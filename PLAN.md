@@ -134,3 +134,7 @@ Calendly detail, collections and delivery/sales costs. Website traffic, newslett
 ## October 14 team review and At a glance
 
 Four Centripetal chats independently reviewed current sources. See SOURCE_REVIEW.md for accepted definitions and gaps. The default screen now follows the five operating vectors in the client-provided GTM Operating Plan. Channel metrics sit underneath, preserving dated, cumulative and snapshot bases. The newsletter live source supersedes its September totals and includes the sender-deleted warning. Pulley remains outbound support; CRM and bookings remain shared outcome systems. No cross-channel total is inferred from overlapping audiences.
+
+## Owner scope clarification
+
+The owner chose to keep the original five dashboard vectors for now: LinkedIn Ads, Waalaxy, LinkedIn content, Pipedrive and Video DMs. At a glance and the prepared source inventory follow that scope. Newsletter, standalone referral/partner reporting, website/inbound and Pulley research remain retained background evidence for future consideration. The five executive cards represent these dashboard vectors, rather than the broader operating-plan categories. Existing CRM pipeline filters remain available.

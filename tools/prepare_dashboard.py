@@ -10,7 +10,6 @@ def read(name):
     return json.loads((DATA / (name+'.json')).read_text())
 now = datetime.now(timezone.utc)
 ads, crm, video, waalaxy, content = (read(k) for k in ('ads','crm','video','waalaxy','content'))
-extras = read('extras') if (DATA / 'extras.json').exists() else {'vectors': [], 'notes': []}
 result = {
     'meta': {
         'generatedAt': now.isoformat(), 'asOfDate': now.astimezone(ZoneInfo('America/Denver')).date().isoformat(),
@@ -20,8 +19,6 @@ result = {
         'note': 'Local concept using actual dated snapshots. Automatic collection and private deployment are not enabled.',
     },
     'ads': ads, 'crm': crm, 'video': video, 'waalaxy': waalaxy, 'content': content,
-    'vectorsExtra': extras.get('vectors', []),
-    'supplementNotes': extras.get('notes', []),
     'sources': [
         {'id':'ads','name':'LinkedIn Ads','status':'Audited snapshot', 'asOf':'2026-10-13',
          'coverage':'September 4–October 12, 2026', 'method':'Reconciled Campaign Manager exports',
@@ -41,13 +38,6 @@ result = {
          'note':'Charles daily analytics end September 10, 2026. Company-page baseline is 2025. Top-ranked posts are not a complete publishing register. Current profile/page admin access unavailable in this browser session.'},
     ],
 }
-for vector in result['vectorsExtra']:
-    result['sources'].append({
-        'id': vector['id'], 'name': vector['name'], 'status': vector['status'],
-        'asOf': vector.get('asOf'), 'coverage': vector.get('coverage'),
-        'method': vector.get('method', 'Retained source evidence / team review'),
-        'note': vector.get('nextStep', ''),
-    })
 assert abs(sum(r['spend'] for r in ads['daily'])-3056.57)<0.02
 assert len(crm['deals'])==len({r['id'] for r in crm['deals']})
 assert len(crm['activities'])==len({r['id'] for r in crm['activities']})

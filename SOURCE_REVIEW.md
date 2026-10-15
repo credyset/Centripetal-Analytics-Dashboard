@@ -2,7 +2,7 @@
 
 Four existing Centripetal chats reviewed their authoritative sources read only: **Centripetal - Listbuilding**, **Centripetal - Video DM / Match LinkedIn video prospects**, **Centripetal - Extract Pipedrive newsletter data**, and **Centripetal - Site Concept**. No source records, campaigns, tracking settings or external messages were changed.
 
-## Incorporated
+## Review findings
 
 - **Operating vectors:** the client-provided *Centripetal GTM Operating Plan*, July 2026–January 2027, supplies the five headings: Content and LinkedIn; Targeted outbound; Relationships and referrals; Sales execution; Structured GTM experiments. Measurement is shared across them. The dashboard's social-account scope remains Charles and the Centripetal company page; this is not complete reporting for everyone named in the operating plan.
 - **Newsletter:** current Pipedrive Newsletter 3.0 cumulative delivery/engagement replaces the September workbook as the headline snapshot. The live sender-deleted warning is retained. Campaign activity has stopped according to that warning. Unique recipients and repeated events remain separate; opens are directional because privacy protection affects tracking. Engagement does not establish sourced sales.
@@ -22,3 +22,7 @@ Four existing Centripetal chats reviewed their authoritative sources read only: 
 7. Establish authenticated hosting and retained daily collection. A fresh page preparation timestamp does not refresh older feeds.
 
 The local prepared data records source dates, coverage and evidence hashes. Operational datasets, recipient details and raw exports remain outside Git. The repository stores the application, source preparation rules and these review conclusions.
+
+## Current display scope
+
+Following the owner’s clarification, the visible dashboard remains limited to the original five vectors. Supplemental newsletter, referral/partner, website/inbound and Pulley findings are retained for later consideration, outside the prepared dashboard data and visible scorecard. The existing Pipedrive view still covers its accessible pipelines.
