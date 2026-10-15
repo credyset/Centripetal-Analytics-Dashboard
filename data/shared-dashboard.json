@@ -51048,13 +51048,13 @@
     ]
   },
   "waalaxy": {
-    "status": "historical",
+    "status": "partial",
     "account": "Charles Solomon",
-    "snapshotAt": "2026-07-06",
+    "snapshotAt": "2026-10-15",
     "preparedAt": "2026-10-14",
     "coverage": {
       "start": "2024-12-13",
-      "end": "2026-06-26"
+      "end": "2026-10-15"
     },
     "dateBasis": "Export contains date-only fields; timezone not supplied",
     "metrics": {
@@ -51065,7 +51065,9 @@
       "replyingProspects": 972,
       "connectedProspects": 3456,
       "pendingProspects": 4600,
-      "connectionRequestedProspects": 8082
+      "connectionRequestedProspects": 8082,
+      "recentInvitationsSent_Sep15_Oct15": 402,
+      "recentInvitationsAccepted_Sep15_Oct15": 114
     },
     "daily": [
       {
@@ -53996,6 +53998,36 @@
       {
         "date": "2026-06-26",
         "connectionsRecorded": 1
+      },
+      {
+        "date": "2026-09-18",
+        "invitationsSent": 31,
+        "invitationsAccepted": 17
+      },
+      {
+        "date": "2026-10-05",
+        "invitationsSent": 62,
+        "invitationsAccepted": 17
+      },
+      {
+        "date": "2026-10-06",
+        "invitationsSent": 59,
+        "invitationsAccepted": 25
+      },
+      {
+        "date": "2026-10-07",
+        "invitationsSent": 68,
+        "invitationsAccepted": 17
+      },
+      {
+        "date": "2026-10-12",
+        "invitationsSent": 138,
+        "invitationsAccepted": 29
+      },
+      {
+        "date": "2026-10-13",
+        "invitationsSent": 44,
+        "invitationsAccepted": 9
       }
     ],
     "lists": [
@@ -54223,14 +54255,15 @@
       "Message recipients and replying prospects are people with Yes flags, not total messages or replies.",
       "Reply dates are the last recorded reply for each person; they do not form a complete reply-event history.",
       "Prospect lists are not campaign histories. No current campaign-level sending totals or positive-reply classifications are available.",
-      "Recent Downloads exports could not be verified as Charles’s account and were excluded. Jess is excluded."
+      "Recent Downloads exports could not be verified as Charles’s account and were excluded. Jess is excluded.",
+      "October 15, 2026: Invitation activity (sent/accepted) from Charles's Waalaxy export covering Sep 15 – Oct 15, 2026. Three burst periods: Sep 18 (31 sent), Oct 5–7 (189 sent), Oct 12–13 (182 sent). Total: 402 sent, 114 accepted (28% accept rate). Invitation-only data; message sends, replies and campaign breakdowns are not included in this export."
     ],
     "accessReview": {
       "status": "account_unavailable",
       "checkedAt": "2026-10-14",
       "reason": "Authenticated Waalaxy Home identifies Christian Wutz. Team page offers team setup/upsell; no Charles Solomon workspace or switcher is available. Unrelated account metrics excluded.",
       "newestVerifiedCharlesSnapshotAt": "2026-07-06",
-      "newestDatedActivity": "2026-06-26"
+      "newestDatedActivity": "2026-10-13"
     }
   },
   "content": {
@@ -60396,11 +60429,665 @@
     }
   },
   "referrals": {
-    "status": "unavailable",
-    "snapshotAt": null,
-    "coverage": null,
-    "records": [],
-    "note": "Referral data has not been supplied. Do not infer events from CRM stages."
+    "status": "current_snapshot",
+    "snapshotAt": "2026-10-15",
+    "coverage": {
+      "source": "Pipedrive Referral Pipeline (pipeline_id=4)",
+      "collectedAt": "2026-10-15",
+      "scope": "Active referral contacts excluding Office Hours (77) and Graveyard/Newsletter (28)"
+    },
+    "summary": {
+      "totalPipelineDeals": 137,
+      "activeReferralDeals": 52,
+      "stageDistribution": {
+        "Centripetal Amigos": 4,
+        "Centripetal Circle": 34,
+        "Intro Promised": 1,
+        "Opportunity ( Referred )": 2,
+        "Inner Circle": 10,
+        "Office Hours": 1
+      },
+      "circleContacts": {
+        "innerCircle": 10,
+        "centripetalCircle": 34,
+        "centripetalAmigos": 4,
+        "introPromised": 1,
+        "opportunity": 2
+      },
+      "officeHoursCount": 77,
+      "graveyardNewsletterCount": 28,
+      "touchpointAutomation": {
+        "status": "configured",
+        "cycle": "30 days",
+        "trelloSyncStatus": "Pipedrive to Trello working; Trello to Pipedrive completion sync pending"
+      },
+      "observedProgressions": [
+        {
+          "dealId": 761,
+          "personName": "Melanie Ortiz",
+          "movement": "Centripetal Circle to Intro Made",
+          "observedAt": "2026-10-14"
+        },
+        {
+          "dealId": 793,
+          "personName": "Jonathan S. Katz",
+          "movement": "Centripetal Amigos to Intro Promised",
+          "observedAt": "2026-10-12"
+        }
+      ]
+    },
+    "stages": [
+      {
+        "id": 42,
+        "name": "Centripetal Amigos",
+        "order": 1
+      },
+      {
+        "id": 26,
+        "name": "Centripetal Circle",
+        "order": 2
+      },
+      {
+        "id": 39,
+        "name": "Inner Circle",
+        "order": 3
+      },
+      {
+        "id": 28,
+        "name": "Intro Promised",
+        "order": 6
+      },
+      {
+        "id": 31,
+        "name": "Opportunity ( Referred )",
+        "order": 10
+      },
+      {
+        "id": 38,
+        "name": "Office Hours",
+        "order": 14
+      },
+      {
+        "id": 40,
+        "name": "Graveyard ( Newsletter )",
+        "order": 15
+      }
+    ],
+    "records": [
+      {
+        "dealId": 103,
+        "title": "Long Pham",
+        "personName": "Long Pham",
+        "organization": null,
+        "stage": "Centripetal Amigos",
+        "stageId": 42,
+        "status": "open",
+        "addedAt": "2024-11-04",
+        "updatedAt": "2026-10-12"
+      },
+      {
+        "dealId": 104,
+        "title": "Nate Littlewood",
+        "personName": "Nate Littlewood",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2024-11-04",
+        "updatedAt": "2026-04-07"
+      },
+      {
+        "dealId": 105,
+        "title": "Porter McKay",
+        "personName": "Porter McKay",
+        "organization": "Avid Bank",
+        "stage": "Intro Promised",
+        "stageId": 28,
+        "status": "open",
+        "addedAt": "2024-11-04",
+        "updatedAt": "2026-10-13"
+      },
+      {
+        "dealId": 152,
+        "title": "Leverage VC",
+        "personName": "David Rabinovici",
+        "organization": "Leverage VC",
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2025-07-18",
+        "updatedAt": "2026-08-03"
+      },
+      {
+        "dealId": 203,
+        "title": "Christian Wutz",
+        "personName": "Christian Wutz",
+        "organization": "REDYSET TEST blerp",
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-02-24",
+        "updatedAt": "2026-10-13"
+      },
+      {
+        "dealId": 214,
+        "title": "Avenue Growth Partners",
+        "personName": "Emmanuel Onakoya",
+        "organization": "Avenue Growth Partners",
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-03-04",
+        "updatedAt": "2026-08-20"
+      },
+      {
+        "dealId": 440,
+        "title": "Aryeh Hoffman",
+        "personName": "Aryeh Hoffman",
+        "organization": "Megadata",
+        "stage": "Centripetal Amigos",
+        "stageId": 42,
+        "status": "open",
+        "addedAt": "2026-08-13",
+        "updatedAt": "2026-10-12"
+      },
+      {
+        "dealId": 441,
+        "title": "Naftali Halberg",
+        "personName": "Naftali Halberg",
+        "organization": "Ginossar",
+        "stage": "Opportunity ( Referred )",
+        "stageId": 31,
+        "status": "open",
+        "addedAt": "2026-08-13",
+        "updatedAt": "2026-09-18"
+      },
+      {
+        "dealId": 442,
+        "title": "Sammy Abdullah",
+        "personName": "Sammy Abdullah",
+        "organization": "Blossom Street Ventures",
+        "stage": "Inner Circle",
+        "stageId": 39,
+        "status": "open",
+        "addedAt": "2026-08-13",
+        "updatedAt": "2026-10-07"
+      },
+      {
+        "dealId": 443,
+        "title": "Howard Friedman",
+        "personName": "Howard Friedman",
+        "organization": "Columbia University",
+        "stage": "Opportunity ( Referred )",
+        "stageId": 31,
+        "status": "open",
+        "addedAt": "2026-08-13",
+        "updatedAt": "2026-09-04"
+      },
+      {
+        "dealId": 452,
+        "title": "Mike Silva",
+        "personName": "Mike Silva",
+        "organization": "Silva Lining HR",
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-03",
+        "updatedAt": "2026-09-16"
+      },
+      {
+        "dealId": 454,
+        "title": "Robert Adelson",
+        "personName": "Robert Adelson",
+        "organization": "Osage Venture Partners",
+        "stage": "Office Hours",
+        "stageId": 38,
+        "status": "open",
+        "addedAt": "2026-09-04",
+        "updatedAt": "2026-09-04"
+      },
+      {
+        "dealId": 494,
+        "title": "Bobby Ocampo",
+        "personName": "Bobby Ocampo",
+        "organization": "Blueprint Equity",
+        "stage": "Inner Circle",
+        "stageId": 39,
+        "status": "open",
+        "addedAt": "2026-09-04",
+        "updatedAt": "2026-09-21"
+      },
+      {
+        "dealId": 495,
+        "title": "Michael Merritt",
+        "personName": "Michael Merritt",
+        "organization": "Blueprint Equity",
+        "stage": "Inner Circle",
+        "stageId": 39,
+        "status": "open",
+        "addedAt": "2026-09-04",
+        "updatedAt": "2026-10-15"
+      },
+      {
+        "dealId": 497,
+        "title": "Reuven Mashitz",
+        "personName": "Reuven Mashitz",
+        "organization": "Careflow",
+        "stage": "Inner Circle",
+        "stageId": 39,
+        "status": "open",
+        "addedAt": "2026-09-04",
+        "updatedAt": "2026-09-21"
+      },
+      {
+        "dealId": 500,
+        "title": "Itay Fried",
+        "personName": "Itay Fried",
+        "organization": "Megadata",
+        "stage": "Centripetal Amigos",
+        "stageId": 42,
+        "status": "open",
+        "addedAt": "2026-09-04",
+        "updatedAt": "2026-10-12"
+      },
+      {
+        "dealId": 508,
+        "title": "Loson Stockton",
+        "personName": "Loson Stockton",
+        "organization": "Vista Point Advisors",
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-04",
+        "updatedAt": "2026-09-21"
+      },
+      {
+        "dealId": 510,
+        "title": "Ari Ashkenas",
+        "personName": "Ari Ashkenas",
+        "organization": "PopUpTalent",
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-04",
+        "updatedAt": "2026-09-21"
+      },
+      {
+        "dealId": 511,
+        "title": "Sidharth Kakkar",
+        "personName": "Sidharth Kakkar",
+        "organization": "Subscript",
+        "stage": "Centripetal Amigos",
+        "stageId": 42,
+        "status": "open",
+        "addedAt": "2026-09-04",
+        "updatedAt": "2026-10-12"
+      },
+      {
+        "dealId": 522,
+        "title": "Jack DeWolf",
+        "personName": "Jack DeWolf",
+        "organization": "Restore AI",
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-04",
+        "updatedAt": "2026-09-21"
+      },
+      {
+        "dealId": 523,
+        "title": "Brian Parks",
+        "personName": "Brian Parks",
+        "organization": "Bigfoot Capital",
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-04",
+        "updatedAt": "2026-09-21"
+      },
+      {
+        "dealId": 525,
+        "title": "Carter Hawthorne",
+        "personName": "Carter Hawthorne",
+        "organization": "Bigfoot Capital",
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-04",
+        "updatedAt": "2026-09-21"
+      },
+      {
+        "dealId": 527,
+        "title": "Don Erwin",
+        "personName": "Don Erwin",
+        "organization": "MontPac",
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-04",
+        "updatedAt": "2026-10-06"
+      },
+      {
+        "dealId": 758,
+        "title": "Ben Murray",
+        "personName": "Ben Murray",
+        "organization": null,
+        "stage": "Inner Circle",
+        "stageId": 39,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 759,
+        "title": "Devo Harris",
+        "personName": "Devo Harris",
+        "organization": null,
+        "stage": "Inner Circle",
+        "stageId": 39,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 760,
+        "title": "Harry Horowitz",
+        "personName": "Harry Horowitz",
+        "organization": null,
+        "stage": "Inner Circle",
+        "stageId": 39,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 761,
+        "title": "Melanie Ortiz",
+        "personName": "Melanie Ortiz",
+        "organization": null,
+        "stage": "Inner Circle",
+        "stageId": 39,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 762,
+        "title": "Shalom Reinman",
+        "personName": "Shalom Reinman",
+        "organization": null,
+        "stage": "Inner Circle",
+        "stageId": 39,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 763,
+        "title": "Joseph Simpson",
+        "personName": "Joseph Simpson",
+        "organization": null,
+        "stage": "Inner Circle",
+        "stageId": 39,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 764,
+        "title": "Alan Faulkner",
+        "personName": "Alan Faulkner",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 765,
+        "title": "Andrew Woodruff",
+        "personName": "Andrew Woodruff",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 766,
+        "title": "Bardia Moayedi",
+        "personName": "Bardia Moayedi",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 767,
+        "title": "Bart Macdonald",
+        "personName": "Bart Macdonald",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 768,
+        "title": "Ben Neuwirth",
+        "personName": "Ben Neuwirth",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 769,
+        "title": "Daniel Schoenbrun",
+        "personName": "Daniel Schoenbrun",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 770,
+        "title": "Eric Broad",
+        "personName": "Eric Broad",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 771,
+        "title": "Mike Firmage",
+        "personName": "Mike Firmage",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 772,
+        "title": "Michael Wallace",
+        "personName": "Michael Wallace",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 773,
+        "title": "Jake Colognesi",
+        "personName": "Jake Colognesi",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 774,
+        "title": "Jamie Vinick",
+        "personName": "Jamie Vinick",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 775,
+        "title": "Jonathan Detzel",
+        "personName": "Jonathan Detzel",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 776,
+        "title": "Kevin Corelli",
+        "personName": "Kevin Corelli",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 777,
+        "title": "Mike Lyon",
+        "personName": "Mike Lyon",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 778,
+        "title": "Michael Rose",
+        "personName": "Michael Rose",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 779,
+        "title": "Dan Williams",
+        "personName": "Dan Williams",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 780,
+        "title": "Rocco Natalicchio",
+        "personName": "Rocco Natalicchio",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 781,
+        "title": "Roey Herzfeld",
+        "personName": "Roey Herzfeld",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 782,
+        "title": "Sandy Kory",
+        "personName": "Sandy Kory",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 783,
+        "title": "David Kim",
+        "personName": "David Kim",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 784,
+        "title": "Matt Cohen",
+        "personName": "Matt Cohen",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 785,
+        "title": "Matt Long",
+        "personName": "Matt Long",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      },
+      {
+        "dealId": 786,
+        "title": "Tim Richardson",
+        "personName": "Tim Richardson",
+        "organization": null,
+        "stage": "Centripetal Circle",
+        "stageId": 26,
+        "status": "open",
+        "addedAt": "2026-09-30",
+        "updatedAt": "2026-09-30"
+      }
+    ],
+    "note": "Referral Pipeline snapshot from Pipedrive. 137 total deals; 52 active referral records shown (excluding 77 Office Hours and 28 Graveyard/Newsletter). Touchpoint automation configured for Centripetal Circle with 30-day cycle. Two referral progressions observed in October 2026."
   },
   "meetings": {
     "snapshotAt": "2026-10-15T02:58:42.803369+00:00",
@@ -61244,7 +61931,11 @@
       "upcomingGeneric30MinuteBookings": 2,
       "last30CompleteDaysGenericBookingCreations": 2,
       "verifiedCommercialCalls": null,
-      "verifiedHeldCalls": null
+      "verifiedHeldCalls": null,
+      "firefliesRecordings": 19,
+      "firefliesBdCalls": 8,
+      "firefliesClientCalls": 6,
+      "firefliesInternalCalls": 5
     },
     "verifiedLinks": [
       {
@@ -61281,8 +61972,113 @@
       "Canceled original events and replacement events are linked by bookingChainId. Count unique chains for booking creation, and only isCurrentBooking records for upcoming active bookings.",
       "An active event in the past is not attendance evidence. No-show absence, elapsed end time and CRM marked-done activity do not independently verify that a call was held.",
       "Exact name and email matches corroborate identity only. They do not establish channel attribution, qualified status, opportunity acceptance or revenue.",
-      "Prepared records omit invitee names, email/phone, meeting notes, answers, locations and join/cancel/reschedule URLs; raw evidence remains local and excluded from Git."
-    ]
+      "Prepared records omit invitee names, email/phone, meeting notes, answers, locations and join/cancel/reschedule URLs; raw evidence remains local and excluded from Git.",
+      "October 15, 2026: Fireflies transcript evidence added by Centripetal strategist agent. 19 recordings classified: 8 BD/prospect, 6 client work, 5 internal. This supplements Calendly booking evidence with actual held-call recordings. Attendance is verified by recording presence, not by booking status."
+    ],
+    "fireflies": {
+      "snapshotAt": "2026-10-15",
+      "source": "Fireflies.ai transcript index",
+      "coverage": "Last 50 transcripts (approximately Sep 14 - Oct 15, 2026)",
+      "totalRecordings": 19,
+      "classification": {
+        "bdProspect": 8,
+        "clientWork": 6,
+        "internal": 5
+      },
+      "bdCalls": [
+        {
+          "firefliesId": "01M4S902G6YVB1HA0R58193800",
+          "title": "Sarim <> Charles --> Len",
+          "date": "2026-10-14",
+          "durationMinutes": 31.1,
+          "externalParticipants": [
+            "sarim.zia@bdc.ca"
+          ],
+          "classification": "bd_prospect",
+          "evidenceType": "fireflies_recording"
+        },
+        {
+          "firefliesId": "01M4RMD1C9QZD883XMXSXPNPB9",
+          "title": "Charles Solomon <> Scott Mallonee",
+          "date": "2026-10-14",
+          "durationMinutes": 33.0,
+          "externalParticipants": [
+            "scottmallonee@gmail.com"
+          ],
+          "classification": "bd_prospect",
+          "evidenceType": "fireflies_recording"
+        },
+        {
+          "firefliesId": "01M4RMD1C8A2GJDX14N0E4RRK5",
+          "title": "Bernard / Charles -> Len",
+          "date": "2026-10-14",
+          "durationMinutes": 30.9,
+          "externalParticipants": [
+            "bbreton@scalecomputing.com"
+          ],
+          "classification": "bd_prospect",
+          "evidenceType": "fireflies_recording"
+        },
+        {
+          "firefliesId": "01M3VBRSPE0959P0NGNV538X8Q",
+          "title": "Centripetal // Woodrow agent follow up",
+          "date": "2026-10-12",
+          "durationMinutes": 13.8,
+          "externalParticipants": [
+            "sidharth@woodrow.ai"
+          ],
+          "classification": "bd_prospect",
+          "evidenceType": "fireflies_recording"
+        },
+        {
+          "firefliesId": "01M4KFKK7JSA9CG20CNWVFK9M9",
+          "title": "Phil <> Charles",
+          "date": "2026-10-12",
+          "durationMinutes": 18.9,
+          "externalParticipants": [
+            "phil@nicolette.com"
+          ],
+          "classification": "bd_prospect",
+          "evidenceType": "fireflies_recording"
+        },
+        {
+          "firefliesId": "01M4BT6MBZQ6P5YW2Q1YXYMP5X",
+          "title": "MEGADATA cyber/tech review",
+          "date": "2026-10-08",
+          "durationMinutes": 20.6,
+          "externalParticipants": [
+            "bobbilynn.tennant@usi.com",
+            "cassandra.nettles@usi.com"
+          ],
+          "classification": "bd_prospect",
+          "evidenceType": "fireflies_recording"
+        },
+        {
+          "firefliesId": "01M49TKTGFKB54QR88B6PCRQ2R",
+          "title": "Intro: Charles <> Matt, Ray",
+          "date": "2026-10-08",
+          "durationMinutes": 18.0,
+          "externalParticipants": [
+            "rspencer@avidbank.com",
+            "mgarrity@avidbank.com"
+          ],
+          "classification": "bd_prospect",
+          "evidenceType": "fireflies_recording"
+        },
+        {
+          "firefliesId": "01M3MQ1VCN1YW7VZMKHFDSH5PE",
+          "title": "Charles <> Varoujan",
+          "date": "2026-10-02",
+          "durationMinutes": 52.8,
+          "externalParticipants": [
+            "varoujan@dexiqrobotics.com"
+          ],
+          "classification": "bd_prospect",
+          "evidenceType": "fireflies_recording"
+        }
+      ],
+      "note": "Fireflies captures recorded calls only. Unrecorded phone calls, WhatsApp/text conversations and in-person meetings are not included. Classification is based on participant email domains. Client domains (OneFlo, Adventr, Careflow, Megadata, AccuBusiness) are separated from external BD prospects. Calls with external non-client participants are classified as BD/prospect."
+    }
   },
   "time": {
     "snapshotAt": "2026-10-15T12:29:52.520633+00:00",
@@ -61738,11 +62534,11 @@
     {
       "id": "waalaxy",
       "name": "Waalaxy · Charles",
-      "status": "Historical export",
-      "asOf": "2026-07-06",
+      "status": "Partial (invitation activity through Oct 15)",
+      "asOf": "2026-10-15",
       "coverage": {
         "start": "2024-12-13",
-        "end": "2026-06-26"
+        "end": "2026-10-15"
       },
       "method": "Verified Charles prospect export",
       "note": "Historical Charles-only person flags, not period message totals. Current campaign analytics remain unavailable.",
@@ -61764,9 +62560,9 @@
     {
       "id": "referrals",
       "name": "Referrals",
-      "status": "Data needed",
-      "asOf": null,
-      "coverage": "No referral dataset supplied",
+      "status": "Current snapshot",
+      "asOf": "2026-10-15",
+      "coverage": "137 pipeline deals; 52 active referral records",
       "method": "Awaiting owner-supplied spreadsheet or export",
       "note": "Dedicated placeholder; no referral activity, introductions or outcomes inferred from CRM stage inventory."
     },
