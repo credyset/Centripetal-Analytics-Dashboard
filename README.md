@@ -86,3 +86,7 @@ See [SOURCE_REVIEW.md](SOURCE_REVIEW.md) for the latest four-chat source review 
 Referral scope was explicitly added after the five-vector clarification. Newsletter/email, standalone website reporting and Pulley remain outside the visible dashboard. Referrals currently shows unavailable metrics and planned definitions; importing/calculating the future referral dataset is a separate implementation step.
 
 See [REFRESH_REVIEW_2026-10-14.md](REFRESH_REVIEW_2026-10-14.md), [CRM_ACTIVITY_REVIEW.md](CRM_ACTIVITY_REVIEW.md) and [MEETING_SOURCE_REVIEW.md](MEETING_SOURCE_REVIEW.md) for the latest source review. Source snapshots remain on-demand; refreshed source dates are distinct from historical imports and access checks.
+
+## October effort and import coverage
+
+The Time & effort view estimates Christian’s October work with deduplicated recording evidence and a separate adjustable nonmeeting range. It does not measure actual or billable hours. See [OCTOBER_EFFORT_REVIEW.md](OCTOBER_EFFORT_REVIEW.md) and [DATA_GAPS.md](DATA_GAPS.md).

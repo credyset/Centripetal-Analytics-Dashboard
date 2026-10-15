@@ -11,6 +11,7 @@ def read(name):
 now = datetime.now(timezone.utc)
 ads, crm, video, waalaxy, content = (read(k) for k in ('ads','crm','video','waalaxy','content'))
 meetings = read('meetings') if (DATA / 'meetings.json').exists() else None
+time = read('time') if (DATA / 'time.json').exists() else None
 if meetings:
     # Calendar identity matches corroborate bookings, without changing the
     # separately owner-confirmed qualification or implying attendance.
@@ -30,9 +31,10 @@ result = {
         'timezone': 'America/Denver', 'scope': 'Charles Solomon and Centripetal Advisors',
         'concept': True, 'autoRefreshEnabled': False,
         'weekStartsOn': 'Monday',
+        'defaultReportingThrough': crm.get('coverage',{}).get('reportingThrough'),
         'note': 'Local concept using actual dated snapshots. Automatic collection and private deployment are not enabled.',
     },
-    'ads': ads, 'crm': crm, 'video': video, 'waalaxy': waalaxy, 'content': content, 'referrals': referrals, 'meetings': meetings,
+    'ads': ads, 'crm': crm, 'video': video, 'waalaxy': waalaxy, 'content': content, 'referrals': referrals, 'meetings': meetings, 'time':time,
     'sources': [
         {'id':'ads','name':'LinkedIn Ads','status':ads.get('status','Dated export'), 'asOf':ads.get('collectedAt',ads.get('snapshotAt')),
          'coverage':ads.get('coverage'), 'method':'Reconciled Campaign Manager exports',
@@ -62,6 +64,11 @@ if meetings:
         'asOf':meetings.get('snapshotAt'),'coverage':meetings.get('coverage'),
         'method':'Read-only calendar event and lifecycle collection',
         'note':'Shared booking evidence, not another acquisition vector. Calendar status does not verify commercial qualification or attendance.'})
+if time:
+    result['sources'].append({'id':'time','name':'Christian · October effort','status':'Current evidence; estimated effort',
+        'asOf':time['snapshotAt'],'coverage':time['period'],
+        'method':'Fireflies metadata, private duplicate comparison, scoped Calendly and cross-project evidence review',
+        'note':'Fixed October-to-date view. Recording duration is a meeting proxy; separate nonmeeting ranges are unconfirmed assumptions. Actual Christian hours remain unknown.'})
 assert abs(sum(r['spend'] for r in ads['daily'])-ads['totals']['spend'])<0.02
 assert len(crm['deals'])==len({r['id'] for r in crm['deals']})
 assert len(crm['activities'])==len({r['id'] for r in crm['activities']})

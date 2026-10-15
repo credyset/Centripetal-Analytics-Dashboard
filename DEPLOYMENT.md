@@ -44,3 +44,10 @@ The project ID and live URL above are non-secret. Credentials and raw recipient-
 - Refreshed CRM, Video DM, Campaign Manager and public LinkedIn observations; Charles Calendly corroboration added under Pipedrive. Six-vector scope remains unchanged.
 - Browser verification: refreshed summary, searchable activity register, 21 selected-period scoped stage-change rows, and two calendar identity matches. Date-coverage, qualification and snapshot distinctions verified; mobile layout checked.
 - Source preparation and review changes pushed to the private GitHub project; operational JSON/raw evidence remain excluded.
+# October 15, 2026 — Christian effort category
+
+Published version 6 at the existing public URL. Site source commit: `0696bdf1c58af538fe2747fac7f2a4f1773871e3`; saved version: `appgprj_6ad03dfa7c78819193bc9778aa17c805~appgver_0c3165d2a1208191ae0608982e43c022`. Deployment succeeded at 12:33:38 UTC.
+
+Added Time & effort and the seventh at-a-glance category. Three distinct Christian-associated recordings total 184.96 audio minutes after a 33-minute duplicate is excluded. A separate editable 6–14.5-hour draft estimates asynchronous review and coordination. Actual attendance and human hours remain unknown; no combined actual total is reported. Added the manual-import and measurement-gap checklist. Existing business snapshots retain their collection dates, and the default 30-day business period remains anchored through October 13.
+
+Verified the published Time view in the browser after refresh, its displayed date scope and ranges, session-only assumptions and reset, duplicate filtering, seven overview cards, existing paid/CRM business counts, mobile layout without page overflow, packaged JSON and JavaScript syntax. No browser errors were recorded. Screenshot: local `validation/october-time-live.png` (not committed).
