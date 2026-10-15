@@ -55,3 +55,9 @@ The existing Listbuilding, Video DM, newsletter/CRM and Site Concept chats were 
 7. Establish authenticated access and monitored recurring collection when requested. This refresh is on demand, not an installed daily automation.
 
 See CRM_ACTIVITY_REVIEW.md and MEETING_SOURCE_REVIEW.md for detailed source diagnostics. Operational JSON and raw evidence remain outside the GitHub repository; the approved prepared snapshot is packaged in the hosted Sites source.
+
+## Final listbuilding cross-check
+
+The 40 operational rows tagged PULLEY do not identify the authoritative 102-company/204-contact research population. Of its 36 research-ready contacts, none is in the main operational prospect table; 13 occur in Accepted Connections and 23 are absent from both operational queues. These are preparation records awaiting explicit promotion, not extra sends or an automatic extension of the 47-row operational ready queue. The sole other research/main-table overlap is outside that ready population.
+
+Of the 59 main-workbook rows carrying CRM deal IDs, 58 IDs resolve in the retained CRM snapshot and one is stale: XCaliber Health / Prakash Khot references deal 290. Only two of the 47 operationally ready rows have CRM IDs. The dashboard exposes missing CRM IDs for review; it does not automatically reassign them to similarly named deals. The 22 Pulley-tagged Accepted Connections records remain not_synced and carry no external CRM IDs.
