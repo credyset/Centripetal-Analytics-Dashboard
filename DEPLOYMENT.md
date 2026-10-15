@@ -35,3 +35,12 @@ The project ID and live URL above are non-secret. Credentials and raw recipient-
 - Deployed Sites source: `91f34262ef95f918072316e4e8152fa56be3b531`
 - Public access retained by owner request; sign-in protection is a future requested direction, not yet enabled.
 - The public index embeds the curated reporting JSON and application script together. This avoids inconsistent cached asset/data responses observed during publication. Browser verification confirmed named prospect rows, LinkedIn links and available video links.
+
+## Latest source refresh publication
+
+- October 14, 2026, approximately 9:17 p.m. Mountain.
+- Saved version 5: `appgprj_6ad03dfa7c78819193bc9778aa17c805~appgver_df2d5c787a08819180f5c08111f69953`
+- Deployed Sites source: `fee858744b0226bc94bd67bf0f6c819311f541e3`
+- Refreshed CRM, Video DM, Campaign Manager and public LinkedIn observations; Charles Calendly corroboration added under Pipedrive. Six-vector scope remains unchanged.
+- Browser verification: refreshed summary, searchable activity register, 21 selected-period scoped stage-change rows, and two calendar identity matches. Date-coverage, qualification and snapshot distinctions verified; mobile layout checked.
+- Source preparation and review changes pushed to the private GitHub project; operational JSON/raw evidence remain excluded.
