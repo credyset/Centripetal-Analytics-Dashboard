@@ -16,6 +16,8 @@ The repository contains application code and an empty-data setup state. Operatio
 
 ## Views
 
+- At a glance (default): five operating vectors from the GTM Operating Plan, followed by channel scorecards with activity, responses, outcomes and source dates. Newsletter, referral inventory, website traffic and Pulley support evidence supplement the original sources.
+
 - Overview: equal emphasis on activity and outcomes, weekly deal creation, follow-up priorities and source coverage.
 - LinkedIn Ads: dated spend/delivery, lead quality and campaign economics.
 - Waalaxy: labelled historical Charles prospect flags; current campaign activity awaits a verified export.
@@ -32,7 +34,7 @@ Monday–Sunday weeks, `America/Denver`, including daylight-saving changes. Pres
 
 ## Data preparation
 
-Normalized local inputs: `data/ads.json`, `crm.json`, `video.json`, `waalaxy.json`, and `content.json`. Combine them with:
+Normalized local inputs: `data/ads.json`, `crm.json`, `video.json`, `waalaxy.json`, and `content.json`, plus optional `extras.json`. Prepare supplemental evidence with `python3 tools/prepare_extra_vectors.py`, then combine it with:
 
 ```sh
 python3 tools/prepare_dashboard.py
@@ -43,6 +45,7 @@ Source-specific preparation:
 - `tools/prepare_channels.py`: audited ad exports, verified Charles Waalaxy baseline and analytics workbooks. Requires `openpyxl`; paths currently reflect the source workspace.
 - `tools/prepare_crm.py`: paginated Pipedrive snapshots collected read-only across all accessible owners.
 - `tools/prepare_video.py`: Video DM prospect and accepted-connection worksheet snapshots.
+- `tools/prepare_extra_vectors.py`: referral inventory, audited GA4 periods, a retained newsletter handoff and Pulley workbook preparation. These cumulative/snapshot figures do not follow the global date filter.
 
 Raw inputs reside in `data/private/` and are ignored by Git. Prepared operational JSON files are also ignored. Store credentials in an authorized collection service, never the front-end code, workbook cells or repository.
 
@@ -70,4 +73,4 @@ A private repository does not make a standard GitHub Pages site private. Protect
 
 Centripetal logo and palette follow the workspace brand guidelines. Roboto is Copyright 2015 Google Inc., licensed under Apache 2.0. Lora is Copyright 2011 The Lora Project Authors, licensed under SIL OFL 1.1 with Reserved Font Name Lora. License texts are included in `assets/`.
 
-See [PLAN.md](PLAN.md) for the agreed scope and implementation sequence.
+See [SOURCE_REVIEW.md](SOURCE_REVIEW.md) for the latest four-chat source review and remaining gaps. See [PLAN.md](PLAN.md) for the agreed scope and implementation sequence.

@@ -4,7 +4,7 @@ Date: October 14, 2026. Status: local working concept built and browser-verified
 
 ## Current delivery
 
-- Local preview: http://127.0.0.1:8765. Six dashboard views plus source definitions, working date presets/custom dates and searchable/sortable tables.
+- Local preview: http://127.0.0.1:8765. At a glance plus six detailed dashboard views and source definitions, working date presets/custom dates and searchable/sortable tables.
 - Current Pipedrive snapshot: 722 accessible non-deleted deals and 923 activities across all owners. Business metrics exclude three test deals and five test activities.
 - Current Video DM snapshot: 428 source rows, 418 unique valid LinkedIn profiles and 47 ready rows. Spreadsheet-classified sent/completed remains distinct from verified delivery.
 - Ads: reconciled daily data through October 12. Charles content: daily export through September 10. Company-page and verified Charles Waalaxy baselines are historical and labelled accordingly.
@@ -22,7 +22,7 @@ Reporting calendar: `America/Denver`, including daylight-saving changes. Store s
 
 Scope: exclude Jess's personal LinkedIn/Waalaxy activity from the first dashboard. Pipedrive covers Centripetal business-development records in Sales, Leads and Referral pipelines, with owner filters; the selected social account scope does not imply excluding other owners' legitimate Centripetal CRM records.
 
-Current direction: develop a local custom-dashboard concept, then create a new private GitHub repository for the project. This replaces the managed Data Studio recommendation. Open decisions: GitHub owner/organization, repository name, private deployment destination and team access, collection/import ownership, and operational definitions for qualified leads and accepted sales opportunities.
+Current direction: develop a local custom-dashboard concept, then create a new private GitHub repository for the project. This replaces the managed Data Studio recommendation. GitHub owner and repository are settled: `credyset/Centripetal-Analytics-Dashboard`. Open decisions: private deployment destination and team access, collection/import ownership, and operational definitions for qualified leads and accepted sales opportunities.
 
 Working proposal: a private, Centripetal-branded browser dashboard, an executive overview with activity and outcome summaries of equal prominence, five channel views, and a weekly operating review. Direct reads where verified; dated exports where a durable integration has not been verified. Start with the latest complete 30 days and a 90-day comparison where the source supports both periods. Keep older evidence explicitly dated.
 
@@ -81,13 +81,13 @@ Proposed filters: date range, account/owner, campaign, pipeline and source. Ever
 
 ## Proposed technical approach
 
-Develop and review the Centripetal-branded concept locally first. After that concept stage, create a new private GitHub repository for the dashboard code, metric definitions, source adapters and documentation. Suggested name: `centripetal-analytics`, subject to the selected GitHub account's availability.
+Develop and review the Centripetal-branded concept locally first. After that concept stage, create a new private GitHub repository for the dashboard code, metric definitions, source adapters and documentation. The private repository is `credyset/Centripetal-Analytics-Dashboard`.
 
 Source reads / dated imports → retained snapshots and prepared reporting data → custom browser dashboard.
 
 ### Repository, data and private hosting
 
-- GitHub provides version history, collaboration and a deployable project home. Repository creation follows the local concept; no repository has been created yet.
+- GitHub provides version history, collaboration and a deployable project home. The private repository has been created and populated after the local concept review.
 - The concept should provide Overview, LinkedIn Ads, Waalaxy, LinkedIn Content, Pipedrive and Video DMs, using the agreed branding, equal activity/outcome prominence and Mountain-time reporting calendar.
 - Use the reconciled paid-ad baseline and clearly labelled unavailable sections or sample data for feeds not yet prepared. Keep sample and actual figures visibly distinguishable. Prototype refresh labels describe real source coverage, not a live integration.
 - Keep connector credentials and raw private exports out of tracked browser assets. Use a separate data store or reporting workbook for operational records and history; the front end receives only data appropriate to its authenticated audience.
@@ -129,4 +129,8 @@ Core reporting entities: campaigns; posts; prospects/contacts; channel actions; 
 
 ## Future additions
 
-GA4/site inquiries, Calendly detail, newsletter, referrals/partners, collections and delivery/sales costs. Calendly should join the first scope if required to substantiate booked/held-call metrics. Keep other additions modular and do not delay the initial operating dashboard.
+Calendly detail, collections and delivery/sales costs. Website traffic, newsletter, referral inventory and Pulley preparation are now included as dated supplementary evidence; verified inquiry and attributed commercial outcomes still need instrumentation. Calendly should join the first scope if required to substantiate booked/held-call metrics. Keep other additions modular and do not delay the initial operating dashboard.
+
+## October 14 team review and At a glance
+
+Four Centripetal chats independently reviewed current sources. See SOURCE_REVIEW.md for accepted definitions and gaps. The default screen now follows the five operating vectors in the client-provided GTM Operating Plan. Channel metrics sit underneath, preserving dated, cumulative and snapshot bases. The newsletter live source supersedes its September totals and includes the sender-deleted warning. Pulley remains outbound support; CRM and bookings remain shared outcome systems. No cross-channel total is inferred from overlapping audiences.
