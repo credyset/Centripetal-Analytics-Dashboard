@@ -6,7 +6,7 @@ Private business-development dashboard for Charles Solomon and the Centripetal t
 
 https://centripetal-analytics-dashboard.christian399556.chatgpt.site
 
-Anyone can view the public aggregate snapshot. Prospect identities and private record links are omitted; source dates and known gaps remain visible. This is separate from the local internal concept. See [DEPLOYMENT.md](DEPLOYMENT.md) for hosting identity and the update procedure.
+Anyone can view the detailed public snapshot. The owner explicitly approved prospect identities and available business record links; source dates and known gaps remain visible. This is separate from the local internal concept. See [DEPLOYMENT.md](DEPLOYMENT.md) for hosting identity and the update procedure.
 
 ## Preview
 

@@ -8,7 +8,7 @@ Published October 14, 2026 (Mountain time), using the Sites plugin. The owner ex
 
 Six sections: LinkedIn Ads, Waalaxy, LinkedIn content, Pipedrive, Video DMs and a Referrals placeholder. Source dates are retained; publication is not a data refresh. No unattended collection has been installed.
 
-The public build omits prospect names, contact links, individual record tables, raw exports and local file paths. Anonymous calculation rows preserve date, stage and owner-group filtering. The internal source snapshot stays local and outside GitHub. New public versions require rebuilding this sanitized package; never deploy the internal checkout or its original dashboard JSON directly.
+The owner subsequently explicitly approved publishing prospect identities with all available detail on October 14. The public build now includes the curated prospect/company identities, original CRM record IDs and links, Video DM profile/video links, source-reported statuses, ranked content and individual record tables. No additional identity data was inferred or collected for publication. Raw exports, credentials and local filesystem paths are excluded. Operational data remains outside the private GitHub repository; the approved prepared snapshot is stored in the hosted Sites source. Always rebuild the allowlisted package; do not deploy the entire internal checkout.
 
 ## Source and hosting identity
 
@@ -23,8 +23,8 @@ The public build omits prospect names, contact links, individual record tables, 
 ## Updating
 
 1. Refresh authorized local snapshots and run `tools/prepare_dashboard.py` only when new data is available.
-2. Run `tools/prepare_public_site.py` from this project to rebuild the public allowlisted output. It checks for private links and local paths and strips identities.
+2. Run `tools/prepare_public_site.py` from this project to rebuild the public allowlisted output. It preserves approved business details, strips local paths and excludes raw exports and credentials.
 3. Follow the Sites skill: reuse the project ID, get a short-lived source credential, open/synchronize the Sites checkout, run needed checks, package the exact pushed source and save/deploy that version. Pass credentials only through hidden stdin; never store them.
 4. Preserve the public audience unless the owner changes the access request. Check the deployment result and source freshness before sharing.
 
-The project ID and live URL above are non-secret. Credentials and recipient-level source files must never be committed.
+The project ID and live URL above are non-secret. Credentials and raw recipient-level exports must never be committed. Prepared prospect data is explicitly approved in the Sites publication; do not add raw source data to the GitHub project.

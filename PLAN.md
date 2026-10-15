@@ -146,3 +146,7 @@ The owner subsequently added Referrals as a separate sixth category, initially w
 ## Public publication requested and completed
 
 On October 14 the owner requested a shareable live dashboard and selected anyone on the internet as its audience. A sanitized public snapshot is hosted with Sites at https://centripetal-analytics-dashboard.christian399556.chatgpt.site. It excludes prospect identities, private links and record tables while retaining the reporting filters and aggregate metrics. The original internal dataset remains local. This supersedes earlier statements that no public website is deployed; automatic collection and authenticated internal hosting remain future work. See DEPLOYMENT.md for the retained project identity and publication process.
+
+## Detailed public snapshot approved
+
+The owner explicitly approved public prospect identities and available business details, with sign-in/password protection planned later. The hosted package now retains the curated prospect identities, company names, original CRM record links, profile/video links, record tables and ranked content. This supersedes the earlier aggregate-only publication policy. Credentials, raw exports and local paths stay excluded. Source coverage is unchanged; no fresh data collection or automatic refresh is implied.
