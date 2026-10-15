@@ -28,3 +28,10 @@ The owner subsequently explicitly approved publishing prospect identities with a
 4. Preserve the public audience unless the owner changes the access request. Check the deployment result and source freshness before sharing.
 
 The project ID and live URL above are non-secret. Credentials and raw recipient-level exports must never be committed. Prepared prospect data is explicitly approved in the Sites publication; do not add raw source data to the GitHub project.
+
+## Current detailed publication
+
+- Saved version 4: `appgprj_6ad03dfa7c78819193bc9778aa17c805~appgver_b171491f9480819188bb292400ce37df`
+- Deployed Sites source: `91f34262ef95f918072316e4e8152fa56be3b531`
+- Public access retained by owner request; sign-in protection is a future requested direction, not yet enabled.
+- The public index embeds the curated reporting JSON and application script together. This avoids inconsistent cached asset/data responses observed during publication. Browser verification confirmed named prospect rows, LinkedIn links and available video links.
