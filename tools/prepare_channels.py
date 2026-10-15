@@ -25,13 +25,21 @@ PREPARED = '2026-10-14'
 def copy_source(path: Path, label: str) -> dict:
     target = PRIVATE / label
     target.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(path, target)
+    if path.resolve() != target.resolve():
+        shutil.copyfile(path, target)
     return {'file': label, 'sha256': hashlib.sha256(target.read_bytes()).hexdigest()}
 
 
 def write(name: str, data: dict):
     DATA.mkdir(parents=True, exist_ok=True)
-    (DATA / name).write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n')
+    target = DATA / name
+    rendered = json.dumps(data, indent=2, ensure_ascii=False) + '\n'
+    if target.exists() and target.read_text() != rendered:
+        history = PRIVATE / 'history'
+        history.mkdir(parents=True, exist_ok=True)
+        old_hash = hashlib.sha256(target.read_bytes()).hexdigest()[:12]
+        shutil.copyfile(target, history / f'{target.stem}_{old_hash}.json')
+    target.write_text(rendered)
 
 
 def number(value):
@@ -61,11 +69,16 @@ def day(value):
 def ads():
     metrics_file = AUDIT / 'Analysis/validated_metrics.json'
     metrics = json.loads(metrics_file.read_text())
-    daily_file = AUDIT / 'LinkedIn/Current_Daily/account_515259390_campaign_performance_report (2).csv'
+    fresh_file = PRIVATE / 'ads_daily_2026-10-14_utf16.tsv'
+    daily_file = fresh_file if fresh_file.exists() else AUDIT / 'LinkedIn/Current_Daily/account_515259390_campaign_performance_report (2).csv'
+    access = json.loads((DATA / 'channel_access_review.json').read_text()) if (DATA / 'channel_access_review.json').exists() else {}
     lead_file = AUDIT / 'Analysis/lead_dispositions.csv'
     text = daily_file.read_text(encoding='utf-16')
     header = text.index('Start Date (in UTC)\t')
     rows = list(csv.DictReader(io.StringIO(text[header:]), delimiter='\t'))
+    expected_ids = {x['ad_set_id'] for x in metrics['performance']}
+    assert {x['Ad Set ID'] for x in rows} == expected_ids
+    assert all('Centripetal' in x['Account Name'] and x['Currency'] == 'USD' for x in rows)
     daily = defaultdict(lambda: {'spend': 0, 'impressions': 0, 'clicks': 0, 'opens': 0, 'leads': 0})
     campaign_daily = defaultdict(list)
     for row in rows:
@@ -86,38 +99,49 @@ def ads():
                       'qualificationAsOf': row['disposition_as_of'],
                       'meetingBooked': None, 'meetingHeld': None})
     campaigns = []
+    metric_map = {'Total Spent': 'spend', 'Impressions': 'impressions', 'Clicks': 'clicks',
+                  'Lead Forms Opened': 'opens', 'Leads': 'leads', 'Video Views': 'videoViews',
+                  'Video Completions': 'videoCompletions', 'Appointments Booked': 'platformAppointmentsReported'}
     for code, row in zip('ABCDE', metrics['performance']):
+        source_rows = [x for x in rows if x['Ad Set ID'] == row['ad_set_id']]
+        latest = max(source_rows, key=lambda x: day(x['Start Date (in UTC)']))
+        aggregated = {out: round(sum(number(x[field]) or 0 for x in source_rows), 2) for field, out in metric_map.items()}
         qualified = sum(1 for lead in leads if lead['campaign'] == code and lead['disposition'] == 'qualified_warm')
-        campaigns.append({'id': row['ad_set_id'], 'code': code, 'name': row['name'],
-                          'spend': row['Total Spent'], 'impressions': integer(row['Impressions']),
-                          'clicks': integer(row['Clicks']), 'opens': integer(row['Lead Forms Opened']),
-                          'leads': integer(row['Leads']), 'qualified': qualified,
-                          'objective': row['objective'], 'statusAsOfExport': row['status'],
-                          'videoViews': integer(row['Video Views']),
-                          'videoCompletions': integer(row['Video Completions']),
-                          'platformAppointmentsReported': integer(row['Appointments Booked']),
+        campaigns.append({'id': row['ad_set_id'], 'code': code, 'name': latest['Ad Set Name'],
+                          **aggregated, 'qualified': qualified,
+                          'objective': latest['Ad Set Objective'], 'statusAsOfExport': latest['Ad Set Status'],
                           'daily': sorted(campaign_daily[row['ad_set_id']], key=lambda x: x['date'])})
-    totals = {'spend': 3056.57, 'impressions': 21050, 'clicks': 94, 'formOpens': 57,
-              'rawLeads': 4, 'qualifiedLeads': 1, 'videoViews': 8973, 'videoCompletions': 336}
+    totals = {key: round(sum(x[source_key] for x in campaigns), 2) for key, source_key in
+              [('spend', 'spend'), ('impressions', 'impressions'), ('clicks', 'clicks'),
+               ('formOpens', 'opens'), ('rawLeads', 'leads'), ('videoViews', 'videoViews'), ('videoCompletions', 'videoCompletions')]}
+    totals['qualifiedLeads'] = sum(x['qualified'] for x in campaigns)
     daily_rows = [{'date': date, **{k: round(v, 2) if k == 'spend' else v for k, v in values.items()}}
                   for date, values in sorted(daily.items())]
     assert round(sum(x['spend'] for x in daily_rows), 2) == totals['spend']
     for field, total_field in [('impressions', 'impressions'), ('clicks', 'clicks'), ('opens', 'formOpens'), ('leads', 'rawLeads')]:
         assert sum(x[field] for x in daily_rows) == totals[total_field]
-    assert len(leads) == totals['rawLeads']
+    assert len(leads) <= totals['rawLeads']
     assert sum(x['qualified'] for x in campaigns) == totals['qualifiedLeads']
-    data = {'status': 'available', 'snapshotAt': '2026-10-13', 'preparedAt': PREPARED,
-            'coverage': {'start': '2026-09-04', 'end': '2026-10-12'},
+    if fresh_file.exists():
+        for key, expected in access['paid']['browserControlTotals'].items():
+            assert totals[key] == expected, (key, totals[key], expected)
+    data = {'status': 'available', 'snapshotAt': '2026-10-14' if fresh_file.exists() else '2026-10-13', 'preparedAt': PREPARED,
+            'collectedAt': access.get('paid', {}).get('collectedAt') if fresh_file.exists() else None,
+            'reportGeneratedAt': access.get('paid', {}).get('reportGeneratedAt') if fresh_file.exists() else None,
+            'refreshMode': 'manual_authenticated_export',
+            'coverage': {'start': min(daily), 'end': max(daily)},
             'dateBasis': 'UTC day buckets supplied by LinkedIn; not rebucketed into Mountain days',
             'totals': totals, 'campaigns': campaigns, 'daily': daily_rows,
             'leads': sorted(leads, key=lambda x: x['date']),
-            'notes': ['Historical audited baseline; current campaign delivery after October 12 is not included.',
+            'notes': [('Fresh authenticated Campaign Manager export collected October 14, 2026; coverage through October 14 UTC. Figures may restate after export.' if fresh_file.exists() else 'Historical audited baseline; current campaign delivery after October 12 is not included.'),
+                      'Paid metrics retain LinkedIn UTC day buckets. They cannot be converted accurately to the dashboard’s Mountain days without hourly data; October 14 Mountain is still in progress at collection.',
                       'A–E are ad sets, displayed as campaign variants for continuity with the audit.',
                       'NuVee is the only owner-confirmed qualified lead and is warm. Qualification confirmation was supplied October 13; meeting status and progress dates are unconfirmed.',
                       'One platform-reported appointment is not treated as a verified booked or held call.',
+                      'Fresh lead detail downloads are blocked by LinkedIn Company Page/Lead Gen Forms permissions. The fresh raw count remains four; existing owner dispositions are retained without inferred new qualifications.',
                       'Campaign E is configured for website visits despite its video-views name.'],
             'sources': [copy_source(metrics_file, 'ads_validated_metrics.json'),
-                        copy_source(daily_file, 'ads_daily_utf16.tsv'),
+                        copy_source(daily_file, 'ads_daily_2026-10-14_utf16.tsv' if fresh_file.exists() else 'ads_daily_utf16.tsv'),
                         copy_source(lead_file, 'ads_lead_dispositions.csv')]}
     write('ads.json', data)
 
@@ -165,6 +189,9 @@ def waalaxy():
                       'Prospect lists are not campaign histories. No current campaign-level sending totals or positive-reply classifications are available.',
                       'Recent Downloads exports could not be verified as Charles’s account and were excluded. Jess is excluded.'],
             'sources': [copy_source(source, 'charles_all_prospects_jul2026.csv')]}
+    review_file = DATA / 'channel_access_review.json'
+    if review_file.exists():
+        data['accessReview'] = json.loads(review_file.read_text())['waalaxy']
     write('waalaxy.json', data)
 
 
@@ -247,6 +274,12 @@ def content():
                       'Current Charles/profile and company admin analytics were unavailable through the authenticated browser account during concept collection.'],
             'sources': [copy_source(charles_file, 'charles_aggregate_2025-09-11_2026-09-10.xlsx'),
                         copy_source(company_file, 'company_content_2025.xlsx')]}
+    public_file = PRIVATE / 'public_observations_2026-10-14.json'
+    if public_file.exists():
+        data['publicObservations'] = json.loads(public_file.read_text())
+    review_file = DATA / 'channel_access_review.json'
+    if review_file.exists():
+        data['accessReview'] = json.loads(review_file.read_text())['organic']
     write('content.json', data)
 
 

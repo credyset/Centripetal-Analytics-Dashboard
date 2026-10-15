@@ -27,8 +27,8 @@ The repository contains application code and an empty-data setup state. Operatio
 - Overview: equal emphasis on activity and outcomes, weekly deal creation, follow-up priorities and source coverage.
 - LinkedIn Ads: dated spend/delivery, lead quality and campaign economics.
 - Waalaxy: labelled historical Charles prospect flags; current campaign activity awaits a verified export.
-- LinkedIn Content: daily exposure, account coverage and a ranked post subset; organic/sponsored splits remain unavailable where omitted.
-- Pipedrive: created/updated records, CRM activity, pipeline inventory and data-quality issues.
+- LinkedIn Content: retained daily exposure and ranked posts, plus separately dated current public followers and observed public engagement. Private current-period analytics and organic/sponsored splits remain unavailable where omitted.
+- Pipedrive: created/updated records, searchable activity records, owner/type breakdowns, automation metadata, overdue inventory, scoped stage-change history, follow-through gaps and separately corroborated Calendly bookings.
 - Video DMs: current readiness/status inventory, searchable records and measurement boundaries.
 - Referrals: dedicated placeholder for referral requests, introductions, qualification and sourced outcomes; awaiting the owner's dataset.
 - Sources & definitions: dates, refresh method, known gaps and outcome definitions.
@@ -41,7 +41,7 @@ Monday–Sunday weeks, `America/Denver`, including daylight-saving changes. Pres
 
 ## Data preparation
 
-Normalized local inputs: `data/ads.json`, `crm.json`, `video.json`, `waalaxy.json`, and `content.json`. Combine them with:
+Normalized local inputs: `data/ads.json`, `crm.json`, `video.json`, `waalaxy.json`, and `content.json`, with optional `meetings.json` for calendar corroboration. Combine them with:
 
 ```sh
 python3 tools/prepare_dashboard.py
@@ -50,7 +50,8 @@ python3 tools/prepare_dashboard.py
 Source-specific preparation:
 
 - `tools/prepare_channels.py`: audited ad exports, verified Charles Waalaxy baseline and analytics workbooks. Requires `openpyxl`; paths currently reflect the source workspace.
-- `tools/prepare_crm.py`: paginated Pipedrive snapshots collected read-only across all accessible owners.
+- `tools/prepare_crm.py`: paginated Pipedrive snapshots across all accessible owners, scoped structured change history and activity diagnostics.
+- `tools/prepare_meetings.py`: Charles Calendly event lifecycle, reschedule-chain deduplication and verified CRM identity matches. Calendar status does not establish attendance or qualification.
 - `tools/prepare_video.py`: Video DM prospect and accepted-connection worksheet snapshots.
 - `tools/prepare_extra_vectors.py`: retained supplemental research for future consideration; its output is not assembled into the current five-vector dashboard.
 
@@ -83,3 +84,5 @@ Centripetal logo and palette follow the workspace brand guidelines. Roboto is Co
 See [SOURCE_REVIEW.md](SOURCE_REVIEW.md) for the latest four-chat source review and remaining gaps. See [PLAN.md](PLAN.md) for the agreed scope and implementation sequence.
 
 Referral scope was explicitly added after the five-vector clarification. Newsletter/email, standalone website reporting and Pulley remain outside the visible dashboard. Referrals currently shows unavailable metrics and planned definitions; importing/calculating the future referral dataset is a separate implementation step.
+
+See [REFRESH_REVIEW_2026-10-14.md](REFRESH_REVIEW_2026-10-14.md), [CRM_ACTIVITY_REVIEW.md](CRM_ACTIVITY_REVIEW.md) and [MEETING_SOURCE_REVIEW.md](MEETING_SOURCE_REVIEW.md) for the latest source review. Source snapshots remain on-demand; refreshed source dates are distinct from historical imports and access checks.

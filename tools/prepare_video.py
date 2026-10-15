@@ -8,7 +8,9 @@ import hashlib, json, re
 BASE = Path(__file__).resolve().parent.parent
 raw = json.loads((BASE / 'data/private/video_sheet.json').read_text())['values']
 connection_raw = json.loads((BASE / 'data/private/video_connections.json').read_text())['values']
-now = datetime.now(timezone.utc).isoformat()
+manifest_path = BASE / 'data/private/video_manifest.json'
+manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
+now = manifest.get('snapshotAt') or datetime.now(timezone.utc).isoformat()
 header = raw[0]
 rows = []
 groups = defaultdict(list)
@@ -50,11 +52,57 @@ duplicates = [{'profile': k, 'rows': [r['sourceRow'] for r in rs],
 conflicts = [d for d in duplicates if len(d['actions']) > 1]
 conn_header = connection_raw[0]
 connections = [dict(zip(conn_header,r)) for r in connection_raw[1:] if r]
+history = []
+for path in (BASE / 'data/history').glob('video_*.json'):
+    previous = json.loads(path.read_text())
+    if previous.get('snapshotAt', '') < now:
+        history.append(previous)
+previous = max(history, key=lambda r: r['snapshotAt']) if history else None
+delta = None
+if previous:
+    # A separately confirmed URL/name repair changes the profile-based identity key.
+    # Reconcile only the explicitly identified source rows; it is not prospect acquisition.
+    old_rows_by_source = {r['sourceRow']: r for r in previous['rows']}
+    new_rows_by_source = {r['sourceRow']: r for r in rows}
+    repair_rows = set(manifest.get('knownSourceCorrections', {}).get('sourceRows', []))
+    identity_repairs = {rownum for rownum in repair_rows
+                        if rownum in old_rows_by_source and rownum in new_rows_by_source
+                        and old_rows_by_source[rownum]['id'] != new_rows_by_source[rownum]['id']
+                        and old_rows_by_source[rownum]['company'] == new_rows_by_source[rownum]['company']}
+    normalized_old_rows = [dict(r, id=new_rows_by_source[r['sourceRow']]['id'])
+                           if r['sourceRow'] in identity_repairs else r for r in previous['rows']]
+    old_ids, new_ids = Counter(r['id'] for r in normalized_old_rows), Counter(r['id'] for r in rows)
+    old_by = defaultdict(list)
+    new_by = defaultdict(list)
+    for r in normalized_old_rows: old_by[r['id']].append(r)
+    for r in rows: new_by[r['id']].append(r)
+    comparable = {key for key in old_by.keys() & new_by.keys()
+                  if len(old_by[key]) == len(new_by[key]) == 1}
+    delta = {
+        'basis': 'first-observed snapshot difference',
+        'fromSnapshotAt': previous['snapshotAt'], 'toSnapshotAt': now,
+        'newProfileIdsObserved': len(new_ids.keys() - old_ids.keys()),
+        'removedProfileIdsObserved': len(old_ids.keys() - new_ids.keys()),
+        'identityCorrectionsObserved': len(identity_repairs),
+        'additionalRowsObserved': sum((new_ids - old_ids).values()),
+        'rowsNoLongerObserved': sum((old_ids - new_ids).values()),
+        'explicitSentDoneStatusChangesObserved': sum(
+            not old_by[key][0]['explicitSendStatus'] and new_by[key][0]['explicitSendStatus']
+            for key in comparable),
+        'statusChangesObserved': sum(old_by[key][0]['status'] != new_by[key][0]['status'] for key in comparable),
+        'derivedActionClassificationChangesObserved': sum(old_by[key][0]['action'] != new_by[key][0]['action'] for key in comparable),
+        'comparableUniqueIdentityCount': len(comparable),
+        'note': 'First observed between retained snapshots; not actual row creation or sending dates. Confirmed profile URL/name repairs are reconciled as identity corrections, not new prospects or removed rows. Duplicate identities are excluded from status-change counts. Derived helper action changes are separate from Charles status changes.',
+    }
 result = {
     'snapshotAt': now, 'status': 'available',
     'coverage': 'Current status snapshot; row-added and video-sent dates are not consistently recorded',
     'sourceUrl': 'https://docs.google.com/spreadsheets/d/1_Vq5-hM3POad1V14rZjX6gfaUojUnnTvxjjSv1zDJ8M/edit',
     'rows': rows, 'datedActions': dated,
+    'snapshotDelta': delta,
+    'sourceCoverage': {'method': manifest.get('method', 'retained source snapshot'),
+                       'complete': manifest.get('complete'),
+                       'ranges': manifest.get('ranges', [])},
     'summary': {
         'sourceRows': len(rows), 'uniqueProfiles': len(groups),
         'rowsMissingProfile': sum(not r['linkedin'] for r in rows),
@@ -78,7 +126,7 @@ result = {
         'Spreadsheet sent/completed includes a Loom link or exact Sent/Done status. A Loom link alone does not establish delivery.',
         'Explicit Sent/Done is a self-reported status, not independently verified delivery. Undated sends cannot be assigned to the selected period.',
         'Follow-up categories overlap the main status categories; do not add them to the prospect total.',
-        'This first snapshot establishes the baseline. Newly added rows by period remain unavailable until a later comparable snapshot or trusted creation date exists.',
+        'Historical row-added/sent dates remain unavailable; compare first-observed changes between retained snapshots. Profile URL/name corrections are not new prospects or sends.',
         'Connection dates and automation message dates are not Video DM send dates. The status snapshot is unaffected by the date filter.',
     ],
 }

@@ -150,3 +150,7 @@ On October 14 the owner requested a shareable live dashboard and selected anyone
 ## Detailed public snapshot approved
 
 The owner explicitly approved public prospect identities and available business details, with sign-in/password protection planned later. The hosted package now retains the curated prospect identities, company names, original CRM record links, profile/video links, record tables and ranked content. This supersedes the earlier aggregate-only publication policy. Credentials, raw exports and local paths stay excluded. Source coverage is unchanged; no fresh data collection or automatic refresh is implied.
+
+## October 14 live refresh and activity assessment
+
+Live paid exports now cover through October 14 UTC; CRM and Video DM sources were re-collected across their full accessible scope. A 44-deal structured-history review and detailed activity diagnostics are included. Charles Calendly lifecycle records corroborate NuVee and Venus bookings without changing owner qualification or inferring attendance. Current public LinkedIn follower/post observations are separated from unavailable private current organic analytics. Waalaxy remains a verified historical Charles export because current account access is unavailable. Referrals remains a data-pending section. Six-vector scope is unchanged; Calendly is a shared outcome evidence source inside Pipedrive. See REFRESH_REVIEW_2026-10-14.md for current counts, caveats and priorities. Source refresh remains manual/on demand.
