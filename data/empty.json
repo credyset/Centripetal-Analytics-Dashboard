@@ -9,10 +9,51 @@
     "autoRefreshEnabled": false,
     "note": "No operational snapshot is included in the repository. Prepare authorized local data to populate this dashboard."
   },
-  "ads": {"coverage": {}, "totals": {}, "campaigns": [], "daily": [], "leads": [], "notes": []},
-  "crm": {"snapshotAt": null, "pipelines": [], "stages": [], "deals": [], "activities": [], "quality": {}, "summary": {}},
-  "video": {"snapshotAt": null, "rows": [], "summary": {}, "notes": []},
-  "waalaxy": {"status": "unavailable", "coverage": {}, "metrics": {}, "campaigns": [], "daily": [], "notes": []},
-  "content": {"status": "unavailable", "coverage": {}, "posts": [], "daily": [], "accounts": [], "notes": []},
-  "sources": []
+  "ads": {
+    "coverage": {},
+    "totals": {},
+    "campaigns": [],
+    "daily": [],
+    "leads": [],
+    "notes": []
+  },
+  "crm": {
+    "snapshotAt": null,
+    "pipelines": [],
+    "stages": [],
+    "deals": [],
+    "activities": [],
+    "quality": {},
+    "summary": {}
+  },
+  "video": {
+    "snapshotAt": null,
+    "rows": [],
+    "summary": {},
+    "notes": []
+  },
+  "waalaxy": {
+    "status": "unavailable",
+    "coverage": {},
+    "metrics": {},
+    "campaigns": [],
+    "daily": [],
+    "notes": []
+  },
+  "content": {
+    "status": "unavailable",
+    "coverage": {},
+    "posts": [],
+    "daily": [],
+    "accounts": [],
+    "notes": []
+  },
+  "sources": [],
+  "referrals": {
+    "status": "unavailable",
+    "snapshotAt": null,
+    "coverage": null,
+    "records": [],
+    "note": "Referral data has not been supplied. Do not infer events from CRM stages."
+  }
 }

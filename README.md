@@ -16,7 +16,7 @@ The repository contains application code and an empty-data setup state. Operatio
 
 ## Views
 
-- At a glance (default): the original five dashboard vectors—LinkedIn Ads, Waalaxy, LinkedIn content, Pipedrive and Video DMs—with activity, responses, outcomes and source dates. Supplementary research is retained for a future scope expansion.
+- At a glance (default): the original five dashboard vectors—LinkedIn Ads, Waalaxy, LinkedIn content, Pipedrive and Video DMs—plus a separate Referrals placeholder—with activity, responses, outcomes and source dates. Supplementary research is retained for a future scope expansion.
 
 - Overview: equal emphasis on activity and outcomes, weekly deal creation, follow-up priorities and source coverage.
 - LinkedIn Ads: dated spend/delivery, lead quality and campaign economics.
@@ -24,6 +24,7 @@ The repository contains application code and an empty-data setup state. Operatio
 - LinkedIn Content: daily exposure, account coverage and a ranked post subset; organic/sponsored splits remain unavailable where omitted.
 - Pipedrive: created/updated records, CRM activity, pipeline inventory and data-quality issues.
 - Video DMs: current readiness/status inventory, searchable records and measurement boundaries.
+- Referrals: dedicated placeholder for referral requests, introductions, qualification and sourced outcomes; awaiting the owner's dataset.
 - Sources & definitions: dates, refresh method, known gaps and outcome definitions.
 
 Date presets and custom dates operate on dated evidence. Undated inventories remain explicitly labelled snapshots. Tables support search, sorting and pagination. Charts, fonts and logo are local assets, with no third-party runtime/CDN requests.
@@ -74,3 +75,5 @@ A private repository does not make a standard GitHub Pages site private. Protect
 Centripetal logo and palette follow the workspace brand guidelines. Roboto is Copyright 2015 Google Inc., licensed under Apache 2.0. Lora is Copyright 2011 The Lora Project Authors, licensed under SIL OFL 1.1 with Reserved Font Name Lora. License texts are included in `assets/`.
 
 See [SOURCE_REVIEW.md](SOURCE_REVIEW.md) for the latest four-chat source review and remaining gaps. See [PLAN.md](PLAN.md) for the agreed scope and implementation sequence.
+
+Referral scope was explicitly added after the five-vector clarification. Newsletter/email, standalone website reporting and Pulley remain outside the visible dashboard. Referrals currently shows unavailable metrics and planned definitions; importing/calculating the future referral dataset is a separate implementation step.

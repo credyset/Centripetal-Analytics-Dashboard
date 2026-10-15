@@ -138,3 +138,7 @@ Four Centripetal chats independently reviewed current sources. See SOURCE_REVIEW
 ## Owner scope clarification
 
 The owner chose to keep the original five dashboard vectors for now: LinkedIn Ads, Waalaxy, LinkedIn content, Pipedrive and Video DMs. At a glance and the prepared source inventory follow that scope. Newsletter, standalone referral/partner reporting, website/inbound and Pulley research remain retained background evidence for future consideration. The five executive cards represent these dashboard vectors, rather than the broader operating-plan categories. Existing CRM pipeline filters remain available.
+
+## Referrals section requested
+
+The owner subsequently added Referrals as a separate sixth category, initially without data. The navigation, At a glance card and dedicated section show planned activity and outcome measures with unavailable values. No earlier CRM inventory or supplemental findings populate these metrics. A future data import requires stable referral identity, event dates, referrer/partner, prospect, owner, follow-up status and linked CRM deal; qualification and source attribution remain explicit.
