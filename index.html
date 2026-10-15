@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#243221">
+  <title>Centripetal Advisors — Analytics</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23243221'/%3E%3Ctext x='7' y='24' fill='%23ddd8cd' font-family='Georgia' font-size='25'%3EC%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to dashboard</a>
+  <aside class="sidebar">
+    <a class="brand" href="#overview" aria-label="Centripetal Advisors overview"><img src="assets/logo.png" alt="Centripetal Advisors" width="190" height="46"></a>
+    <div class="workspace-label">Business development</div>
+    <nav id="navigation" aria-label="Dashboard views"></nav>
+    <div class="sidebar-bottom"><span class="scope-dot"></span><div>Charles &amp; Centripetal<span>Internal analytics · Local concept</span></div></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div class="breadcrumb">Centripetal Advisors <span>/</span> <strong id="breadcrumb-view">Overview</strong></div><a href="#sources" class="source-link"><span class="status-dot"></span> Source coverage <span aria-hidden="true">↗</span></a></header>
+    <main id="main" tabindex="-1">
+      <div class="page-heading"><div><div class="eyebrow" id="page-eyebrow">The operating picture</div><h1 id="page-title">Business development,<br>in perspective.</h1><p id="page-description">Activity and commercial outcomes, together in one place.</p></div><div class="edition"><span>INTERNAL / CONCEPT 01</span><strong id="as-of">Preparing source data</strong><small>Monday–Sunday · Mountain time</small></div></div>
+      <form class="filterbar" id="date-filter"><div class="filter-label"><span class="calendar-icon" aria-hidden="true">▦</span><span>Reporting period</span></div><label class="sr-only" for="date-preset">Reporting period preset</label><select id="date-preset"><option value="30">Last 30 complete days</option><option value="7">Last 7 complete days</option><option value="90">Last 90 complete days</option><option value="audit">Paid audit period</option><option value="all">All available history</option><option value="custom">Custom dates</option></select><div class="date-inputs"><label class="sr-only" for="date-start">Start date</label><input id="date-start" type="date" required><span aria-hidden="true">—</span><label class="sr-only" for="date-end">End date</label><input id="date-end" type="date" required></div><button class="apply-button" type="submit">Apply period <span aria-hidden="true">↗</span></button><span id="period-caption" class="period-caption"></span></form>
+      <div id="dashboard" aria-live="polite"><div class="loading-state"><div class="loading-mark"></div><h2>Preparing the operating picture.</h2><p>Reading the latest retained source snapshots.</p></div></div>
+      <footer class="main-footer"><span>CENTRIPETAL ADVISORS <span class="footer-divider">/</span> Business development intelligence</span><a href="#sources">Definitions &amp; source coverage <span aria-hidden="true">↗</span></a></footer>
+    </main>
+  </div>
+</body>
+</html>

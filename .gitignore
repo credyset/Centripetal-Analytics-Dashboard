@@ -1,0 +1,15 @@
+# Actual source and reporting data stay local until a private data service is chosen.
+data/*.json
+!data/empty.json
+data/private/
+data/history/
+validation/
+*.zip
+*.log
+__pycache__/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.key
