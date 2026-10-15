@@ -7,7 +7,6 @@ never copy raw exports, credentials, environment files or the internal checkout.
 from pathlib import Path
 import copy
 import json
-import hashlib
 import re
 import shutil
 
@@ -47,16 +46,20 @@ def build():
     html = html.replace('<meta name="color-scheme"', '<meta name="robots" content="noindex, nofollow">\n  <meta name="color-scheme"')
     (DIST / 'index.html').write_text(html)
     payload = json.dumps(public, ensure_ascii=False) + '\n'
-    data_filename = 'dashboard.' + hashlib.sha256(payload.encode()).hexdigest()[:12] + '.json'
-    app = (ROOT / 'app.js').read_text().replace('./data/dashboard.json', './data/' + data_filename)
+    app = (ROOT / 'app.js').read_text()
     app = app.replace('local concept', 'published snapshot').replace('Local concept', 'Published snapshot')
     app = app.replace('A working concept, with actual source data.', 'A published snapshot, with actual source data.')
     (DIST / 'app.js').write_text(app)
     (DIST / 'data/dashboard.json').write_text(payload)
-    (DIST / 'data' / data_filename).write_text(payload)
-    app_filename = 'app.' + hashlib.sha256(app.encode()).hexdigest()[:12] + '.js'
-    (DIST / app_filename).write_text(app)
-    (DIST / 'index.html').write_text(html.replace('src="app.js"', 'src="' + app_filename + '"'))
+    # Keep the published interface and source snapshot in one response. This
+    # avoids old asset/data caches and blocked auxiliary script requests.
+    start = app.index('try{const res=await fetch(')
+    end = app.index('S.data.meta=S.data.meta||{};', start)
+    app = app[:start] + "try{S.data=JSON.parse(document.getElementById('report-data').textContent);" + app[end:]
+    safe_payload = payload.replace('<', '\\u003c')
+    html = html.replace('  <script src="app.js" defer></script>\n', '')
+    html = html.replace('</body>', '<script id="report-data" type="application/json">' + safe_payload + '</script>\n<script>' + app + '</script>\n</body>')
+    (DIST / 'index.html').write_text(html)
     shutil.copy2(ROOT / 'data/empty.json', DIST / 'data/empty.json')
     manifest_path = SITE / '.openai/hosting.json'
     manifest = json.loads(manifest_path.read_text())
