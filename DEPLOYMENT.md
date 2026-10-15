@@ -1,5 +1,7 @@
 # Live dashboard
 
+**Current collaboration policy (October 15): GitHub holds the application, documentation and curated snapshot in `data/shared-dashboard.json`. Other agents can contribute without Sites access. Raw exports and credentials remain excluded. Historical entries below describing all operational JSON as untracked predate this change.**
+
 Public URL: https://centripetal-analytics-dashboard.christian399556.chatgpt.site
 
 Published October 14, 2026 (Mountain time), using the Sites plugin. The owner explicitly selected access for anyone on the internet. GitHub remains the private application project; Sites hosts the public website.
@@ -8,7 +10,7 @@ Published October 14, 2026 (Mountain time), using the Sites plugin. The owner ex
 
 Six sections: LinkedIn Ads, Waalaxy, LinkedIn content, Pipedrive, Video DMs and a Referrals placeholder. Source dates are retained; publication is not a data refresh. No unattended collection has been installed.
 
-The owner subsequently explicitly approved publishing prospect identities with all available detail on October 14. The public build now includes the curated prospect/company identities, original CRM record IDs and links, Video DM profile/video links, source-reported statuses, ranked content and individual record tables. No additional identity data was inferred or collected for publication. Raw exports, credentials and local filesystem paths are excluded. Operational data remains outside the private GitHub repository; the approved prepared snapshot is stored in the hosted Sites source. Always rebuild the allowlisted package; do not deploy the entire internal checkout.
+The owner subsequently explicitly approved publishing prospect identities with all available detail on October 14. The public build now includes the curated prospect/company identities, original CRM record IDs and links, Video DM profile/video links, source-reported statuses, ranked content and individual record tables. No additional identity data was inferred or collected for publication. Raw exports, credentials and local filesystem paths are excluded. The approved curated snapshot is now tracked in GitHub and copied into the hosted Sites source; raw operational inputs remain outside both packages. Always rebuild the allowlisted package; do not deploy the entire internal checkout.
 
 ## Source and hosting identity
 
@@ -27,7 +29,7 @@ The owner subsequently explicitly approved publishing prospect identities with a
 3. Follow the Sites skill: reuse the project ID, get a short-lived source credential, open/synchronize the Sites checkout, run needed checks, package the exact pushed source and save/deploy that version. Pass credentials only through hidden stdin; never store them.
 4. Preserve the public audience unless the owner changes the access request. Check the deployment result and source freshness before sharing.
 
-The project ID and live URL above are non-secret. Credentials and raw recipient-level exports must never be committed. Prepared prospect data is explicitly approved in the Sites publication; do not add raw source data to the GitHub project.
+The project ID and live URL above are non-secret. Credentials and raw recipient-level exports must never be committed. Prepared prospect data is explicitly approved in the Sites publication; do not add raw source data to the GitHub project. Commit changes to the approved shared snapshot and relevant application/docs through GitHub. See CONTRIBUTING.md.
 
 ## Current detailed publication
 

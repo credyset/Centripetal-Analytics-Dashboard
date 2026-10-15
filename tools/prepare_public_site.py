@@ -5,10 +5,9 @@ approved by the owner on October 14, 2026. Use only the curated dashboard JSON;
 never copy raw exports, credentials, environment files or the internal checkout.
 """
 from pathlib import Path
-import copy
 import json
-import re
 import shutil
+from prepare_shared_snapshot import curate_snapshot
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / 'public_site'
@@ -16,27 +15,12 @@ DIST = SITE / 'dist'
 
 
 def build():
-    source = json.loads((ROOT / 'data/dashboard.json').read_text())
-    public = copy.deepcopy(source)
-    public['meta'].update(public=True, publicDataPolicy='Owner-approved detailed snapshot including prospect identities and available business record links.')
-    public['meta']['note'] = 'Published snapshot; source coverage varies. Automatic refresh is not enabled.'
-    for name in ('ads', 'waalaxy', 'content'):
-        public[name].pop('sources', None)
-
-    def scrub(value):
-        if isinstance(value, dict):
-            return {key: scrub(item) for key, item in value.items()
-                    if key not in ('provenance', 'sourceUrl', 'sourcePath')}
-        if isinstance(value, list):
-            return [scrub(item) for item in value]
-        if isinstance(value, str):
-            return re.sub(r'/Users/[^\s]+', '[local source]', value)
-        return value
-
-    public = scrub(public)
-    for item in public['sources']:
-        if item['id'] == 'waalaxy':
-            item['note'] = 'Historical Charles-only person flags, not period message totals. Current campaign analytics remain unavailable.'
+    # The same tracked snapshot drives GitHub clones and the hosted dashboard.
+    snapshot_path = ROOT / 'data/shared-dashboard.json'
+    if not snapshot_path.exists():
+        snapshot_path = ROOT / 'data/dashboard.json'
+    source = json.loads(snapshot_path.read_text())
+    public = curate_snapshot(source)
 
     DIST.mkdir(parents=True, exist_ok=True)
     (DIST / 'data').mkdir(exist_ok=True)

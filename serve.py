@@ -6,20 +6,21 @@ import argparse
 
 ROOT = Path(__file__).resolve().parent
 ALLOWED_ROOT = {'index.html','styles.css','app.js','favicon.svg'}
+ALLOWED_DATA = {'data/shared-dashboard.json','data/dashboard.json','data/empty.json'}
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self,*args,**kwargs):
         super().__init__(*args,directory=str(ROOT),**kwargs)
     def do_GET(self):
         path = unquote(urlsplit(self.path).path).lstrip('/') or 'index.html'
         resolved = (ROOT / path).resolve()
-        allowed = path in ALLOWED_ROOT or path in ('data/dashboard.json','data/empty.json') or (path.startswith('assets/') and resolved.is_relative_to(ROOT/'assets'))
+        allowed = path in ALLOWED_ROOT or path in ALLOWED_DATA or (path.startswith('assets/') and resolved.is_relative_to(ROOT/'assets'))
         if not allowed or not resolved.is_relative_to(ROOT) or not resolved.is_file():
             self.send_error(404,'Not found'); return
         super().do_GET()
     def do_HEAD(self):
         path = unquote(urlsplit(self.path).path).lstrip('/') or 'index.html'
         resolved = (ROOT/path).resolve()
-        if not (path in ALLOWED_ROOT or path in ('data/dashboard.json','data/empty.json') or (path.startswith('assets/') and resolved.is_relative_to(ROOT/'assets'))) or not resolved.is_file():
+        if not (path in ALLOWED_ROOT or path in ALLOWED_DATA or (path.startswith('assets/') and resolved.is_relative_to(ROOT/'assets'))) or not resolved.is_file():
             self.send_error(404,'Not found'); return
         super().do_HEAD()
     def end_headers(self):

@@ -1,6 +1,7 @@
 # Actual source and reporting data stay local until a private data service is chosen.
 data/*.json
 !data/empty.json
+!data/shared-dashboard.json
 data/private/
 data/history/
 validation/

@@ -3,6 +3,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 import json
+from prepare_shared_snapshot import write_shared
 
 BASE = Path(__file__).resolve().parent.parent
 DATA = BASE / 'data'
@@ -75,6 +76,7 @@ assert len(crm['activities'])==len({r['id'] for r in crm['activities']})
 assert video['summary']['sourceRows']==len(video['rows'])
 out = DATA / 'dashboard.json'
 out.write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
+write_shared(result)
 print(json.dumps({'output':str(out),'bytes':out.stat().st_size,'generatedAt':now.isoformat(),
                   'sources':len(result['sources']),'ads_days':len(ads['daily']),
                   'crm_deals':len(crm['deals']),'crm_activities':len(crm['activities']),

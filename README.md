@@ -1,6 +1,10 @@
 # Centripetal Analytics Dashboard
 
-Private business-development dashboard for Charles Solomon and the Centripetal team. A local working concept, using actual dated source snapshots, with separate activity and outcome reporting.
+Business-development dashboard for Charles Solomon and the Centripetal team, with actual dated source snapshots and separate activity and outcome reporting.
+
+**GitHub is the shared source of truth for the application, curated reporting snapshot and measurement documentation:** https://github.com/credyset/Centripetal-Analytics-Dashboard
+
+Other agents can clone this repository, run the populated dashboard and contribute through branches/pull requests without access to ChatGPT Sites. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Live public dashboard
 
@@ -18,11 +22,11 @@ python3 serve.py
 
 Open **http://127.0.0.1:8765**. The preview binds to localhost only. The server exposes the application, approved assets and the prepared dashboard snapshot; raw exports, source scripts and Git files are not served.
 
-The repository contains application code and an empty-data setup state. Operational data is deliberately excluded. The working local checkout includes `data/dashboard.json`; a new clone requires authorized source snapshots before it displays actual figures. No synthetic results are presented as real.
+The repository includes application code and the owner-approved curated reporting snapshot in `data/shared-dashboard.json`, so a fresh clone displays the current retained figures. It contains the same approved reporting data as the live publication, including the October effort evidence. Raw exports, credentials and private transcript evidence remain excluded. The app loads the shared snapshot first, then falls back to a local prepared snapshot or the empty setup state when unavailable.
 
 ## Views
 
-- At a glance (default): the original five dashboard vectors—LinkedIn Ads, Waalaxy, LinkedIn content, Pipedrive and Video DMs—plus a separate Referrals placeholder—with activity, responses, outcomes and source dates. Supplementary research is retained for a future scope expansion.
+- At a glance (default): the original five dashboard vectors—LinkedIn Ads, Waalaxy, LinkedIn content, Pipedrive and Video DMs—plus Referrals and a separate Christian Time & effort support category—with activity, responses, outcomes and source dates. Supplementary acquisition research is retained for a future scope expansion.
 
 - Overview: equal emphasis on activity and outcomes, weekly deal creation, follow-up priorities and source coverage.
 - LinkedIn Ads: dated spend/delivery, lead quality and campaign economics.
@@ -31,17 +35,18 @@ The repository contains application code and an empty-data setup state. Operatio
 - Pipedrive: created/updated records, searchable activity records, owner/type breakdowns, automation metadata, overdue inventory, scoped stage-change history, follow-through gaps and separately corroborated Calendly bookings.
 - Video DMs: current readiness/status inventory, searchable records and measurement boundaries.
 - Referrals: dedicated placeholder for referral requests, introductions, qualification and sourced outcomes; awaiting the owner's dataset.
-- Sources & definitions: dates, refresh method, known gaps and outcome definitions.
+- Time & effort: Christian’s fixed October-to-date recording evidence and separate editable nonmeeting estimates; actual attendance and human hours remain unknown.
+- Sources & definitions: dates, refresh method, manual import checklist, known gaps and outcome definitions.
 
 Date presets and custom dates operate on dated evidence. Undated inventories remain explicitly labelled snapshots. Tables support search, sorting and pagination. Charts, fonts and logo are local assets, with no third-party runtime/CDN requests.
 
 ## Reporting calendar
 
-Monday–Sunday weeks, `America/Denver`, including daylight-saving changes. Preserve source day boundaries where exports are already aggregated by another timezone. The default range is the last 30 complete days; the current partial day is excluded. Partial and historical source coverage must remain visible.
+Monday–Sunday weeks, `America/Denver`, including daylight-saving changes. Preserve source day boundaries where exports are already aggregated by another timezone. The default range is 30 days anchored to the latest complete CRM reporting day; publishing an older snapshot today does not advance its cutoff. Time & effort has its separately labelled October-to-date scope. Partial and historical source coverage must remain visible.
 
 ## Data preparation
 
-Normalized local inputs: `data/ads.json`, `crm.json`, `video.json`, `waalaxy.json`, and `content.json`, with optional `meetings.json` for calendar corroboration. Combine them with:
+Normalized local inputs: `data/ads.json`, `crm.json`, `video.json`, `waalaxy.json`, and `content.json`, with optional `meetings.json` for calendar corroboration. Combine them and refresh the tracked shared snapshot with:
 
 ```sh
 python3 tools/prepare_dashboard.py
@@ -53,9 +58,10 @@ Source-specific preparation:
 - `tools/prepare_crm.py`: paginated Pipedrive snapshots across all accessible owners, scoped structured change history and activity diagnostics.
 - `tools/prepare_meetings.py`: Charles Calendly event lifecycle, reschedule-chain deduplication and verified CRM identity matches. Calendar status does not establish attendance or qualification.
 - `tools/prepare_video.py`: Video DM prospect and accepted-connection worksheet snapshots.
+- `tools/prepare_time.py`: curated Christian October meeting/work evidence and unconfirmed assumptions, preserving separate measures.
 - `tools/prepare_extra_vectors.py`: retained supplemental research for future consideration; its output is not assembled into the current five-vector dashboard.
 
-Raw inputs reside in `data/private/` and are ignored by Git. Prepared operational JSON files are also ignored. Store credentials in an authorized collection service, never the front-end code, workbook cells or repository.
+Raw inputs reside in `data/private/` and are ignored by Git. Local normalized JSON files are also ignored. Only `data/empty.json` and the explicitly curated `data/shared-dashboard.json` are tracked. `tools/prepare_dashboard.py` refreshes both local and shared snapshots; `tools/prepare_shared_snapshot.py` can curate an existing local dashboard separately. Store credentials in an authorized collection service, never the front-end code, workbook cells or repository.
 
 Collection is currently manual/on demand. A public sanitized snapshot is deployed through Sites. Automatic refresh and an authenticated internal deployment have not been enabled. The browser concept is not an authenticated production service.
 
@@ -73,7 +79,7 @@ Collection is currently manual/on demand. A public sanitized snapshot is deploye
 
 ## Deployment and next work
 
-The new private repository is `credyset/Centripetal-Analytics-Dashboard`. The public snapshot is available through Sites. Next steps for the internal live-data service are reliable source adapters, retained history, a private data store, authenticated hosting and monitored refresh jobs.
+The shared private repository is `credyset/Centripetal-Analytics-Dashboard`. Sites is a publishing destination built from the shared project; GitHub changes do not yet trigger automatic publication. The current public snapshot is available through Sites. Next steps for the internal live-data service are reliable source adapters, retained history, a private data store, authenticated hosting and monitored refresh jobs.
 
 A private repository does not make a standard GitHub Pages site private. Protect both the dashboard and its data endpoints before publishing internal records. Keep the local concept available while deployment ownership and access are settled.
 
