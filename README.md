@@ -2,6 +2,12 @@
 
 Private business-development dashboard for Charles Solomon and the Centripetal team. A local working concept, using actual dated source snapshots, with separate activity and outcome reporting.
 
+## Live public dashboard
+
+https://centripetal-analytics-dashboard.christian399556.chatgpt.site
+
+Anyone can view the public aggregate snapshot. Prospect identities and private record links are omitted; source dates and known gaps remain visible. This is separate from the local internal concept. See [DEPLOYMENT.md](DEPLOYMENT.md) for hosting identity and the update procedure.
+
 ## Preview
 
 Run Python 3.10 or later from this directory:
@@ -50,7 +56,7 @@ Source-specific preparation:
 
 Raw inputs reside in `data/private/` and are ignored by Git. Prepared operational JSON files are also ignored. Store credentials in an authorized collection service, never the front-end code, workbook cells or repository.
 
-Collection is currently manual/on demand. No automatic refresh workflow, production credentials, public website or private deployment has been enabled. The browser concept is not an authenticated production service.
+Collection is currently manual/on demand. A public sanitized snapshot is deployed through Sites. Automatic refresh and an authenticated internal deployment have not been enabled. The browser concept is not an authenticated production service.
 
 ## Data boundaries
 
@@ -66,7 +72,7 @@ Collection is currently manual/on demand. No automatic refresh workflow, product
 
 ## Deployment and next work
 
-The new private repository is `credyset/Centripetal-Analytics-Dashboard`. The next production steps are reliable source adapters, retained history, a private data store, authenticated hosting and monitored refresh jobs.
+The new private repository is `credyset/Centripetal-Analytics-Dashboard`. The public snapshot is available through Sites. Next steps for the internal live-data service are reliable source adapters, retained history, a private data store, authenticated hosting and monitored refresh jobs.
 
 A private repository does not make a standard GitHub Pages site private. Protect both the dashboard and its data endpoints before publishing internal records. Keep the local concept available while deployment ownership and access are settled.
 

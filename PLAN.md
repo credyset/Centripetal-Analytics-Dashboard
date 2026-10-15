@@ -142,3 +142,7 @@ The owner chose to keep the original five dashboard vectors for now: LinkedIn Ad
 ## Referrals section requested
 
 The owner subsequently added Referrals as a separate sixth category, initially without data. The navigation, At a glance card and dedicated section show planned activity and outcome measures with unavailable values. No earlier CRM inventory or supplemental findings populate these metrics. A future data import requires stable referral identity, event dates, referrer/partner, prospect, owner, follow-up status and linked CRM deal; qualification and source attribution remain explicit.
+
+## Public publication requested and completed
+
+On October 14 the owner requested a shareable live dashboard and selected anyone on the internet as its audience. A sanitized public snapshot is hosted with Sites at https://centripetal-analytics-dashboard.christian399556.chatgpt.site. It excludes prospect identities, private links and record tables while retaining the reporting filters and aggregate metrics. The original internal dataset remains local. This supersedes earlier statements that no public website is deployed; automatic collection and authenticated internal hosting remain future work. See DEPLOYMENT.md for the retained project identity and publication process.

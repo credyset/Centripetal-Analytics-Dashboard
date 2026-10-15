@@ -13,3 +13,6 @@ __pycache__/
 !.env.example
 *.pem
 *.key
+
+# Separate sanitized Sites deployment checkout
+public_site/
