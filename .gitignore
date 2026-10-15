@@ -17,3 +17,4 @@ __pycache__/
 
 # Separate sanitized Sites deployment checkout
 public_site/
+_site/

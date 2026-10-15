@@ -1,3 +1,15 @@
+# GitHub Pages — primary live publication
+
+Primary shareable URL: https://credyset.github.io/Centripetal-Analytics-Dashboard/#glance
+
+Enabled October 15, 2026, on the existing public repository using the `workflow` publishing source. `.github/workflows/pages.yml` validates the shared snapshot, checks JavaScript and builds `_site/` on pull requests and `main` pushes; only non-PR runs deploy to the `github-pages` environment. The workflow uses GitHub's Pages upload/deploy actions and scoped permissions. No external hosting account or additional secret is needed by contributors.
+
+`tools/build_static_site.py` builds the same approved snapshot and interface as the Sites mirror, using tracked application files, assets and `data/shared-dashboard.json`. Raw/local inputs, source provenance and credentials are not part of the artifact. Source collection and data freshness are separate from publication. The first build was checked against the existing live Sites payload and matched exactly, including 722 raw CRM records, 428 Video DM rows, three counted recordings / 184.96 audio minutes and the separate 6–14.5-hour draft range. Business reporting remains anchored through October 13.
+
+To update: contribute approved code/data changes, merge to `main`, check the “Publish dashboard to GitHub Pages” run, then verify the public view. Manual workflow dispatch supports republishing. Do not change source dates merely to trigger a deployment. GitHub Pages is the primary hosting destination; the Sites mirror below is separate and is not automatically updated by this workflow.
+
+---
+
 # Live dashboard
 
 **Current collaboration policy (October 15): GitHub holds the application, documentation and curated snapshot in `data/shared-dashboard.json`. Other agents can contribute without Sites access. Raw exports and credentials remain excluded. Historical entries below describing all operational JSON as untracked predate this change.**

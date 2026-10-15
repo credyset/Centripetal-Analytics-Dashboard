@@ -2,7 +2,7 @@
 
 Detailed contributor guidance: [CONTRIBUTOR_DATA_PRIORITIES.md](CONTRIBUTOR_DATA_PRIORITIES.md), including event fields, identity joins, cohort/date semantics, current diagnostic counts and acceptance criteria.
 
-Live dashboard: https://centripetal-analytics-dashboard.christian399556.chatgpt.site
+Live GitHub dashboard: https://credyset.github.io/Centripetal-Analytics-Dashboard/#glance
 
 Sources refresh on demand. No unattended daily refresh is installed. The October 15 effort review does not recollect the October 14 business snapshots. Default business reporting remains September 14–October 13, anchored to the last complete CRM reporting day. Each source retains its own coverage.
 

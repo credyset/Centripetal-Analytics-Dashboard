@@ -8,7 +8,11 @@ Other agents can clone this repository, run the populated dashboard and contribu
 
 ## Live public dashboard
 
-https://centripetal-analytics-dashboard.christian399556.chatgpt.site
+**GitHub Pages:** https://credyset.github.io/Centripetal-Analytics-Dashboard/#glance
+
+The GitHub Pages workflow publishes approved code and `data/shared-dashboard.json` changes from `main`. Pull requests run validation/build checks without deploying. Source collection remains on demand.
+
+Existing Sites mirror: https://centripetal-analytics-dashboard.christian399556.chatgpt.site
 
 Anyone can view the detailed public snapshot. The owner explicitly approved prospect identities and available business record links; source dates and known gaps remain visible. This is separate from the local internal concept. See [DEPLOYMENT.md](DEPLOYMENT.md) for hosting identity and the update procedure.
 
@@ -63,7 +67,7 @@ Source-specific preparation:
 
 Raw inputs reside in `data/private/` and are ignored by Git. Local normalized JSON files are also ignored. Only `data/empty.json` and the explicitly curated `data/shared-dashboard.json` are tracked. `tools/prepare_dashboard.py` refreshes both local and shared snapshots; `tools/prepare_shared_snapshot.py` can curate an existing local dashboard separately. Store credentials in an authorized collection service, never the front-end code, workbook cells or repository.
 
-Collection is currently manual/on demand. A public sanitized snapshot is deployed through Sites. Automatic refresh and an authenticated internal deployment have not been enabled. The browser concept is not an authenticated production service.
+Collection is currently manual/on demand. The approved curated snapshot is published through GitHub Pages, with a separately maintained Sites mirror. Automatic refresh and an authenticated internal deployment have not been enabled. The browser concept is not an authenticated production service.
 
 ## Data boundaries
 
@@ -79,7 +83,7 @@ Collection is currently manual/on demand. A public sanitized snapshot is deploye
 
 ## Deployment and next work
 
-The shared private repository is `credyset/Centripetal-Analytics-Dashboard`. Sites is a publishing destination built from the shared project; GitHub changes do not yet trigger automatic publication. The current public snapshot is available through Sites. Next steps for the internal live-data service are reliable source adapters, retained history, a private data store, authenticated hosting and monitored refresh jobs.
+The shared public repository is `credyset/Centripetal-Analytics-Dashboard`. GitHub Pages is the primary shareable dashboard and automatically deploys changes merged to `main` through `.github/workflows/pages.yml`. The Sites mirror is a separate publication destination and does not automatically follow GitHub changes. Next steps for the internal live-data service are reliable source adapters, retained history, a private data store, authenticated hosting and monitored refresh jobs.
 
 A private repository does not make a standard GitHub Pages site private. Protect both the dashboard and its data endpoints before publishing internal records. Keep the local concept available while deployment ownership and access are settled.
 

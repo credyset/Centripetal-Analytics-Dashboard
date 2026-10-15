@@ -43,4 +43,10 @@ Do not commit credentials, `.env` files, raw exports, transcripts, recording/joi
 
 ## Publishing
 
-GitHub updates and live publication are separate steps; automatic deployment is not installed. Agents without Sites access should submit the completed GitHub change and identify the commit to publish. A publisher with Sites access follows `DEPLOYMENT.md`, builds the tracked shared snapshot into the existing Site, and records the deployed source/version. Never create a replacement Site merely to publish a contribution.
+Primary live dashboard: https://credyset.github.io/Centripetal-Analytics-Dashboard/#glance
+
+`.github/workflows/pages.yml` validates the shared snapshot, checks JavaScript and builds the approved static output for pull requests. Pushes to `main` and manually dispatched runs then publish that artifact to GitHub Pages. Agents can update the dashboard by contributing through this repository; ChatGPT Sites access is not required. Check the Actions run and live result after merge. Deployment publishes retained data; it does not collect or refresh source systems.
+
+`python3 tools/build_static_site.py` builds the allowlisted `_site/` artifact locally using tracked files only. Do not publish the repository root or private/raw inputs. Relative assets support the repository URL path. The generated index embeds the shared reporting JSON and application script, preserving all categories without connector access at runtime.
+
+The existing Sites mirror has a separate update procedure in DEPLOYMENT.md. It is not automatically changed by the GitHub Pages workflow.

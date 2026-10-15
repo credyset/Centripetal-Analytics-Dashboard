@@ -1,0 +1,50 @@
+name: Publish dashboard to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out shared project
+        uses: actions/checkout@v6
+      - name: Validate reporting snapshot
+        run: python3 tools/check_shared_snapshot.py
+      - name: Check dashboard JavaScript
+        run: node --check app.js
+      - name: Build approved static dashboard
+        run: python3 tools/build_static_site.py
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Publish dashboard
+        id: deployment
+        uses: actions/deploy-pages@v4
