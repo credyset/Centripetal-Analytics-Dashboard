@@ -1,4 +1,4 @@
-# Centripetal Advisors — analytics concept
+# Centripetal Analytics Dashboard
 
 Private business-development dashboard for Charles Solomon and the Centripetal team. A local working concept, using actual dated source snapshots, with separate activity and outcome reporting.
 
@@ -62,7 +62,7 @@ Collection is currently manual/on demand. No automatic refresh workflow, product
 
 ## Deployment and next work
 
-The new private repository is `credyset/centripetal-analytics`. The next production steps are reliable source adapters, retained history, a private data store, authenticated hosting and monitored refresh jobs.
+The new private repository is `credyset/Centripetal-Analytics-Dashboard`. The next production steps are reliable source adapters, retained history, a private data store, authenticated hosting and monitored refresh jobs.
 
 A private repository does not make a standard GitHub Pages site private. Protect both the dashboard and its data endpoints before publishing internal records. Keep the local concept available while deployment ownership and access are settled.
 

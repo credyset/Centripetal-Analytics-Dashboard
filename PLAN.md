@@ -1,6 +1,6 @@
 # Centripetal Advisors analytics dashboard — planning draft
 
-Date: October 14, 2026. Status: local working concept built and browser-verified. New private repository: https://github.com/credyset/centripetal-analytics. No production website or unattended refresh has been deployed.
+Date: October 14, 2026. Status: local working concept built and browser-verified. New private repository: https://github.com/credyset/Centripetal-Analytics-Dashboard. No production website or unattended refresh has been deployed.
 
 ## Current delivery
 
