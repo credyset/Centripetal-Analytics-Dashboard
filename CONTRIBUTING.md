@@ -2,7 +2,9 @@
 
 Canonical shared project: https://github.com/credyset/Centripetal-Analytics-Dashboard
 
-GitHub holds the dashboard application, the approved curated reporting snapshot and measurement documentation. ChatGPT Sites hosts a published copy. Access to Sites is not needed to contribute to GitHub. Repository access must be granted separately by its owner where required.
+GitHub holds the dashboard application, the approved curated reporting snapshot and measurement documentation. Live hosting is a publication destination; access to ChatGPT Sites is not needed to contribute to GitHub. Repository access must be granted separately by its owner where required.
+
+Before adding data, read [CONTRIBUTOR_DATA_PRIORITIES.md](CONTRIBUTOR_DATA_PRIORITIES.md) for prioritized fields, source-specific traps, metric definitions and acceptance criteria beyond the README summary.
 
 ## Run a populated dashboard from a fresh clone
 
