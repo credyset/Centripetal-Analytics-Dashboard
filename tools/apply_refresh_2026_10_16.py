@@ -49,7 +49,7 @@ def build():
         coverage='October 16 selected prospect collection; invitations September 15–October 15; historical account flags through June 26')
     sources['time'].update(asOf=current['time']['snapshotAt'],coverage=current['time']['period'],
         method='Fresh Fireflies metadata and speaker identity review; prior scoped calendar evidence; owner-adjusted nonmeeting assumptions',
-        note='Christian only, October 1–16 MTD; October 16 partial. Five deduplicated recording durations, 228.58 audio minutes. Separate nonmeeting estimate is 35% above the original range at the owner’s request; actual attendance/work hours remain unknown.')
+        note='Christian only, October 1–16 MTD; October 16 partial. Five deduplicated recording durations, 228.58 audio minutes. Separate owner-specified nonmeeting estimate is 14.5–15.75 hours; actual attendance/work hours remain unknown.')
     sources['meetings']['note'] = 'Calendar source retains its collection date. The owner separately confirmed the two linked lead calls as held October 16; this is a bounded set, not complete held-call coverage.'
     current['sources'] = list(sources.values())
     result = curate_snapshot(current)

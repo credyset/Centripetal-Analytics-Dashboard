@@ -5,12 +5,15 @@ import json
 import re
 from datetime import datetime, timezone
 from apply_owner_confirmations import apply_owner_confirmations
+from apply_effort_estimate import apply_effort_estimate
 
 ROOT = Path(__file__).resolve().parents[1]
 
 def curate_snapshot(source):
     public = copy.deepcopy(source)
     apply_owner_confirmations(public)
+    if public.get('time'):
+        apply_effort_estimate(public['time'])
     public['meta'].update(public=True, publicDataPolicy='Owner-approved detailed snapshot including prospect identities and available business record links.')
     public['meta']['note'] = 'Published snapshot; source coverage varies. Automatic refresh is not enabled.'
     for name in ('ads', 'waalaxy', 'content'):

@@ -21,11 +21,11 @@ The prior October 15 collection of Charles’s scoped Calendly account returned 
 
 ## Separate draft nonmeeting estimate
 
-No Christian timesheet was found. Cross-project reviews identify dated deliverables and Christian’s direction, access coordination, feedback and approvals. They do not measure duration. At the owner’s October 16 request, both bounds of the original 6.0–14.5 hour range were increased once by 35%. The new range is **8.1–19.575 hours** (displayed **8.1–19.58 h**). This owner adjustment does not validate actual durations. The fixed baseline is retained to prevent compounding on subsequent refreshes.
+No Christian timesheet was found. Cross-project reviews identify dated deliverables and Christian’s direction, access coordination, feedback and approvals. They do not measure duration. The owner corrected the nonmeeting estimate to **14.5–15.75 hours**, replacing the earlier percentage adjustment. This is an overall estimate; no revised workstream allocation was supplied. Actual duration remains unmeasured. The dashboard’s editable range uses this owner-specified total.
 
 The original baseline below supports the adjustable, low-confidence reconstruction of asynchronous review and coordination:
 
-| Workstream | Baseline hours before 35% uplift | Basis |
+| Workstream | Historical baseline hours (superseded) | Basis |
 | --- | ---: | --- |
 | Pulley prospect intelligence and list QA | 1.5–3.0 | List-building project review across October 2, 6 and 14 milestones; October 15 result check. |
 | Website concept and resources | 2.0–4.0 | Website project review of October 8–10 direction and visual feedback. |
