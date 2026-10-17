@@ -6,6 +6,8 @@ Business-development dashboard for Charles Solomon and the Centripetal team, wit
 
 Other agents can clone this repository, run the populated dashboard and contribute through branches/pull requests without access to ChatGPT Sites. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
+Latest analytics corrections: [ANALYTICS_REVISION_2026-10-16.md](ANALYTICS_REVISION_2026-10-16.md). Reconciled referral counts, invitation activity and reviewed recording purposes are applied; source dates and unresolved outcome gaps remain explicit.
+
 ## Live public dashboard
 
 **GitHub Pages:** https://credyset.github.io/Centripetal-Analytics-Dashboard/#glance
@@ -34,11 +36,11 @@ The repository includes application code and the owner-approved curated reportin
 
 - Overview: equal emphasis on activity and outcomes, weekly deal creation, follow-up priorities and source coverage.
 - LinkedIn Ads: dated spend/delivery, lead quality and campaign economics.
-- Waalaxy: labelled historical Charles prospect flags; current campaign activity awaits a verified export.
+- Waalaxy: dated invitation actions from the retained export, including explicit zero days; historical person flags remain separate. Current message/reply events are still missing.
 - LinkedIn Content: retained daily exposure and ranked posts, plus separately dated current public followers and observed public engagement. Private current-period analytics and organic/sponsored splits remain unavailable where omitted.
 - Pipedrive: created/updated records, searchable activity records, owner/type breakdowns, automation metadata, overdue inventory, scoped stage-change history, follow-through gaps and separately corroborated Calendly bookings.
 - Video DMs: current readiness/status inventory, searchable records and measurement boundaries.
-- Referrals: dedicated placeholder for referral requests, introductions, qualification and sourced outcomes; awaiting the owner's dataset.
+- Referrals: reconciled current relationship-record inventory, explicit exclusion partitions and retained dated stage changes; referral event and qualification outcomes remain incomplete.
 - Time & effort: Christian’s fixed October-to-date recording evidence and separate editable nonmeeting estimates; actual attendance and human hours remain unknown.
 - Sources & definitions: dates, refresh method, manual import checklist, known gaps and outcome definitions.
 
@@ -93,7 +95,7 @@ Centripetal logo and palette follow the workspace brand guidelines. Roboto is Co
 
 See [SOURCE_REVIEW.md](SOURCE_REVIEW.md) for the latest four-chat source review and remaining gaps. See [PLAN.md](PLAN.md) for the agreed scope and implementation sequence.
 
-Referral scope was explicitly added after the five-vector clarification. Newsletter/email, standalone website reporting and Pulley remain outside the visible dashboard. Referrals currently shows unavailable metrics and planned definitions; importing/calculating the future referral dataset is a separate implementation step.
+Referral scope was explicitly added after the five-vector clarification. Newsletter/email, standalone website reporting and Pulley remain outside the visible dashboard. Referrals now contains a reconciled current inventory; dated requests/introductions and owner-confirmed outcomes still require their own event records.
 
 See [REFRESH_REVIEW_2026-10-14.md](REFRESH_REVIEW_2026-10-14.md), [CRM_ACTIVITY_REVIEW.md](CRM_ACTIVITY_REVIEW.md) and [MEETING_SOURCE_REVIEW.md](MEETING_SOURCE_REVIEW.md) for the latest source review. Source snapshots remain on-demand; refreshed source dates are distinct from historical imports and access checks.
 

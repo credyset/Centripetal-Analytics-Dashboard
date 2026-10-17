@@ -6,6 +6,8 @@ GitHub holds the dashboard application, the approved curated reporting snapshot 
 
 Before adding data, read [CONTRIBUTOR_DATA_PRIORITIES.md](CONTRIBUTOR_DATA_PRIORITIES.md) for prioritized fields, source-specific traps, metric definitions and acceptance criteria beyond the README summary.
 
+The October 16 corrections and useful next exports are documented in [ANALYTICS_REVISION_2026-10-16.md](ANALYTICS_REVISION_2026-10-16.md). For scoped imports use `tools/apply_analytics_revisions.py` with explicit source inputs; the older hardcoded Waalaxy/referral replacement has been removed. Complete preparation now preserves newer independently dated shared source sections and recording supplements when local inputs are older.
+
 ## Run a populated dashboard from a fresh clone
 
 Use Python 3.10 or newer:

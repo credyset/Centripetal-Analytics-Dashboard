@@ -12,6 +12,27 @@ for entity in ('deals','activities'):
     assert len(rows) == len({row['id'] for row in rows}), f'Duplicate CRM {entity} IDs'
 assert len(data['video']['rows']) == data['video']['summary']['sourceRows']
 assert abs(sum(row['spend'] for row in data['ads']['daily'])-data['ads']['totals']['spend']) < .02
+ref=data.get('referrals') or {}
+if ref.get('partitions'):
+    s=ref['summary']
+    assert s['totalPipelineDeals']==len(ref['records'])+s['excludedOfficeHoursCount']+s['excludedGraveyardNewsletterCount']+s['excludedTestCount'], 'Referral partitions do not reconcile'
+    assert s['activeReferralDeals']==len(ref['records'])==sum(s['stageDistribution'].values())
+    assert len(ref['records'])==len({r['dealId'] for r in ref['records']})
+    assert not any(r.get('partition')!='active' for r in ref['records']), 'Excluded referral row in active records'
+w=data['waalaxy']
+if w.get('invitationCoverage'):
+    c=w['invitationCoverage']
+    rows=[r for r in w['daily'] if 'invitationsSent' in r and c['start']<=r['date']<=c['end']]
+    assert len(rows)==len({r['date'] for r in rows})==c['sourceDays']
+    assert sum(r['invitationsSent'] for r in rows)==w['invitationSummary']['sent']
+    assert sum(r['invitationsAccepted'] for r in rows)==w['invitationSummary']['accepted']
+    assert w['invitationSummary']['cohortAcceptanceRate'] is None
+ff=(data.get('meetings') or {}).get('fireflies') or {}
+if 'records' in ff:
+    assert len(ff['records'])==len({r['id'] for r in ff['records']}), 'Duplicate recording IDs'
+    for r in ff['records']:
+        assert r.get('occurredAt') or r.get('indexedAt'), 'Recording has no dated evidence'
+        assert r['durationMinutes']>=0
 if data.get('time'):
     effort = data['time']
     meetings = effort['meetings']
