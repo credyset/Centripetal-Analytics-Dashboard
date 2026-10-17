@@ -86,7 +86,7 @@ Reconcile source submission totals to unique submissions, duplicate/test exclusi
 
 ### Content
 
-Private Charles daily analytics end September 10; the company private baseline is 2025. October 14 public follower counts and two observed posts are a sample, not a current publishing census or impressions feed.
+Charles’s signed-in creator analytics are now collected from the owner-designated Chrome profile, covering October 11–17 UTC (final day partial): 4,635 impressions, 2,250 members reached and 82 social engagements. Daily impressions are derived from the cumulative chart; social totals and unique reach remain fixed-window measures. The historical daily export ends September 10, leaving a gap before October 11. The company private baseline remains 2025. Public follower/post samples are separately dated and do not replace private analytics. See CONTENT_CREATOR_REVIEW_2026-10-16.md for identity checks and source-window definitions.
 
 Request account/post IDs, post URL, publication time, metric extraction time/window, impressions/reach/clicks/engagement components, organic/sponsored breakdown, follower changes and boost campaign IDs. Keep Charles and the company distinct. A company repost and Charles's original are related posts, not necessarily duplicate exposure; audiences overlap and cannot be summed as unique reach. Lifetime post engagement cannot be labelled engagement occurring this week. Confirm whether daily rows are incremental or cumulative and whether the export supplies engagements directly or only components; do not invent a missing engagement total or use an unweighted average of rates. Reconcile boosted spend to Campaign Manager before any combined spend metric.
 

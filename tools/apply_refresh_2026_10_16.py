@@ -6,7 +6,8 @@ The tracked shared snapshot remains the portable publication input.
 from datetime import datetime, timezone
 from pathlib import Path
 import json
-from prepare_shared_snapshot import curate_snapshot
+import copy
+from prepare_shared_snapshot import curate_snapshot, preserve_newer_shared_sources
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
@@ -18,6 +19,7 @@ def read(name):
 
 def build():
     current = read('shared-dashboard.json')
+    previous = copy.deepcopy(current)
     for key, filename in [('crm','crm_refresh.json'), ('referrals','referral_refresh.json'),
                           ('ads','ads_refresh.json'), ('content','content_refresh.json'),
                           ('video','video_refresh.json'), ('time','time.json')]:
@@ -52,7 +54,7 @@ def build():
         note='Christian only, October 1–16 MTD; October 16 partial. Five deduplicated recording durations, 228.58 audio minutes. Separate owner-specified nonmeeting estimate is 14.5–15.75 hours; actual attendance/work hours remain unknown.')
     sources['meetings']['note'] = 'Calendar source retains its collection date. The owner separately confirmed the two linked lead calls as held October 16; this is a bounded set, not complete held-call coverage.'
     current['sources'] = list(sources.values())
-    result = curate_snapshot(current)
+    result = curate_snapshot(preserve_newer_shared_sources(current, previous))
     text = json.dumps(result,ensure_ascii=False,indent=2)+'\n'
     (DATA/'shared-dashboard.json').write_text(text)
     (DATA/'dashboard.json').write_text(text)

@@ -63532,8 +63532,8 @@
     "sheetSubsetUpstreamSyncAt": null
   },
   "content": {
-    "status": "historical",
-    "snapshotAt": "2026-09-11",
+    "status": "current_creator_snapshot_with_historical_reference",
+    "snapshotAt": "2026-10-17T01:15:04Z",
     "preparedAt": "2026-10-14",
     "coverage": {
       "start": "2025-04-22",
@@ -67785,6 +67785,76 @@
         "account": "Charles Solomon",
         "impressions": 335,
         "engagements": 3
+      },
+      {
+        "date": "2026-10-11",
+        "account": "Charles Solomon",
+        "impressions": 339,
+        "engagements": null,
+        "sourceId": "charles_creator_current",
+        "sourceTimezone": "UTC",
+        "currentDayPartial": false,
+        "derivation": "First difference of the source cumulative chart"
+      },
+      {
+        "date": "2026-10-12",
+        "account": "Charles Solomon",
+        "impressions": 1101,
+        "engagements": null,
+        "sourceId": "charles_creator_current",
+        "sourceTimezone": "UTC",
+        "currentDayPartial": false,
+        "derivation": "First difference of the source cumulative chart"
+      },
+      {
+        "date": "2026-10-13",
+        "account": "Charles Solomon",
+        "impressions": 1095,
+        "engagements": null,
+        "sourceId": "charles_creator_current",
+        "sourceTimezone": "UTC",
+        "currentDayPartial": false,
+        "derivation": "First difference of the source cumulative chart"
+      },
+      {
+        "date": "2026-10-14",
+        "account": "Charles Solomon",
+        "impressions": 854,
+        "engagements": null,
+        "sourceId": "charles_creator_current",
+        "sourceTimezone": "UTC",
+        "currentDayPartial": false,
+        "derivation": "First difference of the source cumulative chart"
+      },
+      {
+        "date": "2026-10-15",
+        "account": "Charles Solomon",
+        "impressions": 601,
+        "engagements": null,
+        "sourceId": "charles_creator_current",
+        "sourceTimezone": "UTC",
+        "currentDayPartial": false,
+        "derivation": "First difference of the source cumulative chart"
+      },
+      {
+        "date": "2026-10-16",
+        "account": "Charles Solomon",
+        "impressions": 626,
+        "engagements": null,
+        "sourceId": "charles_creator_current",
+        "sourceTimezone": "UTC",
+        "currentDayPartial": false,
+        "derivation": "First difference of the source cumulative chart"
+      },
+      {
+        "date": "2026-10-17",
+        "account": "Charles Solomon",
+        "impressions": 19,
+        "engagements": null,
+        "sourceId": "charles_creator_current",
+        "sourceTimezone": "UTC",
+        "currentDayPartial": true,
+        "derivation": "First difference of the source cumulative chart"
       }
     ],
     "followersDaily": [
@@ -69615,13 +69685,13 @@
       }
     ],
     "notes": [
-      "Charles’s latest on-disk aggregate covers September 11, 2025–September 10, 2026. Company page content covers April–July 2025. Neither is current October performance.",
+      "Historical private exports: Charles’s aggregate covers September 11, 2025–September 10, 2026. Company page content covers April–July 2025. Neither is current October performance.",
       "Charles’s post rows combine top engagement and top impression rankings; the export is not an exhaustive publishing log.",
       "Null values mean unavailable. Personal post titles and per-post clicks, reactions and video views were not supplied in this aggregate export.",
       "Personal ranking metrics are measured within the export reporting window; publication dates do not turn them into lifetime metrics.",
       "No current boosted-post analytics have been collected. Unknown boosted status stays unknown, and paid spend must not be added twice.",
       "Daily exposure can include older posts. Daily impressions do not measure posts published.",
-      "Current Charles/profile and company admin analytics were unavailable through the authenticated browser account during concept collection."
+      "Current signed-in Charles creator analytics cover October 11–17 UTC; the final UTC day is partial. Historical exports, daily impressions, fixed-window social totals and public observations retain separate scopes."
     ],
     "publicObservations": {
       "checkedAt": "2026-10-16",
@@ -70090,7 +70160,7 @@
       },
       "notes": [
         "Public visitor data checked October 16. Charles recent activity includes posts shown as 3h and 4h old at collection; company visitor feed was explicitly sorted Recent.",
-        "The current authenticated account is Christian Wutz. Charles is a non-self profile and the company page is a visitor view; private impressions, reach, clicks and boosted breakdown are unavailable.",
+        "These public observations came from a visitor view; their counters exclude private analytics. Charles’s separate signed-in creator snapshot is shown above.",
         "Post engagement is a point-in-time public counter, not engagement occurring within a date-filtered reporting period.",
         "This visible post sample is incomplete. Relative publication labels are preserved; exact publication dates are not inferred.",
         "A missing counter is null, not zero. Public article URLs are distinguished from post permalinks; unavailable permalinks remain null.",
@@ -70099,17 +70169,234 @@
       ]
     },
     "accessReview": {
-      "status": "partial_public_only",
+      "status": "current_charles_creator_access",
       "checkedAt": "2026-10-16",
-      "reason": "Current browser session is Christian Wutz; Charles is non-self and company page has visitor navigation, not analytics admin controls.",
-      "newestPrivateCharlesCoverageEnd": "2026-09-10",
+      "reason": "Owner-designated Centreptal Advisors x RedySet Chrome window is signed in as Charles Solomon. Current personal creator analytics are accessible; company/private boosted breakdowns were not collected.",
+      "newestPrivateCharlesCoverageEnd": "2026-10-17",
       "newestPrivateCompanyCoverageEnd": "2025-07-20",
       "publicFollowers": {
         "Charles Solomon": 11486,
         "Centripetal Advisors": 867
-      }
+      },
+      "currentCharlesPrivateCoverage": {
+        "start": "2026-10-11",
+        "end": "2026-10-17",
+        "sourceTimezone": "UTC",
+        "sourcePreset": "7 days",
+        "finalDayPartial": true,
+        "completeDaysThrough": "2026-10-16",
+        "accountScope": "Charles personal creator content only"
+      },
+      "historicalPrivateCharlesCoverageEnd": "2026-09-10"
     },
     "review": {
+      "kind": "signed_in_charles_creator",
+      "snapshotAt": "2026-10-17T01:15:04Z",
+      "identityVerified": true,
+      "sourceWindow": {
+        "start": "2026-10-11",
+        "end": "2026-10-17",
+        "sourceTimezone": "UTC",
+        "sourcePreset": "7 days",
+        "finalDayPartial": true,
+        "completeDaysThrough": "2026-10-16",
+        "accountScope": "Charles personal creator content only"
+      },
+      "scope": "7-day personal creator view only; company/private boosted analytics not collected"
+    },
+    "historicalCoverage": {
+      "start": "2025-04-22",
+      "end": "2026-09-10"
+    },
+    "creatorAnalytics": {
+      "snapshotAt": "2026-10-17T01:15:04Z",
+      "checkedAt": "2026-10-16",
+      "account": {
+        "name": "Charles Solomon",
+        "profileUrl": "https://www.linkedin.com/in/solomoncharles/",
+        "identityVerified": true,
+        "identityBasis": "Signed-in Charles Solomon Me control and matching profile sidebar in the Centreptal Advisors x RedySet Chrome window"
+      },
+      "url": "https://www.linkedin.com/analytics/creator/content/",
+      "method": "Read-only observation of the owner-designated signed-in Chrome creator analytics window",
+      "coverage": {
+        "start": "2026-10-11",
+        "end": "2026-10-17",
+        "sourceTimezone": "UTC",
+        "sourcePreset": "7 days",
+        "finalDayPartial": true,
+        "completeDaysThrough": "2026-10-16",
+        "accountScope": "Charles personal creator content only"
+      },
+      "summary": {
+        "impressions": 4635,
+        "membersReached": 2250,
+        "socialEngagements": 82,
+        "reactions": 69,
+        "comments": 11,
+        "reposts": 0,
+        "saves": 2,
+        "sendsOnLinkedIn": 0,
+        "linkEngagements": 1,
+        "premiumCustomButtonEngagements": 1,
+        "inNetworkPercent": 45,
+        "outOfNetworkPercent": 55
+      },
+      "comparison": {
+        "metric": "impressions",
+        "percentChange": -49,
+        "label": "49% lower versus prior 7 days",
+        "sourceReported": true,
+        "priorValue": null,
+        "note": "Platform-reported comparison; the current window includes a partial final UTC day. Do not reconstruct an exact prior value from the rounded percentage."
+      },
+      "chart": {
+        "metric": "impressions",
+        "display": "Cumulative",
+        "sourceDateBasis": "Daily data is recorded in UTC",
+        "points": [
+          {
+            "date": "2026-10-11",
+            "cumulativeImpressions": 339
+          },
+          {
+            "date": "2026-10-12",
+            "cumulativeImpressions": 1440
+          },
+          {
+            "date": "2026-10-13",
+            "cumulativeImpressions": 2535
+          },
+          {
+            "date": "2026-10-14",
+            "cumulativeImpressions": 3389
+          },
+          {
+            "date": "2026-10-15",
+            "cumulativeImpressions": 3990
+          },
+          {
+            "date": "2026-10-16",
+            "cumulativeImpressions": 4616
+          },
+          {
+            "date": "2026-10-17",
+            "cumulativeImpressions": 4635
+          }
+        ]
+      },
+      "topPosts": [
+        {
+          "activityId": "7508255841335103488",
+          "title": "Pulley is shutting down: what operators should do, and what it says about cap table software",
+          "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7508255840668160000/",
+          "analyticsUrl": "https://www.linkedin.com/analytics/post-summary/urn:li:activity:7508255841335103488/",
+          "impressions": 919,
+          "engagements": 0,
+          "publishedAt": null
+        },
+        {
+          "activityId": "7515849116049125376",
+          "title": "Most CAC calculations I see are missing somebody’s salary",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7515814786924756992/",
+          "analyticsUrl": "https://www.linkedin.com/analytics/post-summary/urn:li:activity:7515849116049125376/",
+          "impressions": 430,
+          "engagements": 9,
+          "publishedAt": null
+        },
+        {
+          "activityId": "7515814100527132673",
+          "title": "What Counts as Sales and Marketing Spend in CAC: Labor, Non-Labor, and Everyone Who Isn’t on the S&M Team",
+          "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7515814099948310529/",
+          "analyticsUrl": "https://www.linkedin.com/analytics/post-summary/urn:li:activity:7515814100527132673/",
+          "impressions": 406,
+          "engagements": 11,
+          "publishedAt": null
+        }
+      ],
+      "notes": [
+        "This is a current signed-in Charles creator snapshot, not the Christian Chrome extension profile or a public-feed approximation.",
+        "The 7-day source window includes October 17 UTC partial; Mountain reporting dates are not substituted for UTC source-day buckets.",
+        "Daily impressions are derived by first differences of the explicitly cumulative 7-point source chart. Social engagements and unique members reached are window totals, not daily counts.",
+        "Social engagements comprise reactions, comments, reposts, saves and sends on LinkedIn. Link engagements and custom-button engagements are separate platform fields and are not added to the social total.",
+        "Three visible top-post rows are a ranked sample measured in this analytics window, not lifetime post totals or a complete publishing register. Publication dates were not supplied.",
+        "Current company-page private performance and an explicit organic-versus-sponsored breakdown were not collected in this Charles-only view.",
+        "This observation is not an unattended live integration. A wider date-window export is needed to close the remaining private-data gap before October 11."
+      ],
+      "daily": [
+        {
+          "date": "2026-10-11",
+          "account": "Charles Solomon",
+          "impressions": 339,
+          "engagements": null,
+          "sourceId": "charles_creator_current",
+          "sourceTimezone": "UTC",
+          "currentDayPartial": false,
+          "derivation": "First difference of the source cumulative chart"
+        },
+        {
+          "date": "2026-10-12",
+          "account": "Charles Solomon",
+          "impressions": 1101,
+          "engagements": null,
+          "sourceId": "charles_creator_current",
+          "sourceTimezone": "UTC",
+          "currentDayPartial": false,
+          "derivation": "First difference of the source cumulative chart"
+        },
+        {
+          "date": "2026-10-13",
+          "account": "Charles Solomon",
+          "impressions": 1095,
+          "engagements": null,
+          "sourceId": "charles_creator_current",
+          "sourceTimezone": "UTC",
+          "currentDayPartial": false,
+          "derivation": "First difference of the source cumulative chart"
+        },
+        {
+          "date": "2026-10-14",
+          "account": "Charles Solomon",
+          "impressions": 854,
+          "engagements": null,
+          "sourceId": "charles_creator_current",
+          "sourceTimezone": "UTC",
+          "currentDayPartial": false,
+          "derivation": "First difference of the source cumulative chart"
+        },
+        {
+          "date": "2026-10-15",
+          "account": "Charles Solomon",
+          "impressions": 601,
+          "engagements": null,
+          "sourceId": "charles_creator_current",
+          "sourceTimezone": "UTC",
+          "currentDayPartial": false,
+          "derivation": "First difference of the source cumulative chart"
+        },
+        {
+          "date": "2026-10-16",
+          "account": "Charles Solomon",
+          "impressions": 626,
+          "engagements": null,
+          "sourceId": "charles_creator_current",
+          "sourceTimezone": "UTC",
+          "currentDayPartial": false,
+          "derivation": "First difference of the source cumulative chart"
+        },
+        {
+          "date": "2026-10-17",
+          "account": "Charles Solomon",
+          "impressions": 19,
+          "engagements": null,
+          "sourceId": "charles_creator_current",
+          "sourceTimezone": "UTC",
+          "currentDayPartial": true,
+          "derivation": "First difference of the source cumulative chart"
+        }
+      ]
+    },
+    "historicalPublicReview": {
       "checkedAt": "2026-10-16",
       "privateContentSourceAsOf": "2026-09-11",
       "publicContentSourceAsOf": "2026-10-16",
@@ -81697,14 +81984,11 @@
     {
       "id": "content",
       "name": "LinkedIn content",
-      "status": "Historical export",
-      "asOf": "2026-09-11",
-      "coverage": {
-        "start": "2025-04-22",
-        "end": "2026-09-10"
-      },
-      "method": "Charles personal analytics and company-page exports",
-      "note": "Private Charles daily analytics end September 10, 2026; company private baseline is 2025. October 16 public followers and 26 distinct visible post observations are separate dated evidence, not private impressions or a publishing census.",
+      "status": "Current Charles creator snapshot; historical company reference",
+      "asOf": "2026-10-17T01:15:04Z",
+      "coverage": "Charles creator October 11–17 UTC (final day partial); historical export and public observation windows remain separate",
+      "method": "Read-only signed-in Charles Chrome creator analytics plus retained exports and public observations",
+      "note": "Charles identity verified in the owner-designated Chrome profile. 4,635 impressions, 2,250 members reached and 82 social engagements in the fixed 7-day UTC window. Daily impressions are derived from its cumulative chart; daily engagements, wider-window private data, current company analytics and organic/sponsored separation remain incomplete.",
       "checkedAt": "2026-10-16"
     },
     {

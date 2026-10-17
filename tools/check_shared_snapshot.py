@@ -12,6 +12,17 @@ for entity in ('deals','activities'):
     assert len(rows) == len({row['id'] for row in rows}), f'Duplicate CRM {entity} IDs'
 assert len(data['video']['rows']) == data['video']['summary']['sourceRows']
 assert abs(sum(row['spend'] for row in data['ads']['daily'])-data['ads']['totals']['spend']) < .02
+creator=data['content'].get('creatorAnalytics')
+if creator:
+    assert creator['account']['identityVerified'] and creator['account']['name']=='Charles Solomon'
+    assert creator['coverage']['sourceTimezone']=='UTC' and creator['coverage']['finalDayPartial']
+    assert creator['chart']['display']=='Cumulative'
+    assert sum(r['impressions'] for r in creator['daily'])==creator['summary']['impressions']
+    assert creator['chart']['points'][-1]['cumulativeImpressions']==creator['summary']['impressions']
+    assert all(r['engagements'] is None for r in creator['daily']), 'Window total must not become daily counts'
+    assert len(creator['daily'])==len({r['date'] for r in creator['daily']})
+    assert sum(creator['summary'][k] for k in ('reactions','comments','reposts','saves','sendsOnLinkedIn'))==creator['summary']['socialEngagements']
+    assert len(creator['topPosts'])==len({r['activityId'] for r in creator['topPosts']})
 ref=data.get('referrals') or {}
 if ref.get('partitions'):
     s=ref['summary']
