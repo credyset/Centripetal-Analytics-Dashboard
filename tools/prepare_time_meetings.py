@@ -56,7 +56,9 @@ def build():
         clipped = max(0, (min(derived_end, through) - max(indexed_at, start)).total_seconds()/60)
         is_duplicate = r['id'] == duplicate['shortId']
         # Titles with participant names are replaced with minimal work labels.
-        title = 'Centripetal workflow / GitHub huddle' if 'github' in r['title'].lower() else 'Centripetal GTM'
+        title = ('Centripetal workflow / GitHub huddle' if 'github' in r['title'].lower()
+                 else 'Centripetal CRM coordination' if 'pipedrive' in r['title'].lower()
+                 else 'Centripetal GTM')
         records.append({
             'id': 'fireflies:' + r['id'], 'title': title,
             'startAt': iso(indexed_at), 'endAt': iso(derived_end),
@@ -121,7 +123,7 @@ def build():
     out = {'snapshotAt': manifest['snapshotAt'],
         'subject': {'name': manifest['subjectName'], 'email': manifest['subjectEmail']},
         'timezone': manifest['timezone'], 'period': {'start': iso(start), 'through': iso(through), 'currentDayPartial': True},
-        'sourceAsOf': {'fireflies': indexed['collectedAt'], 'calendly': manifest['snapshotAt']},
+        'sourceAsOf': {'fireflies': indexed['collectedAt'], 'calendly': manifest.get('calendlySnapshotAt', manifest['snapshotAt'])},
         'coverage': {'firefliesMetadataPages': indexed['pagination'], 'firefliesMetadataRecordsReviewed': len(all_transcripts),
             'firefliesMonthIndexedRecords': sum(start.timestamp()*1000 <= r['date'] <= through.timestamp()*1000 for r in all_transcripts.values()),
             'firefliesIndexedMonthCompleteWithinAccessibleList': manifest['firefliesPagesCompleteForIndexedMonth'],
@@ -144,7 +146,7 @@ def build():
         'notes': ['Centripetal work only, exact Christian subject identity only. No other team member\'s work time is included.',
                   'Recorded minutes describe associated audio, not exact attended, worked or billable time. Non-meeting estimates must remain a separate range.',
                   'Zero calendar-only minutes means zero matching invitees in Charles\'s scoped Calendly results, not zero Christian meetings across all calendars.',
-                  'Four associated recording records are retained for audit. One 33-minute duplicate segment has zero countedMinutes; three unique recording durations remain.',
+                  f'{len(records)} associated recording records are retained for audit. One 33-minute duplicate segment has zero countedMinutes; {summary["countedRecordingCount"]} unique recording durations remain.',
                   'Prepared data contains no transcript text, summaries, other participant names/emails, join links or recording access links.'],
     }
     (ROOT / 'data/time_meetings.json').write_text(json.dumps(out, indent=2) + '\n')

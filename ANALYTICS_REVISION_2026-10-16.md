@@ -1,5 +1,7 @@
 # Analytics corrections applied — October 16, 2026
 
+> This records the earlier October 16 correction pass. The later full source refresh and owner confirmations supersede its cutoff and attendance gaps: [LIVE_DATA_REFRESH_2026-10-16.md](LIVE_DATA_REFRESH_2026-10-16.md).
+
 Live dashboard: https://credyset.github.io/Centripetal-Analytics-Dashboard/#glance
 
 This revision applies supported data and interpretation corrections before structural redesign. Source systems were read only. The refreshed referral and recording-review timestamps are separate from the retained October 14 full CRM/calendar snapshots, paid exports and Video DM inventory. Publishing does not make those unchanged feeds current. Business reporting remains anchored through October 13; Christian's effort view retains its explicitly dated October 1–15 scope.

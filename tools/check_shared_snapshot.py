@@ -39,6 +39,33 @@ if data.get('time'):
     assert abs(sum(e['countedMinutes'] for e in meetings['events'])-meetings['summary']['recordedMinutes']) < .001
     assert all(not e.get('duplicateOfId') or e['countedMinutes'] == 0 for e in meetings['events'])
     assert all(0 <= w['planningAllowance']['hoursLow'] <= w['planningAllowance']['hoursHigh'] for w in effort['workstreams'])
+    if effort['summary'].get('ownerAdjustedEstimate'):
+        for w in effort['workstreams']:
+            a=w['planningAllowance']
+            for bound in ('Low','High'):
+                assert abs(a['hours'+bound]-a['baselineHours'+bound]*a['ownerAdjustmentMultiplier'])<.000001, 'Owner uplift compounded or wrong base'
+        for bound in ('Low','High'):
+            assert abs(effort['summary']['nonMeetingEstimateHours'+bound]-sum(w['planningAllowance']['hours'+bound] for w in effort['workstreams']))<.000001
+confirmations=data.get('meetings',{}).get('ownerConfirmedHeldCalls',[])
+assert len(confirmations)==len({r['bookingChainId'] for r in confirmations}), 'Duplicate confirmed booking chain'
+for proof in confirmations:
+    link=next(r for r in data['meetings']['verifiedLinks'] if r['dealId']==proof['dealId'])
+    lead=next(r for r in data['ads']['leads'] if r['company']==proof['company'])
+    assert link['heldVerified'] and lead['meetingHeld'] and lead['meetingBooked'], 'Owner outcome or corroborated booking lost in source refresh'
+    assert link['heldAt']==lead['heldAt']==proof['heldAt'] and link['heldEvidenceSource']==proof['evidenceSource']
+subset=data['waalaxy'].get('sheetSubset')
+if subset:
+    rows=subset['rows'];m=subset['metrics']
+    assert len(rows)==len({r['profileId'] for r in rows})==m['connectedProspects']
+    assert sum(r['messageSentFlag'] for r in rows)==m['messageRecipientFlags']
+    assert sum(r['messageRepliedFlag'] for r in rows)==m['replyingProspectFlags']
+    assert m['currentPeriodMessageEvents'] is None and m['currentPeriodReplyEvents'] is None
+    assert m['acceptanceRate'] is None and m['accountWideProspects'] is None
+valuation=data['crm'].get('assessment',{}).get('valuationCoverage')
+if valuation:
+    assert valuation['nonzeroValuedRecords']+valuation['zeroOrUnsetRecords']==valuation['businessOpenRecords']
+    assert sum(r['value'] for r in valuation['records'] if r['currency']=='USD')==sum(r['value'] for r in valuation['knownPortionByCurrency'] if r['currency']=='USD')
+    assert valuation['completeQualifiedPipelineValue'] is None
 
 def inspect(value):
     if isinstance(value, dict):

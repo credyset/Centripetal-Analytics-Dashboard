@@ -4,11 +4,13 @@ import copy
 import json
 import re
 from datetime import datetime, timezone
+from apply_owner_confirmations import apply_owner_confirmations
 
 ROOT = Path(__file__).resolve().parents[1]
 
 def curate_snapshot(source):
     public = copy.deepcopy(source)
+    apply_owner_confirmations(public)
     public['meta'].update(public=True, publicDataPolicy='Owner-approved detailed snapshot including prospect identities and available business record links.')
     public['meta']['note'] = 'Published snapshot; source coverage varies. Automatic refresh is not enabled.'
     for name in ('ads', 'waalaxy', 'content'):
@@ -32,6 +34,7 @@ def curate_snapshot(source):
         if item['id'] == 'waalaxy':
             item['note'] = ('Dated invitation actions are available, including source-reported zero days. '
                             'The final source day is partial and the source timezone is unspecified. '
+                            + ('A separately dated selected connected-prospect subset is available through Sheets; sender account and upstream sync time are unverified. ' if public.get('waalaxy',{}).get('sheetSubset') else '') +
                             'Message/reply events and campaign breakdowns remain unavailable; historical person flags retain older coverage.'
                             if public.get('waalaxy',{}).get('invitationCoverage') else
                             'Historical Charles-only person flags, not period message totals. Current campaign analytics remain unavailable.')
@@ -58,6 +61,14 @@ def preserve_newer_shared_sources(source, previous):
     if prior_ff and (not current_ff or stamp(prior_ff)>stamp(current_ff)):
         result.setdefault('meetings',{})['fireflies']=copy.deepcopy(prior_ff)
         retained.add('fireflies')
+    # Public observations can be refreshed while private content exports retain
+    # their historical date. Preserve those independent collection dates too.
+    for nested in ('publicObservations','accessReview'):
+        old=(previous.get('content') or {}).get(nested) or {}
+        incoming=(result.get('content') or {}).get(nested) or {}
+        if old.get('checkedAt','')>incoming.get('checkedAt',''):
+            result.setdefault('content',{})[nested]=copy.deepcopy(old)
+            retained.add('content')
     by_id={s['id']:s for s in result.get('sources',[])}
     for src in previous.get('sources',[]):
         if src['id'] in retained or (src['id']=='fireflies' and src['id'] not in by_id):
