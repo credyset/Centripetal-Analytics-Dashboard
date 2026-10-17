@@ -3,12 +3,12 @@ from pathlib import Path
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 import json
+from apply_effort_estimate import apply_effort_estimate
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
-# Owner requested both bounds 35% above the original 6.0–14.5 hour range.
-# Always apply to the fixed baseline, never to a previously adjusted output.
-OWNER_MULTIPLIER = 1.35
+# Retain the historical workstream assumptions. The current owner-specified
+# overall range is applied separately; it does not allocate hours by workstream.
 BASELINE = {'pulley': (1.5, 3.0), 'website': (2.0, 4.0),
             'paid-audit': (1.0, 3.0), 'video-dm': (.25, .75), 'dashboard': (1.25, 3.75)}
 
@@ -28,13 +28,10 @@ def build():
         lo, hi, basis = overrides.get(row['id'], (allowance['hoursLow'], allowance['hoursHigh'], allowance['scope']))
         lo, hi = BASELINE[row['id']]
         base_lo, base_hi = lo, hi
-        lo, hi = round(lo * OWNER_MULTIPLIER, 6), round(hi * OWNER_MULTIPLIER, 6)
         allowance.update(enabled=True, ownerConfirmed=False, hoursLow=lo, hoursHigh=hi,
                          minutesLow=lo*60, minutesHigh=hi*60, scope=basis,
                          baselineHoursLow=base_lo, baselineHoursHigh=base_hi,
-                         ownerAdjustmentMultiplier=OWNER_MULTIPLIER,
-                         ownerAdjustmentDate='2026-10-16', ownerAdjustedEstimate=True,
-                         kind='Owner-adjusted asynchronous review and coordination estimate')
+                         kind='Historical workstream assumption; superseded by owner total estimate')
         # Do not imply the original round formula still defines refined estimates.
         if row['id'] in overrides:
             for key in ('assumedReviewRounds', 'minutesPerRoundLow', 'minutesPerRoundHigh'):
@@ -47,7 +44,7 @@ def build():
         if row['id']=='dashboard':
             streams[-1]['evidenceDates']=sorted(set(streams[-1]['evidenceDates']+['2026-10-16']))
             streams[-1]['evidence'].append({'date':'2026-10-16',
-                'label':'Owner requested current source reconciliation and a 35% nonmeeting estimate uplift; this supports review scope, not measured duration.'})
+                'label':'Owner reviewed source reconciliation and specified an overall nonmeeting estimate; this supports review scope, not measured duration.'})
     # Publish minimum necessary evidence, not source paths, hashes, transcripts,
     # inferred end times, or other attendees' identities.
     meetings.pop('provenance', None)
@@ -64,14 +61,13 @@ def build():
         'summary': {'nonMeetingEstimateHoursLow':sum(s['planningAllowance']['hoursLow'] for s in streams),
                     'nonMeetingEstimateHoursHigh':sum(s['planningAllowance']['hoursHigh'] for s in streams),
                     'confidence':'low', 'ownerConfirmed':False, 'combinedWorkedHours':None,
-                    'ownerAdjustedEstimate':True, 'ownerAdjustmentMultiplier':OWNER_MULTIPLIER,
+                    'ownerAdjustedEstimate':True,
                     'baselineHoursLow':6.0, 'baselineHoursHigh':14.5,
                     'ownerAdjustmentDate':'2026-10-16'},
         'notes': [
             'Christian only. Other team members and automated research, coding, export and publication runtime are excluded.',
             'Meeting evidence measures deduplicated audio associated with Christian; exact attendance remains unknown.',
             'Nonmeeting estimates cover assumed asynchronous direction, review and coordination only. Actual work may fall outside the range.',
-            'Both bounds of the original 6.0–14.5 hour estimate were increased once by 35% at the owner’s October 16 request. This adjustment is not a measured time log.',
             'No combined worked-hour total is asserted: individual attendance and overlap with review work require confirmation.',
             'Newsletter/publication approvals are grouped under dashboard; repeated artifacts and mirrored publications are not extra work.',
             'These figures are a draft reconstruction, not a timesheet or billing record.'
@@ -80,6 +76,7 @@ def build():
     assert abs(sum(e['countedMinutes'] for e in meetings['events']) - meetings['summary']['recordedMinutes']) < .001
     assert all(0 <= s['planningAllowance']['hoursLow'] <= s['planningAllowance']['hoursHigh'] for s in streams)
     assert result['summary']['combinedWorkedHours'] is None
+    apply_effort_estimate(result)
     out = DATA / 'time.json'
     out.write_text(json.dumps(result, indent=2)+'\n')
     print(json.dumps({'output':str(out),'recordedMinutes':meetings['summary']['recordedMinutes'],**result['summary']}))

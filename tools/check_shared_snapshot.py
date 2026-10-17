@@ -39,7 +39,12 @@ if data.get('time'):
     assert abs(sum(e['countedMinutes'] for e in meetings['events'])-meetings['summary']['recordedMinutes']) < .001
     assert all(not e.get('duplicateOfId') or e['countedMinutes'] == 0 for e in meetings['events'])
     assert all(0 <= w['planningAllowance']['hoursLow'] <= w['planningAllowance']['hoursHigh'] for w in effort['workstreams'])
-    if effort['summary'].get('ownerAdjustedEstimate'):
+    if effort['summary'].get('ownerEstimateRange'):
+        owner_range=effort['summary']['ownerEstimateRange']
+        assert effort['summary']['nonMeetingEstimateHoursLow']==owner_range['low']
+        assert effort['summary']['nonMeetingEstimateHoursHigh']==owner_range['high']
+        assert not any(w['planningAllowance'].get('enabled') for w in effort['workstreams']), 'No owner workstream allocation supplied'
+    elif effort['summary'].get('ownerAdjustedEstimate'):
         for w in effort['workstreams']:
             a=w['planningAllowance']
             for bound in ('Low','High'):

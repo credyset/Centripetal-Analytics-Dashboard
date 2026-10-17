@@ -81382,13 +81382,13 @@
         ],
         "humanInvolvementBasis": "Deliverables reflect staged scope and relationship-priority choices. Christian's exact review sessions/durations require his confirmation; source existence alone does not establish them.",
         "planningAllowance": {
-          "enabled": true,
+          "enabled": false,
           "ownerConfirmed": false,
-          "kind": "Owner-adjusted asynchronous review and coordination estimate",
-          "minutesLow": 121.5,
-          "minutesHigh": 243.0,
-          "hoursLow": 2.025,
-          "hoursHigh": 4.05,
+          "kind": "Historical workstream assumption; superseded by owner total estimate",
+          "minutesLow": 90.0,
+          "minutesHigh": 180.0,
+          "hoursLow": 1.5,
+          "hoursHigh": 3.0,
           "scope": "Project review: assumed asynchronous direction, access/upload coordination and review across three milestones.",
           "excludes": [
             "Automated company/contact searches and enrichment",
@@ -81400,9 +81400,9 @@
           "notAStatisticalConfidenceInterval": true,
           "baselineHoursLow": 1.5,
           "baselineHoursHigh": 3.0,
-          "ownerAdjustmentMultiplier": 1.35,
           "ownerAdjustmentDate": "2026-10-16",
-          "ownerAdjustedEstimate": true
+          "ownerAdjustedEstimate": false,
+          "supersededByOwnerTotalRange": true
         },
         "evidence": [
           {
@@ -81433,13 +81433,13 @@
         ],
         "humanInvolvementBasis": "Architecture record explicitly attributes priorities and refinements to the user; 29 October 8–10 commits corroborate implementation chronology. Commit author metadata does not prove Christian typed the changes.",
         "planningAllowance": {
-          "enabled": true,
+          "enabled": false,
           "ownerConfirmed": false,
-          "kind": "Owner-adjusted asynchronous review and coordination estimate",
-          "minutesLow": 162.0,
-          "minutesHigh": 324.0,
-          "hoursLow": 2.7,
-          "hoursHigh": 5.4,
+          "kind": "Historical workstream assumption; superseded by owner total estimate",
+          "minutesLow": 120.0,
+          "minutesHigh": 240.0,
+          "hoursLow": 2.0,
+          "hoursHigh": 4.0,
           "scope": "Project review: assumed asynchronous website direction and visual review; meetings and shared analytics review excluded.",
           "excludes": [
             "Agent coding and browser checks",
@@ -81452,9 +81452,9 @@
           "notAStatisticalConfidenceInterval": true,
           "baselineHoursLow": 2.0,
           "baselineHoursHigh": 4.0,
-          "ownerAdjustmentMultiplier": 1.35,
           "ownerAdjustmentDate": "2026-10-16",
-          "ownerAdjustedEstimate": true
+          "ownerAdjustedEstimate": false,
+          "supersededByOwnerTotalRange": true
         },
         "evidence": [
           {
@@ -81479,16 +81479,16 @@
         ],
         "humanInvolvementBasis": "Direct conversation requests establish lead feedback, targeting/report scope and two formatting review rounds; timestamps of active human review are not supplied.",
         "planningAllowance": {
-          "enabled": true,
+          "enabled": false,
           "ownerConfirmed": false,
-          "kind": "Owner-adjusted asynchronous review and coordination estimate",
+          "kind": "Historical workstream assumption; superseded by owner total estimate",
           "assumedReviewRounds": 4,
           "minutesPerRoundLow": 15,
           "minutesPerRoundHigh": 45,
-          "minutesLow": 81.0,
-          "minutesHigh": 243.0,
-          "hoursLow": 1.35,
-          "hoursHigh": 4.05,
+          "minutesLow": 60.0,
+          "minutesHigh": 180.0,
+          "hoursLow": 1.0,
+          "hoursHigh": 3.0,
           "scope": "Four assumed combined rounds: data/lead scope, targeting/report decisions, typography feedback, native pagination review.",
           "excludes": [
             "Agent exports/calculations/report generation/rendering",
@@ -81500,9 +81500,9 @@
           "notAStatisticalConfidenceInterval": true,
           "baselineHoursLow": 1.0,
           "baselineHoursHigh": 3.0,
-          "ownerAdjustmentMultiplier": 1.35,
           "ownerAdjustmentDate": "2026-10-16",
-          "ownerAdjustedEstimate": true
+          "ownerAdjustedEstimate": false,
+          "supersededByOwnerTotalRange": true
         },
         "evidence": [
           {
@@ -81531,16 +81531,16 @@
         ],
         "humanInvolvementBasis": "October 14 review explicitly records separately owner-authorized profile repairs. Earlier October-modified batches need chat corroboration before adding review allowances.",
         "planningAllowance": {
-          "enabled": true,
+          "enabled": false,
           "ownerConfirmed": false,
-          "kind": "Owner-adjusted asynchronous review and coordination estimate",
+          "kind": "Historical workstream assumption; superseded by owner total estimate",
           "assumedReviewRounds": 1,
           "minutesPerRoundLow": 15,
           "minutesPerRoundHigh": 45,
-          "minutesLow": 20.25,
-          "minutesHigh": 60.75,
-          "hoursLow": 0.3375,
-          "hoursHigh": 1.0125,
+          "minutesLow": 15.0,
+          "minutesHigh": 45.0,
+          "hoursLow": 0.25,
+          "hoursHigh": 0.75,
           "scope": "One assumed round for Christian's October 14 source repair/coordination; additional batch work remains unconfirmed.",
           "excludes": [
             "Charles's recording, outreach and calls",
@@ -81553,9 +81553,9 @@
           "notAStatisticalConfidenceInterval": true,
           "baselineHoursLow": 0.25,
           "baselineHoursHigh": 0.75,
-          "ownerAdjustmentMultiplier": 1.35,
           "ownerAdjustmentDate": "2026-10-16",
-          "ownerAdjustedEstimate": true
+          "ownerAdjustedEstimate": false,
+          "supersededByOwnerTotalRange": true
         },
         "evidence": [
           {
@@ -81573,16 +81573,16 @@
         ],
         "humanInvolvementBasis": "The current conversation directly records Christian's requirements, account/calendar answers, hosting/repository choice, approval to proceed, and iterative review directions. Implementation and connector collection were agent-assisted.",
         "planningAllowance": {
-          "enabled": true,
+          "enabled": false,
           "ownerConfirmed": false,
-          "kind": "Owner-adjusted asynchronous review and coordination estimate",
+          "kind": "Historical workstream assumption; superseded by owner total estimate",
           "assumedReviewRounds": 5,
           "minutesPerRoundLow": 15,
           "minutesPerRoundHigh": 45,
-          "minutesLow": 101.25,
-          "minutesHigh": 303.75,
-          "hoursLow": 1.6875,
-          "hoursHigh": 5.0625,
+          "minutesLow": 75.0,
+          "minutesHigh": 225.0,
+          "hoursLow": 1.25,
+          "hoursHigh": 3.75,
           "scope": "Five assumed combined rounds: requirements/calendar, metric/source definitions, hosting/repository, publication/data scope, refreshed-source operating review.",
           "excludes": [
             "Agent implementation/runtime/tool waiting",
@@ -81596,9 +81596,9 @@
           "notAStatisticalConfidenceInterval": true,
           "baselineHoursLow": 1.25,
           "baselineHoursHigh": 3.75,
-          "ownerAdjustmentMultiplier": 1.35,
           "ownerAdjustmentDate": "2026-10-16",
-          "ownerAdjustedEstimate": true
+          "ownerAdjustedEstimate": false,
+          "supersededByOwnerTotalRange": true
         },
         "evidence": [
           {
@@ -81619,32 +81619,37 @@
           },
           {
             "date": "2026-10-16",
-            "label": "Owner requested current source reconciliation and a 35% nonmeeting estimate uplift; this supports review scope, not measured duration."
+            "label": "Owner reviewed source reconciliation and specified an overall nonmeeting estimate; this supports review scope, not measured duration."
           }
         ]
       }
     ],
     "trackedHumanMinutes": null,
     "summary": {
-      "nonMeetingEstimateHoursLow": 8.1,
-      "nonMeetingEstimateHoursHigh": 19.575,
+      "nonMeetingEstimateHoursLow": 14.5,
+      "nonMeetingEstimateHoursHigh": 15.75,
       "confidence": "low",
       "ownerConfirmed": false,
       "combinedWorkedHours": null,
       "ownerAdjustedEstimate": true,
-      "ownerAdjustmentMultiplier": 1.35,
       "baselineHoursLow": 6.0,
       "baselineHoursHigh": 14.5,
-      "ownerAdjustmentDate": "2026-10-16"
+      "ownerAdjustmentDate": "2026-10-16",
+      "ownerEstimateRange": {
+        "low": 14.5,
+        "high": 15.75,
+        "confirmedOn": "2026-10-16",
+        "basis": "Owner-specified nonmeeting estimate, replacing the earlier percentage adjustment. No workstream allocation was supplied; actual hours remain unmeasured."
+      }
     },
     "notes": [
       "Christian only. Other team members and automated research, coding, export and publication runtime are excluded.",
       "Meeting evidence measures deduplicated audio associated with Christian; exact attendance remains unknown.",
       "Nonmeeting estimates cover assumed asynchronous direction, review and coordination only. Actual work may fall outside the range.",
-      "Both bounds of the original 6.0–14.5 hour estimate were increased once by 35% at the owner’s October 16 request. This adjustment is not a measured time log.",
       "No combined worked-hour total is asserted: individual attendance and overlap with review work require confirmation.",
       "Newsletter/publication approvals are grouped under dashboard; repeated artifacts and mirrored publications are not extra work.",
-      "These figures are a draft reconstruction, not a timesheet or billing record."
+      "These figures are a draft reconstruction, not a timesheet or billing record.",
+      "Owner-specified nonmeeting estimate: 14.5–15.75 hours. This replaces the prior percentage adjustment; no workstream allocation or measured actual-hour claim is made."
     ]
   },
   "sources": [
@@ -81748,7 +81753,7 @@
         "currentDayPartial": true
       },
       "method": "Fresh Fireflies metadata and speaker identity review; prior scoped calendar evidence; owner-adjusted nonmeeting assumptions",
-      "note": "Christian only, October 1–16 MTD; October 16 partial. Five deduplicated recording durations, 228.58 audio minutes. Separate nonmeeting estimate is 35% above the original range at the owner’s request; actual attendance/work hours remain unknown."
+      "note": "Christian only, October 1–16 MTD; October 16 partial. Five deduplicated recording durations, 228.58 audio minutes. Separate owner-specified nonmeeting estimate is 14.5–15.75 hours; actual attendance/work hours remain unknown."
     },
     {
       "id": "fireflies",
