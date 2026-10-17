@@ -8,6 +8,7 @@ from collections import Counter, defaultdict
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = ROOT / 'data' / 'private'
+OUTPUT = ROOT / 'data' / 'crm.json'
 TZ = ZoneInfo('America/Denver')
 
 def load(name):
@@ -155,7 +156,7 @@ def assess(out, manifest, raw_deals, raw_activities):
       'alerts':[
         {'id':'activity-recency','severity':'warning','title':'CRM task completion is not a full business-development activity log','detail':'Business completions and channel activity have different coverage; do not interpret zero CRM completions as zero outreach or meetings.'},
         {'id':'stage-status-conflicts','severity':'warning','title':'Open status in terminal-labelled stages','count':len(terminal_open),'dealIds':[d['id'] for d in terminal_open]},
-        {'id':'pipeline-value','severity':'warning','title':'Open deal values are unpopulated','count':sum(not d['value'] for d in deals if d['status']=='open')},
+        {'id':'pipeline-value','severity':'warning','title':'Open deal valuation is incomplete' if any(d['value'] for d in deals if d['status']=='open') else 'Open deal values are unpopulated','count':sum(not d['value'] for d in deals if d['status']=='open')},
         {'id':'overdue-backlog','severity':'warning','title':'Scheduled overdue tasks require triage','count':len(overdue)},
       ]}
     return review
@@ -183,6 +184,7 @@ def build():
     for d in raw_deals:
         owner = d.get('user_id', d.get('owner_id'))
         deals.append({'id':d['id'],'title':d.get('title'),'person':d.get('person_name') or ref(d.get('person_id')),'isTest':test_label(d.get('title')),
+          'personId':ident(d.get('person_id')),'organizationId':ident(d.get('org_id')),
           'company':d.get('org_name') or ref(d.get('org_id')),'pipelineId':d.get('pipeline_id'),'stageId':d.get('stage_id'),
           'status':d.get('status'),'value':d.get('value'),'currency':d.get('currency'),
           'createdAt':iso(d.get('add_time')),'updatedAt':iso(d.get('update_time')),'stageChangedAt':iso(d.get('stage_change_time')),
@@ -260,6 +262,10 @@ def build():
       'excludedTestDeals':len(deals)-len(business_deals),'excludedTestActivities':len(activities)-len(business_activities),
       'openDealsInClosedLabelledStages':sum(d['status']=='open' and stage_lookup.get(d['stageId'],{}).get('name','').lower() in ['closed won','closed lost'] for d in business_deals),
       'pipelineValuePopulated':any(d['value'] for d in business_deals if d['status']=='open'),
+      'pipelineValueComplete':all(bool(d['value']) for d in business_deals if d['status']=='open'),
+      'zeroOrUnsetValueBusinessOpenDeals':sum(d['status']=='open' and not d['value'] for d in business_deals),
+      'valuedBusinessOpenDeals':sum(d['status']=='open' and bool(d['value']) for d in business_deals),
+      'verificationBasis':'CRM source snapshot alone. Separately confirmed owner/calendar evidence may substantiate bookings or held meetings without a matching CRM activity completion.',
       'updatedDateIsLatestOnly':True,
       'caveats':[
         'Current latest update timestamps count distinct records by their latest update only; they do not reconstruct all updates made during historical periods.',
@@ -270,7 +276,7 @@ def build():
         'Pipedrive timestamps lacking an explicit offset are interpreted as UTC; date-only due dates are retained unchanged.',
         'Scope is all accessible, non-deleted deals and accessible done/undone activities. Deleted records are excluded; account permissions may restrict visibility.'
         ,'Obvious test-labelled deals and activities are retained in the record inventory but excluded from all business summaries.'
-        ,'All current open deal values are zero. Show pipeline valuation as unpopulated rather than claiming the commercial pipeline is worth zero.'
+        ,('Only part of the open-record inventory has a nonzero source-entered value. Show the valued portion and coverage; do not represent it as complete qualified pipeline or recognized revenue.' if any(d['value'] for d in business_deals if d['status']=='open') else 'All current open deal values are zero. Show pipeline valuation as unpopulated rather than claiming the commercial pipeline is worth zero.')
         ,'Open status can coexist with Closed Won/Closed Lost stage labels; stage labels are not substitutes for actual won/lost status.'
         ,'Collection is a paginated snapshot, not an atomic database transaction; records can change during collection.'
       ]}
@@ -294,6 +300,23 @@ def build():
       'quality':quality
     }
     out['assessment']=assess(out,manifest,raw_deals,raw_activities)
+    title_groups=defaultdict(list)
+    for deal in business_deals:
+        key=re.sub(r'[^a-z0-9]+',' ',deal['title'].lower()).strip() if deal.get('title') else ''
+        if key:title_groups[key].append(deal)
+    out['assessment']['duplicateTitleGroups']=[{'normalizedTitle':key,'dealIds':[d['id'] for d in rows],
+      'titles':[d['title'] for d in rows],'pipelineIds':[d['pipelineId'] for d in rows],
+      'organizationIds':[d['organizationId'] for d in rows],'note':'Same normalized title is a review flag, not proof of a duplicate person, company or sales opportunity.'} for key,rows in title_groups.items() if len(rows)>1]
+    known_values=defaultdict(lambda:{'records':0,'value':0})
+    for deal in business_deals:
+        if deal['status']=='open' and deal['value']:
+            known_values[deal['currency']]['records']+=1
+            known_values[deal['currency']]['value']+=deal['value']
+    out['assessment']['valuationCoverage']={'businessOpenRecords':sum(d['status']=='open' for d in business_deals),
+      'nonzeroValuedRecords':out['quality']['valuedBusinessOpenDeals'],'zeroOrUnsetRecords':out['quality']['zeroOrUnsetValueBusinessOpenDeals'],
+      'knownPortionByCurrency':[{'currency':currency,**values} for currency,values in known_values.items()],
+      'valuationBasisVerified':False,'completeQualifiedPipelineValue':None,
+      'records':[{'dealId':d['id'],'title':d['title'],'value':d['value'],'currency':d['currency'],'stageId':d['stageId']} for d in business_deals if d['status']=='open' and d['value']]}
     custom_columns={'Scheduled Call Date':'scheduledCallDate','Last Call Date':'lastCallDate','Last Calendly Meeting':'lastCalendlyMeetingDate',
       'Calendly Meetings Completed':'calendlyMeetingsCompleted','Meeting Outcome':'meetingOutcome','Has Fireflies Transcript':'hasTranscriptFlag'}
     out['assessment']['customFieldCoverage']=[{'field':name,'key':key,'populatedRecords':sum(d.get(key) not in [None,''] for d in business_deals),
@@ -303,7 +326,13 @@ def build():
     out['quality']['stageHistoryComplete']=False
     out['quality']['stageHistoryDealCount']=len(out['assessment']['history'].get('dealIdsReviewed',[]))
     out['quality']['stageHistoryEventCount']=len(out['assessment']['history'].get('events',[]))
-    out['quality']['caveats'].append('Structured history is retained for a defined 44-deal subset since September 1. These observed changes are not account-wide progression, and Closed Won stage entry is not won status or verified revenue.')
+    history_count=out['quality']['stageHistoryDealCount']
+    history_asof=out['assessment']['history'].get('collectedAt') or out['assessment']['history'].get('sourceSnapshotAt')
+    out['quality']['caveats'].append(f'Structured history is retained for a defined {history_count}-deal subset since September 1. Its collection date is separate from current record collection; these observed changes are not account-wide progression, and Closed Won stage entry is not won status or verified revenue.')
+    out['coverage']['stageHistorySnapshotAt']=history_asof
+    out['coverage']['collectionStartedAt']=manifest.get('collectionStartedAt')
+    out['coverage']['collectionCompletedAt']=manifest['snapshotAt']
+    out['coverage']['allOwnerActivitiesRequested']=manifest.get('filters',{}).get('activities',{}).get('user_id')==0
     out['coverage']['latestBusinessActivityCreatedAt']=out['assessment']['inventory']['latestBusinessActivityCreatedAt']
     out['coverage']['latestBusinessActivityCompletedAt']=out['assessment']['inventory']['latestBusinessActivityCompletedAt']
     if manifest.get('leadsInboxComplete'):
@@ -311,7 +340,15 @@ def build():
         out['leadsInbox']={'complete':True,'activeCount':sum(not x.get('is_archived') for x in inbox),'archivedCount':sum(bool(x.get('is_archived')) for x in inbox),
           'note':'Leads Inbox records are separate from deals in the Leads Pipeline. Counts reflect accessible records only.'}
     out=redact_contact_addresses(out)
-    (ROOT / 'data' / 'crm.json').write_text(json.dumps(out,indent=2,ensure_ascii=False)+'\n')
+    OUTPUT.write_text(json.dumps(out,indent=2,ensure_ascii=False)+'\n')
     print(json.dumps({'deals':len(deals),'activities':len(activities),'summary':out['summary'],'quality':quality},indent=2))
 
-if __name__=='__main__': build()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--source-dir',type=Path,default=PRIVATE)
+    parser.add_argument('--output',type=Path,default=OUTPUT)
+    args=parser.parse_args()
+    PRIVATE=args.source_dir.resolve()
+    OUTPUT=args.output.resolve()
+    build()

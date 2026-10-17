@@ -1,5 +1,7 @@
 # Contributor data priorities and accuracy gaps
 
+Latest source refresh: [LIVE_DATA_REFRESH_2026-10-16.md](LIVE_DATA_REFRESH_2026-10-16.md). Older diagnostic counts below retain their original review dates; current dashboards use the refreshed snapshot. NuVee October 6 and Venus October 15 are now owner-confirmed held, with qualification unchanged.
+
 Assessment date: October 15, 2026. Based on the committed shared snapshot and source reviews, not a new collection of the operational systems. Business sources were principally collected October 14 Mountain time; the October effort review was collected October 15. Counts below are dated diagnostics, not permanently current values.
 
 This guide supplements README.md and DATA_GAPS.md. The shared reporting contract is `data/shared-dashboard.json`; follow CONTRIBUTING.md for changes. The goal is to improve the accuracy of business-development activity, commercial outcomes and Christian's separate effort estimate. Do not add acquisition categories or alter source systems merely to fill a chart.
@@ -38,7 +40,7 @@ Current limits:
 
 - Charles's Calendly read contains 27 event records / 25 unique booking chains. Nine interview chains are excluded; 16 generic chains remain commercially unclassified. This is an event-start-bounded extraction, not every booking ever created in the selected date range.
 - NuVee has a corroborated booking and remains owner-qualified/warm. Venus Ai Consulting also has a corroborated booking and remains owner-unqualified. A booking must not requalify either lead automatically. NuVee's November 17 follow-up is a task, not an accepted future appointment.
-- Actual held-call totals remain unverified. Prioritize confirming recent matched calls and working opportunities before collecting more anonymous calendar totals.
+- Complete account-wide held-call totals remain unverified. Two linked paid-lead calls are now owner-confirmed held; prioritize remaining working opportunities and explicit occurrence evidence.
 
 Maintain qualification as a decision history: decision, decision time, reviewer, qualification reason, commercial fit, intent and next step. A later qualification update must not silently rewrite what was known in an earlier reporting period. Four paid submissions and one owner-qualified lead are a small cohort; do not imply a stable forecast from that rate.
 
@@ -72,7 +74,7 @@ High-impact additions/corrections:
 - **Next steps:** working Sales records XCaliber Health and Menos AI lack future linked CRM activities. Verify external commitments, then have the authorized operational owner record the next action and due date.
 - **Backlog:** 371 of 372 unfinished business activities are overdue, including 190 over 90 days. Obtain current/obsolete/sequence-generated classifications before reporting missed commitments. Retiring tasks today must not manufacture historical completions.
 - **Links:** 178 activities lack a deal link; 24 lack deal, person and organization links. Account-wide activity totals and pipeline-filtered totals can legitimately differ. Show the excluded/unlinked population rather than silently losing it.
-- **Value:** open values are zero/unpopulated. Request value basis, amount, currency, recurring fee, one-time fee, expected term, expected/actual close dates and signed-contract evidence where relevant. Keep forecast, signed contract value, recurring revenue and collected revenue separate; an unset zero is not a zero-dollar opportunity.
+- **Value:** the October 16 refresh contains three nonzero open values totaling $20,000 USD, with 746 other business open records zero/unset; value basis remains unverified. Request value basis, amount, currency, recurring fee, one-time fee, expected term, expected/actual close dates and signed-contract evidence where relevant. Keep forecast, signed contract value, recurring revenue and collected revenue separate; an unset zero is not a zero-dollar opportunity.
 
 ## 5. Paid and organic LinkedIn: align the population and dates
 

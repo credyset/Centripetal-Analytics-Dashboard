@@ -1,0 +1,23 @@
+{
+  "source": "Dashboard owner confirmation in this task",
+  "confirmedOn": "2026-10-16",
+  "scope": "The two previously discussed linked lead calls were held; qualification remains separately confirmed.",
+  "heldCalls": [
+    {
+      "dealId": 788,
+      "company": "NuVee",
+      "bookingChainId": "cb09b80e-170c-40ec-a563-9e02aa9947e8",
+      "heldAt": "2026-10-06",
+      "occurrenceDateBasis": "Owner confirms held call on the previously discussed scheduled date; exact start time and attendance duration are unavailable",
+      "ownerQualification": "qualified_warm"
+    },
+    {
+      "dealId": 791,
+      "company": "Venus Ai Consulting",
+      "bookingChainId": "d9459ee9-6d38-4476-a820-3a4eb2473599",
+      "heldAt": "2026-10-15",
+      "occurrenceDateBasis": "Owner confirms held call on the previously discussed scheduled date; exact start time and attendance duration are unavailable",
+      "ownerQualification": "unqualified"
+    }
+  ]
+}

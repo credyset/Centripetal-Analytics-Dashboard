@@ -36,7 +36,7 @@ The repository includes application code and the owner-approved curated reportin
 
 - Overview: equal emphasis on activity and outcomes, weekly deal creation, follow-up priorities and source coverage.
 - LinkedIn Ads: dated spend/delivery, lead quality and campaign economics.
-- Waalaxy: dated invitation actions from the retained export, including explicit zero days; historical person flags remain separate. Current message/reply events are still missing.
+- Waalaxy: dated invitation actions from the retained export, including explicit zero days; a fresh selected connected-prospect worksheet and historical account-wide person flags remain separate. Current message/reply events are still missing.
 - LinkedIn Content: retained daily exposure and ranked posts, plus separately dated current public followers and observed public engagement. Private current-period analytics and organic/sponsored splits remain unavailable where omitted.
 - Pipedrive: created/updated records, searchable activity records, owner/type breakdowns, automation metadata, overdue inventory, scoped stage-change history, follow-through gaps and separately corroborated Calendly bookings.
 - Video DMs: current readiness/status inventory, searchable records and measurement boundaries.
@@ -67,7 +67,9 @@ Source-specific preparation:
 - `tools/prepare_time.py`: curated Christian October meeting/work evidence and unconfirmed assumptions, preserving separate measures.
 - `tools/prepare_extra_vectors.py`: retained supplemental research for future consideration; its output is not assembled into the current five-vector dashboard.
 
-Raw inputs reside in `data/private/` and are ignored by Git. Local normalized JSON files are also ignored. Only `data/empty.json` and the explicitly curated `data/shared-dashboard.json` are tracked. `tools/prepare_dashboard.py` refreshes both local and shared snapshots; `tools/prepare_shared_snapshot.py` can curate an existing local dashboard separately. Store credentials in an authorized collection service, never the front-end code, workbook cells or repository.
+Raw inputs reside in `data/private/` and are ignored by Git. Local normalized JSON files are also ignored. Within `data/`, only `empty.json` and the explicitly curated `shared-dashboard.json` are tracked. `OWNER_CONFIRMATIONS.json` separately retains explicit owner outcomes so source imports cannot erase them. `tools/prepare_dashboard.py` refreshes both local and shared snapshots; `tools/prepare_shared_snapshot.py` can curate an existing local dashboard separately. Store credentials in an authorized collection service, never the front-end code, workbook cells or repository.
+
+Latest reviewed refresh: [LIVE_DATA_REFRESH_2026-10-16.md](LIVE_DATA_REFRESH_2026-10-16.md). Its source-specific scripts produce isolated local refresh inputs; `tools/apply_refresh_2026_10_16.py` assembles those inputs and reapplies owner decisions. Private raw files are required to replay collection preparation; a fresh clone uses the tracked shared snapshot directly.
 
 Collection is currently manual/on demand. The approved curated snapshot is published through GitHub Pages, with a separately maintained Sites mirror. Automatic refresh and an authenticated internal deployment have not been enabled. The browser concept is not an authenticated production service.
 
