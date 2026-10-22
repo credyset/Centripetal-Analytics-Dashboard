@@ -97,10 +97,15 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
                                     ('waalaxy','accountAnalytics','waalaxy_account'),
                                     ('crm','archiveReview','crm_archived'),
                                     ('video','sourceVerification','source_audit'),
+                                    ('video','automationReview','zapier_execution'),
+                                    ('video','datedStatusReview','source_audit'),
+                                    ('video','metadataFreshnessCheck','source_freshness'),
+                                    ('meetings','metadataFreshnessCheck','source_freshness'),
                                     ('waalaxy','workflowReview','source_audit'),
                                     ('crm','commercialContextReview','commercial_context'),
                                     ('waalaxy','replyContextReview','commercial_context'),
                                     ('referrals','eventReview','referral_events'),
+                                    ('referrals','contextReview','referral_context'),
                                     ('referrals','legacyCaptureReview','source_audit'),
                                     ('time','workEvidence','source_audit')):
         prior=(previous.get(parent) or {}).get(child)

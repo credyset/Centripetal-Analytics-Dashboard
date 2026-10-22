@@ -48,12 +48,12 @@ for parent,child in (('crm','archiveReview'),('video','sourceVerification'),('wa
     if child in current[parent]:assert restored[parent][child]==current[parent][child]
 # A newer source container can omit an independently dated context/event
 # supplement; preserve the evidence without re-dating the new parent inventory.
-supplements=[('crm','commercialContextReview','commercial_context'),('waalaxy','replyContextReview','commercial_context'),('referrals','eventReview','referral_events')]
+supplements=[('crm','commercialContextReview','commercial_context'),('waalaxy','replyContextReview','commercial_context'),('referrals','eventReview','referral_events'),('referrals','contextReview','referral_context'),('video','automationReview','zapier_execution'),('video','datedStatusReview','source_audit'),('video','metadataFreshnessCheck','source_freshness'),('meetings','metadataFreshnessCheck','source_freshness')]
 incoming=copy.deepcopy(current)
 for parent,child,source_id in supplements:
     incoming[parent]['snapshotAt']='2026-10-23T12:00:00Z'
     incoming[parent].pop(child,None)
-incoming['sources']=[s for s in incoming['sources'] if s['id'] not in {'commercial_context','referral_events'}]
+incoming['sources']=[s for s in incoming['sources'] if s['id'] not in {source_id for _,_,source_id in supplements}]
 kept=preserve_newer_shared_sources(incoming,current)
 for parent,child,source_id in supplements:
     if child in current[parent]:

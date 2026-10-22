@@ -1,21 +1,21 @@
 {
   "meta": {
-    "generatedAt": "2026-10-22T08:12:34.933111+00:00",
+    "generatedAt": "2026-10-22T12:17:05.550566+00:00",
     "asOfDate": "2026-10-22",
     "timezone": "America/Denver",
     "scope": "Charles Solomon and Centripetal Advisors",
     "concept": true,
     "autoRefreshEnabled": false,
     "weekStartsOn": "Monday",
-    "defaultReportingThrough": "2026-10-21",
+    "defaultReportingThrough": "2026-10-22",
     "note": "Local-only snapshot by owner instruction; refreshed source supplements have not been published. Source coverage varies. Automatic refresh is not enabled.",
     "public": false,
     "publicDataPolicy": "Owner-directed local-only snapshot; GitHub and GitHub Pages remain unchanged. Future publication requires a new explicit owner instruction and policy change.",
     "analyticsRevisedAt": "2026-10-17T00:34:20.257365+00:00",
     "lastRevisionNote": "Supported analytics corrections; individual source collection dates retained.",
-    "revision": "October22 completion audit: creator workbook, archive/sync evidence and metric-scope corrections; local only",
-    "reportingAsOfDate": "2026-10-21",
-    "defaultCompleteReportingThrough": "2026-10-20",
+    "revision": "October 22 latest CRM, commercial reconciliation and verified automation review; local only",
+    "reportingAsOfDate": "2026-10-22",
+    "defaultCompleteReportingThrough": "2026-10-21",
     "defaultDatePreset": "week",
     "currentDayPartial": true,
     "publicationStatus": "local_only",
@@ -8616,10 +8616,10 @@
     }
   },
   "crm": {
-    "snapshotAt": "2026-10-22T05:56:42.938699Z",
+    "snapshotAt": "2026-10-22T11:51:50.385Z",
     "timezone": "America/Denver",
     "coverage": {
-      "method": "Configured read-only Pipedrive MCP; completed all_not_deleted deal pagination and explicit user_id 0 done/undone activity pagination.",
+      "method": "Configured read-only Pipedrive MCP; all_not_deleted deal pagination and both done states with explicit user_id 0 completed.",
       "dealsComplete": true,
       "activitiesComplete": true,
       "earliestDealCreatedDate": "2024-09-11",
@@ -8632,7 +8632,7 @@
         "Christian W": 892,
         "Charles Solomon": 10
       },
-      "reportingThrough": "2026-10-20",
+      "reportingThrough": "2026-10-21",
       "currentDayPartial": true,
       "pagination": {
         "deals": [
@@ -8667,76 +8667,99 @@
             "limit": 500,
             "more_items_in_collection": false
           }
+        ],
+        "leadsInboxActive": [
+          {
+            "start": 0,
+            "limit": 500,
+            "more_items_in_collection": false
+          }
+        ],
+        "leadsInboxArchived": [
+          {
+            "start": 0,
+            "limit": 500,
+            "more_items_in_collection": false
+          }
         ]
       },
       "stageHistorySnapshotAt": "2026-10-15T03:03:19Z",
-      "collectionStartedAt": null,
-      "collectionCompletedAt": "2026-10-22T05:56:42.938699Z",
+      "collectionStartedAt": "2026-10-22T11:51:49.057Z",
+      "collectionCompletedAt": "2026-10-22T11:51:50.385Z",
       "allOwnerActivitiesRequested": true,
       "latestBusinessActivityCreatedAt": "2026-10-16T17:47:27Z",
       "latestBusinessActivityCompletedAt": "2026-08-19T21:48:27Z",
-      "observedThrough": "2026-10-21",
-      "currentDayPartialDate": "2026-10-21",
-      "collectionFirstResponseAt": "2026-10-22T05:55:08.408853Z",
-      "collectionTimeBasis": "Filesystem timestamps when each retained MCP response was saved; exact request-start time was not captured.",
+      "observedThrough": "2026-10-22",
+      "currentDayPartialDate": "2026-10-22",
       "sourceFiles": {
         "deals_000.json": {
-          "collectedAt": "2026-10-22T05:55:39.480566Z",
-          "sha256": "29003eb24a7aac2b85f7484185618149403b0f0409b8b3eddb4c0d6fb438726f"
-        },
-        "deals_500.json": {
-          "collectedAt": "2026-10-22T05:56:18.913832Z",
-          "sha256": "faee88b7c7a9b187cab614d9909687b6f898592f113646877750d817baf233e4"
+          "collectedAt": "2026-10-22T11:51:49.726Z",
+          "requestStartedAt": "2026-10-22T11:51:49.152Z",
+          "sha256": "fdb5dc6c8f4ba437665cf37f717f3be84bfd3ef79e75469c9c72b034a1f3aac6"
         },
         "activities_done_000.json": {
-          "collectedAt": "2026-10-22T05:56:19.671000Z",
-          "sha256": "dd60974c60520b326294fc3270fd886daebce8b3895219d77a486d5579c8b140"
-        },
-        "activities_done_500.json": {
-          "collectedAt": "2026-10-22T05:56:42.938699Z",
-          "sha256": "b179dc06d393cedab65976ff939fb6994f547f498ecc36c25c4db66e47759a08"
+          "collectedAt": "2026-10-22T11:51:49.787Z",
+          "requestStartedAt": "2026-10-22T11:51:49.152Z",
+          "sha256": "3c68ead107c0631409ad1f125fc0c9fdfd9df46318382594c96a6a77f3602cbb"
         },
         "activities_undone_000.json": {
-          "collectedAt": "2026-10-22T05:56:19.556826Z",
-          "sha256": "45f28c58e7af3c42c8c64214a6094a8612a9b8f7794bcd1e1bc168927aab0921"
+          "collectedAt": "2026-10-22T11:51:49.818Z",
+          "requestStartedAt": "2026-10-22T11:51:49.152Z",
+          "sha256": "e2d21c3892072b29811b624995bd0952e4b52039e0a2883579478f219d86dff5"
         },
-        "pipelines.json": {
-          "collectedAt": "2026-10-22T05:55:38.948257Z",
-          "sha256": "612951853bc19832a552bb6da2e9f620f1cec571662ad85704669bdc8a14ad70"
+        "deals_500.json": {
+          "collectedAt": "2026-10-22T11:51:49.982Z",
+          "requestStartedAt": "2026-10-22T11:51:49.762Z",
+          "sha256": "94c2f9eb79ce3ba2df242410dc8bba7fb5c6a28e7b3936e212e7159dfb691810"
         },
-        "stages.json": {
-          "collectedAt": "2026-10-22T05:55:39.532116Z",
-          "sha256": "3534c41d2c0e6405dbf4d0c1daaa93f287e27f7da2aa83df434d20754c8c9c0a"
+        "activities_done_500.json": {
+          "collectedAt": "2026-10-22T11:51:49.998Z",
+          "requestStartedAt": "2026-10-22T11:51:49.804Z",
+          "sha256": "878e6bf66d96b70b0ca5378650c2a24f8d985e3f9672ec193c71106b6641f851"
         },
         "activity_types.json": {
-          "collectedAt": "2026-10-22T05:55:40.167218Z",
-          "sha256": "da6b9e7ac6ffca699a072930737ea264ec8cceb8116985a7e064a5f6543268d3"
+          "collectedAt": "2026-10-22T11:51:50.079Z",
+          "requestStartedAt": "2026-10-22T11:51:50.000Z",
+          "sha256": "bb957c086792924666ff160175801912ebb7b8c355f0710d9d58b90583c3e49e"
+        },
+        "stages.json": {
+          "collectedAt": "2026-10-22T11:51:50.090Z",
+          "requestStartedAt": "2026-10-22T11:51:50.000Z",
+          "sha256": "2a3c51382f86232646ce8ce50df74ae5066f550c69724e1d31c2f5d53738b2a2"
+        },
+        "pipelines.json": {
+          "collectedAt": "2026-10-22T11:51:50.096Z",
+          "requestStartedAt": "2026-10-22T11:51:50.000Z",
+          "sha256": "6ef59a52dcfb342d1f5d8ee078597d55e07e4ede70f6fc4f52ea9428fd5db3a5"
         },
         "users.json": {
-          "collectedAt": "2026-10-22T05:55:08.408853Z",
-          "sha256": "68f724e1f391ba6b2181f1c0b8e207aa90cf3e6677373224cad2c2fe8014db19"
+          "collectedAt": "2026-10-22T11:51:50.127Z",
+          "requestStartedAt": "2026-10-22T11:51:50.000Z",
+          "sha256": "7698f4e80197f346c10e7c4d1781f6eb0cc75e4cd2751ff603166d71afb773dd"
         },
         "deal_fields_000.json": {
-          "collectedAt": "2026-10-22T05:55:39.452315Z",
-          "sha256": "d27f38636f42f23859023f1f422bf984da1e7a923df31739d1379f57f0af2edf"
+          "collectedAt": "2026-10-22T11:51:50.250Z",
+          "requestStartedAt": "2026-10-22T11:51:50.127Z",
+          "sha256": "427fc1f1aacd36ae220c11afc792fcdd482f3a2b96502a2de34a8116286aa913"
         },
         "leads_inbox_active_000.json": {
-          "collectedAt": "2026-10-22T05:57:59.097557Z",
-          "sha256": "64edda82fad13697dbc6fd86d266660d7e2c0c8aa4f223cc342f1ce280ce7a15"
+          "collectedAt": "2026-10-22T11:51:50.373Z",
+          "requestStartedAt": "2026-10-22T11:51:50.253Z",
+          "sha256": "cb3ce324be572317ff11a5cfad5ba5bbdca1495595c18982dc274a8acdfdb137"
         },
         "leads_inbox_archived_000.json": {
-          "collectedAt": "2026-10-22T05:57:58.471425Z",
-          "sha256": "64edda82fad13697dbc6fd86d266660d7e2c0c8aa4f223cc342f1ce280ce7a15"
+          "collectedAt": "2026-10-22T11:51:50.383Z",
+          "requestStartedAt": "2026-10-22T11:51:50.253Z",
+          "sha256": "cb3ce324be572317ff11a5cfad5ba5bbdca1495595c18982dc274a8acdfdb137"
         }
       },
-      "baselineSnapshotSha256": "11a996a2fa29f0ee6ffc254014c6175fbde9c2d39d3b7bd8e8afd8b513e7323b",
+      "baselineSnapshotSha256": "560bfcb25ffae8029d39041524bbbc034d26143e3c691071070a4407e7d012ef",
+      "atomicSnapshot": false,
       "archiveCoverage": {
         "archivedRecordsReturned": 0,
         "nonArchivedRecordsReturned": 769,
         "archiveInclusiveCompletenessVerified": false,
-        "note": "The original non-archived snapshot returned 769 records. A separately dated October22 dedicated archive query returned zero accessible archived non-deleted deals, with pagination exhausted. These independent collection dates are not an atomic combined census; the archived-record zero is not a client-win result.",
-        "dedicatedArchiveQueryVerified": true,
-        "archivedQueryCollectedAt": "2026-10-22T06:53:38.351Z"
+        "note": "The all_not_deleted list exposes non-archived records. The earlier dedicated archive check is retained as an independently dated supplement, not an atomic archive-inclusive census."
       },
       "freshSelectedHistorySnapshotAt": "2026-10-22T05:56:54.943803Z",
       "freshSelectedHistoryDealCount": 11
@@ -31959,7 +31982,7 @@
         "value": 0,
         "currency": "USD",
         "createdAt": "2026-10-12T13:29:05Z",
-        "updatedAt": "2026-10-21T18:29:58Z",
+        "updatedAt": "2026-10-22T11:43:53Z",
         "stageChangedAt": "2026-10-12T13:29:21Z",
         "wonAt": null,
         "lostAt": null,
@@ -53216,10 +53239,10 @@
       ],
       "acceptedOpportunityCount": null,
       "last30CompleteDays": {
-        "start": "2026-09-21",
-        "end": "2026-10-20",
-        "newDeals": 81,
-        "latestUpdatedDeals": 162,
+        "start": "2026-09-22",
+        "end": "2026-10-21",
+        "newDeals": 91,
+        "latestUpdatedDeals": 130,
         "wonDeals": 0,
         "lostDeals": 0,
         "activitiesMarkedDone": 0,
@@ -53361,9 +53384,9 @@
         },
         {
           "start": "2026-10-19",
-          "end": "2026-10-20",
-          "newDeals": 5,
-          "latestUpdatedDeals": 9,
+          "end": "2026-10-21",
+          "newDeals": 15,
+          "latestUpdatedDeals": 27,
           "wonDeals": 0,
           "lostDeals": 0,
           "activitiesMarkedDone": 0,
@@ -53374,7 +53397,7 @@
       "overdueUndoneActivities": 372,
       "currentWeekToDate": {
         "start": "2026-10-19",
-        "end": "2026-10-21",
+        "end": "2026-10-22",
         "currentDayPartial": true,
         "newDeals": 15,
         "latestUpdatedDeals": 28,
@@ -53427,13 +53450,12 @@
           846
         ],
         "wonDealIds": [],
-        "alternativeLatestUpdatedExcludingOrganizationTestFlag": 27,
         "headlineAcceptedOpportunities": null,
         "headlineFirstClientWins": null
       },
       "monthToDate": {
         "start": "2026-10-01",
-        "end": "2026-10-21",
+        "end": "2026-10-22",
         "currentDayPartial": true,
         "newDeals": 58,
         "latestUpdatedDeals": 108,
@@ -53609,7 +53631,21 @@
           846
         ],
         "wonDealIds": [],
-        "alternativeLatestUpdatedExcludingOrganizationTestFlag": 107,
+        "headlineAcceptedOpportunities": null,
+        "headlineFirstClientWins": null
+      },
+      "currentDayPartial": {
+        "start": "2026-10-22",
+        "end": "2026-10-22",
+        "currentDayPartial": true,
+        "newDeals": 0,
+        "latestUpdatedDeals": 1,
+        "wonDeals": 0,
+        "newDealIds": [],
+        "latestUpdatedDealIds": [
+          793
+        ],
+        "wonDealIds": [],
         "headlineAcceptedOpportunities": null,
         "headlineFirstClientWins": null
       }
@@ -53657,7 +53693,7 @@
         "Open status can coexist with Closed Won/Closed Lost stage labels; stage labels are not substitutes for actual won/lost status.",
         "Collection is a paginated snapshot, not an atomic database transaction; records can change during collection.",
         "Structured history is retained for a defined 44-deal subset since September 1. Its collection date is separate from current record collection; these observed changes are not account-wide progression, and Closed Won stage entry is not won status or verified revenue.",
-        "All 769 returned records expose is_archived=false. The list-tool schema has no archive filter; completeness is verified for the returned all_not_deleted endpoint scope, not an independently verified archive-inclusive census."
+        "The all_not_deleted list exposes non-archived records. The earlier dedicated archive check is retained as an independently dated supplement, not an atomic archive-inclusive census."
       ],
       "stageHistoryComplete": false,
       "stageHistoryDealCount": 44,
@@ -53665,10 +53701,10 @@
       "organizationTestLabelReviewIds": [
         203
       ],
-      "organizationTestLabelPolicy": "Flag only; a test-labelled organization does not auto-exclude a real-name deal without owner confirmation. In particular, 203 remains included and flagged."
+      "organizationTestLabelPolicy": "Flag only; do not auto-exclude a real-name deal solely for its organization label. Record203 remains included pending owner confirmation."
     },
     "assessment": {
-      "asOf": "2026-10-22T05:56:42.938699Z",
+      "asOf": "2026-10-22T11:51:50.385Z",
       "inventory": {
         "records": 919,
         "done": 546,
@@ -53788,8 +53824,8 @@
         "overdueAgeBuckets": {
           "1–7 days": 1,
           "8–30 days": 24,
-          "31–90 days": 128,
-          "Over 90 days": 219
+          "31–90 days": 121,
+          "Over 90 days": 226
         },
         "unlinkedActivities": 178,
         "unlinkedActivityIds": [
@@ -53982,205 +54018,29 @@
       },
       "snapshotChanges": {
         "available": true,
-        "baselineAt": "2026-10-17T00:52:01Z",
-        "currentAt": "2026-10-22T05:56:42.938699Z",
-        "baselineDealCount": 755,
+        "baselineAt": "2026-10-22T05:56:42.938699Z",
+        "currentAt": "2026-10-22T11:51:50.385Z",
+        "baselineDealCount": 769,
         "currentDealCount": 769,
         "baselineActivityCount": 924,
         "currentActivityCount": 924,
-        "newDealIds": [
-          832,
-          833,
-          834,
-          835,
-          836,
-          837,
-          838,
-          839,
-          840,
-          841,
-          842,
-          843,
-          844,
-          845,
-          846
-        ],
-        "removedDealIds": [
-          322
-        ],
+        "newDealIds": [],
+        "removedDealIds": [],
         "changedDeals": [
-          {
-            "id": 105,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-16T17:17:12Z",
-                "after": "2026-10-22T00:32:39Z"
-              }
-            }
-          },
-          {
-            "id": 203,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-17T00:26:29Z",
-                "after": "2026-10-21T23:14:14Z"
-              }
-            }
-          },
-          {
-            "id": 283,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-11T20:54:46Z",
-                "after": "2026-10-21T22:03:29Z"
-              }
-            }
-          },
-          {
-            "id": 445,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-11T20:54:39Z",
-                "after": "2026-10-21T21:58:33Z"
-              }
-            }
-          },
-          {
-            "id": 495,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-15T02:03:22Z",
-                "after": "2026-10-20T20:36:21Z"
-              }
-            }
-          },
-          {
-            "id": 500,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-12T04:03:45Z",
-                "after": "2026-10-21T14:41:21Z"
-              }
-            }
-          },
-          {
-            "id": 750,
-            "changes": {
-              "value": {
-                "before": 0,
-                "after": 12500
-              },
-              "updatedAt": {
-                "before": "2026-10-16T23:29:59Z",
-                "after": "2026-10-19T21:23:12Z"
-              }
-            }
-          },
-          {
-            "id": 762,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-16T20:08:00Z",
-                "after": "2026-10-21T18:28:31Z"
-              }
-            }
-          },
-          {
-            "id": 768,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-15T17:32:43Z",
-                "after": "2026-10-21T14:41:18Z"
-              }
-            }
-          },
           {
             "id": 793,
             "changes": {
               "updatedAt": {
-                "before": "2026-10-12T13:29:21Z",
-                "after": "2026-10-21T18:29:58Z"
-              }
-            }
-          },
-          {
-            "id": 794,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-13T19:53:58Z",
-                "after": "2026-10-21T21:52:41Z"
-              }
-            }
-          },
-          {
-            "id": 804,
-            "changes": {
-              "stageId": {
-                "before": 3,
-                "after": 4
-              },
-              "value": {
-                "before": 4000,
-                "after": 1000
-              },
-              "updatedAt": {
-                "before": "2026-10-16T18:28:59Z",
-                "after": "2026-10-19T21:21:25Z"
-              }
-            }
-          },
-          {
-            "id": 805,
-            "changes": {
-              "stageId": {
-                "before": 4,
-                "after": 5
-              },
-              "value": {
-                "before": 0,
-                "after": 2000
-              },
-              "updatedAt": {
-                "before": "2026-10-16T20:09:35Z",
-                "after": "2026-10-20T14:50:30Z"
+                "before": "2026-10-21T18:29:58Z",
+                "after": "2026-10-22T11:43:53Z"
               }
             }
           }
         ],
         "newActivityIds": [],
         "removedActivityIds": [],
-        "changedActivities": [
-          {
-            "id": 554,
-            "changes": {
-              "dealId": {
-                "before": 322,
-                "after": 836
-              }
-            }
-          },
-          {
-            "id": 855,
-            "changes": {
-              "dealId": {
-                "before": 322,
-                "after": 836
-              }
-            }
-          }
-        ],
-        "note": "Snapshot differences are observed since the baseline, not a complete intervening event history. Missing source records need deletion/permission checks.",
-        "verifiedNoLongerObservedRecords": [
-          {
-            "id": 322,
-            "title": "Chromie Health",
-            "status": "deleted",
-            "deleted": true,
-            "sourceUpdatedAt": "2026-10-20T20:46:03Z",
-            "verifiedAt": "2026-10-22T05:58:00.238955Z",
-            "note": "get_deal independently confirms deletion. New Chromie Health record836 has the same title; replacement/merge intent is not independently verified."
-          }
-        ]
+        "changedActivities": [],
+        "note": "Snapshot differences are observed since the baseline, not a complete intervening event history. Missing source records need deletion/permission checks."
       },
       "history": {
         "complete": false,
@@ -55344,13 +55204,13 @@
       },
       "periods": {
         "last7CompleteDays": {
-          "start": "2026-10-14",
-          "end": "2026-10-20",
+          "start": "2026-10-15",
+          "end": "2026-10-21",
           "activitiesCreated": 1,
           "activitiesMarkedDone": 0,
           "automationActivitiesCreated": 1,
           "activitiesDue": 1,
-          "latestUpdatedActivities": 6,
+          "latestUpdatedActivities": 3,
           "callsCreated": 0,
           "callsMarkedDone": 0,
           "callsDue": 0,
@@ -55371,8 +55231,8 @@
           "completedActivityIds": []
         },
         "last30CompleteDays": {
-          "start": "2026-09-21",
-          "end": "2026-10-20",
+          "start": "2026-09-22",
+          "end": "2026-10-21",
           "activitiesCreated": 25,
           "activitiesMarkedDone": 0,
           "automationActivitiesCreated": 24,
@@ -55424,13 +55284,13 @@
           "completedActivityIds": []
         },
         "last90CompleteDays": {
-          "start": "2026-07-23",
-          "end": "2026-10-20",
-          "activitiesCreated": 190,
-          "activitiesMarkedDone": 129,
+          "start": "2026-07-24",
+          "end": "2026-10-21",
+          "activitiesCreated": 167,
+          "activitiesMarkedDone": 101,
           "automationActivitiesCreated": 34,
-          "activitiesDue": 250,
-          "latestUpdatedActivities": 252,
+          "activitiesDue": 237,
+          "latestUpdatedActivities": 219,
           "callsCreated": 6,
           "callsMarkedDone": 1,
           "callsDue": 5,
@@ -55438,42 +55298,25 @@
           "meetingsMarkedDone": 0,
           "meetingsDue": 0,
           "createdByType": {
-            "task": 48,
-            "linkedin_touch": 91,
-            "email": 45,
+            "linkedin_touch": 85,
+            "task": 34,
+            "email": 42,
             "call": 6
           },
           "completedByType": {
-            "task": 40,
-            "email": 77,
+            "task": 30,
+            "email": 59,
             "linkedin_touch": 11,
             "call": 1
           },
           "createdByOwner": {
-            "Christian W": 185,
+            "Christian W": 162,
             "Charles Solomon": 5
           },
           "completedByOwner": {
-            "Christian W": 129
+            "Christian W": 101
           },
           "createdActivityIds": [
-            899,
-            900,
-            901,
-            902,
-            903,
-            904,
-            905,
-            906,
-            907,
-            908,
-            909,
-            910,
-            911,
-            917,
-            912,
-            915,
-            918,
             943,
             1004,
             1005,
@@ -55511,7 +55354,6 @@
             974,
             975,
             1013,
-            913,
             1030,
             1031,
             1032,
@@ -55529,9 +55371,6 @@
             1002,
             1003,
             1057,
-            897,
-            898,
-            914,
             920,
             921,
             922,
@@ -55577,8 +55416,6 @@
             1027,
             1028,
             1029,
-            916,
-            919,
             1035,
             1036,
             1042,
@@ -55668,10 +55505,7 @@
             581,
             587,
             590,
-            691,
             561,
-            747,
-            693,
             769,
             772,
             773,
@@ -55680,36 +55514,11 @@
             778,
             779,
             780,
-            790,
-            791,
-            792,
-            793,
-            794,
-            795,
-            796,
-            797,
-            798,
-            799,
-            800,
-            801,
-            803,
-            804,
-            835,
-            836,
-            837,
-            838,
-            899,
-            900,
             901,
             902,
             903,
             904,
             905,
-            906,
-            907,
-            908,
-            909,
-            910,
             911,
             917,
             877,
@@ -55782,7 +55591,7 @@
         },
         "sinceSeptember1": {
           "start": "2026-09-01",
-          "end": "2026-10-21",
+          "end": "2026-10-22",
           "activitiesCreated": 25,
           "activitiesMarkedDone": 0,
           "automationActivitiesCreated": 24,
@@ -55835,7 +55644,7 @@
         },
         "currentWeekToDate": {
           "start": "2026-10-19",
-          "end": "2026-10-21",
+          "end": "2026-10-22",
           "activitiesCreated": 0,
           "activitiesMarkedDone": 0,
           "automationActivitiesCreated": 0,
@@ -55855,8 +55664,8 @@
           "completedActivityIds": []
         },
         "currentDayPartial": {
-          "start": "2026-10-21",
-          "end": "2026-10-21",
+          "start": "2026-10-22",
+          "end": "2026-10-22",
           "activitiesCreated": 0,
           "activitiesMarkedDone": 0,
           "automationActivitiesCreated": 0,
@@ -55877,7 +55686,7 @@
         },
         "monthToDate": {
           "start": "2026-10-01",
-          "end": "2026-10-21",
+          "end": "2026-10-22",
           "activitiesCreated": 2,
           "activitiesMarkedDone": 0,
           "activitiesDue": 2,
@@ -55890,7 +55699,7 @@
           ],
           "completedActivityIds": [],
           "heldCalls": null,
-          "note": "CRM timestamps and due dates; a marked-done flag or call type is not independent held-call evidence."
+          "note": "Recorded task timestamps/due dates. CRM done/type flags do not prove meetings were held."
         }
       },
       "newestActivities": [
@@ -56746,7 +56555,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-05T15:23:07Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 16,
+          "daysAtCurrentStage": 17,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -56762,7 +56571,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-16T16:42:10Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 5,
+          "daysAtCurrentStage": 6,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -56778,7 +56587,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-16T18:28:00Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 5,
+          "daysAtCurrentStage": 6,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -56794,7 +56603,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-16T18:28:24Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 5,
+          "daysAtCurrentStage": 6,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -56810,7 +56619,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-19T21:17:26Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 2,
+          "daysAtCurrentStage": 3,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -56826,7 +56635,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-20T14:50:30Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 1,
+          "daysAtCurrentStage": 2,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -56844,7 +56653,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-11T20:54:49Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 10,
+          "daysAtCurrentStage": 11,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -56860,7 +56669,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-11T20:54:46Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 10,
+          "daysAtCurrentStage": 11,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -56876,7 +56685,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-07-29T19:21:45Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 84,
+          "daysAtCurrentStage": 85,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -56892,7 +56701,7 @@
           "owner": "Christian W",
           "stageEnteredAt": "2026-08-26T17:27:15Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 56,
+          "daysAtCurrentStage": 57,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -56908,7 +56717,7 @@
           "owner": "Christian W",
           "stageEnteredAt": "2026-09-28T19:30:26Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 23,
+          "daysAtCurrentStage": 24,
           "undoneActivities": 1,
           "overdueActivities": 1,
           "futureActivities": 0,
@@ -56924,7 +56733,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-11T20:54:40Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 10,
+          "daysAtCurrentStage": 11,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -56940,7 +56749,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-11T20:54:39Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 10,
+          "daysAtCurrentStage": 11,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -56956,7 +56765,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-09-01T14:51:39Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 50,
+          "daysAtCurrentStage": 51,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -56972,7 +56781,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-09-22T13:28:42Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 29,
+          "daysAtCurrentStage": 30,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -56988,7 +56797,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-05T15:02:30Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 16,
+          "daysAtCurrentStage": 17,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -57004,7 +56813,7 @@
           "owner": "Christian W",
           "stageEnteredAt": "2026-10-11T20:57:40Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 10,
+          "daysAtCurrentStage": 11,
           "undoneActivities": 1,
           "overdueActivities": 0,
           "futureActivities": 1,
@@ -57022,7 +56831,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-12T17:50:10Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 9,
+          "daysAtCurrentStage": 10,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -57038,7 +56847,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-14T17:02:09Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 7,
+          "daysAtCurrentStage": 8,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -57054,7 +56863,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-13T19:53:58Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 8,
+          "daysAtCurrentStage": 9,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -57070,7 +56879,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-15T18:29:55Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 6,
+          "daysAtCurrentStage": 7,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -57086,7 +56895,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-15T21:17:50Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 6,
+          "daysAtCurrentStage": 7,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -57102,7 +56911,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-16T16:44:55Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 5,
+          "daysAtCurrentStage": 6,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -58311,6 +58120,243 @@
       "activeCount": 0,
       "archivedCount": 0,
       "note": "Leads Inbox records are separate from deals in the Leads Pipeline. Counts reflect accessible records only."
+    },
+    "archiveReview": {
+      "success": true,
+      "archivedDealCount": 0,
+      "pagesExhausted": 1,
+      "paginationComplete": true,
+      "collectedAt": "2026-10-22T06:53:38.351Z",
+      "collectionStartedAt": "2026-10-22T06:53:38.070Z",
+      "endpoint": "/api/v2/deals/archived",
+      "method": "Authenticated read-only query of the dedicated archived-deals endpoint",
+      "scope": "All accessible archived non-deleted deals across owners/pipelines, without a status/pipeline/user filter.",
+      "updatesMainNonArchivedSnapshotDate": false,
+      "actualFirstClientWins": null,
+      "caveat": "Zero is the verified archived-record query result only. The non-archived CRM inventory retains its earlier source date; no actual first-client win total is inferred.",
+      "technicalBasisUrl": "https://developers.pipedrive.com/changelog/post/breaking-change-archived-deals-and-leads-will-not-be-returned-in-existing-endpoints-and-will-not-be-editable",
+      "snapshotAt": "2026-10-22T06:53:38.351Z"
+    },
+    "commercialContextReview": {
+      "snapshotAt": "2026-10-22T11:49:24.649822+00:00",
+      "reviewedAt": "2026-10-22T11:49:24.649822+00:00",
+      "focusWindow": {
+        "start": "2026-10-19",
+        "end": "2026-10-21"
+      },
+      "dealIdsInvestigated": [
+        794,
+        798,
+        802,
+        803,
+        804
+      ],
+      "records": [
+        {
+          "dealId": 802,
+          "organizationId": 1253,
+          "organization": "Aethon Aerial Solutions",
+          "channelContext": "Len Kofman / Codex Advisory referral and potential client-transfer discussion",
+          "referrer": {
+            "name": "Len Kofman",
+            "personId": 528,
+            "organization": "Codex Advisory",
+            "organizationId": 460
+          },
+          "firstContextDocumentedAt": "2026-10-05",
+          "scopeFitResponseAt": "2026-10-07",
+          "scopeFitBasis": "Charles expressed general scope fit and proposed further discussion with Len. This does not establish a held direct buyer call, entity-specific qualification, a dated accepted Centripetal opportunity or an executed client transfer.",
+          "headlineCountingDisposition": "No outcome addition from this contextual evidence.",
+          "sourceRefs": [
+            {
+              "threadId": 29582,
+              "messageDate": "2026-10-05",
+              "basis": "Client details subject to client consent; Charles requested scope."
+            },
+            {
+              "threadId": 29582,
+              "messageDate": "2026-10-07",
+              "basis": "Len described candidate scopes and Charles expressed general scope fit."
+            },
+            {
+              "threadId": 30213,
+              "messageDate": "2026-10-21",
+              "basis": "Len reports CEO discussions and asks Charles for the following afternoon; Charles says an invitation was sent for 2:30 PM tomorrow. Timezone is not explicit."
+            }
+          ],
+          "companyContext": "Existing Codex Advisory client discussed as a potential Centripetal engagement or transfer.",
+          "sourceJoinBasis": "Matching CRM company or alias and Len relationship; inbox thread itself is linked to Len/Codex, not these deals.",
+          "requiredNextEvidence": "The result of the October 22 Charles–Len discussion, then any direct buyer call or dated client consent/contract transfer. Scheduling a partner call does not establish it was held or that the buyer met Charles.",
+          "latestContextDocumentedAt": "2026-10-21",
+          "scheduledPartnerFollowup": {
+            "scheduledDate": "2026-10-22",
+            "timeText": "2:30 PM",
+            "timezone": null,
+            "participantsConfirmedByCorrespondence": [
+              "Charles",
+              "Len Kofman"
+            ],
+            "type": "Scheduled partner discussion after Len spoke to Aethon CEO",
+            "held": null,
+            "directBuyerParticipationEstablished": false
+          }
+        },
+        {
+          "dealId": 803,
+          "organizationId": 1254,
+          "organization": "Spatial Data",
+          "channelContext": "Len Kofman / Codex Advisory referral and potential client-transfer discussion",
+          "referrer": {
+            "name": "Len Kofman",
+            "personId": 528,
+            "organization": "Codex Advisory",
+            "organizationId": 460
+          },
+          "firstContextDocumentedAt": "2026-10-05",
+          "scopeFitResponseAt": "2026-10-07",
+          "scopeFitBasis": "Charles expressed general scope fit and proposed further discussion with Len. This does not establish a held direct buyer call, entity-specific qualification, a dated accepted Centripetal opportunity or an executed client transfer.",
+          "headlineCountingDisposition": "No outcome addition from this contextual evidence.",
+          "sourceRefs": [
+            {
+              "threadId": 29582,
+              "messageDate": "2026-10-05",
+              "basis": "Client details subject to client consent; Charles requested scope."
+            },
+            {
+              "threadId": 29582,
+              "messageDate": "2026-10-07",
+              "basis": "Len described candidate scopes and Charles expressed general scope fit."
+            }
+          ],
+          "companyContext": "Aethon sister-company engagement was in discussion. The email uses the sister-company description; the legal identity Spatial Data is supplied by the existing CRM association, not named by this email.",
+          "sourceJoinBasis": "Matching CRM company or alias and Len relationship; inbox thread itself is linked to Len/Codex, not these deals.",
+          "requiredNextEvidence": "Direct buyer identity and consent or executed transfer, actual Charles buyer-meeting occurrence, and a dated explicit commercial acceptance or first-time engagement evidence.",
+          "latestContextDocumentedAt": "2026-10-07"
+        },
+        {
+          "dealId": 804,
+          "organizationId": 1281,
+          "organization": "Northern Ontario Company",
+          "channelContext": "Len Kofman / Codex Advisory referral and potential client-transfer discussion",
+          "referrer": {
+            "name": "Len Kofman",
+            "personId": 528,
+            "organization": "Codex Advisory",
+            "organizationId": 460
+          },
+          "firstContextDocumentedAt": "2026-10-05",
+          "scopeFitResponseAt": "2026-10-07",
+          "scopeFitBasis": "Charles expressed general scope fit and proposed further discussion with Len. This does not establish a held direct buyer call, entity-specific qualification, a dated accepted Centripetal opportunity or an executed client transfer.",
+          "headlineCountingDisposition": "No outcome addition from this contextual evidence.",
+          "sourceRefs": [
+            {
+              "threadId": 29582,
+              "messageDate": "2026-10-05",
+              "basis": "Client details subject to client consent; Charles requested scope."
+            },
+            {
+              "threadId": 29582,
+              "messageDate": "2026-10-07",
+              "basis": "Len described candidate scopes and Charles expressed general scope fit."
+            }
+          ],
+          "companyContext": "Small Northern Ontario company engagement was in discussion; this is a descriptive company reference, not an independently verified legal entity name.",
+          "sourceJoinBasis": "Matching CRM company or alias and Len relationship; inbox thread itself is linked to Len/Codex, not these deals.",
+          "requiredNextEvidence": "Direct buyer identity and consent or executed transfer, actual Charles buyer-meeting occurrence, and a dated explicit commercial acceptance or first-time engagement evidence.",
+          "latestContextDocumentedAt": "2026-10-07"
+        },
+        {
+          "dealId": 794,
+          "organizationId": 1246,
+          "organization": "Swyft",
+          "personId": 2798,
+          "channelContext": "Earlier introduction and investor-introduction support; paid CFO engagement not established.",
+          "relationshipDocumentedBy": "2026-08-10",
+          "priorCallDocumentedAt": "2026-08-12",
+          "priorCallDateBasis": "Both participants described their call as the previous day; relationship evidence predates the October 13 CRM creation. No October call is inferred.",
+          "latestCharlesDisposition": {
+            "documentedAt": "2026-10-11",
+            "status": "Short-term parking lot",
+            "basis": "Explicit Charles disposition in internal correspondence."
+          },
+          "latestInteractionContext": {
+            "documentedAt": "2026-10-21",
+            "type": "Email offering investor-introduction assistance subject to receiving materials",
+            "heldCallEstablished": null,
+            "paidOpportunityAcceptanceEstablished": null
+          },
+          "sourceJoinBasis": "Named Swyft/Brandon correspondence aligns with CRM deal 794 and organization 1246; thread predates deal creation.",
+          "headlineCountingDisposition": "No October held-call, qualification, accepted opportunity or first-client win addition.",
+          "requiredNextEvidence": "Direct evidence of a Charles prospect call in the reporting period and an explicit paid Centripetal engagement or active accepted commercial next step; investor-introduction support alone does not establish either.",
+          "sourceRefs": [
+            {
+              "threadId": 27610,
+              "messageDate": "2026-08-10",
+              "basis": "Initial introduction."
+            },
+            {
+              "threadId": 27610,
+              "messageDate": "2026-08-12",
+              "basis": "Reciprocal post-call correspondence referring to the previous day."
+            },
+            {
+              "threadId": 27610,
+              "messageDate": "2026-10-11",
+              "basis": "Explicit short-term parking lot disposition."
+            },
+            {
+              "threadId": 27610,
+              "messageDate": "2026-10-21",
+              "basis": "Investor-introduction assistance, contingent on receiving materials."
+            }
+          ],
+          "firstContextDocumentedAt": "2026-08-10",
+          "latestContextDocumentedAt": "2026-10-21",
+          "companyContext": "The relationship predates the October13 CRM creation. Charles explicitly placed this opportunity in the short-term parking lot on October11; October21 correspondence offers investor-introduction help, not a confirmed new paid engagement.",
+          "scopeFitBasis": "A prior relationship and investor-introduction support do not establish a held October prospect call or a newly accepted Centripetal engagement."
+        },
+        {
+          "dealId": 798,
+          "organizationId": 1251,
+          "organization": "Permit Health",
+          "channelContext": "Direct inbound referral from Melanie Ortiz",
+          "firstContextDocumentedAt": "2026-10-14",
+          "latestContextDocumentedAt": "2026-10-15",
+          "companyContext": "Melanie directly introduced Charles to Permit Health contacts on October14. Charles replied on October15 offering an exploratory finance conversation.",
+          "scopeFitBasis": "An actual introduction and an offered exploratory call are established. A scheduled or held buyer call, qualification, accepted opportunity and signed engagement remain unconfirmed.",
+          "sourceJoinBasis": "The email names Permit Health and its contact email domain; the existing uniquely named Sales record is deal798 / organization1251. The mail thread itself directly links referrer deal761, not prospect deal798.",
+          "headlineCountingDisposition": "Adds one verified inbound referral introduction only; no commercial outcome headline addition.",
+          "requiredNextEvidence": "Whether Permit responded or met Charles, with actual meeting date, qualification decision and any accepted commercial next step.",
+          "sourceRefs": [
+            {
+              "threadId": 29926,
+              "messageDate": "2026-10-14",
+              "basis": "Direct email introduction with Charles included."
+            },
+            {
+              "threadId": 29926,
+              "messageDate": "2026-10-15",
+              "basis": "Charles acknowledged the introduction and offered an exploratory call."
+            }
+          ]
+        },
+        {
+          "dealId": 805,
+          "organization": "Venus AI Consulting",
+          "firstContextDocumentedAt": "2026-10-10",
+          "latestContextDocumentedAt": "2026-10-20",
+          "companyContext": "Duplicate Leads 791 / Sales 805 represent one company. Last explicit owner disposition: unqualified October 16.",
+          "scopeFitBasis": "Charles manually moved 805 to Negotiating Contract on October 20 at 14:50:30 UTC. This is a verified stage change; an original explicit acceptance and buyer-agreed next step remain unverified. It does not automatically supersede the owner qualification decision.",
+          "headlineCountingDisposition": "No additional qualification, accepted opportunity or first-client win.",
+          "requiredNextEvidence": "Latest explicit qualification decision, original acceptance date/agreed next step and exact held day (October 15–16 remains unresolved).",
+          "sourceRefs": [],
+          "sourceStageChangeId": 6243
+        }
+      ],
+      "confirmedOutcomeAdditions": 0,
+      "sourceCollectionNote": "The main CRM inventory retains its October21 Mountain collection date. Independent October22 note/detail and Sales Inbox reviews add context only; correspondence message dates remain separate from review time.",
+      "note": "Five selected Sales records have contextual correspondence retained here. Permit Health has a verified inbound introduction and an offered exploratory call; actual attendance and commercial acceptance remain unconfirmed. Missing linked mail or activity is not proof of no actual call. No commercial headline outcome is added.",
+      "reconciliationNote": "The supplied external verification summary was compared with primary dialogue and correspondence. Woodrow is vendor/product feedback; an invitation does not establish Charles attendance. Venus stage movement is retained separately from owner qualification/acceptance."
     },
     "browserReview": {
       "checkedAt": "2026-10-21",
@@ -62911,230 +62957,6 @@
         "The source export could not be completed through the available Chrome download interaction. A refreshed all-status deal export, activity export and event/stage history remain needed."
       ],
       "supersededByFullSnapshotAt": "2026-10-22T05:56:42.938699Z"
-    },
-    "archiveReview": {
-      "success": true,
-      "archivedDealCount": 0,
-      "pagesExhausted": 1,
-      "paginationComplete": true,
-      "collectedAt": "2026-10-22T06:53:38.351Z",
-      "collectionStartedAt": "2026-10-22T06:53:38.070Z",
-      "endpoint": "/api/v2/deals/archived",
-      "method": "Authenticated read-only query of the dedicated archived-deals endpoint",
-      "scope": "All accessible archived non-deleted deals across owners/pipelines, without a status/pipeline/user filter.",
-      "updatesMainNonArchivedSnapshotDate": false,
-      "actualFirstClientWins": null,
-      "caveat": "Zero is the verified archived-record query result only. The non-archived CRM inventory retains its earlier source date; no actual first-client win total is inferred.",
-      "technicalBasisUrl": "https://developers.pipedrive.com/changelog/post/breaking-change-archived-deals-and-leads-will-not-be-returned-in-existing-endpoints-and-will-not-be-editable",
-      "snapshotAt": "2026-10-22T06:53:38.351Z"
-    },
-    "commercialContextReview": {
-      "snapshotAt": "2026-10-22T08:00:52.594789+00:00",
-      "reviewedAt": "2026-10-22T08:00:52.594789+00:00",
-      "focusWindow": {
-        "start": "2026-10-19",
-        "end": "2026-10-21"
-      },
-      "dealIdsInvestigated": [
-        794,
-        798,
-        802,
-        803,
-        804
-      ],
-      "records": [
-        {
-          "dealId": 802,
-          "organizationId": 1253,
-          "organization": "Aethon Aerial Solutions",
-          "channelContext": "Len Kofman / Codex Advisory referral and potential client-transfer discussion",
-          "referrer": {
-            "name": "Len Kofman",
-            "personId": 528,
-            "organization": "Codex Advisory",
-            "organizationId": 460
-          },
-          "firstContextDocumentedAt": "2026-10-05",
-          "scopeFitResponseAt": "2026-10-07",
-          "scopeFitBasis": "Charles expressed general scope fit and proposed further discussion with Len. This does not establish a held direct buyer call, entity-specific qualification, a dated accepted Centripetal opportunity or an executed client transfer.",
-          "headlineCountingDisposition": "No outcome addition from this contextual evidence.",
-          "sourceRefs": [
-            {
-              "threadId": 29582,
-              "messageDate": "2026-10-05",
-              "basis": "Client details subject to client consent; Charles requested scope."
-            },
-            {
-              "threadId": 29582,
-              "messageDate": "2026-10-07",
-              "basis": "Len described candidate scopes and Charles expressed general scope fit."
-            },
-            {
-              "threadId": 30213,
-              "messageDate": "2026-10-21",
-              "basis": "Len reports CEO discussions and asks Charles for the following afternoon; Charles says an invitation was sent for 2:30 PM tomorrow. Timezone is not explicit."
-            }
-          ],
-          "companyContext": "Existing Codex Advisory client discussed as a potential Centripetal engagement or transfer.",
-          "sourceJoinBasis": "Matching CRM company or alias and Len relationship; inbox thread itself is linked to Len/Codex, not these deals.",
-          "requiredNextEvidence": "The result of the October 22 Charles–Len discussion, then any direct buyer call or dated client consent/contract transfer. Scheduling a partner call does not establish it was held or that the buyer met Charles.",
-          "latestContextDocumentedAt": "2026-10-21",
-          "scheduledPartnerFollowup": {
-            "scheduledDate": "2026-10-22",
-            "timeText": "2:30 PM",
-            "timezone": null,
-            "participantsConfirmedByCorrespondence": [
-              "Charles",
-              "Len Kofman"
-            ],
-            "type": "Scheduled partner discussion after Len spoke to Aethon CEO",
-            "held": null,
-            "directBuyerParticipationEstablished": false
-          }
-        },
-        {
-          "dealId": 803,
-          "organizationId": 1254,
-          "organization": "Spatial Data",
-          "channelContext": "Len Kofman / Codex Advisory referral and potential client-transfer discussion",
-          "referrer": {
-            "name": "Len Kofman",
-            "personId": 528,
-            "organization": "Codex Advisory",
-            "organizationId": 460
-          },
-          "firstContextDocumentedAt": "2026-10-05",
-          "scopeFitResponseAt": "2026-10-07",
-          "scopeFitBasis": "Charles expressed general scope fit and proposed further discussion with Len. This does not establish a held direct buyer call, entity-specific qualification, a dated accepted Centripetal opportunity or an executed client transfer.",
-          "headlineCountingDisposition": "No outcome addition from this contextual evidence.",
-          "sourceRefs": [
-            {
-              "threadId": 29582,
-              "messageDate": "2026-10-05",
-              "basis": "Client details subject to client consent; Charles requested scope."
-            },
-            {
-              "threadId": 29582,
-              "messageDate": "2026-10-07",
-              "basis": "Len described candidate scopes and Charles expressed general scope fit."
-            }
-          ],
-          "companyContext": "Aethon sister-company engagement was in discussion. The email uses the sister-company description; the legal identity Spatial Data is supplied by the existing CRM association, not named by this email.",
-          "sourceJoinBasis": "Matching CRM company or alias and Len relationship; inbox thread itself is linked to Len/Codex, not these deals.",
-          "requiredNextEvidence": "Direct buyer identity and consent or executed transfer, actual Charles buyer-meeting occurrence, and a dated explicit commercial acceptance or first-time engagement evidence.",
-          "latestContextDocumentedAt": "2026-10-07"
-        },
-        {
-          "dealId": 804,
-          "organizationId": 1281,
-          "organization": "Northern Ontario Company",
-          "channelContext": "Len Kofman / Codex Advisory referral and potential client-transfer discussion",
-          "referrer": {
-            "name": "Len Kofman",
-            "personId": 528,
-            "organization": "Codex Advisory",
-            "organizationId": 460
-          },
-          "firstContextDocumentedAt": "2026-10-05",
-          "scopeFitResponseAt": "2026-10-07",
-          "scopeFitBasis": "Charles expressed general scope fit and proposed further discussion with Len. This does not establish a held direct buyer call, entity-specific qualification, a dated accepted Centripetal opportunity or an executed client transfer.",
-          "headlineCountingDisposition": "No outcome addition from this contextual evidence.",
-          "sourceRefs": [
-            {
-              "threadId": 29582,
-              "messageDate": "2026-10-05",
-              "basis": "Client details subject to client consent; Charles requested scope."
-            },
-            {
-              "threadId": 29582,
-              "messageDate": "2026-10-07",
-              "basis": "Len described candidate scopes and Charles expressed general scope fit."
-            }
-          ],
-          "companyContext": "Small Northern Ontario company engagement was in discussion; this is a descriptive company reference, not an independently verified legal entity name.",
-          "sourceJoinBasis": "Matching CRM company or alias and Len relationship; inbox thread itself is linked to Len/Codex, not these deals.",
-          "requiredNextEvidence": "Direct buyer identity and consent or executed transfer, actual Charles buyer-meeting occurrence, and a dated explicit commercial acceptance or first-time engagement evidence.",
-          "latestContextDocumentedAt": "2026-10-07"
-        },
-        {
-          "dealId": 794,
-          "organizationId": 1246,
-          "organization": "Swyft",
-          "personId": 2798,
-          "channelContext": "Earlier introduction and investor-introduction support; paid CFO engagement not established.",
-          "relationshipDocumentedBy": "2026-08-10",
-          "priorCallDocumentedAt": "2026-08-12",
-          "priorCallDateBasis": "Both participants described their call as the previous day; relationship evidence predates the October 13 CRM creation. No October call is inferred.",
-          "latestCharlesDisposition": {
-            "documentedAt": "2026-10-11",
-            "status": "Short-term parking lot",
-            "basis": "Explicit Charles disposition in internal correspondence."
-          },
-          "latestInteractionContext": {
-            "documentedAt": "2026-10-21",
-            "type": "Email offering investor-introduction assistance subject to receiving materials",
-            "heldCallEstablished": null,
-            "paidOpportunityAcceptanceEstablished": null
-          },
-          "sourceJoinBasis": "Named Swyft/Brandon correspondence aligns with CRM deal 794 and organization 1246; thread predates deal creation.",
-          "headlineCountingDisposition": "No October held-call, qualification, accepted opportunity or first-client win addition.",
-          "requiredNextEvidence": "Direct evidence of a Charles prospect call in the reporting period and an explicit paid Centripetal engagement or active accepted commercial next step; investor-introduction support alone does not establish either.",
-          "sourceRefs": [
-            {
-              "threadId": 27610,
-              "messageDate": "2026-08-10",
-              "basis": "Initial introduction."
-            },
-            {
-              "threadId": 27610,
-              "messageDate": "2026-08-12",
-              "basis": "Reciprocal post-call correspondence referring to the previous day."
-            },
-            {
-              "threadId": 27610,
-              "messageDate": "2026-10-11",
-              "basis": "Explicit short-term parking lot disposition."
-            },
-            {
-              "threadId": 27610,
-              "messageDate": "2026-10-21",
-              "basis": "Investor-introduction assistance, contingent on receiving materials."
-            }
-          ],
-          "firstContextDocumentedAt": "2026-08-10",
-          "latestContextDocumentedAt": "2026-10-21",
-          "companyContext": "The relationship predates the October13 CRM creation. Charles explicitly placed this opportunity in the short-term parking lot on October11; October21 correspondence offers investor-introduction help, not a confirmed new paid engagement.",
-          "scopeFitBasis": "A prior relationship and investor-introduction support do not establish a held October prospect call or a newly accepted Centripetal engagement."
-        },
-        {
-          "dealId": 798,
-          "organizationId": 1251,
-          "organization": "Permit Health",
-          "channelContext": "Direct inbound referral from Melanie Ortiz",
-          "firstContextDocumentedAt": "2026-10-14",
-          "latestContextDocumentedAt": "2026-10-15",
-          "companyContext": "Melanie directly introduced Charles to Permit Health contacts on October14. Charles replied on October15 offering an exploratory finance conversation.",
-          "scopeFitBasis": "An actual introduction and an offered exploratory call are established. A scheduled or held buyer call, qualification, accepted opportunity and signed engagement remain unconfirmed.",
-          "sourceJoinBasis": "The email names Permit Health and its contact email domain; the existing uniquely named Sales record is deal798 / organization1251. The mail thread itself directly links referrer deal761, not prospect deal798.",
-          "headlineCountingDisposition": "Adds one verified inbound referral introduction only; no commercial outcome headline addition.",
-          "requiredNextEvidence": "Whether Permit responded or met Charles, with actual meeting date, qualification decision and any accepted commercial next step.",
-          "sourceRefs": [
-            {
-              "threadId": 29926,
-              "messageDate": "2026-10-14",
-              "basis": "Direct email introduction with Charles included."
-            },
-            {
-              "threadId": 29926,
-              "messageDate": "2026-10-15",
-              "basis": "Charles acknowledged the introduction and offered an exploratory call."
-            }
-          ]
-        }
-      ],
-      "confirmedOutcomeAdditions": 0,
-      "sourceCollectionNote": "The main CRM inventory retains its October21 Mountain collection date. Independent October22 note/detail and Sales Inbox reviews add context only; correspondence message dates remain separate from review time.",
-      "note": "Five selected Sales records have contextual correspondence retained here. Permit Health has a verified inbound introduction and an offered exploratory call; actual attendance and commercial acceptance remain unconfirmed. Missing linked mail or activity is not proof of no actual call. No commercial headline outcome is added."
     }
   },
   "video": {
@@ -71781,6 +71603,117 @@
       "verifiedVideoDmSends": null,
       "verifiedReplyEvents": null,
       "note": "Source metadata, revision history and stable joins were reviewed independently; no later worksheet value change was established. File-level status entry dates do not establish actual send time, channel or video inclusion."
+    },
+    "datedStatusReview": {
+      "snapshotAt": "2026-10-22T11:59:08.660537+00:00",
+      "reviewedAt": "2026-10-22T11:59:08.660537+00:00",
+      "sourceDate": "2026-10-21",
+      "uniqueProfilesMarkedSent": 12,
+      "recordingLinksPresent": 12,
+      "explicitSheetCrmDealIdsPresent": 0,
+      "sourceStatusLabel": "Sent 10/21/26",
+      "alreadyIncludedInDatedActions": true,
+      "actualSenderAccountId": null,
+      "actualSentAt": null,
+      "deliveryVerified": false,
+      "note": "Twelve distinct profiles have a date-only self-reported Sent label and recording link. These are already retained; do not add twelve new events. No message link, delivery receipt or actual sender is established."
+    },
+    "automationReview": {
+      "snapshotAt": "2026-10-22T12:09:19.575499+00:00",
+      "reviewedAt": "2026-10-22T12:09:19.575499+00:00",
+      "zapId": 383834891,
+      "enabled": true,
+      "sourceCaptureSavedThrough": "2026-10-22T12:03:50.796540+00:00",
+      "publishedVersion": "v2",
+      "hasDraft": true,
+      "source": {
+        "spreadsheetName": "centripetal_top20_video_sniper_prospects_aug2026",
+        "worksheetName": "centripetal_top20_video_sniper_prospects_aug2026",
+        "triggerColumn": "COL$Q",
+        "filter": "Status (CS Column) contains Sent"
+      },
+      "latestVerifiedRun": {
+        "id": "0086536b-859f-acb6-d819-13415762c354",
+        "startedAt": "2026-10-21T16:31:40Z",
+        "completedAt": null,
+        "writebackAt": "2026-10-21T16:31:50Z",
+        "status": "success",
+        "sheetRow": 1116,
+        "company": "BioInsights",
+        "contact": "Travis Bond",
+        "profile": "travisbond",
+        "reportedSentDate": "2026-10-21",
+        "crmOrganizationId": 1294,
+        "crmPersonId": 2843,
+        "crmDealId": 846,
+        "crmPipelineId": 2,
+        "crmStage": "Video DM Outreach",
+        "sheetSyncFlag": true,
+        "crmIdsWrittenBack": false
+      },
+      "historyReview": {
+        "coverage": {
+          "start": "2026-10-19",
+          "end": "2026-10-22",
+          "currentDayPartial": true
+        },
+        "pagesReviewed": 85,
+        "displayedEntries": 841,
+        "uniqueRunIds": 808,
+        "duplicateEntries": 33,
+        "uniqueStatusCounts": {
+          "successful": 15,
+          "filtered": 90,
+          "held": 703
+        },
+        "displayedStatusCounts": {
+          "successful": 15,
+          "filtered": 90,
+          "held": 736
+        },
+        "heldDates": [
+          "2026-10-20"
+        ],
+        "coverageComplete": false,
+        "retainedPagesExhausted": true,
+        "atomicSnapshot": false,
+        "verifiedHeldRun": {
+          "id": "0086536b-24cf-a814-e98c-9b9f27f09d94",
+          "startedAt": "2026-10-20T20:56:26Z",
+          "sheetRow": 1154,
+          "company": "Cypher AI",
+          "errorCode": "TooManyItems",
+          "failedStep": 1,
+          "filterAttempted": false,
+          "crmStepsAttempted": false
+        },
+        "note": "All 85 displayed history pages for this Zap and October 19–22 were retained. 841 entries represent 808 unique run IDs; 33 repeated held IDs have identical status/time. 703 unique held IDs (736 displayed entries) are dated October 20. This is a non-atomic retained execution-history census, not unique recipients or delivered outreach. No replay, test, configuration or connection changes were performed."
+      },
+      "note": "Existing logged-in Zapier session used; no Google account selection or new sign-in was needed. The pre-existing draft was neither edited nor published.",
+      "limits": [
+        "Successful sync establishes worksheet-to-CRM execution, not actual LinkedIn delivery, actual sender or video inclusion.",
+        "The held sample stopped at the Google Sheets trigger because it returned too many items; filter and CRM creation were not attempted.",
+        "Published trigger configuration names COL$Q, while retained writeback output displays the Sent status at COL$P and Loom at COL$Q. This header/position discrepancy requires a configuration audit before changes or replay; no causal defect is asserted.",
+        "The reviewed writeback sets Synced to Pipedrive true but leaves explicit deal_id/org_id inputs empty. This confirms one run mapping, not all historical CRM identity joins.",
+        "Waalaxy sender identity and last successful upstream account sync are separate and remain unverified."
+      ]
+    },
+    "metadataFreshnessCheck": {
+      "snapshotAt": "2026-10-22T12:11:30Z",
+      "reviewedAt": "2026-10-22T12:11:30Z",
+      "currentModifiedAt": "2026-10-21T20:42:06.165Z",
+      "currentRevisionId": "1253",
+      "unchangedSinceRetainedValues": true,
+      "fullValuesReread": false,
+      "retainedValuesCollectedAt": "2026-10-22T01:02:14Z",
+      "valuesFreshnessLabel": "Values collected October 21 at 19:02 Mountain; unchanged source reverified October 22 at 06:11 Mountain.",
+      "metadataFreshnessIsNotNewValueCollection": true,
+      "newValuePatchRequired": false,
+      "provenanceLimits": [
+        "Drive modification/revision checks establish unchanged file state, not the freshness or completeness of an upstream Waalaxy synchronization.",
+        "Upstream sender account, exact sending timestamps and delivery remain unverified.",
+        "No browser, wrong-account collection, source writes, shared edits or publication performed."
+      ]
     }
   },
   "waalaxy": {
@@ -82661,8 +82594,8 @@
       "newestDatedActivity": "2026-10-13"
     },
     "workflowReview": {
-      "snapshotAt": "2026-10-22T07:00:27.833806+00:00",
-      "reviewedAt": "2026-10-22T07:00:27.833806+00:00",
+      "snapshotAt": "2026-10-22T12:09:19.575499+00:00",
+      "reviewedAt": "2026-10-22T12:09:19.575499+00:00",
       "handoffDate": "2026-10-19",
       "documentedDefaultCrmOwner": "Christian W.",
       "syncExecutionIndependentlyVerified": false,
@@ -82710,7 +82643,29 @@
           "Legacy Airtable qualification/call statuses do not override current owner dispositions."
         ]
       },
-      "note": "The dated handoff documents a Sheet-to-CRM status workflow, not message delivery. Current configuration and run execution remain unverified. Historical Airtable records do not supply current October Charles reply or referral events."
+      "note": "Zapier independently verifies Video DM worksheet-to-CRM execution, including a later successful run and October 20 holds. This does not verify the upstream Waalaxy-to-Sheets account or last sync. All 19 visible workflows in the legacy Waalaxy folder are enabled; 17 display None in 60 days, recruitment last ran September 9 and Jess FounderLodge September 23. These bounded folder labels do not establish current Charles reply activity.",
+      "sheetToCrmExecutionVerified": true,
+      "zapierFolderReview": {
+        "reviewedAt": "2026-10-22T12:09:19.575499+00:00",
+        "visibleWorkflows": 19,
+        "enabledWorkflows": 19,
+        "displayedNoneIn60Days": 17,
+        "otherDisplayedLastRuns": [
+          {
+            "zapId": 332913745,
+            "scope": "Recruitment",
+            "date": "2026-09-09"
+          },
+          {
+            "zapId": 368102315,
+            "scope": "Jess FounderLodge",
+            "date": "2026-09-23"
+          }
+        ],
+        "currentCharlesUpstreamSyncEstablished": false
+      },
+      "lastVerifiedSuccessfulSheetToCrmRunAt": "2026-10-21T16:31:40Z",
+      "lastVerifiedSheetWritebackStepAt": "2026-10-21T16:31:50Z"
     },
     "replyContextReview": {
       "snapshotAt": "2026-10-22T07:48:59.464383+00:00",
@@ -94965,7 +94920,7 @@
     }
   },
   "referrals": {
-    "snapshotAt": "2026-10-22T05:56:42.938699Z",
+    "snapshotAt": "2026-10-22T11:51:50.385Z",
     "timezone": "America/Denver",
     "pipeline": {
       "id": 4,
@@ -96625,7 +96580,7 @@
         "owner": "Charles Solomon",
         "addedAt": "2026-10-12T13:29:05Z",
         "createdAt": "2026-10-12T13:29:05Z",
-        "updatedAt": "2026-10-21T18:29:58Z",
+        "updatedAt": "2026-10-22T11:43:53Z",
         "stageChangedAt": "2026-10-12T13:29:21Z",
         "nextActivityDate": null,
         "lastActivityDate": null,
@@ -104181,17 +104136,17 @@
       }
     ],
     "coverage": {
-      "source": "Referral Pipeline4 derived from the same fully paginated all_not_deleted CRM MCP read",
-      "collectedAt": "2026-10-22T05:56:42.938699Z",
-      "scope": "All accessible returned Pipeline4 records; current positions, not period events.",
+      "source": "Pipeline4 derived from the same fully paginated all_not_deleted MCP source read",
+      "collectedAt": "2026-10-22T11:51:50.385Z",
+      "scope": "All accessible returned non-archived Pipeline4 records; current positions, not period events",
       "complete": true,
       "independentSnapshot": false,
-      "parentCRMSnapshotAt": "2026-10-22T05:56:42.938699Z",
+      "parentCRMSnapshotAt": "2026-10-22T11:51:50.385Z",
       "parentCRMSource": "crm_mcp_patch.json",
       "requestedFilter": {
         "status": "all_not_deleted",
-        "limit": 500,
-        "sort": "id ASC"
+        "sort": "id ASC",
+        "limit": 500
       },
       "connectorPipelineFilterHonored": null,
       "observedSourcePipelineIds": [
@@ -104214,11 +104169,11 @@
         }
       ],
       "appliedLocalFilter": "pipeline_id == 4",
-      "observedThrough": "2026-10-21",
-      "reportingThrough": "2026-10-20",
+      "observedThrough": "2026-10-22",
+      "reportingThrough": "2026-10-21",
       "currentDayPartial": true,
       "archiveInclusiveCompletenessVerified": false,
-      "normalizedSourceSha256": "f69f966a0bdd8134b440f04679cab83566994426ed2b95eb33af6a3d63e83a70",
+      "normalizedSourceSha256": "9479452a4de7816bb72d4ea7f32c7a7774d13f62e1c94842fcbc144af57c6270",
       "hashBasis": "Curated normalized source records and verified stage metadata; no raw correspondence content."
     },
     "automationVerification": {
@@ -104765,11 +104720,11 @@
       ]
     },
     "mainCRMComparison": {
-      "mainCRMSnapshotAt": "2026-10-22T05:56:42.938699Z",
+      "mainCRMSnapshotAt": "2026-10-22T11:51:50.385Z",
       "mainCRMSource": "crm_mcp_patch.json",
       "mainCRMReferralRecords": 348,
       "freshReferralIdsNotInMainCRM": [],
-      "independentFreshScope": "Referrals and refreshed main CRM derive from the same source snapshot; overlapping populations must not be added."
+      "independentFreshScope": "Referrals and current main CRM use the same paginated source; populations overlap and are not added."
     },
     "quality": {
       "completeAccessibleSnapshot": true,
@@ -104777,7 +104732,7 @@
       "uniqueSourceIds": 348,
       "testPolicy": "Exclude explicit test-labelled deal titles. Flag, but do not auto-exclude, a test-labelled organization on a real-name deal without owner confirmation.",
       "warnings": [
-        "Same-source full CRM/referral refresh. Pipeline4 was applied locally to the completed all_not_deleted response; returned records are non-archived, and archive-inclusive completeness is not independently verified.",
+        "Same-source current CRM/referral read; Pipeline4 applied locally to fully paginated non-archived source. Independent source-dated event reviews retain their original evidence timestamps.",
         "Active means an open record outside Office Hours, Graveyard/Newsletter and explicit test titles. It does not mean qualified opportunity or confirmed recent engagement.",
         "Current stage positions do not measure introductions, replies or progression in a selected reporting period.",
         "The earlier 52-active plus 105-excluded claim totals 157, not the reported 137, and one supposedly active record was Office Hours.",
@@ -104788,10 +104743,98 @@
     },
     "notes": [
       "All visible counts retain source deal IDs and exact stage IDs.",
-      "The Opportunity (Referred) stage is a CRM position, not independent evidence of commercial fit or accepted sales opportunity.",
-      "The legacy Airtable referral-field query returned 48 records, including one test; 47 non-test rows have no actual introduction dates or verified referral direction. They remain excluded from current referral event and outcome totals."
+      "The Opportunity (Referred) stage is a CRM position, not independent evidence of commercial fit or accepted sales opportunity."
     ],
-    "note": "Current same-source Referral Pipeline snapshot: 348 records = 60 active + 245 office_hours + 40 graveyard_newsletter + 3 test. Current positions are not period events.",
+    "note": "Same-source Referral Pipeline current inventory: 348 records; source positions remain distinct from verified referral events.",
+    "legacyCaptureReview": {
+      "snapshotAt": "2026-10-22T07:00:27.833806+00:00",
+      "reviewedAt": "2026-10-22T07:00:27.833806+00:00",
+      "rawRecords": 48,
+      "excludedTestRecords": 1,
+      "nonTestLegacyRows": 47,
+      "latestCreatedDate": "2026-02-20",
+      "latestModifiedAt": "2026-02-21T00:02:20Z",
+      "introductionDates": null,
+      "referralDirectionEstablished": false,
+      "strictCompanyContactMatchesToFreshCrm": 0,
+      "note": "Referral Contact may name a suggested contact rather than an introducing partner; no current referral outcomes promoted."
+    },
+    "eventReview": {
+      "snapshotAt": "2026-10-22T08:09:23.017590+00:00",
+      "reviewedAt": "2026-10-22T08:09:23.017590+00:00",
+      "coverage": {
+        "status": "incomplete",
+        "start": null,
+        "end": null,
+        "note": "A bounded review of primary Sales Inbox correspondence and linked message metadata substantiates these two event types. Complete request, introduction, follow-up and outcome coverage has not been reconciled."
+      },
+      "events": [
+        {
+          "eventId": "pipedrive:mail:29926:introduction:2026-10-14",
+          "type": "introduction",
+          "direction": "inbound",
+          "date": "2026-10-14",
+          "datePrecision": "timestamp",
+          "sourceTimezone": "UTC",
+          "verified": true,
+          "charlesIncluded": true,
+          "referrer": "Melanie Ortiz",
+          "referrerPersonId": 1357,
+          "referralDealId": 761,
+          "company": "Permit Health",
+          "companyKey": "company:permit-health",
+          "prospectDealId": 798,
+          "organizationId": 1251,
+          "evidenceThreadId": 29926,
+          "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/search/thread/29926",
+          "summary": "Melanie directly introduced Charles to Permit Health contacts by email on October14. Charles replied on October15, thanked her and offered an exploratory finance conversation.",
+          "followupDate": "2026-10-15",
+          "heldCallConfirmed": null,
+          "qualification": "unknown",
+          "acceptedOpportunityConfirmed": null,
+          "firstClientWinConfirmed": null,
+          "prospectCrmJoinBasis": "The email names Permit Health and its contact email domain; the existing uniquely named Sales record is deal798 / organization1251. The mail thread itself directly links referrer deal761, not prospect deal798.",
+          "dateBasis": "Introduction message_time explicitly carries UTC Z; October14 7:12:44AM Mountain. The separate Charles reply is October15 3:40:35PM Mountain. Message add/update times are not substituted for message time.",
+          "sourceSystem": "pipedrive_mail",
+          "occurredAt": "2026-10-14T13:12:44Z",
+          "sourceMessageId": 43547,
+          "sourceTimestampField": "mailMessage.message_time",
+          "followupOccurredAt": "2026-10-15T21:40:35Z",
+          "followupMessageId": 43753
+        },
+        {
+          "eventId": "pipedrive:mail:30220:follow-up:2026-10-21",
+          "type": "follow_up",
+          "direction": "outbound",
+          "date": "2026-10-21",
+          "datePrecision": "timestamp",
+          "sourceTimezone": "UTC",
+          "verified": true,
+          "charlesIncluded": true,
+          "sentByCharles": true,
+          "referrer": "Jonathan S. Katz",
+          "referrerPersonId": 1242,
+          "referralDealId": 793,
+          "company": null,
+          "companyKey": null,
+          "prospectDealId": null,
+          "organizationId": null,
+          "evidenceThreadId": 30220,
+          "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/sent/thread/30220",
+          "summary": "Charles followed up on a promised introduction and asked whether supplied text was helpful. The initial request date, target company and completed introduction remain unverified.",
+          "heldCallConfirmed": null,
+          "qualification": "unknown",
+          "acceptedOpportunityConfirmed": null,
+          "firstClientWinConfirmed": null,
+          "dateBasis": "Source mailMessage.message_time contains an explicit UTC Z offset. Reporting date is October21 in America/Denver; message add/update timestamps do not substitute for message time.",
+          "occurredAt": "2026-10-21T18:29:55Z",
+          "sourceMessageId": 44104,
+          "sourceTimestampField": "mailMessage.message_time",
+          "sourceSystem": "pipedrive_mail"
+        }
+      ],
+      "note": "One actual inbound introduction and one separate outbound referral follow-up are counted once by source mail message IDs. Complete event coverage is unknown. Neither establishes a held call, qualification, accepted opportunity or first-time client win; stage inventory remains independent. Porter's latest linked update is existing-client finance mail, and other reviewed referral-stage logs lack primary introductions and target-company identities; they add no dated actual introduction."
+    },
     "browserReview": {
       "checkedAt": "2026-10-21",
       "collectedAt": "2026-10-22T01:27:02.320441Z",
@@ -106864,94 +106907,49 @@
       ],
       "supersededByFullSnapshotAt": "2026-10-22T05:56:42.938699Z"
     },
-    "legacyCaptureReview": {
-      "snapshotAt": "2026-10-22T07:00:27.833806+00:00",
-      "reviewedAt": "2026-10-22T07:00:27.833806+00:00",
-      "rawRecords": 48,
-      "excludedTestRecords": 1,
-      "nonTestLegacyRows": 47,
-      "latestCreatedDate": "2026-02-20",
-      "latestModifiedAt": "2026-02-21T00:02:20Z",
-      "introductionDates": null,
-      "referralDirectionEstablished": false,
-      "strictCompanyContactMatchesToFreshCrm": 0,
-      "note": "Referral Contact may name a suggested contact rather than an introducing partner; no current referral outcomes promoted."
-    },
-    "eventReview": {
-      "snapshotAt": "2026-10-22T08:09:23.017590+00:00",
-      "reviewedAt": "2026-10-22T08:09:23.017590+00:00",
-      "coverage": {
-        "status": "incomplete",
-        "start": null,
-        "end": null,
-        "note": "A bounded review of primary Sales Inbox correspondence and linked message metadata substantiates these two event types. Complete request, introduction, follow-up and outcome coverage has not been reconciled."
-      },
-      "events": [
+    "contextReview": {
+      "snapshotAt": "2026-10-22T11:47:28.902Z",
+      "reviewedAt": "2026-10-22T11:49:26.471738+00:00",
+      "records": [
         {
-          "eventId": "pipedrive:mail:29926:introduction:2026-10-14",
-          "type": "introduction",
+          "occurredAt": "2026-10-22T09:35:31Z",
           "direction": "inbound",
-          "date": "2026-10-14",
-          "datePrecision": "timestamp",
-          "sourceTimezone": "UTC",
-          "verified": true,
-          "charlesIncluded": true,
-          "referrer": "Melanie Ortiz",
-          "referrerPersonId": 1357,
-          "referralDealId": 761,
-          "company": "Permit Health",
-          "companyKey": "company:permit-health",
-          "prospectDealId": 798,
-          "organizationId": 1251,
-          "evidenceThreadId": 29926,
-          "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/search/thread/29926",
-          "summary": "Melanie directly introduced Charles to Permit Health contacts by email on October14. Charles replied on October15, thanked her and offered an exploratory finance conversation.",
-          "followupDate": "2026-10-15",
-          "heldCallConfirmed": null,
-          "qualification": "unknown",
-          "acceptedOpportunityConfirmed": null,
-          "firstClientWinConfirmed": null,
-          "prospectCrmJoinBasis": "The email names Permit Health and its contact email domain; the existing uniquely named Sales record is deal798 / organization1251. The mail thread itself directly links referrer deal761, not prospect deal798.",
-          "dateBasis": "Introduction message_time explicitly carries UTC Z; October14 7:12:44AM Mountain. The separate Charles reply is October15 3:40:35PM Mountain. Message add/update times are not substituted for message time.",
-          "sourceSystem": "pipedrive_mail",
-          "occurredAt": "2026-10-14T13:12:44Z",
-          "sourceMessageId": 43547,
-          "sourceTimestampField": "mailMessage.message_time",
-          "followupOccurredAt": "2026-10-15T21:40:35Z",
-          "followupMessageId": 43753
+          "referralContact": "Jonathan S. Katz",
+          "dealId": 793,
+          "summary": "Jonathan reports that Rene already works with a west-coast firm and offers to try arranging a general chat.",
+          "sourceMailMessageId": 44155,
+          "sourceThreadId": 30220,
+          "bodyEvidenceScope": "Direct leading API message snippet plus owner-reported context; full body not independently reread by this agent."
         },
         {
-          "eventId": "pipedrive:mail:30220:follow-up:2026-10-21",
-          "type": "follow_up",
+          "occurredAt": "2026-10-22T11:43:48Z",
           "direction": "outbound",
-          "date": "2026-10-21",
-          "datePrecision": "timestamp",
-          "sourceTimezone": "UTC",
-          "verified": true,
-          "charlesIncluded": true,
-          "sentByCharles": true,
-          "referrer": "Jonathan S. Katz",
-          "referrerPersonId": 1242,
-          "referralDealId": 793,
-          "company": null,
-          "companyKey": null,
-          "prospectDealId": null,
-          "organizationId": null,
-          "evidenceThreadId": 30220,
-          "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/sent/thread/30220",
-          "summary": "Charles followed up on a promised introduction and asked whether supplied text was helpful. The initial request date, target company and completed introduction remain unverified.",
-          "heldCallConfirmed": null,
-          "qualification": "unknown",
-          "acceptedOpportunityConfirmed": null,
-          "firstClientWinConfirmed": null,
-          "dateBasis": "Source mailMessage.message_time contains an explicit UTC Z offset. Reporting date is October21 in America/Denver; message add/update timestamps do not substitute for message time.",
-          "occurredAt": "2026-10-21T18:29:55Z",
-          "sourceMessageId": 44104,
-          "sourceTimestampField": "mailMessage.message_time",
-          "sourceSystem": "pipedrive_mail"
+          "referralContact": "Jonathan S. Katz",
+          "dealId": 793,
+          "summary": "Charles welcomes a general chat to learn from a customer of another CFO provider.",
+          "sourceMailMessageId": 44157,
+          "sourceThreadId": 30220,
+          "bodyEvidenceScope": "Direct leading API message snippet plus owner-reported context; full body not independently reread by this agent."
         }
       ],
-      "note": "One actual inbound introduction and one separate outbound referral follow-up are counted once by source mail message IDs. Complete event coverage is unknown. Neither establishes a held call, qualification, accepted opportunity or first-time client win; stage inventory remains independent. Porter's latest linked update is existing-client finance mail, and other reviewed referral-stage logs lack primary introductions and target-company identities; they add no dated actual introduction."
+      "relationshipContext": {
+        "targetGivenName": "Rene",
+        "targetFullName": null,
+        "targetCompany": null,
+        "targetPersonId": null,
+        "targetDealId": null,
+        "targetIdentityResolved": false,
+        "reportedProviderSituation": "Already working with another firm on the west coast, according to Jonathan.",
+        "commercialInterpretation": "Possible general relationship or customer-discovery chat; no confirmed active paid opportunity.",
+        "actualIntroductionConfirmed": false,
+        "generalChatBookedAt": null,
+        "generalChatHeldAt": null,
+        "qualificationDisposition": "unknown",
+        "formalLostOrClosedOutcomeConfirmed": false,
+        "doNotInfer": "Do not infer an actual introduction, booked call, qualification, formal lost deal or won client from this correspondence."
+      },
+      "note": "Jonathan reports an incumbent provider and possible general chat; Charles welcomes that chat. No completed introduction, booking, held call, active paid opportunity or formal lost outcome is established. Deal793 remains open / Intro Promised. October 21 follow-up44104 is retained once.",
+      "coverageComplete": false
     }
   },
   "meetings": {
@@ -108442,8 +108440,8 @@
         {
           "id": "01M5CJYY1ZC0N5C6QKBQSHZ0Q8",
           "indexedAt": "2026-10-20T12:00:00+00:00",
-          "classification": "vendor_workflow_feedback",
-          "classificationBasis": "Peter and Juliana discuss Woodrow vendor workflow evaluation. Charles appears in participant metadata, without attributed speech.",
+          "classification": "vendor_product_evaluation_feedback",
+          "classificationBasis": "Peter and Juliana discuss testing and improving Woodrow software. Centripetal is evaluating the vendor product; a Woodrow purchase of CFO services is not established. Charles is an invitee; actual participation remains unverified. Overlapping recordings remain duplicate candidates.",
           "reviewedDialogue": true,
           "charlesSpeakerConfirmed": false,
           "countAsCharlesProspectCall": false,
@@ -108455,7 +108453,7 @@
           "heldStatus": "excluded_from_Charles_prospect_calls",
           "joinStatus": "prospect_purpose_or_Charles_participation_not_established",
           "crmDealIds": [],
-          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "lastPurposeReviewedAt": "2026-10-22T11:49:24.649822+00:00",
           "purposeSourceCollectedAt": "2026-10-22T05:56:14.364Z",
           "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
           "sentenceCount": 603,
@@ -108485,8 +108483,8 @@
         {
           "id": "01M59ZVHSHAH05156MD4JXFJTN",
           "indexedAt": "2026-10-20T12:00:00+00:00",
-          "classification": "vendor_workflow_feedback",
-          "classificationBasis": "Overlapping Woodrow vendor feedback recording with Peter and Juliana; no Charles-attributed prospect dialogue.",
+          "classification": "vendor_product_evaluation_feedback",
+          "classificationBasis": "Peter and Juliana discuss testing and improving Woodrow software. Centripetal is evaluating the vendor product; a Woodrow purchase of CFO services is not established. Charles is an invitee; actual participation remains unverified. Overlapping recordings remain duplicate candidates.",
           "reviewedDialogue": true,
           "charlesSpeakerConfirmed": false,
           "countAsCharlesProspectCall": false,
@@ -108498,7 +108496,7 @@
           "heldStatus": "excluded_from_Charles_prospect_calls",
           "joinStatus": "prospect_purpose_or_Charles_participation_not_established",
           "crmDealIds": [],
-          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "lastPurposeReviewedAt": "2026-10-22T11:49:24.649822+00:00",
           "purposeSourceCollectedAt": "2026-10-22T05:56:15.332Z",
           "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
           "sentenceCount": 541,
@@ -111535,6 +111533,31 @@
       "noLongerReturnedEventIds": [],
       "newEventCount": 0,
       "basis": "Same explicitly bounded scheduled-start window; an event difference is not held-call evidence"
+    },
+    "metadataFreshnessCheck": {
+      "snapshotAt": "2026-10-22T12:11:21.590Z",
+      "reviewedAt": "2026-10-22T12:11:21.590Z",
+      "fireflies": {
+        "latestAccessibleIds": 100,
+        "octoberIndexedIds": 76,
+        "newIds": 0,
+        "changedMetadataIds": 0,
+        "bodyVersionAvailable": false,
+        "scope": "Latest100 metadata IDs; no body-only change detection or new dialogue retrieval."
+      },
+      "calendly": {
+        "activeEvents": 3,
+        "canceledEvents": 0,
+        "eventsAndInviteesUnchanged": true,
+        "scope": {
+          "minStartTime": "2026-10-01T06:00:00Z",
+          "maxStartTime": "2026-11-01T06:00:00Z",
+          "sourceTimezone": "Timestamped UTC, displayed America/Denver",
+          "scope": "Authenticated Charles calendar October scheduled-start window; calendar status does not verify attendance"
+        },
+        "futureEventStart": "2026-10-22T16:00:00Z"
+      },
+      "note": "Rechecked October 22 at 06:11 MDT: same latest 100 Fireflies IDs and metadata, including 76 October IDs; same 3 active Calendly events and invitees. A future October 22 booking is not held. Metadata cannot detect body-only transcript processing changes; these sources are not a complete actual-call roster. Original evidence dates remain unchanged."
     }
   },
   "time": {
@@ -111543,7 +111566,7 @@
     "timezone": "America/Denver",
     "period": {
       "start": "2026-10-01",
-      "end": "2026-10-21",
+      "end": "2026-10-22",
       "currentDayPartial": true
     },
     "meetings": {
@@ -112070,9 +112093,11 @@
       "October 21 refresh review: a fresh metadata scan and actual Christian speaker checks confirm the same six associated recordings, five after duplicate removal, totaling 228.58 audio minutes. No newer matching recording was found in the accessible indexed list. Audio duration is not attendance or worked time. The owner’s 14.5–15.75-hour non-meeting estimate remains unchanged.",
       "Drive revision metadata attributes 14 retained October file revisions on nine Mountain dates to Christian. This supports activity dates only; it does not establish human work duration, billing or additional hours. The owner allowance remains 14.5–15.75 hours.",
       "A speaker-label cross-check across all 76 retained October Fireflies responses found six Christian-attributed recordings, all already represented in the existing six source audio events. It adds no new recording-duration proxy or human hours; the existing verified duplicate remains excluded.",
+      "October22 review extends the requested period through today. Retained recording/file evidence keeps its original collection dates; no additional Christian hours or new attendance is inferred.",
+      "October 22 review extends the requested period through today. Retained recording/file evidence keeps its original collection dates; no additional Christian hours or new attendance is inferred.",
       "Owner-specified nonmeeting estimate: 14.5–15.75 hours. This replaces the prior percentage adjustment; no workstream allocation or measured actual-hour claim is made."
     ],
-    "reviewedAsOf": "2026-10-21",
+    "reviewedAsOf": "2026-10-22",
     "evidenceCollectionThrough": "2026-10-22T05:56:13.245Z",
     "workEvidence": {
       "snapshotAt": "2026-10-22T07:00:27.833806+00:00",
@@ -112126,7 +112151,7 @@
       "id": "crm",
       "name": "Pipedrive",
       "status": "Current paginated read-only MCP snapshot",
-      "asOf": "2026-10-22T05:56:42.938699Z",
+      "asOf": "2026-10-22T11:51:50.385Z",
       "coverage": {
         "method": "Configured read-only Pipedrive MCP; completed all_not_deleted deal pagination and explicit user_id 0 done/undone activity pagination.",
         "dealsComplete": true,
@@ -112249,7 +112274,7 @@
         "freshSelectedHistoryDealCount": 11
       },
       "method": "Configured Pipedrive read-only MCP; all returned non-deleted deals and all-owner done/undone activities, all pages",
-      "note": "769 returned deals / 924 activities; 765 and 919 after explicit test-title exclusions. Observed through October 21, partial; complete reporting days through October 20. Archived-inclusive completeness is unverified. New/updated CRM records are not new accepted opportunities; current stages are not wins. Record 203 remains flagged for a test-labelled organization and is separately reviewable. Independent archive-only GET query completed 2026-10-22T06:53:38.351Z: zero accessible archived records, one exhausted page. The main non-archived inventory retains its own October21 collection; actual first-client wins remain separately unverified.",
+      "note": "Full accessible non-deleted CRM pagination completed October 22 05:51 MDT. 769 deals /924 activities; referral inventory derived from the same source. October 22 is partial. Record changes and source won status do not establish commercial outcomes.",
       "checkedAt": "2026-10-21"
     },
     {
@@ -112260,7 +112285,7 @@
       "coverage": "428 valid prospect rows; full current main and accepted-connections tabs",
       "method": "Read-only Google Sheets collection",
       "note": "45 ready rows, 41 follow-up rows, 29 exact Sent/Done statuses. Separate dated source-status evidence includes 12 October 21 send statuses; delivery and video content are unverified. Blank rows are excluded. Upstream sync time remains unknown.",
-      "checkedAt": "2026-10-21"
+      "checkedAt": "2026-10-22T12:11:30Z"
     },
     {
       "id": "waalaxy",
@@ -112286,7 +112311,7 @@
       "id": "referrals",
       "name": "Referrals",
       "status": "Current reconciled referral inventory from same CRM read",
-      "asOf": "2026-10-22T05:56:42.938699Z",
+      "asOf": "2026-10-22T11:51:50.385Z",
       "coverage": {
         "source": "Referral Pipeline4 derived from the same fully paginated all_not_deleted CRM MCP read",
         "collectedAt": "2026-10-22T05:56:42.938699Z",
@@ -112329,7 +112354,7 @@
         "hashBasis": "Curated normalized source records and verified stage metadata; no raw correspondence content."
       },
       "method": "Local Pipeline 4 partition of the same current paginated Pipedrive MCP source",
-      "note": "348 raw referral records; 60 active, 245 Office Hours, 40 Graveyard/Newsletter and three explicit tests. The same-source inventory overlaps the CRM; dated introductions, qualification and automation execution remain incomplete.",
+      "note": "Full accessible non-deleted CRM pagination completed October 22 05:51 MDT. 769 deals /924 activities; referral inventory derived from the same source. October 22 is partial. Record changes and source won status do not establish commercial outcomes.",
       "checkedAt": "2026-10-21"
     },
     {
@@ -112359,7 +112384,7 @@
       },
       "method": "Configured Calendly MCP; explicit active/canceled events and all invitee pages within the retained window",
       "note": "27 event records / 25 booking chains, same IDs as the prior source. October bookings: NuVee October 6, original Venus October 15 and Quantex October 22. No October 19–21 Calendly starts were returned, which does not establish zero held calls. The original Venus booking conflicts with an accepted October 16 reschedule in Inbox.",
-      "checkedAt": "2026-10-21"
+      "checkedAt": "2026-10-22T12:11:21.590Z"
     },
     {
       "id": "time",
@@ -112411,7 +112436,7 @@
       },
       "method": "Configured Centripetal Fireflies MCP; paginated metadata plus actual speaker/dialogue reviews and independent Inbox corroboration",
       "note": "100 metadata records scanned / 76 October-indexed. All 11 October 19–21 recordings reviewed; none establishes an additional Charles prospect call. Nicolette and DEXIQ held days are independently corroborated. Actual meeting coverage and commercial decisions remain incomplete.",
-      "checkedAt": "2026-10-21"
+      "checkedAt": "2026-10-22T12:11:21.590Z"
     },
     {
       "id": "crm_browser",
@@ -112510,13 +112535,13 @@
     },
     {
       "id": "commercial_context",
-      "name": "Commercial correspondence and selected reply context",
-      "status": "Current evidence review; underlying inventories keep separate dates",
-      "asOf": "2026-10-22T08:00:52.594789+00:00",
+      "name": "Commercial relationship reconciliation",
+      "status": "Current independent review; local only",
+      "asOf": "2026-10-22T11:49:24.649822+00:00",
       "checkedAt": "2026-10-22",
       "coverage": "Five selected Sales records investigated; five contextual company records and one existing selected-person reply classified",
       "method": "Read-only selected CRM notes/detail and Sales Inbox; dialogue classification of retained Sheet and CSV reply attributes",
-      "note": "Len-origin client-transfer discussions, Swyft parking-lot disposition, Permit referral context and Cypher friendly acknowledgment improve interpretation. They add no held calls, qualifications, accepted opportunities, wins, delivered videos or reply-event counters. Verified referral events have their own source card. Underlying full CRM and Sheet collection dates remain unchanged."
+      "note": "Primary Woodrow dialogue supports vendor feedback; Venus stage change remains separate from explicit owner commercial decisions. Earlier five-record context is retained."
     },
     {
       "id": "referral_events",
@@ -112527,6 +112552,27 @@
       "coverage": "One October14 inbound introduction and one October21 outbound referral follow-up; explicit UTC timestamps displayed in Mountain time",
       "method": "Read-only Sales Inbox threads29926 and30220 plus linked message metadata; actual senders, recipients and explicit source timestamps",
       "note": "Melanie Ortiz introduced Charles to Permit Health on October14; Charles offered an exploratory call on October15. Charles followed up on Jonathan Katz's promised introduction on October21; its target and completion remain unknown. These are separate event types, not held calls, qualification, accepted opportunities or wins. Full event coverage is incomplete, and the referral-stage inventory keeps its prior source date."
+    },
+    {
+      "id": "referral_context",
+      "name": "Referral correspondence context",
+      "asOf": "2026-10-22T11:47:28.902Z",
+      "note": "Two October 22 Jonathan/Charles email snippets with explicit UTC dates. Context only; no completed introduction or formal lost outcome.",
+      "status": "Current independent review; local only"
+    },
+    {
+      "id": "zapier_execution",
+      "name": "Video DM Zapier execution review",
+      "asOf": "2026-10-22T12:09:19.575499+00:00",
+      "note": "Published ON, v2; 85 retained weekly history pages, 808 unique run IDs, 15 successful /90 filtered /703 held. One success and one held run inspected. No delivered-message inference.",
+      "status": "Current independent review; local only"
+    },
+    {
+      "id": "source_freshness",
+      "name": "Final Sheet, Calendly and recording freshness checks",
+      "asOf": "2026-10-22T12:11:30Z",
+      "note": "October 22 06:11 MDT: Sheet revision1253 and modification time unchanged; same 100 recording IDs/metadata and 3 active calendar events/invitees. Original values/dialogue dates retained. No additional outcomes inferred.",
+      "status": "Current independent review; local only"
     }
   ],
   "outcomes": {
