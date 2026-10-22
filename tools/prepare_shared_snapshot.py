@@ -10,15 +10,33 @@ from apply_outcome_confirmations import apply_outcome_confirmations
 
 ROOT = Path(__file__).resolve().parents[1]
 
+def publication_policy():
+    path = ROOT / 'PUBLICATION_POLICY.json'
+    return json.loads(path.read_text()) if path.exists() else {}
+
+def apply_publication_policy(snapshot):
+    """An import or prior public snapshot cannot override an owner local hold."""
+    policy = publication_policy()
+    if policy.get('mode') == 'local_only':
+        snapshot.setdefault('meta', {}).update(
+            publicationStatus='local_only',
+            publicationPolicyConfirmedOn=policy.get('confirmedOn'),
+            publicationPolicyBasis=policy.get('basis'),
+            public=False)
+    return snapshot
+
 def curate_snapshot(source):
     public = copy.deepcopy(source)
     apply_owner_confirmations(public)
     apply_outcome_confirmations(public)
     if public.get('time'):
         apply_effort_estimate(public['time'])
-    pending=public.get('meta',{}).get('publicationStatus')=='pending_owner_approval'
-    public['meta'].update(public=not pending, publicDataPolicy=('Local review snapshot; refreshed private source supplements await publication approval.' if pending else 'Owner-approved detailed snapshot including prospect identities and available business record links.'))
-    public['meta']['note'] = ('Local review snapshot; refreshed private source supplements have not been published. ' if pending else 'Published snapshot; ') + 'Source coverage varies. Automatic refresh is not enabled.'
+    apply_publication_policy(public)
+    state=public.get('meta',{}).get('publicationStatus')
+    local_only=state=='local_only'
+    pending=state=='pending_owner_approval'
+    public.setdefault('meta',{}).update(public=not (local_only or pending), publicDataPolicy=('Owner-directed local-only snapshot; GitHub and GitHub Pages remain unchanged. Future publication requires a new explicit owner instruction and policy change.' if local_only else 'Local review snapshot; refreshed private source supplements await publication approval.' if pending else 'Owner-approved detailed snapshot including prospect identities and available business record links.'))
+    public['meta']['note'] = ('Local-only snapshot by owner instruction; refreshed source supplements have not been published. ' if local_only else 'Local review snapshot; refreshed private source supplements have not been published. ' if pending else 'Published snapshot; ') + 'Source coverage varies. Automatic refresh is not enabled.'
     for name in ('ads', 'waalaxy', 'content'):
         public.get(name, {}).pop('sources', None)
     def scrub(value):
@@ -80,11 +98,18 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
             result.setdefault(key,{})['browserReview']=copy.deepcopy(old_review)
             retained.add(key)
             if key in ('crm','ads'):retained.add(key+'_browser')
+    for key in ('crm','ads'):
+        if key in retained and result.get(key,{}).get('browserReview'):
+            retained.add(key+'_browser')
     # Recording review is an independently dated supplement to calendar data.
     prior_ff=(previous.get('meetings') or {}).get('fireflies')
     current_ff=(result.get('meetings') or {}).get('fireflies')
     if prior_ff and (not current_ff or stamp(prior_ff)>stamp(current_ff)):
         result.setdefault('meetings',{})['fireflies']=copy.deepcopy(prior_ff)
+        retained.add('fireflies')
+    elif prior_ff and 'meetings' in retained:
+        # Replacing the entire calendar container also retained its recording
+        # review. Keep the separate Fireflies source-card timestamp in sync.
         retained.add('fireflies')
     # Public observations can be refreshed while private content exports retain
     # their historical date. Preserve those independent collection dates too.
@@ -109,9 +134,12 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
         for key in ('generatedAt','asOfDate','reportingAsOfDate','defaultReportingThrough',
                     'defaultCompleteReportingThrough','defaultDatePreset','currentDayPartial','revision'):
             if key in old_meta:incoming_meta[key]=copy.deepcopy(old_meta[key])
-    if old_meta.get('publicationStatus')=='pending_owner_approval' and not publication_approved:
-        incoming_meta['publicationStatus']='pending_owner_approval'
-    return result
+    if not publication_approved:
+        holds={'pending_owner_approval':1,'local_only':2}
+        old_hold=old_meta.get('publicationStatus')
+        if holds.get(old_hold,0)>holds.get(incoming_meta.get('publicationStatus'),0):
+            incoming_meta['publicationStatus']=old_hold
+    return apply_publication_policy(result)
 
 def write_shared(source):
     target = ROOT / 'data/shared-dashboard.json'

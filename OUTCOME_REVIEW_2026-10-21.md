@@ -1,45 +1,61 @@
 # Charles's highest-level outcomes
 
-The four cards above the channel summaries use the reporting-period filter and Charles-only scope. The definitions were confirmed by the dashboard owner on October 21, 2026.
+The four cards above the channel summaries use Charles-only scope and the selected reporting period. The owner agreed the definitions on October 21. Source collection finished late October 21 Mountain; local preparation continued after midnight.
 
 | Metric | Date and unit | Required evidence |
 |---|---|---|
-| Prospect calls held | Distinct commercial meeting, by actual occurrence date | Charles participated; prospect purpose and attendance confirmed. Scheduled, canceled, no-show, recruiting, internal and asynchronous exchanges are excluded. |
-| Qualified companies | Unique company among that period's held prospect calls | Latest explicit owner qualification. A repeated meeting does not add another qualified company. |
-| New opportunities accepted | Distinct commercial opportunity, by original acceptance date | Charles explicitly accepted the active opportunity and a next step is recorded. A new CRM record, automated task or current stage label is insufficient. |
-| New clients won | Unique first-time client company, by verified first win date | First engagement and Charles's commercial ownership confirmed. Existing-client renewals, expansions and reopened duplicates are excluded. |
+| Prospect calls held | Distinct prospect meeting, by occurrence date | Charles participated; attendance and prospect purpose confirmed. Scheduled, canceled, no-show, recruiting, internal, existing-client delivery and asynchronous exchanges are excluded. |
+| Qualified companies | Unique company among that period's held calls | Latest explicit owner decision or direct documented Charles commercial approval. A stage label or general interest alone is insufficient. |
+| New opportunities accepted | Distinct commercial opportunity, by original acceptance date | Charles accepts an active opportunity with a next step. First documentation is not automatically first acceptance; new CRM records are insufficient. |
+| New clients won | Unique first-time client, by verified first win date | Actual first engagement and Charles's commercial ownership confirmed. Renewals, expansions and duplicate records are excluded. |
 
-These counts have different units and event cohorts. They must not be presented as a conversion funnel.
+These measures have different event dates and units. They are not a conversion funnel.
 
-## Existing bounded confirmations
+## Reviewed October call set
 
-| Company | Held call date | Qualification | CRM evidence |
+| Company | Held date | Qualification basis | CRM |
 |---|---|---|---|
-| NuVee | October 6, 2026 | Qualified / warm | Deal 788 |
-| Venus Ai Consulting | October 15, 2026 | Unqualified | Deal 791 |
+| DEXIQ Robotics | October 2 | Future CFO interest / nurture; current Charles qualification unknown | 751 |
+| XCaliber Health | October 5 | Qualified through Charles's scoped contract/proposal after the call | 750 |
+| NuVee | October 6 | Owner-confirmed qualified / warm | 788 |
+| Nicolette | October 12 | Nurture / not now after budget mismatch; current qualification unknown | 789 |
+| Venus Ai Consulting | October 15–16; exact day unresolved | Latest explicit owner decision remains unqualified; newer negotiation context requires reconciliation | 791 / duplicate 805 |
 
-On October 16, the owner confirmed that these linked calls were held on their respective dates above. Exact start times and attendance durations remain unavailable. The records are a bounded confirmed set, not a complete October call register. They do not establish accepted opportunities or wins.
+October 1–21 therefore shows **at least five held conversations and at least two qualified companies**. NuVee remains the only qualified company among the four paid lead submissions; XCaliber is a separately evidenced company with no paid attribution assigned.
 
-For October 19–21, no held-call outcome has yet been confirmed in this register. The cards show **Pending**, not zero. Selecting October month to date shows **at least 2** confirmed calls and **at least 1** qualified company until complete coverage is reconciled.
+The original owner attendance confirmations are retained. New inbox evidence shows Venus's original October 15 booking was rescheduled to an accepted October 16 invitation, while Calendly still lists October 15 active. Neither booking alone verifies the actual day. A period containing both dates counts this confirmed meeting once. A selection intersecting only one candidate day stays incomplete, even if wider coverage is later reconciled.
 
-## Owner review needed
+XCaliber's October 5 post-call proposal explicitly establishes a held conversation and Charles's approval of a scoped commercial engagement. Subsequent proposal and start discussions support an active opportunity by October 5. September 24 data-room/follow-up correspondence means its original acceptance may precede October. It appears in a separate evidence table and is excluded from the **new October opportunity** headline until the original date is known. No signed first-client win is verified.
 
-For every Charles prospect meeting since the last review, supply or confirm the company, actual held date, attendance, qualification and supporting calendar/recording/CRM reference. Separately confirm accepted opportunities with the original acceptance date and active next step, and first-time clients with the verified win date. A list of known existing clients prevents renewals and expansions from becoming net-new wins.
+Actual Nicolette and DEXIQ dialogue was matched to accepted invitations and post-call correspondence. Only occurrence-day precision is supported; scheduled start times are not represented as exact attendance starts. Their finance interest and introduction follow-up do not automatically establish current qualification or accepted paid opportunities.
 
-Explicitly confirm a complete date window before interpreting an empty register as zero. A positive count under incomplete coverage is a confirmed minimum (displayed as ≥); an empty incomplete register remains pending.
+## October 19–21 review
 
-## Contributor data contract
+All eleven available Fireflies recordings indexed in this period were reviewed for actual speakers and purpose. They concern existing-client delivery, internal work or vendor feedback. They establish no additional Charles prospect call. Charles's presence in a participant list is not proof he actually spoke or attended.
 
-`OWNER_CONFIRMATIONS.json` remains canonical for the two linked call confirmations above. `OUTCOME_CONFIRMATIONS.json` holds definitions, coverage assertions and additional reviewed records. `tools/apply_outcome_confirmations.py` builds `data.outcomes` after source preparation and during shared curation. It never infers attendance, qualification, acceptance or wins from source activity.
+The fresh Calendly results contain no starts October 19–21. CRM activities and notes establish tasks or outreach, not additional held calls. These source absences do **not** establish a complete actual-call roster, so the four weekly headline totals remain **Pending**, rather than zero.
 
-Additional held-call rows require `conversationId`, canonical `companyKey`, company, `heldAt`, `charlesParticipated: true`, `prospectMeeting: true`, `heldConfirmed: true`, evidence basis and confirmation date. Qualification uses `qualification: "qualified"` or `"unqualified"` plus `qualificationConfirmedOn`. Use the same canonical company key across all of its contacts and CRM deals. A qualification decision from a later call can update the latest recorded company disposition; conflicting decisions on the same review date remain unresolved.
+The accessible CRM has zero October actual won-status records, corroborated by browser won/archive views. That is a CRM record observation, not proof of zero first-time clients. The sole recorded won deal dates to August. Conditional October 19 discussion of future XCaliber and Venus starts does not establish a signed win.
 
-Opportunity rows require a stable `opportunityId`, canonical company key, company, original `acceptedAt`, `charlesAccepted: true`, a nonempty `nextStep`, evidence basis and confirmation date. Keep the same opportunity ID through re-openings and duplicate CRM records.
+## Remaining decisions
 
-Win rows require canonical company key, company, first `wonAt`, `charlesCommercialOwner: true`, `firstTimeClient: true`, `winConfirmed: true`, evidence basis and confirmation date. A current stage label is not win evidence.
+1. Establish XCaliber's original opportunity acceptance date.
+2. Reconcile Venus's latest Charles qualification/commercial decision and its actual held date. Keep its duplicate records joined to one company.
+3. Confirm a complete Charles prospect-call roster, including calls absent from accessible recordings and Calendly.
+4. Supply executed engagement / first-client start evidence and an existing-client baseline before certifying net-new wins.
 
-Coverage keys are `heldCalls`, `qualification`, `opportunityAcceptances` and `clientWins`. Use `status: "complete"` only with explicit inclusive `start` and `end` dates and a review note establishing complete source reconciliation. Qualification totals also require complete held-call coverage and known dispositions for the selected company cohort.
+## Contributor contract
 
-Timestamped events use America/Denver. Confirmed date-only events keep their supplied occurrence date, with their date basis visible. The week starts Monday. Week and month presets run to the stated source cutoff; complete-day presets stop before a partial current day. Each underlying source retains its own coverage cutoff.
+`OWNER_CONFIRMATIONS.json` preserves the original owner decisions. `OUTCOME_CONFIRMATIONS.json` contains definitions, additional reviewed facts, date corrections and explicit coverage assertions. `tools/apply_outcome_confirmations.py` reapplies both after source preparation. It corrects derived date precision without deleting the original owner evidence.
 
-Validation: `node tools/check_outcome_metrics.js` checks deduplication, cohort membership, explicit acceptance, first wins, Mountain date boundaries, missing-versus-zero handling and stale CRM coverage.
+Held-call rows require a stable `conversationId`, canonical `companyKey`, company, participation/purpose/held confirmations and evidence basis. Use either a verified `heldAt` or a bounded `heldDateRange` with inclusive start/end and a visible uncertainty basis. Deduplicate the same conversation across sources and the same company across CRM records.
+
+Qualification requires `qualified` or `unqualified` plus the decision date and direct evidence. Unknown and nurture dispositions remain outside the qualified count. A later explicit decision can update the company disposition; same-date conflicts remain unresolved.
+
+New-opportunity rows require stable `opportunityId`, original `acceptedAt`, `charlesAccepted: true` and a nonempty `nextStep`. A row explicitly marked `originalAcceptanceDateVerified: false` cannot enter the headline. `observedOpportunities` retains active commercial evidence with uncertain original dates separately.
+
+Win rows require a canonical company key, verified first `wonAt`, `charlesCommercialOwner: true`, `firstTimeClient: true` and `winConfirmed: true`.
+
+Coverage keys are `heldCalls`, `qualification`, `opportunityAcceptances` and `clientWins`. Mark complete only for an explicitly reconciled inclusive date window. Unknown totals remain Pending; positive incomplete counts use ≥. Timestamped facts use America/Denver; date-only evidence keeps its supplied precision. Weeks start Monday.
+
+Validation covers cohort membership, deduplication, unresolved date ranges, original acceptance, first-client wins, partial source days, missing versus zero and stale-source boundaries.

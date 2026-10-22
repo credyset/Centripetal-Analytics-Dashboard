@@ -5,7 +5,7 @@
   "definitionsConfirmedOn": "2026-10-21",
   "definitions": {
     "heldCalls": "Distinct held prospect calls or meetings involving Charles; scheduled, canceled, no-show, internal, recruiting and asynchronous exchanges are excluded.",
-    "qualifiedCompanies": "Distinct Charles-qualified companies among the selected period's confirmed held prospect calls. Qualification is the latest recorded owner decision as of the stated review date.",
+    "qualifiedCompanies": "Distinct Charles-qualified companies among the selected period's confirmed held prospect calls. Use the latest explicit owner decision or direct documented Charles commercial approval; a stage label alone cannot qualify a company.",
     "opportunityAcceptances": "Distinct commercial opportunities explicitly accepted by Charles with an active next step, counted by the original acceptance date. New CRM records and stage labels alone do not establish acceptance.",
     "clientWins": "Distinct companies becoming a client for the first time under Charles's commercial ownership, counted by the verified first win date. Renewals, expansions and reopened records are excluded."
   },
@@ -14,33 +14,125 @@
       "status": "incomplete",
       "start": null,
       "end": null,
-      "note": "Only the bounded owner-confirmed linked calls are available. The complete Charles prospect-meeting register has not been reconciled."
+      "note": "Owner-confirmed linked calls plus independently reviewed recordings and post-call correspondence are included. The complete Charles prospect-meeting register is not reconciled; October 19–21 source absences do not establish zero held calls."
     },
     "qualification": {
       "status": "incomplete",
       "start": null,
       "end": null,
-      "note": "Known call dispositions are retained; qualification for all companies Charles met has not been reviewed."
+      "note": "NuVee retains owner-qualified/warm status. XCaliber has direct Charles commercial approval through a scoped proposal. Nicolette and DEXIQ remain nurture/qualification unknown. Venus retains the last explicit owner unqualified decision; later negotiation context needs reconciliation."
     },
     "opportunityAcceptances": {
       "status": "incomplete",
       "start": null,
       "end": null,
-      "note": "Explicit acceptance dates and next steps need Charles's review. CRM record creation is not an accepted opportunity."
+      "note": "XCaliber was an active scoped proposal by October 5, but September follow-up/data-room review predates it. Its original acceptance date remains unknown, so it is excluded from new October opportunity counts."
     },
     "clientWins": {
       "status": "incomplete",
       "start": null,
       "end": null,
-      "note": "First-client win dates and the existing-client baseline need owner confirmation. A CRM Closed Won stage label is insufficient."
+      "note": "The fresh accessible CRM has no October actual won-status records. This does not certify zero first-time clients; signed engagement, original win date and existing-client baseline remain incomplete."
     }
   },
-  "heldCalls": [],
+  "heldCalls": [
+    {
+      "conversationId": "calendly:d9459ee9-6d38-4476-a820-3a4eb2473599",
+      "companyKey": "company:venus-ai-consulting",
+      "company": "Venus Ai Consulting",
+      "dealId": 791,
+      "duplicateDealIds": [
+        805
+      ],
+      "bookingChainId": "d9459ee9-6d38-4476-a820-3a4eb2473599",
+      "heldAt": null,
+      "heldDateRange": {
+        "start": "2026-10-15",
+        "end": "2026-10-16"
+      },
+      "dateBasis": "Owner confirms held. Original October 15 booking conflicts with an accepted October 16 reschedule in Sales Inbox; exact occurrence day is unresolved.",
+      "charlesParticipated": true,
+      "prospectMeeting": true,
+      "heldConfirmed": true,
+      "qualification": "unqualified",
+      "qualificationDetail": "Unqualified under latest explicit owner decision (October 16); later negotiation evidence requires reconciliation",
+      "qualificationConfirmedOn": "2026-10-16",
+      "confirmedOn": "2026-10-16",
+      "reviewedOn": "2026-10-21",
+      "evidenceBasis": "Original owner-held confirmation preserved; independently reviewed reschedule correspondence corrects the assumed date precision."
+    },
+    {
+      "conversationId": "meeting:xcaliber-health:2026-10-05",
+      "companyKey": "company:xcaliber-health",
+      "company": "XCaliber Health",
+      "dealId": 750,
+      "heldAt": "2026-10-05",
+      "dateBasis": "Charles October 5 post-call email explicitly confirms speaking earlier that day; accepted October 5 invitation corroborates the date.",
+      "charlesParticipated": true,
+      "prospectMeeting": true,
+      "heldConfirmed": true,
+      "qualification": "qualified",
+      "qualificationDetail": "Charles commercially approved a scoped finance engagement and issued a contract/proposal after the call",
+      "qualificationConfirmedOn": "2026-10-05",
+      "qualificationBasis": "Direct Charles commercial proposal; independently reviewed against stage history and later correspondence",
+      "confirmedOn": "2026-10-21",
+      "evidenceBasis": "Sales Inbox proposal thread and October 5 manual negotiation-stage change. No signed win established."
+    },
+    {
+      "conversationId": "fireflies:01M4KFKK7JSA9CG20CNWVFK9M9",
+      "companyKey": "company:nicolette",
+      "company": "Nicolette",
+      "dealId": 789,
+      "heldAt": "2026-10-12",
+      "dateBasis": "Actual Charles/Phil dialogue, visible October 12 recording header and accepted October 12 invitation agree.",
+      "charlesParticipated": true,
+      "prospectMeeting": true,
+      "heldConfirmed": true,
+      "qualification": "unknown",
+      "qualificationDetail": "Nurture / not now: budget mismatch; no current owner-qualified finance engagement established",
+      "confirmedOn": "2026-10-21",
+      "evidenceBasis": "Actual recording dialogue: finance-services discussion, minimum-budget mismatch and relationship/introduction follow-up; no accepted active paid engagement."
+    },
+    {
+      "conversationId": "fireflies:01M3MQ1VCN1YW7VZMKHFDSH5PE",
+      "companyKey": "company:dexiq-robotics",
+      "company": "DEXIQ Robotics",
+      "dealId": 751,
+      "heldAt": "2026-10-02",
+      "dateBasis": "Actual Charles/Varoujan dialogue and October 2 recording header, accepted October 2 invitation and same-day post-call email agree.",
+      "charlesParticipated": true,
+      "prospectMeeting": true,
+      "heldConfirmed": true,
+      "qualification": "unknown",
+      "qualificationDetail": "Future CFO interest / nurture; current qualification and paid engagement not established",
+      "confirmedOn": "2026-10-21",
+      "evidenceBasis": "Actual recording discusses future finance-service interest and introductions. Same-day follow-up supplies requested materials; no current paid finance opportunity accepted."
+    }
+  ],
   "opportunityAcceptances": [],
   "clientWins": [],
   "notes": [
-    "The existing owner-confirmed NuVee and Venus calls are imported from OWNER_CONFIRMATIONS.json, which remains their canonical record.",
-    "A positive confirmed count under incomplete coverage is a lower bound. An empty incomplete register is pending, not zero.",
-    "The four period measures use different units and event cohorts; they are not a conversion funnel."
+    "The original owner confirmations remain preserved. The Venus date assumption is narrowed to October 15–16 because newer reschedule correspondence conflicts with its original booking.",
+    "Positive counts under incomplete coverage are confirmed minima. Empty incomplete registers remain pending, not zero.",
+    "Qualification can be supported by direct documented Charles commercial approval, such as his scoped XCaliber contract/proposal. Nicolette and DEXIQ are not automatically qualified from finance interest or introductions.",
+    "October 19 internal discussion of XCaliber and Venus starts was conditional. It does not establish a signed client win or a new Venus qualification decision.",
+    "New CRM records, completed tasks, platform appointments and invited recording participants do not independently establish a held Charles prospect call.",
+    "The four period measures have different units and event cohorts; they are not a conversion funnel."
+  ],
+  "reviewedOn": "2026-10-21",
+  "observedOpportunities": [
+    {
+      "opportunityId": "commercial:xcaliber-health:finance-engagement",
+      "companyKey": "company:xcaliber-health",
+      "company": "XCaliber Health",
+      "dealId": 750,
+      "documentedBy": "2026-10-05",
+      "originalAcceptedAt": null,
+      "originalAcceptanceDateVerified": false,
+      "nextStep": "Resolve proposal/contract scope and confirm engagement start; Charles followed up October 12 and 14 and the prospect requested a few days.",
+      "evidenceBasis": "Charles issued contract and scope October 5 after a held call; September 24 data-room/follow-up correspondence prevents assuming this was the original opportunity acceptance.",
+      "clientWinVerified": false,
+      "reviewedOn": "2026-10-21"
+    }
   ]
 }

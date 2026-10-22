@@ -2,7 +2,7 @@
 import copy
 import json
 from pathlib import Path
-from prepare_shared_snapshot import curate_snapshot, preserve_newer_shared_sources
+from prepare_shared_snapshot import curate_snapshot, preserve_newer_shared_sources, publication_policy
 
 ROOT=Path(__file__).resolve().parents[1]
 current=json.loads((ROOT/'data/shared-dashboard.json').read_text())
@@ -17,6 +17,13 @@ for key in ('crm','referrals','ads'):older[key].pop('browserReview',None)
 older['sources']=[s for s in older['sources'] if s['id'] not in ('crm_browser','ads_browser')]
 older['time'].pop('reviewedAsOf',None)
 older['time']['period']['end']='2026-10-16'
+# Simulate older complete exports, not just missing browser supplements.
+for key in ('crm','referrals','meetings','time'):
+    older[key]['snapshotAt']='2026-10-17T00:52:01Z' if key!='meetings' else '2026-10-15T02:58:42Z'
+older['crm']['deals']=[d for d in older['crm']['deals'] if d['id']<832]
+older['meetings'].pop('fireflies',None)
+for src in older['sources']:
+    if src['id'] in ('crm','referrals','meetings','time','fireflies'):src['asOf']='2026-10-15T02:58:42Z'
 # A later account snapshot may omit independently dated Sheet/CSV supplements.
 older['waalaxy']['snapshotAt']='2026-10-23T00:00:00Z'
 for key in ('sheetSubset','sheetSubsetCollectedAt','sheetSubsetAccountVerification','sheetSubsetUpstreamSyncAt','selectedExportSnapshot'):
@@ -24,6 +31,11 @@ for key in ('sheetSubset','sheetSubsetCollectedAt','sheetSubsetAccountVerificati
 restored=curate_snapshot(preserve_newer_shared_sources(older,current))
 assert restored['content']['creatorAnalytics']==current['content']['creatorAnalytics']
 assert restored['crm']['browserReview']==current['crm']['browserReview']
+for key in ('crm','referrals','meetings','time'):
+    assert restored[key]['snapshotAt']==current[key]['snapshotAt'], f'Newer {key} source lost'
+assert restored['crm']['deals']==current['crm']['deals']
+assert restored['meetings']['fireflies']==current['meetings']['fireflies']
+assert next(s for s in restored['sources'] if s['id']=='fireflies')['asOf']==next(s for s in current['sources'] if s['id']=='fireflies')['asOf']
 assert any(s['id']=='crm_browser' for s in restored['sources'])
 if current['ads'].get('browserReview'):
     assert restored['ads']['browserReview']==current['ads']['browserReview']
@@ -33,7 +45,14 @@ assert restored['waalaxy']['selectedExportSnapshot']==current['waalaxy']['select
 assert restored['time']['period']==current['time']['period']
 for key in ('reportingAsOfDate','defaultReportingThrough','defaultCompleteReportingThrough','defaultDatePreset'):
     assert restored['meta'][key]==current['meta'][key]
-if current['meta'].get('publicationStatus')=='pending_owner_approval':
-    assert restored['meta']['publicationStatus']=='pending_owner_approval'
+if publication_policy().get('mode')=='local_only':
+    assert restored['meta']['publicationStatus']=='local_only'
+    assert restored['meta']['public'] is False
+    # Even a caller's old approval flag cannot override the canonical local hold.
+    approved_flag=curate_snapshot(preserve_newer_shared_sources(older,current,publication_approved=True))
+    assert approved_flag['meta']['publicationStatus']=='local_only'
+    assert approved_flag['meta']['public'] is False
+elif current['meta'].get('publicationStatus') in ('pending_owner_approval','local_only'):
+    assert restored['meta']['publicationStatus']==current['meta']['publicationStatus']
     assert restored['meta']['public'] is False
 print('Snapshot preservation: source supplements, reporting scope and publication hold passed.')

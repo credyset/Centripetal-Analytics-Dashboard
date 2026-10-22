@@ -32,6 +32,19 @@ assert.equal(evaluate(ledger).unknown,1);
 ledger={...empty,opportunityAcceptances:[{opportunityId:'old',acceptedAt:'2026-10-06',charlesAccepted:true,nextStep:'Proposal review'},{opportunityId:'old',acceptedAt:'2026-10-20',charlesAccepted:true,nextStep:'Follow-up'},{opportunityId:'new',acceptedAt:'2026-10-20',charlesAccepted:true,nextStep:'Discovery with finance lead'},{opportunityId:'no-step',acceptedAt:'2026-10-20',charlesAccepted:true},{opportunityId:'unaccepted',acceptedAt:'2026-10-20',nextStep:'Automated task'}],clientWins:[{companyKey:'first',wonAt:'2026-10-20',charlesCommercialOwner:true,firstTimeClient:true,winConfirmed:true},{companyKey:'first',wonAt:'2026-10-21',charlesCommercialOwner:true,firstTimeClient:true,winConfirmed:true},{companyKey:'existing',wonAt:'2026-10-20',charlesCommercialOwner:true,firstTimeClient:false,winConfirmed:true},{companyKey:'label-only',wonAt:'2026-10-20',charlesCommercialOwner:true,firstTimeClient:true}]};
 assert.equal(evaluate(ledger).accepted,1);assert.equal(evaluate(ledger).wins,1);
 
+// An email reschedule can invalidate the assumed day without invalidating the
+// owner's attendance confirmation. Count once only inside the entire date range.
+ledger={...empty,heldCalls:[call('rescheduled','venus',null,{heldDateRange:{start:'2026-10-15',end:'2026-10-16'},qualification:'unqualified'})]};
+assert.equal(evaluate(ledger,'2026-10-01','2026-10-21').calls,1);
+assert.equal(evaluate(ledger,'2026-10-15','2026-10-15').calls,0);
+assert.equal(evaluate(ledger,'2026-10-16','2026-10-16').calls,0);
+const reconciledRange={...ledger,coverage:{heldCalls:{status:'complete',start:'2026-10-01',end:'2026-10-21'},qualification:{status:'complete',start:'2026-10-01',end:'2026-10-21'}}};
+assert.deepEqual(evaluate(reconciledRange,'2026-10-15','2026-10-15').labels.slice(0,2),['Pending','Pending']);
+assert.deepEqual(evaluate(reconciledRange,'2026-10-12','2026-10-18').labels.slice(0,2),['1','0']);
+// First documentation is not automatically original commercial acceptance.
+ledger={...empty,opportunityAcceptances:[{opportunityId:'existing',acceptedAt:'2026-10-05',charlesAccepted:true,nextStep:'Contract review',originalAcceptanceDateVerified:false}]};
+assert.equal(evaluate(ledger,'2026-10-01','2026-10-21').accepted,0);
+
 // Zero is allowed only after the owner reconciles the entire selected window.
 const coverage=Object.fromEntries(['heldCalls','qualification','opportunityAcceptances','clientWins'].map(k=>[k,{status:'complete',start:'2026-10-01',end:'2026-10-21'}]));
 assert.deepEqual(evaluate({...empty,coverage}).labels,['0','0','0','0']);
@@ -48,6 +61,9 @@ assert.equal(run('crmDateAvailable(normalizeCRM())'),false);
 assert.equal(run("weekly([],'createdAt').at(-1).date"),'2026-10-12');
 run("S.end='2026-10-15';");
 assert.equal(run('crmDateAvailable(normalizeCRM())'),true);
+run("S.end='2026-10-21';S.data.crm.coverage.observedThrough='2026-10-21';S.data.crm.coverage.reportingThrough='2026-10-20';");
+assert.equal(run('crmDateAvailable(normalizeCRM())'),true);
+assert.equal(run('crmCoverageNote(normalizeCRM()).includes("current day is partial")'),true);
 ctx.profile={creatorAnalytics:{snapshotAt:'2026-10-22T01:00:00Z',coverage:{start:'2026-07-25',end:'2026-10-22',sourcePreset:'90 days',finalDayPartial:true},summary:{impressions:100,socialEngagements:10},comparison:{percentChange:258,periodLabel:'prior 90 days'},topPosts:[]}};
 assert.equal(run('creatorContentEvidence(profile).includes("Impressions vs prior 90 days")'),true);
 assert.equal(run('creatorContentEvidence(profile).includes("7-day source window")'),false);

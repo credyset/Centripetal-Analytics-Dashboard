@@ -13,25 +13,30 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DIST = ROOT / '_site'
 
 
-def build(destination=DEFAULT_DIST):
+def build(destination=DEFAULT_DIST, for_publication=False):
     DIST = Path(destination).resolve()
     # The same tracked snapshot drives GitHub clones and the hosted dashboard.
     snapshot_path = ROOT / 'data/shared-dashboard.json'
     source = json.loads(snapshot_path.read_text())
     public = curate_snapshot(source)
+    if for_publication and (not public.get('meta',{}).get('public') or public['meta'].get('publicationStatus') in ('local_only','pending_owner_approval')):
+        raise RuntimeError('Publication is held by the canonical owner policy. Local preview builds remain available.')
 
     DIST.mkdir(parents=True, exist_ok=True)
     (DIST / 'data').mkdir(exist_ok=True)
     shutil.copytree(ROOT / 'assets', DIST / 'assets', dirs_exist_ok=True)
     shutil.copy2(ROOT / 'styles.css', DIST / 'styles.css')
-    pending=public.get('meta',{}).get('publicationStatus')=='pending_owner_approval'
-    html = (ROOT / 'index.html').read_text().replace('Internal analytics · Local concept', 'Local review · Not published' if pending else 'Public analytics · Dated snapshot').replace('INTERNAL / CONCEPT 01', 'LOCAL REVIEW' if pending else 'PUBLIC / SNAPSHOT')
+    state=public.get('meta',{}).get('publicationStatus')
+    local_only=state=='local_only'
+    held=state in ('local_only','pending_owner_approval')
+    html = (ROOT / 'index.html').read_text().replace('Internal analytics · Local concept', 'Local-only snapshot · Not published' if local_only else 'Local review · Not published' if held else 'Public analytics · Dated snapshot').replace('INTERNAL / CONCEPT 01', 'LOCAL-ONLY SNAPSHOT' if local_only else 'LOCAL REVIEW' if held else 'PUBLIC / SNAPSHOT')
     html = html.replace('<meta name="color-scheme"', '<meta name="robots" content="noindex, nofollow">\n  <meta name="color-scheme"')
     (DIST / 'index.html').write_text(html)
     payload = json.dumps(public, ensure_ascii=False) + '\n'
     app = (ROOT / 'app.js').read_text()
-    app = app.replace('local concept', 'published snapshot').replace('Local concept', 'Published snapshot')
-    app = app.replace('A working concept, with actual source data.', 'A published snapshot, with actual source data.')
+    if not held:
+        app = app.replace('local concept', 'published snapshot').replace('Local concept', 'Published snapshot')
+        app = app.replace('A working concept, with actual source data.', 'A published snapshot, with actual source data.')
     (DIST / 'app.js').write_text(app)
     (DIST / 'data/dashboard.json').write_text(payload)
     # Keep the published interface and source snapshot in one response. This
@@ -62,4 +67,6 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=DEFAULT_DIST)
-    build(parser.parse_args().output)
+    parser.add_argument('--for-publication', action='store_true', help='Require a publishable canonical snapshot; reject local-only holds.')
+    args=parser.parse_args()
+    build(args.output, for_publication=args.for_publication)

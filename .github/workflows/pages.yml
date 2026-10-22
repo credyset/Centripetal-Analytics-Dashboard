@@ -29,7 +29,12 @@ jobs:
       - name: Check newer source and publication hold preservation
         run: python3 tools/check_snapshot_preservation.py
       - name: Build approved static dashboard
-        run: python3 tools/build_static_site.py
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            python3 tools/build_static_site.py
+          else
+            python3 tools/build_static_site.py --for-publication
+          fi
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4

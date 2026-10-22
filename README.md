@@ -6,13 +6,13 @@ Business-development dashboard for Charles Solomon and the Centripetal team, wit
 
 Other agents can clone this repository, run the populated dashboard and contribute through branches/pull requests without access to ChatGPT Sites. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Latest local refresh: [October 21 review](REFRESH_REVIEW_2026-10-21.md), [Charles outcome definitions](OUTCOME_REVIEW_2026-10-21.md), and [publication review](PUBLICATION_REVIEW_2026-10-21.md). The private source supplements are prepared locally and **have not been published**. The public site retains its last approved snapshot pending explicit publication approval. Earlier corrections remain documented in [ANALYTICS_REVISION_2026-10-16.md](ANALYTICS_REVISION_2026-10-16.md).
+Latest local refresh: [October 21 review](REFRESH_REVIEW_2026-10-21.md), [Charles outcome definitions](OUTCOME_REVIEW_2026-10-21.md), and [publication review](PUBLICATION_REVIEW_2026-10-21.md). The private source supplements are prepared locally and **have not been published**. The owner instructed “Keep it local for now”; the public site retains its last approved snapshot. No publication approval question is pending. The canonical local-only policy is in `PUBLICATION_POLICY.json`. Earlier corrections remain documented in [ANALYTICS_REVISION_2026-10-16.md](ANALYTICS_REVISION_2026-10-16.md).
 
 ## Live public dashboard
 
 **GitHub Pages:** https://credyset.github.io/Centripetal-Analytics-Dashboard/#glance
 
-The GitHub Pages workflow publishes approved code and `data/shared-dashboard.json` changes from `main`. Pull requests run validation/build checks without deploying. Source collection remains on demand.
+The GitHub Pages workflow publishes approved code and `data/shared-dashboard.json` changes from `main` only when the canonical publication policy permits it. Pull requests run validation/build checks without deploying. Source collection remains on demand.
 
 Existing Sites mirror: https://centripetal-analytics-dashboard.christian399556.chatgpt.site
 
@@ -48,7 +48,7 @@ Date presets and custom dates operate on dated evidence. Undated inventories rem
 
 ## Reporting calendar
 
-Monday–Sunday weeks, `America/Denver`, including daylight-saving changes. Preserve source day boundaries where exports are already aggregated by another timezone. The October 21 review defaults to this week through the stated review date, with today partial. Complete-day presets end October 20. Each source is independently bounded: an old CRM export cannot provide this week's totals, and calendar future-event coverage cannot establish bookings created after collection. Time & effort retains its separately labelled October scope and evidence date.
+Monday–Sunday weeks, `America/Denver`, including daylight-saving changes. Preserve source day boundaries where exports are already aggregated by another timezone. The October 21 review defaults to this week through the stated review date, with the latest source reporting day partial. Collection finished late October 21 Mountain; preparation continued after midnight. Complete-day presets end October 20. Each source is independently bounded: an old CRM export cannot provide this week's totals, and calendar future-event coverage cannot establish bookings created after collection. Time & effort retains its separately labelled October scope and evidence date.
 
 ## Data preparation
 
@@ -71,7 +71,7 @@ Raw inputs reside in `data/private/` and are ignored by Git. Local normalized JS
 
 Current Charles source: [CONTENT_CREATOR_REVIEW_2026-10-16.md](CONTENT_CREATOR_REVIEW_2026-10-16.md), using the owner-designated signed-in Chrome profile.
 
-Latest reviewed refresh: [LIVE_DATA_REFRESH_2026-10-16.md](LIVE_DATA_REFRESH_2026-10-16.md). Its source-specific scripts produce isolated local refresh inputs; `tools/apply_refresh_2026_10_16.py` assembles those inputs and reapplies owner decisions. Private raw files are required to replay collection preparation; a fresh clone uses the tracked shared snapshot directly.
+Latest reviewed refresh: [REFRESH_REVIEW_2026-10-21.md](REFRESH_REVIEW_2026-10-21.md). The configured Pipedrive, Calendly and Centripetal Fireflies MCP servers were read directly, with raw evidence kept private. The latest full CRM contains 769 records and 924 activities; calendar and recording source coverage remain separately bounded. `tools/apply_refresh_2026_10_21.py` assembles the latest reviewed patches. Prior review: [LIVE_DATA_REFRESH_2026-10-16.md](LIVE_DATA_REFRESH_2026-10-16.md). Its source-specific scripts produce isolated local refresh inputs; `tools/apply_refresh_2026_10_16.py` assembles those inputs and reapplies owner decisions. Private raw files are required to replay collection preparation; a fresh clone uses the tracked shared snapshot directly.
 
 Collection is currently manual/on demand. The approved curated snapshot is published through GitHub Pages, with a separately maintained Sites mirror. Automatic refresh and an authenticated internal deployment have not been enabled. The browser concept is not an authenticated production service.
 
