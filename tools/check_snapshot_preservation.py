@@ -44,6 +44,8 @@ for parent,child,source_id in (('content','companyAnalytics','content_company'),
     if child in current[parent]:
         assert restored[parent][child]==current[parent][child]
         assert any(s['id']==source_id for s in restored['sources'])
+for parent,child in (('crm','archiveReview'),('video','sourceVerification'),('waalaxy','workflowReview'),('referrals','legacyCaptureReview'),('time','workEvidence')):
+    if child in current[parent]:assert restored[parent][child]==current[parent][child]
 assert restored['meetings']['fireflies']==current['meetings']['fireflies']
 assert next(s for s in restored['sources'] if s['id']=='fireflies')['asOf']==next(s for s in current['sources'] if s['id']=='fireflies')['asOf']
 assert any(s['id']=='crm_browser' for s in restored['sources'])
@@ -52,6 +54,20 @@ if current['ads'].get('browserReview'):
     assert any(s['id']=='ads_browser' for s in restored['sources'])
 assert restored['waalaxy']['sheetSubset']==current['waalaxy']['sheetSubset']
 assert restored['waalaxy']['selectedExportSnapshot']==current['waalaxy']['selectedExportSnapshot']
+# A newer bounded metadata import may omit independently reviewed recordings.
+# Keep the dialogue evidence without falsely claiming new metadata presence.
+prior_ff=current['meetings'].get('fireflies') or {}
+reviewed_ids={r['id'] for r in prior_ff.get('records',[]) if r.get('lastPurposeReviewedAt')}
+if reviewed_ids:
+    incoming=copy.deepcopy(current)
+    incoming['meetings']['snapshotAt']='2026-10-23T12:00:00Z'
+    incoming['meetings']['fireflies']={'snapshotAt':'2026-10-23T12:00:00Z','records':[]}
+    incoming['sources']=[s for s in incoming['sources'] if s['id']!='fireflies_purpose']
+    kept=preserve_newer_shared_sources(incoming,current)
+    rows=kept['meetings']['fireflies']['records']
+    assert reviewed_ids<={r['id'] for r in rows}
+    assert all(r.get('retainedForPurposeEvidenceOnly') for r in rows if r['id'] in reviewed_ids)
+    assert any(s['id']=='fireflies_purpose' for s in kept['sources'])
 assert restored['time']['period']==current['time']['period']
 for key in ('reportingAsOfDate','defaultReportingThrough','defaultCompleteReportingThrough','defaultDatePreset'):
     assert restored['meta'][key]==current['meta'][key]

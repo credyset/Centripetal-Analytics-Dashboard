@@ -11,6 +11,17 @@ for entity in ('deals','activities'):
     rows = data['crm'][entity]
     assert len(rows) == len({row['id'] for row in rows}), f'Duplicate CRM {entity} IDs'
 assert len(data['video']['rows']) == data['video']['summary']['sourceRows']
+archive=data['crm'].get('archiveReview')
+if archive:
+    assert archive['success'] and archive['paginationComplete']
+    assert archive['actualFirstClientWins'] is None
+audit=data['video'].get('sourceVerification')
+if audit:
+    join=audit['crmJoin']
+    assert join['foundRows']+len(join['missingDealIds'])==join['distinctSheetDealIds']==join['sheetRowsWithDealId']
+    assert join['organizationIdMatchedRows']+len(join['organizationIdMismatchRows'])==join['organizationIdComparableRows']
+    assert sum(join['ownerRows'].values())==join['foundRows']
+    assert audit['verifiedVideoDmSends'] is None and audit['verifiedReplyEvents'] is None
 assert abs(sum(row['spend'] for row in data['ads']['daily'])-data['ads']['totals']['spend']) < .02
 ad_review=data['ads'].get('browserReview') or {}
 if ad_review.get('adSets'):
@@ -28,6 +39,22 @@ if creator:
     assert len(creator['daily'])==len({r['date'] for r in creator['daily']})
     assert sum(creator['summary'][k] for k in ('reactions','comments','reposts','saves','sendsOnLinkedIn'))==creator['summary']['socialEngagements']
     assert len(creator['topPosts'])==len({r['activityId'] for r in creator['topPosts']})
+    export=creator.get('exportAnalytics')
+    if export:
+        daily=export['daily']
+        assert [r['date'] for r in daily]==[r['date'] for r in creator['daily']]
+        assert sum(r['impressions'] for r in daily)==creator['summary']['impressions']
+        assert sum(r['engagements'] for r in daily)==export['summary']['engagements']==creator['summary']['exportEngagements']
+        assert all(r['engagements'] is None for r in creator['daily']), 'Broader workbook events became daily social-only counts'
+        posts=export['rankedPosts'];p=export['postCoverage']
+        assert len(posts)==len({r['postId'] for r in posts})==p['uniqueRankedPosts']
+        assert p['completePublishingHistory'] is False
+        for metric in ('impression','engagement'):
+            ranked=[r for r in posts if r[metric+'Rank'] is not None]
+            assert len(ranked)==p[metric+'RankedRows']<=p['rankingCapPerMetric']
+            assert len(ranked)==len({r[metric+'Rank'] for r in ranked})
+        assert [r['date'] for r in export['followers']['daily']]==[r['date'] for r in daily]
+        assert sum(r['newFollowers'] for r in export['followers']['daily'])==export['followers']['newFollowersInWindow']
 company=data['content'].get('companyAnalytics')
 if company:
     rows=company['daily'];summary=company['summary']

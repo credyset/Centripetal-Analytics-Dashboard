@@ -94,7 +94,12 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
     # Account/page supplements have independent collection dates. A newer
     # creator or person export must not silently drop them or refresh their age.
     for parent,child,source_id in (('content','companyAnalytics','content_company'),
-                                    ('waalaxy','accountAnalytics','waalaxy_account')):
+                                    ('waalaxy','accountAnalytics','waalaxy_account'),
+                                    ('crm','archiveReview','crm_archived'),
+                                    ('video','sourceVerification','source_audit'),
+                                    ('waalaxy','workflowReview','source_audit'),
+                                    ('referrals','legacyCaptureReview','source_audit'),
+                                    ('time','workEvidence','source_audit')):
         prior=(previous.get(parent) or {}).get(child)
         incoming=(result.get(parent) or {}).get(child)
         if prior and (not incoming or stamp(prior)>stamp(incoming)):
@@ -123,6 +128,34 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
         # Replacing the entire calendar container also retained its recording
         # review. Keep the separate Fireflies source-card timestamp in sync.
         retained.add('fireflies')
+    # A later metadata-only recording import must not erase reviewed dialogue
+    # purposes. Occurrence dates and joins still follow their separate evidence.
+    new_ff=(result.get('meetings') or {}).get('fireflies') or {}
+    prior_review=(prior_ff or {}).get('additionalPurposeReview')
+    if prior_review and stamp(prior_review)>stamp(new_ff.get('additionalPurposeReview')):
+        new_ff['additionalPurposeReview']=copy.deepcopy(prior_review)
+        retained.add('fireflies_purpose')
+    elif prior_review and 'fireflies' in retained:
+        retained.add('fireflies_purpose')
+    prior_records={r['id']:r for r in (prior_ff or {}).get('records',[])}
+    for record in new_ff.get('records',[]):
+        old_record=prior_records.get(record['id']) or {}
+        if old_record.get('lastPurposeReviewedAt','')>record.get('lastPurposeReviewedAt',''):
+            for key in ('classification','classificationBasis','lastPurposeReviewedAt',
+                        'purposeSourceCollectedAt','purposeReferences','confirmedProspectMeetingAdded'):
+                if key in old_record:record[key]=copy.deepcopy(old_record[key])
+            retained.add('fireflies_purpose')
+    # A metadata-only import can omit previously reviewed recordings because
+    # its date window or pagination differs. Retain their independently dated
+    # purpose evidence without claiming they were returned by that new import.
+    incoming_record_ids={r['id'] for r in new_ff.get('records',[])}
+    for ident,old_record in prior_records.items():
+        if old_record.get('lastPurposeReviewedAt') and ident not in incoming_record_ids:
+            record=copy.deepcopy(old_record)
+            record['retainedForPurposeEvidenceOnly']=True
+            record['metadataPresenceStatus']='Not returned by the latest metadata import; independently dated dialogue review retained'
+            new_ff.setdefault('records',[]).append(record)
+            retained.add('fireflies_purpose')
     # Public observations can be refreshed while private content exports retain
     # their historical date. Preserve those independent collection dates too.
     for nested in ('publicObservations','accessReview'):

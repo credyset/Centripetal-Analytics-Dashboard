@@ -63,8 +63,12 @@ def build(adsets,creatives,baseline,output):
     total=sums(rows);assert total==sums(ads),'Cross-grain totals do not reconcile'
     assert daily(rows)==daily(ads),'Daily cross-grain totals do not reconcile'
     assert all(total[k]==v for k,v in EXPECTED.items()),'Source control totals differ'
-    old=read(baseline)['ads'];result=copy.deepcopy(old)
-    write(RAW/'baseline_ads_before_refresh.json',old)
+    # Owner decisions may advance independently of delivery. Keep the newest
+    # owner evidence while retaining the first pre-refresh comparison snapshot.
+    incoming=read(baseline)['ads']
+    comparison_baseline=RAW/'baseline_ads_before_refresh.json'
+    if not comparison_baseline.exists():write(comparison_baseline,incoming)
+    old=read(comparison_baseline);result=copy.deepcopy(incoming)
     mapping={r['id']:r for r in result['campaigns']}
     assert set(mapping)=={r['Ad Set ID'] for r in rows}
     assert {r['Ad Set ID'] for r in ads}==set(mapping)
@@ -96,11 +100,12 @@ def build(adsets,creatives,baseline,output):
                       'adSetGeneratedAt':meta['generated'],'creativeGeneratedAt':admeta['generated']})
     result['totals']={'spend':total['spend'],'impressions':total['impressions'],
         'clicks':total['clicks'],'formOpens':total['opens'],'rawLeads':total['leads'],
-        'qualifiedLeads':old['totals']['qualifiedLeads'],'videoViews':total['videoViews'],
+        'qualifiedLeads':incoming['totals']['qualifiedLeads'],'videoViews':total['videoViews'],
         'videoCompletions':total['videoCompletions']}
     result['platformTotals']=total
-    result['browserReviewSupersededByExport']=result.pop('browserReview',None)
-    assert result['leads']==old['leads'],'Owner decisions or booking evidence changed'
+    if result.get('browserReview'):
+        result['browserReviewSupersededByExport']=result.pop('browserReview')
+    assert result['leads']==incoming['leads'],'Owner decisions or booking evidence changed'
     assert len(result['leads'])==total['leads']==4
     result['notes']=[
         'Fresh authenticated Ad Set and Ad performance exports from account 515259390; generated October22 at 06:18 and 06:19 UTC. Their requested source window is September4–October22 UTC.',

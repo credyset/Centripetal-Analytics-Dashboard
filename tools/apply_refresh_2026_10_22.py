@@ -8,7 +8,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 import copy
 import json
-from prepare_shared_snapshot import curate_snapshot
+from prepare_shared_snapshot import curate_snapshot, preserve_newer_shared_sources
 
 ROOT=Path(__file__).resolve().parents[1]
 PRIVATE=ROOT/'data/private/refresh_2026_10_22'
@@ -101,6 +101,9 @@ def build():
     current['meta'].update(generatedAt=datetime.now(timezone.utc).isoformat(),
         asOfDate='2026-10-22',localReviewOn='2026-10-22',
         revision='October 22 channel detail refinement and pre-October XCaliber acceptance evidence; owner-directed local only')
+    # A replay of these retained channel patches cannot erase later independent
+    # creator, CRM or other collaborator evidence.
+    current=preserve_newer_shared_sources(current,json.loads((ROOT/'data/shared-dashboard.json').read_text()))
     result=curate_snapshot(current)
     payload=json.dumps(result,ensure_ascii=False,indent=2)+'\n'
     for name in ('shared-dashboard.json','dashboard.json'):(ROOT/'data'/name).write_text(payload)
