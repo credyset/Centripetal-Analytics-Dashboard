@@ -8,6 +8,8 @@ Other agents can clone this repository, run the populated dashboard and contribu
 
 Latest local refresh: [October 22 channel refinement](REFRESH_REVIEW_2026-10-22.md), [October 21 CRM/meeting review](REFRESH_REVIEW_2026-10-21.md), [Charles outcome definitions](OUTCOME_REVIEW_2026-10-21.md), and [publication review](PUBLICATION_REVIEW_2026-10-21.md). The private source supplements are prepared locally and **have not been published**. The owner instructed “Keep it local for now”; the public site retains its last approved snapshot. No publication approval question is pending. The canonical local-only policy is in `PUBLICATION_POLICY.json`. Earlier corrections remain documented in [ANALYTICS_REVISION_2026-10-16.md](ANALYTICS_REVISION_2026-10-16.md).
 
+For the few inputs that still require owner evidence or an export, see [Remaining manual inputs](MANUAL_DATA_REQUEST_2026-10-22.md). Current generic CRM and creator exports have already been collected independently.
+
 ## Live public dashboard
 
 **GitHub Pages:** https://credyset.github.io/Centripetal-Analytics-Dashboard/#glance

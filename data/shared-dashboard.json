@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-10-22T07:11:35.554813+00:00",
+    "generatedAt": "2026-10-22T07:42:22.811834+00:00",
     "asOfDate": "2026-10-22",
     "timezone": "America/Denver",
     "scope": "Charles Solomon and Centripetal Advisors",
@@ -107567,8 +107567,8 @@
         "atomicSnapshot": false,
         "limits": [
           "Configured server date is transcript index time and lacks verified meeting-start/attendance fields. Nicolette and DEXIQ actual dates are separately triangulated to accepted invitation/correspondence and live dialogue; index dates alone remain insufficient.",
-          "NoHot/Qualifiedopportunity ornewclientwin inferredfromsourcecounts orASRconditionalstatements.",
-          "Rawbodies,participantemails,recordinglinks,clientfinancialdetailstayprivate;integrateonlyminimalcuratedfields."
+          "No qualified opportunity or new client win is inferred from source counts or conditional transcript statements.",
+          "Raw transcript bodies, participant emails, recording links and client financial details remain private; only minimal reviewed fields enter the dashboard."
         ]
       },
       "records": [
@@ -107592,26 +107592,36 @@
           "audioDurationIsAttendance": false,
           "sourceEvidenceSha256": "c1f36be29314428b041a30d4c4965fd09de70a50413d3ea7965040652e14bd10",
           "purposeReviewSha256": "9153aea2471bc3f820146169ddd323de2a41f28a131269eefd0fdb5f3f0e5e80",
-          "lastPurposeReviewedAt": "2026-10-22T06:58:46.971794Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
           "purposeSourceCollectedAt": "2026-10-22T06:55:01.960Z",
           "purposeReferences": [
             {
               "sentenceIndex": 27,
               "startSeconds": 161.38,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 65,
               "startSeconds": 302.28,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 111,
               "startSeconds": 504.09,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             }
           ],
-          "confirmedProspectMeetingAdded": false
+          "confirmedProspectMeetingAdded": false,
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 388,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 176,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M4RMD1C9QZD883XMXSXPNPB9",
@@ -107633,26 +107643,36 @@
           "audioDurationIsAttendance": false,
           "sourceEvidenceSha256": "9c35a8d1fe5b3350b7bb910ff7ab19c38d004272dd1eb675be2d3ec3d0eb0877",
           "purposeReviewSha256": "24b872ae6badd2e49526d0dafdd0b2c50dcf7bb497a3bc81dd736a03a134bd5e",
-          "lastPurposeReviewedAt": "2026-10-22T06:58:46.971794Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
           "purposeSourceCollectedAt": "2026-10-22T06:54:57.675Z",
           "purposeReferences": [
             {
               "sentenceIndex": 86,
               "startSeconds": 239.65,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 101,
               "startSeconds": 291.22,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 203,
               "startSeconds": 656.8,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             }
           ],
-          "confirmedProspectMeetingAdded": false
+          "confirmedProspectMeetingAdded": false,
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 563,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 267,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M4RMD1C8A2GJDX14N0E4RRK5",
@@ -107674,26 +107694,36 @@
           "audioDurationIsAttendance": false,
           "sourceEvidenceSha256": "127515730d67c779bac5092c9e072c187c8b08964972d8bdab74e603c6617141",
           "purposeReviewSha256": "a067f5d5e117b3670202907710d7af35d619ba0f26608eff4c0e677b26ba6c2d",
-          "lastPurposeReviewedAt": "2026-10-22T06:58:46.971794Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
           "purposeSourceCollectedAt": "2026-10-22T06:55:04.401Z",
           "purposeReferences": [
             {
               "sentenceIndex": 16,
               "startSeconds": 68.6,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 45,
               "startSeconds": 189.18,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 183,
               "startSeconds": 642.33,
-              "speaker": "Bernard Breton"
+              "speakerLabel": "Bernard Breton"
             }
           ],
-          "confirmedProspectMeetingAdded": false
+          "confirmedProspectMeetingAdded": false,
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 551,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 209,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M3VBRSPE0959P0NGNV538X8Q",
@@ -107701,8 +107731,8 @@
           "indexedAt": "2026-10-12T18:30:00.000Z",
           "occurredAt": null,
           "durationMinutes": 13.78,
-          "classification": "provisional_external",
-          "classificationBasis": "Recording metadata is accessible, but summary and dialogue are absent; commercial purpose is unverified.",
+          "classification": "no_dialogue_available",
+          "classificationBasis": "Successful response contains no sentences; vendor context is metadata only.",
           "evidenceStatus": "recording_metadata_only",
           "crmDealIds": [],
           "bookingChainIds": [],
@@ -107714,7 +107744,20 @@
           "indexedDateMatchesPrior": true,
           "audioDurationIsAttendance": false,
           "sourceEvidenceSha256": "225362141c232e642d14a0e002fa1c55254d19bc01cdfbbc3de8d44edf5b4b8e",
-          "purposeReviewSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+          "purposeReviewSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:50.392Z",
+          "purposeReviewStatus": "response_success_no_dialogue",
+          "sentenceCount": 0,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance."
+          },
+          "purposeReferences": [],
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M4KFKK7JSA9CG20CNWVFK9M9",
@@ -107727,13 +107770,38 @@
           "durationMinutes": 18.93000030517578,
           "occurredAt": "2026-10-12",
           "occurrenceDatePrecision": "day",
-          "classificationBasis": "October8 email agreement for Monday13:30ET, accepted invitation independently observed by root, matching Oct12 Fireflies11:30Mountain header and actual Charles/Phil dialogue. Not index date alone.",
+          "classificationBasis": "Actual Charles and Phil finance-services dialogue, with a budget mismatch and nurture outcome. October 12 occurrence is separately corroborated by invitation and correspondence.",
           "evidenceStatus": "actual_dialogue_and_independent_date_corroboration",
           "heldStatus": "source_corroborated",
           "joinStatus": "actual_dialogue_plus_invitation_and_correspondence",
           "crmDealIds": [
             789
-          ]
+          ],
+          "corroborationReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:56:16.638Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 313,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 234,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 25,
+              "startSeconds": 80.2,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 34,
+              "startSeconds": 121.44,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M4BT6MBZQ6P5YW2Q1YXYMP5X",
@@ -107741,8 +107809,8 @@
           "indexedAt": "2026-10-08T20:00:00.000Z",
           "occurredAt": null,
           "durationMinutes": 20.64,
-          "classification": "client_work",
-          "classificationBasis": "Limited purpose review identifies client service work; external advisers do not make the call new-business acquisition.",
+          "classification": "existing_client_insurance_review",
+          "classificationBasis": "Charles and insurer/client representatives discuss Megadata systems and insurance coverage.",
           "evidenceStatus": "recorded_conversation_unlinked",
           "crmDealIds": [
             762
@@ -107756,7 +107824,36 @@
           "indexedDateMatchesPrior": true,
           "audioDurationIsAttendance": false,
           "sourceEvidenceSha256": "aff697e64a02eaf72750460d9fab980615fa83ac5c329f9fc9e38b3c53202736",
-          "purposeReviewSha256": "e0b0bd058c94b0ca228b149b733c9ae3a763b814095d4f5aec03cbf3fa6ecb2c"
+          "purposeReviewSha256": "e0b0bd058c94b0ca228b149b733c9ae3a763b814095d4f5aec03cbf3fa6ecb2c",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:00.324Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 375,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 128,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 47,
+              "startSeconds": 177.78,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 69,
+              "startSeconds": 247.23,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 93,
+              "startSeconds": 290.93,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M49TKTGFKB54QR88B6PCRQ2R",
@@ -107764,8 +107861,8 @@
           "indexedAt": "2026-10-08T19:30:00.000Z",
           "occurredAt": null,
           "durationMinutes": 18.01,
-          "classification": "partner_financing",
-          "classificationBasis": "Limited purpose review identifies mixed client-financing and partner-relationship activity; not a verified new qualified prospect.",
+          "classification": "lender_partner_and_existing_client_support",
+          "classificationBasis": "Avid representatives and Charles discuss Megadata borrowing and banking/referral relationships.",
           "evidenceStatus": "recorded_conversation_unlinked",
           "crmDealIds": [],
           "bookingChainIds": [],
@@ -107777,7 +107874,36 @@
           "indexedDateMatchesPrior": true,
           "audioDurationIsAttendance": false,
           "sourceEvidenceSha256": "f6b88b24ed5f19dd2aeeb2f85ea1e7098a23210a160f90ff9121768aa11619ff",
-          "purposeReviewSha256": "857337f984abbefdd4bcceec32d6755aba8d2c28aa42e7bbf1192fa29ccb70e4"
+          "purposeReviewSha256": "857337f984abbefdd4bcceec32d6755aba8d2c28aa42e7bbf1192fa29ccb70e4",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:02.804Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 259,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 128,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 10,
+              "startSeconds": 20,
+              "speakerLabel": "Matt Garrity"
+            },
+            {
+              "sentenceIndex": 16,
+              "startSeconds": 38.1,
+              "speakerLabel": "Matt Garrity"
+            },
+            {
+              "sentenceIndex": 20,
+              "startSeconds": 68.81,
+              "speakerLabel": "Matt Garrity"
+            }
+          ],
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M3MQ1VCN1YW7VZMKHFDSH5PE",
@@ -107790,19 +107916,44 @@
           "durationMinutes": 52.75,
           "occurredAt": "2026-10-02",
           "occurrenceDatePrecision": "day",
-          "classificationBasis": "Accepted Oct2 invitation13:00EDT matches Fireflies11:00Mountain header. October2 post-call email says they spoke and sends agreed deck/fund list, corroborating actual dialogue.",
+          "classificationBasis": "Actual Charles and Varoujan future finance-services dialogue. October 2 occurrence is corroborated by invitation, recording header and same-day post-call correspondence.",
           "evidenceStatus": "actual_dialogue_and_independent_date_corroboration",
           "heldStatus": "source_corroborated",
           "joinStatus": "actual_dialogue_plus_invitation_and_correspondence",
           "crmDealIds": [
             751
-          ]
+          ],
+          "corroborationReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:56:17.237Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 728,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 107,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 19,
+              "startSeconds": 65.34,
+              "speakerLabel": "Varoujan Sarkissian"
+            },
+            {
+              "sentenceIndex": 20,
+              "startSeconds": 72.9,
+              "speakerLabel": "Varoujan Sarkissian"
+            }
+          ],
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M5ADMFHW35QJKB18CE8A8KWJ",
           "indexedAt": "2026-10-21T14:30:00+00:00",
           "classification": "client_operating_review",
-          "classificationBasis": "Operating/product review for existingclient; exclude from prospect acquisition.",
+          "classificationBasis": "Operating and product review for an existing client; no new Centripetal prospective-client sale.",
           "reviewedDialogue": true,
           "charlesSpeakerConfirmed": true,
           "countAsCharlesProspectCall": false,
@@ -107813,13 +107964,37 @@
           "evidenceStatus": "actual_dialogue_reviewed",
           "heldStatus": "excluded_from_Charles_prospect_calls",
           "joinStatus": "prospect_purpose_or_Charles_participation_not_established",
-          "crmDealIds": []
+          "crmDealIds": [],
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:42.009Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 671,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 124,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 7,
+              "startSeconds": 17.92,
+              "speakerLabel": "Aryeh Hoffman"
+            },
+            {
+              "sentenceIndex": 93,
+              "startSeconds": 249.62,
+              "speakerLabel": "Ken Berger"
+            }
+          ],
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M5A6E7YNVWMN2YDV70N0F9NB",
           "indexedAt": "2026-10-20T17:00:00+00:00",
           "classification": "client_finance_delivery",
-          "classificationBasis": "Historicalfinancialcleanup and investorreportingdelivery; not a prospectiveCentripetalengagement.",
+          "classificationBasis": "Existing OneFlo financial cleanup and investor reporting delivery.",
           "reviewedDialogue": true,
           "charlesSpeakerConfirmed": true,
           "countAsCharlesProspectCall": false,
@@ -107830,13 +108005,37 @@
           "evidenceStatus": "actual_dialogue_reviewed",
           "heldStatus": "excluded_from_Charles_prospect_calls",
           "joinStatus": "prospect_purpose_or_Charles_participation_not_established",
-          "crmDealIds": []
+          "crmDealIds": [],
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:43.090Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 157,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 81,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 24,
+              "startSeconds": 450.76,
+              "speakerLabel": "Scott Xu"
+            },
+            {
+              "sentenceIndex": 26,
+              "startSeconds": 479.3,
+              "speakerLabel": "Scott Xu"
+            }
+          ],
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M58FTQ6S0GAZ8MK9Q61X0PSM",
           "indexedAt": "2026-10-20T16:00:00+00:00",
           "classification": "client_investor_meeting",
-          "classificationBasis": "Existingclient andgrowthinvestor conversation; not newCentripetalclient acquisition.",
+          "classificationBasis": "Existing Megadata client and investor discussion; not new Centripetal client acquisition.",
           "reviewedDialogue": true,
           "charlesSpeakerConfirmed": true,
           "countAsCharlesProspectCall": false,
@@ -107847,13 +108046,37 @@
           "evidenceStatus": "actual_dialogue_reviewed",
           "heldStatus": "excluded_from_Charles_prospect_calls",
           "joinStatus": "prospect_purpose_or_Charles_participation_not_established",
-          "crmDealIds": []
+          "crmDealIds": [],
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:44.158Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 381,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 164,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 0,
+              "startSeconds": 1.36,
+              "speakerLabel": "Zane Salameh"
+            },
+            {
+              "sentenceIndex": 3,
+              "startSeconds": 10.88,
+              "speakerLabel": "Zane Salameh"
+            }
+          ],
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M58AM0F0K869RZANE0Z4ME2X",
           "indexedAt": "2026-10-20T15:00:00+00:00",
           "classification": "client_finance_delivery",
-          "classificationBasis": "Clientfinance operationshandoff; exclude from prospectcalls.",
+          "classificationBasis": "Existing CareFlow finance operations and service handoff.",
           "reviewedDialogue": true,
           "charlesSpeakerConfirmed": true,
           "countAsCharlesProspectCall": false,
@@ -107864,13 +108087,37 @@
           "evidenceStatus": "actual_dialogue_reviewed",
           "heldStatus": "excluded_from_Charles_prospect_calls",
           "joinStatus": "prospect_purpose_or_Charles_participation_not_established",
-          "crmDealIds": []
+          "crmDealIds": [],
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:45.134Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 232,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 113,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 1,
+              "startSeconds": 8,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 2,
+              "startSeconds": 11.68,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M5CJYY1ZC0N5C6QKBQSHZ0Q8",
           "indexedAt": "2026-10-20T12:00:00+00:00",
           "classification": "vendor_workflow_feedback",
-          "classificationBasis": "ActualspeakersPeterHugick+JulianaOsmers discussWoodrowworkflowevaluation; Charlesparticipantmetadata doesnotverify attendance.",
+          "classificationBasis": "Peter and Juliana discuss Woodrow vendor workflow evaluation. Charles appears in participant metadata, without attributed speech.",
           "reviewedDialogue": true,
           "charlesSpeakerConfirmed": false,
           "countAsCharlesProspectCall": false,
@@ -107881,13 +108128,39 @@
           "evidenceStatus": "actual_dialogue_reviewed",
           "heldStatus": "excluded_from_Charles_prospect_calls",
           "joinStatus": "prospect_purpose_or_Charles_participation_not_established",
-          "crmDealIds": []
+          "crmDealIds": [],
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:56:14.364Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 603,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 55,
+              "startSeconds": 206.48,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 59,
+              "startSeconds": 245.24,
+              "speakerLabel": "Peter Hugick"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M59ZVHSHAH05156MD4JXFJTN"
+          ]
         },
         {
           "id": "01M59ZVHSHAH05156MD4JXFJTN",
           "indexedAt": "2026-10-20T12:00:00+00:00",
           "classification": "vendor_workflow_feedback",
-          "classificationBasis": "OverlappingWoodrowvendorfeedbackrecording; actualspeakersPeter+Juliana,notCharlesprospectcall.",
+          "classificationBasis": "Overlapping Woodrow vendor feedback recording with Peter and Juliana; no Charles-attributed prospect dialogue.",
           "reviewedDialogue": true,
           "charlesSpeakerConfirmed": false,
           "countAsCharlesProspectCall": false,
@@ -107898,13 +108171,39 @@
           "evidenceStatus": "actual_dialogue_reviewed",
           "heldStatus": "excluded_from_Charles_prospect_calls",
           "joinStatus": "prospect_purpose_or_Charles_participation_not_established",
-          "crmDealIds": []
+          "crmDealIds": [],
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:56:15.332Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 541,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 5,
+              "startSeconds": 9.92,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 6,
+              "startSeconds": 19.28,
+              "speakerLabel": "Peter Hugick"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M5CJYY1ZC0N5C6QKBQSHZ0Q8"
+          ]
         },
         {
           "id": "01M55XE19DFCASXNM4VMB7GWYA",
           "indexedAt": "2026-10-19T18:30:00+00:00",
           "classification": "client_gtm_delivery",
-          "classificationBasis": "Existingclient fundraising andoutreachstrategy work,not aCentripetalprospectcall.",
+          "classificationBasis": "Existing OneFlo fundraising and outreach strategy delivery.",
           "reviewedDialogue": true,
           "charlesSpeakerConfirmed": true,
           "countAsCharlesProspectCall": false,
@@ -107915,13 +108214,37 @@
           "evidenceStatus": "actual_dialogue_reviewed",
           "heldStatus": "excluded_from_Charles_prospect_calls",
           "joinStatus": "prospect_purpose_or_Charles_participation_not_established",
-          "crmDealIds": []
+          "crmDealIds": [],
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:45.883Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 565,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 325,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 25,
+              "startSeconds": 99.73,
+              "speakerLabel": "Harry Horowitz"
+            },
+            {
+              "sentenceIndex": 192,
+              "startSeconds": 557.45,
+              "speakerLabel": "Scott Xu"
+            }
+          ],
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M5A7AA264TDZW0Q6XX40X9YR",
           "indexedAt": "2026-10-19T17:00:00+00:00",
           "classification": "client_finance_delivery",
-          "classificationBasis": "Existingclient financialreview,not prospectacquisition.",
+          "classificationBasis": "Existing CareFlow financial review, rather than prospective-client acquisition.",
           "reviewedDialogue": true,
           "charlesSpeakerConfirmed": true,
           "countAsCharlesProspectCall": false,
@@ -107932,13 +108255,37 @@
           "evidenceStatus": "actual_dialogue_reviewed",
           "heldStatus": "excluded_from_Charles_prospect_calls",
           "joinStatus": "prospect_purpose_or_Charles_participation_not_established",
-          "crmDealIds": []
+          "crmDealIds": [],
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:46.679Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 423,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 198,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 4,
+              "startSeconds": 945.58,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 6,
+              "startSeconds": 954.86,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M55AHQ8E75NYHQ559DZ432K8",
           "indexedAt": "2026-10-19T15:00:00+00:00",
           "classification": "client_finance_delivery",
-          "classificationBasis": "Existingclientfinancialreview,not prospectacquisition.",
+          "classificationBasis": "Existing Megadata financial review and delivery.",
           "reviewedDialogue": true,
           "charlesSpeakerConfirmed": true,
           "countAsCharlesProspectCall": false,
@@ -107949,13 +108296,37 @@
           "evidenceStatus": "actual_dialogue_reviewed",
           "heldStatus": "excluded_from_Charles_prospect_calls",
           "joinStatus": "prospect_purpose_or_Charles_participation_not_established",
-          "crmDealIds": []
+          "crmDealIds": [],
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:47.493Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 1092,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 788,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 145,
+              "startSeconds": 1391.28,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 169,
+              "startSeconds": 1444.05,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M5A5PTZ6Y08B2VYN0KW15RDC",
           "indexedAt": "2026-10-19T13:30:00+00:00",
           "classification": "internal_team_huddle",
-          "classificationBasis": "Internaloperations withcommercialpipeline discussion; reportedhypotheticalwins donotestablishclosedclients.",
+          "classificationBasis": "Internal operations and conditional commercial pipeline discussion. Hypothetical client starts do not establish executed wins.",
           "reviewedDialogue": true,
           "charlesSpeakerConfirmed": true,
           "countAsCharlesProspectCall": false,
@@ -107966,13 +108337,39 @@
           "evidenceStatus": "actual_dialogue_reviewed",
           "heldStatus": "excluded_from_Charles_prospect_calls",
           "joinStatus": "prospect_purpose_or_Charles_participation_not_established",
-          "crmDealIds": []
+          "crmDealIds": [],
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:48.351Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 828,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 417,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 81,
+              "startSeconds": 217.17,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 89,
+              "startSeconds": 240.25,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M553MCSM2J79RHRBFVC14CM8"
+          ]
         },
         {
           "id": "01M553MCSM2J79RHRBFVC14CM8",
           "indexedAt": "2026-10-19T13:30:00+00:00",
           "classification": "internal_team_huddle",
-          "classificationBasis": "Overlappinginternalhuddle; not anadditionalprospectcall.",
+          "classificationBasis": "Overlapping internal huddle; not an additional prospect sales call.",
           "reviewedDialogue": true,
           "charlesSpeakerConfirmed": true,
           "countAsCharlesProspectCall": false,
@@ -107983,7 +108380,33 @@
           "evidenceStatus": "actual_dialogue_reviewed",
           "heldStatus": "excluded_from_Charles_prospect_calls",
           "joinStatus": "prospect_purpose_or_Charles_participation_not_established",
-          "crmDealIds": []
+          "crmDealIds": [],
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:49.366Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 809,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 411,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 84,
+              "startSeconds": 230.55,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 92,
+              "startSeconds": 253.6,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M5A5PTZ6Y08B2VYN0KW15RDC"
+          ]
         },
         {
           "id": "01M3Z0ECK6FWF6WKQWPQKS70ZJ",
@@ -108000,26 +108423,36 @@
           "audioDurationIsAttendance": false,
           "classification": "recruiting_acquisition_and_client_transition",
           "classificationBasis": "Charles proposes acquiring Codex/bringing Len onto the team and discusses employment, compensation and transfer economics.",
-          "lastPurposeReviewedAt": "2026-10-22T06:58:46.971794Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
           "purposeSourceCollectedAt": "2026-10-22T06:54:52.663Z",
           "purposeReferences": [
             {
               "sentenceIndex": 62,
               "startSeconds": 147.98,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 68,
               "startSeconds": 178.04,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 146,
               "startSeconds": 508.56,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             }
           ],
-          "confirmedProspectMeetingAdded": false
+          "confirmedProspectMeetingAdded": false,
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 362,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 307,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M47KABBB9KE992WJVP07YR3Q",
@@ -108036,26 +108469,36 @@
           "audioDurationIsAttendance": false,
           "classification": "recruiting_acquisition_and_client_transition",
           "classificationBasis": "Compensation/capacity discussion and possible transfer of Len’s existing clients; no direct new finance-client acceptance or execution established.",
-          "lastPurposeReviewedAt": "2026-10-22T06:58:46.971794Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
           "purposeSourceCollectedAt": "2026-10-22T06:53:38.914Z",
           "purposeReferences": [
             {
               "sentenceIndex": 619,
               "startSeconds": 1808.43,
-              "speaker": "Len Kofman"
+              "speakerLabel": "Len Kofman"
             },
             {
               "sentenceIndex": 627,
               "startSeconds": 1874.96,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 842,
               "startSeconds": 2588.51,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             }
           ],
-          "confirmedProspectMeetingAdded": false
+          "confirmedProspectMeetingAdded": false,
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 985,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 730,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M49K5Z3D0KHXZC7EBMDYBP2W",
@@ -108072,26 +108515,36 @@
           "audioDurationIsAttendance": false,
           "classification": "recruiting_scope_followup",
           "classificationBasis": "Brief scheduling and scope-review coordination with Len; no new client buyer acceptance.",
-          "lastPurposeReviewedAt": "2026-10-22T06:58:46.971794Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
           "purposeSourceCollectedAt": "2026-10-22T06:54:53.648Z",
           "purposeReferences": [
             {
               "sentenceIndex": 4,
               "startSeconds": 5.6,
-              "speaker": "Len Kofman"
+              "speakerLabel": "Len Kofman"
             },
             {
               "sentenceIndex": 36,
               "startSeconds": 156.55,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 38,
               "startSeconds": 171.15,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             }
           ],
-          "confirmedProspectMeetingAdded": false
+          "confirmedProspectMeetingAdded": false,
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 46,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 32,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M4BRN9ZJS3ETMH8J5REMR8Q5",
@@ -108108,26 +108561,36 @@
           "audioDurationIsAttendance": false,
           "classification": "recruiting_onboarding_and_service_model",
           "classificationBasis": "Benefits and delivery workflow discussion with Len, rather than a sales call with a prospective finance client.",
-          "lastPurposeReviewedAt": "2026-10-22T06:58:46.971794Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
           "purposeSourceCollectedAt": "2026-10-22T06:54:54.286Z",
           "purposeReferences": [
             {
               "sentenceIndex": 4,
               "startSeconds": 10.2,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 17,
               "startSeconds": 43.45,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 320,
               "startSeconds": 1057.13,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             }
           ],
-          "confirmedProspectMeetingAdded": false
+          "confirmedProspectMeetingAdded": false,
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 802,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 666,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M4E1AEA38E1BDC1122MNHSK0",
@@ -108144,26 +108607,36 @@
           "audioDurationIsAttendance": false,
           "classification": "recruiting_offer_and_conditional_client_transfer",
           "classificationBasis": "Offer/commission discussion. Charles wants client revenue signed on Centripetal paper before starting; this is a prerequisite, not a signed-win finding.",
-          "lastPurposeReviewedAt": "2026-10-22T06:58:46.971794Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
           "purposeSourceCollectedAt": "2026-10-22T06:54:55.740Z",
           "purposeReferences": [
             {
               "sentenceIndex": 46,
               "startSeconds": 101.76,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 216,
               "startSeconds": 573.4,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 221,
               "startSeconds": 589.69,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             }
           ],
-          "confirmedProspectMeetingAdded": false
+          "confirmedProspectMeetingAdded": false,
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 410,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 337,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M4V6SN23H3E2V6TPTNFWWQBK",
@@ -108180,26 +108653,36 @@
           "audioDurationIsAttendance": false,
           "classification": "referral_partner_and_coaching_discussion",
           "classificationBasis": "Dana explains coaching and referral work; the discussion concerns complementary client support and introductions.",
-          "lastPurposeReviewedAt": "2026-10-22T06:58:46.971794Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
           "purposeSourceCollectedAt": "2026-10-22T06:54:56.755Z",
           "purposeReferences": [
             {
               "sentenceIndex": 315,
               "startSeconds": 891.96,
-              "speaker": "Dana Asher"
+              "speakerLabel": "Dana Asher"
             },
             {
               "sentenceIndex": 531,
               "startSeconds": 1742.63,
-              "speaker": "Dana Asher"
+              "speakerLabel": "Dana Asher"
             },
             {
               "sentenceIndex": 551,
               "startSeconds": 1789.7,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             }
           ],
-          "confirmedProspectMeetingAdded": false
+          "confirmedProspectMeetingAdded": false,
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 657,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 410,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M3MQ1VCR3S2937MKZ09WHWRA",
@@ -108216,26 +108699,38 @@
           "audioDurationIsAttendance": false,
           "classification": "vendor_marketing_and_referral_collaboration",
           "classificationBasis": "Charles, Peter and Rafi discuss marketing, outreach and referral collaboration; no accepted paid Centripetal client engagement established.",
-          "lastPurposeReviewedAt": "2026-10-22T06:58:46.971794Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
           "purposeSourceCollectedAt": "2026-10-22T06:54:58.638Z",
           "purposeReferences": [
             {
               "sentenceIndex": 194,
               "startSeconds": 624.4,
-              "speaker": "Rafi Ferry"
+              "speakerLabel": "Rafi Ferry"
             },
             {
               "sentenceIndex": 223,
               "startSeconds": 861.27,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 357,
               "startSeconds": 1531.23,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             }
           ],
-          "confirmedProspectMeetingAdded": false
+          "confirmedProspectMeetingAdded": false,
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 556,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 224,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "duplicateCandidateIds": [
+            "01M3VTHS6YCSR03XAR0HD6XEKB"
+          ]
         },
         {
           "id": "01M4C1QCT0THMWH2KJASTTBND7",
@@ -108252,26 +108747,36 @@
           "audioDurationIsAttendance": false,
           "classification": "vendor_automation_evaluation",
           "classificationBasis": "David describes selling automation capabilities; Charles proposes checking another contact’s bottlenecks. No Centripetal prospect engagement confirmed.",
-          "lastPurposeReviewedAt": "2026-10-22T06:58:46.971794Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
           "purposeSourceCollectedAt": "2026-10-22T06:54:59.618Z",
           "purposeReferences": [
             {
               "sentenceIndex": 20,
               "startSeconds": 85.06,
-              "speaker": "David Farley"
+              "speakerLabel": "David Farley"
             },
             {
               "sentenceIndex": 37,
               "startSeconds": 212.75,
-              "speaker": "David Farley"
+              "speakerLabel": "David Farley"
             },
             {
               "sentenceIndex": 66,
               "startSeconds": 407.14,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             }
           ],
-          "confirmedProspectMeetingAdded": false
+          "confirmedProspectMeetingAdded": false,
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 76,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 37,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M4D0AZMKMP34SKZY6VHPPGS6",
@@ -108288,26 +108793,36 @@
           "audioDurationIsAttendance": false,
           "classification": "insufficient_dialogue_to_classify",
           "classificationBasis": "Only three brief Charles utterances are retained. No two-way prospect dialogue or outcome can be verified.",
-          "lastPurposeReviewedAt": "2026-10-22T06:58:46.971794Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
           "purposeSourceCollectedAt": "2026-10-22T06:55:00.301Z",
           "purposeReferences": [
             {
               "sentenceIndex": 0,
               "startSeconds": 53.8,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 1,
               "startSeconds": 56.04,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             },
             {
               "sentenceIndex": 2,
               "startSeconds": 56.92,
-              "speaker": "Charles Solomon"
+              "speakerLabel": "Charles Solomon"
             }
           ],
-          "confirmedProspectMeetingAdded": false
+          "confirmedProspectMeetingAdded": false,
+          "purposeReviewStatus": "dialogue_reviewed_insufficient_for_business_purpose",
+          "sentenceCount": 3,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 3,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "duplicateCandidateIds": []
         },
         {
           "id": "01M4S1EAWWD3Z4K8K346ZMX5VZ",
@@ -108324,26 +108839,2018 @@
           "audioDurationIsAttendance": false,
           "classification": "existing_client_professional_services_operations",
           "classificationBasis": "Megadata team discusses customer-facing professional-services delivery and internal scope/workflow controls.",
-          "lastPurposeReviewedAt": "2026-10-22T06:58:46.971794Z",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
           "purposeSourceCollectedAt": "2026-10-22T06:55:01.177Z",
           "purposeReferences": [
             {
               "sentenceIndex": 53,
               "startSeconds": 406.28,
-              "speaker": "Itay Fried"
+              "speakerLabel": "Itay Fried"
             },
             {
               "sentenceIndex": 84,
               "startSeconds": 509.95,
-              "speaker": "Ben Neuwirth"
+              "speakerLabel": "Ben Neuwirth"
             },
             {
               "sentenceIndex": 158,
               "startSeconds": 750.57,
-              "speaker": "Ben Neuwirth"
+              "speakerLabel": "Ben Neuwirth"
             }
           ],
-          "confirmedProspectMeetingAdded": false
+          "confirmedProspectMeetingAdded": false,
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 762,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 13,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4Y6C545HYH3MG146DG6DAPX",
+          "title": "Charles (Megadata) <> Otto (Avante)",
+          "indexedAt": "2026-10-16T19:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 36.01,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "existing_client_insurance_procurement",
+          "classificationBasis": "Charles evaluates insurance options for Megadata; the potential vendor is supplying insurance, not buying Centripetal finance services.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:35.338Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 576,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 193,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 49,
+              "startSeconds": 109.82,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 61,
+              "startSeconds": 150.19,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M52T3HQ1JMVVTCPRBMSZW4GZ",
+          "title": "Matt / Charles",
+          "indexedAt": "2026-10-16T18:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 19.39,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "existing_client_lender_reporting",
+          "classificationBasis": "Charles and Matt review Megadata forecasts, spending and lender approval; no new Centripetal client execution.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:36.488Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 268,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 192,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 45,
+              "startSeconds": 392.43,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 60,
+              "startSeconds": 446.94,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 77,
+              "startSeconds": 490.83,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4XZ669E7AT5QBN1J8WYH0N6",
+          "title": "Pre-podcast chat with Charles (copy)",
+          "indexedAt": "2026-10-16T16:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 13.96,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "insufficient_dialogue",
+          "classificationBasis": "One brief Charles utterance; no two-way prospect conversation or purpose can be verified.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:37.287Z",
+          "purposeReviewStatus": "dialogue_reviewed_insufficient_for_business_purpose",
+          "sentenceCount": 1,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 1,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 0,
+              "startSeconds": 370.38,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4XHMMX8ZBSZ5K3MY9T9QXMN",
+          "title": "AP  (copy)",
+          "indexedAt": "2026-10-16T14:15:00Z",
+          "occurredAt": null,
+          "durationMinutes": 11.34,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "no_dialogue_available",
+          "classificationBasis": "Successful transcript response contains no sentences; participant/title metadata cannot establish purpose or attendance.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:38.052Z",
+          "purposeReviewStatus": "response_success_no_dialogue",
+          "sentenceCount": 0,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance."
+          },
+          "purposeReferences": [],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4XCE0JKSQQWPAPKK9W3H7JQ",
+          "title": "AI Fridays!",
+          "indexedAt": "2026-10-16T13:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 64.35,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_agent_and_workflow_development",
+          "classificationBasis": "Internal team discusses scripts, GitHub and agent rollout for existing finance-service delivery.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:38.688Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 1057,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 340,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement.",
+            "attributionCaution": "Overlapping recordings attribute some matching speech differently to Charles and Scott. Do not treat one missing label as confirmed absence or one label as precise attendance."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 17,
+              "startSeconds": 44.26,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 22,
+              "startSeconds": 59.43,
+              "speakerLabel": "Scott Xu"
+            },
+            {
+              "sentenceIndex": 26,
+              "startSeconds": 75.99,
+              "speakerLabel": "Peter Hugick"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M52EF2HPP99MPCYSV1FNT7FA"
+          ]
+        },
+        {
+          "id": "01M52EF2HPP99MPCYSV1FNT7FA",
+          "title": "AI Fridays!",
+          "indexedAt": "2026-10-16T13:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 64,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_agent_and_workflow_development",
+          "classificationBasis": "Internal automation/workflow discussion; possible overlapping recording has conflicting Charles/Scott speaker attribution.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:39.628Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 999,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance.",
+            "attributionCaution": "Overlapping recordings attribute some matching speech differently to Charles and Scott. Do not treat one missing label as confirmed absence or one label as precise attendance."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 14,
+              "startSeconds": 54.75,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 22,
+              "startSeconds": 85.13,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 27,
+              "startSeconds": 106.11,
+              "speakerLabel": "Peter Hugick"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M4XCE0JKSQQWPAPKK9W3H7JQ"
+          ]
+        },
+        {
+          "id": "01M4VC40Z5ECV6KV4HGQFKD6T5",
+          "title": "Kayla <> Christian -Re: Pipedrive",
+          "indexedAt": "2026-10-15T18:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 12.62,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_team_or_workflow_meeting",
+          "classificationBasis": "Existing direct speaker/dialogue review establishes an internal GTM or workflow conversation; no Centripetal prospective-client sales outcome.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:50.297Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 158,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": false,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 11,
+              "startSeconds": 40.03,
+              "speakerLabel": "Christian Wutz"
+            },
+            {
+              "sentenceIndex": 24,
+              "startSeconds": 140.01,
+              "speakerLabel": "Christian Wutz"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M500EBM4RDPQRNC5ZA5KHSGG",
+          "title": "GTM",
+          "indexedAt": "2026-10-15T14:45:00Z",
+          "occurredAt": null,
+          "durationMinutes": 31,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_team_or_workflow_meeting",
+          "classificationBasis": "Existing direct speaker/dialogue review establishes an internal GTM or workflow conversation; no Centripetal prospective-client sales outcome.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:52.834Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 536,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 329,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 87,
+              "startSeconds": 271.41,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 113,
+              "startSeconds": 366.36,
+              "speakerLabel": "Christian Wutz"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4ZWYNEYEC87F5Z25NT5H8XT",
+          "title": "rgi-dtub-bmw",
+          "indexedAt": "2026-10-15T13:45:00Z",
+          "occurredAt": null,
+          "durationMinutes": 61,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "unrelated_nonbusiness_recording",
+          "classificationBasis": "Direct dialogue is unrelated to Centripetal business and contains no Charles speaker attribution. Irrelevant raw body is not retained in this audit.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:40.631Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 267,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": false,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance."
+          },
+          "purposeReferences": [],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4TZ7WRE183RTGC3K321RMQM",
+          "title": "Megadata monthly catch-up (copy)",
+          "indexedAt": "2026-10-15T13:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 5.11,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "insufficient_business_dialogue",
+          "classificationBasis": "Only meeting/audio/recording logistics are captured. Megadata context is metadata; business purpose and prospect attendance remain unverified.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:41.400Z",
+          "purposeReviewStatus": "dialogue_reviewed_insufficient_for_business_purpose",
+          "sentenceCount": 29,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 23,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 0,
+              "startSeconds": 12.08,
+              "speakerLabel": "Shalom Reinman"
+            },
+            {
+              "sentenceIndex": 5,
+              "startSeconds": 127.16,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4Z1PVJDR78FHYR4S0CV7S11",
+          "title": "Quick GTM / work synch up",
+          "indexedAt": "2026-10-15T13:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 11.66,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "no_dialogue_available",
+          "classificationBasis": "Successful response contains no sentences; no attendance/purpose inference.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:42.211Z",
+          "purposeReviewStatus": "response_success_no_dialogue",
+          "sentenceCount": 0,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance."
+          },
+          "purposeReferences": [],
+          "duplicateCandidateIds": [
+            "01M4ZTBXYCEAECBAJ7YCKW838Z"
+          ]
+        },
+        {
+          "id": "01M4ZTBXYCEAECBAJ7YCKW838Z",
+          "title": "Quick GTM / work synch up",
+          "indexedAt": "2026-10-15T13:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 6,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "insufficient_dialogue",
+          "classificationBasis": "One generic-speaker fragment; Charles identity and purpose cannot be established.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:42.824Z",
+          "purposeReviewStatus": "dialogue_reviewed_insufficient_for_business_purpose",
+          "sentenceCount": 1,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 0,
+              "startSeconds": 306.83,
+              "speakerLabel": "Speaker 1"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M4Z1PVJDR78FHYR4S0CV7S11"
+          ]
+        },
+        {
+          "id": "01M4XG542CG0QAYP3KSGJZKB77",
+          "title": "OneFlo Catch-up",
+          "indexedAt": "2026-10-14T19:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 39.61,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "existing_client_financial_model_delivery",
+          "classificationBasis": "Charles and OneFlo team work on client playbook, pipeline and existing financial projections.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:43.434Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 735,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 383,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 10,
+              "startSeconds": 166.78,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 49,
+              "startSeconds": 253.37,
+              "speakerLabel": "Harry Horowitz"
+            },
+            {
+              "sentenceIndex": 66,
+              "startSeconds": 301.67,
+              "speakerLabel": "Harry Horowitz"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4E8BN6S7ETC3YY0FBPV31XC",
+          "title": "Pre-podcast chat with Charles (copy)",
+          "indexedAt": "2026-10-14T16:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 13.94,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "no_dialogue_available",
+          "classificationBasis": "Successful response contains no sentences; no attendance/purpose inference.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:45.265Z",
+          "purposeReviewStatus": "response_success_no_dialogue",
+          "sentenceCount": 0,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance."
+          },
+          "purposeReferences": [],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4RCV5JHDB3M7GZZK5B9XZFE",
+          "title": "Weekly Operating Review (copy)",
+          "indexedAt": "2026-10-14T14:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 11.52,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "insufficient_business_dialogue",
+          "classificationBasis": "Retained speech concerns Zoom/WhatsApp logistics only; it does not substantiate a prospect sales conversation.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:45.887Z",
+          "purposeReviewStatus": "dialogue_reviewed_insufficient_for_business_purpose",
+          "sentenceCount": 26,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 6,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 5,
+              "startSeconds": 14.08,
+              "speakerLabel": "Itay Fried"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4P9V167ER22J0N3HSE5K8DN",
+          "title": "Finance Huddle",
+          "indexedAt": "2026-10-13T15:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 30.71,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "existing_client_finance_delivery",
+          "classificationBasis": "Client finance, banking and transition obligations are discussed; executed documents refer to client transactions, not Centripetal acquisition wins.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:46.499Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 603,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 198,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 49,
+              "startSeconds": 124.43,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 56,
+              "startSeconds": 135.91,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 118,
+              "startSeconds": 322.9,
+              "speakerLabel": "Reuven Mashitz"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4TSF8T6BKQRE03041E28VZ7",
+          "title": "Peter / Christian Github and more huddle",
+          "indexedAt": "2026-10-13T14:10:00Z",
+          "occurredAt": null,
+          "durationMinutes": 68,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_team_or_workflow_meeting",
+          "classificationBasis": "Existing direct speaker/dialogue review establishes an internal GTM or workflow conversation; no Centripetal prospective-client sales outcome.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:53.653Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 841,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": false,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 6,
+              "startSeconds": 12.52,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 10,
+              "startSeconds": 19.96,
+              "speakerLabel": "Peter Hugick"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4TQEPNDNGPN8D9R0RZ0RVB1",
+          "title": "Centripetal Huddle",
+          "indexedAt": "2026-10-13T13:35:00Z",
+          "occurredAt": null,
+          "durationMinutes": 36,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_team_huddle",
+          "classificationBasis": "Centripetal team discusses existing CareFlow/Blueprint handoff and client finance delivery.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:47.602Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 669,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 329,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 33,
+              "startSeconds": 91.37,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 38,
+              "startSeconds": 103.97,
+              "speakerLabel": "Jess Glasser"
+            },
+            {
+              "sentenceIndex": 71,
+              "startSeconds": 216.12,
+              "speakerLabel": "Jess Glasser"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M465M81E308KD7Y7GYWM9N41",
+          "title": "Centripetal Huddle",
+          "indexedAt": "2026-10-13T13:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 52.91,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_team_huddle",
+          "classificationBasis": "Existing-client handoff and reporting responsibilities are discussed by the internal team.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:48.493Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 897,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 535,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 26,
+              "startSeconds": 117.26,
+              "speakerLabel": "Jess Glasser"
+            },
+            {
+              "sentenceIndex": 34,
+              "startSeconds": 140.97,
+              "speakerLabel": "Jess Glasser"
+            },
+            {
+              "sentenceIndex": 73,
+              "startSeconds": 254.05,
+              "speakerLabel": "Jess Glasser"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4NPAP56FPTZ66Q46AKTH3Z1",
+          "title": "Devo Data Room Asks Meeting",
+          "indexedAt": "2026-10-13T13:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 35.27,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "existing_client_fundraising_delivery",
+          "classificationBasis": "Charles, Scott and Devo discuss Adventr materials, models and its own enterprise transactions; these are not new Centripetal clients.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:49.506Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 435,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 81,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 28,
+              "startSeconds": 108.98,
+              "speakerLabel": "Scott Xu"
+            },
+            {
+              "sentenceIndex": 33,
+              "startSeconds": 119.38,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 75,
+              "startSeconds": 339.66,
+              "speakerLabel": "Devo Harris"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4KWMZ7M0X4PG2RFJWK7BANM",
+          "title": "Centripetal & Blueprint (copy)",
+          "indexedAt": "2026-10-12T18:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 25.52,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "existing_client_service_transition",
+          "classificationBasis": "Centripetal and Blueprint discuss existing client playbooks, close process and handoff.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:51.053Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 547,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 195,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 112,
+              "startSeconds": 228.19,
+              "speakerLabel": "Jessica Glasser"
+            },
+            {
+              "sentenceIndex": 122,
+              "startSeconds": 270.01,
+              "speakerLabel": "Jessica Glasser"
+            },
+            {
+              "sentenceIndex": 126,
+              "startSeconds": 283.61,
+              "speakerLabel": "Jessica Glasser"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4KFKK9E1RBPSSH1V8QYBJMN",
+          "title": "Meeting with Sue to Clean-up Adventr Books",
+          "indexedAt": "2026-10-12T16:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 44.19,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "existing_client_bookkeeping_cleanup",
+          "classificationBasis": "Charles and Sue discuss Devo/Adventr fundraising and financial cleanup.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:51.929Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 693,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 224,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 8,
+              "startSeconds": 31.88,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 16,
+              "startSeconds": 51.24,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 115,
+              "startSeconds": 334.45,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4KFKK71P2E5HSTGY380Z4Z8",
+          "title": "Megan / Charles",
+          "indexedAt": "2026-10-12T15:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 15.61,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "existing_client_fundraising_and_winddown",
+          "classificationBasis": "Megan and Charles discuss existing Adventr obligations, Devo and wind-down/fundraising planning.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:53.021Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 244,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 122,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 12,
+              "startSeconds": 77.07,
+              "speakerLabel": "Megan King"
+            },
+            {
+              "sentenceIndex": 23,
+              "startSeconds": 141.61,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 43,
+              "startSeconds": 236.61,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4R6MC6ZENNYTTVTNZBTRDD4",
+          "title": "Peter / Chuck business strategy pow wow",
+          "indexedAt": "2026-10-12T14:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 70,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_business_and_workflow_strategy",
+          "classificationBasis": "Charles and Peter discuss operating model, client metrics and future onboarding frameworks.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:53.757Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 1404,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 652,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 153,
+              "startSeconds": 402.22,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 174,
+              "startSeconds": 461.85,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 205,
+              "startSeconds": 581.64,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4H1FQRRA9A595QJWTETTZ1T",
+          "title": "GTM",
+          "indexedAt": "2026-10-09T19:15:00Z",
+          "occurredAt": null,
+          "durationMinutes": 33,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_team_or_workflow_meeting",
+          "classificationBasis": "Existing direct speaker/dialogue review establishes an internal GTM or workflow conversation; no Centripetal prospective-client sales outcome.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:54.638Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 452,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 156,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 33,
+              "startSeconds": 102.3,
+              "speakerLabel": "Christian Wutz"
+            },
+            {
+              "sentenceIndex": 41,
+              "startSeconds": 159.74,
+              "speakerLabel": "Christian Wutz"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4GYYYDYKKTXDG7Q2PYGMAW8",
+          "title": "GTM",
+          "indexedAt": "2026-10-09T18:45:00Z",
+          "occurredAt": null,
+          "durationMinutes": 80.96,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_team_or_workflow_meeting",
+          "classificationBasis": "Existing direct speaker/dialogue review establishes an internal GTM or workflow conversation; no Centripetal prospective-client sales outcome.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:55.421Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 1240,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 576,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 14,
+              "startSeconds": 53.46,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 24,
+              "startSeconds": 114.03,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4GD969TT3TC4QR2ZB20T7EB",
+          "title": "Charles <> Megan",
+          "indexedAt": "2026-10-09T17:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 11.67,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "no_dialogue_available",
+          "classificationBasis": "Successful response contains no sentences; title/participant metadata cannot establish actual attendance or purpose.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:55.586Z",
+          "purposeReviewStatus": "response_success_no_dialogue",
+          "sentenceCount": 0,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance."
+          },
+          "purposeReferences": [],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4GKKGP684EJ99DP8HTDV1HA",
+          "title": "Deck Review",
+          "indexedAt": "2026-10-09T16:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 78.9,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "existing_client_fundraising_model_delivery",
+          "classificationBasis": "Charles, Scott and OneFlo founders review a financial model and investment assumptions.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:56.270Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 1671,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 777,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 82,
+              "startSeconds": 313.76,
+              "speakerLabel": "Scott Xu"
+            },
+            {
+              "sentenceIndex": 112,
+              "startSeconds": 395.75,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 162,
+              "startSeconds": 531.54,
+              "speakerLabel": "Harry Horowitz"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4E8BN6CK871TMZ64JCEGPXR",
+          "title": "Lighter Capital &  (copy)",
+          "indexedAt": "2026-10-09T16:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 28.95,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "financing_partner_and_existing_client_support",
+          "classificationBasis": "Charles discusses client financing and a lender partnership; recent-client references do not identify an original Centripetal win date.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:57.316Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 494,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 330,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 36,
+              "startSeconds": 73.16,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 38,
+              "startSeconds": 75.52,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 57,
+              "startSeconds": 126.68,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 215,
+              "startSeconds": 907.74,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M4GDR01APNF3178QBCWHCEE5",
+          "title": "AI Fridays!",
+          "indexedAt": "2026-10-09T13:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 53,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_agent_and_workflow_development",
+          "classificationBasis": "Internal team discusses AI month-close workflow and required client context.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:58.224Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 853,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 316,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 47,
+              "startSeconds": 139.609,
+              "speakerLabel": "Scott Xu"
+            },
+            {
+              "sentenceIndex": 58,
+              "startSeconds": 188.66,
+              "speakerLabel": "Scott Xu"
+            },
+            {
+              "sentenceIndex": 64,
+              "startSeconds": 238.69,
+              "speakerLabel": "Scott Xu"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M465M81EANCTF1Y6FA8H05CN"
+          ]
+        },
+        {
+          "id": "01M465M81EANCTF1Y6FA8H05CN",
+          "title": "AI Fridays!",
+          "indexedAt": "2026-10-09T13:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 70.01,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_agent_and_workflow_development",
+          "classificationBasis": "Internal team discusses AI finance workflow development and supporting documents.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:17:59.389Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 1135,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 592,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 10,
+              "startSeconds": 12,
+              "speakerLabel": "Scott Xu"
+            },
+            {
+              "sentenceIndex": 17,
+              "startSeconds": 63.4,
+              "speakerLabel": "Scott Xu"
+            },
+            {
+              "sentenceIndex": 61,
+              "startSeconds": 304.41,
+              "speakerLabel": "Scott Xu"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M4GDR01APNF3178QBCWHCEE5"
+          ]
+        },
+        {
+          "id": "01M4E61VH8XTD3GS8R5RH1MG72",
+          "title": "Webinar Recap",
+          "indexedAt": "2026-10-08T16:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 10.71,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "existing_client_webinar_logistics",
+          "classificationBasis": "Retained dialogue concerns the completed Megadata webinar and presentation mechanics, not a Centripetal prospect.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:10.241Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 78,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 16,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 23,
+              "startSeconds": 58.66,
+              "speakerLabel": "Dan Brody"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M3VNZW9YK3WF9BWZ2P36QCX2",
+          "title": "The MegaEdge Launch Event | Ask. Analyze. Act.",
+          "indexedAt": "2026-10-08T16:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 39.98,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "other_team_existing_client_webinar",
+          "classificationBasis": "Megadata leadership presents its product/webinar. No Charles speaker attribution is present; metadata invitation is not attendance evidence.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:12.091Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 380,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 15,
+              "startSeconds": 253.41,
+              "speakerLabel": "Dan Brody"
+            },
+            {
+              "sentenceIndex": 23,
+              "startSeconds": 302.55,
+              "speakerLabel": "Dan Brody"
+            },
+            {
+              "sentenceIndex": 27,
+              "startSeconds": 345.16,
+              "speakerLabel": "Dan Brody"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M46P9X3J08CPKAZEGZ1FJ8GY",
+          "title": "Contract Mgmt",
+          "indexedAt": "2026-10-07T18:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 58.47,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "existing_client_vendor_and_contract_management",
+          "classificationBasis": "Megadata operations, vendor costs and contract management; no Centripetal client acquisition.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:13.057Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 1100,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 574,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 5,
+              "startSeconds": 12.24,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 39,
+              "startSeconds": 159.11,
+              "speakerLabel": "Shalom Reinman"
+            },
+            {
+              "sentenceIndex": 100,
+              "startSeconds": 305.17,
+              "speakerLabel": "Shalom Reinman"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M48VMW72H02EFGM9BGNP38T5",
+          "title": "Finance Huddle",
+          "indexedAt": "2026-10-06T19:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 41.19,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "existing_client_finance_delivery",
+          "classificationBasis": "CareFlow finance and its contemplated combination/funding are discussed; its transaction is not a Centripetal sales win.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:13.898Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 864,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 304,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 13,
+              "startSeconds": 50.21,
+              "speakerLabel": "Reuven Mashitz"
+            },
+            {
+              "sentenceIndex": 23,
+              "startSeconds": 77.2,
+              "speakerLabel": "Reuven Mashitz"
+            },
+            {
+              "sentenceIndex": 27,
+              "startSeconds": 93.03,
+              "speakerLabel": "Reuven Mashitz"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M46BAK3HDR7J30F34R5493RM",
+          "title": "Charles / Scott Adventr Bankruptcy Actions",
+          "indexedAt": "2026-10-05T16:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 37.09,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "existing_client_advisory_and_winddown",
+          "classificationBasis": "Charles and Scott discuss existing Adventr financial presentation, weekly cash and wind-down actions.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:15.037Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 681,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 481,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 18,
+              "startSeconds": 53.19,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 47,
+              "startSeconds": 185.7,
+              "speakerLabel": "Scott Xu"
+            },
+            {
+              "sentenceIndex": 57,
+              "startSeconds": 224.8,
+              "speakerLabel": "Scott Xu"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M46462DWD04AA8HRXZ2RJM9V",
+          "title": "Centripetal Huddle",
+          "indexedAt": "2026-10-05T13:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 43,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_team_huddle",
+          "classificationBasis": "Internal team reviews CareFlow finance and existing Megadata obligations.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:16.094Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 683,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 406,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 146,
+              "startSeconds": 390.01,
+              "speakerLabel": "Jess Glasser"
+            },
+            {
+              "sentenceIndex": 162,
+              "startSeconds": 441.88,
+              "speakerLabel": "Jess Glasser"
+            },
+            {
+              "sentenceIndex": 175,
+              "startSeconds": 476.81,
+              "speakerLabel": "Jess Glasser"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M3MQ1VD1FC5MYFM2P733Q3RE"
+          ]
+        },
+        {
+          "id": "01M3MQ1VD1FC5MYFM2P733Q3RE",
+          "title": "Centripetal Huddle",
+          "indexedAt": "2026-10-05T13:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 43.41,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_team_huddle",
+          "classificationBasis": "Overlapping internal review of existing-client obligations and conditional capacity for future clients.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:16.975Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 681,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 413,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 134,
+              "startSeconds": 353.07,
+              "speakerLabel": "Jess Glasser"
+            },
+            {
+              "sentenceIndex": 150,
+              "startSeconds": 404.58,
+              "speakerLabel": "Jess Glasser"
+            },
+            {
+              "sentenceIndex": 164,
+              "startSeconds": 439.53,
+              "speakerLabel": "Jess Glasser"
+            },
+            {
+              "sentenceIndex": 523,
+              "startSeconds": 1858.01,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M46462DWD04AA8HRXZ2RJM9V"
+          ]
+        },
+        {
+          "id": "01M3YD1SR0NBPG337VFT69Y068",
+          "title": "AI Fridays!",
+          "indexedAt": "2026-10-02T13:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 32,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_agent_and_workflow_development",
+          "classificationBasis": "Internal team discusses client agents and describes OneFlo as already a client, without an original execution date.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:17.888Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 415,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 63,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 23,
+              "startSeconds": 84.14,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 36,
+              "startSeconds": 132.96,
+              "speakerLabel": "Scott Xu"
+            },
+            {
+              "sentenceIndex": 46,
+              "startSeconds": 164.49,
+              "speakerLabel": "Peter Hugick"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M3MQ1VCYTB69RRD8271Y3T2D"
+          ]
+        },
+        {
+          "id": "01M3MQ1VCYTB69RRD8271Y3T2D",
+          "title": "AI Fridays!",
+          "indexedAt": "2026-10-02T13:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 28.89,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_agent_and_workflow_development",
+          "classificationBasis": "Internal team discusses agent architecture and existing client context.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:18.862Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 498,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 74,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 60,
+              "startSeconds": 176.48,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 64,
+              "startSeconds": 192.12,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 77,
+              "startSeconds": 238.05,
+              "speakerLabel": "Peter Hugick"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M3YD1SR0NBPG337VFT69Y068"
+          ]
+        },
+        {
+          "id": "01M3YB7K55ZSRZP73ZHFWRC220",
+          "title": "Peter / Chuck connect on Megadata board deck",
+          "indexedAt": "2026-10-02T13:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 32,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_existing_client_report_automation",
+          "classificationBasis": "Peter and Charles review automated Megadata board-deck and reporting workflow.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:19.747Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 325,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 81,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 21,
+              "startSeconds": 835.07,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 29,
+              "startSeconds": 869.96,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 38,
+              "startSeconds": 912.78,
+              "speakerLabel": "Peter Hugick"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M3PV4WCMHYN43F9V5799T5Z6"
+          ]
+        },
+        {
+          "id": "01M3PV4WCMHYN43F9V5799T5Z6",
+          "title": "Peter / Chuck connect on Megadata board deck",
+          "indexedAt": "2026-10-02T13:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 32.27,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_existing_client_report_automation",
+          "classificationBasis": "Overlapping Peter/Charles board-deck automation review, not a new client sales conversation.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:22.782Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 323,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 84,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 22,
+              "startSeconds": 813.28,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 32,
+              "startSeconds": 848.53,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 41,
+              "startSeconds": 889.3,
+              "speakerLabel": "Peter Hugick"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M3YB7K55ZSRZP73ZHFWRC220"
+          ]
+        },
+        {
+          "id": "01M3Y7S9YBS8HFSZ2J0PZAYQMF",
+          "title": "Peter / Tony connect",
+          "indexedAt": "2026-10-02T12:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 50,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "other_team_vendor_workflow_evaluation",
+          "classificationBasis": "Peter and Tony discuss AI workflows; no Charles speaker attribution. A recent-client reference does not establish the original win date.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:23.625Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 762,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": false,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 106,
+              "startSeconds": 233.21,
+              "speakerLabel": "Tony Sanchez"
+            },
+            {
+              "sentenceIndex": 127,
+              "startSeconds": 334.48,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 139,
+              "startSeconds": 425.07,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 651,
+              "startSeconds": 2715.73,
+              "speakerLabel": "Peter Hugick"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M3VV18JZV3CX6960CW7GQP5K",
+          "title": "Oneflo Model Meeting - Market Place Assumptions",
+          "indexedAt": "2026-10-02T12:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 73.11,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "existing_client_financial_model_delivery",
+          "classificationBasis": "Charles, Scott and OneFlo founders work through an existing client financial model.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:24.592Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 1276,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 361,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 149,
+              "startSeconds": 557.18,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 179,
+              "startSeconds": 661.08,
+              "speakerLabel": "Scott Xu"
+            },
+            {
+              "sentenceIndex": 192,
+              "startSeconds": 741.75,
+              "speakerLabel": "Harry Horowitz"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M3VYQ9JG4RNHBZS30CXSA6MA",
+          "title": "Important: Your Insurance Policy Has Been Updated",
+          "indexedAt": "2026-10-01T15:00:00Z",
+          "occurredAt": null,
+          "durationMinutes": 11.7,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "no_dialogue_available",
+          "classificationBasis": "Successful transcript response provides no sentences; subject and invitees do not establish a held prospect conversation.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:25.588Z",
+          "purposeReviewStatus": "response_success_no_dialogue",
+          "sentenceCount": 0,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": false,
+            "speakerLabelSentenceCount": 0,
+            "status": "not_established_from_dialogue",
+            "basis": "No Charles-attributed speech is retained; participant metadata alone cannot establish actual attendance."
+          },
+          "purposeReferences": [],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M3VWTSATSAX06M6EN8XFDVGT",
+          "title": "GTM",
+          "indexedAt": "2026-10-01T14:10:00Z",
+          "occurredAt": null,
+          "durationMinutes": 36,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "internal_team_or_workflow_meeting",
+          "classificationBasis": "Existing direct speaker/dialogue review establishes an internal GTM or workflow conversation; no Centripetal prospective-client sales outcome.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T05:57:56.453Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 622,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 245,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 98,
+              "startSeconds": 399.55,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 202,
+              "startSeconds": 646.35,
+              "speakerLabel": "Peter Hugick"
+            }
+          ],
+          "duplicateCandidateIds": []
+        },
+        {
+          "id": "01M3VTHS6YCSR03XAR0HD6XEKB",
+          "title": "Centripetal / Raftika",
+          "indexedAt": "2026-10-01T13:30:00Z",
+          "occurredAt": null,
+          "durationMinutes": 40,
+          "evidenceStatus": "bounded_source_response_reviewed",
+          "crmDealIds": [],
+          "bookingChainIds": [],
+          "joinStatus": "no_verified_crm_or_calendar_join",
+          "heldStatus": "unverified_for_booked_call",
+          "qualifiedStatus": "unverified",
+          "audioDurationIsAttendance": false,
+          "classification": "vendor_marketing_and_referral_collaboration",
+          "classificationBasis": "Overlapping marketing/referral discussion with Rafi, rather than a direct Centripetal prospective-client finance engagement.",
+          "lastPurposeReviewedAt": "2026-10-22T07:30:31.319097Z",
+          "purposeSourceCollectedAt": "2026-10-22T07:18:26.152Z",
+          "purposeReviewStatus": "dialogue_reviewed_purpose_classified",
+          "sentenceCount": 552,
+          "charlesSpeakerEvidence": {
+            "listedInMetadata": true,
+            "speakerLabelObserved": true,
+            "speakerLabelSentenceCount": 220,
+            "status": "speaker_attributed",
+            "basis": "Direct retained speech attributed by source to Charles/Charles Solomon; no independent voice identity or total attendance measurement."
+          },
+          "purposeReferences": [
+            {
+              "sentenceIndex": 52,
+              "startSeconds": 200.57,
+              "speakerLabel": "Peter Hugick"
+            },
+            {
+              "sentenceIndex": 234,
+              "startSeconds": 914.73,
+              "speakerLabel": "Charles Solomon"
+            },
+            {
+              "sentenceIndex": 239,
+              "startSeconds": 944.26,
+              "speakerLabel": "Charles Solomon"
+            }
+          ],
+          "duplicateCandidateIds": [
+            "01M3MQ1VCR3S2937MKZ09WHWRA"
+          ]
         }
       ],
       "summary": {
@@ -108410,7 +110917,8 @@
         "Nicolette October 12 and DEXIQ October 2 have actual Charles dialogue and independently corroborated occurrence days. Exact meeting-start and individual attendance times remain unknown.",
         "The eleven October 19–21 recordings establish no additional Charles prospect calls. This bounded absence is not an account-wide zero.",
         "Conditional internal discussion of future XCaliber/Venus engagements does not establish signed client wins.",
-        "Thirteen additional selected October-indexed dialogues were read independently: twelve establish recruiting, vendor, referral or existing-client purposes; one has insufficient dialogue. None adds a confirmed prospect outcome. Metadata/index times remain distinct from actual meeting occurrence; complete held-call coverage is still unresolved."
+        "Thirteen additional selected October-indexed dialogues were read independently: twelve establish recruiting, vendor, referral or existing-client purposes; one has insufficient dialogue. None adds a confirmed prospect outcome. Metadata/index times remain distinct from actual meeting occurrence; complete held-call coverage is still unresolved.",
+        "76 successful responses: 65 purposes classified, five insufficient dialogues and six responses with no dialogue. Nine metadata duplicate-candidate groups are retained separately from a previously verified audio duplicate. No additional eligible prospect call or dated first-client win was established. Complete actual call coverage remains unknown."
       ],
       "currentWeekPurposeReview": {
         "start": "2026-10-19",
@@ -108449,6 +110957,163 @@
           "meaning": "Zero additions from this review, not verified zero business activity or complete outcome coverage. Existing five-held/two-qualified confirmed minima remain unchanged. Venus retains owner-unqualified status."
         },
         "note": "Thirteen additional selected October-indexed dialogues were read independently: twelve establish recruiting, vendor, referral or existing-client purposes; one has insufficient dialogue. None adds a confirmed prospect outcome. Metadata/index times remain distinct from actual meeting occurrence; complete held-call coverage is still unresolved."
+      },
+      "octoberPurposeReview": {
+        "snapshotAt": "2026-10-22T07:30:31.319097Z",
+        "reviewedAt": "2026-10-22T07:30:31.319097Z",
+        "metadataInventorySnapshotAt": "2026-10-22T05:56:13.245Z",
+        "retainedOctoberIndexedRecords": 76,
+        "alreadyRetrievedBeforeThisPass": 32,
+        "additionalSuccessfulTranscriptReads": 44,
+        "successfulResponseCoverage": true,
+        "metadataOnlyUnrequestedRecords": 0,
+        "reviewStatusCounts": {
+          "dialogue_reviewed_purpose_classified": 65,
+          "dialogue_reviewed_insufficient_for_business_purpose": 5,
+          "response_success_no_dialogue": 6
+        },
+        "nonemptyDialogueRecords": 70,
+        "recordsWithCharlesSpeakerAttribution": 61,
+        "duplicateCandidateGroups": [
+          [
+            "01M5CJYY1ZC0N5C6QKBQSHZ0Q8",
+            "01M59ZVHSHAH05156MD4JXFJTN"
+          ],
+          [
+            "01M5A5PTZ6Y08B2VYN0KW15RDC",
+            "01M553MCSM2J79RHRBFVC14CM8"
+          ],
+          [
+            "01M4XCE0JKSQQWPAPKK9W3H7JQ",
+            "01M52EF2HPP99MPCYSV1FNT7FA"
+          ],
+          [
+            "01M4Z1PVJDR78FHYR4S0CV7S11",
+            "01M4ZTBXYCEAECBAJ7YCKW838Z"
+          ],
+          [
+            "01M4GDR01APNF3178QBCWHCEE5",
+            "01M465M81EANCTF1Y6FA8H05CN"
+          ],
+          [
+            "01M46462DWD04AA8HRXZ2RJM9V",
+            "01M3MQ1VD1FC5MYFM2P733Q3RE"
+          ],
+          [
+            "01M3YD1SR0NBPG337VFT69Y068",
+            "01M3MQ1VCYTB69RRD8271Y3T2D"
+          ],
+          [
+            "01M3YB7K55ZSRZP73ZHFWRC220",
+            "01M3PV4WCMHYN43F9V5799T5Z6"
+          ],
+          [
+            "01M3VTHS6YCSR03XAR0HD6XEKB",
+            "01M3MQ1VCR3S2937MKZ09WHWRA"
+          ]
+        ],
+        "recordsAreDistinctMeetings": false,
+        "completeActualHeldCallRosterEstablished": false,
+        "additionalConfirmedProspectCalls": 0,
+        "additionalConfirmedQualifications": 0,
+        "additionalDatedOpportunityAcceptances": 0,
+        "additionalVerifiedFirstClientWins": 0,
+        "canonicalConfirmedMinimaUnchanged": {
+          "heldCalls": 5,
+          "qualifiedCompanies": 2
+        },
+        "previouslyVerifiedDuplicateGroups": [
+          [
+            "01M4H1FQRRA9A595QJWTETTZ1T",
+            "01M4GYYYDYKKTXDG7Q2PYGMAW8"
+          ]
+        ],
+        "recordingIds": [
+          "01M5ADMFHW35QJKB18CE8A8KWJ",
+          "01M5A6E7YNVWMN2YDV70N0F9NB",
+          "01M58FTQ6S0GAZ8MK9Q61X0PSM",
+          "01M58AM0F0K869RZANE0Z4ME2X",
+          "01M5CJYY1ZC0N5C6QKBQSHZ0Q8",
+          "01M59ZVHSHAH05156MD4JXFJTN",
+          "01M55XE19DFCASXNM4VMB7GWYA",
+          "01M5A7AA264TDZW0Q6XX40X9YR",
+          "01M55AHQ8E75NYHQ559DZ432K8",
+          "01M5A5PTZ6Y08B2VYN0KW15RDC",
+          "01M553MCSM2J79RHRBFVC14CM8",
+          "01M4Y6C545HYH3MG146DG6DAPX",
+          "01M52T3HQ1JMVVTCPRBMSZW4GZ",
+          "01M4XZ669E7AT5QBN1J8WYH0N6",
+          "01M4XHMMX8ZBSZ5K3MY9T9QXMN",
+          "01M4XCE0JKSQQWPAPKK9W3H7JQ",
+          "01M52EF2HPP99MPCYSV1FNT7FA",
+          "01M4VC40Z5ECV6KV4HGQFKD6T5",
+          "01M4V6SN23H3E2V6TPTNFWWQBK",
+          "01M500EBM4RDPQRNC5ZA5KHSGG",
+          "01M4ZWYNEYEC87F5Z25NT5H8XT",
+          "01M4TZ7WRE183RTGC3K321RMQM",
+          "01M4Z1PVJDR78FHYR4S0CV7S11",
+          "01M4ZTBXYCEAECBAJ7YCKW838Z",
+          "01M4S1EAWWD3Z4K8K346ZMX5VZ",
+          "01M4XG542CG0QAYP3KSGJZKB77",
+          "01M4S902G6YVB1HA0R58193800",
+          "01M4RMD1C9QZD883XMXSXPNPB9",
+          "01M4E8BN6S7ETC3YY0FBPV31XC",
+          "01M4RCV5JHDB3M7GZZK5B9XZFE",
+          "01M4RMD1C8A2GJDX14N0E4RRK5",
+          "01M4P9V167ER22J0N3HSE5K8DN",
+          "01M4TSF8T6BKQRE03041E28VZ7",
+          "01M4TQEPNDNGPN8D9R0RZ0RVB1",
+          "01M465M81E308KD7Y7GYWM9N41",
+          "01M4NPAP56FPTZ66Q46AKTH3Z1",
+          "01M3VBRSPE0959P0NGNV538X8Q",
+          "01M4KWMZ7M0X4PG2RFJWK7BANM",
+          "01M4KFKK7JSA9CG20CNWVFK9M9",
+          "01M4KFKK9E1RBPSSH1V8QYBJMN",
+          "01M4KFKK71P2E5HSTGY380Z4Z8",
+          "01M4R6MC6ZENNYTTVTNZBTRDD4",
+          "01M4H1FQRRA9A595QJWTETTZ1T",
+          "01M4GYYYDYKKTXDG7Q2PYGMAW8",
+          "01M4C1QCT0THMWH2KJASTTBND7",
+          "01M4GD969TT3TC4QR2ZB20T7EB",
+          "01M4GKKGP684EJ99DP8HTDV1HA",
+          "01M4E8BN6CK871TMZ64JCEGPXR",
+          "01M4GDR01APNF3178QBCWHCEE5",
+          "01M465M81EANCTF1Y6FA8H05CN",
+          "01M4BT6MBZQ6P5YW2Q1YXYMP5X",
+          "01M49TKTGFKB54QR88B6PCRQ2R",
+          "01M4E61VH8XTD3GS8R5RH1MG72",
+          "01M3VNZW9YK3WF9BWZ2P36QCX2",
+          "01M4E1AEA38E1BDC1122MNHSK0",
+          "01M4D0AZMKMP34SKZY6VHPPGS6",
+          "01M4BRN9ZJS3ETMH8J5REMR8Q5",
+          "01M49K5Z3D0KHXZC7EBMDYBP2W",
+          "01M46P9X3J08CPKAZEGZ1FJ8GY",
+          "01M47KABBB9KE992WJVP07YR3Q",
+          "01M48VMW72H02EFGM9BGNP38T5",
+          "01M46BAK3HDR7J30F34R5493RM",
+          "01M46462DWD04AA8HRXZ2RJM9V",
+          "01M3MQ1VD1FC5MYFM2P733Q3RE",
+          "01M3Z0ECK6FWF6WKQWPQKS70ZJ",
+          "01M3MQ1VCN1YW7VZMKHFDSH5PE",
+          "01M3YD1SR0NBPG337VFT69Y068",
+          "01M3MQ1VCYTB69RRD8271Y3T2D",
+          "01M3YB7K55ZSRZP73ZHFWRC220",
+          "01M3PV4WCMHYN43F9V5799T5Z6",
+          "01M3Y7S9YBS8HFSZ2J0PZAYQMF",
+          "01M3VV18JZV3CX6960CW7GQP5K",
+          "01M3VYQ9JG4RNHBZS30CXSA6MA",
+          "01M3VWTSATSAX06M6EN8XFDVGT",
+          "01M3VTHS6YCSR03XAR0HD6XEKB",
+          "01M3MQ1VCR3S2937MKZ09WHWRA"
+        ],
+        "notes": [
+          "All 76 retained October-indexed records received successful transcript responses and a disposition. No unrequested metadata-only record remains; successful empty/fragmentary responses remain explicitly insufficient.",
+          "This completeness statement covers the retained 100-record metadata inventory collected October21 Mountain (October22 UTC), of which 76 are October-indexed. It does not establish all October meetings, silent attendance, missing recordings, actual occurrence dates or later additions to Fireflies.",
+          "Record IDs count indexed recordings, including overlapping/duplicate candidates. They are not 76 distinct meetings.",
+          "Existing independently corroborated DEXIQ and Nicolette held-call ledger entries remain supported. NuVee, Venus and XCaliber held calls are supported outside this recording inventory. No new eligible call was established from the 44 additional reads.",
+          "Conditional staffing, employer/acquisition negotiations, existing-client transactions and other-party sales are not counted as first-time Centripetal client wins.",
+          "Venus retains the last explicit owner-unqualified decision. XCaliber acceptance remains established before October, with exact first-ever day unknown."
+        ]
       }
     },
     "ownerConfirmedHeldCalls": [
@@ -109078,6 +111743,7 @@
       "These figures are a draft reconstruction, not a timesheet or billing record.",
       "October 21 refresh review: a fresh metadata scan and actual Christian speaker checks confirm the same six associated recordings, five after duplicate removal, totaling 228.58 audio minutes. No newer matching recording was found in the accessible indexed list. Audio duration is not attendance or worked time. The owner’s 14.5–15.75-hour non-meeting estimate remains unchanged.",
       "Drive revision metadata attributes 14 retained October file revisions on nine Mountain dates to Christian. This supports activity dates only; it does not establish human work duration, billing or additional hours. The owner allowance remains 14.5–15.75 hours.",
+      "A speaker-label cross-check across all 76 retained October Fireflies responses found six Christian-attributed recordings, all already represented in the existing six source audio events. It adds no new recording-duration proxy or human hours; the existing verified duplicate remains excluded.",
       "Owner-specified nonmeeting estimate: 14.5–15.75 hours. This replaces the prior percentage adjustment; no workstream allocation or measured actual-hour claim is made."
     ],
     "reviewedAsOf": "2026-10-21",
@@ -109497,6 +112163,16 @@
       "note": "Thirteen additional selected October-indexed dialogues were read independently: twelve establish recruiting, vendor, referral or existing-client purposes; one has insufficient dialogue. None adds a confirmed prospect outcome. Metadata/index times remain distinct from actual meeting occurrence; complete held-call coverage is still unresolved."
     },
     {
+      "id": "fireflies_october_review",
+      "name": "Fireflies · retained October inventory review",
+      "status": "Current complete response review of the bounded October inventory",
+      "asOf": "2026-10-22T07:30:31.319097Z",
+      "checkedAt": "2026-10-22",
+      "coverage": "All 76 October-indexed records within the retained 100-record metadata inventory; not all actual meetings",
+      "method": "All retained October source IDs requested; dialogue and speaker evidence assessed separately from metadata",
+      "note": "76 successful responses: 65 purposes classified, five insufficient dialogues and six responses with no dialogue. Nine metadata duplicate-candidate groups are retained separately from a previously verified audio duplicate. No additional eligible prospect call or dated first-client win was established. Complete actual call coverage remains unknown."
+    },
+    {
       "id": "source_audit",
       "name": "Worksheet · CRM joins and workflow provenance review",
       "status": "Current source-quality review; source inventories retain separate dates",
@@ -109541,7 +112217,7 @@
         "status": "incomplete",
         "start": null,
         "end": null,
-        "note": "The fresh accessible CRM has no October actual won-status records. This does not certify zero first-time clients; signed engagement, original win date and existing-client baseline remain incomplete."
+        "note": "The fresh accessible CRM has no October actual won-status records. OneFlo is independently established as a client before October through September engagement/payment correspondence and is excluded from October first-time wins. Complete signed engagement dates and the remaining existing-client baseline are still incomplete; no zero actual-win total is certified."
       }
     },
     "heldCalls": [
@@ -109644,7 +112320,8 @@
       "October 19 internal discussion of XCaliber and Venus starts was conditional. It does not establish a signed client win or a new Venus qualification decision.",
       "New CRM records, completed tasks, platform appointments and invited recording participants do not independently establish a held Charles prospect call.",
       "The four period measures have different units and event cohorts; they are not a conversion funnel.",
-      "New September dialogue and independently dated September 24 follow-up establish XCaliber was active before October. Do not count the October 5 proposal as net-new October acceptance; no signed win was found."
+      "New September dialogue and independently dated September 24 follow-up establish XCaliber was active before October. Do not count the October 5 proposal as net-new October acceptance; no signed win was found.",
+      "OneFlo is a pre-October client, established by September24 engagement/payment correspondence. Later internal new-client wording does not make it an October first-time win; CRM creation and terminal-stage labels do not supply its original win date."
     ],
     "reviewedOn": "2026-10-22",
     "observedOpportunities": [
@@ -109662,6 +112339,22 @@
         "reviewedOn": "2026-10-22",
         "acceptedBeforeOctober": true,
         "lastDocumentedAt": "2026-10-15"
+      }
+    ],
+    "existingClientBaseline": [
+      {
+        "companyKey": "company:oneflo",
+        "company": "OneFlo",
+        "dealId": 165,
+        "establishedBy": "2026-09-24",
+        "firstWinAt": null,
+        "firstWinDateVerified": false,
+        "clientBeforeOctober": true,
+        "evidenceSystem": "Pipedrive Sales Inbox",
+        "evidenceThreadId": 28809,
+        "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/search/thread/28809",
+        "evidenceBasis": "September10 engagement-letter correspondence and September24 payment correspondence for September services establish a client relationship before October. October internal references to a new client do not establish a new October first-time win. Exact original signature/start date remains unverified.",
+        "reviewedOn": "2026-10-22"
       }
     ],
     "ownerDecisionsAsOf": "2026-10-21"

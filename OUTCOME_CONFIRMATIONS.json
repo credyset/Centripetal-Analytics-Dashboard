@@ -32,7 +32,7 @@
       "status": "incomplete",
       "start": null,
       "end": null,
-      "note": "The fresh accessible CRM has no October actual won-status records. This does not certify zero first-time clients; signed engagement, original win date and existing-client baseline remain incomplete."
+      "note": "The fresh accessible CRM has no October actual won-status records. OneFlo is independently established as a client before October through September engagement/payment correspondence and is excluded from October first-time wins. Complete signed engagement dates and the remaining existing-client baseline are still incomplete; no zero actual-win total is certified."
     }
   },
   "heldCalls": [
@@ -118,7 +118,8 @@
     "October 19 internal discussion of XCaliber and Venus starts was conditional. It does not establish a signed client win or a new Venus qualification decision.",
     "New CRM records, completed tasks, platform appointments and invited recording participants do not independently establish a held Charles prospect call.",
     "The four period measures have different units and event cohorts; they are not a conversion funnel.",
-    "New September dialogue and independently dated September 24 follow-up establish XCaliber was active before October. Do not count the October 5 proposal as net-new October acceptance; no signed win was found."
+    "New September dialogue and independently dated September 24 follow-up establish XCaliber was active before October. Do not count the October 5 proposal as net-new October acceptance; no signed win was found.",
+    "OneFlo is a pre-October client, established by September24 engagement/payment correspondence. Later internal new-client wording does not make it an October first-time win; CRM creation and terminal-stage labels do not supply its original win date."
   ],
   "reviewedOn": "2026-10-22",
   "observedOpportunities": [
@@ -136,6 +137,22 @@
       "reviewedOn": "2026-10-22",
       "acceptedBeforeOctober": true,
       "lastDocumentedAt": "2026-10-15"
+    }
+  ],
+  "existingClientBaseline": [
+    {
+      "companyKey": "company:oneflo",
+      "company": "OneFlo",
+      "dealId": 165,
+      "establishedBy": "2026-09-24",
+      "firstWinAt": null,
+      "firstWinDateVerified": false,
+      "clientBeforeOctober": true,
+      "evidenceSystem": "Pipedrive Sales Inbox",
+      "evidenceThreadId": 28809,
+      "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/search/thread/28809",
+      "evidenceBasis": "September10 engagement-letter correspondence and September24 payment correspondence for September services establish a client relationship before October. October internal references to a new client do not establish a new October first-time win. Exact original signature/start date remains unverified.",
+      "reviewedOn": "2026-10-22"
     }
   ]
 }

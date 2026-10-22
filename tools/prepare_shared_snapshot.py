@@ -131,20 +131,35 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
     # A later metadata-only recording import must not erase reviewed dialogue
     # purposes. Occurrence dates and joins still follow their separate evidence.
     new_ff=(result.get('meetings') or {}).get('fireflies') or {}
-    prior_review=(prior_ff or {}).get('additionalPurposeReview')
-    if prior_review and stamp(prior_review)>stamp(new_ff.get('additionalPurposeReview')):
-        new_ff['additionalPurposeReview']=copy.deepcopy(prior_review)
-        retained.add('fireflies_purpose')
-    elif prior_review and 'fireflies' in retained:
-        retained.add('fireflies_purpose')
+    for review_key,source_id in (('additionalPurposeReview','fireflies_purpose'),
+                                ('octoberPurposeReview','fireflies_october_review')):
+        prior_review=(prior_ff or {}).get(review_key)
+        if prior_review and stamp(prior_review)>stamp(new_ff.get(review_key)):
+            new_ff[review_key]=copy.deepcopy(prior_review)
+            retained.add(source_id)
+        elif prior_review and 'fireflies' in retained:
+            retained.add(source_id)
     prior_records={r['id']:r for r in (prior_ff or {}).get('records',[])}
     for record in new_ff.get('records',[]):
         old_record=prior_records.get(record['id']) or {}
         if old_record.get('lastPurposeReviewedAt','')>record.get('lastPurposeReviewedAt',''):
             for key in ('classification','classificationBasis','lastPurposeReviewedAt',
-                        'purposeSourceCollectedAt','purposeReferences','confirmedProspectMeetingAdded'):
+                        'purposeSourceCollectedAt','purposeReferences','confirmedProspectMeetingAdded',
+                        'purposeReviewStatus','sentenceCount','charlesSpeakerEvidence','duplicateCandidateIds'):
                 if key in old_record:record[key]=copy.deepcopy(old_record[key])
             retained.add('fireflies_purpose')
+            if old_record.get('purposeReviewStatus'):retained.add('fireflies_october_review')
+        # Metadata timestamps cannot retract an independently corroborated
+        # occurrence date or join. A later explicit corroboration review can.
+        old_corroboration=old_record.get('corroborationReviewedAt') or old_record.get('evidenceCollectedAt','')
+        incoming_corroboration=record.get('corroborationReviewedAt') or (
+            record.get('evidenceCollectedAt','') if record.get('heldStatus')=='source_corroborated' else '')
+        if old_record.get('heldStatus')=='source_corroborated' and old_corroboration>incoming_corroboration:
+            for key in ('company','occurredAt','occurrenceDatePrecision','heldStatus','evidenceStatus',
+                        'joinStatus','crmDealIds','bookingChainIds','qualifiedStatus',
+                        'charlesSpeakerConfirmed','evidenceCollectedAt','corroborationReviewedAt',
+                        'audioDurationIsAttendance'):
+                if key in old_record:record[key]=copy.deepcopy(old_record[key])
     # A metadata-only import can omit previously reviewed recordings because
     # its date window or pagination differs. Retain their independently dated
     # purpose evidence without claiming they were returned by that new import.
@@ -156,6 +171,7 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
             record['metadataPresenceStatus']='Not returned by the latest metadata import; independently dated dialogue review retained'
             new_ff.setdefault('records',[]).append(record)
             retained.add('fireflies_purpose')
+            if old_record.get('purposeReviewStatus'):retained.add('fireflies_october_review')
     # Public observations can be refreshed while private content exports retain
     # their historical date. Preserve those independent collection dates too.
     for nested in ('publicObservations','accessReview'):

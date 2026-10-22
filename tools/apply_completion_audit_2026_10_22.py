@@ -106,6 +106,43 @@ def build():
         'checkedAt':'2026-10-22','coverage':'Thirteen additional selected October-indexed recordings; incomplete account-wide held-call coverage',
         'method':'Authenticated recording-dialogue reads; retained sentence and speaker references',
         'note':commercial['sourceCardNoteDelta']['fireflies']}
+    full=json.loads((PRIVATE/'commercial/october_76_proposed_patch.json').read_text())
+    for ident,review in full['recordingClassificationUpdates'].items():
+        if ident not in by_id:
+            record={'id':ident,'title':review['title'],'indexedAt':review['indexedAt'],
+                'occurredAt':review.get('occurredAt'),'durationMinutes':round(review['durationMinutes'],2),
+                'evidenceStatus':'bounded_source_response_reviewed','crmDealIds':[],'bookingChainIds':[],
+                'joinStatus':'no_verified_crm_or_calendar_join','heldStatus':'unverified_for_booked_call',
+                'qualifiedStatus':'unverified','audioDurationIsAttendance':False}
+            ff['records'].append(record);by_id[ident]=record
+        record=by_id[ident]
+        if record.get('heldStatus')=='source_corroborated':
+            record.setdefault('corroborationReviewedAt',full['reviewedAt'])
+        record.update(classification=review['classification'],classificationBasis=review['shortBasis'],
+            lastPurposeReviewedAt=review['reviewedAt'],purposeSourceCollectedAt=review['sourceCollectedAt'],
+            purposeReviewStatus=review['reviewStatus'],sentenceCount=review['sentenceCount'],
+            charlesSpeakerEvidence=copy.deepcopy(review['charlesParticipation']),
+            purposeReferences=copy.deepcopy(review['sourceReferences']),
+            duplicateCandidateIds=copy.deepcopy(review['duplicateCandidateIds']))
+    ff['octoberPurposeReview']={'snapshotAt':full['reviewedAt'],'reviewedAt':full['reviewedAt'],
+        'metadataInventorySnapshotAt':full['retainedMetadataSnapshotAt'],
+        **copy.deepcopy(full['fullReviewSummary']),
+        'recordingIds':list(full['recordingClassificationUpdates']),
+        'notes':copy.deepcopy(full['notes'])}
+    sources['fireflies_october_review']={
+        'id':'fireflies_october_review','name':'Fireflies · retained October inventory review',
+        'status':'Current complete response review of the bounded October inventory',
+        'asOf':full['reviewedAt'],'checkedAt':'2026-10-22',
+        'coverage':'All 76 October-indexed records within the retained 100-record metadata inventory; not all actual meetings',
+        'method':'All retained October source IDs requested; dialogue and speaker evidence assessed separately from metadata',
+        'note':'76 successful responses: 65 purposes classified, five insufficient dialogues and six responses with no dialogue. Nine metadata duplicate-candidate groups are retained separately from a previously verified audio duplicate. No additional eligible prospect call or dated first-client win was established. Complete actual call coverage remains unknown.'}
+    ff['notes'].append(sources['fireflies_october_review']['note'])
+    ff['coverage']['limits']=[
+        'No qualified opportunity or new client win is inferred from source counts or conditional transcript statements.'
+        if note.startswith('NoHot/Qualified') else
+        'Raw transcript bodies, participant emails, recording links and client financial details remain private; only minimal reviewed fields enter the dashboard.'
+        if note.startswith('Rawbodies,') else note
+        for note in ff['coverage'].get('limits',[])]
     sheets=json.loads((PRIVATE/'sheets/completion_audit_patch.json').read_text())
     reviewed=sheets['reviewedAt']
     data['video']['sourceVerification']={
@@ -136,6 +173,7 @@ def build():
     data['referrals'].setdefault('notes',[]).append('The legacy Airtable referral-field query returned 48 records, including one test; 47 non-test rows have no actual introduction dates or verified referral direction. They remain excluded from current referral event and outcome totals.')
     data['time']['workEvidence']={'snapshotAt':reviewed,**copy.deepcopy(sheets['christianWorkEvidence'])}
     data['time']['notes'].append('Drive revision metadata attributes 14 retained October file revisions on nine Mountain dates to Christian. This supports activity dates only; it does not establish human work duration, billing or additional hours. The owner allowance remains 14.5–15.75 hours.')
+    data['time']['notes'].append('A speaker-label cross-check across all 76 retained October Fireflies responses found six Christian-attributed recordings, all already represented in the existing six source audio events. It adds no new recording-duration proxy or human hours; the existing verified duplicate remains excluded.')
     sources['source_audit']={
         'id':'source_audit','name':'Worksheet · CRM joins and workflow provenance review',
         'status':'Current source-quality review; source inventories retain separate dates',

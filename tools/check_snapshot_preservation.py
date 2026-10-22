@@ -62,12 +62,42 @@ if reviewed_ids:
     incoming=copy.deepcopy(current)
     incoming['meetings']['snapshotAt']='2026-10-23T12:00:00Z'
     incoming['meetings']['fireflies']={'snapshotAt':'2026-10-23T12:00:00Z','records':[]}
-    incoming['sources']=[s for s in incoming['sources'] if s['id']!='fireflies_purpose']
+    incoming['sources']=[s for s in incoming['sources'] if s['id'] not in ('fireflies_purpose','fireflies_october_review')]
     kept=preserve_newer_shared_sources(incoming,current)
     rows=kept['meetings']['fireflies']['records']
     assert reviewed_ids<={r['id'] for r in rows}
     assert all(r.get('retainedForPurposeEvidenceOnly') for r in rows if r['id'] in reviewed_ids)
     assert any(s['id']=='fireflies_purpose' for s in kept['sources'])
+    if prior_ff.get('octoberPurposeReview'):
+        assert kept['meetings']['fireflies']['octoberPurposeReview']==prior_ff['octoberPurposeReview']
+        assert any(s['id']=='fireflies_october_review' for s in kept['sources'])
+        prior_by_id={r['id']:r for r in prior_ff['records']}
+        for row in rows:
+            if row['id'] in reviewed_ids:
+                for key in ('purposeReviewStatus','sentenceCount','charlesSpeakerEvidence','duplicateCandidateIds'):
+                    assert row.get(key)==prior_by_id[row['id']].get(key), f'Lost recording purpose field {key}'
+# Matching IDs in a newer metadata-only import must preserve separately
+# corroborated occurrence dates, held status and CRM joins too.
+corroborated={r['id']:r for r in prior_ff.get('records',[]) if r.get('heldStatus')=='source_corroborated'}
+if corroborated:
+    incoming=copy.deepcopy(current)
+    incoming_ff=incoming['meetings']['fireflies']
+    incoming_ff['snapshotAt']='2026-10-23T12:00:00Z'
+    incoming_ff['records']=[{k:r[k] for k in ('id','title','indexedAt','durationMinutes') if k in r}
+                            for r in prior_ff['records']]
+    kept=curate_snapshot(preserve_newer_shared_sources(incoming,current))
+    rows={r['id']:r for r in kept['meetings']['fireflies']['records']}
+    for ident,record in corroborated.items():
+        for key in ('heldStatus','occurredAt','occurrenceDatePrecision','crmDealIds','joinStatus','evidenceStatus'):
+            assert rows[ident].get(key)==record.get(key), f'Lost independently corroborated recording field {key}'
+    # A later explicit, dated review may still retract a prior occurrence claim.
+    ident=next(iter(corroborated))
+    newer=copy.deepcopy(incoming)
+    decision=next(r for r in newer['meetings']['fireflies']['records'] if r['id']==ident)
+    decision.update(corroborationReviewedAt='2026-10-24T12:00:00Z',heldStatus='retracted_by_review',
+                    occurredAt=None,crmDealIds=[],joinStatus='reviewed_join_retracted')
+    decision=next(r for r in preserve_newer_shared_sources(newer,current)['meetings']['fireflies']['records'] if r['id']==ident)
+    assert decision['heldStatus']=='retracted_by_review' and decision['occurredAt'] is None
 assert restored['time']['period']==current['time']['period']
 for key in ('reportingAsOfDate','defaultReportingThrough','defaultCompleteReportingThrough','defaultDatePreset'):
     assert restored['meta'][key]==current['meta'][key]

@@ -92,6 +92,18 @@ if 'records' in ff:
     for r in ff['records']:
         assert r.get('occurredAt') or r.get('indexedAt'), 'Recording has no dated evidence'
         assert r['durationMinutes']>=0
+october_review=ff.get('octoberPurposeReview')
+if october_review:
+    reviewed_ids=set(october_review['recordingIds'])
+    reviewed_rows=[r for r in ff['records'] if r['id'] in reviewed_ids]
+    assert len(reviewed_rows)==len(reviewed_ids)==october_review['retainedOctoberIndexedRecords']
+    assert sum(october_review['reviewStatusCounts'].values())==len(reviewed_ids)
+    for status,count in october_review['reviewStatusCounts'].items():
+        assert sum(r.get('purposeReviewStatus')==status for r in reviewed_rows)==count
+    assert sum(r['sentenceCount']>0 for r in reviewed_rows)==october_review['nonemptyDialogueRecords']
+    assert october_review['completeActualHeldCallRosterEstablished'] is False
+    assert october_review['recordsAreDistinctMeetings'] is False
+    assert any(s['id']=='fireflies_october_review' for s in data['sources'])
 if data.get('time'):
     effort = data['time']
     meetings = effort['meetings']

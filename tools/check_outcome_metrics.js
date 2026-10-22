@@ -74,4 +74,15 @@ run("S.start='2026-10-01';S.end='2026-10-13';");
 assert.equal(run('calendarCreationAvailable(calendar)'),true);
 run("S.end='2026-10-14';");
 assert.equal(run('calendarCreationAvailable(calendar)'),false);
+// A flow export contains value edits alongside stage changes. Value edits
+// must not render as extra stage transitions with blank from/to stages.
+run(`S.start='2026-10-19';S.end='2026-10-21';
+  var capturedHistoryTables={};
+  table=(id,title,rows)=>{capturedHistoryTables[id]=rows;return '';};
+  var mixedHistory={deals:[{id:1,title:'Prospect'}],assessment:{history:{events:[],dealIdsReviewed:[1]},freshSelectedDealHistory:{dealIdsReviewed:[1],events:[
+    {id:'stage',dealId:1,field:'stage_id',timestamp:'2026-10-20T16:00:00Z',oldStageName:'Intro Meeting',newStageName:'Follow-up'},
+    {id:'value',dealId:1,field:'value',timestamp:'2026-10-20T16:01:00Z',oldValue:'0',newValue:'2000'}]}}};
+  crmHistoryReview(mixedHistory,mixedHistory);`);
+assert.equal(run('capturedHistoryTables["crm-fresh-stage-events"].length'),1);
+assert.equal(run('capturedHistoryTables["crm-fresh-stage-events"][0].id'),'stage');
 console.log('Charles outcome metrics: cohort, deduplication, scope, Mountain dates, and unknown/zero rules passed.');
