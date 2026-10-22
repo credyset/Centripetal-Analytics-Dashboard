@@ -39,6 +39,7 @@ def main():
     for source in data['sources']:
         if source['id'] in ('crm', 'referrals'):
             source['asOf'] = crm_at
+            source['coverage'] = copy.deepcopy(data[source['id']]['coverage'])
             source['note'] = ('Full accessible non-deleted CRM pagination completed October 22 05:51 MDT. '
                 '769 deals /924 activities; referral inventory derived from the same source. '
                 'October 22 is partial. Record changes and source won status do not establish commercial outcomes.')

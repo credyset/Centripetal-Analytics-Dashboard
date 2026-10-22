@@ -1,5 +1,8 @@
 {
-  "mode": "local_only",
-  "confirmedOn": "2026-10-21",
-  "basis": "The owner said: Keep it local for now."
+  "mode": "public_approved",
+  "confirmedOn": "2026-10-22",
+  "basis": "The owner explicitly instructed publication of the completed local metrics and revised structure to the Centripetal Analytics GitHub project and its shareable GitHub Pages dashboard so the team can view and interact with them. This supersedes the earlier local-only hold.",
+  "repository": "https://github.com/credyset/Centripetal-Analytics-Dashboard",
+  "dashboard": "https://credyset.github.io/Centripetal-Analytics-Dashboard/#glance",
+  "scope": "Reviewed October 22 curated reporting snapshot and application; raw evidence, credentials and private exports remain excluded. Source collection is on demand."
 }

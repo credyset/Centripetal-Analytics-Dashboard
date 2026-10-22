@@ -34,6 +34,20 @@ older['waalaxy']['snapshotAt']='2026-10-23T00:00:00Z'
 for key in ('sheetSubset','sheetSubsetCollectedAt','sheetSubsetAccountVerification','sheetSubsetUpstreamSyncAt','selectedExportSnapshot'):
     older['waalaxy'].pop(key,None)
 restored=curate_snapshot(preserve_newer_shared_sources(older,current))
+# Source-card collection dates and nested coverage must follow the actual
+# selected inventory, including when an older card survives a fresh import.
+stale_cards=copy.deepcopy(current)
+for src in stale_cards['sources']:
+    if src['id'] in ('crm','referrals'):
+        src['asOf']='2026-10-15T02:58:42Z'
+        src['coverage']={'observedThrough':'2026-10-14'}
+for reconciled in (curate_snapshot(stale_cards),
+                   preserve_newer_shared_sources(stale_cards,{}), restored):
+    for ident in ('crm','referrals'):
+        card=next(s for s in reconciled['sources'] if s['id']==ident)
+        assert card['asOf']==reconciled[ident]['snapshotAt']
+        assert card['coverage']==reconciled[ident]['coverage']
+        assert card['coverage'] is not reconciled[ident]['coverage']
 assert restored['content']['creatorAnalytics']==current['content']['creatorAnalytics']
 assert restored['crm']['browserReview']==current['crm']['browserReview']
 for key in ('crm','referrals','meetings','time'):

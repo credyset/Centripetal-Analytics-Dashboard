@@ -1,5 +1,7 @@
 # Local-only publication policy — October 21
 
+**Historical review, superseded October 22:** the owner subsequently instructed publication of the completed local dashboard to the Centripetal GitHub project and Pages dashboard. See [the current publication review](PUBLICATION_REVIEW_2026-10-22.md) and `PUBLICATION_POLICY.json`. The hold described below records the prior state.
+
 **State:** the owner explicitly instructed **“Keep it local for now”** on October 21, 2026. This refreshed snapshot stays local. Public GitHub and GitHub Pages remain unchanged; no publication approval request is pending.
 
 `PUBLICATION_POLICY.json` records the canonical `local_only` policy. Snapshot curation enforces `meta.public: false` and `publicationStatus: "local_only"` even when importing an older public snapshot or receiving a caller's older approval flag. Desktop and mobile previews label the snapshot as local-only. Publication builds require `--for-publication` and reject the local-only hold; the deployment workflow uses this check. A local preview build remains available. This does not authorize pushing local data to the public repository.

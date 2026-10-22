@@ -4,24 +4,26 @@
     "asOfDate": "2026-10-22",
     "timezone": "America/Denver",
     "scope": "Charles Solomon and Centripetal Advisors",
-    "concept": true,
+    "concept": false,
     "autoRefreshEnabled": false,
     "weekStartsOn": "Monday",
     "defaultReportingThrough": "2026-10-22",
-    "note": "Local-only snapshot by owner instruction; refreshed source supplements have not been published. Source coverage varies. Automatic refresh is not enabled.",
-    "public": false,
-    "publicDataPolicy": "Owner-directed local-only snapshot; GitHub and GitHub Pages remain unchanged. Future publication requires a new explicit owner instruction and policy change.",
+    "note": "Published snapshot; Source coverage varies. Automatic refresh is not enabled.",
+    "public": true,
+    "publicDataPolicy": "Owner-approved detailed snapshot including prospect identities and available business record links.",
     "analyticsRevisedAt": "2026-10-17T00:34:20.257365+00:00",
     "lastRevisionNote": "Supported analytics corrections; individual source collection dates retained.",
-    "revision": "October 22 trigger-burst interpretation, recording URL correction and verified CRM cohort; local only",
+    "revision": "October 22 reviewed source refresh, Charles outcome structure and verified Video DM CRM reconciliation",
     "reportingAsOfDate": "2026-10-22",
     "defaultCompleteReportingThrough": "2026-10-21",
     "defaultDatePreset": "week",
     "currentDayPartial": true,
-    "publicationStatus": "local_only",
-    "publicationPolicyConfirmedOn": "2026-10-21",
-    "publicationPolicyBasis": "The owner said: Keep it local for now.",
-    "localReviewOn": "2026-10-22"
+    "publicationStatus": "owner_approved",
+    "publicationPolicyConfirmedOn": "2026-10-22",
+    "publicationPolicyBasis": "The owner explicitly instructed publication of the completed local metrics and revised structure to the Centripetal Analytics GitHub project and its shareable GitHub Pages dashboard so the team can view and interact with them. This supersedes the earlier local-only hold.",
+    "localReviewOn": "2026-10-22",
+    "publicationApprovedAt": "2026-10-22T12:57:17.430019+00:00",
+    "publicationReview": "PUBLICATION_REVIEW_2026-10-22.md"
   },
   "ads": {
     "status": "available",
@@ -113113,7 +113115,7 @@
       "status": "Current paginated read-only MCP snapshot",
       "asOf": "2026-10-22T11:51:50.385Z",
       "coverage": {
-        "method": "Configured read-only Pipedrive MCP; completed all_not_deleted deal pagination and explicit user_id 0 done/undone activity pagination.",
+        "method": "Configured read-only Pipedrive MCP; all_not_deleted deal pagination and both done states with explicit user_id 0 completed.",
         "dealsComplete": true,
         "activitiesComplete": true,
         "earliestDealCreatedDate": "2024-09-11",
@@ -113126,7 +113128,7 @@
           "Christian W": 892,
           "Charles Solomon": 10
         },
-        "reportingThrough": "2026-10-20",
+        "reportingThrough": "2026-10-21",
         "currentDayPartial": true,
         "pagination": {
           "deals": [
@@ -113161,81 +113163,106 @@
               "limit": 500,
               "more_items_in_collection": false
             }
+          ],
+          "leadsInboxActive": [
+            {
+              "start": 0,
+              "limit": 500,
+              "more_items_in_collection": false
+            }
+          ],
+          "leadsInboxArchived": [
+            {
+              "start": 0,
+              "limit": 500,
+              "more_items_in_collection": false
+            }
           ]
         },
         "stageHistorySnapshotAt": "2026-10-15T03:03:19Z",
-        "collectionStartedAt": null,
-        "collectionCompletedAt": "2026-10-22T05:56:42.938699Z",
+        "collectionStartedAt": "2026-10-22T11:51:49.057Z",
+        "collectionCompletedAt": "2026-10-22T11:51:50.385Z",
         "allOwnerActivitiesRequested": true,
         "latestBusinessActivityCreatedAt": "2026-10-16T17:47:27Z",
         "latestBusinessActivityCompletedAt": "2026-08-19T21:48:27Z",
-        "observedThrough": "2026-10-21",
-        "currentDayPartialDate": "2026-10-21",
-        "collectionFirstResponseAt": "2026-10-22T05:55:08.408853Z",
-        "collectionTimeBasis": "Filesystem timestamps when each retained MCP response was saved; exact request-start time was not captured.",
+        "observedThrough": "2026-10-22",
+        "currentDayPartialDate": "2026-10-22",
         "sourceFiles": {
           "deals_000.json": {
-            "collectedAt": "2026-10-22T05:55:39.480566Z",
-            "sha256": "29003eb24a7aac2b85f7484185618149403b0f0409b8b3eddb4c0d6fb438726f"
-          },
-          "deals_500.json": {
-            "collectedAt": "2026-10-22T05:56:18.913832Z",
-            "sha256": "faee88b7c7a9b187cab614d9909687b6f898592f113646877750d817baf233e4"
+            "collectedAt": "2026-10-22T11:51:49.726Z",
+            "requestStartedAt": "2026-10-22T11:51:49.152Z",
+            "sha256": "fdb5dc6c8f4ba437665cf37f717f3be84bfd3ef79e75469c9c72b034a1f3aac6"
           },
           "activities_done_000.json": {
-            "collectedAt": "2026-10-22T05:56:19.671000Z",
-            "sha256": "dd60974c60520b326294fc3270fd886daebce8b3895219d77a486d5579c8b140"
-          },
-          "activities_done_500.json": {
-            "collectedAt": "2026-10-22T05:56:42.938699Z",
-            "sha256": "b179dc06d393cedab65976ff939fb6994f547f498ecc36c25c4db66e47759a08"
+            "collectedAt": "2026-10-22T11:51:49.787Z",
+            "requestStartedAt": "2026-10-22T11:51:49.152Z",
+            "sha256": "3c68ead107c0631409ad1f125fc0c9fdfd9df46318382594c96a6a77f3602cbb"
           },
           "activities_undone_000.json": {
-            "collectedAt": "2026-10-22T05:56:19.556826Z",
-            "sha256": "45f28c58e7af3c42c8c64214a6094a8612a9b8f7794bcd1e1bc168927aab0921"
+            "collectedAt": "2026-10-22T11:51:49.818Z",
+            "requestStartedAt": "2026-10-22T11:51:49.152Z",
+            "sha256": "e2d21c3892072b29811b624995bd0952e4b52039e0a2883579478f219d86dff5"
           },
-          "pipelines.json": {
-            "collectedAt": "2026-10-22T05:55:38.948257Z",
-            "sha256": "612951853bc19832a552bb6da2e9f620f1cec571662ad85704669bdc8a14ad70"
+          "deals_500.json": {
+            "collectedAt": "2026-10-22T11:51:49.982Z",
+            "requestStartedAt": "2026-10-22T11:51:49.762Z",
+            "sha256": "94c2f9eb79ce3ba2df242410dc8bba7fb5c6a28e7b3936e212e7159dfb691810"
           },
-          "stages.json": {
-            "collectedAt": "2026-10-22T05:55:39.532116Z",
-            "sha256": "3534c41d2c0e6405dbf4d0c1daaa93f287e27f7da2aa83df434d20754c8c9c0a"
+          "activities_done_500.json": {
+            "collectedAt": "2026-10-22T11:51:49.998Z",
+            "requestStartedAt": "2026-10-22T11:51:49.804Z",
+            "sha256": "878e6bf66d96b70b0ca5378650c2a24f8d985e3f9672ec193c71106b6641f851"
           },
           "activity_types.json": {
-            "collectedAt": "2026-10-22T05:55:40.167218Z",
-            "sha256": "da6b9e7ac6ffca699a072930737ea264ec8cceb8116985a7e064a5f6543268d3"
+            "collectedAt": "2026-10-22T11:51:50.079Z",
+            "requestStartedAt": "2026-10-22T11:51:50.000Z",
+            "sha256": "bb957c086792924666ff160175801912ebb7b8c355f0710d9d58b90583c3e49e"
+          },
+          "stages.json": {
+            "collectedAt": "2026-10-22T11:51:50.090Z",
+            "requestStartedAt": "2026-10-22T11:51:50.000Z",
+            "sha256": "2a3c51382f86232646ce8ce50df74ae5066f550c69724e1d31c2f5d53738b2a2"
+          },
+          "pipelines.json": {
+            "collectedAt": "2026-10-22T11:51:50.096Z",
+            "requestStartedAt": "2026-10-22T11:51:50.000Z",
+            "sha256": "6ef59a52dcfb342d1f5d8ee078597d55e07e4ede70f6fc4f52ea9428fd5db3a5"
           },
           "users.json": {
-            "collectedAt": "2026-10-22T05:55:08.408853Z",
-            "sha256": "68f724e1f391ba6b2181f1c0b8e207aa90cf3e6677373224cad2c2fe8014db19"
+            "collectedAt": "2026-10-22T11:51:50.127Z",
+            "requestStartedAt": "2026-10-22T11:51:50.000Z",
+            "sha256": "7698f4e80197f346c10e7c4d1781f6eb0cc75e4cd2751ff603166d71afb773dd"
           },
           "deal_fields_000.json": {
-            "collectedAt": "2026-10-22T05:55:39.452315Z",
-            "sha256": "d27f38636f42f23859023f1f422bf984da1e7a923df31739d1379f57f0af2edf"
+            "collectedAt": "2026-10-22T11:51:50.250Z",
+            "requestStartedAt": "2026-10-22T11:51:50.127Z",
+            "sha256": "427fc1f1aacd36ae220c11afc792fcdd482f3a2b96502a2de34a8116286aa913"
           },
           "leads_inbox_active_000.json": {
-            "collectedAt": "2026-10-22T05:57:59.097557Z",
-            "sha256": "64edda82fad13697dbc6fd86d266660d7e2c0c8aa4f223cc342f1ce280ce7a15"
+            "collectedAt": "2026-10-22T11:51:50.373Z",
+            "requestStartedAt": "2026-10-22T11:51:50.253Z",
+            "sha256": "cb3ce324be572317ff11a5cfad5ba5bbdca1495595c18982dc274a8acdfdb137"
           },
           "leads_inbox_archived_000.json": {
-            "collectedAt": "2026-10-22T05:57:58.471425Z",
-            "sha256": "64edda82fad13697dbc6fd86d266660d7e2c0c8aa4f223cc342f1ce280ce7a15"
+            "collectedAt": "2026-10-22T11:51:50.383Z",
+            "requestStartedAt": "2026-10-22T11:51:50.253Z",
+            "sha256": "cb3ce324be572317ff11a5cfad5ba5bbdca1495595c18982dc274a8acdfdb137"
           }
         },
-        "baselineSnapshotSha256": "11a996a2fa29f0ee6ffc254014c6175fbde9c2d39d3b7bd8e8afd8b513e7323b",
+        "baselineSnapshotSha256": "560bfcb25ffae8029d39041524bbbc034d26143e3c691071070a4407e7d012ef",
+        "atomicSnapshot": false,
         "archiveCoverage": {
           "archivedRecordsReturned": 0,
           "nonArchivedRecordsReturned": 769,
           "archiveInclusiveCompletenessVerified": false,
-          "note": "All 769 returned records expose is_archived=false. The list-tool schema has no archive filter; completeness is verified for the returned all_not_deleted endpoint scope, not an independently verified archive-inclusive census."
+          "note": "The all_not_deleted list exposes non-archived records. The earlier dedicated archive check is retained as an independently dated supplement, not an atomic archive-inclusive census."
         },
         "freshSelectedHistorySnapshotAt": "2026-10-22T05:56:54.943803Z",
         "freshSelectedHistoryDealCount": 11
       },
       "method": "Configured Pipedrive read-only MCP; all returned non-deleted deals and all-owner done/undone activities, all pages",
       "note": "Full accessible non-deleted CRM pagination completed October 22 05:51 MDT. 769 deals /924 activities; referral inventory derived from the same source. October 22 is partial. Record changes and source won status do not establish commercial outcomes.",
-      "checkedAt": "2026-10-21"
+      "checkedAt": "2026-10-22"
     },
     {
       "id": "video",
@@ -113273,17 +113300,17 @@
       "status": "Current reconciled referral inventory from same CRM read",
       "asOf": "2026-10-22T11:51:50.385Z",
       "coverage": {
-        "source": "Referral Pipeline4 derived from the same fully paginated all_not_deleted CRM MCP read",
-        "collectedAt": "2026-10-22T05:56:42.938699Z",
-        "scope": "All accessible returned Pipeline4 records; current positions, not period events.",
+        "source": "Pipeline4 derived from the same fully paginated all_not_deleted MCP source read",
+        "collectedAt": "2026-10-22T11:51:50.385Z",
+        "scope": "All accessible returned non-archived Pipeline4 records; current positions, not period events",
         "complete": true,
         "independentSnapshot": false,
-        "parentCRMSnapshotAt": "2026-10-22T05:56:42.938699Z",
+        "parentCRMSnapshotAt": "2026-10-22T11:51:50.385Z",
         "parentCRMSource": "crm_mcp_patch.json",
         "requestedFilter": {
           "status": "all_not_deleted",
-          "limit": 500,
-          "sort": "id ASC"
+          "sort": "id ASC",
+          "limit": 500
         },
         "connectorPipelineFilterHonored": null,
         "observedSourcePipelineIds": [
@@ -113306,16 +113333,16 @@
           }
         ],
         "appliedLocalFilter": "pipeline_id == 4",
-        "observedThrough": "2026-10-21",
-        "reportingThrough": "2026-10-20",
+        "observedThrough": "2026-10-22",
+        "reportingThrough": "2026-10-21",
         "currentDayPartial": true,
         "archiveInclusiveCompletenessVerified": false,
-        "normalizedSourceSha256": "f69f966a0bdd8134b440f04679cab83566994426ed2b95eb33af6a3d63e83a70",
+        "normalizedSourceSha256": "9479452a4de7816bb72d4ea7f32c7a7774d13f62e1c94842fcbc144af57c6270",
         "hashBasis": "Curated normalized source records and verified stage metadata; no raw correspondence content."
       },
       "method": "Local Pipeline 4 partition of the same current paginated Pipedrive MCP source",
       "note": "Full accessible non-deleted CRM pagination completed October 22 05:51 MDT. 769 deals /924 activities; referral inventory derived from the same source. October 22 is partial. Record changes and source won status do not establish commercial outcomes.",
-      "checkedAt": "2026-10-21"
+      "checkedAt": "2026-10-22"
     },
     {
       "id": "meetings",

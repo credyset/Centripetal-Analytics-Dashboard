@@ -1,4 +1,6 @@
-# October 22 channel refinement and completion audit — local only
+# October 22 channel refinement and completion audit
+
+**Publication update:** after this local review, the owner explicitly approved publication of the completed curated dashboard to GitHub and Pages. See [the current publication review](PUBLICATION_REVIEW_2026-10-22.md). The local-only statements below describe the collection/review stage.
 
 The owner authorized continued work and another independent collection/accuracy pass. The instruction to keep the update local remains in force: no GitHub push, Pages deployment or Sites publication occurred. A fresh full CRM/activity snapshot was collected October 22 at **11:51:50.385 UTC / 5:51 AM Mountain**. Calendar, content, Ads and other sources retain their independently dated coverage.
 

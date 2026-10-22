@@ -51,4 +51,4 @@ For measured Christian hours, provide actual attendance and dated work durations
 
 A bulk replay of the held Zapier queue, another all-deals export, and another copy of the 76 reviewed recordings are not prerequisites. The ten verified October 21 video-asset records are already in CRM. Any future workflow repair should address a specifically evidenced problem, rather than an assumed 703-record deficit.
 
-New raw files belong in ignored `data/private/`. Apply reviewed corrections locally. The publication instruction remains **local only**; supplying more data does not authorize a GitHub or Pages update.
+New raw files belong in ignored `data/private/`. The owner approved publication of the reviewed October 22 curated snapshot and application to the GitHub project and Pages dashboard. Raw evidence remains excluded. Source collection is on demand; receiving more data does not itself publish it. See [the publication review](PUBLICATION_REVIEW_2026-10-22.md).

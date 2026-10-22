@@ -26,6 +26,19 @@ def apply_publication_policy(snapshot):
             public=False)
     return snapshot
 
+def sync_inventory_source_cards(snapshot):
+    """Keep CRM/referral collection metadata tied to the selected inventory."""
+    for card in snapshot.get('sources', []):
+        ident = card.get('id')
+        if ident not in ('crm', 'referrals'):
+            continue
+        section = snapshot.get(ident) or {}
+        if section.get('snapshotAt'):
+            card['asOf'] = section['snapshotAt']
+        if section.get('coverage') is not None:
+            card['coverage'] = copy.deepcopy(section['coverage'])
+    return snapshot
+
 def curate_snapshot(source):
     public = copy.deepcopy(source)
     apply_owner_confirmations(public)
@@ -34,6 +47,7 @@ def curate_snapshot(source):
         apply_video_evidence_reviews(public['video'])
     if public.get('time'):
         apply_effort_estimate(public['time'])
+    sync_inventory_source_cards(public)
     apply_publication_policy(public)
     state=public.get('meta',{}).get('publicationStatus')
     local_only=state=='local_only'
@@ -198,6 +212,7 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
         if src['id'] in retained or (src['id']=='fireflies' and src['id'] not in by_id):
             by_id[src['id']]=copy.deepcopy(src)
     result['sources']=list(by_id.values())
+    sync_inventory_source_cards(result)
     if 'crm' in retained and not result.get('meta',{}).get('reportingAsOfDate'):
         result.setdefault('meta',{})['defaultReportingThrough']=result['crm'].get('coverage',{}).get('reportingThrough')
     # Review freshness is distinct from source freshness. Re-importing an older

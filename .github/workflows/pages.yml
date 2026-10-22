@@ -26,6 +26,8 @@ jobs:
         run: node --check app.js
       - name: Check commercial outcome and coverage rules
         run: node tools/check_outcome_metrics.js
+      - name: Check Video DM recording and CRM reconciliation
+        run: python3 tools/check_video_reconciliation.py
       - name: Check newer source and publication hold preservation
         run: python3 tools/check_snapshot_preservation.py
       - name: Build approved static dashboard
