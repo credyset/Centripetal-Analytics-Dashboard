@@ -22,6 +22,11 @@ for key in ('crm','referrals','meetings','time'):
     older[key]['snapshotAt']='2026-10-17T00:52:01Z' if key!='meetings' else '2026-10-15T02:58:42Z'
 older['crm']['deals']=[d for d in older['crm']['deals'] if d['id']<832]
 older['meetings'].pop('fireflies',None)
+older['ads']['snapshotAt']='2026-10-17T00:51:00Z'
+older['ads']['daily']=[r for r in older['ads']['daily'] if r['date']<='2026-10-16']
+older['content'].pop('companyAnalytics',None)
+older['waalaxy'].pop('accountAnalytics',None)
+older['sources']=[s for s in older['sources'] if s['id'] not in ('content_company','waalaxy_account')]
 for src in older['sources']:
     if src['id'] in ('crm','referrals','meetings','time','fireflies'):src['asOf']='2026-10-15T02:58:42Z'
 # A later account snapshot may omit independently dated Sheet/CSV supplements.
@@ -34,6 +39,11 @@ assert restored['crm']['browserReview']==current['crm']['browserReview']
 for key in ('crm','referrals','meetings','time'):
     assert restored[key]['snapshotAt']==current[key]['snapshotAt'], f'Newer {key} source lost'
 assert restored['crm']['deals']==current['crm']['deals']
+assert restored['ads']['daily']==current['ads']['daily']
+for parent,child,source_id in (('content','companyAnalytics','content_company'),('waalaxy','accountAnalytics','waalaxy_account')):
+    if child in current[parent]:
+        assert restored[parent][child]==current[parent][child]
+        assert any(s['id']==source_id for s in restored['sources'])
 assert restored['meetings']['fireflies']==current['meetings']['fireflies']
 assert next(s for s in restored['sources'] if s['id']=='fireflies')['asOf']==next(s for s in current['sources'] if s['id']=='fireflies')['asOf']
 assert any(s['id']=='crm_browser' for s in restored['sources'])

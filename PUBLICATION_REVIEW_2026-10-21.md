@@ -17,3 +17,5 @@ The locally retained update includes:
 Raw exports, credentials, email/phone fields, transcript bodies, private Sheet notes and source screenshots remain excluded.
 
 **Future publication:** requires a new explicit owner instruction covering the intended data and public destination, followed by an intentional change to `PUBLICATION_POLICY.json` and the snapshot's local-only marker. Revalidate the concrete publication payload and deployment only after that change. Continue authorized collection, reconciliation and local preview without reopening the declined publication question.
+
+The October 22 local refinement also includes fresh Ads ad-set/creative daily exports through October 21 UTC, company organic/sponsored daily data through October 20, a verified Charles Waalaxy October 1–22 fixed-window aggregate and pre-October XCaliber acceptance evidence. These additions remain covered by the same local-only instruction. See [the October 22 review](REFRESH_REVIEW_2026-10-22.md).

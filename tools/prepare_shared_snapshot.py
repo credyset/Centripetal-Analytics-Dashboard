@@ -59,7 +59,8 @@ def curate_snapshot(source):
             item['note'] = ('Dated invitation actions are available, including source-reported zero days. '
                             'The final source day is partial and the source timezone is unspecified. '
                             + ('A separately dated selected connected-prospect subset is available through Sheets; sender account and upstream sync time are unverified. ' if public.get('waalaxy',{}).get('sheetSubset') else '') +
-                            'Message/reply events and campaign breakdowns remain unavailable; historical person flags retain older coverage.'
+                            'Dated message/reply events and campaign breakdowns remain unavailable; historical person flags retain older coverage. '
+                            + ('See the separately dated, verified Charles Home account aggregate; it does not refresh this daily invitation CSV or selected-person subset.' if public.get('waalaxy',{}).get('accountAnalytics') else '')
                             if public.get('waalaxy',{}).get('invitationCoverage') else
                             'Historical Charles-only person flags, not period message totals. Current campaign analytics remain unavailable.')
     return public
@@ -90,6 +91,17 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
     new_export=new_w.get('selectedExportSnapshot') or {}
     if old_export.get('reviewedAt','')>new_export.get('reviewedAt',''):
         new_w['selectedExportSnapshot']=copy.deepcopy(old_export)
+    # Account/page supplements have independent collection dates. A newer
+    # creator or person export must not silently drop them or refresh their age.
+    for parent,child,source_id in (('content','companyAnalytics','content_company'),
+                                    ('waalaxy','accountAnalytics','waalaxy_account')):
+        prior=(previous.get(parent) or {}).get(child)
+        incoming=(result.get(parent) or {}).get(child)
+        if prior and (not incoming or stamp(prior)>stamp(incoming)):
+            result.setdefault(parent,{})[child]=copy.deepcopy(prior)
+            retained.add(source_id)
+        elif prior and parent in retained:
+            retained.add(source_id)
     # A partial browser review never replaces the full historical CRM/Ads source.
     for key in ('crm','ads','referrals'):
         old_review=(previous.get(key) or {}).get('browserReview') or {}

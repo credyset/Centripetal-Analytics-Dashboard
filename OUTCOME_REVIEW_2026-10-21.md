@@ -25,7 +25,7 @@ October 1–21 therefore shows **at least five held conversations and at least t
 
 The original owner attendance confirmations are retained. New inbox evidence shows Venus's original October 15 booking was rescheduled to an accepted October 16 invitation, while Calendly still lists October 15 active. Neither booking alone verifies the actual day. A period containing both dates counts this confirmed meeting once. A selection intersecting only one candidate day stays incomplete, even if wider coverage is later reconciled.
 
-XCaliber's October 5 post-call proposal explicitly establishes a held conversation and Charles's approval of a scoped commercial engagement. Subsequent proposal and start discussions support an active opportunity by October 5. September 24 data-room/follow-up correspondence means its original acceptance may precede October. It appears in a separate evidence table and is excluded from the **new October opportunity** headline until the original date is known. No signed first-client win is verified.
+XCaliber's October 5 post-call proposal explicitly establishes a held conversation and Charles's approval of a scoped commercial engagement. Subsequent proposal and start discussions support an active opportunity by October 5. A follow-on October 22 review retrieved September 23 dialogue covering paid scope, retainer pricing and agreed follow-up steps, corroborated by independently dated September 24 correspondence. This establishes the opportunity was already active before October. It appears in a separate evidence table and is excluded from the **new October opportunity** headline; its exact first acceptance date remains unknown. No signed first-client win is verified.
 
 Actual Nicolette and DEXIQ dialogue was matched to accepted invitations and post-call correspondence. Only occurrence-day precision is supported; scheduled start times are not represented as exact attendance starts. Their finance interest and introduction follow-up do not automatically establish current qualification or accepted paid opportunities.
 
@@ -39,7 +39,7 @@ The accessible CRM has zero October actual won-status records, corroborated by b
 
 ## Remaining decisions
 
-1. Establish XCaliber's original opportunity acceptance date.
+1. Preserve XCaliber's established pre-October acceptance. Its exact original date remains unknown; the October 5 proposal must not become a new October acceptance.
 2. Reconcile Venus's latest Charles qualification/commercial decision and its actual held date. Keep its duplicate records joined to one company.
 3. Confirm a complete Charles prospect-call roster, including calls absent from accessible recordings and Calendly.
 4. Supply executed engagement / first-client start evidence and an existing-client baseline before certifying net-new wins.

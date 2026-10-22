@@ -26,7 +26,7 @@
       "status": "incomplete",
       "start": null,
       "end": null,
-      "note": "XCaliber was an active scoped proposal by October 5, but September follow-up/data-room review predates it. Its original acceptance date remains unknown, so it is excluded from new October opportunity counts."
+      "note": "XCaliber was already an accepted active commercial opportunity by September 24, before October. Its October 5 scoped proposal is not a new October acceptance. Exact original acceptance date and complete new-opportunity coverage remain incomplete."
     },
     "clientWins": {
       "status": "incomplete",
@@ -117,22 +117,25 @@
     "Qualification can be supported by direct documented Charles commercial approval, such as his scoped XCaliber contract/proposal. Nicolette and DEXIQ are not automatically qualified from finance interest or introductions.",
     "October 19 internal discussion of XCaliber and Venus starts was conditional. It does not establish a signed client win or a new Venus qualification decision.",
     "New CRM records, completed tasks, platform appointments and invited recording participants do not independently establish a held Charles prospect call.",
-    "The four period measures have different units and event cohorts; they are not a conversion funnel."
+    "The four period measures have different units and event cohorts; they are not a conversion funnel.",
+    "New September dialogue and independently dated September 24 follow-up establish XCaliber was active before October. Do not count the October 5 proposal as net-new October acceptance; no signed win was found."
   ],
-  "reviewedOn": "2026-10-21",
+  "reviewedOn": "2026-10-22",
   "observedOpportunities": [
     {
       "opportunityId": "commercial:xcaliber-health:finance-engagement",
       "companyKey": "company:xcaliber-health",
       "company": "XCaliber Health",
       "dealId": 750,
-      "documentedBy": "2026-10-05",
+      "documentedBy": "2026-09-24",
       "originalAcceptedAt": null,
       "originalAcceptanceDateVerified": false,
       "nextStep": "Resolve proposal/contract scope and confirm engagement start; Charles followed up October 12 and 14 and the prospect requested a few days.",
-      "evidenceBasis": "Charles issued contract and scope October 5 after a held call; September 24 data-room/follow-up correspondence prevents assuming this was the original opportunity acceptance.",
+      "evidenceBasis": "September 23 actual Charles/Prakash dialogue discusses paid scope, retainer pricing and an agreed data-room/proposal follow-up. Independently dated September 24 correspondence confirms Charles requesting the data room and scheduling a follow-up. This establishes an accepted active opportunity before October; the exact first acceptance day remains unknown.",
       "clientWinVerified": false,
-      "reviewedOn": "2026-10-21"
+      "reviewedOn": "2026-10-22",
+      "acceptedBeforeOctober": true,
+      "lastDocumentedAt": "2026-10-15"
     }
   ]
 }

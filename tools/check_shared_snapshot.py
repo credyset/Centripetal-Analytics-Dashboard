@@ -28,6 +28,22 @@ if creator:
     assert len(creator['daily'])==len({r['date'] for r in creator['daily']})
     assert sum(creator['summary'][k] for k in ('reactions','comments','reposts','saves','sendsOnLinkedIn'))==creator['summary']['socialEngagements']
     assert len(creator['topPosts'])==len({r['activityId'] for r in creator['topPosts']})
+company=data['content'].get('companyAnalytics')
+if company:
+    rows=company['daily'];summary=company['summary']
+    assert company['coverage']['sourceTimezone']=='UTC'
+    assert len(rows)==len({r['date'] for r in rows})
+    assert min(r['date'] for r in rows)==company['coverage']['start']
+    assert max(r['date'] for r in rows)==company['coverage']['end']
+    ads_by_day={r['date']:r for r in data['ads']['daily']}
+    for metric,ad_key in [('impressions','impressions'),('clicks','clicks'),('reactions','reactions'),('comments','comments'),('reposts','shares')]:
+        for row in rows:
+            assert row[metric+'Organic']+row[metric+'Sponsored']==row[metric+'Total']
+            assert row[metric+'Sponsored']==ads_by_day[row['date']][ad_key], 'Company-sponsored Ads overlap changed'
+        for channel in ('organic','sponsored','total'):
+            assert sum(r[metric+channel.capitalize()] for r in rows)==summary[channel][metric]
+    assert all(summary[k]['uniqueReach'] is None and summary[k]['engagementRate'] is None for k in ('organic','sponsored','total'))
+    assert company['postCoverage']['publishedPostCount'] is None, 'Missing post register became zero'
 ref=data.get('referrals') or {}
 if ref.get('partitions'):
     s=ref['summary']
@@ -82,6 +98,15 @@ if subset:
     assert sum(r['messageRepliedFlag'] for r in rows)==m['replyingProspectFlags']
     assert m['currentPeriodMessageEvents'] is None and m['currentPeriodReplyEvents'] is None
     assert m['acceptanceRate'] is None and m['accountWideProspects'] is None
+account=data['waalaxy'].get('accountAnalytics')
+if account:
+    assert account['account']['independentlyVerified']
+    assert account['account']['linkedInProfile']=='https://www.linkedin.com/in/solomoncharles'
+    assert account['sourceWindow']['sourceTimezone'] is None
+    assert account['integration']['includeInSelectedPeriodTotals'] is False
+    assert account['integration']['mergeIntoDailySeries'] is False
+    assert account['platformDisplayedRates']['cohortRateEstablished'] is False
+    assert all(isinstance(v,int) and v>=0 for v in account['metrics'].values())
 valuation=data['crm'].get('assessment',{}).get('valuationCoverage')
 if valuation:
     assert valuation['nonzeroValuedRecords']+valuation['zeroOrUnsetRecords']==valuation['businessOpenRecords']
