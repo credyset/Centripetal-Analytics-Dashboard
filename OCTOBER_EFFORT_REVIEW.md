@@ -1,4 +1,8 @@
-# Christian’s October effort — evidence and draft assumptions
+# Christian’s October effort — estimate and evidence
+
+**Updated October 22:** Christian confirmed the original 14.5–15.75 hours covered October 1–16 and supplied 3.75 additional non-meeting hours for October 17–22. The current owner-provided range is **18.25–19.5 hours**. The associated recording proxy remains 228.58 minutes and is kept separate. See [the current review and dated breakdown](DASHBOARD_REVIEW_2026-10-22.md) and `EFFORT_ESTIMATE.json`.
+
+## Historical October 16 basis
 
 Scope: October 1–16, 2026, Mountain time; October 16 is partial. Christian Wutz only.
 

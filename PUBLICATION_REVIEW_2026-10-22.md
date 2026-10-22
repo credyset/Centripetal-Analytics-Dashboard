@@ -1,5 +1,7 @@
 # Approved GitHub publication — October 22, 2026
 
+**Later October 22 update:** the owner subsequently confirmed an additional 3.75 non-meeting hours for October 17–22. The resulting 18.25–19.5-hour estimate and the existing-data display corrections are documented in [the dashboard review](DASHBOARD_REVIEW_2026-10-22.md). The payload description below records the initial October 22 publication.
+
 The owner explicitly instructed publication of the completed local dashboard to `credyset/Centripetal-Analytics-Dashboard` and its public GitHub Pages dashboard so the team can view and interact with the updated metrics and revised structure. This supersedes the October 21 local-only instruction. `PUBLICATION_POLICY.json` records the approval, destination and scope.
 
 ## Approved payload

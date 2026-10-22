@@ -6,7 +6,7 @@ Business-development dashboard for Charles Solomon and the Centripetal team, wit
 
 Other agents can clone this repository, run the populated dashboard and contribute through branches/pull requests without access to ChatGPT Sites. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Latest approved refresh: [October 22 channel refinement](REFRESH_REVIEW_2026-10-22.md), [October 21 CRM/meeting review](REFRESH_REVIEW_2026-10-21.md), [Charles outcome definitions](OUTCOME_REVIEW_2026-10-21.md), and [October 22 publication review](PUBLICATION_REVIEW_2026-10-22.md). On October 22 the owner explicitly instructed publication of the completed local metrics and revised structure to this GitHub project and GitHub Pages. This supersedes the earlier local-only hold. `PUBLICATION_POLICY.json` records the destination and approved scope; raw exports and private evidence remain excluded. Earlier corrections remain documented in [ANALYTICS_REVISION_2026-10-16.md](ANALYTICS_REVISION_2026-10-16.md).
+Latest approved refresh: [October 22 effort and dashboard review](DASHBOARD_REVIEW_2026-10-22.md), [October 22 channel refinement](REFRESH_REVIEW_2026-10-22.md), [October 21 CRM/meeting review](REFRESH_REVIEW_2026-10-21.md), [Charles outcome definitions](OUTCOME_REVIEW_2026-10-21.md), and [October 22 publication review](PUBLICATION_REVIEW_2026-10-22.md). On October 22 the owner explicitly instructed publication of the completed local metrics and revised structure to this GitHub project and GitHub Pages. This supersedes the earlier local-only hold. `PUBLICATION_POLICY.json` records the destination and approved scope; raw exports and private evidence remain excluded. Earlier corrections remain documented in [ANALYTICS_REVISION_2026-10-16.md](ANALYTICS_REVISION_2026-10-16.md).
 
 For the few inputs that still require owner evidence or an export, see [Remaining manual inputs](MANUAL_DATA_REQUEST_2026-10-22.md). Current generic CRM and creator exports have already been collected independently.
 
@@ -52,7 +52,7 @@ Date presets and custom dates operate on dated evidence. Undated inventories rem
 
 ## Reporting calendar
 
-Monday–Sunday weeks, `America/Denver`, including daylight-saving changes. Preserve source day boundaries where exports are already aggregated by another timezone. The current review defaults to October 19–22, with October 22 partial; complete-day presets end October 21. Each source is independently bounded: the fresh CRM read does not extend older calendar, content, invitation or recording coverage. Calendar future-event coverage cannot establish bookings created after collection. Time & effort extends its requested October scope through October 22 while retaining the original evidence dates and the separate14.5–15.75-hour owner estimate.
+Monday–Sunday weeks, `America/Denver`, including daylight-saving changes. Preserve source day boundaries where exports are already aggregated by another timezone. The current review defaults to October 19–22, with October 22 partial; complete-day presets end October 21. Each source is independently bounded: the fresh CRM read does not extend older calendar, content, invitation or recording coverage. Calendar future-event coverage cannot establish bookings created after collection. Time & effort extends its requested October scope through October 22 while retaining the original evidence dates and the separate 18.25–19.5-hour owner estimate.
 
 ## Data preparation
 

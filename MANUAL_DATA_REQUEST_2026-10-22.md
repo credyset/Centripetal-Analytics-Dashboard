@@ -45,7 +45,7 @@ Ads currently has daily source rows through October 21; company daily metrics st
 
 For referrals, collect actual request/introduction/follow-up dates, direction, referrer, target company/contact, evidence and linked CRM IDs. The agent should reconcile accessible correspondence first. Permit introduction and Jonathan follow-up/replies are already retained; no completed Jonathan introduction or formal lost outcome is established.
 
-For measured Christian hours, provide actual attendance and dated work durations. Otherwise keep the owner-specified **14.5–15.75 hours** as a non-meeting estimate, separate from recording duration. This optional work log is not required to show the current estimate accurately.
+For measured Christian hours, provide actual attendance and dated work durations. Otherwise keep the owner-provided **18.25–19.5 hours** as a non-meeting estimate, separate from recording duration. This optional work log is not required to show the current estimate accurately.
 
 ## What does not block the current refresh
 

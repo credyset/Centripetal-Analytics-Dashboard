@@ -1,6 +1,25 @@
 {
-  "hoursLow": 14.5,
-  "hoursHigh": 15.75,
-  "confirmedOn": "2026-10-16",
-  "basis": "Owner-specified nonmeeting estimate, replacing the earlier percentage adjustment. No workstream allocation was supplied; actual hours remain unmeasured."
+  "hoursLow": 18.25,
+  "hoursHigh": 19.5,
+  "confirmedOn": "2026-10-22",
+  "periodStart": "2026-10-01",
+  "coversThrough": "2026-10-22",
+  "basis": "Christian confirmed the 14.5–15.75-hour estimate covered October 1–16 and supplied 3.75 additional non-meeting hours for October 17–22. The updated overall estimate is 18.25–19.5 hours. No workstream allocation was supplied; this is owner-reported effort, not independently measured duration.",
+  "baseline": {
+    "hoursLow": 14.5,
+    "hoursHigh": 15.75,
+    "periodStart": "2026-10-01",
+    "coversThrough": "2026-10-16",
+    "confirmedOn": "2026-10-16",
+    "coverageConfirmedOn": "2026-10-22"
+  },
+  "increments": [
+    {
+      "periodStart": "2026-10-17",
+      "coversThrough": "2026-10-22",
+      "hours": 3.75,
+      "confirmedOn": "2026-10-22",
+      "basis": "Christian supplied this additional non-meeting estimate after confirming the earlier range excluded October 17–22. Meetings, unattended agent runs and previously counted time were excluded in the question."
+    }
+  ]
 }

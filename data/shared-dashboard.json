@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-10-22T12:48:03.110520+00:00",
+    "generatedAt": "2026-10-22T13:15:39.240257+00:00",
     "asOfDate": "2026-10-22",
     "timezone": "America/Denver",
     "scope": "Charles Solomon and Centripetal Advisors",
@@ -12,8 +12,8 @@
     "public": true,
     "publicDataPolicy": "Owner-approved detailed snapshot including prospect identities and available business record links.",
     "analyticsRevisedAt": "2026-10-17T00:34:20.257365+00:00",
-    "lastRevisionNote": "Supported analytics corrections; individual source collection dates retained.",
-    "revision": "October 22 reviewed source refresh, Charles outcome structure and verified Video DM CRM reconciliation",
+    "lastRevisionNote": "Owner-provided non-meeting estimate updated by3.75 hours; source rows and commercial outcomes unchanged. Content headline now uses the selected daily evidence.",
+    "revision": "October 22 owner effort addition, selected-period content headline and source coverage presentation",
     "reportingAsOfDate": "2026-10-22",
     "defaultCompleteReportingThrough": "2026-10-21",
     "defaultDatePreset": "week",
@@ -112523,7 +112523,7 @@
     }
   },
   "time": {
-    "snapshotAt": "2026-10-22T05:56:13.245Z",
+    "snapshotAt": "2026-10-22T13:15:39.240257+00:00",
     "subject": "Christian Wutz",
     "timezone": "America/Denver",
     "period": {
@@ -112930,7 +112930,9 @@
         "id": "video-dm",
         "title": "Video DM workflow review and source repairs",
         "evidenceDates": [
-          "2026-10-14"
+          "2026-10-14",
+          "2026-10-19",
+          "2026-10-22"
         ],
         "humanInvolvementBasis": "October 14 review explicitly records separately owner-authorized profile repairs. Earlier October-modified batches need chat corroboration before adding review allowances.",
         "planningAllowance": {
@@ -112964,6 +112966,14 @@
           {
             "date": "2026-10-14",
             "label": "Documents a separate owner-authorized repair of two Video DM profile URLs; inventory/status changes are not sends."
+          },
+          {
+            "date": "2026-10-19",
+            "label": "Christian confirmed research-account sign-in and the browser session so prospect checks could continue. Two access messages are one coordination cluster; no duration inferred."
+          },
+          {
+            "date": "2026-10-22",
+            "label": "Christian confirmed reloading the Pipedrive research tab for net-new prospect checks. This supports access coordination, not measured work duration."
           }
         ]
       },
@@ -112972,7 +112982,9 @@
         "title": "Analytics scope, source reconciliation and publication review",
         "evidenceDates": [
           "2026-10-14",
-          "2026-10-16"
+          "2026-10-16",
+          "2026-10-21",
+          "2026-10-22"
         ],
         "humanInvolvementBasis": "The current conversation directly records Christian's requirements, account/calendar answers, hosting/repository choice, approval to proceed, and iterative review directions. Implementation and connector collection were agent-assisted.",
         "planningAllowance": {
@@ -113023,41 +113035,95 @@
           {
             "date": "2026-10-16",
             "label": "Owner reviewed source reconciliation and specified an overall nonmeeting estimate; this supports review scope, not measured duration."
+          },
+          {
+            "date": "2026-10-21",
+            "label": "Christian directed commercial-evidence and source reconciliation, including CRM/inbox checks. This is review context, not an independently timed session."
+          },
+          {
+            "date": "2026-10-22",
+            "label": "Christian reviewed the held-trigger interpretation and directed GitHub publication, then clarified the October 16 estimate cutoff and supplied 3.75 additional non-meeting hours. The addition is counted once overall."
           }
         ]
+      },
+      {
+        "id": "investor-partner",
+        "title": "Investor/contact QA and partner research direction",
+        "evidenceDates": [
+          "2026-10-20",
+          "2026-10-21"
+        ],
+        "evidence": [
+          {
+            "date": "2026-10-20",
+            "label": "Christian identified departed investor contacts and requested current replacements at Arthur Ventures, Osage and Generator. Research execution and generated contact counts are not human time."
+          },
+          {
+            "date": "2026-10-21",
+            "label": "Christian directed healthcare-partner research across 29 firms with current-role, verified-email and credit-limit requirements. The deliverable supports coordination scope, not measured duration."
+          }
+        ],
+        "humanInvolvementBasis": "Direct Christian requests establish research direction and review. No hours are allocated by workstream; agent research/enrichment is excluded.",
+        "planningAllowance": {
+          "enabled": false,
+          "hoursLow": 0,
+          "hoursHigh": 0,
+          "kind": "Historical workstream assumption; superseded by owner total estimate",
+          "scope": "Included only in the owner-provided overall estimate; no additional hours inferred.",
+          "supersededByOwnerTotalRange": true,
+          "ownerAdjustedEstimate": false
+        }
       }
     ],
     "trackedHumanMinutes": null,
     "summary": {
-      "nonMeetingEstimateHoursLow": 14.5,
-      "nonMeetingEstimateHoursHigh": 15.75,
+      "nonMeetingEstimateHoursLow": 18.25,
+      "nonMeetingEstimateHoursHigh": 19.5,
       "confidence": "low",
-      "ownerConfirmed": false,
       "combinedWorkedHours": null,
       "ownerAdjustedEstimate": true,
       "baselineHoursLow": 6.0,
       "baselineHoursHigh": 14.5,
       "ownerAdjustmentDate": "2026-10-16",
       "ownerEstimateRange": {
-        "low": 14.5,
-        "high": 15.75,
-        "confirmedOn": "2026-10-16",
-        "basis": "Owner-specified nonmeeting estimate, replacing the earlier percentage adjustment. No workstream allocation was supplied; actual hours remain unmeasured."
-      }
+        "low": 18.25,
+        "high": 19.5,
+        "confirmedOn": "2026-10-22",
+        "basis": "Christian confirmed the 14.5–15.75-hour estimate covered October 1–16 and supplied 3.75 additional non-meeting hours for October 17–22. The updated overall estimate is 18.25–19.5 hours. No workstream allocation was supplied; this is owner-reported effort, not independently measured duration.",
+        "periodStart": "2026-10-01",
+        "coversThrough": "2026-10-22",
+        "baseline": {
+          "hoursLow": 14.5,
+          "hoursHigh": 15.75,
+          "periodStart": "2026-10-01",
+          "coversThrough": "2026-10-16",
+          "confirmedOn": "2026-10-16",
+          "coverageConfirmedOn": "2026-10-22"
+        },
+        "increments": [
+          {
+            "periodStart": "2026-10-17",
+            "coversThrough": "2026-10-22",
+            "hours": 3.75,
+            "confirmedOn": "2026-10-22",
+            "basis": "Christian supplied this additional non-meeting estimate after confirming the earlier range excluded October 17–22. Meetings, unattended agent runs and previously counted time were excluded in the question."
+          }
+        ]
+      },
+      "ownerEstimateConfirmed": true,
+      "actualHumanTimeVerified": false
     },
     "notes": [
       "Christian only. Other team members and automated research, coding, export and publication runtime are excluded.",
       "Meeting evidence measures deduplicated audio associated with Christian; exact attendance remains unknown.",
-      "Nonmeeting estimates cover assumed asynchronous direction, review and coordination only. Actual work may fall outside the range.",
+      "Non-meeting effort is the owner-provided overall estimate; dated workstream evidence gives context without allocating hours.",
       "No combined worked-hour total is asserted: individual attendance and overlap with review work require confirmation.",
       "Newsletter/publication approvals are grouped under dashboard; repeated artifacts and mirrored publications are not extra work.",
-      "These figures are a draft reconstruction, not a timesheet or billing record.",
-      "October 21 refresh review: a fresh metadata scan and actual Christian speaker checks confirm the same six associated recordings, five after duplicate removal, totaling 228.58 audio minutes. No newer matching recording was found in the accessible indexed list. Audio duration is not attendance or worked time. The owner’s 14.5–15.75-hour non-meeting estimate remains unchanged.",
-      "Drive revision metadata attributes 14 retained October file revisions on nine Mountain dates to Christian. This supports activity dates only; it does not establish human work duration, billing or additional hours. The owner allowance remains 14.5–15.75 hours.",
+      "The non-meeting range is an owner estimate; associated audio is a separate proxy. These are not a timesheet or billing record.",
+      "October 21 recording review confirmed six associated source recordings, five after duplicate removal, totaling 228.58 audio minutes. No newer exact-Christian matching recording was found in the retained indexed list; audio duration is not attendance or worked time.",
+      "Drive revision metadata attributes 14 retained October file revisions on nine Mountain dates to Christian. This supports activity dates only; it does not establish human work duration, billing or additional hours.",
       "A speaker-label cross-check across all 76 retained October Fireflies responses found six Christian-attributed recordings, all already represented in the existing six source audio events. It adds no new recording-duration proxy or human hours; the existing verified duplicate remains excluded.",
-      "October22 review extends the requested period through today. Retained recording/file evidence keeps its original collection dates; no additional Christian hours or new attendance is inferred.",
-      "October 22 review extends the requested period through today. Retained recording/file evidence keeps its original collection dates; no additional Christian hours or new attendance is inferred.",
-      "Owner-specified nonmeeting estimate: 14.5–15.75 hours. This replaces the prior percentage adjustment; no workstream allocation or measured actual-hour claim is made."
+      "Owner-specified nonmeeting estimate: 18.25–19.5 hours through 2026-10-22. No workstream allocation or independently measured-hour claim is made."
     ],
     "reviewedAsOf": "2026-10-22",
     "evidenceCollectionThrough": "2026-10-22T05:56:13.245Z",
@@ -113376,16 +113442,16 @@
     {
       "id": "time",
       "name": "Christian · October effort",
-      "status": "Current recording review; owner nonmeeting estimate",
-      "asOf": "2026-10-22T05:56:13.245Z",
+      "status": "Current owner nonmeeting estimate; separately dated recording evidence",
+      "asOf": "2026-10-22T13:15:39.240257+00:00",
       "coverage": {
         "start": "2026-10-01",
-        "end": "2026-10-21",
+        "end": "2026-10-22",
         "currentDayPartial": true
       },
       "method": "Fresh Fireflies metadata and speaker identity review; prior scoped calendar evidence; owner-adjusted nonmeeting assumptions",
-      "note": "Christian only, reporting through October 21. Fresh metadata and speaker reviews retain five deduplicated recordings / 228.58 audio minutes; no additional matching source recording was found. The separate 14.5–15.75-hour owner estimate remains unchanged. Actual human hours and own-calendar coverage remain unknown.",
-      "checkedAt": "2026-10-21"
+      "note": "Christian confirmed the October 1–16 baseline of 14.5–15.75 hours and supplied 3.75 additional non-meeting hours for October 17–22. Updated estimate:18.25–19.5 hours. Recording-source dates and the 228.58-minute proxy are unchanged; duration and attendance are not independently measured.",
+      "checkedAt": "2026-10-22"
     },
     {
       "id": "fireflies",
@@ -113523,7 +113589,7 @@
     {
       "id": "commercial_context",
       "name": "Commercial relationship reconciliation",
-      "status": "Current independent review; local only",
+      "status": "Current independent review",
       "asOf": "2026-10-22T11:49:24.649822+00:00",
       "checkedAt": "2026-10-22",
       "coverage": "Five selected Sales records investigated; five contextual company records and one existing selected-person reply classified",
@@ -113545,27 +113611,27 @@
       "name": "Referral correspondence context",
       "asOf": "2026-10-22T11:47:28.902Z",
       "note": "Two October 22 Jonathan/Charles email snippets with explicit UTC dates. Context only; no completed introduction or formal lost outcome.",
-      "status": "Current independent review; local only"
+      "status": "Current independent review"
     },
     {
       "id": "zapier_execution",
       "name": "Video DM Zapier execution review",
       "asOf": "2026-10-22T12:39:16.176288Z",
       "note": "Historical bulk Sheet-trigger burst, separate from business activity. Six targeted held inputs did not establish eligible sent-video syncs. October 21 ten-row Loom cohort is present in CRM; no703-record deficit is inferred.",
-      "status": "Current independent review; local only"
+      "status": "Current independent review"
     },
     {
       "id": "source_freshness",
       "name": "Final Sheet, Calendly and recording freshness checks",
       "asOf": "2026-10-22T12:11:30Z",
       "note": "October 22 06:11 MDT: Sheet revision1253 and modification time unchanged; same 100 recording IDs/metadata and 3 active calendar events/invitees. Original values/dialogue dates retained. No additional outcomes inferred.",
-      "status": "Current independent review; local only"
+      "status": "Current independent review"
     },
     {
       "id": "video_crm_reconciliation",
       "name": "Video DM recording fields and CRM crosswalk",
       "asOf": "2026-10-22T12:39:16.176288Z",
-      "status": "Current independent review; local only",
+      "status": "Current independent review",
       "note": "57 valid Loom URLs and 3 non-URL notes across 60 populated recording cells. October 21:12 Sent labels,10 Loom URLs,10 exact CRM profile/asset-note matches and 2 non-URL DM notes. All 29 undated Sent/Done rows have current record evidence. No delivery inference."
     }
   ],

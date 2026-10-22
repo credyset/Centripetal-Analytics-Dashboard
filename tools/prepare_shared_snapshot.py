@@ -54,6 +54,10 @@ def curate_snapshot(source):
     pending=state=='pending_owner_approval'
     public.setdefault('meta',{}).update(public=not (local_only or pending), publicDataPolicy=('Owner-directed local-only snapshot; GitHub and GitHub Pages remain unchanged. Future publication requires a new explicit owner instruction and policy change.' if local_only else 'Local review snapshot; refreshed private source supplements await publication approval.' if pending else 'Owner-approved detailed snapshot including prospect identities and available business record links.'))
     public['meta']['note'] = ('Local-only snapshot by owner instruction; refreshed source supplements have not been published. ' if local_only else 'Local review snapshot; refreshed private source supplements have not been published. ' if pending else 'Published snapshot; ') + 'Source coverage varies. Automatic refresh is not enabled.'
+    if public['meta']['public']:
+        for card in public.get('sources',[]):
+            if isinstance(card.get('status'),str):
+                card['status']=card['status'].replace('; local only','')
     for name in ('ads', 'waalaxy', 'content'):
         public.get(name, {}).pop('sources', None)
     def scrub(value):
