@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-10-22T12:17:05.550566+00:00",
+    "generatedAt": "2026-10-22T12:48:03.110520+00:00",
     "asOfDate": "2026-10-22",
     "timezone": "America/Denver",
     "scope": "Charles Solomon and Centripetal Advisors",
@@ -13,7 +13,7 @@
     "publicDataPolicy": "Owner-directed local-only snapshot; GitHub and GitHub Pages remain unchanged. Future publication requires a new explicit owner instruction and policy change.",
     "analyticsRevisedAt": "2026-10-17T00:34:20.257365+00:00",
     "lastRevisionNote": "Supported analytics corrections; individual source collection dates retained.",
-    "revision": "October 22 latest CRM, commercial reconciliation and verified automation review; local only",
+    "revision": "October 22 trigger-burst interpretation, recording URL correction and verified CRM cohort; local only",
     "reportingAsOfDate": "2026-10-22",
     "defaultCompleteReportingThrough": "2026-10-21",
     "defaultDatePreset": "week",
@@ -62985,7 +62985,10 @@
       "connectedRows": 115,
       "rowsWithDealId": 82,
       "syncedToPipedriveFlagRows": 58,
-      "newRowsInPeriod": null
+      "newRowsInPeriod": null,
+      "recordingLinkRows": 57,
+      "recordingFieldNonemptyRows": 60,
+      "recordingFieldNonUrlNotes": 3
     },
     "snapshotDelta": {
       "basis": "First observed between source snapshots; not creation/send timestamps",
@@ -65270,7 +65273,10 @@
         "dealId": 431,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "skarasavva",
@@ -65384,7 +65390,10 @@
         "dealId": 296,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "sekhar-sarukkai",
@@ -65479,7 +65488,10 @@
         "dealId": 829,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "dwightneptune",
@@ -66391,7 +66403,10 @@
         "dealId": 813,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "vishnukrishnaprasad",
@@ -66467,7 +66482,10 @@
         "dealId": 812,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "christopherxlee",
@@ -66771,7 +66789,10 @@
         "dealId": 227,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "elizabeth-hudson-670bb5291",
@@ -67056,7 +67077,10 @@
         "dealId": 295,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "bentley-way",
@@ -67132,7 +67156,10 @@
         "dealId": 282,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "ejbuckleyiii",
@@ -67569,7 +67596,10 @@
         "dealId": 428,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "ryan-t-gill-9388238",
@@ -67911,7 +67941,10 @@
         "dealId": 809,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "marcsayoub",
@@ -67930,7 +67963,10 @@
         "dealId": 427,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "ariel-harmoko",
@@ -68614,7 +68650,10 @@
         "dealId": 285,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "raymondz1",
@@ -68766,7 +68805,10 @@
         "dealId": 425,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "thejackobrien",
@@ -68851,7 +68893,7 @@
         "contact": "Douglas Ford",
         "linkedin": "https://www.linkedin.com/in/douglas-ford-304279b5/",
         "status": "Sent",
-        "hasRecordingLink": true,
+        "hasRecordingLink": false,
         "hasResponseStatus": false,
         "connected": false,
         "connectedAt": null,
@@ -68861,7 +68903,10 @@
         "dealId": 322,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "non_url_note",
+        "recordingFieldNote": "Sent a video DM without loom"
       },
       {
         "id": "mitch-mudra-2794369",
@@ -69070,7 +69115,13 @@
         "dealId": null,
         "explicitSendStatus": false,
         "datedSendStatus": true,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null,
+        "matchedCrmDealId": 837,
+        "matchedCrmPersonId": 2834,
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
       },
       {
         "id": "nadav-cornberg",
@@ -69108,7 +69159,10 @@
         "dealId": 819,
         "explicitSendStatus": false,
         "datedSendStatus": true,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "sidghatak",
@@ -69127,7 +69181,10 @@
         "dealId": 821,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "richardyuxuanzhang",
@@ -69146,7 +69203,10 @@
         "dealId": null,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "shreykapoor1",
@@ -69165,7 +69225,13 @@
         "dealId": null,
         "explicitSendStatus": false,
         "datedSendStatus": true,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null,
+        "matchedCrmDealId": 844,
+        "matchedCrmPersonId": 2841,
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
       },
       {
         "id": "susanoneillfcca",
@@ -69203,7 +69269,10 @@
         "dealId": null,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "benpham1",
@@ -69241,7 +69310,13 @@
         "dealId": null,
         "explicitSendStatus": false,
         "datedSendStatus": true,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null,
+        "matchedCrmDealId": 843,
+        "matchedCrmPersonId": 2840,
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
       },
       {
         "id": "ajith-govind",
@@ -69260,7 +69335,13 @@
         "dealId": null,
         "explicitSendStatus": false,
         "datedSendStatus": true,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null,
+        "matchedCrmDealId": 842,
+        "matchedCrmPersonId": 2839,
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
       },
       {
         "id": "alexchantavy",
@@ -69279,7 +69360,13 @@
         "dealId": null,
         "explicitSendStatus": false,
         "datedSendStatus": true,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null,
+        "matchedCrmDealId": 845,
+        "matchedCrmPersonId": 2842,
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
       },
       {
         "id": "saoud-khalifah",
@@ -69298,7 +69385,10 @@
         "dealId": 244,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "cale-johnston",
@@ -69336,7 +69426,10 @@
         "dealId": 258,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "samira-daswani",
@@ -69355,7 +69448,13 @@
         "dealId": null,
         "explicitSendStatus": false,
         "datedSendStatus": true,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null,
+        "matchedCrmDealId": 838,
+        "matchedCrmPersonId": 2835,
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
       },
       {
         "id": "grant-siders-0860354b",
@@ -69374,7 +69473,13 @@
         "dealId": null,
         "explicitSendStatus": false,
         "datedSendStatus": true,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null,
+        "matchedCrmDealId": 841,
+        "matchedCrmPersonId": 2838,
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
       },
       {
         "id": "brandondterry",
@@ -69393,7 +69498,10 @@
         "dealId": 811,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "derekabdine",
@@ -69412,7 +69520,10 @@
         "dealId": 830,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "jirka-bachel",
@@ -69421,7 +69532,7 @@
         "contact": "Jirka Bachel",
         "linkedin": "https://www.linkedin.com/in/jirka-bachel/",
         "status": "Dated send status recorded",
-        "hasRecordingLink": true,
+        "hasRecordingLink": false,
         "hasResponseStatus": true,
         "connected": true,
         "connectedAt": "2026-04-08",
@@ -69431,7 +69542,10 @@
         "dealId": null,
         "explicitSendStatus": false,
         "datedSendStatus": true,
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "non_url_note",
+        "recordingFieldNote": "LI DM - had already connected on LI"
       },
       {
         "id": "ido-arieli-noga",
@@ -69450,7 +69564,10 @@
         "dealId": 249,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "manvitha-mallela-9a699884",
@@ -69469,7 +69586,10 @@
         "dealId": 256,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "dominik-pederzani-07baa26a",
@@ -69497,7 +69617,7 @@
         "contact": "Noel Thomas",
         "linkedin": "https://www.linkedin.com/in/noeljthomas/",
         "status": "Dated send status recorded",
-        "hasRecordingLink": true,
+        "hasRecordingLink": false,
         "hasResponseStatus": false,
         "connected": true,
         "connectedAt": "2026-04-08",
@@ -69507,7 +69627,10 @@
         "dealId": null,
         "explicitSendStatus": false,
         "datedSendStatus": true,
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "non_url_note",
+        "recordingFieldNote": "LI DM - had already connected on LI"
       },
       {
         "id": "rimoch",
@@ -69526,7 +69649,10 @@
         "dealId": 269,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "stephen-martin-texas",
@@ -69564,7 +69690,10 @@
         "dealId": 831,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "dadhemar",
@@ -69602,7 +69731,10 @@
         "dealId": 247,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "maximeberthelot",
@@ -69659,7 +69791,10 @@
         "dealId": 255,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "federico-spagnoli-80204b1",
@@ -69678,7 +69813,10 @@
         "dealId": 278,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "le-ora-lichtenstein-cfa-9bbb8b112",
@@ -69697,7 +69835,10 @@
         "dealId": 822,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "le-ora-lichtenstein-cfa-9bbb8b112",
@@ -69754,7 +69895,10 @@
         "dealId": 253,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "ryan-wenger",
@@ -69792,7 +69936,10 @@
         "dealId": 810,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "assafweinberg",
@@ -69849,7 +69996,10 @@
         "dealId": 750,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "spencerpotts",
@@ -69868,7 +70018,10 @@
         "dealId": 336,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "robmay",
@@ -69887,7 +70040,10 @@
         "dealId": 335,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "jrowl",
@@ -69925,7 +70081,10 @@
         "dealId": 239,
         "explicitSendStatus": true,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "innocent-c-80713232",
@@ -69944,7 +70103,10 @@
         "dealId": 828,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "batuhan-balci-7a3589114",
@@ -70001,7 +70163,10 @@
         "dealId": 825,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "jrebholz",
@@ -70020,7 +70185,10 @@
         "dealId": 820,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "raj-jagiasi",
@@ -70115,7 +70283,10 @@
         "dealId": 816,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "kaya-celebi",
@@ -70134,7 +70305,10 @@
         "dealId": 824,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "nikhilrreddy",
@@ -70153,7 +70327,10 @@
         "dealId": 823,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "ryan-nowicki-stewart",
@@ -70229,7 +70406,10 @@
         "dealId": 817,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "steve-rahimi",
@@ -70248,7 +70428,10 @@
         "dealId": 826,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "serena-dang-aaab3141",
@@ -70267,7 +70450,10 @@
         "dealId": 827,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "pankaj-dhariwal",
@@ -70324,7 +70510,10 @@
         "dealId": 818,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "jakenewfield",
@@ -70362,7 +70551,10 @@
         "dealId": 815,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "nicholas-bartz",
@@ -70381,7 +70573,10 @@
         "dealId": 814,
         "explicitSendStatus": false,
         "datedSendStatus": false,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null
       },
       {
         "id": "rkhardalian",
@@ -70419,7 +70614,13 @@
         "dealId": null,
         "explicitSendStatus": false,
         "datedSendStatus": true,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null,
+        "matchedCrmDealId": 846,
+        "matchedCrmPersonId": 2843,
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
       },
       {
         "id": "kabiri-ali",
@@ -70476,7 +70677,13 @@
         "dealId": null,
         "explicitSendStatus": false,
         "datedSendStatus": true,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null,
+        "matchedCrmDealId": 840,
+        "matchedCrmPersonId": 2837,
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
       },
       {
         "id": "razvanr",
@@ -70514,7 +70721,13 @@
         "dealId": null,
         "explicitSendStatus": false,
         "datedSendStatus": true,
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "hasRecordingFieldContent": true,
+        "recordingFieldKind": "loom_url",
+        "recordingFieldNote": null,
+        "matchedCrmDealId": 839,
+        "matchedCrmPersonId": 2836,
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
       },
       {
         "id": "kuan-zou-322a27117",
@@ -71495,11 +71708,11 @@
     },
     "notes": [
       "Only populated company/contact records count as prospects; blank/formatting/helper rows are excluded.",
-      "Sheet-classified completion includes recording-link presence; a recording link does not prove delivery.",
+      "Sheet helper completion may include nonblank recording-field content, including notes as well as URLs; it does not prove delivery.",
       "Exact Sent/Done statuses remain separate from dated send statuses. Dated status text is self-reported; it does not independently verify video content, channel or delivery.",
       "The October 19 email status is kept separate from send/follow-up status counts.",
       "The live helper intentionally requires an acceptance date as well as connected status and an exact unique URL match. All 33 accepted profiles without a main Connected flag lack that date; these are verification gaps, not demonstrated formula errors.",
-      "Synced to Pipedrive is a source flag; successful identity synchronization is not independently verified.",
+      "Synced to Pipedrive is a source flag. The independent October21 ten-row Loom cohort has exact CRM profile/asset-note matches; the flag alone does not verify delivery.",
       "Snapshot differences are first-observed changes, not actual creation/send dates. Collection freshness is separate from unknown upstream sync.",
       "Stable CRM join review: 81 of 82 explicit Sheet deal IDs exist in the current CRM snapshot; one points to deleted Chromie deal322 and is not silently remapped. All 58 populated organization IDs match.",
       "Of the 81 matched rows, 80 are CRM-owned by Christian and one by Charles. Automation ownership does not identify the actual outreach sender.",
@@ -71605,22 +71818,25 @@
       "note": "Source metadata, revision history and stable joins were reviewed independently; no later worksheet value change was established. File-level status entry dates do not establish actual send time, channel or video inclusion."
     },
     "datedStatusReview": {
-      "snapshotAt": "2026-10-22T11:59:08.660537+00:00",
-      "reviewedAt": "2026-10-22T11:59:08.660537+00:00",
+      "snapshotAt": "2026-10-22T12:39:16.176288Z",
+      "reviewedAt": "2026-10-22T12:39:16.176288Z",
+      "sourceValuesCollectedAt": "2026-10-22T01:02:14Z",
       "sourceDate": "2026-10-21",
       "uniqueProfilesMarkedSent": 12,
-      "recordingLinksPresent": 12,
+      "recordingLinksPresent": 10,
+      "recordingFieldContentPresent": 12,
+      "nonUrlRecordingNotes": 2,
       "explicitSheetCrmDealIdsPresent": 0,
       "sourceStatusLabel": "Sent 10/21/26",
       "alreadyIncludedInDatedActions": true,
       "actualSenderAccountId": null,
       "actualSentAt": null,
       "deliveryVerified": false,
-      "note": "Twelve distinct profiles have a date-only self-reported Sent label and recording link. These are already retained; do not add twelve new events. No message link, delivery receipt or actual sender is established."
+      "note": "Twelve existing self-reported dated Sent rows:ten valid Loom URLs and two non-URL LinkedIn DM notes. No new send events or verified deliveries are added."
     },
     "automationReview": {
-      "snapshotAt": "2026-10-22T12:09:19.575499+00:00",
-      "reviewedAt": "2026-10-22T12:09:19.575499+00:00",
+      "snapshotAt": "2026-10-22T12:39:16.176288Z",
+      "reviewedAt": "2026-10-22T12:39:16.176288Z",
       "zapId": 383834891,
       "enabled": true,
       "sourceCaptureSavedThrough": "2026-10-22T12:03:50.796540+00:00",
@@ -71630,7 +71846,11 @@
         "spreadsheetName": "centripetal_top20_video_sniper_prospects_aug2026",
         "worksheetName": "centripetal_top20_video_sniper_prospects_aug2026",
         "triggerColumn": "COL$Q",
-        "filter": "Status (CS Column) contains Sent"
+        "filter": "Status (CS Column) contains Sent",
+        "triggerColumnName": "Loom Link",
+        "filterColumn": "COL$P",
+        "filterColumnName": "Status (CS Column)",
+        "mappingDefectEstablished": false
       },
       "latestVerifiedRun": {
         "id": "0086536b-859f-acb6-d819-13415762c354",
@@ -71687,15 +71907,33 @@
           "filterAttempted": false,
           "crmStepsAttempted": false
         },
-        "note": "All 85 displayed history pages for this Zap and October 19–22 were retained. 841 entries represent 808 unique run IDs; 33 repeated held IDs have identical status/time. 703 unique held IDs (736 displayed entries) are dated October 20. This is a non-atomic retained execution-history census, not unique recipients or delivered outreach. No replay, test, configuration or connection changes were performed."
+        "note": "All 85 retained pages were reviewed:841 displayed entries represent808 distinct IDs. The 33 repeated IDs occur across adjacent pages with identical status/time. Tied, non-atomic pagination can repeat or omit items; these are retained observations, not a certified complete execution census. The703 held IDs are technical history, not an evidenced business-data deficit.",
+        "reconciliation": {
+          "reviewedAt": "2026-10-22T12:39:16.176288Z",
+          "interpretation": "bulk_sheet_trigger_burst",
+          "businessImpactEstablished": false,
+          "sampledHeldRuns": 6,
+          "blankPayloadSamples": 4,
+          "prospectPayloadsWithoutSentStatus": 2,
+          "heldBurst": {
+            "startAt": "2026-10-20T20:56:26Z",
+            "endAt": "2026-10-20T20:56:28Z"
+          },
+          "heldTimestampCounts": {
+            "Oct 20, 2026 02:56:28 pm": 636,
+            "Oct 20, 2026 02:56:27 pm": 59,
+            "Oct 20, 2026 02:56:26 pm": 8
+          },
+          "sampleSelection": "Targeted sample spread through retained history, not a random or complete eligibility audit.",
+          "note": "703 distinct held IDs cluster into one approximately two-second Google Sheets trigger burst. Four reviewed payloads contain only row identifiers/hash data; two contain prospect data with blank Sent and Loom fields. None of these six establishes an eligible sent-video CRM write. This is consistent with bulk-trigger flood protection; the exact initiating edit and all-row eligibility remain unverified."
+        }
       },
       "note": "Existing logged-in Zapier session used; no Google account selection or new sign-in was needed. The pre-existing draft was neither edited nor published.",
       "limits": [
-        "Successful sync establishes worksheet-to-CRM execution, not actual LinkedIn delivery, actual sender or video inclusion.",
-        "The held sample stopped at the Google Sheets trigger because it returned too many items; filter and CRM creation were not attempted.",
-        "Published trigger configuration names COL$Q, while retained writeback output displays the Sent status at COL$P and Loom at COL$Q. This header/position discrepancy requires a configuration audit before changes or replay; no causal defect is asserted.",
-        "The reviewed writeback sets Synced to Pipedrive true but leaves explicit deal_id/org_id inputs empty. This confirms one run mapping, not all historical CRM identity joins.",
-        "Waalaxy sender identity and last successful upstream account sync are separate and remain unverified."
+        "No held entries were replayed and no workflow configuration was changed.",
+        "ColumnQ is Loom Link; columnP is the downstream Status filter. Different source fields alone do not establish a mapping defect.",
+        "The verified October 21 ten-record Loom cohort is present in CRM. The703 held IDs do not establish703 intended syncs, missed messages or missing records.",
+        "Waalaxy upstream synchronization and actual LinkedIn sender, sending time and delivery remain separate evidence gaps."
       ]
     },
     "metadataFreshnessCheck": {
@@ -71713,6 +71951,728 @@
         "Drive modification/revision checks establish unchanged file state, not the freshness or completeness of an upstream Waalaxy synchronization.",
         "Upstream sender account, exact sending timestamps and delivery remain unverified.",
         "No browser, wrong-account collection, source writes, shared edits or publication performed."
+      ]
+    },
+    "recordingFieldReview": {
+      "snapshotAt": "2026-10-22T12:39:16.176288Z",
+      "reviewedAt": "2026-10-22T12:39:16.176288Z",
+      "appliesToSnapshotAt": "2026-10-22T01:02:14Z",
+      "nonemptyCells": 60,
+      "validLoomUrls": 57,
+      "nonUrlNotes": 3,
+      "records": [
+        {
+          "sourceRow": 121,
+          "profile": "chloe-duckworth-25994419a",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 127,
+          "profile": "james-zhan-4a74a135",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 132,
+          "profile": "shaharplinner",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 180,
+          "profile": "kurthackenberger",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 184,
+          "profile": "kenneth-to-1344045",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 200,
+          "profile": "jtluchs",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 215,
+          "profile": "cwnkong",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 219,
+          "profile": "vicyeh",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 242,
+          "profile": "alejandro-castellano",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 260,
+          "profile": "cameron-badger-817b925b",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 261,
+          "profile": "marcsayoub",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 297,
+          "profile": "rojagarimella",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 305,
+          "profile": "saganschultz",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 310,
+          "profile": "douglas-ford-304279b5",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": false,
+          "recordingFieldKind": "non_url_note",
+          "recordingFieldNote": "Sent a video DM without loom"
+        },
+        {
+          "sourceRow": 1045,
+          "profile": "mikepena08",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1047,
+          "profile": "maorfaridphd",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1048,
+          "profile": "sidghatak",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1049,
+          "profile": "richardyuxuanzhang",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1050,
+          "profile": "shreykapoor1",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1052,
+          "profile": "laurengage",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1054,
+          "profile": "eyal-heldenberg-4171a24",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1055,
+          "profile": "ajith-govind",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1056,
+          "profile": "alexchantavy",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1057,
+          "profile": "saoud-khalifah",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1059,
+          "profile": "peterglyman",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1060,
+          "profile": "samira-daswani",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1061,
+          "profile": "grant-siders-0860354b",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1062,
+          "profile": "brandondterry",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1063,
+          "profile": "derekabdine",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1064,
+          "profile": "jirka-bachel",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": false,
+          "recordingFieldKind": "non_url_note",
+          "recordingFieldNote": "LI DM - had already connected on LI"
+        },
+        {
+          "sourceRow": 1065,
+          "profile": "ido-arieli-noga",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1066,
+          "profile": "manvitha-mallela-9a699884",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1068,
+          "profile": "noeljthomas",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": false,
+          "recordingFieldKind": "non_url_note",
+          "recordingFieldNote": "LI DM - had already connected on LI"
+        },
+        {
+          "sourceRow": 1069,
+          "profile": "rimoch",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1071,
+          "profile": "keltonhardrictjr",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1073,
+          "profile": "sayantan-biswas-",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1076,
+          "profile": "mehdimerai",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1077,
+          "profile": "federico-spagnoli-80204b1",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1078,
+          "profile": "le-ora-lichtenstein-cfa-9bbb8b112",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1081,
+          "profile": "ozzie-saeed",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1083,
+          "profile": "assafweinberg",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1086,
+          "profile": "prkhot",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1087,
+          "profile": "spencerpotts",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1088,
+          "profile": "robmay",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1090,
+          "profile": "veronicama97",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1091,
+          "profile": "innocent-c-80713232",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1094,
+          "profile": "aakarkhanna",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1095,
+          "profile": "jrebholz",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1100,
+          "profile": "jinman11",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1101,
+          "profile": "kaya-celebi",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1102,
+          "profile": "nikhilrreddy",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1106,
+          "profile": "tedjulian",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1107,
+          "profile": "steve-rahimi",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1108,
+          "profile": "serena-dang-aaab3141",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1111,
+          "profile": "williamjunchenwu",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1113,
+          "profile": "jaredzelman",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1114,
+          "profile": "nicholas-bartz",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1116,
+          "profile": "travisbond",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1119,
+          "profile": "seckin-secilmis",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        },
+        {
+          "sourceRow": 1121,
+          "profile": "dankatzman",
+          "hasRecordingFieldContent": true,
+          "hasRecordingLink": true,
+          "recordingFieldKind": "loom_url",
+          "recordingFieldNote": null
+        }
+      ],
+      "note": "Recording-field content was validated as URL syntax:57 Loom share URLs and 3 separate text notes. A nonempty cell alone does not establish a video asset; a URL does not establish delivery."
+    },
+    "crmReconciliation": {
+      "snapshotAt": "2026-10-22T12:39:16.176288Z",
+      "reviewedAt": "2026-10-22T12:39:16.176288Z",
+      "appliesToSnapshotAt": "2026-10-22T01:02:14Z",
+      "cohortDate": "2026-10-21",
+      "crmInventorySnapshotAt": "2026-10-22T11:51:50.385Z",
+      "selfReportedSentRows": 12,
+      "validVideoAssetRows": 10,
+      "messageNoteWithoutAssetRows": 2,
+      "videoAssetCohortCrmMatches": 10,
+      "expectedVideoCrmMissing": 0,
+      "records": [
+        {
+          "sourceRow": 1045,
+          "company": "SafeHill",
+          "contact": "Mike Pena",
+          "profile": "mikepena08",
+          "recordingFieldKind": "loom_url",
+          "crmDealId": 837,
+          "crmPersonId": 2834,
+          "crmNoteIds": [
+            1656
+          ],
+          "status": "Profile and asset matched",
+          "evidenceCollectedAt": "2026-10-22T12:27:41.719Z",
+          "evidenceBasis": "Exact canonical LinkedIn profile plus the same source Loom asset in CRM note 1656. Original Sheet deal ID remains blank."
+        },
+        {
+          "sourceRow": 1050,
+          "company": "MedSetGo",
+          "contact": "Shrey Kapoor",
+          "profile": "shreykapoor1",
+          "recordingFieldKind": "loom_url",
+          "crmDealId": 844,
+          "crmPersonId": 2841,
+          "crmNoteIds": [
+            1663
+          ],
+          "status": "Profile and asset matched",
+          "evidenceCollectedAt": "2026-10-22T12:27:42.327Z",
+          "evidenceBasis": "Exact canonical LinkedIn profile plus the same source Loom asset in CRM note 1663. Original Sheet deal ID remains blank."
+        },
+        {
+          "sourceRow": 1054,
+          "company": "No Barrier Medical",
+          "contact": "Eyal Heldenberg",
+          "profile": "eyal-heldenberg-4171a24",
+          "recordingFieldKind": "loom_url",
+          "crmDealId": 843,
+          "crmPersonId": 2840,
+          "crmNoteIds": [
+            1662
+          ],
+          "status": "Profile and asset matched",
+          "evidenceCollectedAt": "2026-10-22T12:27:42.553Z",
+          "evidenceBasis": "Exact canonical LinkedIn profile plus the same source Loom asset in CRM note 1662. Original Sheet deal ID remains blank."
+        },
+        {
+          "sourceRow": 1055,
+          "company": "Cactus",
+          "contact": "Ajith Govind Satheesh",
+          "profile": "ajith-govind",
+          "recordingFieldKind": "loom_url",
+          "crmDealId": 842,
+          "crmPersonId": 2839,
+          "crmNoteIds": [
+            1661
+          ],
+          "status": "Profile and asset matched",
+          "evidenceCollectedAt": "2026-10-22T12:27:42.780Z",
+          "evidenceBasis": "Exact canonical LinkedIn profile plus the same source Loom asset in CRM note 1661. Original Sheet deal ID remains blank."
+        },
+        {
+          "sourceRow": 1056,
+          "company": "SubImage",
+          "contact": "Alex Chantavy",
+          "profile": "alexchantavy",
+          "recordingFieldKind": "loom_url",
+          "crmDealId": 845,
+          "crmPersonId": 2842,
+          "crmNoteIds": [
+            1664
+          ],
+          "status": "Profile and asset matched",
+          "evidenceCollectedAt": "2026-10-22T12:27:42.992Z",
+          "evidenceBasis": "Exact canonical LinkedIn profile plus the same source Loom asset in CRM note 1664. Original Sheet deal ID remains blank."
+        },
+        {
+          "sourceRow": 1060,
+          "company": "Manta Cares",
+          "contact": "Samira Daswani",
+          "profile": "samira-daswani",
+          "recordingFieldKind": "loom_url",
+          "crmDealId": 838,
+          "crmPersonId": 2835,
+          "crmNoteIds": [
+            1657
+          ],
+          "status": "Profile and asset matched",
+          "evidenceCollectedAt": "2026-10-22T12:27:43.275Z",
+          "evidenceBasis": "Exact canonical LinkedIn profile plus the same source Loom asset in CRM note 1657. Original Sheet deal ID remains blank."
+        },
+        {
+          "sourceRow": 1061,
+          "company": "Helia Care",
+          "contact": "Grant Siders",
+          "profile": "grant-siders-0860354b",
+          "recordingFieldKind": "loom_url",
+          "crmDealId": 841,
+          "crmPersonId": 2838,
+          "crmNoteIds": [
+            1660
+          ],
+          "status": "Profile and asset matched",
+          "evidenceCollectedAt": "2026-10-22T12:27:43.494Z",
+          "evidenceBasis": "Exact canonical LinkedIn profile plus the same source Loom asset in CRM note 1660. Original Sheet deal ID remains blank."
+        },
+        {
+          "sourceRow": 1064,
+          "company": "Navigara",
+          "contact": "Jirka Bachel",
+          "profile": "jirka-bachel",
+          "recordingFieldKind": "non_url_note",
+          "crmDealId": null,
+          "status": "Non-URL DM note; run filtered",
+          "runId": "0086536b-506f-a748-ec33-54d30466fea4",
+          "runAt": "2026-10-21T15:30:26Z",
+          "evidenceBasis": "Recording field contains a LinkedIn DM note, not a video URL. The structured Sent field was blank at trigger time and filtering stopped CRM creation. No expected Loom-specific sync failure is established; bounded CRM searches found no match."
+        },
+        {
+          "sourceRow": 1068,
+          "company": "Dark Watch",
+          "contact": "Noel Thomas",
+          "profile": "noeljthomas",
+          "recordingFieldKind": "non_url_note",
+          "crmDealId": null,
+          "status": "Non-URL DM note; run filtered",
+          "runId": "0086536b-bdb8-ac38-ec80-a1901a6f0484",
+          "runAt": "2026-10-21T15:26:51Z",
+          "evidenceBasis": "Recording field contains a LinkedIn DM note, not a video URL. The structured Sent field was blank at trigger time and filtering stopped CRM creation. No expected Loom-specific sync failure is established; bounded CRM searches found no match."
+        },
+        {
+          "sourceRow": 1116,
+          "company": "BioInsights",
+          "contact": "Travis Bond",
+          "profile": "travisbond",
+          "recordingFieldKind": "loom_url",
+          "crmDealId": 846,
+          "crmPersonId": 2843,
+          "crmNoteIds": [
+            1665
+          ],
+          "status": "Profile and asset matched",
+          "evidenceCollectedAt": "2026-10-22T12:27:43.715Z",
+          "evidenceBasis": "Exact canonical LinkedIn profile plus the same source Loom asset in CRM note 1665. Original Sheet deal ID remains blank."
+        },
+        {
+          "sourceRow": 1119,
+          "company": "TigerByte Cyber",
+          "contact": "Sage Secilmis",
+          "profile": "seckin-secilmis",
+          "recordingFieldKind": "loom_url",
+          "crmDealId": 840,
+          "crmPersonId": 2837,
+          "crmNoteIds": [
+            1659
+          ],
+          "status": "Profile and asset matched",
+          "evidenceCollectedAt": "2026-10-22T12:27:43.929Z",
+          "evidenceBasis": "Exact canonical LinkedIn profile plus the same source Loom asset in CRM note 1659. Original Sheet deal ID remains blank."
+        },
+        {
+          "sourceRow": 1121,
+          "company": "Bernard",
+          "contact": "Dan Katzman",
+          "profile": "dankatzman",
+          "recordingFieldKind": "loom_url",
+          "crmDealId": 839,
+          "crmPersonId": 2836,
+          "crmNoteIds": [
+            1658
+          ],
+          "status": "Profile and asset matched",
+          "evidenceCollectedAt": "2026-10-22T12:27:44.148Z",
+          "evidenceBasis": "Exact canonical LinkedIn profile plus the same source Loom asset in CRM note 1658. Original Sheet deal ID remains blank."
+        }
+      ],
+      "undatedStatusReview": {
+        "sourceRows": 29,
+        "currentCrmRecordsEvidenced": 29,
+        "sourceLoomUrls": 26,
+        "sameAssetInCrmNotes": 25,
+        "note": "These statuses lack send dates; current record presence does not establish period outreach or delivery."
+      },
+      "specificLinkageGaps": [
+        {
+          "sourceRow": 305,
+          "company": "Sonata",
+          "dealId": 425,
+          "personId": 621,
+          "organizationId": 552,
+          "gap": "Source Loom URL absent from2 distinct CRM notes, with complete deal/person/org scoped results. Record exists; recording-note coverage is incomplete.",
+          "noteIdsReviewed": [
+            1391,
+            1408
+          ]
+        },
+        {
+          "sourceRow": 310,
+          "company": "Chromie Health",
+          "originalSheetDealId": 322,
+          "matchedCrmDealId": 836,
+          "gap": "Original Sheet ID is deleted; exact live profile supports current record836. Formal merge/replacement intent remains unverified; retain both separately."
+        },
+        {
+          "sourceRow": 1047,
+          "company": "Leo AI",
+          "dealId": 819,
+          "gap": "Live CRM profile URL field absent; same explicit Sheet ID and source recording asset in note1631 still evidence current record."
+        }
+      ],
+      "notes": [
+        "Zero missing records is scoped to the ten reviewed October 21 rows with Loom URLs, not all held trigger IDs or all outreach.",
+        "All 29 exact undated Sent/Done source rows also have current CRM record evidence; no dated send total is inferred.",
+        "Sonata has a source Loom URL absent from the reviewed CRM notes. Chromie retains deleted Sheet ID322 while matching current record836; no formal merge intent is inferred. Leo AI lacks a CRM profile URL but has an explicit source deal ID and matching recording note.",
+        "Original worksheet deal IDs and all 33 dated status markers remain unchanged. The independent crosswalk does not write back to Sheets or Pipedrive."
+      ],
+      "limits": [
+        "Asset preparation, self-reported status and CRM presence do not independently establish actual sender, sending time or delivery."
       ]
     }
   },
@@ -82594,8 +83554,8 @@
       "newestDatedActivity": "2026-10-13"
     },
     "workflowReview": {
-      "snapshotAt": "2026-10-22T12:09:19.575499+00:00",
-      "reviewedAt": "2026-10-22T12:09:19.575499+00:00",
+      "snapshotAt": "2026-10-22T12:39:16.176288Z",
+      "reviewedAt": "2026-10-22T12:39:16.176288Z",
       "handoffDate": "2026-10-19",
       "documentedDefaultCrmOwner": "Christian W.",
       "syncExecutionIndependentlyVerified": false,
@@ -82643,7 +83603,7 @@
           "Legacy Airtable qualification/call statuses do not override current owner dispositions."
         ]
       },
-      "note": "Zapier independently verifies Video DM worksheet-to-CRM execution, including a later successful run and October 20 holds. This does not verify the upstream Waalaxy-to-Sheets account or last sync. All 19 visible workflows in the legacy Waalaxy folder are enabled; 17 display None in 60 days, recruitment last ran September 9 and Jess FounderLodge September 23. These bounded folder labels do not establish current Charles reply activity.",
+      "note": "October 21 ten-row Loom cohort has exact CRM profile/asset-note matches. The retained October 20 held-trigger burst does not establish missing outreach records. This Sheet-to-CRM reconciliation does not establish the Charles Waalaxy upstream account or last successful upstream sync.",
       "sheetToCrmExecutionVerified": true,
       "zapierFolderReview": {
         "reviewedAt": "2026-10-22T12:09:19.575499+00:00",
@@ -112563,8 +113523,8 @@
     {
       "id": "zapier_execution",
       "name": "Video DM Zapier execution review",
-      "asOf": "2026-10-22T12:09:19.575499+00:00",
-      "note": "Published ON, v2; 85 retained weekly history pages, 808 unique run IDs, 15 successful /90 filtered /703 held. One success and one held run inspected. No delivered-message inference.",
+      "asOf": "2026-10-22T12:39:16.176288Z",
+      "note": "Historical bulk Sheet-trigger burst, separate from business activity. Six targeted held inputs did not establish eligible sent-video syncs. October 21 ten-row Loom cohort is present in CRM; no703-record deficit is inferred.",
       "status": "Current independent review; local only"
     },
     {
@@ -112573,6 +113533,13 @@
       "asOf": "2026-10-22T12:11:30Z",
       "note": "October 22 06:11 MDT: Sheet revision1253 and modification time unchanged; same 100 recording IDs/metadata and 3 active calendar events/invitees. Original values/dialogue dates retained. No additional outcomes inferred.",
       "status": "Current independent review; local only"
+    },
+    {
+      "id": "video_crm_reconciliation",
+      "name": "Video DM recording fields and CRM crosswalk",
+      "asOf": "2026-10-22T12:39:16.176288Z",
+      "status": "Current independent review; local only",
+      "note": "57 valid Loom URLs and 3 non-URL notes across 60 populated recording cells. October 21:12 Sent labels,10 Loom URLs,10 exact CRM profile/asset-note matches and 2 non-URL DM notes. All 29 undated Sent/Done rows have current record evidence. No delivery inference."
     }
   ],
   "outcomes": {

@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from apply_owner_confirmations import apply_owner_confirmations
 from apply_effort_estimate import apply_effort_estimate
 from apply_outcome_confirmations import apply_outcome_confirmations
+from recording_evidence import apply_video_evidence_reviews
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -29,6 +30,8 @@ def curate_snapshot(source):
     public = copy.deepcopy(source)
     apply_owner_confirmations(public)
     apply_outcome_confirmations(public)
+    if public.get('video'):
+        apply_video_evidence_reviews(public['video'])
     if public.get('time'):
         apply_effort_estimate(public['time'])
     apply_publication_policy(public)
@@ -98,6 +101,8 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
                                     ('crm','archiveReview','crm_archived'),
                                     ('video','sourceVerification','source_audit'),
                                     ('video','automationReview','zapier_execution'),
+                                    ('video','recordingFieldReview','video_crm_reconciliation'),
+                                    ('video','crmReconciliation','video_crm_reconciliation'),
                                     ('video','datedStatusReview','source_audit'),
                                     ('video','metadataFreshnessCheck','source_freshness'),
                                     ('meetings','metadataFreshnessCheck','source_freshness'),

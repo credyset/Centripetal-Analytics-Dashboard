@@ -9,6 +9,7 @@ from urllib.parse import unquote
 import hashlib
 import json
 import re
+from recording_evidence import recording_evidence_fields
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = ROOT / 'data/private/sheets_refresh_2026-10-16'
@@ -82,7 +83,7 @@ def build():
         row = {'id': key or hashlib.sha256((company+'|'+contact).lower().encode()).hexdigest()[:16],
                'sourceRow': line, 'company': company, 'contact': contact,
                'linkedin': 'https://www.linkedin.com/in/'+key+'/' if key else '',
-               'status': status_category(status), 'hasRecordingLink': bool(str(r.get('Loom Link') or '').strip()),
+               'status': status_category(status), **recording_evidence_fields(r.get('Loom Link')),
                'hasResponseStatus': bool(str(r.get('Response Status') or '').strip()),
                'connected': yes(r.get('Connected?')), 'connectedAt': date(r.get('Connected At')),
                'action': r.get('DM Action') or '', 'followUp': r.get('Follow-up Action') or '',

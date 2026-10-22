@@ -91,10 +91,11 @@ def main():
     data['video']['datedStatusReview'] = {
         'snapshotAt':dated['preparedAt'], 'reviewedAt':dated['preparedAt'],
         'sourceDate':'2026-10-21', 'uniqueProfilesMarkedSent':12,
-        'recordingLinksPresent':12,'explicitSheetCrmDealIdsPresent':0,
+        'recordingLinksPresent':10,'recordingFieldContentPresent':12,
+        'nonUrlRecordingNotes':2,'explicitSheetCrmDealIdsPresent':0,
         'sourceStatusLabel':'Sent 10/21/26', 'alreadyIncludedInDatedActions':True,
         'actualSenderAccountId':None,'actualSentAt':None,'deliveryVerified':False,
-        'note':'Twelve distinct profiles have a date-only self-reported Sent label and recording link. '
+        'note':'Twelve distinct profiles have a date-only self-reported Sent label; ten have valid Loom URLs and two have non-URL LinkedIn DM notes. '
             'These are already retained; do not add twelve new events. No message link, delivery receipt or actual sender is established.'}
     freshness = read(AUDIT/'sheets/final_sheet_freshness_check_2026_10_22.json')
     data['video']['metadataFreshnessCheck'] = {
@@ -210,7 +211,7 @@ def main():
         if card is None:
             card={'id':ident};data['sources'].append(card)
         card.update(values,status='Current independent review; local only')
-    data=curate_snapshot(data)
+    data=curate_snapshot(preserve_newer_shared_sources(data, previous))
     assert data['meta']['publicationStatus']=='local_only' and data['meta']['public'] is False
     assert len(data['crm']['deals'])==769 and len(data['video']['rows'])==428
     assert len(data['meetings']['fireflies']['records'])==len(previous['meetings']['fireflies']['records'])

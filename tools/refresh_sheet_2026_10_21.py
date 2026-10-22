@@ -11,6 +11,7 @@ import csv
 import hashlib
 import json
 import re
+from recording_evidence import recording_evidence_fields
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = ROOT / 'data/private/refresh_2026_10_21'
@@ -145,7 +146,7 @@ def build():
         row = {'id': key or hashlib.sha256((company+'|'+contact).lower().encode()).hexdigest()[:16],
             'sourceRow': line, 'company': company, 'contact': contact,
             'linkedin': 'https://www.linkedin.com/in/'+key+'/' if key else '',
-            'status': status_category(status), 'hasRecordingLink': bool(str(item.get('Loom Link') or '').strip()),
+            'status': status_category(status), **recording_evidence_fields(item.get('Loom Link')),
             'hasResponseStatus': bool(str(item.get('Response Status') or '').strip()),
             'connected': yes(item.get('Connected?')), 'connectedAt': iso_date(item.get('Connected At')),
             'connectionLabel': str(item.get('Connected?') or '').strip(),
