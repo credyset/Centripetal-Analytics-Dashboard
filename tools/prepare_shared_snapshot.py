@@ -98,6 +98,9 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
                                     ('crm','archiveReview','crm_archived'),
                                     ('video','sourceVerification','source_audit'),
                                     ('waalaxy','workflowReview','source_audit'),
+                                    ('crm','commercialContextReview','commercial_context'),
+                                    ('waalaxy','replyContextReview','commercial_context'),
+                                    ('referrals','eventReview','referral_events'),
                                     ('referrals','legacyCaptureReview','source_audit'),
                                     ('time','workEvidence','source_audit')):
         prior=(previous.get(parent) or {}).get(child)

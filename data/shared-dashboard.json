@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-10-22T07:42:22.811834+00:00",
+    "generatedAt": "2026-10-22T08:12:34.933111+00:00",
     "asOfDate": "2026-10-22",
     "timezone": "America/Denver",
     "scope": "Charles Solomon and Centripetal Advisors",
@@ -62927,6 +62927,214 @@
       "caveat": "Zero is the verified archived-record query result only. The non-archived CRM inventory retains its earlier source date; no actual first-client win total is inferred.",
       "technicalBasisUrl": "https://developers.pipedrive.com/changelog/post/breaking-change-archived-deals-and-leads-will-not-be-returned-in-existing-endpoints-and-will-not-be-editable",
       "snapshotAt": "2026-10-22T06:53:38.351Z"
+    },
+    "commercialContextReview": {
+      "snapshotAt": "2026-10-22T08:00:52.594789+00:00",
+      "reviewedAt": "2026-10-22T08:00:52.594789+00:00",
+      "focusWindow": {
+        "start": "2026-10-19",
+        "end": "2026-10-21"
+      },
+      "dealIdsInvestigated": [
+        794,
+        798,
+        802,
+        803,
+        804
+      ],
+      "records": [
+        {
+          "dealId": 802,
+          "organizationId": 1253,
+          "organization": "Aethon Aerial Solutions",
+          "channelContext": "Len Kofman / Codex Advisory referral and potential client-transfer discussion",
+          "referrer": {
+            "name": "Len Kofman",
+            "personId": 528,
+            "organization": "Codex Advisory",
+            "organizationId": 460
+          },
+          "firstContextDocumentedAt": "2026-10-05",
+          "scopeFitResponseAt": "2026-10-07",
+          "scopeFitBasis": "Charles expressed general scope fit and proposed further discussion with Len. This does not establish a held direct buyer call, entity-specific qualification, a dated accepted Centripetal opportunity or an executed client transfer.",
+          "headlineCountingDisposition": "No outcome addition from this contextual evidence.",
+          "sourceRefs": [
+            {
+              "threadId": 29582,
+              "messageDate": "2026-10-05",
+              "basis": "Client details subject to client consent; Charles requested scope."
+            },
+            {
+              "threadId": 29582,
+              "messageDate": "2026-10-07",
+              "basis": "Len described candidate scopes and Charles expressed general scope fit."
+            },
+            {
+              "threadId": 30213,
+              "messageDate": "2026-10-21",
+              "basis": "Len reports CEO discussions and asks Charles for the following afternoon; Charles says an invitation was sent for 2:30 PM tomorrow. Timezone is not explicit."
+            }
+          ],
+          "companyContext": "Existing Codex Advisory client discussed as a potential Centripetal engagement or transfer.",
+          "sourceJoinBasis": "Matching CRM company or alias and Len relationship; inbox thread itself is linked to Len/Codex, not these deals.",
+          "requiredNextEvidence": "The result of the October 22 Charles–Len discussion, then any direct buyer call or dated client consent/contract transfer. Scheduling a partner call does not establish it was held or that the buyer met Charles.",
+          "latestContextDocumentedAt": "2026-10-21",
+          "scheduledPartnerFollowup": {
+            "scheduledDate": "2026-10-22",
+            "timeText": "2:30 PM",
+            "timezone": null,
+            "participantsConfirmedByCorrespondence": [
+              "Charles",
+              "Len Kofman"
+            ],
+            "type": "Scheduled partner discussion after Len spoke to Aethon CEO",
+            "held": null,
+            "directBuyerParticipationEstablished": false
+          }
+        },
+        {
+          "dealId": 803,
+          "organizationId": 1254,
+          "organization": "Spatial Data",
+          "channelContext": "Len Kofman / Codex Advisory referral and potential client-transfer discussion",
+          "referrer": {
+            "name": "Len Kofman",
+            "personId": 528,
+            "organization": "Codex Advisory",
+            "organizationId": 460
+          },
+          "firstContextDocumentedAt": "2026-10-05",
+          "scopeFitResponseAt": "2026-10-07",
+          "scopeFitBasis": "Charles expressed general scope fit and proposed further discussion with Len. This does not establish a held direct buyer call, entity-specific qualification, a dated accepted Centripetal opportunity or an executed client transfer.",
+          "headlineCountingDisposition": "No outcome addition from this contextual evidence.",
+          "sourceRefs": [
+            {
+              "threadId": 29582,
+              "messageDate": "2026-10-05",
+              "basis": "Client details subject to client consent; Charles requested scope."
+            },
+            {
+              "threadId": 29582,
+              "messageDate": "2026-10-07",
+              "basis": "Len described candidate scopes and Charles expressed general scope fit."
+            }
+          ],
+          "companyContext": "Aethon sister-company engagement was in discussion. The email uses the sister-company description; the legal identity Spatial Data is supplied by the existing CRM association, not named by this email.",
+          "sourceJoinBasis": "Matching CRM company or alias and Len relationship; inbox thread itself is linked to Len/Codex, not these deals.",
+          "requiredNextEvidence": "Direct buyer identity and consent or executed transfer, actual Charles buyer-meeting occurrence, and a dated explicit commercial acceptance or first-time engagement evidence.",
+          "latestContextDocumentedAt": "2026-10-07"
+        },
+        {
+          "dealId": 804,
+          "organizationId": 1281,
+          "organization": "Northern Ontario Company",
+          "channelContext": "Len Kofman / Codex Advisory referral and potential client-transfer discussion",
+          "referrer": {
+            "name": "Len Kofman",
+            "personId": 528,
+            "organization": "Codex Advisory",
+            "organizationId": 460
+          },
+          "firstContextDocumentedAt": "2026-10-05",
+          "scopeFitResponseAt": "2026-10-07",
+          "scopeFitBasis": "Charles expressed general scope fit and proposed further discussion with Len. This does not establish a held direct buyer call, entity-specific qualification, a dated accepted Centripetal opportunity or an executed client transfer.",
+          "headlineCountingDisposition": "No outcome addition from this contextual evidence.",
+          "sourceRefs": [
+            {
+              "threadId": 29582,
+              "messageDate": "2026-10-05",
+              "basis": "Client details subject to client consent; Charles requested scope."
+            },
+            {
+              "threadId": 29582,
+              "messageDate": "2026-10-07",
+              "basis": "Len described candidate scopes and Charles expressed general scope fit."
+            }
+          ],
+          "companyContext": "Small Northern Ontario company engagement was in discussion; this is a descriptive company reference, not an independently verified legal entity name.",
+          "sourceJoinBasis": "Matching CRM company or alias and Len relationship; inbox thread itself is linked to Len/Codex, not these deals.",
+          "requiredNextEvidence": "Direct buyer identity and consent or executed transfer, actual Charles buyer-meeting occurrence, and a dated explicit commercial acceptance or first-time engagement evidence.",
+          "latestContextDocumentedAt": "2026-10-07"
+        },
+        {
+          "dealId": 794,
+          "organizationId": 1246,
+          "organization": "Swyft",
+          "personId": 2798,
+          "channelContext": "Earlier introduction and investor-introduction support; paid CFO engagement not established.",
+          "relationshipDocumentedBy": "2026-08-10",
+          "priorCallDocumentedAt": "2026-08-12",
+          "priorCallDateBasis": "Both participants described their call as the previous day; relationship evidence predates the October 13 CRM creation. No October call is inferred.",
+          "latestCharlesDisposition": {
+            "documentedAt": "2026-10-11",
+            "status": "Short-term parking lot",
+            "basis": "Explicit Charles disposition in internal correspondence."
+          },
+          "latestInteractionContext": {
+            "documentedAt": "2026-10-21",
+            "type": "Email offering investor-introduction assistance subject to receiving materials",
+            "heldCallEstablished": null,
+            "paidOpportunityAcceptanceEstablished": null
+          },
+          "sourceJoinBasis": "Named Swyft/Brandon correspondence aligns with CRM deal 794 and organization 1246; thread predates deal creation.",
+          "headlineCountingDisposition": "No October held-call, qualification, accepted opportunity or first-client win addition.",
+          "requiredNextEvidence": "Direct evidence of a Charles prospect call in the reporting period and an explicit paid Centripetal engagement or active accepted commercial next step; investor-introduction support alone does not establish either.",
+          "sourceRefs": [
+            {
+              "threadId": 27610,
+              "messageDate": "2026-08-10",
+              "basis": "Initial introduction."
+            },
+            {
+              "threadId": 27610,
+              "messageDate": "2026-08-12",
+              "basis": "Reciprocal post-call correspondence referring to the previous day."
+            },
+            {
+              "threadId": 27610,
+              "messageDate": "2026-10-11",
+              "basis": "Explicit short-term parking lot disposition."
+            },
+            {
+              "threadId": 27610,
+              "messageDate": "2026-10-21",
+              "basis": "Investor-introduction assistance, contingent on receiving materials."
+            }
+          ],
+          "firstContextDocumentedAt": "2026-08-10",
+          "latestContextDocumentedAt": "2026-10-21",
+          "companyContext": "The relationship predates the October13 CRM creation. Charles explicitly placed this opportunity in the short-term parking lot on October11; October21 correspondence offers investor-introduction help, not a confirmed new paid engagement.",
+          "scopeFitBasis": "A prior relationship and investor-introduction support do not establish a held October prospect call or a newly accepted Centripetal engagement."
+        },
+        {
+          "dealId": 798,
+          "organizationId": 1251,
+          "organization": "Permit Health",
+          "channelContext": "Direct inbound referral from Melanie Ortiz",
+          "firstContextDocumentedAt": "2026-10-14",
+          "latestContextDocumentedAt": "2026-10-15",
+          "companyContext": "Melanie directly introduced Charles to Permit Health contacts on October14. Charles replied on October15 offering an exploratory finance conversation.",
+          "scopeFitBasis": "An actual introduction and an offered exploratory call are established. A scheduled or held buyer call, qualification, accepted opportunity and signed engagement remain unconfirmed.",
+          "sourceJoinBasis": "The email names Permit Health and its contact email domain; the existing uniquely named Sales record is deal798 / organization1251. The mail thread itself directly links referrer deal761, not prospect deal798.",
+          "headlineCountingDisposition": "Adds one verified inbound referral introduction only; no commercial outcome headline addition.",
+          "requiredNextEvidence": "Whether Permit responded or met Charles, with actual meeting date, qualification decision and any accepted commercial next step.",
+          "sourceRefs": [
+            {
+              "threadId": 29926,
+              "messageDate": "2026-10-14",
+              "basis": "Direct email introduction with Charles included."
+            },
+            {
+              "threadId": 29926,
+              "messageDate": "2026-10-15",
+              "basis": "Charles acknowledged the introduction and offered an exploratory call."
+            }
+          ]
+        }
+      ],
+      "confirmedOutcomeAdditions": 0,
+      "sourceCollectionNote": "The main CRM inventory retains its October21 Mountain collection date. Independent October22 note/detail and Sales Inbox reviews add context only; correspondence message dates remain separate from review time.",
+      "note": "Five selected Sales records have contextual correspondence retained here. Permit Health has a verified inbound introduction and an offered exploratory call; actual attendance and commercial acceptance remain unconfirmed. Missing linked mail or activity is not proof of no actual call. No commercial headline outcome is added."
     }
   },
   "video": {
@@ -82503,6 +82711,48 @@
         ]
       },
       "note": "The dated handoff documents a Sheet-to-CRM status workflow, not message delivery. Current configuration and run execution remain unverified. Historical Airtable records do not supply current October Charles reply or referral events."
+    },
+    "replyContextReview": {
+      "snapshotAt": "2026-10-22T07:48:59.464383+00:00",
+      "reviewedAt": "2026-10-22T07:48:59.464383+00:00",
+      "sourceCollectedAt": "2026-10-22T01:02:14Z",
+      "records": [
+        {
+          "profileId": "yaoyuyang",
+          "company": "Cypher AI",
+          "contact": "Yaoyu Yang",
+          "latestReplyDate": "2026-10-20",
+          "sourceTimezone": null,
+          "datePrecision": "date_only",
+          "occurredAt": null,
+          "eventId": null,
+          "senderAccountId": null,
+          "classification": "friendly_connection_acknowledgment",
+          "summary": "A friendly acknowledgment of connecting and of Charles’s work; the retained text makes no explicit meeting request or active commercial next step.",
+          "doesNotEstablish": [
+            "positive commercial intent",
+            "Charles-qualified company",
+            "held call",
+            "accepted opportunity",
+            "win",
+            "video delivered",
+            "actual send time"
+          ],
+          "outboundVideoEvidence": false,
+          "crmJoinStatus": "No explicit CRM identifiers in either retained Sheet source; no Cypher/Yaoyu match in fresh769-deal source. Do not create or guess a CRM join."
+        }
+      ],
+      "counterChanges": {
+        "replyEvents": 0,
+        "replyingProspects": 0,
+        "videoSends": 0,
+        "messagesSent": 0,
+        "qualifiedCompanies": 0,
+        "heldCalls": 0,
+        "newOpportunities": 0,
+        "wins": 0
+      },
+      "note": "Context merged by canonical profile and latest-reply attribute date. This reply is already present in the retained Sheet and selected CSV; it is not a second reply event, a verified video send or a commercial qualification. Date-only source timezone and actual sender remain unknown."
     }
   },
   "content": {
@@ -106626,6 +106876,82 @@
       "referralDirectionEstablished": false,
       "strictCompanyContactMatchesToFreshCrm": 0,
       "note": "Referral Contact may name a suggested contact rather than an introducing partner; no current referral outcomes promoted."
+    },
+    "eventReview": {
+      "snapshotAt": "2026-10-22T08:09:23.017590+00:00",
+      "reviewedAt": "2026-10-22T08:09:23.017590+00:00",
+      "coverage": {
+        "status": "incomplete",
+        "start": null,
+        "end": null,
+        "note": "A bounded review of primary Sales Inbox correspondence and linked message metadata substantiates these two event types. Complete request, introduction, follow-up and outcome coverage has not been reconciled."
+      },
+      "events": [
+        {
+          "eventId": "pipedrive:mail:29926:introduction:2026-10-14",
+          "type": "introduction",
+          "direction": "inbound",
+          "date": "2026-10-14",
+          "datePrecision": "timestamp",
+          "sourceTimezone": "UTC",
+          "verified": true,
+          "charlesIncluded": true,
+          "referrer": "Melanie Ortiz",
+          "referrerPersonId": 1357,
+          "referralDealId": 761,
+          "company": "Permit Health",
+          "companyKey": "company:permit-health",
+          "prospectDealId": 798,
+          "organizationId": 1251,
+          "evidenceThreadId": 29926,
+          "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/search/thread/29926",
+          "summary": "Melanie directly introduced Charles to Permit Health contacts by email on October14. Charles replied on October15, thanked her and offered an exploratory finance conversation.",
+          "followupDate": "2026-10-15",
+          "heldCallConfirmed": null,
+          "qualification": "unknown",
+          "acceptedOpportunityConfirmed": null,
+          "firstClientWinConfirmed": null,
+          "prospectCrmJoinBasis": "The email names Permit Health and its contact email domain; the existing uniquely named Sales record is deal798 / organization1251. The mail thread itself directly links referrer deal761, not prospect deal798.",
+          "dateBasis": "Introduction message_time explicitly carries UTC Z; October14 7:12:44AM Mountain. The separate Charles reply is October15 3:40:35PM Mountain. Message add/update times are not substituted for message time.",
+          "sourceSystem": "pipedrive_mail",
+          "occurredAt": "2026-10-14T13:12:44Z",
+          "sourceMessageId": 43547,
+          "sourceTimestampField": "mailMessage.message_time",
+          "followupOccurredAt": "2026-10-15T21:40:35Z",
+          "followupMessageId": 43753
+        },
+        {
+          "eventId": "pipedrive:mail:30220:follow-up:2026-10-21",
+          "type": "follow_up",
+          "direction": "outbound",
+          "date": "2026-10-21",
+          "datePrecision": "timestamp",
+          "sourceTimezone": "UTC",
+          "verified": true,
+          "charlesIncluded": true,
+          "sentByCharles": true,
+          "referrer": "Jonathan S. Katz",
+          "referrerPersonId": 1242,
+          "referralDealId": 793,
+          "company": null,
+          "companyKey": null,
+          "prospectDealId": null,
+          "organizationId": null,
+          "evidenceThreadId": 30220,
+          "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/sent/thread/30220",
+          "summary": "Charles followed up on a promised introduction and asked whether supplied text was helpful. The initial request date, target company and completed introduction remain unverified.",
+          "heldCallConfirmed": null,
+          "qualification": "unknown",
+          "acceptedOpportunityConfirmed": null,
+          "firstClientWinConfirmed": null,
+          "dateBasis": "Source mailMessage.message_time contains an explicit UTC Z offset. Reporting date is October21 in America/Denver; message add/update timestamps do not substitute for message time.",
+          "occurredAt": "2026-10-21T18:29:55Z",
+          "sourceMessageId": 44104,
+          "sourceTimestampField": "mailMessage.message_time",
+          "sourceSystem": "pipedrive_mail"
+        }
+      ],
+      "note": "One actual inbound introduction and one separate outbound referral follow-up are counted once by source mail message IDs. Complete event coverage is unknown. Neither establishes a held call, qualification, accepted opportunity or first-time client win; stage inventory remains independent. Porter's latest linked update is existing-client finance mail, and other reviewed referral-stage logs lack primary introductions and target-company identities; they add no dated actual introduction."
     }
   },
   "meetings": {
@@ -112181,6 +112507,26 @@
       "coverage": "Independent revision, CRM-join and legacy capture review; not verified send, reply, referral or human-hour events",
       "method": "Read-only Sheet metadata/revisions/cell notes; explicit CRM IDs; dated handoff and connected Airtable records",
       "note": "81 of 82 Sheet deal IDs reconcile; one references deleted deal322. All 58 populated organization IDs agree. CRM owner alone is unsafe for sender attribution. Legacy Airtable adds no current October Charles events. Fourteen Christian-attributed revision records support nine activity dates, without adding hours. Actual delivery and upstream sync execution remain unverified."
+    },
+    {
+      "id": "commercial_context",
+      "name": "Commercial correspondence and selected reply context",
+      "status": "Current evidence review; underlying inventories keep separate dates",
+      "asOf": "2026-10-22T08:00:52.594789+00:00",
+      "checkedAt": "2026-10-22",
+      "coverage": "Five selected Sales records investigated; five contextual company records and one existing selected-person reply classified",
+      "method": "Read-only selected CRM notes/detail and Sales Inbox; dialogue classification of retained Sheet and CSV reply attributes",
+      "note": "Len-origin client-transfer discussions, Swyft parking-lot disposition, Permit referral context and Cypher friendly acknowledgment improve interpretation. They add no held calls, qualifications, accepted opportunities, wins, delivered videos or reply-event counters. Verified referral events have their own source card. Underlying full CRM and Sheet collection dates remain unchanged."
+    },
+    {
+      "id": "referral_events",
+      "name": "Referrals · verified introduction and follow-up evidence",
+      "status": "Current bounded event review; complete referral coverage unknown",
+      "asOf": "2026-10-22T08:09:23.017590+00:00",
+      "checkedAt": "2026-10-22",
+      "coverage": "One October14 inbound introduction and one October21 outbound referral follow-up; explicit UTC timestamps displayed in Mountain time",
+      "method": "Read-only Sales Inbox threads29926 and30220 plus linked message metadata; actual senders, recipients and explicit source timestamps",
+      "note": "Melanie Ortiz introduced Charles to Permit Health on October14; Charles offered an exploratory call on October15. Charles followed up on Jonathan Katz's promised introduction on October21; its target and completion remain unknown. These are separate event types, not held calls, qualification, accepted opportunities or wins. Full event coverage is incomplete, and the referral-stage inventory keeps its prior source date."
     }
   ],
   "outcomes": {

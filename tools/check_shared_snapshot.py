@@ -22,6 +22,20 @@ if audit:
     assert join['organizationIdMatchedRows']+len(join['organizationIdMismatchRows'])==join['organizationIdComparableRows']
     assert sum(join['ownerRows'].values())==join['foundRows']
     assert audit['verifiedVideoDmSends'] is None and audit['verifiedReplyEvents'] is None
+context=data['crm'].get('commercialContextReview')
+if context:
+    assert context['confirmedOutcomeAdditions']==0
+    assert len(context['records'])==len({r['dealId'] for r in context['records']})
+    assert {r['dealId'] for r in context['records']}<={r['id'] for r in data['crm']['deals']}
+reply_context=data['waalaxy'].get('replyContextReview')
+if reply_context:
+    assert not any(reply_context['counterChanges'].values())
+    for record in reply_context['records']:
+        assert record['occurredAt'] is None and record['eventId'] is None
+        assert record['outboundVideoEvidence'] is False
+        assert record['datePrecision']=='date_only' and record['sourceTimezone'] is None
+        matched=[r for r in data['waalaxy']['sheetSubset']['rows'] if r['profileId']==record['profileId']]
+        assert len(matched)==1 and matched[0]['lastReplyAt']==record['latestReplyDate']
 assert abs(sum(row['spend'] for row in data['ads']['daily'])-data['ads']['totals']['spend']) < .02
 ad_review=data['ads'].get('browserReview') or {}
 if ad_review.get('adSets'):
@@ -72,6 +86,22 @@ if company:
     assert all(summary[k]['uniqueReach'] is None and summary[k]['engagementRate'] is None for k in ('organic','sponsored','total'))
     assert company['postCoverage']['publishedPostCount'] is None, 'Missing post register became zero'
 ref=data.get('referrals') or {}
+event_review=ref.get('eventReview')
+if event_review:
+    events=event_review['events']
+    assert len(events)==len({e['eventId'] for e in events})
+    assert event_review['coverage']['status']=='incomplete'
+    for event in events:
+        assert event['verified'] and event['charlesIncluded']
+        if event['type']=='introduction':assert event['direction']=='inbound' and event['prospectDealId']
+        elif event['type']=='follow_up':assert event['direction']=='outbound' and event['sentByCharles'] is True
+        else:raise AssertionError('Unrecognized curated referral event type')
+        if event['datePrecision']=='timestamp':
+            assert event['occurredAt'].endswith('Z') and event['sourceTimezone']=='UTC' and event['sourceMessageId']
+        else:assert event['datePrecision']=='day' and event['sourceTimezone'] is None
+        assert event['heldCallConfirmed'] is None and event['acceptedOpportunityConfirmed'] is None and event['firstClientWinConfirmed'] is None
+        assert event['referralDealId'] in {r['dealId'] for r in ref['records']}
+        if event['prospectDealId']:assert event['prospectDealId'] in {r['id'] for r in data['crm']['deals']}
 if ref.get('partitions'):
     s=ref['summary']
     assert s['totalPipelineDeals']==len(ref['records'])+s['excludedOfficeHoursCount']+s['excludedGraveyardNewsletterCount']+s['excludedTestCount'], 'Referral partitions do not reconcile'

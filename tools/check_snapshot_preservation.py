@@ -44,8 +44,22 @@ for parent,child,source_id in (('content','companyAnalytics','content_company'),
     if child in current[parent]:
         assert restored[parent][child]==current[parent][child]
         assert any(s['id']==source_id for s in restored['sources'])
-for parent,child in (('crm','archiveReview'),('video','sourceVerification'),('waalaxy','workflowReview'),('referrals','legacyCaptureReview'),('time','workEvidence')):
+for parent,child in (('crm','archiveReview'),('video','sourceVerification'),('waalaxy','workflowReview'),('crm','commercialContextReview'),('waalaxy','replyContextReview'),('referrals','eventReview'),('referrals','legacyCaptureReview'),('time','workEvidence')):
     if child in current[parent]:assert restored[parent][child]==current[parent][child]
+# A newer source container can omit an independently dated context/event
+# supplement; preserve the evidence without re-dating the new parent inventory.
+supplements=[('crm','commercialContextReview','commercial_context'),('waalaxy','replyContextReview','commercial_context'),('referrals','eventReview','referral_events')]
+incoming=copy.deepcopy(current)
+for parent,child,source_id in supplements:
+    incoming[parent]['snapshotAt']='2026-10-23T12:00:00Z'
+    incoming[parent].pop(child,None)
+incoming['sources']=[s for s in incoming['sources'] if s['id'] not in {'commercial_context','referral_events'}]
+kept=preserve_newer_shared_sources(incoming,current)
+for parent,child,source_id in supplements:
+    if child in current[parent]:
+        assert kept[parent][child]==current[parent][child]
+        assert kept[parent]['snapshotAt']=='2026-10-23T12:00:00Z'
+        assert any(s['id']==source_id for s in kept['sources'])
 assert restored['meetings']['fireflies']==current['meetings']['fireflies']
 assert next(s for s in restored['sources'] if s['id']=='fireflies')['asOf']==next(s for s in current['sources'] if s['id']=='fireflies')['asOf']
 assert any(s['id']=='crm_browser' for s in restored['sources'])

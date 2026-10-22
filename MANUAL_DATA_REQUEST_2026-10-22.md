@@ -15,6 +15,8 @@ A short list or a calendar/CRM export with the following information is sufficie
 
 Venus's exact October15/16 held date and any later qualification decision remain useful confirmations. The last explicit owner unqualified decision stays in force until superseded. XCaliber was already an accepted active opportunity before October; its October5 follow-up is not a new October acceptance. OneFlo was already a client by September24 and is excluded from October first-time wins.
 
+For the reviewed active candidates, the useful missing facts are Permit Health's response or actual meeting after the October14 introduction; direct buyer consent/meetings and any executed client transfer for Len's Aethon/sister-company/Northern Ontario discussions; and any change to Swyft's explicit short-term parking-lot disposition. These have been investigated independently and are not promoted from their CRM stages.
+
 All76 retained October-indexed Fireflies source IDs have now been reviewed:65 purposes classified, five insufficient dialogues and six empty responses. Another copy of those recordings is not needed. Unrecorded calls, missing dialogue and independent occurrence dates remain the relevant gaps; recordings are not a complete actual-call roster.
 
 ## 2. Charles-only Waalaxy action history
@@ -46,7 +48,7 @@ The October19 handoff documents intended configuration and a noted last run. It 
 ## Later additions
 
 - **Content:** a complete publishing census and post-level organic/boosted metrics. The current Charles workbook is a capped ranked subset; company data after October20 needs a later export after the stated source delay.
-- **Referrals:** introducer, introduced company/person, actual introduction date, source message and subsequent commercial outcomes. Legacy fields naming a referral contact do not establish relationship direction or occurrence.
+- **Referrals:** complete dated requests, introductions, follow-ups and subsequent commercial outcomes. Melanie's October14 Permit introduction and Charles's October21 Jonathan Katz follow-up are already verified; another copy of those messages is not needed. Jonathan's target company and whether the promised introduction occurred remain unknown. Legacy fields naming a referral contact do not establish relationship direction or occurrence.
 - **Time:** Christian's actual attendance and approved work log, with durations. File edits establish activity dates only. The separate owner estimate remains **14.5–15.75 hours**.
 
 New files should be retained under ignored `data/private/`, reviewed against the existing identity/outcome rules and applied locally. The current publication instruction remains **local only**; no GitHub or Pages update is authorized by supplying more data.

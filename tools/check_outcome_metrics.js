@@ -85,4 +85,28 @@ run(`S.start='2026-10-19';S.end='2026-10-21';
   crmHistoryReview(mixedHistory,mixedHistory);`);
 assert.equal(run('capturedHistoryTables["crm-fresh-stage-events"].length'),1);
 assert.equal(run('capturedHistoryTables["crm-fresh-stage-events"][0].id'),'stage');
+// A real introduction remains distinct from a promise, duplicate mail copy,
+// outbound favor, or any later commercial outcome. Unknown coverage stays Pending.
+ctx.referralFixture={eventReview:{coverage:{status:'incomplete',start:null,end:null},events:[
+  {eventId:'mail:intro',verified:true,type:'introduction',direction:'inbound',charlesIncluded:true,date:'2026-10-14'},
+  {eventId:'mail:intro',verified:true,type:'introduction',direction:'inbound',charlesIncluded:true,date:'2026-10-14'},
+  {eventId:'promise',verified:true,type:'promise',direction:'inbound',charlesIncluded:true,date:'2026-10-14'},
+  {eventId:'outbound',verified:true,type:'introduction',direction:'outbound',charlesIncluded:true,date:'2026-10-14'},
+  {eventId:'unverified',verified:false,type:'introduction',direction:'inbound',charlesIncluded:true,date:'2026-10-14'}]}};
+run("S.start='2026-10-01';S.end='2026-10-21';");
+assert.equal(run('selectedReferralIntroductions(referralFixture).label'),'≥1');
+run("S.start='2026-10-19';");
+assert.equal(run('selectedReferralIntroductions(referralFixture).label'),'Pending');
+run("referralFixture.eventReview.coverage={status:'complete',start:'2026-10-19',end:'2026-10-21'};");
+assert.equal(run('selectedReferralIntroductions(referralFixture).label'),'0');
+// Message time, not ingestion/update time or a cached UTC day, supplies the
+// Mountain reporting date. A different import ID cannot duplicate the same mail.
+ctx.followupFixture={eventReview:{coverage:{status:'incomplete'},events:[
+  {eventId:'source-a',sourceSystem:'pipedrive_mail',sourceMessageId:44104,verified:true,type:'follow_up',direction:'outbound',sentByCharles:true,date:'2026-10-19',occurredAt:'2026-10-19T05:30:00Z'},
+  {eventId:'source-b',sourceSystem:'pipedrive_mail',sourceMessageId:44104,verified:true,type:'follow_up',direction:'outbound',sentByCharles:true,date:'2026-10-19',occurredAt:'2026-10-19T05:30:00Z'},
+  {eventId:'participant-only',verified:true,type:'follow_up',direction:'outbound',charlesIncluded:true,date:'2026-10-18'}]}};
+run("S.start='2026-10-18';S.end='2026-10-18';");
+assert.equal(run('selectedReferralFollowups(followupFixture).label'),'≥1');
+run("S.start='2026-10-19';S.end='2026-10-19';");
+assert.equal(run('selectedReferralFollowups(followupFixture).label'),'Pending');
 console.log('Charles outcome metrics: cohort, deduplication, scope, Mountain dates, and unknown/zero rules passed.');

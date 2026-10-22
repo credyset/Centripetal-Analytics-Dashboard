@@ -181,6 +181,54 @@ def build():
         'coverage':'Independent revision, CRM-join and legacy capture review; not verified send, reply, referral or human-hour events',
         'method':'Read-only Sheet metadata/revisions/cell notes; explicit CRM IDs; dated handoff and connected Airtable records',
         'note':'81 of 82 Sheet deal IDs reconcile; one references deleted deal322. All 58 populated organization IDs agree. CRM owner alone is unsafe for sender attribution. Legacy Airtable adds no current October Charles events. Fourteen Christian-attributed revision records support nine activity dates, without adding hours. Actual delivery and upstream sync execution remain unverified.'}
+    focused=json.loads((PRIVATE/'commercial/focused_sales_candidates_context_patch.json').read_text())
+    contexts=copy.deepcopy(focused['candidateContextUpdates'])
+    for record in contexts:
+        record['firstContextDocumentedAt']=record.get('firstContextDocumentedAt') or record.get('relationshipDocumentedBy')
+        record['latestContextDocumentedAt']=record.get('latestContextDocumentedAt') or record.get('latestInteractionContext',{}).get('documentedAt') or record.get('scopeFitResponseAt')
+        if record['dealId']==794:
+            record['companyContext']='The relationship predates the October13 CRM creation. Charles explicitly placed this opportunity in the short-term parking lot on October11; October21 correspondence offers investor-introduction help, not a confirmed new paid engagement.'
+            record['scopeFitBasis']='A prior relationship and investor-introduction support do not establish a held October prospect call or a newly accepted Centripetal engagement.'
+        record['sourceRefs']=[{k:v for k,v in ref.items() if k!='axNodes'} for ref in record['sourceRefs']]
+    data['crm']['commercialContextReview']={
+        'snapshotAt':focused['reviewedAt'],'reviewedAt':focused['reviewedAt'],
+        'focusWindow':copy.deepcopy(focused['focusWindow']),
+        'dealIdsInvestigated':[794,798,802,803,804],
+        'records':contexts,'confirmedOutcomeAdditions':0,
+        'sourceCollectionNote':'The main CRM inventory retains its October21 Mountain collection date. Independent October22 note/detail and Sales Inbox reviews add context only; correspondence message dates remain separate from review time.',
+        'note':'Five selected Sales records have contextual correspondence retained here. Permit Health has a verified inbound introduction and an offered exploratory call; actual attendance and commercial acceptance remain unconfirmed. Missing linked mail or activity is not proof of no actual call. No commercial headline outcome is added.'}
+    referral_events=json.loads((PRIVATE/'commercial/verified_referral_events_2026_10_22.json').read_text())
+    data['referrals']['eventReview']={
+        'snapshotAt':referral_events['reviewedAt'],'reviewedAt':referral_events['reviewedAt'],
+        'coverage':copy.deepcopy(referral_events['coverage']),
+        'events':copy.deepcopy(referral_events['events']),'note':referral_events['note']}
+    cypher=json.loads((PRIVATE/'sheets/cypher_reply_context_patch.json').read_text())
+    reply=cypher['latestReplyAttribute'];identity=cypher['identity'];dialogue=cypher['dialogueContext']
+    data['waalaxy']['replyContextReview']={
+        'snapshotAt':cypher['preparedAt'],'reviewedAt':cypher['preparedAt'],
+        'sourceCollectedAt':cypher['sourceLinkage']['sourceCollectedAt'],
+        'records':[{'profileId':identity['profileId'],'company':identity['company'],'contact':identity['contact'],
+            'latestReplyDate':reply['date'],'sourceTimezone':reply['sourceTimezone'],'datePrecision':reply['precision'],
+            'occurredAt':None,'eventId':None,'senderAccountId':None,
+            'classification':dialogue['classification'],'summary':dialogue['summary'],
+            'doesNotEstablish':copy.deepcopy(dialogue['doesNotEstablish']),
+            'outboundVideoEvidence':dialogue['outboundVideoEvidence'],'crmJoinStatus':identity['crmJoinStatus']}],
+        'counterChanges':copy.deepcopy(cypher['counterChanges']),
+        'note':'Context merged by canonical profile and latest-reply attribute date. This reply is already present in the retained Sheet and selected CSV; it is not a second reply event, a verified video send or a commercial qualification. Date-only source timezone and actual sender remain unknown.'}
+    sources['commercial_context']={
+        'id':'commercial_context','name':'Commercial correspondence and selected reply context',
+        'status':'Current evidence review; underlying inventories keep separate dates',
+        'asOf':focused['reviewedAt'],'checkedAt':'2026-10-22',
+        'coverage':'Five selected Sales records investigated; five contextual company records and one existing selected-person reply classified',
+        'method':'Read-only selected CRM notes/detail and Sales Inbox; dialogue classification of retained Sheet and CSV reply attributes',
+        'note':'Len-origin client-transfer discussions, Swyft parking-lot disposition, Permit referral context and Cypher friendly acknowledgment improve interpretation. They add no held calls, qualifications, accepted opportunities, wins, delivered videos or reply-event counters. Verified referral events have their own source card. Underlying full CRM and Sheet collection dates remain unchanged.'}
+    sources['referral_events']={
+        'id':'referral_events','name':'Referrals · verified introduction and follow-up evidence',
+        'status':'Current bounded event review; complete referral coverage unknown',
+        'asOf':referral_events['reviewedAt'],'checkedAt':'2026-10-22',
+        'coverage':'One October14 inbound introduction and one October21 outbound referral follow-up; explicit UTC timestamps displayed in Mountain time',
+        'method':'Read-only Sales Inbox threads29926 and30220 plus linked message metadata; actual senders, recipients and explicit source timestamps',
+        'note':'Melanie Ortiz introduced Charles to Permit Health on October14; Charles offered an exploratory call on October15. Charles followed up on Jonathan Katz\'s promised introduction on October21; its target and completion remain unknown. These are separate event types, not held calls, qualification, accepted opportunities or wins. Full event coverage is incomplete, and the referral-stage inventory keeps its prior source date.'}
     data['sources']=list(sources.values())
     data['meta'].update(generatedAt=datetime.now(timezone.utc).isoformat(),asOfDate='2026-10-22',localReviewOn='2026-10-22',
         revision='October22 completion audit: creator workbook, archive/sync evidence and metric-scope corrections; local only')

@@ -10,6 +10,8 @@ Latest local refresh: [October 22 channel refinement](REFRESH_REVIEW_2026-10-22.
 
 For the few inputs that still require owner evidence or an export, see [Remaining manual inputs](MANUAL_DATA_REQUEST_2026-10-22.md). Current generic CRM and creator exports have already been collected independently.
 
+The local October22 review now includes all76 retained October recording responses, five selected Sales-record context reviews, and separately dated referral evidence: Melanie's October14 Permit introduction and Charles's October21 Jonathan Katz follow-up. These events retain incomplete coverage and do not create commercial outcome or Video DM delivery counts.
+
 ## Live public dashboard
 
 **GitHub Pages:** https://credyset.github.io/Centripetal-Analytics-Dashboard/#glance
