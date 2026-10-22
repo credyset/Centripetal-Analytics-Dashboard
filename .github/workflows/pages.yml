@@ -32,6 +32,9 @@ jobs:
         run: |
           python3 tools/check_effort_estimate.py
           node tools/check_reporting_display.js
+          node tools/check_waalaxy_reporting.js
+          node tools/check_video_message_display.js
+          python3 tools/check_independent_channels.py
       - name: Check newer source and publication hold preservation
         run: python3 tools/check_snapshot_preservation.py
       - name: Build approved static dashboard

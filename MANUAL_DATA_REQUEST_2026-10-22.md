@@ -1,54 +1,56 @@
-# Remaining inputs for the October dashboard
+# Remaining data needs after the October 22 independent refresh
 
-The reviewed Video DM records are present in Pipedrive. All ten October 21 rows with valid Loom URLs match CRM people by exact LinkedIn profile and match the same asset in deal notes. All 29 undated Sent/Done rows also have current CRM record evidence. The 703 held trigger IDs do not establish missing outreach or CRM records. See [the reconciliation](ZAPIER_RECONCILIATION_2026-10-22.md).
+The owner asked that commercial outcomes stay with their manual Charles review, while the agent resolves accessible channel evidence independently. The updated invitation CSV, fresh creator workbook, concluded-Ads check and native LinkedIn conversation review are documented in [the independent channel review](INDEPENDENT_CHANNEL_REFRESH_2026-10-22.md).
 
-The current CRM inventory, reviewed recordings and channel snapshots have already been collected. Another generic CRM export is unnecessary. The priority is the timing, meaning and attribution of actual business events.
+**No additional generic creator, Ads, invitation or all-deals export is currently needed.** Remaining requests should be narrow and follow an unsuccessful direct-source check. Receiving a new source file does not itself prove successful live deployment.
 
-## 1. Resolve the four commercial headlines
+## 1. Commercial outcomes — manual owner/Charles review
 
-The minimum input is a short Charles-confirmed list for unresolved October events:
+The owner will review the unresolved commercial decisions with Charles. Retain existing confirmed minimums and Pending totals until that review supplies the missing business meaning and original dates:
 
-| Event | Required information |
+| Event | Useful confirmation |
 |---|---|
-| Held prospect call | Company, actual date/time and timezone, Charles attended, prospect purpose and evidence link. Include calls outside the accessible calendar/recordings; confirm none for any requested period that truly had none. |
-| Qualification | Latest qualified/unqualified decision and date, linked to a held prospect company. |
-| New accepted opportunity | Original acceptance date, Charles's acceptance and an agreed next step. |
-| First-time client win | Actual signed/start/win date, evidence and confirmation this was a first engagement. |
+| Held prospect call | Company, actual occurrence date/time and timezone, Charles attended and prospect purpose. Include calls absent from accessible records. |
+| Qualification | Latest qualified/unqualified decision and its date among the relevant held-call companies. |
+| Accepted opportunity | Original acceptance date, Charles's explicit acceptance and an agreed next step. |
+| First-time client win | Actual signed/start/win date and confirmation this was the first engagement. |
 
-The agent should reuse accessible inbox, dialogue, CRM flow and contract evidence first. Charles is needed for business decisions or unrecorded exceptions that those sources cannot establish.
+The clearest unresolved case remains Venus: the earlier explicit owner decision and later negotiation context need reconciliation. Do not turn a CRM stage, creation time, calendar booking or recording index date into the missing commercial decision. This is a human review dependency, not a reason to request another generic CRM export.
 
-The clearest unresolved case is **Venus**: the last explicit owner decision was unqualified on October 16, while Charles moved the Sales record to Negotiating Contract on October 20. Confirm whether and when its qualification changed, when an active opportunity was first accepted and the next step. Its actual held day remains October 15–16 after reschedule evidence. XCaliber was already accepted before October; OneFlo was already a client before October. Woodrow's reviewed dialogue is vendor feedback.
+## 2. Video DMs — extend the dated message evidence only where needed
 
-## 2. Supply actual outreach events where direct access is incomplete
+The ten October 21 Loom-linked worksheet profiles already match Pipedrive records and asset notes. Native Charles conversations now corroborate matching outbound Loom messages for **nine of those ten profiles**, dated October 21 at day precision from the visible Wednesday label and corroborating source evidence. These are existing reported sends now supported by platform evidence, not nine additional sends to add to the worksheet count.
 
-For each message or reply, useful fields are stable event ID, prospect profile/person ID, actual sender, channel, timestamp and timezone, video included yes/no/unknown, reply meaning, evidence link and linked CRM deal. A narrow export or event log is preferable to another prospect inventory.
+**SubImage remains unconfirmed at the platform level.** The correct visible conversation ends with February 3 text outreach and does not show the worksheet/CRM-referenced October Loom asset. This does not prove that a send never occurred, that it was deleted or that a CRM record is missing.
 
-The agent can inspect accessible Charles message/action history and retain verified dates. Prepared recording links, source status labels, note creation dates and CRM presence alone do not measure delivery. Keep self-reported statuses visible with their limits.
+The separately observed Cypher incoming LinkedIn message has a visible October 19 day, while its retained Waalaxy latest-reply attribute says October 20. Preserve both source dates. The available evidence does not establish timezone conversion, video-reply attribution or a commercial outcome.
 
-The worksheet has **57 valid Loom URLs and three separate text notes** in 60 populated recording cells. October 21's 12 Sent labels contain ten Loom URLs and two non-URL LinkedIn DM notes. These existing rows must not be added again as new sends.
+For remaining messages, the useful evidence is a stable platform event/conversation ID when available, exact profile, actual sender, channel, source timestamp/timezone, video asset or video yes/no/unknown, direction and reply meaning. Direct conversation inspection comes first. A narrow message export is useful only where accessible history cannot resolve the missing event. Source status labels, CRM note creation dates and Loom preparation alone remain insufficient. Date-only observations do not become invented midnight timestamps or account-wide event totals.
 
-Three specific linkage details remain useful, without establishing missing outreach deals: Sonata's source recording URL is absent from the reviewed CRM notes; Chromie retains deleted Sheet ID 322 while independently matching current record 836; Leo AI lacks a CRM profile URL but has an explicit Sheet deal ID and matching asset note. Resolve only the missing metadata or intended linkage; preserve original source IDs.
+## 3. Waalaxy — invitations supplied; message/reply action history remains
 
-## 3. Obtain daily Charles Waalaxy actions
+The new `invitations (5).csv` contains 31 source-date buckets from September 22 through October 22: **430 Sent /132 Accepted**, all within October. October 19–22 totals **59 /22**. The file replaces overlapping earlier buckets and retains explicit zeros; October 22 is partial. Earlier September 15–21 data stays a separate provenance segment.
 
-The fixed October 1–22 Home aggregate is already available. Weekly reporting still needs daily invitations/acceptances and message/reply events, particularly **October 16 onward**, with account/profile, campaign IDs, source timezone, extraction time and final-day status.
+Four historical Accepted buckets were revised, so neither their differences nor their date labels establish newly occurring acceptance events. The source timezone, exact acceptance-event dates and matched invitation cohorts remain unverified. Matching Home totals are overlapping measurements, not another activity stream.
 
-The agent should attempt the original daily/campaign exports using Charles's signed-in account. If direct download remains unavailable, provide the original CSV covering October 1 through the latest day. Include explicit source zero days. Monthly totals cannot reconstruct weekly actions or invitation-cohort conversion rates.
+The remaining useful export is **dated message/reply action history**, with account/sender, campaign, source timezone and stable action IDs. Positive-reply classification and video/manual-message coverage also remain incomplete. An invitation-only CSV does not contain those events. Attempt direct access first and request only the missing action file if necessary.
 
-## 4. Complete the October publishing register
+## 4. Content — current creator performance collected; full publishing census remains
 
-The agent can use the signed-in creator/company account and Ads exports to collect all October post IDs/URLs, publication dates, metric windows, organic/boosted delivery and ad/creative joins. The current creator workbook is a capped ranked subset, not an exhaustive post census. A complete post-level export is needed only if direct access cannot produce these rows.
+A fresh workbook was collected independently through Charles's signed-in account as of October 22. It supplies current daily impressions, broader workbook Engagements, follower additions and a capped 49-post ranked subset. No further aggregate creator export is needed at present.
 
-Ads currently has daily source rows through October 21; company daily metrics stop October 20 because of the stated source delay. Later days need a later source refresh. Missing days remain unavailable rather than zero; company sponsored metrics overlap Ads.
+The next useful collection is a **complete October publishing register**: all post IDs/URLs and publication dates, organic/boosted status, per-post measurement windows and ad/creative joins. Continue through the signed-in account first. A repeat of the same capped ranked-post export would not establish a complete post census.
 
-## 5. Fill only missing referral events and optional actual effort
+Company analytics were checked separately. October 20 is the latest available date; October 21 and 22 are disabled in the source. The existing company series remains unchanged. A later source refresh is required when those days become available, rather than another current export or placeholder zeros. Company-sponsored metrics overlap Ads.
 
-For referrals, collect actual request/introduction/follow-up dates, direction, referrer, target company/contact, evidence and linked CRM IDs. The agent should reconcile accessible correspondence first. Permit introduction and Jonathan follow-up/replies are already retained; no completed Jonathan introduction or formal lost outcome is established.
+## 5. Ads — conclusion independently checked
 
-For measured Christian hours, provide actual attendance and dated work durations. Otherwise keep the owner-provided **18.25–19.5 hours** as a non-meeting estimate, separate from recording duration. This optional work log is not required to show the current estimate accurately.
+All seven observed ad sets show Completed. The September 4–October 22 aggregate check matches the retained totals: **$3,592.31 spend /25,055 impressions /106 clicks**. Current daily exports end October 21; a missing October 22 row is not an explicit zero. No additional Ads export is currently required. Request a narrow final daily export only if later adjustments or newly available dates change the retained source.
 
-## What does not block the current refresh
+## 6. Other remaining detail
 
-A bulk replay of the held Zapier queue, another all-deals export, and another copy of the 76 reviewed recordings are not prerequisites. The ten verified October 21 video-asset records are already in CRM. Any future workflow repair should address a specifically evidenced problem, rather than an assumed 703-record deficit.
+Referral requests, completed introductions and follow-ups still need complete dated event coverage linked to referrer, target and CRM identifiers. Reconcile accessible correspondence before requesting missing evidence.
 
-New raw files belong in ignored `data/private/`. The owner approved publication of the reviewed October 22 curated snapshot and application to the GitHub project and Pages dashboard. Raw evidence remains excluded. Source collection is on demand; receiving more data does not itself publish it. See [the publication review](PUBLICATION_REVIEW_2026-10-22.md).
+Christian's owner-provided non-meeting estimate remains **18.25–19.5 hours** through October 22, separate from the unchanged recording-duration proxy. Actual attendance/work logs are optional if independently measured hours are desired; this channel refresh does not add effort hours.
+
+Raw source files, screenshots and messages belong in ignored `data/private/`. The existing approved destination is the Centripetal GitHub project and Pages dashboard; validation and live deployment must still be verified for each update. A bulk replay of the held Zapier queue, another general CRM export and another copy of the reviewed recordings are not prerequisites.

@@ -77,7 +77,7 @@ def curate_snapshot(source):
         meetings['notes']=[n for n in meetings.get('notes',[]) if '19 recordings classified' not in n and 'Attendance is verified by recording presence' not in n]
     for item in public.get('sources', []):
         if item['id'] == 'waalaxy':
-            item['note'] = ('Dated invitation actions are available, including source-reported zero days. '
+            item['note'] = ('Invitation source-date buckets are available, including source-reported zero days. Accepted buckets can be revised retrospectively; exact acceptance-event dates and matched invitation cohorts are unverified. '
                             'The final source day is partial and the source timezone is unspecified. '
                             + ('A separately dated selected connected-prospect subset is available through Sheets; sender account and upstream sync time are unverified. ' if public.get('waalaxy',{}).get('sheetSubset') else '') +
                             'Dated message/reply events and campaign breakdowns remain unavailable; historical person flags retain older coverage. '
@@ -105,6 +105,45 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
     # Their collection dates do not establish when the upstream account synced.
     old_w=previous.get('waalaxy') or {}
     new_w=result.setdefault('waalaxy',{})
+    # Daily invitation imports have an independent collection clock. Choose
+    # that family from the original inputs, even if a whole-container choice
+    # above selected the other person's/account snapshot. Keep other measures
+    # on each day and never re-date the parent inventory or Sheet source.
+    invitation_card=None
+    invitation_candidates=[]
+    for container in (source,previous):
+        section=container.get('waalaxy') or {}
+        collected=(section.get('invitationCollectedAt') or
+                   (section.get('invitationCoverage') or {}).get('collectedAt') or
+                   (section.get('invitationImportReview') or {}).get('snapshotAt'))
+        if collected and section.get('invitationCoverage'):
+            invitation_candidates.append((stamp({'collectedAt':collected}),section,container))
+    if invitation_candidates:
+        _,chosen,chosen_container=max(invitation_candidates,key=lambda item:item[0])
+        by_day={}
+        for row in new_w.get('daily',[]):
+            other={key:copy.deepcopy(value) for key,value in row.items()
+                   if key not in ('invitationsSent','invitationsAccepted')}
+            if len(other)>1:by_day[row['date']]=other
+        for row in chosen.get('daily',[]):
+            fields={key:copy.deepcopy(row[key]) for key in ('invitationsSent','invitationsAccepted') if key in row}
+            if fields:by_day.setdefault(row['date'],{'date':row['date']}).update(fields)
+        new_w['daily']=[by_day[key] for key in sorted(by_day)]
+        for key in ('invitationCollectedAt','invitationCoverage','invitationSummary','invitationImportReview'):
+            if key in chosen:new_w[key]=copy.deepcopy(chosen[key])
+        prefixes=('Invitation import contains','Latest owner-supplied invitation CSV:')
+        new_w['notes']=[note for note in new_w.get('notes',[]) if not str(note).startswith(prefixes)]
+        new_w['notes'].extend(copy.deepcopy(note) for note in chosen.get('notes',[])
+                             if str(note).startswith(prefixes) and note not in new_w['notes'])
+        invitation_card=next((copy.deepcopy(card) for card in chosen_container.get('sources',[])
+                              if card['id']=='waalaxy_invitations'),None)
+        if not invitation_card:
+            invitation_card={'id':'waalaxy_invitations','name':'Waalaxy · daily invitation source buckets',
+                'asOf':chosen.get('invitationCollectedAt') or chosen['invitationCoverage'].get('collectedAt') or chosen.get('invitationImportReview',{}).get('snapshotAt'),
+                'coverage':copy.deepcopy(chosen['invitationCoverage']),
+                'status':'Current independently dated invitation export',
+                'method':'Retained invitation CSV date buckets',
+                'note':'Invitation date buckets retain their own collection date. Source timezone, exact acceptance-event dates and matched invitation cohorts are unverified; message/reply actions have separate coverage.'}
     if old_w.get('sheetSubset') and old_w.get('sheetSubsetCollectedAt','')>new_w.get('sheetSubsetCollectedAt',''):
         for key in ('sheetSubset','sheetSubsetCollectedAt','sheetSubsetAccountVerification','sheetSubsetUpstreamSyncAt'):
             if key in old_w:new_w[key]=copy.deepcopy(old_w[key])
@@ -114,13 +153,17 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
         new_w['selectedExportSnapshot']=copy.deepcopy(old_export)
     # Account/page supplements have independent collection dates. A newer
     # creator or person export must not silently drop them or refresh their age.
-    for parent,child,source_id in (('content','companyAnalytics','content_company'),
+    for parent,child,source_id in (('content','creatorAnalytics','content'),
+                                    ('content','companyAnalytics','content_company'),
+                                    ('content','companyAvailabilityReview','content_company_availability'),
                                     ('waalaxy','accountAnalytics','waalaxy_account'),
                                     ('crm','archiveReview','crm_archived'),
                                     ('video','sourceVerification','source_audit'),
                                     ('video','automationReview','zapier_execution'),
                                     ('video','recordingFieldReview','video_crm_reconciliation'),
                                     ('video','crmReconciliation','video_crm_reconciliation'),
+                                    ('video','messageDateReview','video_message_dates'),
+                                    ('ads','lifecycleReview','ads_lifecycle'),
                                     ('video','datedStatusReview','source_audit'),
                                     ('video','metadataFreshnessCheck','source_freshness'),
                                     ('meetings','metadataFreshnessCheck','source_freshness'),
@@ -215,6 +258,7 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
     for src in previous.get('sources',[]):
         if src['id'] in retained or (src['id']=='fireflies' and src['id'] not in by_id):
             by_id[src['id']]=copy.deepcopy(src)
+    if invitation_card:by_id['waalaxy_invitations']=invitation_card
     result['sources']=list(by_id.values())
     sync_inventory_source_cards(result)
     if 'crm' in retained and not result.get('meta',{}).get('reportingAsOfDate'):

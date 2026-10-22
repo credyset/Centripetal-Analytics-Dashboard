@@ -49,6 +49,21 @@ for reconciled in (curate_snapshot(stale_cards),
         assert card['coverage']==reconciled[ident]['coverage']
         assert card['coverage'] is not reconciled[ident]['coverage']
 assert restored['content']['creatorAnalytics']==current['content']['creatorAnalytics']
+# Creator collection has its own clock: refreshing it must not re-date the
+# historical content parent, and old replays with the same parent clock must
+# not silently restore the older creator workbook or its stale source card.
+for parent_stamp in (current['content']['snapshotAt'],'2026-10-23T12:00:00Z'):
+    creator_old=copy.deepcopy(current)
+    creator_old['content']['snapshotAt']=parent_stamp
+    creator_old['content']['creatorAnalytics']['snapshotAt']='2026-10-21T12:00:00Z'
+    creator_old['content']['creatorAnalytics']['summary']['impressions']=1
+    creator_old['content']['historicalImportMarker']='incoming historical source'
+    next(s for s in creator_old['sources'] if s['id']=='content')['asOf']='2026-10-21T12:00:00Z'
+    creator_kept=preserve_newer_shared_sources(creator_old,current)
+    assert creator_kept['content']['creatorAnalytics']==current['content']['creatorAnalytics']
+    assert creator_kept['content']['snapshotAt']==parent_stamp
+    assert creator_kept['content']['historicalImportMarker']=='incoming historical source'
+    assert next(s for s in creator_kept['sources'] if s['id']=='content')==next(s for s in current['sources'] if s['id']=='content')
 assert restored['crm']['browserReview']==current['crm']['browserReview']
 for key in ('crm','referrals','meetings','time'):
     assert restored[key]['snapshotAt']==current[key]['snapshotAt'], f'Newer {key} source lost'
@@ -58,12 +73,13 @@ for parent,child,source_id in (('content','companyAnalytics','content_company'),
     if child in current[parent]:
         assert restored[parent][child]==current[parent][child]
         assert any(s['id']==source_id for s in restored['sources'])
-for parent,child in (('crm','archiveReview'),('video','sourceVerification'),('waalaxy','workflowReview'),('crm','commercialContextReview'),('waalaxy','replyContextReview'),('referrals','eventReview'),('referrals','legacyCaptureReview'),('time','workEvidence')):
+for parent,child in (('crm','archiveReview'),('video','sourceVerification'),('video','messageDateReview'),('ads','lifecycleReview'),('waalaxy','workflowReview'),('crm','commercialContextReview'),('waalaxy','replyContextReview'),('referrals','eventReview'),('referrals','legacyCaptureReview'),('time','workEvidence')):
     if child in current[parent]:assert restored[parent][child]==current[parent][child]
 # A newer source container can omit an independently dated context/event
 # supplement; preserve the evidence without re-dating the new parent inventory.
 supplements=[('crm','commercialContextReview','commercial_context'),('waalaxy','replyContextReview','commercial_context'),('referrals','eventReview','referral_events'),('referrals','contextReview','referral_context'),('video','automationReview','zapier_execution'),('video','datedStatusReview','source_audit'),('video','metadataFreshnessCheck','source_freshness'),('meetings','metadataFreshnessCheck','source_freshness')]
 supplements += [('video','recordingFieldReview','video_crm_reconciliation'),('video','crmReconciliation','video_crm_reconciliation')]
+supplements += [('video','messageDateReview','video_message_dates'),('ads','lifecycleReview','ads_lifecycle'),('content','companyAvailabilityReview','content_company_availability')]
 incoming=copy.deepcopy(current)
 for parent,child,source_id in supplements:
     incoming[parent]['snapshotAt']='2026-10-23T12:00:00Z'
@@ -83,6 +99,33 @@ if current['ads'].get('browserReview'):
     assert any(s['id']=='ads_browser' for s in restored['sources'])
 assert restored['waalaxy']['sheetSubset']==current['waalaxy']['sheetSubset']
 assert restored['waalaxy']['selectedExportSnapshot']==current['waalaxy']['selectedExportSnapshot']
+# A newer invitation CSV survives a still-newer generic account/person import,
+# and a newer CSV in an older parent survives the whole-parent source choice.
+invitation_new=copy.deepcopy(current)
+invitation_new['waalaxy'].update(invitationCollectedAt='2026-10-22T14:00:00Z',
+    invitationCoverage={'start':'2026-10-19','end':'2026-10-22'},
+    invitationSummary={'sent':59,'accepted':22,'cohortAcceptanceRate':None},
+    invitationImportReview={'snapshotAt':'2026-10-22T14:00:00Z','review':'newest CSV'},
+    daily=[{'date':'2026-10-19','invitationsSent':59,'invitationsAccepted':22}])
+invitation_new['sources']=[s for s in invitation_new['sources'] if s['id']!='waalaxy_invitations']
+invitation_new['sources'].append({'id':'waalaxy_invitations','asOf':'2026-10-22T14:00:00Z'})
+account_new=copy.deepcopy(current)
+account_new['waalaxy'].update(snapshotAt='2026-10-23T12:00:00Z',
+    invitationCollectedAt='2026-10-21T12:00:00Z',
+    daily=[{'date':'2026-10-19','invitationsSent':1,'invitationsAccepted':1,'prospectsImported':99},
+           {'date':'2026-10-20','invitationsSent':3,'invitationsAccepted':0}])
+account_new['waalaxy']['invitationImportReview']={'snapshotAt':'2026-10-21T12:00:00Z'}
+account_new['sources']=[s for s in account_new['sources'] if s['id']!='waalaxy_invitations']
+for source,previous in ((account_new,invitation_new),(invitation_new,account_new)):
+    combined=preserve_newer_shared_sources(source,previous)
+    w=combined['waalaxy']
+    assert w['snapshotAt']=='2026-10-23T12:00:00Z'
+    assert w['invitationCollectedAt']=='2026-10-22T14:00:00Z'
+    assert w['invitationSummary']==invitation_new['waalaxy']['invitationSummary']
+    assert w['invitationCoverage']==invitation_new['waalaxy']['invitationCoverage']
+    assert w['invitationImportReview']==invitation_new['waalaxy']['invitationImportReview']
+    assert w['daily']==[{'date':'2026-10-19','prospectsImported':99,'invitationsSent':59,'invitationsAccepted':22}]
+    assert next(s for s in combined['sources'] if s['id']=='waalaxy_invitations')['asOf']=='2026-10-22T14:00:00Z'
 # A newer bounded metadata import may omit independently reviewed recordings.
 # Keep the dialogue evidence without falsely claiming new metadata presence.
 prior_ff=current['meetings'].get('fireflies') or {}
