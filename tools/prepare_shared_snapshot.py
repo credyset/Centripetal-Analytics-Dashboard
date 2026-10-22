@@ -6,16 +6,19 @@ import re
 from datetime import datetime, timezone
 from apply_owner_confirmations import apply_owner_confirmations
 from apply_effort_estimate import apply_effort_estimate
+from apply_outcome_confirmations import apply_outcome_confirmations
 
 ROOT = Path(__file__).resolve().parents[1]
 
 def curate_snapshot(source):
     public = copy.deepcopy(source)
     apply_owner_confirmations(public)
+    apply_outcome_confirmations(public)
     if public.get('time'):
         apply_effort_estimate(public['time'])
-    public['meta'].update(public=True, publicDataPolicy='Owner-approved detailed snapshot including prospect identities and available business record links.')
-    public['meta']['note'] = 'Published snapshot; source coverage varies. Automatic refresh is not enabled.'
+    pending=public.get('meta',{}).get('publicationStatus')=='pending_owner_approval'
+    public['meta'].update(public=not pending, publicDataPolicy=('Local review snapshot; refreshed private source supplements await publication approval.' if pending else 'Owner-approved detailed snapshot including prospect identities and available business record links.'))
+    public['meta']['note'] = ('Local review snapshot; refreshed private source supplements have not been published. ' if pending else 'Published snapshot; ') + 'Source coverage varies. Automatic refresh is not enabled.'
     for name in ('ads', 'waalaxy', 'content'):
         public.get(name, {}).pop('sources', None)
     def scrub(value):
@@ -49,15 +52,34 @@ def stamp(section):
     dt = datetime.fromisoformat(value.replace('Z','+00:00'))
     return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt
 
-def preserve_newer_shared_sources(source, previous):
+def preserve_newer_shared_sources(source, previous, publication_approved=False):
     """Older local inputs must not erase newer collaborator source revisions."""
     result=copy.deepcopy(source)
     retained=set()
     for key in ('ads','crm','video','waalaxy','content','referrals','meetings','time'):
         current, old = result.get(key) or {}, previous.get(key) or {}
-        if stamp(old)>stamp(current) or (key=='waalaxy' and old.get('invitationCoverage') and not current.get('invitationCoverage') and stamp(old)>=stamp(current)):
+        if stamp(old)>stamp(current) or (key=='time' and old.get('reviewedAsOf','')>current.get('reviewedAsOf','') and stamp(old)>=stamp(current)) or (key=='waalaxy' and old.get('invitationCoverage') and not current.get('invitationCoverage') and stamp(old)>=stamp(current)):
             result[key]=copy.deepcopy(old)
             retained.add(key)
+    # Independent selected-person sources must survive an account-wide refresh.
+    # Their collection dates do not establish when the upstream account synced.
+    old_w=previous.get('waalaxy') or {}
+    new_w=result.setdefault('waalaxy',{})
+    if old_w.get('sheetSubset') and old_w.get('sheetSubsetCollectedAt','')>new_w.get('sheetSubsetCollectedAt',''):
+        for key in ('sheetSubset','sheetSubsetCollectedAt','sheetSubsetAccountVerification','sheetSubsetUpstreamSyncAt'):
+            if key in old_w:new_w[key]=copy.deepcopy(old_w[key])
+    old_export=old_w.get('selectedExportSnapshot') or {}
+    new_export=new_w.get('selectedExportSnapshot') or {}
+    if old_export.get('reviewedAt','')>new_export.get('reviewedAt',''):
+        new_w['selectedExportSnapshot']=copy.deepcopy(old_export)
+    # A partial browser review never replaces the full historical CRM/Ads source.
+    for key in ('crm','ads','referrals'):
+        old_review=(previous.get(key) or {}).get('browserReview') or {}
+        incoming=(result.get(key) or {}).get('browserReview') or {}
+        if old_review.get('collectedAt','')>incoming.get('collectedAt',''):
+            result.setdefault(key,{})['browserReview']=copy.deepcopy(old_review)
+            retained.add(key)
+            if key in ('crm','ads'):retained.add(key+'_browser')
     # Recording review is an independently dated supplement to calendar data.
     prior_ff=(previous.get('meetings') or {}).get('fireflies')
     current_ff=(result.get('meetings') or {}).get('fireflies')
@@ -77,8 +99,18 @@ def preserve_newer_shared_sources(source, previous):
         if src['id'] in retained or (src['id']=='fireflies' and src['id'] not in by_id):
             by_id[src['id']]=copy.deepcopy(src)
     result['sources']=list(by_id.values())
-    if 'crm' in retained:
+    if 'crm' in retained and not result.get('meta',{}).get('reportingAsOfDate'):
         result.setdefault('meta',{})['defaultReportingThrough']=result['crm'].get('coverage',{}).get('reportingThrough')
+    # Review freshness is distinct from source freshness. Re-importing an older
+    # export must not erase the newer reporting scope or a publication hold.
+    old_meta=previous.get('meta') or {}
+    incoming_meta=result.setdefault('meta',{})
+    if old_meta.get('reportingAsOfDate','')>incoming_meta.get('reportingAsOfDate',''):
+        for key in ('generatedAt','asOfDate','reportingAsOfDate','defaultReportingThrough',
+                    'defaultCompleteReportingThrough','defaultDatePreset','currentDayPartial','revision'):
+            if key in old_meta:incoming_meta[key]=copy.deepcopy(old_meta[key])
+    if old_meta.get('publicationStatus')=='pending_owner_approval' and not publication_approved:
+        incoming_meta['publicationStatus']='pending_owner_approval'
     return result
 
 def write_shared(source):

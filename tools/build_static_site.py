@@ -24,7 +24,8 @@ def build(destination=DEFAULT_DIST):
     (DIST / 'data').mkdir(exist_ok=True)
     shutil.copytree(ROOT / 'assets', DIST / 'assets', dirs_exist_ok=True)
     shutil.copy2(ROOT / 'styles.css', DIST / 'styles.css')
-    html = (ROOT / 'index.html').read_text().replace('Internal analytics · Local concept', 'Public analytics · Dated snapshot').replace('INTERNAL / CONCEPT 01', 'PUBLIC / SNAPSHOT')
+    pending=public.get('meta',{}).get('publicationStatus')=='pending_owner_approval'
+    html = (ROOT / 'index.html').read_text().replace('Internal analytics · Local concept', 'Local review · Not published' if pending else 'Public analytics · Dated snapshot').replace('INTERNAL / CONCEPT 01', 'LOCAL REVIEW' if pending else 'PUBLIC / SNAPSHOT')
     html = html.replace('<meta name="color-scheme"', '<meta name="robots" content="noindex, nofollow">\n  <meta name="color-scheme"')
     (DIST / 'index.html').write_text(html)
     payload = json.dumps(public, ensure_ascii=False) + '\n'

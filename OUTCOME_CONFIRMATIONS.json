@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "scope": "charles_only",
+  "timezone": "America/Denver",
+  "definitionsConfirmedOn": "2026-10-21",
+  "definitions": {
+    "heldCalls": "Distinct held prospect calls or meetings involving Charles; scheduled, canceled, no-show, internal, recruiting and asynchronous exchanges are excluded.",
+    "qualifiedCompanies": "Distinct Charles-qualified companies among the selected period's confirmed held prospect calls. Qualification is the latest recorded owner decision as of the stated review date.",
+    "opportunityAcceptances": "Distinct commercial opportunities explicitly accepted by Charles with an active next step, counted by the original acceptance date. New CRM records and stage labels alone do not establish acceptance.",
+    "clientWins": "Distinct companies becoming a client for the first time under Charles's commercial ownership, counted by the verified first win date. Renewals, expansions and reopened records are excluded."
+  },
+  "coverage": {
+    "heldCalls": {
+      "status": "incomplete",
+      "start": null,
+      "end": null,
+      "note": "Only the bounded owner-confirmed linked calls are available. The complete Charles prospect-meeting register has not been reconciled."
+    },
+    "qualification": {
+      "status": "incomplete",
+      "start": null,
+      "end": null,
+      "note": "Known call dispositions are retained; qualification for all companies Charles met has not been reviewed."
+    },
+    "opportunityAcceptances": {
+      "status": "incomplete",
+      "start": null,
+      "end": null,
+      "note": "Explicit acceptance dates and next steps need Charles's review. CRM record creation is not an accepted opportunity."
+    },
+    "clientWins": {
+      "status": "incomplete",
+      "start": null,
+      "end": null,
+      "note": "First-client win dates and the existing-client baseline need owner confirmation. A CRM Closed Won stage label is insufficient."
+    }
+  },
+  "heldCalls": [],
+  "opportunityAcceptances": [],
+  "clientWins": [],
+  "notes": [
+    "The existing owner-confirmed NuVee and Venus calls are imported from OWNER_CONFIRMATIONS.json, which remains their canonical record.",
+    "A positive confirmed count under incomplete coverage is a lower bound. An empty incomplete register is pending, not zero.",
+    "The four period measures use different units and event cohorts; they are not a conversion funnel."
+  ]
+}

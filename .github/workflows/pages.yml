@@ -24,6 +24,10 @@ jobs:
         run: python3 tools/check_shared_snapshot.py
       - name: Check dashboard JavaScript
         run: node --check app.js
+      - name: Check commercial outcome and coverage rules
+        run: node tools/check_outcome_metrics.js
+      - name: Check newer source and publication hold preservation
+        run: python3 tools/check_snapshot_preservation.py
       - name: Build approved static dashboard
         run: python3 tools/build_static_site.py
       - name: Upload Pages artifact

@@ -12,6 +12,11 @@ for entity in ('deals','activities'):
     assert len(rows) == len({row['id'] for row in rows}), f'Duplicate CRM {entity} IDs'
 assert len(data['video']['rows']) == data['video']['summary']['sourceRows']
 assert abs(sum(row['spend'] for row in data['ads']['daily'])-data['ads']['totals']['spend']) < .02
+ad_review=data['ads'].get('browserReview') or {}
+if ad_review.get('adSets'):
+    for total,key in [('spend','spend'),('impressions','impressions'),('clicks','clicks'),('rawLeads','leads'),('formOpens','opens')]:
+        assert abs(sum(r[key] for r in ad_review['adSets'])-ad_review['totals'][total])<.001
+    assert ad_review['totals']['qualifiedLeads'] is None and ad_review['totals']['heldProspectCalls'] is None
 creator=data['content'].get('creatorAnalytics')
 if creator:
     assert creator['account']['identityVerified'] and creator['account']['name']=='Charles Solomon'

@@ -6,7 +6,7 @@ Business-development dashboard for Charles Solomon and the Centripetal team, wit
 
 Other agents can clone this repository, run the populated dashboard and contribute through branches/pull requests without access to ChatGPT Sites. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Latest analytics corrections: [ANALYTICS_REVISION_2026-10-16.md](ANALYTICS_REVISION_2026-10-16.md). Reconciled referral counts, invitation activity and reviewed recording purposes are applied; source dates and unresolved outcome gaps remain explicit.
+Latest local refresh: [October 21 review](REFRESH_REVIEW_2026-10-21.md), [Charles outcome definitions](OUTCOME_REVIEW_2026-10-21.md), and [publication review](PUBLICATION_REVIEW_2026-10-21.md). The private source supplements are prepared locally and **have not been published**. The public site retains its last approved snapshot pending explicit publication approval. Earlier corrections remain documented in [ANALYTICS_REVISION_2026-10-16.md](ANALYTICS_REVISION_2026-10-16.md).
 
 ## Live public dashboard
 
@@ -28,11 +28,11 @@ python3 serve.py
 
 Open **http://127.0.0.1:8765**. The preview binds to localhost only. The server exposes the application, approved assets and the prepared dashboard snapshot; raw exports, source scripts and Git files are not served.
 
-The repository includes application code and the owner-approved curated reporting snapshot in `data/shared-dashboard.json`, so a fresh clone displays the current retained figures. It contains the same approved reporting data as the live publication, including the October effort evidence. Raw exports, credentials and private transcript evidence remain excluded. The app loads the shared snapshot first, then falls back to a local prepared snapshot or the empty setup state when unavailable.
+The repository includes application code and the curated reporting snapshot in `data/shared-dashboard.json`. On the published `main` branch this is the approved live input. A local review branch may contain a newer unpublished snapshot; inspect `meta.publicationStatus` and the publication review before sharing it. Raw exports, credentials and private transcript evidence remain excluded. The app loads the shared snapshot first, then falls back to a local prepared snapshot or the empty setup state when unavailable.
 
 ## Views
 
-- At a glance (default): the original five dashboard vectors—LinkedIn Ads, Waalaxy, LinkedIn content, Pipedrive and Video DMs—plus Referrals and a separate Christian Time & effort support category—with activity, responses, outcomes and source dates. Supplementary acquisition research is retained for a future scope expansion.
+- At a glance (default): Charles's four highest-level outcomes first, followed by the original five vectors—LinkedIn Ads, Waalaxy, LinkedIn content, Pipedrive and Video DMs—plus Referrals and Christian Time & effort. Incomplete outcomes show confirmed minimums or Pending, never inferred zeros.
 
 - Overview: equal emphasis on activity and outcomes, weekly deal creation, follow-up priorities and source coverage.
 - LinkedIn Ads: dated spend/delivery, lead quality and campaign economics.
@@ -48,7 +48,7 @@ Date presets and custom dates operate on dated evidence. Undated inventories rem
 
 ## Reporting calendar
 
-Monday–Sunday weeks, `America/Denver`, including daylight-saving changes. Preserve source day boundaries where exports are already aggregated by another timezone. The default range is 30 days anchored to the latest complete CRM reporting day; publishing an older snapshot today does not advance its cutoff. Time & effort has its separately labelled October-to-date scope. Partial and historical source coverage must remain visible.
+Monday–Sunday weeks, `America/Denver`, including daylight-saving changes. Preserve source day boundaries where exports are already aggregated by another timezone. The October 21 review defaults to this week through the stated review date, with today partial. Complete-day presets end October 20. Each source is independently bounded: an old CRM export cannot provide this week's totals, and calendar future-event coverage cannot establish bookings created after collection. Time & effort retains its separately labelled October scope and evidence date.
 
 ## Data preparation
 
