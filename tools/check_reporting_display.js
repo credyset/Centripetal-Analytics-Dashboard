@@ -121,4 +121,18 @@ assert.equal(run("vectorData().find(v=>v.id==='content').responses[0].value"),nu
 ctx.onlyCompany.content.daily.push({date:'2026-10-20',account:'Charles Solomon',impressions:17,engagements:3});
 assert.equal(run("vectorData().find(v=>v.id==='content').activity[0].value"),'17');
 assert.equal(run("vectorData().find(v=>v.id==='content').responses[0].value"),'3');
+// A verified unchanged-state check may bridge inventory coverage while its
+// original census clock remains intact. Incomplete or unrelated checks cannot.
+ctx.stateBridgeFixture={snapshotAt:'2026-10-24T03:11:09.030Z',coverage:{reportingThrough:'2026-10-22',observedThrough:'2026-10-23'},activities:[{id:1},{id:2}],incrementalReview:{counts:{deals_delta:0,deleted_deals_delta:0,activities_delta:0,recents_delta:0,archived_deals:0},effectiveCoverage:{baselineSnapshotAt:'2026-10-24T03:11:09.030Z',baselineCollectionStartedAtUTC:'2026-10-24T03:11:07.475Z',overlapSinceTimestampUTC:'2026-10-24T03:11:07Z',checkCompletedAtUTC:'2026-10-24T06:32:30.142Z',reportingThrough:'2026-10-23',observedThrough:'2026-10-24',currentDayPartial:true,statePreserved:true,comparisonComplete:true,sameAccessibleAccountScope:true,activityStateRecordsCompared:2,newActivityIds:0,removedActivityIds:0,changedActivityRecords:0}}};
+const originalStateFixture=JSON.stringify(ctx.stateBridgeFixture);
+assert.equal(run('crmStateCoverage(stateBridgeFixture).reportingThrough'),'2026-10-23');
+assert.equal(run('crmStateCoverage(stateBridgeFixture).observedThrough'),'2026-10-24');
+assert.equal(ctx.stateBridgeFixture.snapshotAt,'2026-10-24T03:11:09.030Z');
+assert.equal(JSON.stringify(ctx.stateBridgeFixture),originalStateFixture);
+for(const change of [{baselineSnapshotAt:'2026-10-24T03:11:08Z'},{overlapSinceTimestampUTC:'2026-10-24T03:11:09Z'},{comparisonComplete:false},{sameAccessibleAccountScope:false},{activityStateRecordsCompared:3},{removedActivityIds:1},{changedActivityRecords:1},{observedThrough:'2026-10-25'}]){
+ ctx.invalidBridge=JSON.parse(originalStateFixture);Object.assign(ctx.invalidBridge.incrementalReview.effectiveCoverage,change);
+ assert.equal(run('crmStateCoverage(invalidBridge).reportingThrough'),'2026-10-22');
+}
+ctx.invalidBridge=JSON.parse(originalStateFixture);ctx.invalidBridge.incrementalReview.counts.deleted_deals_delta=1;
+assert.equal(run('crmStateCoverage(invalidBridge).reportingThrough'),'2026-10-22');
 console.log('Reporting display: selected-date impressions, missing/zero handling, fixed reach and source-specific coverage passed.');

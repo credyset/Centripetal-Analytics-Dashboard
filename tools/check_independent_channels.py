@@ -38,6 +38,17 @@ def check_video(data):
     assert all(r['platformSendDate'] is None for r in unconfirmed)
     crm_cohort={(r['profile'],r.get('sourceLoomAssetId')):r for r in video['crmReconciliation']['records'] if r.get('crmDealId')}
     inventory=video['rows']
+    focused=review.get('focusedNativeReviews') or {}
+    focused_checks=focused.get('profileChecks',[])
+    focused_by_profile={r['profileId']:r for r in focused_checks}
+    if focused:
+        assert len(focused_by_profile)==len(focused_checks)==focused['profilesChecked']
+        assert focused['sourceTimezone'] is None
+        for check in focused_checks:
+            assert check['sourceEvidenceBasis']=='native_direct' and check['profileIdentityVerified'] is True
+            assert check['senderAccount']=='Charles Solomon' and check['coverageCompleteForThread'] is False
+            assert check['crmAssetMatchRequiredForNativeProof'] is False
+            assert timestamp(check['observedAt'])<=timestamp(focused['reviewedAt'])<=timestamp(review['reviewedAt'])
     outbound_video=[]
     for event in events:
         assert event['profileId'] in by_profile
@@ -46,12 +57,27 @@ def check_video(data):
         assert event['sourceMessageId'] is None and event['sourceConversationId'] is None
         assert event['channel']=='linkedin_message'
         assert re.fullmatch(r'\d{4}-\d{2}-\d{2}',event['date'])
+        if event.get('sourceEvidenceBasis')=='native_direct':
+            assert event.get('profileIdentityVerified') is True and event.get('senderVerifiedWithinMessageBlock') is True, 'Direct native sender/recipient identity is unverified'
+            assert event.get('observedAt') and event.get('dateBasis') and event.get('evidenceBasis')
+            assert event.get('displayedDateLabel') and event.get('displayedTime')
+            assert re.fullmatch(r'[0-9a-f]{64}',event.get('contentFingerprint','')), 'Direct native message lacks a stable content fingerprint'
+            if focused:
+                assert event['profileId'] in focused_by_profile
+                assert event['observedAt']==focused_by_profile[event['profileId']]['observedAt']
         expected='|'.join((event['profileId'],event['direction'],event['date'],event.get('assetId') or 'no-video'))
-        assert event['dedupKey']==expected
+        if event.get('contentFingerprint') and not event.get('assetId'):
+            assert event.get('displayedTime') and event['contentFingerprint'] in event['dedupKey'], 'Text-event identity lacks its own time/content evidence'
+            assert event['dedupKey'].startswith('|'.join((event['profileId'],event['direction'],event['date']))+'|')
+        else:
+            assert event['dedupKey']==expected
         if event['direction']=='outbound' and event['videoIncluded'] is True:
             outbound_video.append(event)
             check=check_by_profile.get(event['profileId']);record=by_profile[event['profileId']]
-            if check and check.get('assetId')==event['assetId']:
+            direct=event.get('sourceEvidenceBasis')=='native_direct'
+            if direct:
+                assert event.get('dateTimeAssetAnchoredWithinSameMessageBlock') is True, 'Asset/sender/date/time were not verified within the same message block'
+            elif check and check.get('assetId')==event['assetId']:
                 assert check['status']=='matched' and check['platformSendDate']==event['date']
             else:
                 assert event.get('historicalSourceSnapshotAt'), 'Message outside current bounded check has no historical provenance'
@@ -62,14 +88,21 @@ def check_video(data):
             assert record['platformSendDate']==max(profile_send_dates), 'Latest observed send must follow actual observed messages'
             assert event['sender']=='Charles Solomon' and record['platformVideoAttributionEstablished'] is True
             crm=crm_cohort.get((event['profileId'],event['assetId'])) or crm_cohort.get((event['profileId'],None))
-            if crm:
+            if direct:
+                # Native message proof is independent of whether the original
+                # worksheet or currently accessible CRM notes retain the asset.
+                pass
+            elif crm:
                 assert event['crmDealId']==crm['crmDealId'] and event['sourceNoteId'] in crm['crmNoteIds']
             else:
                 assert event.get('historicalSourceSnapshotAt'), 'Original native proof was detached from its historical CRM scope'
             if 'currentInventorySnapshotAt' in event:
                 assert event['currentInventorySnapshotAt']==video['snapshotAt']
-                expected_rows=[r['sourceRow'] for r in inventory if r['id']==event['profileId'] and r.get('recordingAssetId')==event['assetId']]
-                assert event['currentSourceRows']==expected_rows, 'Historical row number reused as current join'
+                expected_assets=[r['sourceRow'] for r in inventory if r['id']==event['profileId'] and r.get('recordingAssetId')==event['assetId']]
+                expected_profiles=[r['sourceRow'] for r in inventory if r['id']==event['profileId']]
+                assert event['currentSourceRows']==(expected_profiles if direct else expected_assets), 'Historical row number reused as current join'
+                if direct:
+                    assert event['currentAssetSourceRows']==expected_assets, 'Direct native proof invented a worksheet asset match'
                 if event.get('sourceInventorySnapshotAt')!=video['snapshotAt']:
                     assert event['historicalSourceSnapshotAt']==event['sourceInventorySnapshotAt'] and event['sourceRowBasis']
             assert event['readReceiptDate'] is None, 'Undated seen marker became a dated receipt'
@@ -85,7 +118,16 @@ def check_video(data):
     for check in matched:
         assert any(e['profileId']==check['profileId'] and e['assetId']==check['assetId'] and e['date']==check['platformSendDate'] for e in outbound_video), 'Matched profile has no corresponding observed send'
     assert summary['additionalSendsAboveExistingReportedStatusCount']==0, 'Corroborations became extra sends'
-    assert summary['newVerifiedVideoReplyEventsAdded']==0
+    attributed_replies=[e for e in events if e.get('replyToVideoAttributionEstablished') is True]
+    for reply in attributed_replies:
+        assert reply['direction']=='inbound', 'Outbound content was treated as an attributed prospect reply'
+        assert reply.get('attributionBasis'), 'Video reply attribution requires explicit conversation evidence'
+        asset=reply.get('replyToVideoAssetId')
+        assert asset and re.fullmatch(r'[0-9a-f]{32}',asset), 'Reply attribution has no exact source video asset'
+        assert any(sent['profileId']==reply['profileId'] and sent['assetId']==asset and sent['date']<=reply['date'] for sent in outbound_video), 'Attributed reply has no prior observed matching outbound video'
+    assert 0<=summary['newVerifiedVideoReplyEventsAdded']<=len(attributed_replies), 'Incremental replies exceed actual attributed source events'
+    if attributed_replies or 'retainedObservedVideoReplyEvents' in summary:
+        assert summary.get('retainedObservedVideoReplyEvents')==len(attributed_replies), 'Retained video replies must follow explicit source attribution'
     cypher=by_profile['yaoyuyang']
     cypher_reply=[e for e in events if e['profileId']=='yaoyuyang' and e['direction']=='inbound']
     assert len(cypher_reply)==1 and cypher_reply[0]['videoIncluded'] is False
@@ -170,11 +212,60 @@ def check_creator(data):
     assert creator['summary']['membersReached']==export['summary']['membersReached']
 
 
+def check_native_attribution_regressions(data):
+    """Direct proof can survive absent joins, while reply attribution needs evidence."""
+    fixture=copy.deepcopy(data);review=fixture['video']['messageDateReview']
+    original=next(e for e in review['platformObservedEvents']
+                  if e['direction']=='outbound' and e['videoIncluded'] is True)
+    direct=copy.deepcopy(original)
+    asset=next(candidate for candidate in ('a'*32,'b'*32,'c'*32)
+               if all(r.get('recordingAssetId')!=candidate for r in fixture['video']['rows']))
+    direct.update(observationId='synthetic-native-without-crm-asset',sourceEvidenceBasis='native_direct',
+                  assetId=asset,assetLink='https://www.loom.com/share/'+asset,
+                  dedupKey='|'.join((original['profileId'],'outbound',original['date'],asset)),
+                  crmDealId=None,sourceNoteId=None,
+                  currentInventorySnapshotAt=fixture['video']['snapshotAt'],
+                  currentSourceRows=[r['sourceRow'] for r in fixture['video']['rows'] if r['id']==original['profileId']],
+                  currentAssetSourceRows=[],profileIdentityVerified=True,senderVerifiedWithinMessageBlock=True,
+                  dateTimeAssetAnchoredWithinSameMessageBlock=True,contentFingerprint='f'*64)
+    # This synthetic fixture exercises message invariants separately from the
+    # retained real six-profile proof metadata; it cannot change that source.
+    review.pop('focusedNativeReviews',None)
+    review['platformObservedEvents'].append(direct)
+    review['summary']['retainedObservedVideoSendEvents']=sum(e['direction']=='outbound' and e['videoIncluded'] is True for e in review['platformObservedEvents'])
+    check_video(fixture)  # Missing CRM/worksheet asset is not missing native proof.
+    reply=copy.deepcopy(direct)
+    reply.update(observationId='synthetic-explicit-video-reply',direction='inbound',sender='Synthetic prospect',
+                 videoIncluded=False,assetId=None,assetLink=None,
+                 dedupKey='|'.join((direct['profileId'],'inbound',direct['date'],'no-video',direct['displayedTime'],'e'*64)),
+                 contentFingerprint='e'*64,dateTimeAssetAnchoredWithinSameMessageBlock=False,
+                 replyToVideoAttributionEstablished=True,replyToVideoAssetId=asset,
+                 attributionBasis='Explicit response to a question about the source video.')
+    review['platformObservedEvents'].append(reply)
+    review['summary']['retainedObservedVideoReplyEvents']=sum(e.get('replyToVideoAttributionEstablished') is True for e in review['platformObservedEvents'])
+    review['summary']['newVerifiedVideoReplyEventsAdded']=1
+    check_video(fixture)  # An attributed text reply contains no video itself.
+    for mutate in (
+        lambda e:e.pop('attributionBasis'),
+        lambda e:e.update(replyToVideoAssetId='d'*32),
+        lambda e:e.update(direction='outbound'),
+    ):
+        invalid=copy.deepcopy(fixture)
+        target=next(e for e in invalid['video']['messageDateReview']['platformObservedEvents']
+                    if e['observationId']=='synthetic-explicit-video-reply')
+        mutate(target)
+        try:check_video(invalid)
+        except AssertionError:pass
+        else:raise AssertionError('Unsupported native video-reply attribution was accepted')
+    assert fixture.get('outcomes')==data.get('outcomes')
+    assert fixture.get('time')==data.get('time')
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--snapshot',type=Path,default=ROOT/'data/shared-dashboard.json')
     data=json.loads(parser.parse_args().snapshot.read_text())
-    check_video(data);check_retained_sources(data);check_creator(data)
+    check_video(data);check_retained_sources(data);check_creator(data);check_native_attribution_regressions(data)
     # These checks must reject the damaging interpretations, not just parse JSON.
     for mutate in (
         lambda d:d['video']['messageDateReview']['platformObservedEvents'].append(copy.deepcopy(d['video']['messageDateReview']['platformObservedEvents'][0])),

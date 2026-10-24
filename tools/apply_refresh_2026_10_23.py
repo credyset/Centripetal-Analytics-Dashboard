@@ -233,10 +233,19 @@ def merge_message_review(previous, incoming, video, sheet_subset, sheet_collecte
         asset = item.get('assetId') or item.get('loomAssetId')
         exact_assets = [r for r in matches if asset and r.get('recordingAssetId') == asset]
         item['currentInventorySnapshotAt'] = video.get('snapshotAt')
-        item['currentSourceRows'] = [r['sourceRow'] for r in exact_assets if asset] if asset else [r['sourceRow'] for r in matches]
-        item['currentInventoryMatchBasis'] = ('Exact profile and identical recording asset; historical observation row is unchanged.' if exact_assets else
-            'Exact profile only; current inventory does not independently corroborate an identical asset.' if matches else
-            'Profile absent from current inventory; historical observed message retained independently.')
+        if item.get('sourceEvidenceBasis') == 'native_direct':
+            # Native message proof remains valid independently of the current
+            # worksheet recording cell or an absent CRM note. Track profile and
+            # asset joins separately on every future inventory-only replay.
+            item['currentSourceRows'] = [r['sourceRow'] for r in matches]
+            item['currentAssetSourceRows'] = [r['sourceRow'] for r in exact_assets]
+            item['currentInventoryMatchBasis'] = ('Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents.' if matches else
+                'Profile absent from current inventory; historical native message proof retained independently.')
+        else:
+            item['currentSourceRows'] = [r['sourceRow'] for r in exact_assets if asset] if asset else [r['sourceRow'] for r in matches]
+            item['currentInventoryMatchBasis'] = ('Exact profile and identical recording asset; historical observation row is unchanged.' if exact_assets else
+                'Exact profile only; current inventory does not independently corroborate an identical asset.' if matches else
+                'Profile absent from current inventory; historical observed message retained independently.')
         if item.get('sourceInventorySnapshotAt') != video.get('snapshotAt'):
             item.setdefault('historicalSourceSnapshotAt', item.get('sourceInventorySnapshotAt'))
             item['sourceRowBasis'] = 'Row number at the original observation; currentSourceRows is a separate current-inventory join.'
@@ -297,7 +306,8 @@ def merge_message_review(previous, incoming, video, sheet_subset, sheet_collecte
         relatedActualOutboundEmails=len(review.get('separateEmailContext', [])),
         explicitCrmReplyDateReports=len(review.get('explicitReplyReports', [])),
         accountWideActualVideoSends=None, accountWideActualVideoReplies=None,
-        retainedObservedVideoSendEvents=sum(e.get('direction') == 'outbound' and bool(e.get('videoIncluded')) for e in review['platformObservedEvents']))
+        retainedObservedVideoSendEvents=sum(e.get('direction') == 'outbound' and bool(e.get('videoIncluded')) for e in review['platformObservedEvents']),
+        retainedObservedVideoReplyEvents=sum(e.get('direction') == 'inbound' and e.get('replyToVideoAttributionEstablished') is True for e in review['platformObservedEvents']))
     review['inventorySupplementCollectedAt'] = video.get('snapshotAt')
     note = 'Current worksheet inventory/date reports were refreshed independently. Every native observation retains its original observedAt, displayed day, precision and historical row; newer inventory collection does not re-date native proof.'
     if note not in review.setdefault('notes', []):

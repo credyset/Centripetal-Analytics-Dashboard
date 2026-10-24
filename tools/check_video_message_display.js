@@ -23,6 +23,10 @@ const html=run('videoMessageDateEvidence(S.data.video)');
 assert.match(html,/Video sent · observed/);assert.match(html,/Sent · worksheet evidence/);
 assert.match(html,/Latest LinkedIn reply · retained history/);assert.match(html,/Reply · observed/);
 assert.match(html,/not a complete send\/reply census/);
+assert.match(run("videoPlatformCheckLabel('matched_native_direct')"),/Video matched · direct conversation/);
+assert.match(run("videoPlatformCheckLabel('general_text_observed')"),/Text observed · video unconfirmed/);
+assert.match(run("videoPlatformCheckLabel('video_reference_asset_unconfirmed')"),/exact asset unconfirmed/);
+assert.equal(run('videoPlatformCheckLabel(null)'),'Not checked');
 run("S.start='2026-10-20';S.end='2026-10-20';");
 assert.equal(observed().videoSends,0);assert.equal(observed().generalReplies,0);
 assert.equal(vector().cardActivity.value,null); // Missing sample evidence never becomes verified zero.
@@ -30,4 +34,104 @@ run("S.start='2026-10-21';S.end='2026-10-21';");
 assert.equal(observed().videoSends,1);assert.equal(observed().generalReplies,0);
 run("S.start='2026-10-23';S.end='2026-10-23';");
 assert.equal(vector().cardActivity.value,null);
-console.log('Video date display: observed source-day minimums, reported/history separation, no email duplication, no inferred reply/outcome or zero passed.');
+// Exact worksheet response labels must be visible and searchable without
+// becoming dated/native reply events or changing the observed-message ledger.
+ctx.capturedTables=[];
+run("const originalVideoTable=table;table=(...args)=>{capturedTables.push(args);return originalVideoTable(...args);};");
+ctx.responseFixture=[{id:'profile-a',company:'Response A',responseStatus:'Interested',hasResponseStatus:true},{id:'profile-b',company:'Response B',status:'Video Sent',hasResponseStatus:false}];
+run("S.data={meta:{},video:{rows:responseFixture,summary:{}}};video();");
+const register=ctx.capturedTables.find(t=>t[0]==='video-prospects'),responseCol=register[3].find(c=>c.key==='responseStatus');
+assert.ok(responseCol,'The response column must use the actual searchable source field');
+assert.match(responseCol.render('Interested',ctx.responseFixture[0]),/^Interested<div/);
+assert.match(responseCol.render('Interested',ctx.responseFixture[0]),/Undated worksheet status/);
+assert.doesNotMatch(responseCol.render('<script>private body</script>',{}),/<script>/);
+assert.equal(vector().responses[0].value,null);
+const listeners={},body={innerHTML:''},count={textContent:''},controls={input:{addEventListener:(event,callback)=>{listeners[event]=callback;}},prev:{},next:{}};
+ctx.document.getElementById=()=>({querySelector:selector=>selector==='tbody'?body:selector==='.table-count'?count:selector==='input'?controls.input:selector==='[data-page="prev"]'?controls.prev:controls.next,querySelectorAll:()=>[]});
+ctx.searchRows=register[2];ctx.searchCols=register[3];run("bindTable('response-search',searchRows,searchCols);");
+listeners.input({target:{value:'Interested'}});
+assert.match(body.innerHTML,/Response A/);assert.doesNotMatch(body.innerHTML,/Response B/);
+assert.equal(count.textContent,'1–1 of 1 records');
+
+// Broader current identity/asset coverage is a separate denominator from the
+// dated source cohort. Original and matched IDs stay separate in the gap table.
+ctx.actualVideo=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/shared-dashboard.json'),'utf8')).video;
+const identityHtml=run('videoIdentityAssetEvidence(actualVideo)'),identity=ctx.actualVideo.crmReconciliation.currentIdentityAssetReview;
+assert.match(identityHtml,/broader ID\/asset scope is separate from the dated report cohort/);
+assert.ok(identityHtml.includes(`${identity.sameAssetInCrmNotes} of ${identity.sourceLoomUrls}`));
+assert.match(identityHtml,/not sent messages/);
+const gaps=ctx.capturedTables.find(t=>t[0]==='video-crm-linkage-gaps');
+assert.equal(gaps[2].length,ctx.actualVideo.crmReconciliation.specificLinkageGaps.length);
+const mapped=gaps[2].find(r=>r.sourceSheetDealId&&r.matchedCrmDealId&&r.sourceSheetDealId!==r.matchedCrmDealId);
+assert.ok(mapped);assert.notEqual(mapped.sourceSheetDealId,mapped.matchedCrmDealId);
+ctx.staleVideo=JSON.parse(JSON.stringify(ctx.actualVideo));ctx.staleVideo.snapshotAt='2099-01-01T00:00:00Z';
+const staleHtml=run('videoIdentityAssetEvidence(staleVideo)');
+assert.match(staleHtml,/different worksheet snapshot/);assert.doesNotMatch(staleHtml,/Exact profile matches/);
+
+// A newly reviewed historical source fact is visible in its own review, while
+// selected October send/reply minimums remain unchanged without event evidence.
+ctx.gapFixture={snapshotAt:'2026-10-24T15:00:00Z',summary:{note:'Two source questions were reviewed; coverage stays bounded.'},records:[{profileId:'profile-c',company:'Historical C',contact:'Contact C',status:'Historical asset matched; date bounded',findings:['Original video source day verified; CRM note link remains absent.'],platformSendDate:'2026-09-10',platformReplyDate:'2026-09-16',sendAssetObserved:true,crmDealId:123},{profileId:'profile-d',company:'Bounded D',status:'Still unresolved',findings:['Matching outbound asset was not visible.'],sendAssetObserved:false}],notes:['No commercial decision was changed.']};
+run('S.data=input;S.data.video.gapResolutionReview=gapFixture;');
+const beforeGap=observed(),gapHtml=run('videoGapResolutionEvidence(S.data.video)');
+assert.match(gapHtml,/fixed review is independent of the reporting-period filter/);
+assert.match(gapHtml,/adds no send, reply or commercial-outcome count/);
+const gapTable=ctx.capturedTables.find(t=>t[0]==='video-gap-resolution');
+assert.equal(gapTable[2].length,2);assert.equal(gapTable[2][0].platformSendDate,'2026-09-10');
+const assetCol=gapTable[3].find(c=>c.key==='sendAssetObserved');
+assert.equal(assetCol.render(false),'Not observed in bounded view');assert.equal(assetCol.render(undefined),'Not established');
+assert.deepEqual(observed(),beforeGap);
+assert.equal(vector().responses[0].value,null);assert.equal(vector().outcomes[0].value,null);
+// A text reply can explicitly refer to a video without containing one itself.
+// Its September source day must not increase October replies; a general October
+// acknowledgment remains unattributed even if it appears after an outbound.
+ctx.actualOutcomes=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/shared-dashboard.json'),'utf8')).outcomes;
+run("S.data.outcomes=actualOutcomes;S.start='2026-10-01';S.end='2026-10-24';");
+const priorOutcomes=run('JSON.stringify(selectedOutcomeMetrics())'),priorLedger=JSON.stringify(ctx.actualOutcomes);
+ctx.historicalReply={dedupKey:'c|inbound|2026-09-16|explicit-video-reply',profileId:'profile-c',date:'2026-09-16',direction:'inbound',videoIncluded:false,replyToVideoAttributionEstablished:true,replyToVideoAssetId:'a'.repeat(32),attributionBasis:'Explicit response to a question about the video.',dateYearConfidence:'moderate',dateBasis:'Current-year label convention; exact source timezone unknown.'};
+run('S.data.video.messageDateReview.platformObservedEvents.push(historicalReply);');
+run("S.start='2026-10-01';S.end='2026-10-24';");
+assert.equal(observed().videoReplies,0);assert.equal(observed().generalReplies,1);
+assert.equal(vector().responses[0].value,null);
+assert.equal(run('JSON.stringify(selectedOutcomeMetrics())'),priorOutcomes);
+run("S.start='2026-09-01';S.end='2026-09-30';");
+assert.equal(observed().videoReplies,1);assert.equal(observed().generalReplies,0);
+assert.equal(vector().responses[0].value,'≥1');assert.equal(vector().responses[0].basis,'partial');
+const attributedHtml=run('videoMessageDateEvidence(S.data.video)');
+assert.match(attributedHtml,/Observed replies linked to video/);
+assert.match(attributedHtml,/not necessarily positive interest/);
+assert.match(attributedHtml,/Account-wide Video DM replies/);
+const latestNativeTable=ctx.capturedTables.filter(t=>t[0]==='video-platform-observations').at(-1),nativeEvidenceCol=latestNativeTable[3].find(c=>c.key==='evidenceBasis');
+assert.match(nativeEvidenceCol.render('Observed source block',ctx.historicalReply),/moderate confidence/);
+assert.match(nativeEvidenceCol.render('Observed source block',ctx.historicalReply),/source timezone unknown/);
+assert.equal(run('JSON.stringify(S.data.outcomes)'),priorLedger);
+ctx.historicalReply.replyToVideoAttributionEstablished=false;
+assert.equal(observed().videoReplies,0);assert.equal(observed().generalReplies,1);
+assert.equal(vector().responses[0].value,null); // videoIncluded=false alone is never attribution.
+// A revision-bound source minimum is usable only when both offset instants
+// fall inside the selected Mountain dates; it is never a video-send count.
+ctx.appearanceVideo={snapshotAt:'2026-10-24T03:10:06Z',rows:[{id:'existing',sourceRow:3,company:'Prior company',contact:'Prior contact'},{id:'new-a',sourceRow:431,company:'New Co A',contact:'New Contact A'},{id:'new-b',sourceRow:432,company:'New Co B',contact:'New Contact B'}],gapResolutionReview:{sourceAppearanceReview:{snapshotAt:'2026-10-24T06:35:26Z',reviewedAt:'2026-10-24T06:35:26Z',appliesToSnapshotAt:'2026-10-24T03:10:06Z',revisionComparisonComplete:true,stableIdentityComparisonVerified:true,baselineRevisionId:'1253',laterRevisionId:'1290',firstAppearedAfter:'2026-10-21T20:42:06.138Z',firstAppearedBy:'2026-10-22T21:59:05.316Z',baselineValidSourceRows:1,laterValidSourceRows:3,retainedPriorStableIdentities:1,newStableSourceRecordsMinimum:2,newUniqueProfilesMinimum:2,sourceRecordsRemoved:0,records:[{profileId:'new-a',currentSourceRow:431,company:'New Co A',contact:'New Contact A',firstAppearedAfter:'2026-10-21T20:42:06.138Z',firstAppearedBy:'2026-10-22T21:59:05.316Z'},{profileId:'new-b',currentSourceRow:432,company:'New Co B',contact:'New Contact B',firstAppearedAfter:'2026-10-21T20:42:06.138Z',firstAppearedBy:'2026-10-22T21:59:05.316Z'}]}}};
+run("S.start='2026-10-19';S.end='2026-10-25';");
+assert.equal(run('selectedVideoSourceAppearances(appearanceVideo).value'),2);
+assert.match(run('videoSourceAppearanceEvidence(appearanceVideo)'),/≥2/);
+assert.match(run('videoSourceAppearanceEvidence(appearanceVideo)'),/not exact row-added timestamps/);
+run("S.start='2026-10-21';S.end='2026-10-21';");
+assert.equal(run('selectedVideoSourceAppearances(appearanceVideo).value'),null);
+const partialAppearanceHtml=run('videoSourceAppearanceEvidence(appearanceVideo)');
+assert.match(partialAppearanceHtml,/Not measured/);assert.match(partialAppearanceHtml,/Oct 22, 2026/);assert.doesNotMatch(partialAppearanceHtml,/≥2/);
+for(const mutation of [r=>r.revisionComparisonComplete=false,r=>r.stableIdentityComparisonVerified=false,r=>r.appliesToSnapshotAt='2000-01-01T00:00:00Z',r=>r.newStableSourceRecordsMinimum=0,r=>r.laterValidSourceRows=99,r=>r.sourceRecordsRemoved=1,r=>r.records[0].profileId='wrong-profile',r=>r.records[0].contact='Different person']){
+ ctx.invalidAppearance=JSON.parse(JSON.stringify(ctx.appearanceVideo));mutation(ctx.invalidAppearance.gapResolutionReview.sourceAppearanceReview);
+ run("S.start='2026-10-19';S.end='2026-10-25';");
+ assert.equal(run('selectedVideoSourceAppearances(invalidAppearance).value'),null);
+}
+// Both bounds share a UTC calendar day but straddle two Mountain days.
+ctx.offsetAppearance=JSON.parse(JSON.stringify(ctx.appearanceVideo));
+const offsetReview=ctx.offsetAppearance.gapResolutionReview.sourceAppearanceReview;
+offsetReview.firstAppearedAfter='2026-10-22T05:30:00Z';offsetReview.firstAppearedBy='2026-10-22T06:30:00Z';
+for(const record of offsetReview.records){record.firstAppearedAfter=offsetReview.firstAppearedAfter;record.firstAppearedBy=offsetReview.firstAppearedBy;}
+run("S.start='2026-10-22';S.end='2026-10-22';");assert.equal(run('selectedVideoSourceAppearances(offsetAppearance).value'),null);
+run("S.start='2026-10-21';S.end='2026-10-22';");assert.equal(run('selectedVideoSourceAppearances(offsetAppearance).value'),2);
+const eventCountBeforeAppearance=run('S.data.video.messageDateReview.platformObservedEvents.length');
+run('S.data.video.gapResolutionReview.sourceAppearanceReview=appearanceVideo.gapResolutionReview.sourceAppearanceReview;videoSourceAppearanceEvidence(S.data.video);');
+assert.equal(run('S.data.video.messageDateReview.platformObservedEvents.length'),eventCountBeforeAppearance);
+assert.equal(run('JSON.stringify(S.data.outcomes)'),priorLedger);
+console.log('Video date display: observed minimums, searchable exact worksheet responses, independent identity/asset scopes and bounded gap-review facts passed.');

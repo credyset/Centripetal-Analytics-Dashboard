@@ -1,29 +1,29 @@
 {
   "meta": {
-    "generatedAt": "2026-10-24T03:47:31.288650+00:00",
-    "asOfDate": "2026-10-23",
+    "generatedAt": "2026-10-24T06:40:22.149268+00:00",
+    "asOfDate": "2026-10-24",
     "timezone": "America/Denver",
     "scope": "Charles Solomon and Centripetal Advisors",
     "concept": false,
     "autoRefreshEnabled": false,
     "weekStartsOn": "Monday",
-    "defaultReportingThrough": "2026-10-23",
+    "defaultReportingThrough": "2026-10-24",
     "note": "Published snapshot; Source coverage varies. Automatic refresh is not enabled.",
     "public": true,
     "publicDataPolicy": "Owner-approved detailed snapshot including prospect identities and available business record links.",
-    "analyticsRevisedAt": "2026-10-24T03:47:31.288650+00:00",
-    "lastRevisionNote": "Independently collected source families refreshed with separate source clocks. Commercial outcomes and the owner non-meeting estimate are unchanged.",
-    "revision": "October 23 independent live-source refresh",
-    "reportingAsOfDate": "2026-10-23",
-    "defaultCompleteReportingThrough": "2026-10-22",
+    "analyticsRevisedAt": "2026-10-24T06:40:22.149268+00:00",
+    "lastRevisionNote": "Focused source checks add historical native-message evidence and clarify CRM/identity/date gaps. Parent inventory clocks, commercial outcomes and owner effort estimates retain their separate evidence dates.",
+    "revision": "October 24 focused Video DM and CRM gap resolution",
+    "reportingAsOfDate": "2026-10-24",
+    "defaultCompleteReportingThrough": "2026-10-23",
     "defaultDatePreset": "week",
     "currentDayPartial": true,
     "publicationStatus": "owner_approved",
     "publicationPolicyConfirmedOn": "2026-10-22",
     "publicationPolicyBasis": "The owner explicitly instructed publication of the completed local metrics and revised structure to the Centripetal Analytics GitHub project and its shareable GitHub Pages dashboard so the team can view and interact with them. This supersedes the earlier local-only hold.",
-    "localReviewOn": "2026-10-23",
+    "localReviewOn": "2026-10-24",
     "publicationApprovedAt": "2026-10-22T12:57:17.430019+00:00",
-    "publicationReview": "REFRESH_REVIEW_2026-10-23.md"
+    "publicationReview": "GAP_RESOLUTION_2026-10-24.md"
   },
   "ads": {
     "status": "available",
@@ -63927,6 +63927,57 @@
         "The source export could not be completed through the available Chrome download interaction. A refreshed all-status deal export, activity export and event/stage history remain needed."
       ],
       "supersededByFullSnapshotAt": "2026-10-22T05:56:42.938699Z"
+    },
+    "incrementalReview": {
+      "reviewedAt": "2026-10-24T06:32:30.142Z",
+      "sinceTimestampUTC": "2026-10-24T03:11:09Z",
+      "counts": {
+        "deals_delta": 0,
+        "deleted_deals_delta": 0,
+        "activities_delta": 0,
+        "archived_deals": 0,
+        "recents_delta": 0
+      },
+      "inventoryRecollected": false,
+      "inventorySnapshotAtUnchanged": "2026-10-24T03:11:09.030Z",
+      "nonAtomic": true,
+      "scope": "Default non-deleted all-accessible-owner deal updates; separately deleted deals; all accessible activities; recents for deal/activity/person/organization/note; separately all accessible archived deals. Each source has its own captured collection time.",
+      "result": "No changes returned in overlapping accessible deal/update queries, and all924 currently returned activity records exactly match the retained state. The original full inventory timestamp is unchanged; the separately dated state bridge supports complete October23 state reporting plus partial October24 observation, within the accessible source scope.",
+      "effectiveCoverage": {
+        "baselineSnapshotAt": "2026-10-24T03:11:09.030Z",
+        "baselineCollectionStartedAtUTC": "2026-10-24T03:11:07.475Z",
+        "baselineCollectionCompletedAtUTC": "2026-10-24T03:11:09.030Z",
+        "overlapSinceTimestampUTC": "2026-10-24T03:11:07Z",
+        "checkStartedAtUTC": "2026-10-24T06:32:21.852Z",
+        "checkCompletedAtUTC": "2026-10-24T06:32:30.142Z",
+        "reportingThrough": "2026-10-23",
+        "observedThrough": "2026-10-24",
+        "currentDayPartial": true,
+        "currentDayPartialDate": "2026-10-24",
+        "statePreserved": true,
+        "comparisonComplete": true,
+        "nonAtomic": true,
+        "sameAccessibleAccountScope": true,
+        "activityStateRecordsCompared": 924,
+        "activityStateDoneRecordsCompared": 547,
+        "activityStateUndoneRecordsCompared": 377,
+        "newActivityIds": 0,
+        "removedActivityIds": 0,
+        "changedActivityRecords": 0,
+        "inventoryCensusClockPreserved": true,
+        "deletedHistoricalEventCoverageComplete": false,
+        "completeActivityEventHistory": false,
+        "sourceBasis": "Overlapping updated-since reads for accessible non-deleted and deleted deals, accessible activity updates and recent changes from before the earliest baseline request; separately all accessible archived deals; fresh fully paginated done/undone activity census with user_id0 compared by unique ID and every returned field against all924 retained activity records. All changes/ID removals/additions were zero. The source checks are non-atomic. This verifies retained accessible state, not all historical deleted events, source writes or commercial outcomes.",
+        "sourceManifests": [
+          "overlap_delta_manifest.json",
+          "activity_state_manifest.json",
+          "activity_state_comparison.json"
+        ]
+      },
+      "initialDeltaSourceManifest": "delta_manifest.json",
+      "overlapSourceManifest": "overlap_delta_manifest.json",
+      "snapshotAt": "2026-10-24T06:32:30.142Z",
+      "baselineSnapshotAt": "2026-10-24T03:11:09.030Z"
     }
   },
   "video": {
@@ -79574,13 +79625,15 @@
           "company": "Chromie Health",
           "sourceSheetDealId": 322,
           "matchedCrmDealId": 836,
-          "gap": "Original worksheet ID322 remains source provenance for a deleted record; exact live profile/asset instead match836. Formal merge/replacement intent is not verified.",
+          "gap": "Original worksheet ID322 remains provenance for a deleted record. Live deal836 matches the exact LinkedIn profile; the current source recording cell is empty, so no source-asset match is claimed. Formal merge/replacement intent is not verified.",
           "noteIdsReviewed": [
             1102,
             1103,
             1247,
             1655
-          ]
+          ],
+          "wordingCorrectedAt": "2026-10-24T06:32:30.142Z",
+          "wordingCorrectionBasis": "Separately dated focused CRM review; original crosswalk collection clock and source ID are unchanged."
         },
         {
           "sourceRow": 375,
@@ -79604,8 +79657,8 @@
       ]
     },
     "messageDateReview": {
-      "snapshotAt": "2026-10-24T03:45:32.197Z",
-      "reviewedAt": "2026-10-24T03:45:32.197Z",
+      "snapshotAt": "2026-10-24T06:36:58.419Z",
+      "reviewedAt": "2026-10-24T06:36:58.419Z",
       "scope": {
         "videoSnapshotAt": "2026-10-24T03:10:06Z",
         "crmCollectionCompletedAt": "2026-10-22T13:52:09.901Z",
@@ -79646,7 +79699,18 @@
         "crmIdentityAssetReviewCollectedAt": "2026-10-24T03:20:51.223Z",
         "currentVideoInventorySnapshotAt": "2026-10-24T03:10:06Z",
         "currentPersonHistoryCollectedAt": "2026-10-24T03:10:06Z",
-        "historicalNativeProofRetained": true
+        "historicalNativeProofRetained": true,
+        "focusedNativeReviewedAt": "2026-10-24T06:36:58.419Z",
+        "focusedNativeProfilesReviewed": [
+          "alejandro-castellano",
+          "nadav-cornberg",
+          "saganschultz",
+          "jirka-bachel",
+          "noeljthomas",
+          "alexchantavy",
+          "marcsayoub",
+          "ashishmandavia"
+        ]
       },
       "summary": {
         "rowsWithReportedSendDate": 22,
@@ -79656,13 +79720,16 @@
         "explicitCrmReplyDateReports": 1,
         "relatedActualOutboundEmails": 23,
         "excludedEmailDrafts": 1,
-        "newVerifiedVideoSendEventsAdded": 9,
-        "newVerifiedVideoReplyEventsAdded": 0,
+        "newVerifiedVideoSendEventsAdded": 3,
+        "newVerifiedVideoReplyEventsAdded": 1,
         "accountWideActualVideoSends": null,
         "accountWideActualVideoReplies": null,
         "previouslyReportedSendsCorroborated": 18,
         "additionalSendsAboveExistingReportedStatusCount": 0,
-        "retainedObservedVideoSendEvents": 18
+        "retainedObservedVideoSendEvents": 21,
+        "retainedObservedVideoReplyEvents": 1,
+        "newHistoricalSeptemberVideoSendsAdded": 3,
+        "newOctoberObservedVideoSendsAdded": 0
       },
       "records": [
         {
@@ -79739,9 +79806,10 @@
         },
         {
           "profileId": "ashishmandavia",
-          "sourceRow": 1041,
+          "sourceRow": 371,
           "sourceRows": [
-            1041
+            1041,
+            371
           ],
           "company": "Sohar Health",
           "contact": "Ashish Mandavia MD",
@@ -79769,7 +79837,13 @@
           ],
           "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
           "sourceRowBasis": "Original evidence row retained; currentSourceRows independently identifies the refreshed inventory.",
-          "personHistoryCollectedAt": "2026-10-24T03:10:06Z"
+          "personHistoryCollectedAt": "2026-10-24T03:10:06Z",
+          "platformEvidenceCollectedAt": "2026-10-24T06:36:58.419Z",
+          "nativeDirectReviewCollectedAt": "2026-10-24T06:36:58.419Z",
+          "platformFollowUpDate": "2026-10-21",
+          "platformCheckStatus": "general_text_observed",
+          "platformVideoAttributionEstablished": false,
+          "nativeLatestSequenceContainsVideoAsset": false
         },
         {
           "profileId": "dos-bahá-4a671391",
@@ -79916,9 +79990,10 @@
         },
         {
           "profileId": "nadav-cornberg",
-          "sourceRow": 1046,
+          "sourceRow": 375,
           "sourceRows": [
-            1046
+            1046,
+            375
           ],
           "company": "Eve Security",
           "contact": "Nadav Cornberg",
@@ -79946,7 +80021,14 @@
           ],
           "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
           "sourceRowBasis": "Original evidence row retained; currentSourceRows independently identifies the refreshed inventory.",
-          "personHistoryCollectedAt": "2026-10-24T03:10:06Z"
+          "personHistoryCollectedAt": "2026-10-24T03:10:06Z",
+          "platformEvidenceCollectedAt": "2026-10-24T06:25:18.467Z",
+          "nativeDirectReviewCollectedAt": "2026-10-24T06:25:18.467Z",
+          "platformSendDate": "2026-09-25",
+          "platformVideoAttributionEstablished": true,
+          "platformCheckStatus": "matched_native_direct",
+          "nativeAssetId": "028cf476dec54073922b204e5359ef61",
+          "nativeAssetDoesNotPopulateSourceRecordingField": true
         },
         {
           "profileId": "maorfaridphd",
@@ -80249,9 +80331,10 @@
         },
         {
           "profileId": "alexchantavy",
-          "sourceRow": 1056,
+          "sourceRow": 59,
           "sourceRows": [
-            1056
+            1056,
+            59
           ],
           "company": "SubImage",
           "contact": "Alex Chantavy",
@@ -80283,7 +80366,10 @@
           ],
           "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
           "sourceRowBasis": "Original evidence row retained; currentSourceRows independently identifies the refreshed inventory.",
-          "personHistoryCollectedAt": "2026-10-24T03:10:06Z"
+          "personHistoryCollectedAt": "2026-10-24T03:10:06Z",
+          "platformEvidenceCollectedAt": "2026-10-24T06:22:18.155Z",
+          "nativeDirectReviewCollectedAt": "2026-10-24T06:22:18.155Z",
+          "platformVideoAttributionEstablished": false
         },
         {
           "profileId": "saoud-khalifah",
@@ -80547,9 +80633,10 @@
         },
         {
           "profileId": "jirka-bachel",
-          "sourceRow": 1064,
+          "sourceRow": 379,
           "sourceRows": [
-            1064
+            1064,
+            379
           ],
           "company": "Navigara",
           "contact": "Jirka Bachel",
@@ -80579,7 +80666,14 @@
           ],
           "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
           "sourceRowBasis": "Original evidence row retained; currentSourceRows independently identifies the refreshed inventory.",
-          "personHistoryCollectedAt": "2026-10-24T03:10:06Z"
+          "personHistoryCollectedAt": "2026-10-24T03:10:06Z",
+          "platformEvidenceCollectedAt": "2026-10-24T06:25:55.679Z",
+          "nativeDirectReviewCollectedAt": "2026-10-24T06:25:55.679Z",
+          "platformReplyDate": "2026-10-21",
+          "platformReplyVideoAttributionEstablished": false,
+          "platformCheckStatus": "general_text_observed",
+          "platformVideoAttributionEstablished": false,
+          "nativeLatestSequenceContainsVideoAsset": false
         },
         {
           "profileId": "ido-arieli-noga",
@@ -80689,9 +80783,10 @@
         },
         {
           "profileId": "noeljthomas",
-          "sourceRow": 1068,
+          "sourceRow": 381,
           "sourceRows": [
-            1068
+            1068,
+            381
           ],
           "company": "Dark Watch",
           "contact": "Noel Thomas",
@@ -80721,7 +80816,12 @@
           ],
           "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
           "sourceRowBasis": "Original evidence row retained; currentSourceRows independently identifies the refreshed inventory.",
-          "personHistoryCollectedAt": "2026-10-24T03:10:06Z"
+          "personHistoryCollectedAt": "2026-10-24T03:10:06Z",
+          "platformEvidenceCollectedAt": "2026-10-24T06:26:17.392Z",
+          "nativeDirectReviewCollectedAt": "2026-10-24T06:26:17.392Z",
+          "platformCheckStatus": "general_text_observed",
+          "platformVideoAttributionEstablished": false,
+          "nativeLatestSequenceContainsVideoAsset": false
         },
         {
           "profileId": "rimoch",
@@ -81702,6 +81802,113 @@
           "platformCheckStatus": "matched",
           "platformEvidenceCollectedAt": "2026-10-24T03:44:47.605Z",
           "basis": "Native observed send date belongs to the identical source Loom asset; worksheet reports and source person attributes remain separately labelled."
+        },
+        {
+          "profileId": "alejandro-castellano",
+          "sourceRow": 32,
+          "sourceRows": [
+            32
+          ],
+          "company": "Caddi",
+          "contact": "Alejandro Castellano",
+          "linkedin": "https://www.linkedin.com/in/alejandro-castellano/",
+          "platformEvidenceCollectedAt": "2026-10-24T06:23:35.584Z",
+          "nativeDirectReviewCollectedAt": "2026-10-24T06:23:35.584Z",
+          "platformSendDate": "2026-09-10",
+          "platformReplyDate": "2026-09-16",
+          "platformReplyVideoAttributionEstablished": true,
+          "platformVideoAttributionEstablished": true,
+          "platformCheckStatus": "matched_native_direct",
+          "nativeAssetId": "c8e600cc63794bb99d49b23a03df2251",
+          "currentWorksheetReportedSendDates": [],
+          "reportedSendDate": null,
+          "reportedSendBasis": null,
+          "currentSourceRows": [
+            32
+          ],
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "sourceRowBasis": "Original evidence row retained; currentSourceRows independently identifies the refreshed inventory.",
+          "hasRecordingAssetReference": true,
+          "firstLinkedInMessageDate": null,
+          "latestLinkedInMessageDate": null,
+          "latestLinkedInReplyDate": null,
+          "personHistoryCollectedAt": "2026-10-24T03:10:06Z",
+          "historySource": "Selected connected-person worksheet attributes via exact profile identity",
+          "historyDatePrecision": "day",
+          "historySourceTimezone": null,
+          "historySenderAccountId": null,
+          "videoAttributionEstablished": false
+        },
+        {
+          "profileId": "saganschultz",
+          "sourceRow": 48,
+          "sourceRows": [
+            48
+          ],
+          "company": "Sonata",
+          "contact": "Sagan Schultz, MD, MBA",
+          "linkedin": "https://www.linkedin.com/in/saganschultz/",
+          "platformEvidenceCollectedAt": "2026-10-24T06:24:31.989Z",
+          "nativeDirectReviewCollectedAt": "2026-10-24T06:24:31.989Z",
+          "platformVideoReferenceDate": "2026-09-01",
+          "platformFollowUpDate": "2026-09-09",
+          "platformCheckStatus": "video_reference_asset_unconfirmed",
+          "platformVideoAttributionEstablished": false,
+          "expectedSourceAssetId": "0e6e7fcfa597412686f35f7e224369f7",
+          "shortLinkDestinationVerified": false,
+          "currentWorksheetReportedSendDates": [],
+          "reportedSendDate": null,
+          "reportedSendBasis": null,
+          "currentSourceRows": [
+            48
+          ],
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "sourceRowBasis": "Original evidence row retained; currentSourceRows independently identifies the refreshed inventory.",
+          "hasRecordingAssetReference": true,
+          "firstLinkedInMessageDate": null,
+          "latestLinkedInMessageDate": null,
+          "latestLinkedInReplyDate": null,
+          "personHistoryCollectedAt": "2026-10-24T03:10:06Z",
+          "historySource": "Selected connected-person worksheet attributes via exact profile identity",
+          "historyDatePrecision": "day",
+          "historySourceTimezone": null,
+          "historySenderAccountId": null,
+          "videoAttributionEstablished": false
+        },
+        {
+          "profileId": "marcsayoub",
+          "sourceRow": 38,
+          "sourceRows": [
+            38
+          ],
+          "company": "Saile",
+          "contact": "Marc Ayoub, MD",
+          "linkedin": "https://www.linkedin.com/in/marcsayoub/",
+          "platformEvidenceCollectedAt": "2026-10-24T06:36:10.753Z",
+          "nativeDirectReviewCollectedAt": "2026-10-24T06:36:10.753Z",
+          "platformSendDate": "2026-09-01",
+          "platformVideoAttributionEstablished": true,
+          "platformCheckStatus": "matched_native_direct",
+          "nativeAssetId": "dbbdf32725da4cab951ad71804187308",
+          "nativeAssetDoesNotPopulateSourceRecordingField": true,
+          "currentWorksheetReportedSendDates": [],
+          "reportedSendDate": null,
+          "reportedSendBasis": null,
+          "currentSourceRows": [
+            38
+          ],
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "sourceRowBasis": "Original evidence row retained; currentSourceRows independently identifies the refreshed inventory.",
+          "hasRecordingAssetReference": true,
+          "firstLinkedInMessageDate": null,
+          "latestLinkedInMessageDate": null,
+          "latestLinkedInReplyDate": null,
+          "personHistoryCollectedAt": "2026-10-24T03:10:06Z",
+          "historySource": "Selected connected-person worksheet attributes via exact profile identity",
+          "historyDatePrecision": "day",
+          "historySourceTimezone": null,
+          "historySenderAccountId": null,
+          "videoAttributionEstablished": false
         }
       ],
       "explicitReplyReports": [
@@ -82062,7 +82269,8 @@
         "Native observations expose weekday labels and local display times, not source timezones or stable message/conversation IDs. Day precision is retained and occurredAt remains null; no midnight UTC timestamp is fabricated.",
         "The older Waalaxy latest-message attributes for several matched profiles precede actual October 21 platform video messages. They are retained as source attributes and should not be used as complete or current message history.",
         "Current worksheet inventory/date reports were refreshed independently. Every native observation retains its original observedAt, displayed day, precision and historical row; newer inventory collection does not re-date native proof.",
-        "Fresh October 22 video-asset checks corroborate existing worksheet reports; they are not added again to reported-send totals. Unchecked profiles remain pending, not verified zero or unconfirmed sends."
+        "Fresh October 22 video-asset checks corroborate existing worksheet reports; they are not added again to reported-send totals. Unchecked profiles remain pending, not verified zero or unconfirmed sends.",
+        "October 24 targeted checks add three historical September video sends and one attributed September declined reply. October verified video sends remain 18; source literal date/status reports are unchanged. Navigara/Dark Watch latest October messages are general text, and Sonata is a video reference with an unverified short-link destination."
       ],
       "platformObservedEvents": [
         {
@@ -82644,7 +82852,16 @@
           "currentSourceRows": [
             102
           ],
-          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged."
+          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged.",
+          "observationHistory": [
+            {
+              "observationId": "linkedin-ui:2026-10-23:adamfreed:outbound:7578c81541ee4735ae6b42d0ef6eb805",
+              "observedAt": "2026-10-24T03:45:06.152Z",
+              "sourceRow": 102,
+              "evidenceBasis": "Correct Charles account and exact prospect; retained existing conversation shows the same outbound Loom asset. This establishes a sent platform message, not a dated delivery/view receipt, a prospect reply or a commercial outcome."
+            }
+          ],
+          "firstObservedAt": "2026-10-24T03:45:06.152Z"
         },
         {
           "observationId": "linkedin-ui:2026-10-23:adish-jain:outbound:2af86223e03647429b0f5f033808cc97",
@@ -82683,7 +82900,16 @@
           "currentSourceRows": [
             100
           ],
-          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged."
+          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged.",
+          "observationHistory": [
+            {
+              "observationId": "linkedin-ui:2026-10-23:adish-jain:outbound:2af86223e03647429b0f5f033808cc97",
+              "observedAt": "2026-10-24T03:44:18.520Z",
+              "sourceRow": 100,
+              "evidenceBasis": "Correct Charles account and exact prospect; retained existing conversation shows the same outbound Loom asset. This establishes a sent platform message, not a dated delivery/view receipt, a prospect reply or a commercial outcome."
+            }
+          ],
+          "firstObservedAt": "2026-10-24T03:44:18.520Z"
         },
         {
           "observationId": "linkedin-ui:2026-10-23:alexandradebow:outbound:b19f4262f6254020ae4c9092b342ca0a",
@@ -82722,7 +82948,16 @@
           "currentSourceRows": [
             97
           ],
-          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged."
+          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged.",
+          "observationHistory": [
+            {
+              "observationId": "linkedin-ui:2026-10-23:alexandradebow:outbound:b19f4262f6254020ae4c9092b342ca0a",
+              "observedAt": "2026-10-24T03:41:59.911Z",
+              "sourceRow": 97,
+              "evidenceBasis": "Correct Charles account and exact prospect; retained existing conversation shows the same outbound Loom asset. This establishes a sent platform message, not a dated delivery/view receipt, a prospect reply or a commercial outcome."
+            }
+          ],
+          "firstObservedAt": "2026-10-24T03:41:59.911Z"
         },
         {
           "observationId": "linkedin-ui:2026-10-23:brantroth:outbound:ce6623de227947dab8c0c11b9b1decd2",
@@ -82761,7 +82996,16 @@
           "currentSourceRows": [
             104
           ],
-          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged."
+          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged.",
+          "observationHistory": [
+            {
+              "observationId": "linkedin-ui:2026-10-23:brantroth:outbound:ce6623de227947dab8c0c11b9b1decd2",
+              "observedAt": "2026-10-24T03:45:32.197Z",
+              "sourceRow": 104,
+              "evidenceBasis": "Correct Charles account and exact prospect; retained existing conversation shows the same outbound Loom asset. This establishes a sent platform message, not a dated delivery/view receipt, a prospect reply or a commercial outcome."
+            }
+          ],
+          "firstObservedAt": "2026-10-24T03:45:32.197Z"
         },
         {
           "observationId": "linkedin-ui:2026-10-23:rkhardalian:outbound:4f44f788bde44968873ebaeeb951cf20",
@@ -82800,7 +83044,16 @@
           "currentSourceRows": [
             93
           ],
-          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged."
+          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged.",
+          "observationHistory": [
+            {
+              "observationId": "linkedin-ui:2026-10-23:rkhardalian:outbound:4f44f788bde44968873ebaeeb951cf20",
+              "observedAt": "2026-10-24T03:41:26.629Z",
+              "sourceRow": 93,
+              "evidenceBasis": "Correct Charles account and exact prospect; retained existing conversation shows the same outbound Loom asset. This establishes a sent platform message, not a dated delivery/view receipt, a prospect reply or a commercial outcome."
+            }
+          ],
+          "firstObservedAt": "2026-10-24T03:41:26.629Z"
         },
         {
           "observationId": "linkedin-ui:2026-10-23:sherwoodcallaway:outbound:ad69bc0283064258856630b66407f2ed",
@@ -82839,7 +83092,16 @@
           "currentSourceRows": [
             103
           ],
-          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged."
+          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged.",
+          "observationHistory": [
+            {
+              "observationId": "linkedin-ui:2026-10-23:sherwoodcallaway:outbound:ad69bc0283064258856630b66407f2ed",
+              "observedAt": "2026-10-24T03:45:19.558Z",
+              "sourceRow": 103,
+              "evidenceBasis": "Correct Charles account and exact prospect; retained existing conversation shows the same outbound Loom asset. This establishes a sent platform message, not a dated delivery/view receipt, a prospect reply or a commercial outcome."
+            }
+          ],
+          "firstObservedAt": "2026-10-24T03:45:19.558Z"
         },
         {
           "observationId": "linkedin-ui:2026-10-23:siddharthbohra:outbound:4daf8179d51648b08d43e48df0d4188d",
@@ -82878,7 +83140,16 @@
           "currentSourceRows": [
             99
           ],
-          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged."
+          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged.",
+          "observationHistory": [
+            {
+              "observationId": "linkedin-ui:2026-10-23:siddharthbohra:outbound:4daf8179d51648b08d43e48df0d4188d",
+              "observedAt": "2026-10-24T03:44:34.449Z",
+              "sourceRow": 99,
+              "evidenceBasis": "Correct Charles account and exact prospect; retained existing conversation shows the same outbound Loom asset. This establishes a sent platform message, not a dated delivery/view receipt, a prospect reply or a commercial outcome."
+            }
+          ],
+          "firstObservedAt": "2026-10-24T03:44:34.449Z"
         },
         {
           "observationId": "linkedin-ui:2026-10-23:yigit-guney-90a80314a:outbound:7577e4298a2f44b685758b7a3b5125f6",
@@ -82917,7 +83188,16 @@
           "currentSourceRows": [
             98
           ],
-          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged."
+          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged.",
+          "observationHistory": [
+            {
+              "observationId": "linkedin-ui:2026-10-23:yigit-guney-90a80314a:outbound:7577e4298a2f44b685758b7a3b5125f6",
+              "observedAt": "2026-10-24T03:43:16.192Z",
+              "sourceRow": 98,
+              "evidenceBasis": "Correct Charles account and exact prospect; retained existing conversation shows the same outbound Loom asset. This establishes a sent platform message, not a dated delivery/view receipt, a prospect reply or a commercial outcome."
+            }
+          ],
+          "firstObservedAt": "2026-10-24T03:43:16.192Z"
         },
         {
           "observationId": "linkedin-ui:2026-10-23:yihhanma:outbound:d3c9424e4c1b4ddd806a6f9bc62618e9",
@@ -82956,7 +83236,698 @@
           "currentSourceRows": [
             101
           ],
-          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged."
+          "currentInventoryMatchBasis": "Exact profile and identical recording asset; historical observation row is unchanged.",
+          "observationHistory": [
+            {
+              "observationId": "linkedin-ui:2026-10-23:yihhanma:outbound:d3c9424e4c1b4ddd806a6f9bc62618e9",
+              "observedAt": "2026-10-24T03:44:47.605Z",
+              "sourceRow": 101,
+              "evidenceBasis": "Correct Charles account and exact prospect; retained existing conversation shows the same outbound Loom asset. This establishes a sent platform message, not a dated delivery/view receipt, a prospect reply or a commercial outcome."
+            }
+          ],
+          "firstObservedAt": "2026-10-24T03:44:47.605Z"
+        },
+        {
+          "observationId": "linkedin-ui:2026-10-24:alejandro-castellano:outbound:83aa7bbee8f07542bfbc6fb6",
+          "dedupKey": "alejandro-castellano|outbound|2026-09-10|c8e600cc63794bb99d49b23a03df2251",
+          "sourceMessageId": null,
+          "sourceConversationId": null,
+          "profileId": "alejandro-castellano",
+          "company": "Caddi",
+          "contact": "Alejandro Castellano",
+          "sourceRow": 32,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "crmDealId": 428,
+          "sourceSheetDealId": 428,
+          "sourceKind": "native_linkedin_existing_conversation",
+          "sourceEvidenceBasis": "native_direct",
+          "date": "2026-09-10",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "displayedDateLabel": "SEP 10",
+          "displayedTime": "8:59 AM",
+          "contentFingerprint": "b84f094de56879294446412829ac4421a212eb72fea95702ae27c0681a3dd16c",
+          "observedAsOfDate": "2026-10-24",
+          "dateBasis": "LinkedIn current-year month/day labels, corroborated by the same authenticated account explicitly labelling prior-year messages 2025 and later current-year messages without the year in the Eve Security chronology. Displayed local source day; timezone is unknown.",
+          "dateYearBasis": "observed_current_year_label_convention",
+          "dateYearConfidence": "moderate",
+          "channel": "linkedin_message",
+          "direction": "outbound",
+          "sender": "Charles Solomon",
+          "messageKind": "video",
+          "videoIncluded": true,
+          "assetId": "c8e600cc63794bb99d49b23a03df2251",
+          "assetLink": "https://www.loom.com/share/c8e600cc63794bb99d49b23a03df2251",
+          "evidenceLink": "https://www.linkedin.com/in/alejandro-castellano/",
+          "observedAt": "2026-10-24T06:23:35.584Z",
+          "profileIdentityVerified": true,
+          "senderVerifiedWithinMessageBlock": true,
+          "dateTimeAssetAnchoredWithinSameMessageBlock": true,
+          "evidenceBasis": "Exact recipient profile and displayed sender/date/time verified within this specific native message block. CRM note contents and worksheet statuses do not establish or invalidate the observed message.",
+          "replyToVideoAttributionEstablished": false,
+          "platformReadReceiptObserved": false,
+          "readReceiptDate": null,
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "currentSourceRows": [
+            32
+          ],
+          "currentAssetSourceRows": [
+            32
+          ],
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+        },
+        {
+          "observationId": "linkedin-ui:2026-10-24:alejandro-castellano:outbound:f92fe2c1a00cd71dd2de3bdb",
+          "dedupKey": "alejandro-castellano|outbound|2026-09-16|9:49 AM:5eb18417abd24d5483c781a399a0748fa5471b34974339db398bade6e0c0936d",
+          "sourceMessageId": null,
+          "sourceConversationId": null,
+          "profileId": "alejandro-castellano",
+          "company": "Caddi",
+          "contact": "Alejandro Castellano",
+          "sourceRow": 32,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "crmDealId": 428,
+          "sourceSheetDealId": 428,
+          "sourceKind": "native_linkedin_existing_conversation",
+          "sourceEvidenceBasis": "native_direct",
+          "date": "2026-09-16",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "displayedDateLabel": "SEP 16",
+          "displayedTime": "9:49 AM",
+          "contentFingerprint": "5eb18417abd24d5483c781a399a0748fa5471b34974339db398bade6e0c0936d",
+          "observedAsOfDate": "2026-10-24",
+          "dateBasis": "LinkedIn current-year month/day labels, corroborated by the same authenticated account explicitly labelling prior-year messages 2025 and later current-year messages without the year in the Eve Security chronology. Displayed local source day; timezone is unknown.",
+          "dateYearBasis": "observed_current_year_label_convention",
+          "dateYearConfidence": "moderate",
+          "channel": "linkedin_message",
+          "direction": "outbound",
+          "sender": "Charles Solomon",
+          "messageKind": "video_follow_up",
+          "videoIncluded": false,
+          "assetId": null,
+          "assetLink": null,
+          "evidenceLink": "https://www.linkedin.com/in/alejandro-castellano/",
+          "observedAt": "2026-10-24T06:23:35.584Z",
+          "profileIdentityVerified": true,
+          "senderVerifiedWithinMessageBlock": true,
+          "dateTimeAssetAnchoredWithinSameMessageBlock": false,
+          "evidenceBasis": "Exact recipient profile and displayed sender/date/time verified within this specific native message block. CRM note contents and worksheet statuses do not establish or invalidate the observed message.",
+          "replyToVideoAttributionEstablished": false,
+          "platformReadReceiptObserved": false,
+          "readReceiptDate": null,
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "currentSourceRows": [
+            32
+          ],
+          "currentAssetSourceRows": [],
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+        },
+        {
+          "observationId": "linkedin-ui:2026-10-24:alejandro-castellano:inbound:d731fcc097cf461426453162",
+          "dedupKey": "alejandro-castellano|inbound|2026-09-16|12:16 PM:49780701dc2d7cc65cb60e61a79e282a7f062cadaf32890796c36723f277f236",
+          "sourceMessageId": null,
+          "sourceConversationId": null,
+          "profileId": "alejandro-castellano",
+          "company": "Caddi",
+          "contact": "Alejandro Castellano",
+          "sourceRow": 32,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "crmDealId": 428,
+          "sourceSheetDealId": 428,
+          "sourceKind": "native_linkedin_existing_conversation",
+          "sourceEvidenceBasis": "native_direct",
+          "date": "2026-09-16",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "displayedDateLabel": "SEP 16",
+          "displayedTime": "12:16 PM",
+          "contentFingerprint": "49780701dc2d7cc65cb60e61a79e282a7f062cadaf32890796c36723f277f236",
+          "observedAsOfDate": "2026-10-24",
+          "dateBasis": "LinkedIn current-year month/day labels, corroborated by the same authenticated account explicitly labelling prior-year messages 2025 and later current-year messages without the year in the Eve Security chronology. Displayed local source day; timezone is unknown.",
+          "dateYearBasis": "observed_current_year_label_convention",
+          "dateYearConfidence": "moderate",
+          "channel": "linkedin_message",
+          "direction": "inbound",
+          "sender": "Alejandro Castellano",
+          "messageKind": "reply",
+          "videoIncluded": false,
+          "assetId": null,
+          "assetLink": null,
+          "evidenceLink": "https://www.linkedin.com/in/alejandro-castellano/",
+          "observedAt": "2026-10-24T06:23:35.584Z",
+          "profileIdentityVerified": true,
+          "senderVerifiedWithinMessageBlock": true,
+          "dateTimeAssetAnchoredWithinSameMessageBlock": false,
+          "evidenceBasis": "Exact recipient profile and displayed sender/date/time verified within this specific native message block. CRM note contents and worksheet statuses do not establish or invalidate the observed message.",
+          "replyToVideoAttributionEstablished": true,
+          "platformReadReceiptObserved": false,
+          "readReceiptDate": null,
+          "replyToVideoAssetId": "c8e600cc63794bb99d49b23a03df2251",
+          "attributionBasis": "Direct response to Charles explicit same-day video follow-up",
+          "replyMeaning": "declined",
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "currentSourceRows": [
+            32
+          ],
+          "currentAssetSourceRows": [],
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+        },
+        {
+          "observationId": "linkedin-ui:2026-10-24:nadav-cornberg:outbound:462453ebd59027594c08a609",
+          "dedupKey": "nadav-cornberg|outbound|2026-09-25|028cf476dec54073922b204e5359ef61",
+          "sourceMessageId": null,
+          "sourceConversationId": null,
+          "profileId": "nadav-cornberg",
+          "company": "Eve Security",
+          "contact": "Nadav Cornberg",
+          "sourceRow": 375,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "crmDealId": null,
+          "sourceSheetDealId": null,
+          "sourceKind": "native_linkedin_existing_conversation",
+          "sourceEvidenceBasis": "native_direct",
+          "date": "2026-09-25",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "displayedDateLabel": "SEP 25",
+          "displayedTime": "2:41 PM",
+          "contentFingerprint": "713b63a47174de982101ca87d81e9b0a55a74de02ed10ed299a9465fc3e767c3",
+          "observedAsOfDate": "2026-10-24",
+          "dateBasis": "The same chronologically ordered thread explicitly labels prior-year OCT16/21,2025 and omits year for later SEP25/OCT13 in current2026; source timezone remains unknown.",
+          "dateYearBasis": "same_thread_explicit_prior_year_anchor",
+          "dateYearConfidence": "high",
+          "channel": "linkedin_message",
+          "direction": "outbound",
+          "sender": "Charles Solomon",
+          "messageKind": "video",
+          "videoIncluded": true,
+          "assetId": "028cf476dec54073922b204e5359ef61",
+          "assetLink": "https://www.loom.com/share/028cf476dec54073922b204e5359ef61",
+          "evidenceLink": "https://www.linkedin.com/in/nadav-cornberg/",
+          "observedAt": "2026-10-24T06:25:18.467Z",
+          "profileIdentityVerified": true,
+          "senderVerifiedWithinMessageBlock": true,
+          "dateTimeAssetAnchoredWithinSameMessageBlock": true,
+          "evidenceBasis": "Exact recipient profile and displayed sender/date/time verified within this specific native message block. CRM note contents and worksheet statuses do not establish or invalidate the observed message.",
+          "replyToVideoAttributionEstablished": false,
+          "platformReadReceiptObserved": false,
+          "readReceiptDate": null,
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "currentSourceRows": [
+            375
+          ],
+          "currentAssetSourceRows": [],
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+        },
+        {
+          "observationId": "linkedin-ui:2026-10-24:nadav-cornberg:outbound:28c8e5103d6ea1676ce5885d",
+          "dedupKey": "nadav-cornberg|outbound|2026-10-13|3:07 PM:749012a39b573aa5ce10863e7ba3e32f7ff9803653f9d019ff784953bcb445e0",
+          "sourceMessageId": null,
+          "sourceConversationId": null,
+          "profileId": "nadav-cornberg",
+          "company": "Eve Security",
+          "contact": "Nadav Cornberg",
+          "sourceRow": 375,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "crmDealId": null,
+          "sourceSheetDealId": null,
+          "sourceKind": "native_linkedin_existing_conversation",
+          "sourceEvidenceBasis": "native_direct",
+          "date": "2026-10-13",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "displayedDateLabel": "OCT 13",
+          "displayedTime": "3:07 PM",
+          "contentFingerprint": "749012a39b573aa5ce10863e7ba3e32f7ff9803653f9d019ff784953bcb445e0",
+          "observedAsOfDate": "2026-10-24",
+          "dateBasis": "The same chronologically ordered thread explicitly labels prior-year OCT16/21,2025 and omits year for later SEP25/OCT13 in current2026; source timezone remains unknown.",
+          "dateYearBasis": "same_thread_explicit_prior_year_anchor",
+          "dateYearConfidence": "high",
+          "channel": "linkedin_message",
+          "direction": "outbound",
+          "sender": "Charles Solomon",
+          "messageKind": "video_follow_up",
+          "videoIncluded": false,
+          "assetId": null,
+          "assetLink": null,
+          "evidenceLink": "https://www.linkedin.com/in/nadav-cornberg/",
+          "observedAt": "2026-10-24T06:25:18.467Z",
+          "profileIdentityVerified": true,
+          "senderVerifiedWithinMessageBlock": true,
+          "dateTimeAssetAnchoredWithinSameMessageBlock": false,
+          "evidenceBasis": "Exact recipient profile and displayed sender/date/time verified within this specific native message block. CRM note contents and worksheet statuses do not establish or invalidate the observed message.",
+          "replyToVideoAttributionEstablished": false,
+          "platformReadReceiptObserved": false,
+          "readReceiptDate": null,
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "currentSourceRows": [
+            375
+          ],
+          "currentAssetSourceRows": [],
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+        },
+        {
+          "observationId": "linkedin-ui:2026-10-24:saganschultz:outbound:3aa2515db2b3dccac3adf468",
+          "dedupKey": "saganschultz|outbound|2026-09-01|11:58 AM:d390b7c3efdc1d97f7fad43637a06b9cd9123f8b440888d2be306e66e032a012",
+          "sourceMessageId": null,
+          "sourceConversationId": null,
+          "profileId": "saganschultz",
+          "company": "Sonata",
+          "contact": "Sagan Schultz, MD, MBA",
+          "sourceRow": 48,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "crmDealId": 425,
+          "sourceSheetDealId": 425,
+          "sourceKind": "native_linkedin_existing_conversation",
+          "sourceEvidenceBasis": "native_direct",
+          "date": "2026-09-01",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "displayedDateLabel": "SEP 1",
+          "displayedTime": "11:58 AM",
+          "contentFingerprint": "d390b7c3efdc1d97f7fad43637a06b9cd9123f8b440888d2be306e66e032a012",
+          "observedAsOfDate": "2026-10-24",
+          "dateBasis": "LinkedIn current-year month/day labels, corroborated by the same authenticated account explicitly labelling prior-year messages 2025 and later current-year messages without the year in the Eve Security chronology. Displayed local source day; timezone is unknown.",
+          "dateYearBasis": "observed_current_year_label_convention",
+          "dateYearConfidence": "moderate",
+          "channel": "linkedin_message",
+          "direction": "outbound",
+          "sender": "Charles Solomon",
+          "messageKind": "video_reference",
+          "videoIncluded": null,
+          "assetId": null,
+          "assetLink": null,
+          "evidenceLink": "https://www.linkedin.com/in/saganschultz/",
+          "observedAt": "2026-10-24T06:24:31.989Z",
+          "profileIdentityVerified": true,
+          "senderVerifiedWithinMessageBlock": true,
+          "dateTimeAssetAnchoredWithinSameMessageBlock": false,
+          "evidenceBasis": "Exact recipient profile and displayed sender/date/time verified within this specific native message block. CRM note contents and worksheet statuses do not establish or invalidate the observed message.",
+          "replyToVideoAttributionEstablished": false,
+          "platformReadReceiptObserved": false,
+          "readReceiptDate": null,
+          "videoReferenceObserved": true,
+          "observedShortLink": "https://bit.ly/3Usd6Lr",
+          "shortLinkDestinationVerified": false,
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "currentSourceRows": [
+            48
+          ],
+          "currentAssetSourceRows": [],
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+        },
+        {
+          "observationId": "linkedin-ui:2026-10-24:saganschultz:outbound:c8aa33c6967924b4fa694011",
+          "dedupKey": "saganschultz|outbound|2026-09-09|9:17 PM:46d674725a444e30b6ce7a6cde137bfedfcc2184bfc8d1d25e6dbe5a5bf5267e",
+          "sourceMessageId": null,
+          "sourceConversationId": null,
+          "profileId": "saganschultz",
+          "company": "Sonata",
+          "contact": "Sagan Schultz, MD, MBA",
+          "sourceRow": 48,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "crmDealId": 425,
+          "sourceSheetDealId": 425,
+          "sourceKind": "native_linkedin_existing_conversation",
+          "sourceEvidenceBasis": "native_direct",
+          "date": "2026-09-09",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "displayedDateLabel": "SEP 9",
+          "displayedTime": "9:17 PM",
+          "contentFingerprint": "46d674725a444e30b6ce7a6cde137bfedfcc2184bfc8d1d25e6dbe5a5bf5267e",
+          "observedAsOfDate": "2026-10-24",
+          "dateBasis": "LinkedIn current-year month/day labels, corroborated by the same authenticated account explicitly labelling prior-year messages 2025 and later current-year messages without the year in the Eve Security chronology. Displayed local source day; timezone is unknown.",
+          "dateYearBasis": "observed_current_year_label_convention",
+          "dateYearConfidence": "moderate",
+          "channel": "linkedin_message",
+          "direction": "outbound",
+          "sender": "Charles Solomon",
+          "messageKind": "video_follow_up",
+          "videoIncluded": false,
+          "assetId": null,
+          "assetLink": null,
+          "evidenceLink": "https://www.linkedin.com/in/saganschultz/",
+          "observedAt": "2026-10-24T06:24:31.989Z",
+          "profileIdentityVerified": true,
+          "senderVerifiedWithinMessageBlock": true,
+          "dateTimeAssetAnchoredWithinSameMessageBlock": false,
+          "evidenceBasis": "Exact recipient profile and displayed sender/date/time verified within this specific native message block. CRM note contents and worksheet statuses do not establish or invalidate the observed message.",
+          "replyToVideoAttributionEstablished": false,
+          "platformReadReceiptObserved": false,
+          "readReceiptDate": null,
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "currentSourceRows": [
+            48
+          ],
+          "currentAssetSourceRows": [],
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+        },
+        {
+          "observationId": "linkedin-ui:2026-10-24:jirka-bachel:outbound:52df9ca41b2647244365441a",
+          "dedupKey": "jirka-bachel|outbound|2026-10-21|9:27 AM:a73fcafe1eb250d22c400a295983d29bfba7f821034df0ad2495817d15029363",
+          "sourceMessageId": null,
+          "sourceConversationId": null,
+          "profileId": "jirka-bachel",
+          "company": "Navigara",
+          "contact": "Jirka Bachel",
+          "sourceRow": 379,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "crmDealId": null,
+          "sourceSheetDealId": null,
+          "sourceKind": "native_linkedin_existing_conversation",
+          "sourceEvidenceBasis": "native_direct",
+          "date": "2026-10-21",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "displayedDateLabel": "WEDNESDAY",
+          "displayedTime": "9:27 AM",
+          "contentFingerprint": "a73fcafe1eb250d22c400a295983d29bfba7f821034df0ad2495817d15029363",
+          "observedAsOfDate": "2026-10-24",
+          "dateBasis": "Displayed Wednesday anchored to the October 24 observation; source timezone is unknown.",
+          "dateYearBasis": "relative_weekday_with_observation_day",
+          "dateYearConfidence": "high",
+          "channel": "linkedin_message",
+          "direction": "outbound",
+          "sender": "Charles Solomon",
+          "messageKind": "general_text",
+          "videoIncluded": false,
+          "assetId": null,
+          "assetLink": null,
+          "evidenceLink": "https://www.linkedin.com/in/jirka-bachel/",
+          "observedAt": "2026-10-24T06:25:55.679Z",
+          "profileIdentityVerified": true,
+          "senderVerifiedWithinMessageBlock": true,
+          "dateTimeAssetAnchoredWithinSameMessageBlock": false,
+          "evidenceBasis": "Exact recipient profile and displayed sender/date/time verified within this specific native message block. CRM note contents and worksheet statuses do not establish or invalidate the observed message.",
+          "replyToVideoAttributionEstablished": false,
+          "platformReadReceiptObserved": false,
+          "readReceiptDate": null,
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "currentSourceRows": [
+            379
+          ],
+          "currentAssetSourceRows": [],
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+        },
+        {
+          "observationId": "linkedin-ui:2026-10-24:jirka-bachel:inbound:c62e68418f091505090a0765",
+          "dedupKey": "jirka-bachel|inbound|2026-10-21|9:35 AM:c54cbee211a25e1433eb71998057181fa2c44273dc20445a35263c86a0ca041d",
+          "sourceMessageId": null,
+          "sourceConversationId": null,
+          "profileId": "jirka-bachel",
+          "company": "Navigara",
+          "contact": "Jirka Bachel",
+          "sourceRow": 379,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "crmDealId": null,
+          "sourceSheetDealId": null,
+          "sourceKind": "native_linkedin_existing_conversation",
+          "sourceEvidenceBasis": "native_direct",
+          "date": "2026-10-21",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "displayedDateLabel": "WEDNESDAY",
+          "displayedTime": "9:35 AM",
+          "contentFingerprint": "c54cbee211a25e1433eb71998057181fa2c44273dc20445a35263c86a0ca041d",
+          "observedAsOfDate": "2026-10-24",
+          "dateBasis": "Displayed Wednesday anchored to the October 24 observation; source timezone is unknown.",
+          "dateYearBasis": "relative_weekday_with_observation_day",
+          "dateYearConfidence": "high",
+          "channel": "linkedin_message",
+          "direction": "inbound",
+          "sender": "Jiri Bachel💡",
+          "messageKind": "general_reply",
+          "videoIncluded": false,
+          "assetId": null,
+          "assetLink": null,
+          "evidenceLink": "https://www.linkedin.com/in/jirka-bachel/",
+          "observedAt": "2026-10-24T06:25:55.679Z",
+          "profileIdentityVerified": true,
+          "senderVerifiedWithinMessageBlock": true,
+          "dateTimeAssetAnchoredWithinSameMessageBlock": false,
+          "evidenceBasis": "Exact recipient profile and displayed sender/date/time verified within this specific native message block. CRM note contents and worksheet statuses do not establish or invalidate the observed message.",
+          "replyToVideoAttributionEstablished": false,
+          "platformReadReceiptObserved": false,
+          "readReceiptDate": null,
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "currentSourceRows": [
+            379
+          ],
+          "currentAssetSourceRows": [],
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+        },
+        {
+          "observationId": "linkedin-ui:2026-10-24:jirka-bachel:outbound:222ec181f274a9304ba90901",
+          "dedupKey": "jirka-bachel|outbound|2026-10-21|9:35 AM:b8afdadd5f0d78448c3a29a22c3b1cf480f8e62e0a92ca38a0d4eaae18e94237",
+          "sourceMessageId": null,
+          "sourceConversationId": null,
+          "profileId": "jirka-bachel",
+          "company": "Navigara",
+          "contact": "Jirka Bachel",
+          "sourceRow": 379,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "crmDealId": null,
+          "sourceSheetDealId": null,
+          "sourceKind": "native_linkedin_existing_conversation",
+          "sourceEvidenceBasis": "native_direct",
+          "date": "2026-10-21",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "displayedDateLabel": "WEDNESDAY",
+          "displayedTime": "9:35 AM",
+          "contentFingerprint": "b8afdadd5f0d78448c3a29a22c3b1cf480f8e62e0a92ca38a0d4eaae18e94237",
+          "observedAsOfDate": "2026-10-24",
+          "dateBasis": "Displayed Wednesday anchored to the October 24 observation; source timezone is unknown.",
+          "dateYearBasis": "relative_weekday_with_observation_day",
+          "dateYearConfidence": "high",
+          "channel": "linkedin_message",
+          "direction": "outbound",
+          "sender": "Charles Solomon",
+          "messageKind": "general_text",
+          "videoIncluded": false,
+          "assetId": null,
+          "assetLink": null,
+          "evidenceLink": "https://www.linkedin.com/in/jirka-bachel/",
+          "observedAt": "2026-10-24T06:25:55.679Z",
+          "profileIdentityVerified": true,
+          "senderVerifiedWithinMessageBlock": true,
+          "dateTimeAssetAnchoredWithinSameMessageBlock": false,
+          "evidenceBasis": "Exact recipient profile and displayed sender/date/time verified within this specific native message block. CRM note contents and worksheet statuses do not establish or invalidate the observed message.",
+          "replyToVideoAttributionEstablished": false,
+          "platformReadReceiptObserved": false,
+          "readReceiptDate": null,
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "currentSourceRows": [
+            379
+          ],
+          "currentAssetSourceRows": [],
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+        },
+        {
+          "observationId": "linkedin-ui:2026-10-24:noeljthomas:outbound:ecf7f4865ac9bcde305af1ef",
+          "dedupKey": "noeljthomas|outbound|2026-10-21|9:23 AM:f7b4d11f2122212b29f7a3f3f8fdd2eb3a233940c534610a3b16e30df74e5e18",
+          "sourceMessageId": null,
+          "sourceConversationId": null,
+          "profileId": "noeljthomas",
+          "company": "Dark Watch",
+          "contact": "Noel Thomas",
+          "sourceRow": 381,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "crmDealId": null,
+          "sourceSheetDealId": null,
+          "sourceKind": "native_linkedin_existing_conversation",
+          "sourceEvidenceBasis": "native_direct",
+          "date": "2026-10-21",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "displayedDateLabel": "WEDNESDAY",
+          "displayedTime": "9:23 AM",
+          "contentFingerprint": "f7b4d11f2122212b29f7a3f3f8fdd2eb3a233940c534610a3b16e30df74e5e18",
+          "observedAsOfDate": "2026-10-24",
+          "dateBasis": "Displayed Wednesday anchored to the October 24 observation; source timezone is unknown.",
+          "dateYearBasis": "relative_weekday_with_observation_day",
+          "dateYearConfidence": "high",
+          "channel": "linkedin_message",
+          "direction": "outbound",
+          "sender": "Charles Solomon",
+          "messageKind": "general_text",
+          "videoIncluded": false,
+          "assetId": null,
+          "assetLink": null,
+          "evidenceLink": "https://www.linkedin.com/in/noeljthomas/",
+          "observedAt": "2026-10-24T06:26:17.392Z",
+          "profileIdentityVerified": true,
+          "senderVerifiedWithinMessageBlock": true,
+          "dateTimeAssetAnchoredWithinSameMessageBlock": false,
+          "evidenceBasis": "Exact recipient profile and displayed sender/date/time verified within this specific native message block. CRM note contents and worksheet statuses do not establish or invalidate the observed message.",
+          "replyToVideoAttributionEstablished": false,
+          "platformReadReceiptObserved": false,
+          "readReceiptDate": null,
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "currentSourceRows": [
+            381
+          ],
+          "currentAssetSourceRows": [],
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+        },
+        {
+          "observationId": "linkedin-ui:2026-10-24:marcsayoub:outbound:b506dbf3a60417bb4aa519a2",
+          "dedupKey": "marcsayoub|outbound|2026-09-01|dbbdf32725da4cab951ad71804187308",
+          "sourceMessageId": null,
+          "sourceConversationId": null,
+          "profileId": "marcsayoub",
+          "company": "Saile",
+          "contact": "Marc Ayoub, MD",
+          "sourceRow": 38,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "crmDealId": 427,
+          "sourceSheetDealId": 427,
+          "sourceKind": "native_linkedin_existing_conversation",
+          "sourceEvidenceBasis": "native_direct",
+          "date": "2026-09-01",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "displayedDateLabel": "SEP 1",
+          "displayedTime": "9:23 PM",
+          "contentFingerprint": "90170fb21b42a3a6b20523f24f9b8d5754168feb16525080b9d263a9a877f8df",
+          "observedAsOfDate": "2026-10-24",
+          "dateBasis": "Observed current-year label convention with separate same-account prior-year2025 anchor in Eve transcript; moderate confidence.",
+          "dateYearBasis": "observed_current_year_label_convention",
+          "dateYearConfidence": "moderate",
+          "channel": "linkedin_message",
+          "direction": "outbound",
+          "sender": "Charles Solomon",
+          "messageKind": "video",
+          "videoIncluded": true,
+          "assetId": "dbbdf32725da4cab951ad71804187308",
+          "assetLink": "https://www.loom.com/share/dbbdf32725da4cab951ad71804187308",
+          "evidenceLink": "https://www.linkedin.com/in/marcsayoub/",
+          "observedAt": "2026-10-24T06:36:10.753Z",
+          "profileIdentityVerified": true,
+          "senderVerifiedWithinMessageBlock": true,
+          "dateTimeAssetAnchoredWithinSameMessageBlock": true,
+          "evidenceBasis": "Exact recipient profile and displayed sender/date/time verified within this specific native message block. CRM note contents and worksheet statuses do not establish or invalidate the observed message.",
+          "replyToVideoAttributionEstablished": false,
+          "platformReadReceiptObserved": false,
+          "readReceiptDate": null,
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "currentSourceRows": [
+            38
+          ],
+          "currentAssetSourceRows": [
+            38
+          ],
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+        },
+        {
+          "observationId": "linkedin-ui:2026-10-24:marcsayoub:outbound:b17bb651499dfc65cf99b281",
+          "dedupKey": "marcsayoub|outbound|2026-09-09|9:20 PM:c46e67597af228bce776d4d522c4a7c783c59939f55885cb1d875fb820cfa976",
+          "sourceMessageId": null,
+          "sourceConversationId": null,
+          "profileId": "marcsayoub",
+          "company": "Saile",
+          "contact": "Marc Ayoub, MD",
+          "sourceRow": 38,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "crmDealId": 427,
+          "sourceSheetDealId": 427,
+          "sourceKind": "native_linkedin_existing_conversation",
+          "sourceEvidenceBasis": "native_direct",
+          "date": "2026-09-09",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "displayedDateLabel": "SEP 9",
+          "displayedTime": "9:20 PM",
+          "contentFingerprint": "c46e67597af228bce776d4d522c4a7c783c59939f55885cb1d875fb820cfa976",
+          "observedAsOfDate": "2026-10-24",
+          "dateBasis": "Observed current-year label convention with separate same-account prior-year2025 anchor in Eve transcript; moderate confidence.",
+          "dateYearBasis": "observed_current_year_label_convention",
+          "dateYearConfidence": "moderate",
+          "channel": "linkedin_message",
+          "direction": "outbound",
+          "sender": "Charles Solomon",
+          "messageKind": "video_follow_up",
+          "videoIncluded": false,
+          "assetId": null,
+          "assetLink": null,
+          "evidenceLink": "https://www.linkedin.com/in/marcsayoub/",
+          "observedAt": "2026-10-24T06:36:10.753Z",
+          "profileIdentityVerified": true,
+          "senderVerifiedWithinMessageBlock": true,
+          "dateTimeAssetAnchoredWithinSameMessageBlock": false,
+          "evidenceBasis": "Exact recipient profile and displayed sender/date/time verified within this specific native message block. CRM note contents and worksheet statuses do not establish or invalidate the observed message.",
+          "replyToVideoAttributionEstablished": false,
+          "platformReadReceiptObserved": false,
+          "readReceiptDate": null,
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "currentSourceRows": [
+            38
+          ],
+          "currentAssetSourceRows": [],
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+        },
+        {
+          "observationId": "linkedin-ui:2026-10-24:ashishmandavia:outbound:432cfc172df06cd696c686bd",
+          "dedupKey": "ashishmandavia|outbound|2026-10-21|10:18 AM:707e2dc861f2cf7afca23616b6d34d2c0d688c762abdb1040feeeb834c59ab10",
+          "sourceMessageId": null,
+          "sourceConversationId": null,
+          "profileId": "ashishmandavia",
+          "company": "Sohar Health",
+          "contact": "Ashish Mandavia MD",
+          "sourceRow": 371,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "crmDealId": null,
+          "sourceSheetDealId": null,
+          "sourceKind": "native_linkedin_existing_conversation",
+          "sourceEvidenceBasis": "native_direct",
+          "date": "2026-10-21",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "displayedDateLabel": "WEDNESDAY",
+          "displayedTime": "10:18 AM",
+          "contentFingerprint": "707e2dc861f2cf7afca23616b6d34d2c0d688c762abdb1040feeeb834c59ab10",
+          "observedAsOfDate": "2026-10-24",
+          "dateBasis": "Current Wednesday resolves Oct21 relative to Oct24 observation; prior-year Feb17/18,2025 messages explicitly distinguished in the same thread.",
+          "dateYearBasis": "relative_weekday_with_observation_day",
+          "dateYearConfidence": "high",
+          "channel": "linkedin_message",
+          "direction": "outbound",
+          "sender": "Charles Solomon",
+          "messageKind": "general_text",
+          "videoIncluded": false,
+          "assetId": null,
+          "assetLink": null,
+          "evidenceLink": "https://www.linkedin.com/in/ashishmandavia/",
+          "observedAt": "2026-10-24T06:36:58.419Z",
+          "profileIdentityVerified": true,
+          "senderVerifiedWithinMessageBlock": true,
+          "dateTimeAssetAnchoredWithinSameMessageBlock": false,
+          "evidenceBasis": "Exact recipient profile and displayed sender/date/time verified within this specific native message block. CRM note contents and worksheet statuses do not establish or invalidate the observed message.",
+          "replyToVideoAttributionEstablished": false,
+          "platformReadReceiptObserved": false,
+          "readReceiptDate": null,
+          "currentInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "currentSourceRows": [
+            371
+          ],
+          "currentAssetSourceRows": [],
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
         }
       ],
       "nativePlatformCoverage": {
@@ -83224,7 +84195,1328 @@
           "replyHistoryComplete": false
         }
       },
-      "inventorySupplementCollectedAt": "2026-10-24T03:10:06Z"
+      "inventorySupplementCollectedAt": "2026-10-24T03:10:06Z",
+      "focusedNativeReviews": {
+        "snapshotAt": "2026-10-24T06:36:58.419Z",
+        "reviewedAt": "2026-10-24T06:36:58.419Z",
+        "scope": "Eight targeted native thread checks; not a complete account or thread message census.",
+        "profileChecks": [
+          {
+            "profileId": "alejandro-castellano",
+            "sourceRow": 32,
+            "observedAt": "2026-10-24T06:23:35.584Z",
+            "evidenceLink": "https://www.linkedin.com/in/alejandro-castellano/",
+            "sourceEvidenceBasis": "native_direct",
+            "profileIdentityVerified": true,
+            "senderAccount": "Charles Solomon",
+            "coverageCompleteForThread": false,
+            "crmAssetMatchRequiredForNativeProof": false,
+            "status": "matched_native_direct",
+            "assetId": "c8e600cc63794bb99d49b23a03df2251",
+            "platformSendDate": "2026-09-10",
+            "platformReplyDate": "2026-09-16",
+            "replyToVideoAttributionEstablished": true,
+            "replyMeaning": "declined",
+            "assetObserved": true
+          },
+          {
+            "profileId": "nadav-cornberg",
+            "sourceRow": 375,
+            "observedAt": "2026-10-24T06:25:18.467Z",
+            "evidenceLink": "https://www.linkedin.com/in/nadav-cornberg/",
+            "sourceEvidenceBasis": "native_direct",
+            "profileIdentityVerified": true,
+            "senderAccount": "Charles Solomon",
+            "coverageCompleteForThread": false,
+            "crmAssetMatchRequiredForNativeProof": false,
+            "status": "matched_native_direct",
+            "assetId": "028cf476dec54073922b204e5359ef61",
+            "platformSendDate": "2026-09-25",
+            "assetObserved": true,
+            "replyObservation": "No incoming reply visible in this bounded excerpt; no claim of complete thread coverage."
+          },
+          {
+            "profileId": "saganschultz",
+            "sourceRow": 48,
+            "observedAt": "2026-10-24T06:24:31.989Z",
+            "evidenceLink": "https://www.linkedin.com/in/saganschultz/",
+            "sourceEvidenceBasis": "native_direct",
+            "profileIdentityVerified": true,
+            "senderAccount": "Charles Solomon",
+            "coverageCompleteForThread": false,
+            "crmAssetMatchRequiredForNativeProof": false,
+            "status": "video_reference_asset_unconfirmed",
+            "assetObserved": false,
+            "expectedAssetId": "0e6e7fcfa597412686f35f7e224369f7",
+            "platformVideoReferenceDate": "2026-09-01",
+            "platformFollowUpDate": "2026-09-09"
+          },
+          {
+            "profileId": "jirka-bachel",
+            "sourceRow": 379,
+            "observedAt": "2026-10-24T06:25:55.679Z",
+            "evidenceLink": "https://www.linkedin.com/in/jirka-bachel/",
+            "sourceEvidenceBasis": "native_direct",
+            "profileIdentityVerified": true,
+            "senderAccount": "Charles Solomon",
+            "coverageCompleteForThread": false,
+            "crmAssetMatchRequiredForNativeProof": false,
+            "status": "general_text_observed",
+            "assetObserved": false,
+            "platformReplyDate": "2026-10-21",
+            "replyToVideoAttributionEstablished": false,
+            "replyMeaning": "willing_to_connect_not_a_held_meeting"
+          },
+          {
+            "profileId": "noeljthomas",
+            "sourceRow": 381,
+            "observedAt": "2026-10-24T06:26:17.392Z",
+            "evidenceLink": "https://www.linkedin.com/in/noeljthomas/",
+            "sourceEvidenceBasis": "native_direct",
+            "profileIdentityVerified": true,
+            "senderAccount": "Charles Solomon",
+            "coverageCompleteForThread": false,
+            "crmAssetMatchRequiredForNativeProof": false,
+            "status": "general_text_observed",
+            "assetObserved": false,
+            "replyObservation": "No October reply visible; older April reply is outside this reviewed sequence."
+          },
+          {
+            "profileId": "alexchantavy",
+            "sourceRow": 59,
+            "observedAt": "2026-10-24T06:22:18.155Z",
+            "evidenceLink": "https://www.linkedin.com/in/alexchantavy/",
+            "sourceEvidenceBasis": "native_direct",
+            "profileIdentityVerified": true,
+            "senderAccount": "Charles Solomon",
+            "coverageCompleteForThread": false,
+            "crmAssetMatchRequiredForNativeProof": false,
+            "status": "checked_unconfirmed",
+            "assetObserved": false,
+            "expectedAssetId": "2fe41d4880d84e52af0e43658282e947",
+            "basis": "Matching asset was not established in the bounded excerpt; no non-send or deletion is inferred."
+          },
+          {
+            "profileId": "marcsayoub",
+            "sourceRow": 38,
+            "observedAt": "2026-10-24T06:36:10.753Z",
+            "evidenceLink": "https://www.linkedin.com/in/marcsayoub/",
+            "sourceEvidenceBasis": "native_direct",
+            "profileIdentityVerified": true,
+            "senderAccount": "Charles Solomon",
+            "coverageCompleteForThread": false,
+            "crmAssetMatchRequiredForNativeProof": false,
+            "status": "matched_native_direct",
+            "assetId": "dbbdf32725da4cab951ad71804187308",
+            "platformSendDate": "2026-09-01",
+            "assetObserved": true,
+            "replyObservation": "No incoming reply visible in this bounded excerpt; no claim of complete thread coverage."
+          },
+          {
+            "profileId": "ashishmandavia",
+            "sourceRow": 371,
+            "observedAt": "2026-10-24T06:36:58.419Z",
+            "evidenceLink": "https://www.linkedin.com/in/ashishmandavia/",
+            "sourceEvidenceBasis": "native_direct",
+            "profileIdentityVerified": true,
+            "senderAccount": "Charles Solomon",
+            "coverageCompleteForThread": false,
+            "crmAssetMatchRequiredForNativeProof": false,
+            "status": "general_text_observed",
+            "assetObserved": false,
+            "platformFollowUpDate": "2026-10-21",
+            "replyObservation": "No incoming reply visible in the current-period sequence; older 2025 replies are separate."
+          }
+        ],
+        "profilesChecked": 8,
+        "newHistoricalSeptemberVideoSends": 3,
+        "newHistoricalSeptemberAttributedReplies": 1,
+        "sourceTimezone": null,
+        "notes": [
+          "Legacy 19-profile October asset cohort retains its original scope and collection clock.",
+          "Current-year omitted year labels for Caddi/Sonata/Saile use the observed authenticated account convention; year confidence is moderate. Eve has an explicit prior-year chronology in the same thread.",
+          "Native messages are independently verified; a missing CRM note or blank worksheet asset does not negate the observed message.",
+          "No source edits, held calls, qualification or opportunity decisions are established by these checks."
+        ]
+      }
+    },
+    "sourceFreshnessReview": {
+      "snapshotAt": "2026-10-24T06:26:36Z",
+      "reviewedAt": "2026-10-24T06:26:36Z",
+      "reportingLocalDate": "2026-10-24",
+      "appliesToSnapshotAt": "2026-10-24T03:10:06Z",
+      "scope": "Complete read-only current main/accepted worksheet values and source date/helper cells; comparison against retained October 23 collection.",
+      "sourceRanges": [
+        "'centripetal_top20_video_sniper_prospects_aug2026'!A1:AC5000",
+        "'Accepted Connections (Video Prospects)'!A1:AR1011"
+      ],
+      "collectionCompleteWithinWorkbook": true,
+      "fullValuesReread": true,
+      "valuesIdenticalToRetainedSource": true,
+      "inventoryChanged": false,
+      "changedPhysicalRows": 0,
+      "retainedInventorySnapshotAt": "2026-10-24T03:10:06Z",
+      "inventoryCollectionClockPreserved": true,
+      "retainedCounts": {
+        "sourceRows": 468,
+        "uniqueProfiles": 460,
+        "rowsMissingProfile": 2,
+        "readyRows": 7,
+        "sheetCompletedRows": 73,
+        "explicitSendStatusRows": 0,
+        "reportedVideoSentStatusRows": 24,
+        "datedSendStatusRows": 22,
+        "reportedFollowUpDateRows": 44,
+        "followUpRows": 23,
+        "manualCheckRows": 46,
+        "reviewRows": 35,
+        "awaitingConnectionRows": 303,
+        "skipRows": 50,
+        "duplicates": 6,
+        "duplicateExtraRows": 6,
+        "conflictingProfiles": 2,
+        "acceptedConnectionRecords": 168,
+        "connectedRows": 115,
+        "rowsWithDealId": 82,
+        "syncedToPipedriveFlagRows": 103,
+        "recordingLinkRows": 66,
+        "recordingFieldNonemptyRows": 66,
+        "recordingFieldNonUrlNotes": 0,
+        "newRowsInPeriod": null
+      },
+      "sourceModifiedAt": "2026-10-23T02:59:30.310Z",
+      "fileUnchangedAcrossCollection": true,
+      "currentRevisionId": "1316",
+      "previousRevisionId": "1304",
+      "historyAccess": {
+        "revisionMetadataAccessible": true,
+        "revisionMetadataRows": 78,
+        "previousRevisionContentReadable": true,
+        "previousRevisionModifiedAt": "2026-10-23T01:45:36.395Z",
+        "cellEditTimestampOrEventLogProvided": false,
+        "limit": "File/revision modification times are not prospect-added, video-sent or reply timestamps. Readable revision content does not establish a complete per-cell activity log."
+      },
+      "dateFieldReview": {
+        "videoDateField": "Video Sent Date",
+        "followUpDateField": "Follow-up Sent Date",
+        "dateFieldsLiteralNotFormula": true,
+        "datePrecision": "day",
+        "exactSendingTimestampAvailable": false,
+        "upstreamEventTimezone": null,
+        "workbookTimezone": "America/Los_Angeles",
+        "rowAddedTimestampFieldPresent": false,
+        "firstLastPersonFieldsAreEventCensus": false
+      },
+      "counterChangesFromThisReview": {
+        "sourceRows": 0,
+        "uniqueProfiles": 0,
+        "worksheetVideoDateRows": 0,
+        "worksheetFollowUpDateRows": 0,
+        "newNativeSendOrReplyProof": 0
+      },
+      "note": "October 24 reread verifies unchanged worksheet state. Original inventory and CRM row-guard dates remain unchanged; independently collected native observations are a separate source family."
+    },
+    "gapResolutionReview": {
+      "snapshotAt": "2026-10-24T06:36:58.419Z",
+      "reviewedAt": "2026-10-24T06:36:58.419Z",
+      "reportingAsOfDate": "2026-10-24",
+      "appliesToVideoInventorySnapshotAt": "2026-10-24T03:10:06Z",
+      "crmInventorySnapshotAt": "2026-10-24T03:11:09.030Z",
+      "summary": {
+        "description": "Focused native conversations, exact CRM record/asset searches, full unchanged Sheet reread and identity/date diagnostics resolve specific gaps while keeping source reports separate from actual observed messages.",
+        "nativeProfilesReviewed": 8,
+        "newHistoricalSeptemberVideoSends": 3,
+        "newHistoricalSeptemberAttributedReplies": 1,
+        "newOctoberObservedVideoSends": 0,
+        "newOctoberAttributedVideoReplies": 0,
+        "sourceRowsChanged": 0,
+        "commercialOutcomesChanged": false,
+        "ownerHoursChanged": false
+      },
+      "records": [
+        {
+          "profileId": "alejandro-castellano",
+          "sourceRow": 32,
+          "company": "Caddi",
+          "contact": "Alejandro Castellano",
+          "status": "Native send and declined reply verified; CRM asset-note gap remains",
+          "findings": [
+            "Charles sent the exact worksheet Loom asset on September 10; a September 16 reply directly declined the explicit same-day video follow-up.",
+            "These are historical September events. They add no October send or reply and establish no qualification or opportunity outcome.",
+            "Pipedrive deal 428 exists with the exact current profile. The two distinct notes returned across deal/person/organization scopes do not contain this source Loom asset.",
+            "The displayed month/day year uses the observed current-year label convention with moderate confidence; source timezone and exact instants are unavailable."
+          ],
+          "crmDealId": 428,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "nativeReviewedAt": "2026-10-24T06:23:35.584Z",
+          "nativeEvidenceLink": "https://www.linkedin.com/in/alejandro-castellano/",
+          "platformSendDate": "2026-09-10",
+          "platformReplyDate": "2026-09-16",
+          "sendAssetObserved": true,
+          "sourceEvidenceBasis": "native_direct",
+          "platformReplyVideoAttributionEstablished": true,
+          "replyMeaning": "declined",
+          "nativeAssetId": "c8e600cc63794bb99d49b23a03df2251"
+        },
+        {
+          "profileId": "nadav-cornberg",
+          "sourceRow": 375,
+          "company": "Eve Security",
+          "contact": "Nadav Cornberg",
+          "status": "Historical native video send verified; worksheet/CRM linkage incomplete",
+          "findings": [
+            "Charles sent a matching Eve Security Loom video on September 25 and followed up October 13. The same thread explicitly distinguishes earlier 2025 messages from current-year labels.",
+            "The source recording cell, literal video date and explicit CRM ID remain blank; native evidence is kept separately without filling those source fields.",
+            "No accessible CRM profile/name/organization/native-asset search match was returned. Expected automation eligibility or a failed sync is not established.",
+            "No incoming reply is visible in the bounded excerpt; full thread coverage is not claimed."
+          ],
+          "crmDealId": null,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "nativeReviewedAt": "2026-10-24T06:25:18.467Z",
+          "nativeEvidenceLink": "https://www.linkedin.com/in/nadav-cornberg/",
+          "platformSendDate": "2026-09-25",
+          "platformReplyDate": null,
+          "sendAssetObserved": true,
+          "sourceEvidenceBasis": "native_direct",
+          "nativeAssetId": "028cf476dec54073922b204e5359ef61",
+          "crmRecordMatchEstablished": false
+        },
+        {
+          "profileId": "saganschultz",
+          "sourceRow": 48,
+          "company": "Sonata",
+          "contact": "Sagan Schultz, MD, MBA",
+          "status": "Native video reference verified; exact asset remains unconfirmed",
+          "findings": [
+            "A September 1 Charles message explicitly references a video and contains a shortened link. Its destination was not verified, so this is not counted as an exact-asset video send.",
+            "Native follow-up is displayed September 9 at 9:17 PM; worksheet follow-up reports September 10. Unknown source timezone prevents declaring either source day incorrect.",
+            "Pipedrive deal 425 and exact profile are present; the source Loom asset is absent from the two returned distinct notes.",
+            "Month/day labels use the observed current-year convention with moderate confidence."
+          ],
+          "crmDealId": 425,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "nativeReviewedAt": "2026-10-24T06:24:31.989Z",
+          "nativeEvidenceLink": "https://www.linkedin.com/in/saganschultz/",
+          "platformSendDate": null,
+          "platformReplyDate": null,
+          "sendAssetObserved": false,
+          "sourceEvidenceBasis": "native_direct",
+          "platformVideoReferenceDate": "2026-09-01",
+          "platformFollowUpDate": "2026-09-09",
+          "shortLinkDestinationVerified": false
+        },
+        {
+          "profileId": "jirka-bachel",
+          "sourceRow": 379,
+          "company": "Navigara",
+          "contact": "Jirka Bachel",
+          "status": "October conversation observed as general text",
+          "findings": [
+            "October 21 latest sequence contains Charles general text, an incoming agreement to connect and a Charles scheduling response; no video asset appears in that bounded sequence.",
+            "The incoming response is a general LinkedIn reply, not an attributed video reply, held meeting or qualified prospect.",
+            "Worksheet October 21 Video Sent report remains a separately labelled source report. No accessible CRM match was returned; automation eligibility is unverified."
+          ],
+          "crmDealId": null,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "nativeReviewedAt": "2026-10-24T06:25:55.679Z",
+          "nativeEvidenceLink": "https://www.linkedin.com/in/jirka-bachel/",
+          "platformSendDate": null,
+          "platformReplyDate": "2026-10-21",
+          "sendAssetObserved": false,
+          "sourceEvidenceBasis": "native_direct",
+          "platformReplyVideoAttributionEstablished": false,
+          "sourceReportContentClassification": "general_text_observed_no_video_in_bounded_sequence"
+        },
+        {
+          "profileId": "noeljthomas",
+          "sourceRow": 381,
+          "company": "Dark Watch",
+          "contact": "Noel Thomas",
+          "status": "October message observed as general text",
+          "findings": [
+            "The October 21 latest Charles message is general text with no video asset in that bounded sequence.",
+            "The older April incoming response is separate and does not establish an October reply.",
+            "Worksheet October 21 Video Sent report remains a source report. No accessible CRM match was returned; automation eligibility is unverified."
+          ],
+          "crmDealId": null,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "nativeReviewedAt": "2026-10-24T06:26:17.392Z",
+          "nativeEvidenceLink": "https://www.linkedin.com/in/noeljthomas/",
+          "platformSendDate": null,
+          "platformReplyDate": null,
+          "sendAssetObserved": false,
+          "sourceEvidenceBasis": "native_direct",
+          "sourceReportContentClassification": "general_text_observed_no_video_in_bounded_sequence"
+        },
+        {
+          "profileId": "alexchantavy",
+          "sourceRow": 59,
+          "company": "SubImage",
+          "contact": "Alex Chantavy",
+          "status": "Matching October asset remains unconfirmed",
+          "findings": [
+            "The exact Charles/Alex conversation was rechecked, but the matching October Loom asset was not established in the bounded visible excerpt.",
+            "This preserves the original unconfirmed result; it does not prove a non-send, deletion or automation failure."
+          ],
+          "crmDealId": null,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "nativeReviewedAt": "2026-10-24T06:22:18.155Z",
+          "nativeEvidenceLink": "https://www.linkedin.com/in/alexchantavy/",
+          "platformSendDate": null,
+          "platformReplyDate": null,
+          "sendAssetObserved": false,
+          "sourceEvidenceBasis": "native_direct"
+        },
+        {
+          "profileId": "ottocm",
+          "sourceRow": 30,
+          "company": "Cast Insights",
+          "contact": "Otávio (Otto) Costa Miranda",
+          "status": "Stale CRM profile URL identified; alias equivalence unverified",
+          "findings": [
+            "Pipedrive deal 429 exists. Its older LinkedIn profile URL returns a LinkedIn 404; the current ottocm profile shows Otávio (Otto) Costa Miranda.",
+            "No immutable profile-ID equivalence or old-to-new redirect was established, so name/company consistency does not become an exact profile match.",
+            "The current source recording cell is empty. Source cleanup would require an owner-approved CRM profile correction."
+          ],
+          "crmDealId": 429,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "nativeReviewedAt": "2026-10-24T06:26:47.080Z",
+          "profileAliasEquivalenceEstablished": false
+        },
+        {
+          "profileId": "xavierdegracia",
+          "sourceRow": 8,
+          "company": "Prosper AI",
+          "contact": "Xavier de Gracia",
+          "status": "Explicit CRM record present; exact profile missing",
+          "findings": [
+            "Pipedrive deal 224 is open and accessible through its explicit worksheet ID.",
+            "Current CRM profile field is empty and exact-profile/note searches did not supply a verified profile link. This establishes record presence only."
+          ],
+          "crmDealId": 224,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z"
+        },
+        {
+          "profileId": "douglas-ford-304279b5",
+          "sourceRow": 49,
+          "company": "Chromie Health",
+          "contact": "Douglas Ford",
+          "status": "Deleted original and related live CRM record distinguished",
+          "findings": [
+            "Original worksheet ID 322 points to a deleted CRM record and remains source provenance.",
+            "Live deal 836 has the exact current LinkedIn profile. The worksheet recording cell is empty, so no source-asset match is claimed.",
+            "Formal merge/replacement intent is not verified; this is not evidence of a new prospect, new send or accepted opportunity."
+          ],
+          "crmDealId": 836,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "sourceSheetDealId": 322,
+          "sourceRecordDeleted": true
+        },
+        {
+          "profileId": "mac-dougherty",
+          "sourceRow": 50,
+          "company": "InStockRx",
+          "contact": "Mac Dougherty",
+          "status": "Undated status has unresolved channel classification",
+          "findings": [
+            "The row reports Video Sent but has no literal video date or recording asset. Its source note describes email activity.",
+            "A standardized status is insufficient to establish a LinkedIn video send, actual date or channel."
+          ],
+          "crmDealId": 393,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z"
+        },
+        {
+          "profileId": "marcsayoub",
+          "sourceRow": 38,
+          "company": "Saile",
+          "contact": "Marc Ayoub, MD",
+          "status": "Historical video and follow-up dates independently verified",
+          "findings": [
+            "The September 1 Charles message contains a short link with a visible native Loom preview matching the exact worksheet asset. This establishes one historical September video send.",
+            "An explicit video follow-up is displayed September 9 at 9:20 PM. The worksheet literal date fields remain blank and are not populated by this review.",
+            "Current-year omitted month/day labels use the separately observed authenticated account convention with moderate confidence. Source timezone and exact instants remain unknown."
+          ],
+          "crmDealId": 427,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "nativeReviewedAt": "2026-10-24T06:36:10.753Z",
+          "nativeEvidenceLink": "https://www.linkedin.com/in/marcsayoub/",
+          "platformSendDate": "2026-09-01",
+          "platformReplyDate": null,
+          "sendAssetObserved": true,
+          "sourceEvidenceBasis": "native_direct",
+          "platformFollowUpDate": "2026-09-09",
+          "nativeAssetId": "dbbdf32725da4cab951ad71804187308"
+        },
+        {
+          "profileId": "ashishmandavia",
+          "sourceRow": 371,
+          "company": "Sohar Health",
+          "contact": "Ashish Mandavia MD",
+          "status": "October general follow-up date independently verified",
+          "findings": [
+            "The October 21 Charles message at 10:18 AM is general text asking to reconnect; it has no video asset in the current-period sequence.",
+            "This supplies a native observed follow-up day separately from the blank worksheet follow-up date. No video send, current reply or held call is inferred.",
+            "Earlier replies are explicitly dated February 2025 and remain separate from the October sequence."
+          ],
+          "crmDealId": null,
+          "sourceInventorySnapshotAt": "2026-10-24T03:10:06Z",
+          "nativeReviewedAt": "2026-10-24T06:36:58.419Z",
+          "nativeEvidenceLink": "https://www.linkedin.com/in/ashishmandavia/",
+          "platformSendDate": null,
+          "platformReplyDate": null,
+          "sendAssetObserved": false,
+          "sourceEvidenceBasis": "native_direct",
+          "platformFollowUpDate": "2026-10-21"
+        },
+        {
+          "company": "TurboLaw",
+          "sourceRow": 211,
+          "status": "Official company identities resolved; intended recipient still needs selection",
+          "findings": [
+            "Official TurboLaw about page names Jay Sarmaz (co-founder/CEO) and Ozgur Gevrek (co-founder/CTO). The source row combines misspelled names without an exact profile.",
+            "Public profiles are contact candidates only; choosing one or two recipients requires source-owner direction. No source row was changed."
+          ],
+          "candidates": [
+            {
+              "name": "Jay Sarmaz",
+              "linkedin": "https://www.linkedin.com/in/jaysarmaz/"
+            },
+            {
+              "name": "Ozgur Bora Gevrek",
+              "linkedin": "https://www.linkedin.com/in/ozgurbora/"
+            }
+          ],
+          "evidenceLinks": [
+            "https://turbolaw.ai/about"
+          ]
+        },
+        {
+          "company": "Corca Research",
+          "sourceRow": 223,
+          "status": "Official company contact identified; exact intended profile unresolved",
+          "findings": [
+            "Official Corca documentation identifies Anton Gladkoborodov as CEO of Corca Research.",
+            "The source says Co-founders without an exact profile. The intended recipient and exact LinkedIn identity remain unresolved; no automatic identity substitution was made."
+          ],
+          "candidates": [
+            {
+              "name": "Anton Gladkoborodov",
+              "role": "CEO"
+            }
+          ],
+          "evidenceLinks": [
+            "https://corca.app/doc/45KghvqDJatmDv7T_MGhq/what-is-corca"
+          ]
+        }
+      ],
+      "crmRecordReviews": [
+        {
+          "sourceRow": 8,
+          "profile": "xavierdegracia",
+          "company": "Prosper AI",
+          "sourceSheetDealId": 224,
+          "crmDealId": 224,
+          "crmPersonId": 396,
+          "crmOrganizationId": 326,
+          "dealStatus": "open",
+          "dealDeleted": false,
+          "explicitRecordPresence": true,
+          "exactCurrentProfileFieldMatch": false,
+          "sourceLoomAssetId": null,
+          "matchingAssetNoteIds": [],
+          "distinctNoteIds": [
+            1255
+          ],
+          "reviewedAt": "2026-10-24T06:22:59.521Z",
+          "actualSendOrReplyInferred": false
+        },
+        {
+          "sourceRow": 48,
+          "profile": "saganschultz",
+          "company": "Sonata",
+          "sourceSheetDealId": 425,
+          "crmDealId": 425,
+          "crmPersonId": 621,
+          "crmOrganizationId": 552,
+          "dealStatus": "open",
+          "dealDeleted": false,
+          "explicitRecordPresence": true,
+          "exactCurrentProfileFieldMatch": true,
+          "sourceLoomAssetId": "0e6e7fcfa597412686f35f7e224369f7",
+          "matchingAssetNoteIds": [],
+          "distinctNoteIds": [
+            1391,
+            1408
+          ],
+          "reviewedAt": "2026-10-24T06:22:59.650Z",
+          "actualSendOrReplyInferred": false
+        },
+        {
+          "sourceRow": 32,
+          "profile": "alejandro-castellano",
+          "company": "Caddi",
+          "sourceSheetDealId": 428,
+          "crmDealId": 428,
+          "crmPersonId": 625,
+          "crmOrganizationId": 555,
+          "dealStatus": "open",
+          "dealDeleted": false,
+          "explicitRecordPresence": true,
+          "exactCurrentProfileFieldMatch": true,
+          "sourceLoomAssetId": "c8e600cc63794bb99d49b23a03df2251",
+          "matchingAssetNoteIds": [],
+          "distinctNoteIds": [
+            1394,
+            1410
+          ],
+          "reviewedAt": "2026-10-24T06:22:59.781Z",
+          "actualSendOrReplyInferred": false
+        },
+        {
+          "sourceRow": 30,
+          "profile": "ottocm",
+          "company": "Cast Insights",
+          "sourceSheetDealId": 429,
+          "crmDealId": 429,
+          "crmPersonId": 627,
+          "crmOrganizationId": 556,
+          "dealStatus": "open",
+          "dealDeleted": false,
+          "explicitRecordPresence": true,
+          "exactCurrentProfileFieldMatch": false,
+          "sourceLoomAssetId": null,
+          "matchingAssetNoteIds": [],
+          "distinctNoteIds": [
+            1395,
+            1412
+          ],
+          "reviewedAt": "2026-10-24T06:22:59.908Z",
+          "actualSendOrReplyInferred": false
+        },
+        {
+          "sourceRow": 49,
+          "profile": "douglas-ford-304279b5",
+          "company": "Chromie Health",
+          "sourceSheetDealId": 322,
+          "crmDealId": 322,
+          "crmPersonId": 503,
+          "crmOrganizationId": 435,
+          "dealStatus": "deleted",
+          "dealDeleted": true,
+          "explicitRecordPresence": true,
+          "exactCurrentProfileFieldMatch": true,
+          "sourceLoomAssetId": null,
+          "matchingAssetNoteIds": [],
+          "distinctNoteIds": [
+            1102,
+            1103,
+            1247
+          ],
+          "reviewedAt": "2026-10-24T06:23:00.034Z",
+          "actualSendOrReplyInferred": false
+        },
+        {
+          "sourceRow": 49,
+          "profile": "douglas-ford-304279b5",
+          "company": "Chromie Health",
+          "sourceSheetDealId": 322,
+          "crmDealId": 836,
+          "crmPersonId": 2833,
+          "crmOrganizationId": 1284,
+          "dealStatus": "open",
+          "dealDeleted": false,
+          "explicitRecordPresence": false,
+          "exactCurrentProfileFieldMatch": true,
+          "sourceLoomAssetId": null,
+          "matchingAssetNoteIds": [],
+          "distinctNoteIds": [
+            1102,
+            1103,
+            1247,
+            1655
+          ],
+          "reviewedAt": "2026-10-24T06:23:00.204Z",
+          "actualSendOrReplyInferred": false
+        }
+      ],
+      "crmUnmatchedRecordReviews": [
+        {
+          "sourceRow": 375,
+          "profile": "nadav-cornberg",
+          "company": "Eve Security",
+          "sourceSheetDealId": null,
+          "sourceReportedVideoSentDate": null,
+          "reviewedAt": "2026-10-24T06:25:28.221Z",
+          "matchedCrmDealId": null,
+          "currentAccessibleSearchMatches": 0,
+          "expectedAutomationWriteEstablished": false,
+          "note": "No accessible match returned for current exact profile/name/organization queries. Native send proof, where separately established, does not establish why a CRM record should exist or prove a failed automation."
+        },
+        {
+          "sourceRow": 379,
+          "profile": "jirka-bachel",
+          "company": "Navigara",
+          "sourceSheetDealId": null,
+          "sourceReportedVideoSentDate": "2026-10-21",
+          "reviewedAt": "2026-10-24T06:25:18.479Z",
+          "matchedCrmDealId": null,
+          "currentAccessibleSearchMatches": 0,
+          "expectedAutomationWriteEstablished": false,
+          "note": "No accessible match returned for current exact profile/name/organization queries. Native send proof, where separately established, does not establish why a CRM record should exist or prove a failed automation."
+        },
+        {
+          "sourceRow": 381,
+          "profile": "noeljthomas",
+          "company": "Dark Watch",
+          "sourceSheetDealId": null,
+          "sourceReportedVideoSentDate": "2026-10-21",
+          "reviewedAt": "2026-10-24T06:24:01.750Z",
+          "matchedCrmDealId": null,
+          "currentAccessibleSearchMatches": 0,
+          "expectedAutomationWriteEstablished": false,
+          "note": "No accessible match returned for current exact profile/name/organization queries. Native send proof, where separately established, does not establish why a CRM record should exist or prove a failed automation."
+        }
+      ],
+      "crmSearchReview": {
+        "reviewedAt": "2026-10-24T06:32:30.142Z",
+        "scopedSearches": 28,
+        "currentAccessibleAccountOnly": true,
+        "zeroResultsDoNotProveGlobalAbsence": true,
+        "automationFailureEstablished": false
+      },
+      "identityDateReview": {
+        "snapshotAt": "2026-10-24T06:26:36Z",
+        "reviewedAt": "2026-10-24T06:26:36Z",
+        "appliesToSnapshotAt": "2026-10-24T03:10:06Z",
+        "summary": {
+          "sourceRows": 468,
+          "uniqueValidProfiles": 460,
+          "duplicateProfileGroups": 6,
+          "duplicateExtraSourceRows": 6,
+          "sameProfileIdentityGroupsResolved": 6,
+          "activeDuplicateGroupsPendingSourceCleanup": 4,
+          "groupsWithActiveAndSkipCopies": 2,
+          "connectedSourceRows": 115,
+          "connectedUniqueProfiles": 113,
+          "connectedExtraDuplicateRows": 2,
+          "missingProfileSourceRows": 2,
+          "recordingAssets": 66,
+          "uniqueRecordingAssets": 66,
+          "recordingAssetRowsWithoutReportedVideoDate": 46,
+          "videoStatusRowsWithoutReportedVideoDate": 2,
+          "followUpStatusRowsWithoutReportedFollowUpDate": 2,
+          "reportedVideoDateRows": 22,
+          "uniqueReportedVideoProfileDates": 22,
+          "reportedFollowUpDateRows": 44,
+          "uniqueReportedFollowUpProfileDates": 44
+        },
+        "duplicateGroups": [
+          {
+            "profileId": "le-ora-lichtenstein-cfa-9bbb8b112",
+            "sourceRows": [
+              73,
+              386
+            ],
+            "companies": [
+              "Corbel"
+            ],
+            "contactNames": [
+              "Le'ora Lichtenstein CFA"
+            ],
+            "sourceStatuses": [
+              "Follow-up Sent",
+              "Skip"
+            ],
+            "sourceActions": [
+              "Already sent/completed",
+              "Skip"
+            ],
+            "activeSourceRows": [
+              73
+            ],
+            "skippedSourceRows": [
+              386
+            ],
+            "recordingOrDateEvidenceRows": [
+              73
+            ],
+            "identityStatus": "Same person key resolved by exact normalized LinkedIn profile; source rows retained.",
+            "sourceCleanupStatus": "Source contains both active and Skip copies; do not treat them as different people.",
+            "addsNewSendOrReplyEvent": false
+          },
+          {
+            "profileId": "assafweinberg",
+            "sourceRows": [
+              75,
+              389
+            ],
+            "companies": [
+              "SetSale"
+            ],
+            "contactNames": [
+              "Assaf Weinberg"
+            ],
+            "sourceStatuses": [
+              "Follow-up Sent",
+              "Skip"
+            ],
+            "sourceActions": [
+              "Already sent/completed",
+              "Skip"
+            ],
+            "activeSourceRows": [
+              75
+            ],
+            "skippedSourceRows": [
+              389
+            ],
+            "recordingOrDateEvidenceRows": [
+              75
+            ],
+            "identityStatus": "Same person key resolved by exact normalized LinkedIn profile; source rows retained.",
+            "sourceCleanupStatus": "Source contains both active and Skip copies; do not treat them as different people.",
+            "addsNewSendOrReplyEvent": false
+          },
+          {
+            "profileId": "dudutwizer",
+            "sourceRows": [
+              158,
+              308
+            ],
+            "companies": [
+              "Xpander",
+              "xpander.ai"
+            ],
+            "contactNames": [
+              "David Twizer"
+            ],
+            "sourceStatuses": [
+              "Blank"
+            ],
+            "sourceActions": [
+              "Review"
+            ],
+            "activeSourceRows": [
+              158,
+              308
+            ],
+            "skippedSourceRows": [],
+            "recordingOrDateEvidenceRows": [],
+            "identityStatus": "Same person key resolved by exact normalized LinkedIn profile; source rows retained.",
+            "sourceCleanupStatus": "Multiple active source copies remain; current helper conservatively blocks readiness pending source cleanup.",
+            "addsNewSendOrReplyEvent": false
+          },
+          {
+            "profileId": "sanjeet-hajarnis-709021a",
+            "sourceRows": [
+              162,
+              370
+            ],
+            "companies": [
+              "Decimal",
+              "Decimal AI"
+            ],
+            "contactNames": [
+              "Sanjeet Hajarnis"
+            ],
+            "sourceStatuses": [
+              "Blank",
+              "QC Approved - Not Activated"
+            ],
+            "sourceActions": [
+              "Review"
+            ],
+            "activeSourceRows": [
+              162,
+              370
+            ],
+            "skippedSourceRows": [],
+            "recordingOrDateEvidenceRows": [],
+            "identityStatus": "Same person key resolved by exact normalized LinkedIn profile; source rows retained.",
+            "sourceCleanupStatus": "Multiple active source copies remain; current helper conservatively blocks readiness pending source cleanup.",
+            "addsNewSendOrReplyEvent": false
+          },
+          {
+            "profileId": "stephen-mchale",
+            "sourceRows": [
+              187,
+              314
+            ],
+            "companies": [
+              "Graici"
+            ],
+            "contactNames": [
+              "Stephen McHale"
+            ],
+            "sourceStatuses": [
+              "Blank",
+              "Connection Invite Sent"
+            ],
+            "sourceActions": [
+              "Review"
+            ],
+            "activeSourceRows": [
+              187,
+              314
+            ],
+            "skippedSourceRows": [],
+            "recordingOrDateEvidenceRows": [],
+            "identityStatus": "Same person key resolved by exact normalized LinkedIn profile; source rows retained.",
+            "sourceCleanupStatus": "Multiple active source copies remain; current helper conservatively blocks readiness pending source cleanup.",
+            "addsNewSendOrReplyEvent": false
+          },
+          {
+            "profileId": "darrenschaupp",
+            "sourceRows": [
+              263,
+              296
+            ],
+            "companies": [
+              "SiteLabs"
+            ],
+            "contactNames": [
+              "Darren Schaupp"
+            ],
+            "sourceStatuses": [
+              "Blank",
+              "Connection Invite Sent"
+            ],
+            "sourceActions": [
+              "Review"
+            ],
+            "activeSourceRows": [
+              263,
+              296
+            ],
+            "skippedSourceRows": [],
+            "recordingOrDateEvidenceRows": [],
+            "identityStatus": "Same person key resolved by exact normalized LinkedIn profile; source rows retained.",
+            "sourceCleanupStatus": "Multiple active source copies remain; current helper conservatively blocks readiness pending source cleanup.",
+            "addsNewSendOrReplyEvent": false
+          }
+        ],
+        "analyticalTreatment": [
+          "Count exact normalized profile keys once when reporting people; source row/status inventories remain source rows.",
+          "115 Connected row flags describe 113 unique profiles. Two active/Skip duplicate copies account for the difference.",
+          "Current reported send/follow-up profile-date keys are already unique; deduplicating source identities adds no send or reply events.",
+          "Four active duplicate groups have no exact match in the selected accepted-connections tab. This is incomplete subset evidence, not a platform-wide proof of disconnection.",
+          "Source status, available asset, CRM record presence and native sent-message observations remain separately labelled."
+        ]
+      },
+      "companyIdentityCandidates": [
+        {
+          "company": "TurboLaw",
+          "sourceRow": 211,
+          "status": "Official company identities resolved; intended recipient still needs selection",
+          "findings": [
+            "Official TurboLaw about page names Jay Sarmaz (co-founder/CEO) and Ozgur Gevrek (co-founder/CTO). The source row combines misspelled names without an exact profile.",
+            "Public profiles are contact candidates only; choosing one or two recipients requires source-owner direction. No source row was changed."
+          ],
+          "candidates": [
+            {
+              "name": "Jay Sarmaz",
+              "linkedin": "https://www.linkedin.com/in/jaysarmaz/"
+            },
+            {
+              "name": "Ozgur Bora Gevrek",
+              "linkedin": "https://www.linkedin.com/in/ozgurbora/"
+            }
+          ],
+          "evidenceLinks": [
+            "https://turbolaw.ai/about"
+          ]
+        },
+        {
+          "company": "Corca Research",
+          "sourceRow": 223,
+          "status": "Official company contact identified; exact intended profile unresolved",
+          "findings": [
+            "Official Corca documentation identifies Anton Gladkoborodov as CEO of Corca Research.",
+            "The source says Co-founders without an exact profile. The intended recipient and exact LinkedIn identity remain unresolved; no automatic identity substitution was made."
+          ],
+          "candidates": [
+            {
+              "name": "Anton Gladkoborodov",
+              "role": "CEO"
+            }
+          ],
+          "evidenceLinks": [
+            "https://corca.app/doc/45KghvqDJatmDv7T_MGhq/what-is-corca"
+          ]
+        }
+      ],
+      "sourceAppearanceReview": {
+        "snapshotAt": "2026-10-24T06:35:26Z",
+        "reviewedAt": "2026-10-24T06:35:26Z",
+        "appliesToSnapshotAt": "2026-10-24T03:10:06Z",
+        "revisionComparisonComplete": true,
+        "stableIdentityComparisonVerified": true,
+        "scope": "Source identity first-appearance bounds from retained workbook revision exports; not an exact edit or message event log.",
+        "baselineRevisionId": "1253",
+        "laterRevisionId": "1290",
+        "subsequentRevisionId": "1304",
+        "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+        "firstAppearedBy": "2026-10-22T21:59:05.316Z",
+        "firstAppearedAfterMountain": "2026-10-21T14:42:06.138000-06:00",
+        "firstAppearedByMountain": "2026-10-22T15:59:05.316000-06:00",
+        "baselineValidSourceRows": 428,
+        "laterValidSourceRows": 468,
+        "retainedPriorStableIdentities": 428,
+        "newStableSourceRecordsMinimum": 40,
+        "newUniqueProfilesMinimum": 40,
+        "sourceRecordsRemoved": 0,
+        "subsequentIdentityChanges": 0,
+        "selectedWeekStart": "2026-10-19",
+        "selectedWeekEnd": "2026-10-25",
+        "boundsContainedInSelectedWeek": true,
+        "exactRowAddedTimestampAvailable": false,
+        "actualMessageEventsAdded": 0,
+        "sourceWritesPerformed": false,
+        "records": [
+          {
+            "profileId": "jaymingwong",
+            "company": "Luminous Robotics",
+            "contact": "Jay M. Wong",
+            "currentSourceRow": 431,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "texbarnes",
+            "company": "Viva Benefits",
+            "contact": "Michael Barnes",
+            "currentSourceRow": 432,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "lobenja",
+            "company": "Dialogue AI",
+            "contact": "Benjamin Lo",
+            "currentSourceRow": 433,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "narek-kajikian",
+            "company": "Guard Owl",
+            "contact": "Narek Kajikian",
+            "currentSourceRow": 434,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "christianwiens",
+            "company": "Loman AI",
+            "contact": "Christian Wiens",
+            "currentSourceRow": 435,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "leeconni",
+            "company": "Reffie",
+            "contact": "Connie Lee",
+            "currentSourceRow": 436,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "glynnlopresti",
+            "company": "Takt",
+            "contact": "Glynn LoPresti",
+            "currentSourceRow": 437,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "chadsteelberg",
+            "company": "Tiberius Aerospace",
+            "contact": "Chad Steelberg",
+            "currentSourceRow": 438,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "janfelixschneider",
+            "company": "Arlo",
+            "contact": "Jan-Felix Schneider",
+            "currentSourceRow": 439,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "david-mou-md-mba-21286625",
+            "company": "Benchmark Health",
+            "contact": "David Mou",
+            "currentSourceRow": 440,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "adamvincent",
+            "company": "Bricklayer AI",
+            "contact": "Adam Vincent",
+            "currentSourceRow": 441,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "baksht",
+            "company": "Catena Clearing",
+            "contact": "Jeremy Baksht",
+            "currentSourceRow": 442,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "madeleinewsmith",
+            "company": "Civic Roundtable",
+            "contact": "Madeleine Smith",
+            "currentSourceRow": 443,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "thomasjcsmyth",
+            "company": "Concourse Tech",
+            "contact": "Thomas Smyth",
+            "currentSourceRow": 444,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "sára-nožková-91339685",
+            "company": "Flox Intelligence",
+            "contact": "Sára Nožková",
+            "currentSourceRow": 445,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "akashmandavilli",
+            "company": "GovEagle",
+            "contact": "Akash Mandavilli",
+            "currentSourceRow": 446,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "david-caputo-52399499",
+            "company": "Harmoni",
+            "contact": "David Caputo",
+            "currentSourceRow": 447,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "swj72688",
+            "company": "Helios",
+            "contact": "Joe Scheidler",
+            "currentSourceRow": 448,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "drew-f-74947b117",
+            "company": "Iris Finance",
+            "contact": "Drew Fallon",
+            "currentSourceRow": 449,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "venkat-janapareddy-5120702",
+            "company": "Jobiak",
+            "contact": "Venkat Janapareddy",
+            "currentSourceRow": 450,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "rjawali",
+            "company": "Kantiv",
+            "contact": "Rohan Jawali",
+            "currentSourceRow": 451,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "senankhawaja",
+            "company": "Kollegio",
+            "contact": "Senan Khawaja",
+            "currentSourceRow": 452,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "meydom",
+            "company": "Looq AI",
+            "contact": "Dominique Meyer",
+            "currentSourceRow": 453,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "maggie-tang-381aa1162",
+            "company": "Magic",
+            "contact": "Maggie Tang",
+            "currentSourceRow": 454,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "ishani-gujral",
+            "company": "Nest Veterinary",
+            "contact": "Ishani Gujral",
+            "currentSourceRow": 455,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "mjantonini",
+            "company": "NeuroBionics",
+            "contact": "Marc-Joseph (MJ) Antonini",
+            "currentSourceRow": 456,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "john-t-mcdevitt-0410167",
+            "company": "OraLiva",
+            "contact": "John T. McDevitt",
+            "currentSourceRow": 457,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "asaf-israelit",
+            "company": "Parter",
+            "contact": "Asaf Israelit",
+            "currentSourceRow": 458,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "george-kramb",
+            "company": "PatientPartner",
+            "contact": "George Kramb",
+            "currentSourceRow": 459,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "hanpark",
+            "company": "Payment Labs",
+            "contact": "Han Park",
+            "currentSourceRow": 460,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "delphinelegrandofficial",
+            "company": "Protocole",
+            "contact": "Delphine Le Grand",
+            "currentSourceRow": 461,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "michael-the-data-guy-kaminsky",
+            "company": "Recast",
+            "contact": "Michael Kaminsky",
+            "currentSourceRow": 462,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "kevinzhangecom",
+            "company": "Reign (formerly Phoenix Ecommerce Technologies)",
+            "contact": "Kevin Zhang",
+            "currentSourceRow": 463,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "anand-veerkar-8ba47b1",
+            "company": "Rivvun AI",
+            "contact": "Anand Veerkar",
+            "currentSourceRow": 464,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "ardie-sameti-32aa4937",
+            "company": "Scala",
+            "contact": "Ardie Sameti",
+            "currentSourceRow": 465,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "thomas-mazimann",
+            "company": "TeamOut",
+            "contact": "Thomas Mazimann",
+            "currentSourceRow": 466,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "yunhaojiao",
+            "company": "TestSprite",
+            "contact": "Yunhao Jiao",
+            "currentSourceRow": 467,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "jaclyn-rice-nelson-473b1a8",
+            "company": "Tribe AI",
+            "contact": "Jaclyn Rice Nelson",
+            "currentSourceRow": 468,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "furmanhaynes",
+            "company": "WorkHero",
+            "contact": "Furman Haynes",
+            "currentSourceRow": 469,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          },
+          {
+            "profileId": "themichaelchen",
+            "company": "Yondu",
+            "contact": "Michael Chen",
+            "currentSourceRow": 470,
+            "firstAppearedAfter": "2026-10-21T20:42:06.138Z",
+            "firstAppearedBy": "2026-10-22T21:59:05.316Z"
+          }
+        ],
+        "notes": [
+          "All 428 prior exact profile plus normalized company/contact identities remain in the later 468-row returned revision. Forty new unique profiles appear, with no prior stable identity removed.",
+          "Both revision bounds are within October 19–25 Mountain time, supporting a weekly source first-appearance minimum of 40; the interval is October 21 afternoon through October 22 afternoon.",
+          "These are source-record first appearances within compared retained revisions, not exact row-added timestamps, first-ever prospect discovery dates, Video DM sends, replies or CRM deal creation events.",
+          "No additional identity appeared between the later revision and revision 1304. The current full-range reread separately matches the retained latest inventory.",
+          "Historical helper/formula edits and inserted row positions do not establish sending dates; current row numbers are independent profile/identity joins."
+        ]
+      },
+      "specificLinkageWordingCorrections": [
+        {
+          "sourceSheetDealId": 322,
+          "replacement": "Original worksheet ID322 remains provenance for a deleted record. Live deal836 matches the exact LinkedIn profile; the current source recording cell is empty, so no source-asset match is claimed. Formal merge/replacement intent is not verified.",
+          "reviewedAt": "2026-10-24T06:32:30.142Z"
+        }
+      ],
+      "notes": [
+        "No source records, worksheets, messages, notes or automations were changed.",
+        "Native evidence retains displayed day precision and unknown source timezone. Source date/status reports, person-history attributes, native observations and CRM note inventories are distinct evidence families.",
+        "Worksheet inventory remains at its original collection clock because every full-range value was unchanged during the fresh read.",
+        "Revision 1253 to 1290 bounds 40 new stable source identities between October 21 14:42 and October 22 15:59 Mountain time; this is a weekly source first-appearance minimum, not exact row-added or sending timestamps.",
+        "Profile duplicates are recognized for unique-person diagnostics; six duplicate groups add no message events. Two duplicate Connected flags explain 115 source flags versus 113 distinct profiles.",
+        "Exact commercial qualification, held-call completeness, opportunity acceptance and first-time wins remain reserved for Charles."
+      ]
     }
   },
   "waalaxy": {
@@ -125091,13 +127383,12 @@
     },
     {
       "id": "video_message_dates",
-      "name": "Video DM · observed message dates",
-      "asOf": "2026-10-24T03:45:32.197Z",
-      "checkedAt": "2026-10-23",
-      "status": "Bounded native conversation asset checks; complete account history unavailable",
-      "coverage": "19 asset profiles checked across separately dated October 21–22 cohorts; 18 matching outbound videos observed. 0 newly requested profiles remain unchecked.",
-      "method": "Read-only Charles native LinkedIn conversations, exact worksheet/CRM asset and profile matches.",
-      "note": "Every observation retains its actual collection time and displayed source day. Native matches corroborate reported sends; no exact timestamp, dated read receipt, complete reply census or commercial outcome is inferred."
+      "name": "Video DM · source dates and observed message proof",
+      "asOf": "2026-10-24T06:36:58.419Z",
+      "status": "Targeted native observations plus retained historical proof",
+      "coverage": "Current literal source dates and 34 separately observed messages; 21 exact-asset video sends, including 18 in October and 3 historical September sends. Not an account-wide message census.",
+      "method": "Exact profile plus sender/date/time/asset within each relevant native message block",
+      "note": "The legacy 19-profile October cohort retains its original source clock. The focused October 24 eight-profile review is separate. One attributed declined reply is September 16; no new October video reply is inferred."
     },
     {
       "id": "ads_lifecycle",
@@ -125149,6 +127440,63 @@
       },
       "method": "Read-only authenticated Profile Viewers page, primary-content aggregate",
       "note": "1,313 profile viewers in LinkedIn’s captured Past 90 days preset. Exact date boundaries and source timezone are unavailable; this aggregate does not follow the dashboard date filter. No trend, viewer identities or weekly sum is published."
+    },
+    {
+      "id": "video_source_freshness",
+      "name": "Video DM · full-range unchanged-source verification",
+      "asOf": "2026-10-24T06:26:36Z",
+      "status": "Fresh read; source inventory unchanged",
+      "coverage": "'centripetal_top20_video_sniper_prospects_aug2026'!A1:AC5000; 'Accepted Connections (Video Prospects)'!A1:AR1011",
+      "method": "Read-only full allocated ranges, literal-date/formula inspection and source revision metadata/content access",
+      "note": "All current values match the retained October 23 source. Inventory remains 468 rows / 460 unique profiles, with 22 literal video dates and 44 follow-up dates; original collection clock is preserved. File/revision timestamps do not establish message sending or exact row-added timestamps."
+    },
+    {
+      "id": "video_gap_resolution",
+      "name": "Video DM · targeted native/CRM/identity gap resolution",
+      "asOf": "2026-10-24T06:36:58.419Z",
+      "status": "Focused evidence; complete activity history remains unavailable",
+      "coverage": "Eight native thread checks, stale profile review, six explicit CRM record checks, three unmatched-profile reviews and unchanged full Sheet ranges.",
+      "method": "Independent native message blocks, current CRM record/note/search scopes and exact source-profile joins",
+      "note": "Three September sends and one September declined video reply are newly verified. October native video sends remain 18; Navigara/Dark Watch current messages are general text. Source reports and commercial outcomes are unchanged."
+    },
+    {
+      "id": "crm_incremental",
+      "name": "Pipedrive · independent incremental state review",
+      "asOf": "2026-10-24T06:32:30.142Z",
+      "status": "Independently dated delta checks; full inventory clock retained",
+      "coverage": {
+        "baselineSnapshotAt": "2026-10-24T03:11:09.030Z",
+        "baselineCollectionStartedAtUTC": "2026-10-24T03:11:07.475Z",
+        "baselineCollectionCompletedAtUTC": "2026-10-24T03:11:09.030Z",
+        "overlapSinceTimestampUTC": "2026-10-24T03:11:07Z",
+        "checkStartedAtUTC": "2026-10-24T06:32:21.852Z",
+        "checkCompletedAtUTC": "2026-10-24T06:32:30.142Z",
+        "reportingThrough": "2026-10-23",
+        "observedThrough": "2026-10-24",
+        "currentDayPartial": true,
+        "currentDayPartialDate": "2026-10-24",
+        "statePreserved": true,
+        "comparisonComplete": true,
+        "nonAtomic": true,
+        "sameAccessibleAccountScope": true,
+        "activityStateRecordsCompared": 924,
+        "activityStateDoneRecordsCompared": 547,
+        "activityStateUndoneRecordsCompared": 377,
+        "newActivityIds": 0,
+        "removedActivityIds": 0,
+        "changedActivityRecords": 0,
+        "inventoryCensusClockPreserved": true,
+        "deletedHistoricalEventCoverageComplete": false,
+        "completeActivityEventHistory": false,
+        "sourceBasis": "Overlapping updated-since reads for accessible non-deleted and deleted deals, accessible activity updates and recent changes from before the earliest baseline request; separately all accessible archived deals; fresh fully paginated done/undone activity census with user_id0 compared by unique ID and every returned field against all924 retained activity records. All changes/ID removals/additions were zero. The source checks are non-atomic. This verifies retained accessible state, not all historical deleted events, source writes or commercial outcomes.",
+        "sourceManifests": [
+          "overlap_delta_manifest.json",
+          "activity_state_manifest.json",
+          "activity_state_comparison.json"
+        ]
+      },
+      "method": "Read-only overlapping change queries and bounded record verification; see guarded state bridge where verified",
+      "note": "No changes returned in overlapping accessible deal/update queries, and all924 currently returned activity records exactly match the retained state. The original full inventory timestamp is unchanged; the separately dated state bridge supports complete October23 state reporting plus partial October24 observation, within the accessible source scope."
     }
   ],
   "outcomes": {

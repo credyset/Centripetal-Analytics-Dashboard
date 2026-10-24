@@ -116,6 +116,59 @@ class RefreshReplayTests(unittest.TestCase):
         self.assertTrue({row['profileId'] for row in self.prior['records']} <=
                         {row['profileId'] for row in result['records']})
 
+    def test_inventory_and_partial_refresh_keep_explicit_video_reply(self):
+        sent = next(event for event in self.prior['platformObservedEvents']
+                    if event.get('direction') == 'outbound' and event.get('videoIncluded') is True)
+        reply = copy.deepcopy(sent)
+        reply.update(observationId='synthetic-explicit-video-reply',
+                     dedupKey=sent['profileId']+'|inbound|2026-10-22|explicit-video-reply',
+                     direction='inbound', sender='Synthetic prospect', date='2026-10-22',
+                     videoIncluded=False, assetId=None, assetLink=None,
+                     replyToVideoAttributionEstablished=True,
+                     replyToVideoAssetId=sent['assetId'],
+                     attributionBasis='Explicit response to a question about the previously sent video.')
+        self.prior['platformObservedEvents'].append(reply)
+        # A stale summary from a partial collector cannot hide event evidence.
+        self.prior['summary']['retainedObservedVideoReplyEvents'] = 0
+        self.baseline['video']['messageDateReview'] = copy.deepcopy(self.prior)
+        for result in (self.apply_inventory_only()['video']['messageDateReview'],
+                       self.merge(self.partial_review(summary={'retainedObservedVideoReplyEvents': 0}))):
+            retained = next(event for event in result['platformObservedEvents']
+                            if event_key(event) == event_key(reply))
+            for field in ('date', 'observedAt', 'sourceRow', 'videoIncluded',
+                          'replyToVideoAttributionEstablished', 'replyToVideoAssetId', 'attributionBasis'):
+                self.assertEqual(retained.get(field), reply.get(field))
+            expected = sum(event.get('direction') == 'inbound' and
+                           event.get('replyToVideoAttributionEstablished') is True
+                           for event in result['platformObservedEvents'])
+            self.assertGreaterEqual(expected, 1)
+            self.assertEqual(result['summary']['retainedObservedVideoReplyEvents'], expected)
+            self.assertIsNone(result['summary']['accountWideActualVideoReplies'])
+        self.assertEqual(self.baseline.get('outcomes'), self.before.get('outcomes'))
+        self.assertEqual(self.baseline.get('time'), self.before.get('time'))
+
+    def test_direct_native_proof_keeps_profile_join_without_source_asset(self):
+        event = copy.deepcopy(next(e for e in self.prior['platformObservedEvents']
+                                   if e.get('direction') == 'outbound' and e.get('videoIncluded') is True))
+        asset = next(value for value in ('a'*32, 'b'*32, 'c'*32)
+                     if not any(row.get('recordingAssetId') == value for row in self.fresh['rows']))
+        event.update(sourceEvidenceBasis='native_direct', assetId=asset,
+                     assetLink='https://www.loom.com/share/'+asset,
+                     observationId='synthetic-direct-native-without-source-asset',
+                     dedupKey='|'.join((event['profileId'], 'outbound', event['date'], asset)),
+                     sourceInventorySnapshotAt=self.baseline['video']['snapshotAt'])
+        self.prior['platformObservedEvents'].append(event)
+        self.baseline['video']['messageDateReview'] = copy.deepcopy(self.prior)
+        result = self.apply_inventory_only()['video']['messageDateReview']
+        retained = next(e for e in result['platformObservedEvents'] if event_key(e) == event_key(event))
+        expected = [row['sourceRow'] for row in self.fresh['rows'] if row['id'] == event['profileId']]
+        self.assertTrue(expected)
+        self.assertEqual(retained['currentSourceRows'], expected)
+        self.assertEqual(retained['currentAssetSourceRows'], [])
+        self.assertEqual(retained['currentInventorySnapshotAt'], self.fresh['snapshotAt'])
+        for field in ('sourceRow', 'observedAt', 'date', 'assetId'):
+            self.assertEqual(retained[field], event[field])
+
     def test_partial_record_update_keeps_omitted_evidence(self):
         prior_record = self.prior['records'][0]
         prior_record['retainedEvidenceMarker'] = 'Earlier independently dated CRM context'
