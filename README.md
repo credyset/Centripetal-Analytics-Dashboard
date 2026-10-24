@@ -1,6 +1,6 @@
 # Centripetal Analytics Dashboard
 
-Business-development dashboard for Charles Solomon and the Centripetal team, with actual dated source snapshots and separate activity and outcome reporting.
+Business-development dashboard for Charles Solomon and the Centripetal team, with actual dated source snapshots and separate activity and outcome reporting. **Content performance focuses on Charles’s personal LinkedIn profile.** Company-page exports are retained as collapsed supplementary context and never contribute to his headline content metrics.
 
 **GitHub is the shared source of truth for the application, curated reporting snapshot and measurement documentation:** https://github.com/credyset/Centripetal-Analytics-Dashboard
 

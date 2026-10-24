@@ -99,4 +99,26 @@ assert.match(recordingHtml,/Earlier October inventory review/);
 assert.match(recordingHtml,/15 new recording dialogues and 11 earlier insufficient responses/);
 assert.match(recordingHtml,/91/);
 assert.equal(run("capturedTables.find(t=>t[0]==='crm-recording-evidence')[2].length"),2);
+// Company distribution must never become Charles's headline content activity,
+// including when personal creator evidence is absent or a historical date is selected.
+ctx.personalFocusData=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/shared-dashboard.json'),'utf8'));
+run("S.data=personalFocusData;S.start=personalFocusData.content.creatorAnalytics.exportAnalytics.coverage.start;S.end=personalFocusData.content.creatorAnalytics.exportAnalytics.coverage.completeDaysThrough;");
+const focusedVector=JSON.parse(run("JSON.stringify(vectorData().find(v=>v.id==='content'))"));
+assert.equal(focusedVector.name,'Charles’s LinkedIn content');
+assert.equal(focusedVector.scope,'Charles Solomon · personal profile');
+const focusCoverage=ctx.personalFocusData.content.creatorAnalytics.exportAnalytics.coverage;
+const expectedPersonalImpressions=ctx.personalFocusData.content.creatorAnalytics.exportAnalytics.daily.filter(r=>r.date>=focusCoverage.start&&r.date<=focusCoverage.completeDaysThrough).reduce((total,r)=>total+r.impressions,0);
+assert.equal(focusedVector.activity[0].value,expectedPersonalImpressions.toLocaleString('en-US'));
+assert.ok(focusedVector.activity.every(m=>!/company/i.test(m.label)));
+const focusedHtml=run('content()'),supplementAt=focusedHtml.indexOf('<details class="activity-review-details">');
+assert.ok(supplementAt>0);
+assert.match(focusedHtml.slice(supplementAt),/Supplementary company-page/);
+assert.doesNotMatch(focusedHtml.slice(0,supplementAt),/Centripetal company-page analytics|Company sponsored impressions/);
+ctx.onlyCompany={meta:{},content:{daily:[{date:'2026-10-20',account:'Centripetal Advisors',impressions:999999,engagements:888888}],accounts:[{name:'Centripetal Advisors',impressions:999999}],publicObservations:{profiles:[{name:'Centripetal Advisors',followers:777777},{name:'Charles Solomon',followers:666666}]}}};
+run("S.data=onlyCompany;S.start='2026-10-19';S.end='2026-10-23';");
+assert.equal(run("vectorData().find(v=>v.id==='content').activity[0].value"),null);
+assert.equal(run("vectorData().find(v=>v.id==='content').responses[0].value"),null);
+ctx.onlyCompany.content.daily.push({date:'2026-10-20',account:'Charles Solomon',impressions:17,engagements:3});
+assert.equal(run("vectorData().find(v=>v.id==='content').activity[0].value"),'17');
+assert.equal(run("vectorData().find(v=>v.id==='content').responses[0].value"),'3');
 console.log('Reporting display: selected-date impressions, missing/zero handling, fixed reach and source-specific coverage passed.');
