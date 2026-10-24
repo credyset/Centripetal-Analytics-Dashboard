@@ -1,0 +1,57 @@
+/* Targeted mail context keeps its own dates and never becomes activity totals. */
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const app=fs.readFileSync(path.join(__dirname,'../app.js'),'utf8').replace(/\ninit\(\);\s*$/,'');
+const ctx=vm.createContext({Intl,Date,URL,setTimeout:()=>{},document:{querySelector:()=>null}});
+vm.runInContext(app,ctx);const run=source=>vm.runInContext(source,ctx);
+const row={recordId:'charles-personal:thread:30330',mailboxKey:'charles-personal',threadId:30330,company:'Example prospect',contact:'Example contact',dealIds:[],observedAt:'2026-10-24T07:00:00Z',messageDate:'2026-10-23',datePrecision:'day',occurredAt:null,sourceTimezone:null,direction:'inbound',senderVerified:true,contextKind:'meeting_reference',summary:'A meeting reference needs independent attendance evidence.',remainingEvidenceNeeded:['Verify actual occurrence and Charles participation.'],commercialOutcomeDecisionApplied:false};
+ctx.mailReview={snapshotAt:'2026-10-24T07:01:00Z',reviewedAt:'2026-10-24T07:02:00Z',scope:{kind:'targeted_inbox_review',mailboxKeysReviewed:['charles-personal'],foldersReviewed:['Inbox'],focusWindow:{start:'2026-10-19',end:'2026-10-24'},fullAccountCensus:false,completeCommercialActivityCoverage:false},accessContext:{browserSessionUserLabel:'Christian W',mailboxes:[{mailboxKey:'charles-personal',mode:'personal',ownerLabel:'Charles Solomon',identityVerified:true}]},sourceDisplayedAggregateConversationCount:999,aggregateCountScope:'Displayed mailbox inventory, not selected-period activity.',records:[row,{...row,recordId:'charles-personal:thread:30331',threadId:30331,company:'Unknown-date context',messageDate:null,datePrecision:'unknown',direction:'unconfirmed',senderVerified:false,summary:'Source message date and sender remain unconfirmed.'}],counterChanges:{heldProspectConversations:0,qualifiedProspectCompanies:0,acceptedOpportunities:0,firstClientWins:0,videoSends:0,videoReplies:0,referralEvents:0,humanHours:0},notes:['No commercial decision is applied.']};
+ctx.input=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/shared-dashboard.json'),'utf8'));
+run("S.data=input;S.start='2026-10-19';S.end='2026-10-24';capture=[];const originalMailboxTable=table;table=(...args)=>{capture.push(args);return originalMailboxTable(...args);};");
+const beforeMetrics=run('JSON.stringify(vectorData())'),beforeOutcome=run('JSON.stringify(selectedOutcomeMetrics())');
+run('S.data.crm.mailboxReview=mailReview;');
+assert.equal(run('crmMailboxReviewValid(mailReview)'),true);
+const html=run('crmMailboxEvidence(S.data.crm)');
+assert.match(html,/Targeted Sales Inbox review/);assert.match(html,/Christian W/);assert.match(html,/Charles Solomon/);
+assert.match(html,/not a full mailbox census/);assert.match(html,/independent of the dashboard date, owner and pipeline filters/);
+assert.match(html,/not a new-message, prospect or outcome count/);
+assert.match(html,/Oct 24, 2026/);
+assert.match(run('sourceCoverageLabel(mailReview.scope)'),/Targeted Sales Inbox correspondence/);
+assert.doesNotMatch(run('sourceCoverageLabel(mailReview.scope)'),/Coverage not supplied/);
+const table=ctx.capture.find(entry=>entry[0]==='crm-mailbox-context');
+assert.equal(table[2].length,2);
+assert.ok(table[3].every(column=>!['subject','body','email','emailBody','messageBody'].includes(column.key)));
+const dateColumn=table[3].find(column=>column.key==='messageDate'),directionColumn=table[3].find(column=>column.key==='direction');
+assert.match(dateColumn.render(row.messageDate,row),/Oct 23, 2026/);assert.doesNotMatch(dateColumn.render(row.messageDate,row),/Oct 24, 2026/);
+assert.match(dateColumn.render(row.messageDate,row),/source timezone unavailable/);
+const inferredDate={...row,sourceDisplayedDateLabel:'OCT 23',messageDateBasis:'Year inferred from current-year source context; source label omits the year.'};
+assert.match(dateColumn.render(row.messageDate,inferredDate),/source label omits the year/);
+assert.match(dateColumn.render(row.messageDate,inferredDate),/Source label: OCT 23/);
+assert.match(dateColumn.render(row.messageDate,{...row,messageDateRange:{start:'2026-10-19',end:'2026-10-23'}}),/Thread context dates/);
+assert.doesNotMatch(dateColumn.render(row.messageDate,{...row,messageDateBasis:'<script>bad</script>'}),/<script>/);
+const evidenceColumn=table[3].find(column=>column.key==='summary');
+assert.match(evidenceColumn.render('Curated context',{notes:['Earlier source window; no outcome inferred.']}),/Earlier source window/);
+assert.doesNotMatch(evidenceColumn.render('<script>bad</script>',{notes:['<script>bad</script>']}),/<script>/);
+assert.equal(dateColumn.render(null,table[2][1]),'Source date not established');
+assert.match(dateColumn.render('2026-10-24',{datePrecision:'timestamp',occurredAt:'2026-10-24T02:00:00Z'}),/Oct 23, 2026/);
+assert.equal(dateColumn.render('2026-10-24',{datePrecision:'timestamp',occurredAt:'2026-10-24T02:00:00'}),'Source date not established');
+assert.match(directionColumn.render('inbound',row),/Sender verified in source/);
+assert.match(directionColumn.render('unconfirmed',table[2][1]),/Sender unconfirmed/);
+assert.equal(run('JSON.stringify(vectorData())'),beforeMetrics);
+assert.equal(run('JSON.stringify(selectedOutcomeMetrics())'),beforeOutcome);
+run("S.start='2000-01-01';S.end='2000-01-02';S.pipeline='9999';S.owner='Different owner';");
+assert.equal(run('crmMailboxEvidence(S.data.crm)'),html,'Date/pipeline/owner filters must not relabel or hide this fixed review.');
+
+for(const mutate of [review=>review.scope.fullAccountCensus=true,review=>review.scope.completeCommercialActivityCoverage=true,review=>review.reviewedAt='2020-01-01T00:00:00Z',review=>review.counterChanges.videoSends=1,review=>review.records[0].commercialOutcomeDecisionApplied=true,review=>review.records[0].mailboxKey='unreviewed-mailbox',review=>review.accessContext.mailboxes[0].identityVerified=false,review=>review.records[0].senderVerified=false,review=>review.records.push({...review.records[0]})]){
+ ctx.invalidReview=JSON.parse(JSON.stringify(ctx.mailReview));mutate(ctx.invalidReview);
+ assert.equal(run('crmMailboxReviewValid(invalidReview)'),false);
+ assert.match(run('crmMailboxEvidence({mailboxReview:invalidReview})'),/review withheld/);
+}
+ctx.previousReview=JSON.parse(JSON.stringify(ctx.mailReview));ctx.previousReview.snapshotAt='2026-10-23T07:01:00Z';ctx.previousReview.reviewedAt='2026-10-23T07:02:00Z';
+for(const record of ctx.previousReview.records)record.observedAt='2026-10-23T07:00:00Z';
+ctx.mailReview.retainedPriorReviews=[ctx.previousReview];
+const withHistory=run('crmMailboxEvidence({mailboxReview:mailReview})');
+assert.match(withHistory,/<details class="activity-review-details"><summary>Earlier Sales Inbox review/);
+assert.match(withHistory,/crm-mailbox-context-history-0/);
+assert.match(withHistory,/Oct 23, 2026/);
+console.log('Mailbox display: fixed source clocks, sender/date precision, retained earlier reviews, scope guards and unchanged activity/outcome totals passed.');

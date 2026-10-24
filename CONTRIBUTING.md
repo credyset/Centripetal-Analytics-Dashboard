@@ -10,6 +10,8 @@ The latest focused findings are documented in [GAP_RESOLUTION_2026-10-24.md](GAP
 
 The October 24 review includes three historical September videos and one declined September video-linked reply; October's observed-video minimum remains 18. Source-profile first appearances are a bounded revision comparison, not exact row-add dates or new people. Show their minimum only when the entire comparison interval falls within the selected period. CRM's separately dated unchanged-state verification preserves the original census timestamp and does not establish complete deleted-event history. Charles's personal profile remains the headline content scope.
 
+`tools/apply_mailbox_review_2026_10_24.py` prepares a private preview of independently dated, targeted Sales Inbox context. Keep mailbox ownership separate from the authenticated browser user and verified senders. Curated thread summaries and booking evidence do not change activity counts, commercial decisions or owner hours. Raw messages, addresses, meeting-access links and unrelated financial details remain private. Retain prior review batches with their original clocks when a later selection covers different threads.
+
 CI checks partial-refresh replay, source-age and publication-hold preservation, and source-specific publication minimization. Rules in `PUBLICATION_REDACTIONS.json` are applied during final curation and validated before publication; a later source import must not restore excluded personal identity or context. Raw source content remains private. Earlier October 16 corrections remain documented in [ANALYTICS_REVISION_2026-10-16.md](ANALYTICS_REVISION_2026-10-16.md).
 
 ## Run a populated dashboard from a fresh clone

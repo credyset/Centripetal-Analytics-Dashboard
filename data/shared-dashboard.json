@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-10-24T06:40:22.149268+00:00",
+    "generatedAt": "2026-10-24T06:52:09.565086+00:00",
     "asOfDate": "2026-10-24",
     "timezone": "America/Denver",
     "scope": "Charles Solomon and Centripetal Advisors",
@@ -11,8 +11,8 @@
     "note": "Published snapshot; Source coverage varies. Automatic refresh is not enabled.",
     "public": true,
     "publicDataPolicy": "Owner-approved detailed snapshot including prospect identities and available business record links.",
-    "analyticsRevisedAt": "2026-10-24T06:40:22.149268+00:00",
-    "lastRevisionNote": "Focused source checks add historical native-message evidence and clarify CRM/identity/date gaps. Parent inventory clocks, commercial outcomes and owner effort estimates retain their separate evidence dates.",
+    "analyticsRevisedAt": "2026-10-24T06:52:09.565086+00:00",
+    "lastRevisionNote": "Focused native-message, worksheet, CRM-state and separately dated Sales Inbox checks clarify historical activity and remaining identity/date questions. Parent inventory clocks, commercial outcomes and owner effort estimates retain their separate evidence dates.",
     "revision": "October 24 focused Video DM and CRM gap resolution",
     "reportingAsOfDate": "2026-10-24",
     "defaultCompleteReportingThrough": "2026-10-23",
@@ -63978,6 +63978,293 @@
       "overlapSourceManifest": "overlap_delta_manifest.json",
       "snapshotAt": "2026-10-24T06:32:30.142Z",
       "baselineSnapshotAt": "2026-10-24T03:11:09.030Z"
+    },
+    "mailboxReview": {
+      "snapshotAt": "2026-10-24T06:48:34.792Z",
+      "reviewedAt": "2026-10-24T06:48:34.792Z",
+      "scope": {
+        "kind": "targeted_inbox_review",
+        "mailboxKeysReviewed": [
+          "charles_team"
+        ],
+        "foldersReviewed": [
+          "team_inbox",
+          "search"
+        ],
+        "focusWindow": {
+          "start": "2026-10-19",
+          "end": "2026-10-24"
+        },
+        "fullAccountCensus": false,
+        "completeCommercialActivityCoverage": false,
+        "selectionBasis": "Eight selected business-context threads plus 13 targeted searches. Historical correspondence was included where needed to interpret the current relationship or channel. NuVee search results were not opened."
+      },
+      "accessContext": {
+        "browserSessionUserLabel": "CW",
+        "mailboxes": [
+          {
+            "mailboxKey": "charles_team",
+            "mode": "team",
+            "ownerLabel": "Charles",
+            "identityVerified": true
+          }
+        ],
+        "note": "Existing CW browser authentication provided access to the selected Charles Team mailbox. Mailbox ownership and browser-session identity remain separate from the individually verified message senders. This is not a Charles-credential API mailbox census."
+      },
+      "sourceDisplayedAggregateConversationCount": null,
+      "aggregateCountScope": "Undated interface aggregates are excluded; they do not measure this review window, sent actions or completeness.",
+      "records": [
+        {
+          "recordId": "charles_team:thread:30330",
+          "mailboxKey": "charles_team",
+          "threadId": 30330,
+          "company": "SportX1",
+          "contact": "Sid El Saghir",
+          "dealIds": [],
+          "observedAt": "2026-10-24T06:43:06.514Z",
+          "messageDate": "2026-10-23",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "messageDateBasis": "Displayed source message date and retained 2026 thread context; no exact source instant or message timezone was established.",
+          "direction": "inbound",
+          "senderVerified": true,
+          "charlesInCorrespondenceObserved": true,
+          "contextKind": "meeting_reference_and_introduction_support",
+          "summary": "An incoming follow-up references an earlier meeting and welcomes Charles’s help with introductions. This supplies meeting-reference and relationship context, rather than a new commercial decision.",
+          "remainingEvidenceNeeded": "Charles must review the meeting occurrence day and commercial classification. No held-prospect, qualification, accepted-opportunity or win headline is added.",
+          "commercialOutcomeDecisionApplied": false,
+          "heldMeetingInferred": false,
+          "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/search/thread/30330",
+          "meetingReferenceObserved": true
+        },
+        {
+          "recordId": "charles_team:thread:27052",
+          "mailboxKey": "charles_team",
+          "threadId": 27052,
+          "company": "InStockRx",
+          "contact": "Mac Dougherty",
+          "dealIds": [
+            393
+          ],
+          "observedAt": "2026-10-24T06:43:53.880Z",
+          "messageDate": "2026-07-28",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "messageDateBasis": "The displayed July 28 label omits year;2026 uses the current-source thread context. Source day only; message timezone and exact instant are unknown.",
+          "direction": "outbound",
+          "senderVerified": true,
+          "charlesInCorrespondenceObserved": true,
+          "contextKind": "historical_email_channel_provenance",
+          "summary": "A historical Charles-sent email references an earlier LinkedIn note. No video asset is established in the reviewed email. The worksheet’s undated Video Sent label remains separate from this email evidence.",
+          "remainingEvidenceNeeded": "An actual LinkedIn video asset and platform send date remain unverified for this row. This context is not inserted into the Video DM or retained email-event registers.",
+          "commercialOutcomeDecisionApplied": false,
+          "heldMeetingInferred": false,
+          "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/search/thread/27052",
+          "notes": [
+            "This newly reviewed email context adds no email-event, LinkedIn-message or video-send count."
+          ]
+        },
+        {
+          "recordId": "charles_team:thread:29907",
+          "mailboxKey": "charles_team",
+          "threadId": 29907,
+          "company": "Woodrow",
+          "contact": "Juliana Osmers",
+          "dealIds": [],
+          "observedAt": "2026-10-24T06:44:34.583Z",
+          "messageDate": "2026-10-19",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "messageDateBasis": "Displayed source message date and retained 2026 thread context; no exact source instant or message timezone was established.",
+          "direction": "inbound",
+          "senderVerified": true,
+          "charlesInCorrespondenceObserved": true,
+          "contextKind": "scheduling_context",
+          "summary": "Incoming scheduling correspondence arranges an October 20 meeting. Scheduling establishes the intended date; it does not independently establish attendance or the direction of the commercial relationship.",
+          "remainingEvidenceNeeded": "Review the sales-prospect role with Charles alongside the separate product/support correspondence. No held-call or qualification decision is updated.",
+          "commercialOutcomeDecisionApplied": false,
+          "heldMeetingInferred": false,
+          "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/search/thread/29907",
+          "scheduledEventDate": "2026-10-20",
+          "bookingEvidence": "scheduling_correspondence",
+          "relatedThreadIds": [
+            28283
+          ]
+        },
+        {
+          "recordId": "charles_team:thread:28283",
+          "mailboxKey": "charles_team",
+          "threadId": 28283,
+          "company": "Woodrow",
+          "contact": "Sidharth Kakkar",
+          "dealIds": [],
+          "observedAt": "2026-10-24T06:44:53.316Z",
+          "messageDate": "2026-09-10",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "messageDateBasis": "Displayed source message date and retained 2026 thread context; no exact source instant or message timezone was established.",
+          "direction": "mixed",
+          "senderVerified": true,
+          "charlesInCorrespondenceObserved": true,
+          "contextKind": "product_vendor_context_candidate",
+          "summary": "Earlier August 26–September 10 correspondence describes Centripetal considering or using Woodrow’s operational-agent product, followed by product-access and support exchanges. A Centripetal service-buyer role is not established by this thread.",
+          "remainingEvidenceNeeded": "Charles must reconcile the product/vendor context with the October meeting before classifying Woodrow as a Centripetal sales prospect. The commercial ledger remains unchanged.",
+          "commercialOutcomeDecisionApplied": false,
+          "heldMeetingInferred": false,
+          "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/search/thread/28283",
+          "messageDateRange": {
+            "start": "2026-08-26",
+            "end": "2026-09-10"
+          },
+          "relatedThreadIds": [
+            29907
+          ]
+        },
+        {
+          "recordId": "charles_team:thread:29965",
+          "mailboxKey": "charles_team",
+          "threadId": 29965,
+          "company": "Venus AI",
+          "contact": "Micah Thorner",
+          "dealIds": [
+            791
+          ],
+          "observedAt": "2026-10-24T06:45:56.522Z",
+          "messageDate": "2026-10-16",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "messageDateBasis": "Displayed source message date and retained 2026 thread context; no exact source instant or message timezone was established.",
+          "direction": "inbound",
+          "senderVerified": true,
+          "charlesInCorrespondenceObserved": true,
+          "contextKind": "rescheduling_context",
+          "summary": "The October 14–16 correspondence discusses moving the original October 15 booking to October 16. This thread and the separate accepted replacement invitation concern the same rescheduling chain.",
+          "remainingEvidenceNeeded": "Preserve the existing owner-held decision and unresolved occurrence-day review. Rescheduling correspondence does not establish an additional call, qualification or newly accepted opportunity.",
+          "commercialOutcomeDecisionApplied": false,
+          "heldMeetingInferred": false,
+          "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/search/thread/29965",
+          "messageDateRange": {
+            "start": "2026-10-14",
+            "end": "2026-10-16"
+          },
+          "scheduledEventDate": "2026-10-16",
+          "bookingEvidence": "scheduling_correspondence",
+          "relatedThreadIds": [
+            30043
+          ]
+        },
+        {
+          "recordId": "charles_team:thread:30043",
+          "mailboxKey": "charles_team",
+          "threadId": 30043,
+          "company": "Venus AI",
+          "contact": "Micah Thorner",
+          "dealIds": [
+            791
+          ],
+          "observedAt": "2026-10-24T06:46:08.718Z",
+          "messageDate": "2026-10-16",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "messageDateBasis": "Displayed source message date and retained 2026 thread context; no exact source instant or message timezone was established.",
+          "direction": "inbound",
+          "senderVerified": true,
+          "charlesInCorrespondenceObserved": true,
+          "contextKind": "accepted_replacement_booking",
+          "summary": "An accepted replacement invitation explicitly schedules October 16, 2026. It corroborates the replacement booking, rather than proving actual attendance or a separate second meeting.",
+          "remainingEvidenceNeeded": "Charles must reconcile the invitation with the existing held-call/date evidence. The accepted invitation does not change qualification or commercial-acceptance decisions.",
+          "commercialOutcomeDecisionApplied": false,
+          "heldMeetingInferred": false,
+          "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/search/thread/30043",
+          "scheduledEventDate": "2026-10-16",
+          "scheduledEventTimezone": "America/New_York",
+          "bookingEvidence": "accepted_invitation",
+          "relatedThreadIds": [
+            29965
+          ]
+        },
+        {
+          "recordId": "charles_team:thread:30266",
+          "mailboxKey": "charles_team",
+          "threadId": 30266,
+          "company": "Quantex Health",
+          "contact": "Muhtasim Mannan (Sadab)",
+          "dealIds": [
+            796
+          ],
+          "observedAt": "2026-10-24T06:47:06.765Z",
+          "messageDate": "2026-10-22",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "messageDateBasis": "Displayed source message date and retained 2026 thread context; no exact source instant or message timezone was established.",
+          "direction": "inbound",
+          "senderVerified": true,
+          "charlesInCorrespondenceObserved": true,
+          "contextKind": "accepted_future_replacement_booking",
+          "summary": "An October 22 acceptance explicitly schedules the replacement meeting for October 29, 2026. It is a future accepted booking as of this review, not evidence of an October 22 held call.",
+          "remainingEvidenceNeeded": "Actual attendance and any commercial decisions require later evidence and Charles’s review. No held-prospect or qualification count is added.",
+          "commercialOutcomeDecisionApplied": false,
+          "heldMeetingInferred": false,
+          "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/search/thread/30266",
+          "scheduledEventDate": "2026-10-29",
+          "scheduledEventTimezone": "America/New_York",
+          "bookingEvidence": "accepted_invitation"
+        },
+        {
+          "recordId": "charles_team:thread:30298",
+          "mailboxKey": "charles_team",
+          "threadId": 30298,
+          "company": "Jumbo Ventures",
+          "contact": "Jahir Islam",
+          "dealIds": [
+            857
+          ],
+          "observedAt": "2026-10-24T06:48:34.792Z",
+          "messageDate": "2026-10-22",
+          "datePrecision": "day",
+          "occurredAt": null,
+          "sourceTimezone": null,
+          "messageDateBasis": "Displayed source message date and retained 2026 thread context; no exact source instant or message timezone was established.",
+          "direction": "inbound",
+          "senderVerified": true,
+          "charlesInCorrespondenceObserved": true,
+          "contextKind": "accepted_future_booking",
+          "summary": "An October 22 acceptance explicitly schedules a meeting for October 29, 2026. The settled invitation view confirms the future booking date; it does not establish that a call has been held.",
+          "remainingEvidenceNeeded": "Actual attendance and any commercial decisions require later evidence and Charles’s review. The associated CRM record is context, not an accepted sales-opportunity decision.",
+          "commercialOutcomeDecisionApplied": false,
+          "heldMeetingInferred": false,
+          "evidenceUrl": "https://centripetaladvisors.pipedrive.com/mail/search/thread/30298",
+          "scheduledEventDate": "2026-10-29",
+          "scheduledEventTimezone": "America/New_York",
+          "bookingEvidence": "accepted_invitation"
+        }
+      ],
+      "counterChanges": {
+        "videoSends": 0,
+        "firstClientWins": 0,
+        "humanHours": 0,
+        "qualifiedProspectCompanies": 0,
+        "videoReplies": 0,
+        "heldProspectConversations": 0,
+        "referralEvents": 0,
+        "acceptedOpportunities": 0
+      },
+      "notes": [
+        "Eight thread records are a targeted context sample, not eight meetings, new prospects, accepted opportunities or sends.",
+        "The Venus reschedule and replacement invitation describe one booking chain; accepted future Quantex/Jumbo invitations do not establish held calls.",
+        "Thirteen accessible UI searches were inspected. Zero keyword results are bounded search findings, not proof of account-wide absence; alternate company/contact queries can find relevant threads.",
+        "NuVee search results were inspected without opening either thread. Its existing owner-confirmed qualified status and held-call decision remain unchanged.",
+        "Source message dates, scheduled event dates and source collection times are distinct. Date-only message observations keep unknown source timezone and no invented UTC timestamp.",
+        "No source records or messages were edited or sent. CRM state checks, all event counters, owner decisions, commercial outcomes and human-hour estimates are unchanged.",
+        "Raw messages, addresses, subjects, meeting access details and unrelated private context remain outside the public supplement."
+      ]
     }
   },
   "video": {
@@ -127497,6 +127784,31 @@
       },
       "method": "Read-only overlapping change queries and bounded record verification; see guarded state bridge where verified",
       "note": "No changes returned in overlapping accessible deal/update queries, and all924 currently returned activity records exactly match the retained state. The original full inventory timestamp is unchanged; the separately dated state bridge supports complete October23 state reporting plus partial October24 observation, within the accessible source scope."
+    },
+    {
+      "id": "crm_inbox_context",
+      "name": "Pipedrive · targeted Charles mailbox context",
+      "asOf": "2026-10-24T06:48:34.792Z",
+      "status": "Independent bounded correspondence review",
+      "coverage": {
+        "kind": "targeted_inbox_review",
+        "mailboxKeysReviewed": [
+          "charles_team"
+        ],
+        "foldersReviewed": [
+          "team_inbox",
+          "search"
+        ],
+        "focusWindow": {
+          "start": "2026-10-19",
+          "end": "2026-10-24"
+        },
+        "fullAccountCensus": false,
+        "completeCommercialActivityCoverage": false,
+        "selectionBasis": "Eight selected business-context threads plus 13 targeted searches. Historical correspondence was included where needed to interpret the current relationship or channel. NuVee search results were not opened."
+      },
+      "method": "Read-only Sales Inbox browser review; selected mailbox and individual sender/date evidence verified separately",
+      "note": "Curated correspondence context only. The displayed inbox aggregate is not selected-period activity or completeness evidence. Original CRM inventory and commercial decisions retain their own sources and clocks."
     }
   ],
   "outcomes": {

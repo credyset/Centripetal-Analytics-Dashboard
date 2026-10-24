@@ -1,6 +1,6 @@
 # Remaining measurement gaps — updated October 16, 2026
 
-Current collected-source checklist: [October 23 remaining inputs](MANUAL_DATA_REQUEST_2026-10-23.md). The dated October 16 assessment below is historical; later source reviews resolve several of its earlier gaps.
+Latest targeted findings: [October 24 gap resolution](GAP_RESOLUTION_2026-10-24.md). CRM state and full worksheet values were independently rechecked, historical native-message dates were corroborated, and Charles's shared Sales Inbox was subsequently accessed for a bounded correspondence review. The [October 23 input checklist](MANUAL_DATA_REQUEST_2026-10-23.md) includes the latest follow-up. Another generic CRM or worksheet export is not needed. The dated October 16 assessment below is historical; later source reviews resolve several of its earlier gaps.
 
 Latest source refresh and owner outcomes are applied in [LIVE_DATA_REFRESH_2026-10-16.md](LIVE_DATA_REFRESH_2026-10-16.md). The earlier correction review remains in [ANALYTICS_REVISION_2026-10-16.md](ANALYTICS_REVISION_2026-10-16.md). The source reviews below retain their individual collection dates.
 

@@ -7,6 +7,7 @@ The eight targeted thread checks bring the retained sample to 34 observed messag
 ## What the review established
 
 - **CRM state:** overlapping change queries began before the earliest retained inventory read and returned no accessible changes. A fresh read of all 924 current activities, across both completion states and accessible owners, matched every retained ID and field. This supports a separately dated state check through complete October 23 and partial October 24. The 780-deal / 924-activity inventory keeps its original `2026-10-24T03:11:09.030Z` timestamp; the non-atomic state check is not a complete history of deleted activities or every past edit.
+- **Targeted Sales Inbox context:** eight selected Team-mailbox threads and 13 accessible UI searches were reviewed through 06:48:34 UTC on October 24. The authenticated browser session is labelled CW; the selected mailbox belongs to Charles. Individual sender evidence remains separate from mailbox ownership. Undated interface totals are excluded, and complete mailbox coverage is unavailable.
 - **Video DM worksheet:** a fresh read of the allocated source ranges matched the retained values exactly. Its 468 valid rows, 460 unique profiles, 22 literal video-send dates and 44 literal follow-up dates remain unchanged. Source labels and dates remain distinct from observed LinkedIn events.
 - **Caddi:** the exact worksheet Loom asset appears in Charles’s conversation. The displayed September 10 video message and September 16 follow-up/reply fill historical evidence gaps. The incoming reply declines the approach; it is not a video message or an owner qualification decision. The CRM record exists, but its current recording-note gap remains.
 - **Eve Security:** the conversation establishes an older September video asset and an October follow-up even though the current worksheet has no asset or date. Targeted accessible CRM searches still find no matching record. This does not establish that a CRM write was required or that an automation failed.
@@ -20,6 +21,18 @@ Complete compared workbook revisions also establish a minimum of 40 source-profi
 
 September observations stay in their historical period. They do not increase October’s 18 previously corroborated video sends. Previously retained events keep their original observation times.
 
+## Fresh correspondence context
+
+SportX1’s October 23 follow-up references an earlier meeting and welcomes help with introductions. Charles still needs to review the occurrence date and commercial classification. It adds no held-prospect headline.
+
+Woodrow’s earlier product/access/support correspondence describes Centripetal considering or using Woodrow’s operational-agent product. The October 19 scheduling thread arranges an October 20 meeting. A Centripetal sales-buyer role remains unestablished, so Charles should review the relationship before treating that meeting as a prospect conversation.
+
+Venus’s rescheduling correspondence and accepted replacement invitation support an October 16 booking. They describe one booking chain and leave the existing owner-held decision unchanged. Quantex Health and Jumbo Ventures have accepted October 29 bookings; these were future appointments at review time and do not establish held calls.
+
+InStockRx’s historical July 28 Charles-sent email supplies channel context and references an earlier LinkedIn note. Its year uses current-source context because the displayed month/day omits year; timezone and exact instant remain unknown. No video asset or LinkedIn send date was established in that email. It remains an independent mailbox-context record, with no email-event or Video DM counter increment.
+
+NuVee’s search results were inspected without opening the threads. Its existing owner-confirmed qualified status remains unchanged.
+
 ## Limits and remaining decisions
 
 LinkedIn source timezones are unknown. Caddi, Saile and Sonata messages that omit a year use an explicitly documented current-year label convention, with moderate confidence and day precision; their displayed times are not converted into invented UTC send timestamps.
@@ -28,7 +41,7 @@ Sonata’s conversation contains an explicit video-reference message using a sho
 
 Prosper’s explicit CRM ID establishes record presence, but the retained CRM contact still lacks a matching profile URL. Caddi and Sonata remain gaps in recording references, rather than missing CRM records. Accessible name/profile/asset searches are bounded and do not prove that a person or record is absent everywhere.
 
-The review did not refresh Charles’s Sales Inbox: the browser session requires his manual Google sign-in. Both configured CRM connections authenticate as the same user; neither established an alternative Charles mailbox session. Mailbox conclusions retain their older review date.
+The earlier mailbox-access gap is resolved for this targeted Team-mailbox review. The API connections still authenticate as the same user, while the browser provided the independently verified Charles mailbox selection. Older commercial-context reviews retain their original dates. The new supplement is a bounded correspondence review, not a complete mailbox census or commercial-activity history.
 
 Charles still needs to review commercial outcomes: held prospect conversations, qualification, acceptance of an active opportunity with a next step, and first-time client wins. A reply, CRM stage, booking or new record does not automatically establish one of those outcomes.
 

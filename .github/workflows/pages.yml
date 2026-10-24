@@ -41,6 +41,10 @@ jobs:
         run: python3 tools/check_refresh_replay_2026_10_23.py
       - name: Check focused evidence anchoring and independent-review preservation
         run: python3 tools/check_gap_resolution_2026_10_24.py
+      - name: Check targeted mailbox context and commercial isolation
+        run: |
+          python3 tools/check_mailbox_review_2026_10_24.py
+          node tools/check_mailbox_display.js
       - name: Check publication data minimization
         run: python3 tools/check_publication_redactions.py
       - name: Build approved static dashboard

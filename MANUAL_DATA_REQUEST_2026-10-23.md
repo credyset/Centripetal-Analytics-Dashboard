@@ -1,5 +1,7 @@
 # Remaining data needs — October 23, 2026
 
+**October 24 follow-up:** [The focused gap review](GAP_RESOLUTION_2026-10-24.md) adds unchanged CRM-state and full-sheet checks, three historical September video sends and one September declined video-linked reply. October's native video minimum remains 18. Complete revision comparisons establish at least 40 source-profile first appearances between October 21–22, without exact row-added times. Charles's shared Sales Inbox is now accessible through the signed-in CW session; eight selected threads were reviewed separately from the current CRM census. This targeted review does not establish complete correspondence or commercial outcomes.
+
 The [October 23 source review](REFRESH_REVIEW_2026-10-23.md) documents the completed independent collection. Another generic CRM, Video DM worksheet or aggregate creator export is not needed. Ads status/totals, Waalaxy Home, Charles profile analytics and the nine new October 22 native Video DM threads have also been checked. No new aggregate export is needed to reproduce the current accessible snapshot. The remaining requests below address specific coverage or event-definition gaps.
 
 ## Owner review with Charles
@@ -24,7 +26,7 @@ If direct history remains incomplete, the useful narrow message export contains 
 Remaining bounded record-quality questions:
 
 - Caddi and Sonata have current CRM records, but their source recording assets were absent from the fully paginated current deal/person/organization note scopes. This is a recording-note gap, not proof of missing sends.
-- Chromie Health retains deleted worksheet ID 322 while exact live identity/asset evidence matches 836. Formal replacement/merge intent is unverified.
+- Chromie Health retains deleted worksheet ID 322 while the exact live profile matches 836. The October 24 check confirms the current worksheet recording cell is empty, so no current source-asset match is claimed. Formal replacement/merge intent is unverified.
 - Two source-ID rows still lack an exact current profile match. Current record presence is separate from identity verification.
 - Eve Security has an undated Video Sent label, an empty recording cell and no explicit ID. The accessible current deal metadata and targeted name/profile/organization queries found no matching record. An eligible automation write or failure is unverified.
 - SubImage's earlier platform send remains unconfirmed. General reply evidence and video-attributed replies remain different measures.
@@ -45,7 +47,7 @@ The last validated invitation CSV ends October 22 partial, with 430 Sent / 132 A
 
 For complete dated message coverage, the useful Waalaxy export is campaign message/reply action history, with sender/account, campaign/action IDs and source timezone. Exact acceptance-event dates and matched invitation cohorts remain unverified; retrospective Accepted bucket revisions do not supply them.
 
-Charles's current Sales Inbox is not established by this collection: the configured CRM credential identifies a different user, and the Mailbox API has no user selector. Use Charles's authenticated browser first. A mailbox export or Charles-owned connection is useful only if that direct route remains unavailable. Full CRM record/activity and archive reads are already retained.
+The October 23 API collection did not establish Charles's current mailbox: the configured credential identifies a different user, and the Mailbox API has no user selector. The October 24 follow-up accessed Charles's shared Team inbox through the signed-in CW browser session and reviewed eight selected threads. Mailbox ownership, browser-session user and verified message senders remain separate. Access is resolved for this targeted review; complete correspondence history remains unavailable. A generic mailbox export is not presently required. Full CRM record/activity and archive reads are already retained.
 
 Referral accuracy needs dated requests, completed introductions and Charles follow-ups linked to referrer, target company and stable source/CRM identifiers. Current stage positions and one latest-update timestamp cannot reconstruct those events. Complete account-wide stage/activity history is also distinct from the freshly collected current inventory and selected changed-deal histories.
 
