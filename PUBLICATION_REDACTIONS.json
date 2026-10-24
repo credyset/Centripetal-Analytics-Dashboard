@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "basis": "Employment and recruiting context is outside the approved prospect and business-development publication scope. Preserve source proof privately and publish only minimal audit metadata.",
+  "records": [
+    {
+      "sourceSystem": "fireflies",
+      "sourceId": "01M5CWDYQKG89SJR4KZ07H7DQ3",
+      "safeTitle": "Recruiting interview (excluded from business-development outcomes)",
+      "safeClassification": "recruiting_interview",
+      "safeClassificationBasis": "Employment/recruiting purpose verified; excluded from business-development outcomes. Personal employment details are withheld from publication.",
+      "allowedFields": [
+        "id", "recordingId", "sourceId", "title", "indexedAt", "occurredAt", "dateBasis", "durationMinutes",
+        "classification", "classificationBasis", "reviewedDialogue", "sentenceCount", "speakerCount",
+        "charlesSpeakerConfirmed", "christianSpeakerLabelObserved", "charlesListedInParticipants",
+        "evidenceCollectedAt", "sourceEvidenceSha256", "commercialOutcomeDecisionApplied",
+        "qualificationDecisionApplied", "ownerReviewRequired", "audioDurationIsAttendance", "crmDealIds",
+        "publicationPolicy"
+      ],
+      "publicationPolicy": {
+        "scope": "employment_context_minimized",
+        "candidateIdentityWithheld": true,
+        "originalTitleWithheld": true,
+        "employmentDetailsWithheld": true,
+        "recordingAccessLinksWithheld": true,
+        "rawEvidenceRetainedPrivately": true,
+        "requiredDisplayTitle": "Recruiting interview (excluded from business-development outcomes)"
+      }
+    }
+  ]
+}

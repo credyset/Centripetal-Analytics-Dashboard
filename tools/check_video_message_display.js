@@ -20,7 +20,7 @@ assert.equal(vector().cardActivity.value,'≥1');assert.equal(vector().cardActiv
 assert.equal(vector().responses[0].value,null); // General reply is not a video reply.
 assert.equal(vector().outcomes[0].value,null);
 const html=run('videoMessageDateEvidence(S.data.video)');
-assert.match(html,/Video sent · observed/);assert.match(html,/Sent · worksheet report/);
+assert.match(html,/Video sent · observed/);assert.match(html,/Sent · worksheet evidence/);
 assert.match(html,/Latest LinkedIn reply · retained history/);assert.match(html,/Reply · observed/);
 assert.match(html,/not a complete send\/reply census/);
 run("S.start='2026-10-20';S.end='2026-10-20';");

@@ -37,6 +37,10 @@ jobs:
           python3 tools/check_independent_channels.py
       - name: Check newer source and publication hold preservation
         run: python3 tools/check_snapshot_preservation.py
+      - name: Check partial refresh replay and row-evidence scope
+        run: python3 tools/check_refresh_replay_2026_10_23.py
+      - name: Check publication data minimization
+        run: python3 tools/check_publication_redactions.py
       - name: Build approved static dashboard
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then

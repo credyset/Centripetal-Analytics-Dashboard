@@ -34,4 +34,25 @@ assert.equal(vector().cardOutcome.value,null);
 // Missing source dates are partial coverage, even inside declared boundaries.
 run("fixture.waalaxy.daily=fixture.waalaxy.daily.filter(r=>r.date!=='2026-10-20');S.end='2026-10-21';");
 assert.equal(vector().cardActivity.basis,'partial');
+
+// The separately observed account window must follow its source metadata when
+// refreshed; it must not retain a hardcoded earlier cutoff or partial label.
+run("fixture.waalaxy.accountAnalytics.sourceWindow.displayedEndDate='2026-10-23';");
+const homeHtml=run('waalaxyAccountEvidence(fixture.waalaxy)');
+assert.match(homeHtml,/Displayed source dates: Oct 1, 2026 – Oct 23, 2026/);
+assert.match(homeHtml,/Fixed source window: Oct 1, 2026 – Oct 23, 2026/);
+assert.doesNotMatch(homeHtml,/October 1–22|includes October 22/);
+run('fixture.waalaxy.accountAnalytics.sourceWindow.finalDayPartial=false;');
+assert.doesNotMatch(run('waalaxyAccountEvidence(fixture.waalaxy)'),/final (source )?day partial/);
+const fixedWindow=run('waalaxyAccountEvidence(fixture.waalaxy)');
+run("S.start='2026-09-01';S.end='2026-09-30';");
+assert.equal(run('waalaxyAccountEvidence(fixture.waalaxy)'),fixedWindow);
+ctx.comparison={start:'2026-10-01',end:'2026-10-22',sameNumericTotals:true,csv:{sent:430,accepted:132},home:{sent:430,accepted:132}};
+run("fixture.waalaxy.accountAnalytics.sourceWindow.displayedEndDate='2026-10-22';");
+assert.match(run('invitationHomeComparisonNote(fixture.waalaxy,comparison)'),/displayed Home source window match/);
+run("fixture.waalaxy.accountAnalytics.sourceWindow.displayedEndDate='2026-10-24';fixture.waalaxy.accountAnalytics.metrics.invitationAcceptancesReported=133;");
+const historicalComparison=run('invitationHomeComparisonNote(fixture.waalaxy,comparison)');
+assert.match(historicalComparison,/earlier Oct 1, 2026 – Oct 22, 2026 comparison recorded 430 Sent \/ 132 Accepted/);
+assert.match(historicalComparison,/does not reconcile the newer independently collected Home aggregate/);
+assert.doesNotMatch(historicalComparison,/displayed Home source window match/);
 console.log('Waalaxy display: selected date buckets, explicit zero/missing values, no cohort rate, and separate fixed Home messages/replies passed.');

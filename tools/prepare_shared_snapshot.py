@@ -8,6 +8,7 @@ from apply_owner_confirmations import apply_owner_confirmations
 from apply_effort_estimate import apply_effort_estimate
 from apply_outcome_confirmations import apply_outcome_confirmations
 from recording_evidence import apply_video_evidence_reviews
+from publication_redactions import apply_publication_redactions
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -84,7 +85,7 @@ def curate_snapshot(source):
                             + ('See the separately dated, verified Charles Home account aggregate; it does not refresh this daily invitation CSV or selected-person subset.' if public.get('waalaxy',{}).get('accountAnalytics') else '')
                             if public.get('waalaxy',{}).get('invitationCoverage') else
                             'Historical Charles-only person flags, not period message totals. Current campaign analytics remain unavailable.')
-    return public
+    return apply_publication_redactions(public)
 
 def stamp(section):
     value = (section.get('snapshotAt') or section.get('collectedAt')) if isinstance(section,dict) else None
@@ -173,7 +174,8 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
                                     ('referrals','eventReview','referral_events'),
                                     ('referrals','contextReview','referral_context'),
                                     ('referrals','legacyCaptureReview','source_audit'),
-                                    ('time','workEvidence','source_audit')):
+                                    ('time','workEvidence','source_audit'),
+                                    ('time','meetings','time')):
         prior=(previous.get(parent) or {}).get(child)
         incoming=(result.get(parent) or {}).get(child)
         if prior and (not incoming or stamp(prior)>stamp(incoming)):
@@ -206,7 +208,9 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
     # purposes. Occurrence dates and joins still follow their separate evidence.
     new_ff=(result.get('meetings') or {}).get('fireflies') or {}
     for review_key,source_id in (('additionalPurposeReview','fireflies_purpose'),
-                                ('octoberPurposeReview','fireflies_october_review')):
+                                ('octoberPurposeReview','fireflies_october_review'),
+                                ('incrementalPurposeReview','fireflies_incremental_review'),
+                                ('newDuplicateEvidence','fireflies_incremental_review')):
         prior_review=(prior_ff or {}).get(review_key)
         if prior_review and stamp(prior_review)>stamp(new_ff.get(review_key)):
             new_ff[review_key]=copy.deepcopy(prior_review)
@@ -254,11 +258,25 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
         if old.get('checkedAt','')>incoming.get('checkedAt',''):
             result.setdefault('content',{})[nested]=copy.deepcopy(old)
             retained.add('content')
+    # Profile discovery has its own UI collection clock, independent of the
+    # creator workbook. Select from the original inputs so a parent-container
+    # choice cannot erase a newer nested profile review in either direction.
+    profile_candidates=[]
+    for container in (source,previous):
+        profile=((container.get('content') or {}).get('creatorAnalytics') or {}).get('profileAnalytics')
+        if profile:profile_candidates.append((stamp(profile),profile,container))
+    profile_card=None
+    if profile_candidates:
+        _,profile,chosen_container=max(profile_candidates,key=lambda item:item[0])
+        result.setdefault('content',{}).setdefault('creatorAnalytics',{})['profileAnalytics']=copy.deepcopy(profile)
+        profile_card=next((copy.deepcopy(s) for s in chosen_container.get('sources',[])
+                           if s['id']=='content_profile'),None)
     by_id={s['id']:s for s in result.get('sources',[])}
     for src in previous.get('sources',[]):
         if src['id'] in retained or (src['id']=='fireflies' and src['id'] not in by_id):
             by_id[src['id']]=copy.deepcopy(src)
     if invitation_card:by_id['waalaxy_invitations']=invitation_card
+    if profile_card:by_id['content_profile']=profile_card
     result['sources']=list(by_id.values())
     sync_inventory_source_cards(result)
     if 'crm' in retained and not result.get('meta',{}).get('reportingAsOfDate'):

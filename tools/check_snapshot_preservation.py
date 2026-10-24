@@ -1,11 +1,14 @@
 """Regression checks for importing old sources after a newer reviewed snapshot."""
 import copy
 import json
+from datetime import datetime,timedelta
 from pathlib import Path
 from prepare_shared_snapshot import curate_snapshot, preserve_newer_shared_sources, publication_policy
 
 ROOT=Path(__file__).resolve().parents[1]
 current=json.loads((ROOT/'data/shared-dashboard.json').read_text())
+NEWER=(datetime.fromisoformat(current['meta']['generatedAt'].replace('Z','+00:00'))+timedelta(days=2)).isoformat().replace('+00:00','Z')
+LATER=(datetime.fromisoformat(NEWER.replace('Z','+00:00'))+timedelta(days=1)).isoformat().replace('+00:00','Z')
 older=copy.deepcopy(current)
 for key in ('publicationStatus','reportingAsOfDate','defaultCompleteReportingThrough','defaultDatePreset','currentDayPartial'):
     older['meta'].pop(key,None)
@@ -49,10 +52,27 @@ for reconciled in (curate_snapshot(stale_cards),
         assert card['coverage']==reconciled[ident]['coverage']
         assert card['coverage'] is not reconciled[ident]['coverage']
 assert restored['content']['creatorAnalytics']==current['content']['creatorAnalytics']
+# Independent profile-view evidence survives newer creator workbooks that omit
+# it, including when the whole content/creator parent is selected in reverse.
+profile_source=copy.deepcopy(current)
+profile_fixture={'snapshotAt':NEWER,'profileViewers':1313,'sourcePreset':'Past 90 days'}
+profile_source['content']['creatorAnalytics']['profileAnalytics']=profile_fixture
+profile_source['sources']=[s for s in profile_source['sources'] if s['id']!='content_profile']
+profile_source['sources'].append({'id':'content_profile','asOf':NEWER})
+profile_omitted=copy.deepcopy(current)
+profile_omitted['content']['snapshotAt']=LATER
+profile_omitted['content']['creatorAnalytics']['snapshotAt']=LATER
+profile_omitted['content']['creatorAnalytics'].pop('profileAnalytics',None)
+profile_omitted['sources']=[s for s in profile_omitted['sources'] if s['id']!='content_profile']
+for incoming,previous in ((profile_omitted,profile_source),(profile_source,profile_omitted)):
+    selected=preserve_newer_shared_sources(incoming,previous)
+    assert selected['content']['creatorAnalytics']['profileAnalytics']==profile_fixture
+    assert selected['content']['creatorAnalytics']['snapshotAt']==LATER
+    assert next(s for s in selected['sources'] if s['id']=='content_profile')['asOf']==NEWER
 # Creator collection has its own clock: refreshing it must not re-date the
 # historical content parent, and old replays with the same parent clock must
 # not silently restore the older creator workbook or its stale source card.
-for parent_stamp in (current['content']['snapshotAt'],'2026-10-23T12:00:00Z'):
+for parent_stamp in (current['content']['snapshotAt'],NEWER):
     creator_old=copy.deepcopy(current)
     creator_old['content']['snapshotAt']=parent_stamp
     creator_old['content']['creatorAnalytics']['snapshotAt']='2026-10-21T12:00:00Z'
@@ -79,17 +99,17 @@ for parent,child in (('crm','archiveReview'),('video','sourceVerification'),('vi
 # supplement; preserve the evidence without re-dating the new parent inventory.
 supplements=[('crm','commercialContextReview','commercial_context'),('waalaxy','replyContextReview','commercial_context'),('referrals','eventReview','referral_events'),('referrals','contextReview','referral_context'),('video','automationReview','zapier_execution'),('video','datedStatusReview','source_audit'),('video','metadataFreshnessCheck','source_freshness'),('meetings','metadataFreshnessCheck','source_freshness')]
 supplements += [('video','recordingFieldReview','video_crm_reconciliation'),('video','crmReconciliation','video_crm_reconciliation')]
-supplements += [('video','messageDateReview','video_message_dates'),('ads','lifecycleReview','ads_lifecycle'),('content','companyAvailabilityReview','content_company_availability')]
+supplements += [('video','messageDateReview','video_message_dates'),('ads','lifecycleReview','ads_lifecycle'),('content','companyAvailabilityReview','content_company_availability'),('time','meetings','time')]
 incoming=copy.deepcopy(current)
 for parent,child,source_id in supplements:
-    incoming[parent]['snapshotAt']='2026-10-23T12:00:00Z'
+    incoming[parent]['snapshotAt']=NEWER
     incoming[parent].pop(child,None)
 incoming['sources']=[s for s in incoming['sources'] if s['id'] not in {source_id for _,_,source_id in supplements}]
 kept=preserve_newer_shared_sources(incoming,current)
 for parent,child,source_id in supplements:
     if child in current[parent]:
         assert kept[parent][child]==current[parent][child]
-        assert kept[parent]['snapshotAt']=='2026-10-23T12:00:00Z'
+        assert kept[parent]['snapshotAt']==NEWER
         assert any(s['id']==source_id for s in kept['sources'])
 assert restored['meetings']['fireflies']==current['meetings']['fireflies']
 assert next(s for s in restored['sources'] if s['id']=='fireflies')['asOf']==next(s for s in current['sources'] if s['id']=='fireflies')['asOf']
@@ -110,7 +130,7 @@ invitation_new['waalaxy'].update(invitationCollectedAt='2026-10-22T14:00:00Z',
 invitation_new['sources']=[s for s in invitation_new['sources'] if s['id']!='waalaxy_invitations']
 invitation_new['sources'].append({'id':'waalaxy_invitations','asOf':'2026-10-22T14:00:00Z'})
 account_new=copy.deepcopy(current)
-account_new['waalaxy'].update(snapshotAt='2026-10-23T12:00:00Z',
+account_new['waalaxy'].update(snapshotAt=NEWER,
     invitationCollectedAt='2026-10-21T12:00:00Z',
     daily=[{'date':'2026-10-19','invitationsSent':1,'invitationsAccepted':1,'prospectsImported':99},
            {'date':'2026-10-20','invitationsSent':3,'invitationsAccepted':0}])
@@ -119,7 +139,7 @@ account_new['sources']=[s for s in account_new['sources'] if s['id']!='waalaxy_i
 for source,previous in ((account_new,invitation_new),(invitation_new,account_new)):
     combined=preserve_newer_shared_sources(source,previous)
     w=combined['waalaxy']
-    assert w['snapshotAt']=='2026-10-23T12:00:00Z'
+    assert w['snapshotAt']==NEWER
     assert w['invitationCollectedAt']=='2026-10-22T14:00:00Z'
     assert w['invitationSummary']==invitation_new['waalaxy']['invitationSummary']
     assert w['invitationCoverage']==invitation_new['waalaxy']['invitationCoverage']
@@ -132,8 +152,8 @@ prior_ff=current['meetings'].get('fireflies') or {}
 reviewed_ids={r['id'] for r in prior_ff.get('records',[]) if r.get('lastPurposeReviewedAt')}
 if reviewed_ids:
     incoming=copy.deepcopy(current)
-    incoming['meetings']['snapshotAt']='2026-10-23T12:00:00Z'
-    incoming['meetings']['fireflies']={'snapshotAt':'2026-10-23T12:00:00Z','records':[]}
+    incoming['meetings']['snapshotAt']=NEWER
+    incoming['meetings']['fireflies']={'snapshotAt':NEWER,'records':[]}
     incoming['sources']=[s for s in incoming['sources'] if s['id'] not in ('fireflies_purpose','fireflies_october_review')]
     kept=preserve_newer_shared_sources(incoming,current)
     rows=kept['meetings']['fireflies']['records']
@@ -154,7 +174,7 @@ corroborated={r['id']:r for r in prior_ff.get('records',[]) if r.get('heldStatus
 if corroborated:
     incoming=copy.deepcopy(current)
     incoming_ff=incoming['meetings']['fireflies']
-    incoming_ff['snapshotAt']='2026-10-23T12:00:00Z'
+    incoming_ff['snapshotAt']=NEWER
     incoming_ff['records']=[{k:r[k] for k in ('id','title','indexedAt','durationMinutes') if k in r}
                             for r in prior_ff['records']]
     kept=curate_snapshot(preserve_newer_shared_sources(incoming,current))
@@ -162,11 +182,17 @@ if corroborated:
     for ident,record in corroborated.items():
         for key in ('heldStatus','occurredAt','occurrenceDatePrecision','crmDealIds','joinStatus','evidenceStatus'):
             assert rows[ident].get(key)==record.get(key), f'Lost independently corroborated recording field {key}'
+    # Fresh metadata cannot erase separately reviewed dialogue or overlap proof.
+    for key in ('incrementalPurposeReview','newDuplicateEvidence'):
+        if key in prior_ff:
+            assert kept['meetings']['fireflies'][key]==prior_ff[key]
+    if prior_ff.get('incrementalPurposeReview'):
+        assert any(s['id']=='fireflies_incremental_review' for s in kept['sources'])
     # A later explicit, dated review may still retract a prior occurrence claim.
     ident=next(iter(corroborated))
     newer=copy.deepcopy(incoming)
     decision=next(r for r in newer['meetings']['fireflies']['records'] if r['id']==ident)
-    decision.update(corroborationReviewedAt='2026-10-24T12:00:00Z',heldStatus='retracted_by_review',
+    decision.update(corroborationReviewedAt=LATER,heldStatus='retracted_by_review',
                     occurredAt=None,crmDealIds=[],joinStatus='reviewed_join_retracted')
     decision=next(r for r in preserve_newer_shared_sources(newer,current)['meetings']['fireflies']['records'] if r['id']==ident)
     assert decision['heldStatus']=='retracted_by_review' and decision['occurredAt'] is None

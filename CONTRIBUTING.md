@@ -6,7 +6,9 @@ GitHub holds the dashboard application, the approved curated reporting snapshot 
 
 Before adding data, read [CONTRIBUTOR_DATA_PRIORITIES.md](CONTRIBUTOR_DATA_PRIORITIES.md) for prioritized fields, source-specific traps, metric definitions and acceptance criteria beyond the README summary.
 
-The October 16 corrections and useful next exports are documented in [ANALYTICS_REVISION_2026-10-16.md](ANALYTICS_REVISION_2026-10-16.md). For scoped imports use `tools/apply_analytics_revisions.py` with explicit source inputs; the older hardcoded Waalaxy/referral replacement has been removed. Complete preparation now preserves newer independently dated shared source sections and recording supplements when local inputs are older.
+The latest collected sources and remaining bounds are documented in [REFRESH_REVIEW_2026-10-23.md](REFRESH_REVIEW_2026-10-23.md) and [the current input checklist](MANUAL_DATA_REQUEST_2026-10-23.md). `tools/apply_refresh_2026_10_23.py --manifest <private-manifest.json>` defaults to a private preview; `--write-shared` is the explicit canonical-write step. Keep each source family's clock, guard row-scoped reviews against the exact inventory, and retain historical native observations and email context separately. A newer collection does not authorize changing commercial decisions or Christian's owner-reported hours.
+
+CI checks partial-refresh replay, source-age and publication-hold preservation, and source-specific publication minimization. Rules in `PUBLICATION_REDACTIONS.json` are applied during final curation and validated before publication; a later source import must not restore excluded personal identity or context. Raw source content remains private. Earlier October 16 corrections remain documented in [ANALYTICS_REVISION_2026-10-16.md](ANALYTICS_REVISION_2026-10-16.md).
 
 ## Run a populated dashboard from a fresh clone
 

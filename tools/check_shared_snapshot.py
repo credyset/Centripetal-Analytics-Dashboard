@@ -1,12 +1,45 @@
 """Check the portable, curated reporting snapshot before sharing changes."""
 from pathlib import Path
+import argparse
+from datetime import date
 import json
+from publication_redactions import validate_publication_redactions
 
 ROOT = Path(__file__).resolve().parents[1]
-source = ROOT/'data/shared-dashboard.json'
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--snapshot', type=Path, default=ROOT/'data/shared-dashboard.json')
+source = parser.parse_args().snapshot
 data = json.loads(source.read_text())
+validate_publication_redactions(data)
 assert all(k in data for k in ('meta','ads','crm','video','waalaxy','content','referrals','time','sources'))
 assert data['meta']['timezone'] == 'America/Denver'
+
+# This opaque source ID is employment evidence, outside prospect-publication scope.
+# Guard by source identity rather than a candidate-name blacklist, so aliases and
+# new personal-context fields cannot quietly return during a later source merge.
+employment_exclusions={'01M5CWDYQKG89SJR4KZ07H7DQ3'}
+employment_title='Recruiting interview (excluded from business-development outcomes)'
+employment_allowed={'id','recordingId','title','indexedAt','occurredAt','dateBasis','durationMinutes',
+    'classification','classificationBasis','reviewedDialogue','sentenceCount','speakerCount',
+    'charlesSpeakerConfirmed','christianSpeakerLabelObserved','charlesListedInParticipants',
+    'evidenceCollectedAt','sourceEvidenceSha256','commercialOutcomeDecisionApplied',
+    'qualificationDecisionApplied','ownerReviewRequired','audioDurationIsAttendance','crmDealIds',
+    'publicationPolicy'}
+def check_employment_publication(value):
+    if isinstance(value,dict):
+        if value.get('id',value.get('recordingId')) in employment_exclusions:
+            assert value.get('title')==employment_title, 'Excluded employment source restored a personal recording title'
+            assert set(value)<=employment_allowed, 'Unnecessary personal employment fields entered the public record'
+            policy=value.get('publicationPolicy',{})
+            assert policy.get('scope')=='employment_context_minimized'
+            assert policy.get('requiredDisplayTitle')==employment_title
+            assert all(policy.get(k) is True for k in ['candidateIdentityWithheld','originalTitleWithheld',
+                'employmentDetailsWithheld','recordingAccessLinksWithheld','rawEvidenceRetainedPrivately'])
+            assert value.get('classificationBasis')=='Employment/recruiting purpose verified; excluded from business-development outcomes. Personal employment details are withheld from publication.'
+        for item in value.values():check_employment_publication(item)
+    elif isinstance(value,list):
+        for item in value:check_employment_publication(item)
+check_employment_publication(data)
 for entity in ('deals','activities'):
     rows = data['crm'][entity]
     assert len(rows) == len({row['id'] for row in rows}), f'Duplicate CRM {entity} IDs'
@@ -76,14 +109,29 @@ if company:
     assert len(rows)==len({r['date'] for r in rows})
     assert min(r['date'] for r in rows)==company['coverage']['start']
     assert max(r['date'] for r in rows)==company['coverage']['end']
+    if company['coverage'].get('completeWithinExport'):
+        assert len(rows)==(date.fromisoformat(company['coverage']['end'])-date.fromisoformat(company['coverage']['start'])).days+1, 'Complete company export has missing source days'
     ads_by_day={r['date']:r for r in data['ads']['daily']}
+    compared_dates={r['date'] for r in rows}&set(ads_by_day)
+    assert compared_dates, 'No dates overlap for the company/Ads reconciliation'
     for metric,ad_key in [('impressions','impressions'),('clicks','clicks'),('reactions','reactions'),('comments','comments'),('reposts','shares')]:
         for row in rows:
             assert row[metric+'Organic']+row[metric+'Sponsored']==row[metric+'Total']
-            assert row[metric+'Sponsored']==ads_by_day[row['date']][ad_key], 'Company-sponsored Ads overlap changed'
+            if row['date'] in compared_dates:
+                assert row[metric+'Sponsored']==ads_by_day[row['date']][ad_key], 'Company-sponsored Ads overlap changed'
         for channel in ('organic','sponsored','total'):
             assert sum(r[metric+channel.capitalize()] for r in rows)==summary[channel][metric]
     assert all(summary[k]['uniqueReach'] is None and summary[k]['engagementRate'] is None for k in ('organic','sponsored','total'))
+    reconciliation=(company.get('reconciliation') or {}).get('ads')
+    if reconciliation and 'comparedDateCount' in reconciliation:
+        assert reconciliation['comparedDateCount']==len(compared_dates)
+        assert reconciliation['companyDatesWithoutPaidRows']==sorted({r['date'] for r in rows}-set(ads_by_day))
+        assert reconciliation['completeAcrossCompanyWindow']==(len(compared_dates)==len(rows))
+        for metric,ad_key in [('impressions','impressions'),('clicks','clicks'),('reactions','reactions'),('comments','comments'),('reposts','shares')]:
+            totals=reconciliation['metrics'][metric]
+            assert totals['companySponsoredOnComparedDates']==sum(r[metric+'Sponsored'] for r in rows if r['date'] in compared_dates)
+            assert totals['paidSource']==sum(ads_by_day[date][ad_key] for date in compared_dates)
+            assert totals['equal'] is True
     assert company['postCoverage']['publishedPostCount'] is None, 'Missing post register became zero'
 ref=data.get('referrals') or {}
 event_review=ref.get('eventReview')
