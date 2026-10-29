@@ -78,7 +78,7 @@ assert.match(gapHtml,/adds no send, reply or commercial-outcome count/);
 const gapTable=ctx.capturedTables.find(t=>t[0]==='video-gap-resolution');
 assert.equal(gapTable[2].length,2);assert.equal(gapTable[2][0].platformSendDate,'2026-09-10');
 const assetCol=gapTable[3].find(c=>c.key==='sendAssetObserved');
-assert.equal(assetCol.render(false),'Not observed in bounded view');assert.equal(assetCol.render(undefined),'Not established');
+assert.equal(assetCol.render(false,{}),'Not observed in bounded view');assert.equal(assetCol.render(undefined,{}),'Not established');
 assert.deepEqual(observed(),beforeGap);
 assert.equal(vector().responses[0].value,null);assert.equal(vector().outcomes[0].value,null);
 // A text reply can explicitly refer to a video without containing one itself.
@@ -134,4 +134,83 @@ const eventCountBeforeAppearance=run('S.data.video.messageDateReview.platformObs
 run('S.data.video.gapResolutionReview.sourceAppearanceReview=appearanceVideo.gapResolutionReview.sourceAppearanceReview;videoSourceAppearanceEvidence(S.data.video);');
 assert.equal(run('S.data.video.messageDateReview.platformObservedEvents.length'),eventCountBeforeAppearance);
 assert.equal(run('JSON.stringify(S.data.outcomes)'),priorLedger);
-console.log('Video date display: observed minimums, searchable exact worksheet responses, independent identity/asset scopes and bounded gap-review facts passed.');
+
+// A historical unsuccessful check stays historical after a later exact asset
+// observation. Neither a different asset nor an earlier observation closes it.
+ctx.cohortFixture={summary:{},messageDateReview:{records:[],platformObservedEvents:[{
+  dedupKey:'subimage|outbound|2026-10-26|exact-asset',profileId:'alexchantavy',company:'SubImage',
+  date:'2026-10-26',direction:'outbound',videoIncluded:true,assetId:'a'.repeat(32),observedAt:'2026-10-29T06:10:00Z'
+}],nativePlatformCoverage:{cohort:'Retained October asset cohort.',cohortProfilesChecked:19,
+  cohortExactOutboundVideoMatches:18,reviewedAt:'2026-10-24T03:45:00Z',profileChecks:[{
+    profileId:'alexchantavy',company:'SubImage',status:'checked_unconfirmed',assetId:'a'.repeat(32),
+    observedAt:'2026-10-24T03:45:00Z',basis:'Exact asset was not visible in the earlier bounded review.'
+  }]},focusedNativeReviews:{profilesChecked:25,reviewedAt:'2026-10-29T06:10:00Z'}}};
+run("S.data={meta:{},video:cohortFixture,outcomes:actualOutcomes};S.start='2026-10-26';S.end='2026-10-29';");
+const cohortBefore=JSON.stringify(ctx.cohortFixture),resolvedCohortHtml=run('videoMessageDateEvidence(S.data.video)');
+assert.match(resolvedCohortHtml,/Earlier cohort review: 18 of 19/);
+assert.match(resolvedCohortHtml,/SubImage was subsequently verified on source day Oct 26, 2026/);
+assert.doesNotMatch(resolvedCohortHtml,/SubImage remains unconfirmed/);
+assert.match(resolvedCohortHtml,/Latest focused review: 25 profiles checked/);
+assert.equal(JSON.stringify(ctx.cohortFixture),cohortBefore,'Rendering must preserve earlier checks and later proof');
+assert.equal(observed().videoSends,1);
+ctx.cohortFixture.messageDateReview.platformObservedEvents[0].assetId='b'.repeat(32);
+assert.match(run('videoMessageDateEvidence(S.data.video)'),/SubImage remains unconfirmed/);
+ctx.cohortFixture.messageDateReview.platformObservedEvents[0].assetId='a'.repeat(32);
+ctx.cohortFixture.messageDateReview.platformObservedEvents[0].observedAt='2026-10-23T06:10:00Z';
+assert.match(run('videoMessageDateEvidence(S.data.video)'),/SubImage remains unconfirmed/);
+ctx.cohortFixture.messageDateReview.platformObservedEvents[0].observedAt='2026-10-29T06:10:00Z';
+
+// A person whose only dated evidence is a native follow-up belongs in that
+// selected week's register, without becoming an additional video send/reply.
+ctx.followUpFixture={summary:{},messageDateReview:{records:[
+  {profileId:'follow-up-only',company:'Follow-up only company',platformFollowUpDate:'2026-10-26'},
+  {profileId:'prior-follow-up',company:'Outside earlier',platformFollowUpDate:'2026-10-25'},
+  {profileId:'later-follow-up',company:'Outside later',platformFollowUpDate:'2026-10-30'}
+],platformObservedEvents:[{dedupKey:'follow-up-only|outbound|2026-10-26|text',
+  profileId:'follow-up-only',date:'2026-10-26',direction:'outbound',videoIncluded:false}]}};
+run("S.data={meta:{},video:followUpFixture,outcomes:actualOutcomes};S.start='2026-10-26';S.end='2026-10-29';");
+const followUpHtml=run('videoMessageDateEvidence(S.data.video)');
+const followUpTable=ctx.capturedTables.filter(t=>t[0]==='video-message-dates').at(-1);
+assert.deepEqual(Array.from(followUpTable[2],r=>r.profileId),['follow-up-only']);
+const followUpCol=followUpTable[3].find(c=>c.key==='platformFollowUpDate');
+assert.ok(followUpCol,'Observed follow-ups need a dedicated date column');
+assert.equal(followUpCol.label,'Video follow-up · observed');
+assert.equal(followUpCol.render('2026-10-26'),'Oct 26, 2026');
+assert.match(followUpHtml,/Video follow-up · observed/);
+ctx.followUpRows=followUpTable[2];ctx.followUpCols=followUpTable[3];
+run("bindTable('follow-up-fixture',followUpRows,followUpCols);");
+assert.match(body.innerHTML,/Follow-up only company/);assert.match(body.innerHTML,/Oct 26, 2026/);
+assert.doesNotMatch(body.innerHTML,/Outside earlier|Outside later/);
+assert.equal(observed().videoSends,0);assert.equal(observed().videoReplies,0);
+assert.equal(run('JSON.stringify(S.data.outcomes)'),priorLedger);
+
+// Later native proof closes a displayed gap without overwriting the old
+// unsuccessful bounded review or silently creating activity-ledger events.
+ctx.closedGapFixture={summary:{},messageDateReview:{platformObservedEvents:[]},gapResolutionReview:{
+  snapshotAt:'2026-10-29T06:10:00Z',records:[{
+    profileId:'alexchantavy',company:'SubImage',status:'Closed: exact native send verified',
+    findings:['Earlier unconfirmed observation retained; later exact asset directly observed.'],
+    platformSendDate:'2026-10-21',sendAssetObserved:false,
+    nativeSendEvidence:{date:'2026-10-26',assetId:'a'.repeat(32),observedAt:'2026-10-29T06:10:00Z'}
+  },{profileId:'still-unconfirmed',company:'Still bounded',status:'Unresolved',sendAssetObserved:false}]
+}};
+run('S.data={meta:{},video:closedGapFixture,outcomes:actualOutcomes};');
+const gapBefore=JSON.stringify(ctx.closedGapFixture),gapCountsBefore=observed();
+const closedGapHtml=run('videoGapResolutionEvidence(S.data.video)');
+const closedGapTable=ctx.capturedTables.filter(t=>t[0]==='video-gap-resolution').at(-1);
+const nativeGapRow=closedGapTable[2][0],closedDateCol=closedGapTable[3].find(c=>c.key==='platformSendDate'),
+  closedAssetCol=closedGapTable[3].find(c=>c.key==='sendAssetObserved');
+assert.match(closedGapHtml,/adds no send, reply or commercial-outcome count/);
+ctx.closedGapRows=closedGapTable[2];ctx.closedGapCols=closedGapTable[3];
+run("bindTable('closed-gap-fixture',closedGapRows,closedGapCols);");
+assert.match(body.innerHTML,/Closed: exact native send verified/);assert.match(body.innerHTML,/Oct 26, 2026/);
+assert.match(body.innerHTML,/Asset observed in reviewed message/);
+assert.equal(closedDateCol.render(nativeGapRow.platformSendDate,nativeGapRow),'Oct 26, 2026');
+assert.equal(closedAssetCol.render(nativeGapRow.sendAssetObserved,nativeGapRow),'Asset observed in reviewed message');
+assert.equal(closedAssetCol.render(false,closedGapTable[2][1]),'Not observed in bounded view');
+assert.equal(nativeGapRow.sendAssetObserved,false,'Earlier bounded result must retain its historical value');
+assert.equal(nativeGapRow.platformSendDate,'2026-10-21','Native date display must not rewrite the source report');
+assert.equal(JSON.stringify(ctx.closedGapFixture),gapBefore);
+assert.deepEqual(observed(),gapCountsBefore,'Gap display alone must not create observed-message events');
+assert.equal(run('JSON.stringify(S.data.outcomes)'),priorLedger);
+console.log('Video date display: observed minimums, exact worksheet responses, scoped identity evidence, historical gap resolution and follow-up dates passed.');

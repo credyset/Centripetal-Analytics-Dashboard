@@ -1,10 +1,10 @@
 {
-  "hoursLow": 18.25,
-  "hoursHigh": 19.5,
-  "confirmedOn": "2026-10-22",
+  "hoursLow": 21.75,
+  "hoursHigh": 23.0,
+  "confirmedOn": "2026-10-28",
   "periodStart": "2026-10-01",
-  "coversThrough": "2026-10-22",
-  "basis": "Christian confirmed the 14.5–15.75-hour estimate covered October 1–16 and supplied 3.75 additional non-meeting hours for October 17–22. The updated overall estimate is 18.25–19.5 hours. No workstream allocation was supplied; this is owner-reported effort, not independently measured duration.",
+  "coversThrough": "2026-10-28",
+  "basis": "Christian confirmed the original 14.5–15.75-hour October 1–16 baseline, 3.75 additional non-meeting hours for October 17–22, and 3.5 additional hours for October 23–28. The overall owner estimate is 21.75–23.0 hours through October 28. Each dated increment is counted once. This is not independently measured time and no workstream allocation was supplied.",
   "baseline": {
     "hoursLow": 14.5,
     "hoursHigh": 15.75,
@@ -20,6 +20,14 @@
       "hours": 3.75,
       "confirmedOn": "2026-10-22",
       "basis": "Christian supplied this additional non-meeting estimate after confirming the earlier range excluded October 17–22. Meetings, unattended agent runs and previously counted time were excluded in the question."
+    },
+    {
+      "id": "owner-nonmeeting-oct23-through-oct28-2026",
+      "periodStart": "2026-10-23",
+      "coversThrough": "2026-10-28",
+      "hours": 3.5,
+      "confirmedOn": "2026-10-28",
+      "basis": "Christian directly confirmed 3.5 additional non-meeting hours for October 23–28 in this dashboard task. The repeated answer under an unrelated question is the same confirmation, counted once; it establishes no commercial outcome."
     }
   ]
 }

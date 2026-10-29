@@ -29,10 +29,13 @@ def clean_name(value):
     return ''.join(c for c in value.casefold() if c.isalnum())
 
 
-def parse_blocks(raw, contact):
+def parse_blocks(raw, contact, *, recipient_identity_verified=False):
     """Extract date/sender/time/body only within the captured conversation list."""
-    assert 'Open the options list in your conversation with Charles Solomon and ' in raw
-    assert clean_name(contact) in clean_name(raw), 'Wrong recipient excerpt'
+    # A newer collector also supports reversed participant order and the real
+    # single-recipient compose-history layout. It must validate that layout
+    # before opting out of this legacy, deliberately narrower guard.
+    assert recipient_identity_verified or 'Open the options list in your conversation with Charles Solomon and ' in raw
+    assert recipient_identity_verified or clean_name(contact) in clean_name(raw), 'Wrong recipient excerpt'
     rows = raw.splitlines()
     started = False
     day = author = None

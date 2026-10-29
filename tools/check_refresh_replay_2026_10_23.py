@@ -11,6 +11,7 @@ import json
 import unittest
 
 from apply_refresh_2026_10_23 import apply_patches, event_key, merge_message_review
+from apply_effort_estimate import apply_effort_estimate
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = ROOT / 'data/private/refresh_2026_10_23'
@@ -23,6 +24,10 @@ def load(path):
 def fixture():
     baseline_path = PRIVATE / 'baseline_shared.json'
     baseline = load(baseline_path if baseline_path.exists() else ROOT / 'data/shared-dashboard.json')
+    # Retained private source fixtures can predate an approved owner increment.
+    # Model an inventory-only import under today's canonical effort decision;
+    # the production invariant must still reject any change to that decision.
+    apply_effort_estimate(baseline['time'])
     fresh_path = PRIVATE / 'sheets/video_inventory_patch.json'
     fresh = copy.deepcopy(load(fresh_path) if fresh_path.exists() else baseline['video'])
     # A synthetic later import must remain later than any real fixture after

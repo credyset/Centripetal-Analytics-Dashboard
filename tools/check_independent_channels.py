@@ -14,6 +14,43 @@ def timestamp(value):
     return datetime.fromisoformat(value.replace('Z','+00:00'))
 
 
+def check_ads_source_clocks(ads, lifecycle):
+    """An independent status read can precede or follow a real export capture."""
+    captured = timestamp(ads['collectedAt'])
+    status_observed = timestamp(lifecycle['snapshotAt'])
+    reviewed = timestamp(lifecycle['reviewedAt'])
+    assert all(value.tzinfo is not None for value in (captured, status_observed, reviewed)), 'Source clocks need explicit offsets'
+    assert reviewed >= status_observed, 'A lifecycle review cannot precede its own observation'
+    if ads.get('reportGeneratedAt'):
+        generated = timestamp(ads['reportGeneratedAt'])
+        assert generated.tzinfo is not None and generated <= captured, 'An export cannot be captured before it was generated'
+        if ads.get('refreshMode') == 'manual_authenticated_export':
+            assert timestamp(ads['snapshotAt']) == generated, 'Export inventory clock no longer matches its own report-generation evidence'
+    # Daily coverage remains constrained by actual rows elsewhere. Neither the
+    # download clock nor the status-review clock creates later daily activity.
+
+
+def check_ads_clock_regressions(data):
+    ads = copy.deepcopy(data['ads']); lifecycle = ads['lifecycleReview']
+    for status_at, generated_at, captured_at in (
+        ('2026-10-29T06:00:52Z', '2026-10-29T06:03:00Z', '2026-10-29T06:07:00Z'),
+        ('2026-10-29T06:10:00Z', '2026-10-29T06:03:00Z', '2026-10-29T06:07:00Z'),
+    ):
+        lifecycle.update(snapshotAt=status_at, reviewedAt=status_at)
+        ads.update(snapshotAt=generated_at, reportGeneratedAt=generated_at,
+            collectedAt=captured_at, refreshMode='manual_authenticated_export')
+        check_ads_source_clocks(ads, lifecycle)
+    for mutation in (
+        lambda a, l: a.update(collectedAt='2026-10-29T06:02:00Z'),
+        lambda a, l: a.update(snapshotAt=l['reviewedAt']),
+        lambda a, l: l.update(reviewedAt='2026-10-29T06:00:00Z'),
+    ):
+        invalid = copy.deepcopy(ads); mutation(invalid, invalid['lifecycleReview'])
+        try:check_ads_source_clocks(invalid, invalid['lifecycleReview'])
+        except AssertionError:pass
+        else:raise AssertionError('Invalid independent Ads clock interpretation was accepted')
+
+
 def check_video(data):
     video=data['video'];review=video['messageDateReview'];summary=review['summary']
     records=review['records'];events=review['platformObservedEvents']
@@ -41,14 +78,28 @@ def check_video(data):
     focused=review.get('focusedNativeReviews') or {}
     focused_checks=focused.get('profileChecks',[])
     focused_by_profile={r['profileId']:r for r in focused_checks}
+    # A later targeted review may revisit a profile while its older message
+    # observations retain their original clocks. Validate each native event
+    # against a real current or explicitly retained review for that profile.
+    focused_history=[]
+    def retain_review(group):
+        if not group:return
+        focused_history.append(group)
+        for older in group.get('retainedPriorReviews',[]):
+            assert older.get('historicalOnly') is True
+            retain_review(older)
+    retain_review(focused)
     if focused:
         assert len(focused_by_profile)==len(focused_checks)==focused['profilesChecked']
-        assert focused['sourceTimezone'] is None
-        for check in focused_checks:
-            assert check['sourceEvidenceBasis']=='native_direct' and check['profileIdentityVerified'] is True
-            assert check['senderAccount']=='Charles Solomon' and check['coverageCompleteForThread'] is False
-            assert check['crmAssetMatchRequiredForNativeProof'] is False
-            assert timestamp(check['observedAt'])<=timestamp(focused['reviewedAt'])<=timestamp(review['reviewedAt'])
+        for group in focused_history:
+            assert group['sourceTimezone'] is None
+            group_checks=group.get('profileChecks',[])
+            assert len(group_checks)==len({r['profileId'] for r in group_checks})==group['profilesChecked']
+            for check in group_checks:
+                assert check['sourceEvidenceBasis']=='native_direct' and check['profileIdentityVerified'] is True
+                assert check['senderAccount']=='Charles Solomon' and check['coverageCompleteForThread'] is False
+                assert check['crmAssetMatchRequiredForNativeProof'] is False
+                assert timestamp(check['observedAt'])<=timestamp(group['reviewedAt'])<=timestamp(review['reviewedAt'])
     outbound_video=[]
     for event in events:
         assert event['profileId'] in by_profile
@@ -63,8 +114,10 @@ def check_video(data):
             assert event.get('displayedDateLabel') and event.get('displayedTime')
             assert re.fullmatch(r'[0-9a-f]{64}',event.get('contentFingerprint','')), 'Direct native message lacks a stable content fingerprint'
             if focused:
-                assert event['profileId'] in focused_by_profile
-                assert event['observedAt']==focused_by_profile[event['profileId']]['observedAt']
+                supporting=[check for group in focused_history for check in group['profileChecks']
+                    if check['profileId']==event['profileId'] and timestamp(check['observedAt'])==timestamp(event['observedAt'])
+                    and ('observationIds' not in check or event.get('observationId') in check['observationIds']+check.get('reobservedObservationIds',[]))]
+                assert supporting, 'Native observation lacks its original profile-specific review provenance'
         expected='|'.join((event['profileId'],event['direction'],event['date'],event.get('assetId') or 'no-video'))
         if event.get('contentFingerprint') and not event.get('assetId'):
             assert event.get('displayedTime') and event['contentFingerprint'] in event['dedupKey'], 'Text-event identity lacks its own time/content evidence'
@@ -188,7 +241,7 @@ def check_retained_sources(data):
     assert lifecycle['retainedDailyThrough']==ads['coverage']['end']==max(r['date'] for r in ads['daily'])
     assert lifecycle['matchesRetainedExportTotals'] is True
     for key,value in lifecycle['displayedTotals'].items():assert abs(ads['totals'][key]-value)<.001
-    assert timestamp(ads['collectedAt'])<timestamp(lifecycle['reviewedAt']), 'Status review refreshed old daily-source age'
+    check_ads_source_clocks(ads,lifecycle)
 
 
 def check_creator(data):
@@ -265,7 +318,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--snapshot',type=Path,default=ROOT/'data/shared-dashboard.json')
     data=json.loads(parser.parse_args().snapshot.read_text())
-    check_video(data);check_retained_sources(data);check_creator(data);check_native_attribution_regressions(data)
+    check_video(data);check_retained_sources(data);check_creator(data);check_native_attribution_regressions(data);check_ads_clock_regressions(data)
     # These checks must reject the damaging interpretations, not just parse JSON.
     for mutate in (
         lambda d:d['video']['messageDateReview']['platformObservedEvents'].append(copy.deepcopy(d['video']['messageDateReview']['platformObservedEvents'][0])),

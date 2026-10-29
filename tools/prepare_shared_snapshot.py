@@ -40,14 +40,14 @@ def sync_inventory_source_cards(snapshot):
             card['coverage'] = copy.deepcopy(section['coverage'])
     return snapshot
 
-def curate_snapshot(source):
+def curate_snapshot(source, effort_decision=None):
     public = copy.deepcopy(source)
     apply_owner_confirmations(public)
     apply_outcome_confirmations(public)
     if public.get('video'):
         apply_video_evidence_reviews(public['video'])
     if public.get('time'):
-        apply_effort_estimate(public['time'])
+        apply_effort_estimate(public['time'], decision=effort_decision)
     sync_inventory_source_cards(public)
     apply_publication_policy(public)
     state=public.get('meta',{}).get('publicationStatus')

@@ -55,6 +55,42 @@ def totals(rows):
             'accepted':sum(row['invitationsAccepted'] for row in rows)}
 
 
+def retained_source_segments(old_rows, previous, first, last, prior_collected_at):
+    """Clip each original provenance segment; never relabel older composite days."""
+    retained=[row for row in old_rows if row['date']<first or row['date']>last]
+    origins=previous.get('segments') or []
+    if not origins and not previous.get('compositeSource'):
+        origins=[{'start':old_rows[0]['date'],'end':old_rows[-1]['date'],
+            'sourceFilename':previous.get('sourceFilename'),
+            'sourceSha256':previous.get('sourceSha256'),
+            'collectedAt':prior_collected_at,
+            'finalDayPartial':previous.get('currentDayPartial',False)}] if old_rows else []
+    groups=[]
+    for row in retained:
+        matching=[origin for origin in origins if origin['start']<=row['date']<=origin['end']]
+        if len(matching)>1:
+            raise ValueError('Retained invitation date has overlapping source provenance segments.')
+        # If a composite source lost its day-level lineage earlier, retain that
+        # uncertainty instead of inventing attribution to the latest CSV.
+        origin=matching[0] if matching else {'sourceFilename':None,'sourceSha256':None,'collectedAt':None}
+        identity=tuple(origin.get(key) for key in ('sourceFilename','sourceSha256','collectedAt'))
+        contiguous=bool(groups) and (date.fromisoformat(row['date'])-date.fromisoformat(groups[-1]['rows'][-1]['date'])).days==1
+        if groups and groups[-1]['identity']==identity and contiguous:
+            groups[-1]['rows'].append(row)
+        else:
+            groups.append({'identity':identity,'origin':origin,'rows':[row]})
+    result=[]
+    for group in groups:
+        segment,origin=group['rows'],group['origin']
+        value={'start':segment[0]['date'],'end':segment[-1]['date'],'sourceDays':len(segment),
+            'sourceFilename':origin.get('sourceFilename'),'sourceSha256':origin.get('sourceSha256'),
+            'collectedAt':origin.get('collectedAt'),'retainedFromPriorSource':True,**totals(segment)}
+        if origin.get('finalDayPartial') and segment[-1]['date']==origin.get('end'):
+            value['finalDayPartial']=True
+        result.append(value)
+    return result
+
+
 def normalize(source_path,waalaxy,collected_at,reviewed_day='2026-10-22'):
     path=Path(source_path);raw=path.read_bytes();incoming=parse_source(raw)
     first,last=incoming[0]['date'],incoming[-1]['date']
@@ -83,14 +119,7 @@ def normalize(source_path,waalaxy,collected_at,reviewed_day='2026-10-22'):
     earlier=[row for row in old_rows if row['date']<first]
     later=[row for row in old_rows if row['date']>last]
     previous=waalaxy.get('invitationCoverage') or {}
-    segments=[]
-    for segment in (earlier,later):
-        if segment:
-            segments.append({'start':segment[0]['date'],'end':segment[-1]['date'],
-                'sourceDays':len(segment),'sourceFilename':previous.get('sourceFilename'),
-                'sourceSha256':previous.get('sourceSha256'),
-                'collectedAt':waalaxy.get('invitationCollectedAt'),
-                'retainedFromPriorSource':True,**totals(segment)})
+    segments=retained_source_segments(old_rows,previous,first,last,waalaxy.get('invitationCollectedAt'))
     current_partial=last==reviewed_day
     latest={'start':first,'end':last,'sourceDays':len(incoming),
         'sourceFilename':path.name,'sourceSha256':hashlib.sha256(raw).hexdigest(),
