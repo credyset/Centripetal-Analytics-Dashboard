@@ -44,6 +44,13 @@ jobs:
           python3 tools/check_refresh_2026_10_28.py
           python3 tools/check_invitation_provenance.py
           python3 tools/check_native_refresh_2026_10_28.py
+      - name: Check accuracy corrections and evidence scope
+        run: |
+          node tools/check_confidence_metrics_2026_10_29.js
+          python3 tools/check_accuracy_review_2026_10_29.py
+          python3 tools/check_crm_alias_review.py
+          python3 tools/check_sheet_reporting_audit_2026_10_29.py
+          python3 tools/check_ads_zero_review_2026_10_29.py
       - name: Check focused evidence anchoring and independent-review preservation
         run: python3 tools/check_gap_resolution_2026_10_24.py
       - name: Check targeted mailbox context and commercial isolation

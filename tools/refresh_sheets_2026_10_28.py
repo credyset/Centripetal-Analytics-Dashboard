@@ -4,7 +4,7 @@ Worksheet dates and person-history attributes remain source reports. This script
 does not write the shared dashboard, publish, or mutate the source workbook.
 """
 from collections import Counter, defaultdict
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 from urllib.parse import unquote
 import hashlib
@@ -32,14 +32,25 @@ def profile(value):
     return match.group(1).lower().rstrip('/') if match else None
 
 
-def valid_date(value):
+def valid_date(value, *, date_column=None, reference_day=None):
     if not value:
         return None
     value = str(value).strip()
     try:
         return date.fromisoformat(value).isoformat()
     except ValueError:
+        pass
+    # A formula-backed connection date can be returned as a numeric string by
+    # this Sheets integration. Interpret serials only in explicit date columns,
+    # never a generic year, ID or count; fractional times remain unclassified.
+    if date_column not in {'Connected At', 'Video Sent Date', 'Follow-up Sent Date'} or not reference_day:
         return None
+    if not re.fullmatch(r'[1-9]\d{4}(?:\.0+)?', value):
+        return None
+    converted = date(1899, 12, 30) + timedelta(days=int(value.split('.', 1)[0]))
+    if not date(2000, 1, 1) <= converted <= date.fromisoformat(reference_day):
+        return None
+    return converted.isoformat()
 
 
 def record_rows(raw):
@@ -80,8 +91,8 @@ def build():
             continue
         key = profile(item.get('li'))
         status = str(item.get('Status (CS Column)') or '').strip()
-        video_date = valid_date(item.get('Video Sent Date'))
-        follow_date = valid_date(item.get('Follow-up Sent Date'))
+        video_date = valid_date(item.get('Video Sent Date'), date_column='Video Sent Date', reference_day=stamp[:10])
+        follow_date = valid_date(item.get('Follow-up Sent Date'), date_column='Follow-up Sent Date', reference_day=stamp[:10])
         asset_match = re.search(r'/share/([a-fA-F0-9]{32})', str(item.get('Loom Link') or ''))
         row = {
             'id': key or hashlib.sha256((company + '|' + contact).lower().encode()).hexdigest()[:16],
@@ -92,7 +103,7 @@ def build():
             'hasResponseStatus': bool(str(item.get('Response Status') or '').strip()),
             'responseStatus': str(item.get('Response Status') or '').strip() or None,
             'connected': str(item.get('Connected?') or '').strip() == 'Connected',
-            'connectedAt': valid_date(item.get('Connected At')),
+            'connectedAt': valid_date(item.get('Connected At'), date_column='Connected At', reference_day=stamp[:10]),
             'connectionLabel': str(item.get('Connected?') or '').strip(),
             'action': item.get('DM Action') or '', 'followUp': item.get('Follow-up Action') or '',
             'dealId': item.get('deal_id') or None,
@@ -187,6 +198,13 @@ def build():
             ['sourceRows', 'uniqueProfiles', 'readyRows', 'sheetCompletedRows', 'explicitSendStatusRows', 'datedSendStatusRows', 'connectedRows', 'reviewRows', 'awaitingConnectionRows', 'skipRows', 'recordingLinkRows']},
         'note': 'Differences in statuses, date fields, completion and follow-up helper classifications are first-observed source changes. They do not by themselves establish new messages. Native observations remain a separate historical evidence layer.'}
     connection_rows = people(record_rows(accepted), set(groups))
+    accepted_by_profile = {r['profileId']: r for r in connection_rows}
+    decoded_connection_rows = [r for r in rows if r.get('connectedAt') and re.fullmatch(r'[1-9]\d{4}(?:\.0+)?', str(current_raw[r['sourceRow']].get('Connected At') or '').strip())]
+    for row in decoded_connection_rows:
+        # The current Connected At helper copies the exact accepted-profile
+        # attribute. Preserve that independent corroboration instead of treating
+        # a merely plausible number as a historical connection event.
+        assert row['connected'] and accepted_by_profile.get(row['id'], {}).get('connectedAt') == row['connectedAt'], 'Decoded connection date does not match its accepted-profile source attribute'
     subset = population(connection_rows, {r['profileId'] for r in previous['waalaxy']['sheetSubset']['rows']})
     subset.update(sourceSpreadsheetId=SHEET_ID, sourceTabId=1939678986, sourceTab='Accepted Connections (Video Prospects)',
         returnedDataRows=len(connection_rows), scope='Selected connected prospects: Video DMs and Pulley Contacts lists; not account-wide Waalaxy coverage.',
@@ -236,6 +254,8 @@ def build():
             'reviewDuplicateRows': sum(r['connectionLabel'] == 'Review duplicate' for r in rows),
             'acceptedProfilesMatchedMain': sum(r['matchedVideoProspect'] for r in connection_rows),
             'acceptedProfilesWithoutConnectedFlag': sum(r['matchedVideoProspect'] and not any(v['connected'] for v in groups[r['profileId']]) for r in connection_rows),
+            'acceptedProfilesWithoutConnectedFlagMissingDate': sum(r['matchedVideoProspect'] and not any(v['connected'] for v in groups[r['profileId']]) and not r['connectedAt'] for r in connection_rows),
+            'serialConnectionDatesDecodedAndCorroborated': len(decoded_connection_rows),
             'helperRuleVerified': True,
             'helperRuleBasis': 'Current source formulas verified. Main status/action and follow-up helpers use explicit date fields, Loom assets, terminal/excluded status and accepted identity verification. Accepted verification supports an explicit manual override; all current override cells are blank.',
             'manualOverrideRows': sum(bool(str(r.get('Manual Connection Override') or '').strip()) for r in accepted_raw)},

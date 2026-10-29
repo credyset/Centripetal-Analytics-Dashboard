@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-10-29T06:25:46.744787+00:00",
+    "generatedAt": "2026-10-29T06:50:40.476815+00:00",
     "asOfDate": "2026-10-29",
     "timezone": "America/Denver",
     "scope": "Charles Solomon and Centripetal Advisors",
@@ -11,9 +11,9 @@
     "note": "Published snapshot; Source coverage varies. Automatic refresh is not enabled.",
     "public": true,
     "publicDataPolicy": "Owner-approved detailed snapshot including prospect identities and available business record links.",
-    "analyticsRevisedAt": "2026-10-29T06:25:46.744787+00:00",
-    "lastRevisionNote": "Current source inventories, personal creator/profile analytics and separately dated native evidence retain their actual clocks. October 29 is partial. Commercial outcomes remain owner-reviewed. Christian confirmed one additional 3.5-hour non-meeting increment for October 23–28, bringing the estimate to 21.75–23.0 hours through October 28; associated audio remains separate.",
-    "revision": "October 29 independent live-source refresh",
+    "analyticsRevisedAt": "2026-10-29T06:50:40.476815+00:00",
+    "lastRevisionNote": "Bounded Ads aggregate zero, retained connection-date normalization, corrected snapshot overlap, canonical CRM alias and own-message Seen markers have independent evidence clocks. Inventory, native message dates/IDs, commercial owner decisions and Christian’s 21.75–23.0-hour estimate through October28 remain unchanged; October29 is partial.",
+    "revision": "October 29 published-dashboard accuracy review",
     "reportingAsOfDate": "2026-10-29",
     "defaultCompleteReportingThrough": "2026-10-28",
     "defaultDatePreset": "week",
@@ -23,7 +23,8 @@
     "publicationPolicyBasis": "The owner explicitly instructed publication of the completed local metrics and revised structure to the Centripetal Analytics GitHub project and its shareable GitHub Pages dashboard so the team can view and interact with them. This supersedes the earlier local-only hold.",
     "localReviewOn": "2026-10-29",
     "publicationApprovedAt": "2026-10-22T12:57:17.430019+00:00",
-    "publicationReview": "REFRESH_2026-10-29.md"
+    "publicationReview": "ACCURACY_REVIEW_2026-10-29.md",
+    "accuracyAuditReviewedAt": "2026-10-29T06:50:40.476815+00:00"
   },
   "ads": {
     "status": "available",
@@ -8662,6 +8663,100 @@
       "newDailyRowsImported": 0,
       "concludedAt": null,
       "note": "All seven filtered ad sets are Completed in Charles’s authenticated account. UI totals agree with the separately generated October29 exports. Actual daily rows stop October21; October22–29 remain absent export rows. No zero daily values or exact conclusion timestamp are inferred."
+    },
+    "zeroDeliveryReview": {
+      "snapshotAt": "2026-10-29T06:38:16.046Z",
+      "reviewedAt": "2026-10-29T06:39:08.300455+00:00",
+      "accountId": "515259390",
+      "identityVerified": true,
+      "reviewKind": "authenticated_ui_aggregate_zero",
+      "coverage": {
+        "start": "2026-10-22",
+        "end": "2026-10-29",
+        "sourceTimezone": "UTC",
+        "finalDayPartial": true,
+        "completeDaysThrough": "2026-10-28",
+        "sourceMayRestate": true
+      },
+      "metrics": {
+        "spend": 0,
+        "impressions": 0,
+        "clicks": 0,
+        "rawLeads": 0
+      },
+      "scope": {
+        "adSetIds": [
+          "409641733",
+          "445365453",
+          "880330273",
+          "880742753",
+          "888447843",
+          "891464353",
+          "891475603"
+        ],
+        "matchesRetainedAdSetScope": true,
+        "adSetsReviewed": 7,
+        "accountWideCompleteCampaignCoverage": false,
+        "viewFilterCleared": true,
+        "allVisibleCurrentAdSetsVerified": true,
+        "unfilteredAdSetCount": 7,
+        "parentCampaignCount": 18,
+        "parentCampaignCountIsSeparateGrain": true
+      },
+      "sourceDailyRowsAdded": 0,
+      "notes": [
+        "Authenticated Performance table aggregate explicitly reports $0.00 Spent, 0 Impressions, 0 Clicks and 0 platform Leads for October22–29UTC in the same seven retained ad sets. October29 is partial at the observation clock.",
+        "These four nonnegative aggregate metrics support zero for a selected source-date subwindow wholly inside this observed all-zero interval. They do not create daily or campaign rows; the actual CSV dates still end October21UTC.",
+        "The view filter is cleared; all seven displayed ad sets are Completed and the source reports seven shown/seven total on one page. The Campaigns tab reports eighteen parent entities, a different grain; that is not evidence of eleven omitted ad sets.",
+        "Individual ad-set cells display dashes and remain unavailable. The verified metric scope remains the seven exact retained ad sets; no individual campaign or daily zero rows are inferred.",
+        "Qualified leads, matched bookings, form opens, video views/completions and actual commercial outcomes remain independently unavailable for this interval. Platform Leads is not owner qualification.",
+        "The aggregate retains its own observation clock and may be restated. It must not refresh an older CSV, an individual lead record, or a native message observation."
+      ],
+      "retainedPriorReviews": [
+        {
+          "snapshotAt": "2026-10-29T06:35:02.571Z",
+          "reviewedAt": "2026-10-29T06:36:51.727442+00:00",
+          "accountId": "515259390",
+          "identityVerified": true,
+          "reviewKind": "authenticated_ui_aggregate_zero",
+          "coverage": {
+            "start": "2026-10-22",
+            "end": "2026-10-29",
+            "sourceTimezone": "UTC",
+            "finalDayPartial": true,
+            "completeDaysThrough": "2026-10-28",
+            "sourceMayRestate": true
+          },
+          "metrics": {
+            "spend": 0,
+            "impressions": 0,
+            "clicks": 0,
+            "rawLeads": 0
+          },
+          "scope": {
+            "adSetIds": [
+              "409641733",
+              "445365453",
+              "880330273",
+              "880742753",
+              "888447843",
+              "891464353",
+              "891475603"
+            ],
+            "matchesRetainedAdSetScope": true,
+            "adSetsReviewed": 7,
+            "accountWideCompleteCampaignCoverage": false
+          },
+          "sourceDailyRowsAdded": 0,
+          "notes": [
+            "Authenticated Performance table aggregate explicitly reports $0.00 Spent, 0 Impressions, 0 Clicks and 0 platform Leads for October22–29UTC in the same seven retained ad sets. October29 is partial at the observation clock.",
+            "These four nonnegative aggregate metrics support zero for a selected source-date subwindow wholly inside this observed all-zero interval. They do not create daily or campaign rows; the actual CSV dates still end October21UTC.",
+            "Individual ad-set cells display dashes and remain unavailable. This evidence does not extend account-wide scope beyond the seven reviewed ad sets.",
+            "Qualified leads, matched bookings, form opens, video views/completions and actual commercial outcomes remain independently unavailable for this interval. Platform Leads is not owner qualification.",
+            "The aggregate retains its own observation clock and may be restated. It must not refresh an older CSV, an individual lead record, or a native message observation."
+          ]
+        }
+      ]
     }
   },
   "crm": {
@@ -65917,7 +66012,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2025-01-30",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Follow-up Needed",
@@ -65928,7 +66023,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "mikepena08",
@@ -65945,7 +66043,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2025-10-15",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -65959,7 +66057,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 837,
         "matchedCrmPersonId": 2834,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "maorfaridphd",
@@ -65976,7 +66077,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2025-10-17",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -65987,7 +66088,10 @@
         "reportedVideoSentDate": "2026-09-24",
         "reportedFollowUpSentDate": "2026-10-26",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "sidghatak",
@@ -66004,7 +66108,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2025-11-06",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66015,7 +66119,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-05",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "richardyuxuanzhang",
@@ -66032,7 +66139,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2025-11-06",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66043,7 +66150,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-21",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "shreykapoor1",
@@ -66060,7 +66170,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2025-11-10",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66074,7 +66184,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 844,
         "matchedCrmPersonId": 2841,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "laurengage",
@@ -66091,7 +66204,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2025-11-26",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66102,7 +66215,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-21",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "eyal-heldenberg-4171a24",
@@ -66119,7 +66235,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-01-28",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66133,7 +66249,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 843,
         "matchedCrmPersonId": 2840,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "ajith-govind",
@@ -66150,7 +66269,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-01-28",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66164,7 +66283,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 842,
         "matchedCrmPersonId": 2839,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "alexchantavy",
@@ -66181,7 +66303,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-01-29",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Follow-up Needed",
@@ -66195,7 +66317,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 845,
         "matchedCrmPersonId": 2842,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "saoud-khalifah",
@@ -66212,7 +66337,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-01-29",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66223,7 +66348,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-09-16",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "peterglyman",
@@ -66240,7 +66368,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-02-05",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66251,7 +66379,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-09-10",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "samira-daswani",
@@ -66268,7 +66399,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-02-06",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66282,7 +66413,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 838,
         "matchedCrmPersonId": 2835,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "grant-siders-0860354b",
@@ -66299,7 +66433,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-02-08",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66313,7 +66447,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 841,
         "matchedCrmPersonId": 2838,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "brandondterry",
@@ -66330,7 +66467,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-02-14",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66341,7 +66478,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-09-16",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "derekabdine",
@@ -66358,7 +66498,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-08",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66369,7 +66509,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-07",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "ido-arieli-noga",
@@ -66386,7 +66529,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-08",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66397,7 +66540,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-09-16",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "manvitha-mallela-9a699884",
@@ -66414,7 +66560,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-08",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66425,7 +66571,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-09-16",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "rimoch",
@@ -66442,7 +66591,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-08",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66453,7 +66602,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-09-10",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "keltonhardrictjr",
@@ -66470,7 +66622,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-09",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66481,7 +66633,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-07",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "sayantan-biswas-",
@@ -66498,7 +66653,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-09",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66509,7 +66664,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-09-16",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "mehdimerai",
@@ -66526,7 +66684,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-09",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66537,7 +66695,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-09-16",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "federico-spagnoli-80204b1",
@@ -66554,7 +66715,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-09",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66565,7 +66726,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-09-16",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "le-ora-lichtenstein-cfa-9bbb8b112",
@@ -66582,7 +66746,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-09",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66593,7 +66757,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-05",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "ozzie-saeed",
@@ -66610,7 +66777,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-09",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66621,7 +66788,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-09-10",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "assafweinberg",
@@ -66638,7 +66808,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-14",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66649,7 +66819,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-09-16",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "prkhot",
@@ -66666,7 +66839,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-06-26",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66677,7 +66850,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-09-10",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "spencerpotts",
@@ -66694,7 +66870,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-07-22",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66705,7 +66881,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-09-10",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "robmay",
@@ -66722,7 +66901,7 @@
         "hasResponseStatus": true,
         "responseStatus": "Not Interested",
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-07-22",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "",
@@ -66733,7 +66912,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "jrowl",
@@ -66750,7 +66932,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-07-30",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -66761,7 +66943,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "veronicama97",
@@ -66778,7 +66963,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-08-26",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66789,7 +66974,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-09-10",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "innocent-c-80713232",
@@ -66806,7 +66994,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-15",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66817,7 +67005,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-05",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "aakarkhanna",
@@ -66834,7 +67025,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-18",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66845,7 +67036,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-07",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "jrebholz",
@@ -66862,7 +67056,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-18",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66873,7 +67067,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-05",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "jinman11",
@@ -66890,7 +67087,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-18",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66901,7 +67098,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-05",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "kaya-celebi",
@@ -66918,7 +67118,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-19",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66929,7 +67129,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-05",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "nikhilrreddy",
@@ -66946,7 +67149,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-19",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66957,7 +67160,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-05",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "tedjulian",
@@ -66974,7 +67180,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-19",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -66985,7 +67191,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-05",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "steve-rahimi",
@@ -67002,7 +67211,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-21",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67013,7 +67222,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-07",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "serena-dang-aaab3141",
@@ -67030,7 +67242,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-05",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67041,7 +67253,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-12",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "williamjunchenwu",
@@ -67058,7 +67273,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-05",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67069,7 +67284,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-12",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "jaredzelman",
@@ -67086,7 +67304,7 @@
         "hasResponseStatus": true,
         "responseStatus": "No Response",
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-05",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67097,7 +67315,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-12",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "nicholas-bartz",
@@ -67114,7 +67335,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-05",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67125,7 +67346,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": "2026-10-12",
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": true
+        "syncedToPipedriveFlag": true,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "rkhardalian",
@@ -67142,7 +67366,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-06",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67156,7 +67380,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 850,
         "matchedCrmPersonId": 2847,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "travisbond",
@@ -67173,7 +67400,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-06",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67187,7 +67414,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 846,
         "matchedCrmPersonId": 2843,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "seckin-secilmis",
@@ -67204,7 +67434,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-07",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67218,7 +67448,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 840,
         "matchedCrmPersonId": 2837,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "dankatzman",
@@ -67235,7 +67468,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-12",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67249,7 +67482,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 839,
         "matchedCrmPersonId": 2836,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "alexandradebow",
@@ -67266,7 +67502,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-13",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67280,7 +67516,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 847,
         "matchedCrmPersonId": 2844,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "yigit-guney-90a80314a",
@@ -67297,7 +67536,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-15",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67311,7 +67550,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 848,
         "matchedCrmPersonId": 2845,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "siddharthbohra",
@@ -67328,7 +67570,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-15",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67342,7 +67584,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 851,
         "matchedCrmPersonId": 2848,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "adish-jain",
@@ -67359,7 +67604,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67373,7 +67618,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 852,
         "matchedCrmPersonId": 2851,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "yihhanma",
@@ -67390,7 +67638,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67404,7 +67652,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 853,
         "matchedCrmPersonId": 2852,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "adamfreed",
@@ -67421,7 +67672,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67435,7 +67686,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 854,
         "matchedCrmPersonId": 2853,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "sherwoodcallaway",
@@ -67452,7 +67706,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67466,7 +67720,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 856,
         "matchedCrmPersonId": 2855,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "brantroth",
@@ -67483,7 +67740,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -67497,7 +67754,10 @@
         "syncedToPipedriveFlag": true,
         "matchedCrmDealId": 849,
         "matchedCrmPersonId": 2846,
-        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately."
+        "crmMatchBasis": "Exact LinkedIn profile and matching Loom asset in linked CRM note; original Sheet ID retained separately.",
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "joon-ahn-phd-512ba4154",
@@ -68466,7 +68726,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-20",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Follow-up Needed",
@@ -68477,7 +68737,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "jeremylbolls",
@@ -68998,7 +69261,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-21",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -69009,7 +69272,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "danieltian316",
@@ -71126,7 +71392,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-20",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -71137,7 +71403,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "james-hall-86b627b",
@@ -72022,7 +72291,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-25",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -72033,7 +72302,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "ericgreen96",
@@ -73058,7 +73330,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-22",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Follow-up Needed",
@@ -73069,7 +73341,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "scottsearle",
@@ -74934,7 +75209,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2025-02-17",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Manual Check",
@@ -74945,7 +75220,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "dos-bahá-4a671391",
@@ -74962,7 +75240,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2025-04-23",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -74973,7 +75251,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "royzur",
@@ -74990,7 +75271,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2025-05-12",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75001,7 +75282,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "andy-ellner-md-ba1b6567",
@@ -75018,7 +75302,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2025-09-01",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -75029,7 +75313,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "nadav-cornberg",
@@ -75046,7 +75333,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2025-10-16",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Follow-up Needed",
@@ -75057,7 +75344,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "susanoneillfcca",
@@ -75074,7 +75364,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2025-11-11",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75085,7 +75375,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "benpham1",
@@ -75102,7 +75395,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-01-28",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -75113,7 +75406,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "cale-johnston",
@@ -75130,7 +75426,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-02-03",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -75141,7 +75437,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "jirka-bachel",
@@ -75158,7 +75457,7 @@
         "hasResponseStatus": true,
         "responseStatus": "Interested",
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-08",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "",
@@ -75169,7 +75468,10 @@
         "reportedVideoSentDate": "2026-10-21",
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "dominik-pederzani-07baa26a",
@@ -75186,7 +75488,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-08",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75197,7 +75499,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "noeljthomas",
@@ -75214,7 +75519,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-08",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Follow-up Needed",
@@ -75225,7 +75530,10 @@
         "reportedVideoSentDate": "2026-10-21",
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "stephen-martin-texas",
@@ -75242,7 +75550,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-09",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75253,7 +75561,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "dadhemar",
@@ -75270,7 +75581,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-09",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75281,7 +75592,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "maximeberthelot",
@@ -75298,7 +75612,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-09",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75309,7 +75623,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "patrickcollins1",
@@ -75326,7 +75643,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-09",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75337,7 +75654,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "le-ora-lichtenstein-cfa-9bbb8b112",
@@ -75354,7 +75674,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-09",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75365,7 +75685,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "cam-badger",
@@ -75382,7 +75705,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-09",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75393,7 +75716,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "ryan-wenger",
@@ -75410,7 +75736,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-14",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75421,7 +75747,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "assafweinberg",
@@ -75438,7 +75767,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-04-14",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75449,7 +75778,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "michael-martin-35a7ba26",
@@ -75466,7 +75798,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-05-19",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75477,7 +75809,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "batuhan-balci-7a3589114",
@@ -75494,7 +75829,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-18",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75505,7 +75840,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "nikita-mullangi",
@@ -75522,7 +75860,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-18",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75533,7 +75871,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "raj-jagiasi",
@@ -75550,7 +75891,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-18",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75561,7 +75902,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "alinapark",
@@ -75578,7 +75922,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-18",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75589,7 +75933,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "silvestrejaramontes",
@@ -75606,7 +75953,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-18",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75617,7 +75964,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "junlianglee",
@@ -75634,7 +75984,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-18",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75645,7 +75995,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "ryan-nowicki-stewart",
@@ -75662,7 +76015,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-19",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75673,7 +76026,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "shaivi-rau",
@@ -75690,7 +76046,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-19",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75701,7 +76057,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "jamiecuffe",
@@ -75718,7 +76077,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-09-19",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75729,7 +76088,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "pankaj-dhariwal",
@@ -75746,7 +76108,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-05",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75757,7 +76119,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "jiezhaophd",
@@ -75774,7 +76139,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-05",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75785,7 +76150,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "jakenewfield",
@@ -75802,7 +76170,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-05",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -75813,7 +76181,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "kabiri-ali",
@@ -75830,7 +76201,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-07",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Follow-up Needed",
@@ -75841,7 +76212,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "betchang",
@@ -75858,7 +76232,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-07",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75869,7 +76243,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "razvanr",
@@ -75886,7 +76263,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-08",
         "connectionLabel": "Connected",
         "action": "Already sent/completed",
         "followUp": "Follow-up Needed",
@@ -75897,7 +76274,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "kuan-zou-322a27117",
@@ -75914,7 +76294,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-13",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -75925,7 +76305,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "meghana-helder",
@@ -75942,7 +76325,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-13",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -75953,7 +76336,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "justin-byers-axio",
@@ -75970,7 +76356,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-13",
         "connectionLabel": "Connected",
         "action": "Ready for video DM",
         "followUp": "",
@@ -75981,7 +76367,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "mitchell-fogelson",
@@ -75998,7 +76387,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-13",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -76009,7 +76398,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "gregrable",
@@ -76026,7 +76418,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-13",
         "connectionLabel": "Connected",
         "action": "Ready for video DM",
         "followUp": "",
@@ -76037,7 +76429,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "nicholas-aldridge",
@@ -76054,7 +76449,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-13",
         "connectionLabel": "Connected",
         "action": "Ready for video DM",
         "followUp": "",
@@ -76065,7 +76460,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "dominic-toselli-80722b27",
@@ -76082,7 +76480,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-13",
         "connectionLabel": "Connected",
         "action": "Ready for video DM",
         "followUp": "",
@@ -76093,7 +76491,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "kiranjain",
@@ -76110,7 +76511,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-14",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -76121,7 +76522,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "ataberk",
@@ -76138,7 +76542,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-14",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -76149,7 +76553,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "torrey-leonard",
@@ -76166,7 +76573,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-17",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -76177,7 +76584,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "arikvrobel",
@@ -76194,7 +76604,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -76205,7 +76615,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "sebastianscott",
@@ -76222,7 +76635,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -76233,7 +76646,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "pinarormeci",
@@ -76250,7 +76666,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -76261,7 +76677,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "pau-casas",
@@ -76278,7 +76697,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -76289,7 +76708,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "tuvia-ohana",
@@ -76306,7 +76728,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -76317,7 +76739,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "mariatcarmona",
@@ -76334,7 +76759,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -76345,7 +76770,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "craigahrens",
@@ -76362,7 +76790,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Ready for video DM",
         "followUp": "",
@@ -76373,7 +76801,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "dean-bracha-75256a70",
@@ -76390,7 +76821,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -76401,7 +76832,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "spirosoik",
@@ -76418,7 +76852,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -76429,7 +76863,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "blennon",
@@ -76446,7 +76883,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -76457,7 +76894,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "matthew-r-ao",
@@ -76474,7 +76914,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -76485,7 +76925,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "ben-fuxbruner-555b2b187",
@@ -76502,7 +76945,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -76513,7 +76956,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "kyle-nesbit-7312a58",
@@ -76530,7 +76976,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -76541,7 +76987,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "finnlancaster",
@@ -76558,7 +77007,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-19",
         "connectionLabel": "Connected",
         "action": "Skip",
         "followUp": "",
@@ -76569,7 +77018,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "yaoyuyang",
@@ -76586,7 +77038,7 @@
         "hasResponseStatus": false,
         "responseStatus": null,
         "connected": true,
-        "connectedAt": null,
+        "connectedAt": "2026-10-20",
         "connectionLabel": "Connected",
         "action": "Review",
         "followUp": "",
@@ -76597,7 +77049,10 @@
         "reportedVideoSentDate": null,
         "reportedFollowUpSentDate": null,
         "sourceDateBasis": "Literal date-only worksheet fields; owner-reported activity, not native-platform or delivery proof.",
-        "syncedToPipedriveFlag": false
+        "syncedToPipedriveFlag": false,
+        "connectedAtDatePrecision": "day",
+        "connectedAtSourceTimezone": null,
+        "connectedAtEvidenceBasis": "Explicit Connected At worksheet date attribute; integral Sheets serial decoded with the 1899-12-30 epoch and independently matched to the same accepted-profile date. Not a dated invitation acceptance event."
       },
       {
         "id": "jaymingwong",
@@ -78853,7 +79308,9 @@
       "acceptedProfilesWithoutConnectedFlag": 33,
       "helperRuleVerified": true,
       "helperRuleBasis": "Current source formulas verified. Main status/action and follow-up helpers use explicit date fields, Loom assets, terminal/excluded status and accepted identity verification. Accepted verification supports an explicit manual override; all current override cells are blank.",
-      "manualOverrideRows": 0
+      "manualOverrideRows": 0,
+      "acceptedProfilesWithoutConnectedFlagMissingDate": 33,
+      "serialConnectionDatesDecodedAndCorroborated": 120
     },
     "notes": [
       "All allocated worksheet rows and columns were read in bounded chunks. Only nonblank company/contact records count as prospects.",
@@ -79712,7 +80169,7 @@
     },
     "crmReconciliation": {
       "snapshotAt": "2026-10-29T06:01:08.808Z",
-      "reviewedAt": "2026-10-29T06:01:08.808Z",
+      "reviewedAt": "2026-10-29T06:31:49.516Z",
       "appliesToSnapshotAt": "2026-10-29T05:51:57Z",
       "cohortDate": "2026-10-28",
       "cohortStartDate": "2026-10-21",
@@ -80408,17 +80865,18 @@
       ],
       "currentIdentityAssetReview": {
         "rowsReviewed": 107,
-        "currentCrmRecordsEvidenced": 103,
-        "exactProfileMatches": 101,
-        "profileMatchedInPersonField": 79,
+        "currentCrmRecordsEvidenced": 104,
+        "exactProfileMatches": 102,
+        "profileMatchedInPersonField": 80,
         "profileMatchedInDealNote": 22,
         "sourceLoomUrls": 71,
         "sameAssetInCrmNotes": 65,
-        "note": "All 107 current source rows with an explicit CRM ID and/or a valid Loom URL were reviewed against current accessible CRM/person identity and exhausted deal-note scopes. Record and asset presence do not establish actual message sends."
+        "note": "Current explicit-ID/asset rows retain their original CRM/person and note scopes. Person-field matches include one independently observed canonical LinkedIn redirect; the stored CRM URL is unchanged. Identity and asset evidence do not establish actual sending.",
+        "verifiedCanonicalAliasMatches": 1
       },
       "undatedStatusReview": {
         "sourceRows": 6,
-        "currentCrmRecordsEvidenced": 1,
+        "currentCrmRecordsEvidenced": 2,
         "sourceLoomUrls": 5,
         "sameAssetInCrmNotes": 0,
         "note": "Current Video Sent labels lacking literal source send dates only. Source labels, prepared recording assets and actual native events remain separate."
@@ -80630,9 +81088,12 @@
           "company": "Apaluma",
           "profile": "aliciajkeyes505",
           "sourceSheetDealId": null,
-          "matchedCrmDealId": null,
-          "gap": "A same-name/company candidate exists at deal 411, but its current CRM profile differs from the exact source aliciajkeyes505 URL and the current source Loom asset is absent. Identity/alias equivalence and asset linkage remain unverified; the candidate is not an exact match.",
-          "noteIdsReviewed": [],
+          "matchedCrmDealId": 411,
+          "gap": "Identity resolved: the retained CRM profile URL redirects to the exact current source profile. Current deal 411/person 605 is matched without altering the original worksheet ID or stored CRM URL. The source Loom asset is absent from the exhausted deal/person/organization notes; that remaining recording-linkage gap is separate from independently observed native sending.",
+          "noteIdsReviewed": [
+            1325,
+            1354
+          ],
           "candidateCrmDealIds": [
             411
           ],
@@ -80657,6 +81118,43 @@
             ],
             "reviewedAt": "2026-10-29T05:58:04.554Z",
             "zeroResultsDoNotProveGlobalAbsence": true
+          },
+          "identityAliasReview": {
+            "snapshotAt": "2026-10-29T06:31:49.516Z",
+            "method": "authenticated_native_profile_redirect",
+            "sourceRow": 140,
+            "profileId": "aliciajkeyes505",
+            "contact": "Alicia J. Keyes",
+            "company": "Apaluma",
+            "crmDealId": 411,
+            "crmPersonId": 605,
+            "crmOrganizationId": 536,
+            "retainedCrmProfileUrl": "https://www.linkedin.com/in/alicia-j-keyes-59722197/",
+            "canonicalProfileUrl": "https://www.linkedin.com/in/aliciajkeyes505/",
+            "redirectObserved": true,
+            "identityVerified": true,
+            "sourceSystemWrites": 0,
+            "sourceInventorySnapshotAt": "2026-10-29T05:51:57Z",
+            "crmInventorySnapshotAt": "2026-10-29T06:01:08.808Z",
+            "noteScopeReview": {
+              "scopes": [
+                "deal",
+                "person",
+                "organization"
+              ],
+              "completeReturnedPagination": true,
+              "sourceAssetId": "20b9f21c6bf847b3be83f050a6a37eb3",
+              "sourceAssetMatches": [],
+              "distinctNoteIds": [
+                1325,
+                1354
+              ],
+              "collectedAt": "2026-10-29T06:31:47.457Z"
+            },
+            "evidenceHashes": {
+              "browserObservationSha256": "c499c0a73a63cdadf4916bc2732103c2e52188612417a5ce200ff839749b776c",
+              "retainedCrmPersonSha256": "b5c34919bc61daca224e3fc6413a2b277c6ef05bdee4c644f08036c54bb007d2"
+            }
           }
         },
         {
@@ -80760,13 +81258,53 @@
         "The current 2026-10-21–2026-10-28 source-date cohort contains 19 valid Loom rows; 19 have exact current profile and asset evidence in CRM. This is scoped record/asset presence, not additional verified sends.",
         "The current SubImage worksheet video date moved to October26; retained earlier source reports and independent native observations retain their own dates.",
         "Every row join is rebuilt from current sourceRow plus exact profile/asset and guarded by appliesToSnapshotAt. Original worksheet IDs are preserved.",
-        "Dedicated archived-deal pagination returned zero accessible records. Deleted original 322 remains distinct from related live 836."
+        "Dedicated archived-deal pagination returned zero accessible records. Deleted original 322 remains distinct from related live 836.",
+        "Apaluma identity was independently resolved by a native canonical-profile redirect. Its source asset remains absent from current scoped CRM notes. Original IDs and all native/commercial clocks are preserved."
       ],
       "limits": [
         "Note creation/update timestamps are CRM logging times, not Video DM send/reply dates.",
         "Person-level Last LinkedIn Message fields are single-record attributes, not complete video-specific event logs.",
         "Fully exhausted deal-note scopes are current bounded evidence; broader missing-person/organization matches are not automatically automation failures.",
         "No Pipedrive, Sheets or messages were edited or sent."
+      ],
+      "profileAliasReviews": [
+        {
+          "snapshotAt": "2026-10-29T06:31:49.516Z",
+          "method": "authenticated_native_profile_redirect",
+          "sourceRow": 140,
+          "profileId": "aliciajkeyes505",
+          "contact": "Alicia J. Keyes",
+          "company": "Apaluma",
+          "crmDealId": 411,
+          "crmPersonId": 605,
+          "crmOrganizationId": 536,
+          "retainedCrmProfileUrl": "https://www.linkedin.com/in/alicia-j-keyes-59722197/",
+          "canonicalProfileUrl": "https://www.linkedin.com/in/aliciajkeyes505/",
+          "redirectObserved": true,
+          "identityVerified": true,
+          "sourceSystemWrites": 0,
+          "sourceInventorySnapshotAt": "2026-10-29T05:51:57Z",
+          "crmInventorySnapshotAt": "2026-10-29T06:01:08.808Z",
+          "noteScopeReview": {
+            "scopes": [
+              "deal",
+              "person",
+              "organization"
+            ],
+            "completeReturnedPagination": true,
+            "sourceAssetId": "20b9f21c6bf847b3be83f050a6a37eb3",
+            "sourceAssetMatches": [],
+            "distinctNoteIds": [
+              1325,
+              1354
+            ],
+            "collectedAt": "2026-10-29T06:31:47.457Z"
+          },
+          "evidenceHashes": {
+            "browserObservationSha256": "c499c0a73a63cdadf4916bc2732103c2e52188612417a5ce200ff839749b776c",
+            "retainedCrmPersonSha256": "b5c34919bc61daca224e3fc6413a2b277c6ef05bdee4c644f08036c54bb007d2"
+          }
+        }
       ]
     },
     "messageDateReview": {
@@ -85488,14 +86026,19 @@
           "dateTimeAssetAnchoredWithinSameMessageBlock": false,
           "evidenceBasis": "Verified recipient profile and real conversation control; the selected native block establishes its sender, displayed date/time and any exact video asset. Worksheet statuses and CRM notes do not establish message delivery.",
           "replyToVideoAttributionEstablished": false,
-          "platformReadReceiptObserved": false,
+          "platformReadReceiptObserved": true,
           "readReceiptDate": null,
           "currentInventorySnapshotAt": "2026-10-29T05:51:57Z",
           "currentSourceRows": [
             102
           ],
           "currentAssetSourceRows": [],
-          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents.",
+          "readReceiptBasis": "An undated native LinkedIn Seen marker for the verified recipient occurs inside this exact selected authored/date/time message block. It establishes no receipt date, video play or reply.",
+          "readReceiptSourceObservedAt": "2026-10-29T06:15:18.354Z",
+          "readReceiptValidatedAt": "2026-10-29T06:40:22.802121+00:00",
+          "readReceiptAppliesTo": "linkedin_message_only",
+          "loomVideoViewedEstablished": false
         },
         {
           "observationId": "linkedin-ui:2026-10-29:adish-jain:outbound:7f7a9eb9c362705dfcb074b8",
@@ -85680,7 +86223,7 @@
           "dateTimeAssetAnchoredWithinSameMessageBlock": true,
           "evidenceBasis": "Verified recipient profile and real conversation control; the selected native block establishes its sender, displayed date/time and any exact video asset. Worksheet statuses and CRM notes do not establish message delivery.",
           "replyToVideoAttributionEstablished": false,
-          "platformReadReceiptObserved": false,
+          "platformReadReceiptObserved": true,
           "readReceiptDate": null,
           "currentInventorySnapshotAt": "2026-10-29T05:51:57Z",
           "currentSourceRows": [
@@ -85689,7 +86232,12 @@
           "currentAssetSourceRows": [
             140
           ],
-          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents.",
+          "readReceiptBasis": "An undated native LinkedIn Seen marker for the verified recipient occurs inside this exact selected authored/date/time message block. It establishes no receipt date, video play or reply.",
+          "readReceiptSourceObservedAt": "2026-10-29T06:08:28.850Z",
+          "readReceiptValidatedAt": "2026-10-29T06:40:22.802121+00:00",
+          "readReceiptAppliesTo": "linkedin_message_only",
+          "loomVideoViewedEstablished": false
         },
         {
           "observationId": "linkedin-ui:2026-10-29:ericleuthardt:outbound:235914370f098282ffda5cf3",
@@ -85828,14 +86376,19 @@
           "dateTimeAssetAnchoredWithinSameMessageBlock": false,
           "evidenceBasis": "Verified recipient profile and real conversation control; the selected native block establishes its sender, displayed date/time and any exact video asset. Worksheet statuses and CRM notes do not establish message delivery.",
           "replyToVideoAttributionEstablished": false,
-          "platformReadReceiptObserved": false,
+          "platformReadReceiptObserved": true,
           "readReceiptDate": null,
           "currentInventorySnapshotAt": "2026-10-29T05:51:57Z",
           "currentSourceRows": [
             96
           ],
           "currentAssetSourceRows": [],
-          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents.",
+          "readReceiptBasis": "An undated native LinkedIn Seen marker for the verified recipient occurs inside this exact selected authored/date/time message block. It establishes no receipt date, video play or reply.",
+          "readReceiptSourceObservedAt": "2026-10-29T06:13:57.117Z",
+          "readReceiptValidatedAt": "2026-10-29T06:40:22.802121+00:00",
+          "readReceiptAppliesTo": "linkedin_message_only",
+          "loomVideoViewedEstablished": false
         },
         {
           "observationId": "linkedin-ui:2026-10-29:eyal-heldenberg-4171a24:outbound:c87392bdb3306bc1c1ef32aa",
@@ -86316,14 +86869,19 @@
           "dateTimeAssetAnchoredWithinSameMessageBlock": false,
           "evidenceBasis": "Verified recipient profile and real conversation control; the selected native block establishes its sender, displayed date/time and any exact video asset. Worksheet statuses and CRM notes do not establish message delivery.",
           "replyToVideoAttributionEstablished": false,
-          "platformReadReceiptObserved": false,
+          "platformReadReceiptObserved": true,
           "readReceiptDate": null,
           "currentInventorySnapshotAt": "2026-10-29T05:51:57Z",
           "currentSourceRows": [
             62
           ],
           "currentAssetSourceRows": [],
-          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents.",
+          "readReceiptBasis": "An undated native LinkedIn Seen marker for the verified recipient occurs inside this exact selected authored/date/time message block. It establishes no receipt date, video play or reply.",
+          "readReceiptSourceObservedAt": "2026-10-29T06:12:22.910Z",
+          "readReceiptValidatedAt": "2026-10-29T06:40:22.802121+00:00",
+          "readReceiptAppliesTo": "linkedin_message_only",
+          "loomVideoViewedEstablished": false
         },
         {
           "observationId": "linkedin-ui:2026-10-29:seckin-secilmis:outbound:f72982b0a07af26077e9d0d6",
@@ -86364,14 +86922,19 @@
           "dateTimeAssetAnchoredWithinSameMessageBlock": false,
           "evidenceBasis": "Verified recipient profile and real conversation control; the selected native block establishes its sender, displayed date/time and any exact video asset. Worksheet statuses and CRM notes do not establish message delivery.",
           "replyToVideoAttributionEstablished": false,
-          "platformReadReceiptObserved": false,
+          "platformReadReceiptObserved": true,
           "readReceiptDate": null,
           "currentInventorySnapshotAt": "2026-10-29T05:51:57Z",
           "currentSourceRows": [
             95
           ],
           "currentAssetSourceRows": [],
-          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents.",
+          "readReceiptBasis": "An undated native LinkedIn Seen marker for the verified recipient occurs inside this exact selected authored/date/time message block. It establishes no receipt date, video play or reply.",
+          "readReceiptSourceObservedAt": "2026-10-29T06:13:35.881Z",
+          "readReceiptValidatedAt": "2026-10-29T06:40:22.802121+00:00",
+          "readReceiptAppliesTo": "linkedin_message_only",
+          "loomVideoViewedEstablished": false
         },
         {
           "observationId": "linkedin-ui:2026-10-29:sherwoodcallaway:outbound:020ce532325a595d2e87348b",
@@ -86702,14 +87265,19 @@
           "dateTimeAssetAnchoredWithinSameMessageBlock": false,
           "evidenceBasis": "Verified recipient profile and real conversation control; the selected native block establishes its sender, displayed date/time and any exact video asset. Worksheet statuses and CRM notes do not establish message delivery.",
           "replyToVideoAttributionEstablished": false,
-          "platformReadReceiptObserved": false,
+          "platformReadReceiptObserved": true,
           "readReceiptDate": null,
           "currentInventorySnapshotAt": "2026-10-29T05:51:57Z",
           "currentSourceRows": [
             101
           ],
           "currentAssetSourceRows": [],
-          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents."
+          "currentInventoryMatchBasis": "Exact current worksheet profile; native message proof is independent of worksheet asset fields and CRM note contents.",
+          "readReceiptBasis": "An undated native LinkedIn Seen marker for the verified recipient occurs inside this exact selected authored/date/time message block. It establishes no receipt date, video play or reply.",
+          "readReceiptSourceObservedAt": "2026-10-29T06:15:07.218Z",
+          "readReceiptValidatedAt": "2026-10-29T06:40:22.802121+00:00",
+          "readReceiptAppliesTo": "linkedin_message_only",
+          "loomVideoViewedEstablished": false
         }
       ],
       "nativePlatformCoverage": {
@@ -87843,13 +88411,14 @@
           "sourceRow": 140,
           "company": "Apaluma",
           "contact": "Alicia J. Keyes",
-          "crmDealId": null,
-          "status": "Exact native video send verified on 2026-10-28; source fields and CRM notes remain separate",
+          "crmDealId": 411,
+          "status": "Exact native video and current CRM identity verified; source asset-note gap remains",
           "findings": [
             "The current recording field contains a valid Loom asset that was absent in the prior complete source snapshot.",
             "The exact company/contact source row had an empty recording field in revision1380 and the asset appears in revision1401. These bounds date the source-field appearance, not the recording creation or sending.",
             "The current Video Sent worksheet label is undated for this row. This source review establishes no actual LinkedIn send, reply, delivery receipt or commercial decision.",
-            "Later independent native message review confirms this exact authored video asset on 2026-10-28. The displayed source day has unknown timezone and is not an exact sending timestamp."
+            "Later independent native message review confirms this exact authored video asset on 2026-10-28. The displayed source day has unknown timezone and is not an exact sending timestamp.",
+            "Later independent native-profile redirect resolves this source/CRM identity alias; the original CRM URL and worksheet ID are retained. The source asset remains absent from current scoped CRM notes."
           ],
           "recordingAssetId": "20b9f21c6bf847b3be83f050a6a37eb3",
           "currentRecordingFieldKind": "loom_url",
@@ -87873,6 +88442,43 @@
             "sourceInventorySnapshotAt": "2026-10-29T05:51:57Z",
             "crmAssetNotePresenceRequired": false,
             "commercialOutcomeInferred": false
+          },
+          "identityAliasReview": {
+            "snapshotAt": "2026-10-29T06:31:49.516Z",
+            "method": "authenticated_native_profile_redirect",
+            "sourceRow": 140,
+            "profileId": "aliciajkeyes505",
+            "contact": "Alicia J. Keyes",
+            "company": "Apaluma",
+            "crmDealId": 411,
+            "crmPersonId": 605,
+            "crmOrganizationId": 536,
+            "retainedCrmProfileUrl": "https://www.linkedin.com/in/alicia-j-keyes-59722197/",
+            "canonicalProfileUrl": "https://www.linkedin.com/in/aliciajkeyes505/",
+            "redirectObserved": true,
+            "identityVerified": true,
+            "sourceSystemWrites": 0,
+            "sourceInventorySnapshotAt": "2026-10-29T05:51:57Z",
+            "crmInventorySnapshotAt": "2026-10-29T06:01:08.808Z",
+            "noteScopeReview": {
+              "scopes": [
+                "deal",
+                "person",
+                "organization"
+              ],
+              "completeReturnedPagination": true,
+              "sourceAssetId": "20b9f21c6bf847b3be83f050a6a37eb3",
+              "sourceAssetMatches": [],
+              "distinctNoteIds": [
+                1325,
+                1354
+              ],
+              "collectedAt": "2026-10-29T06:31:47.457Z"
+            },
+            "evidenceHashes": {
+              "browserObservationSha256": "c499c0a73a63cdadf4916bc2732103c2e52188612417a5ce200ff839749b776c",
+              "retainedCrmPersonSha256": "b5c34919bc61daca224e3fc6413a2b277c6ef05bdee4c644f08036c54bb007d2"
+            }
           }
         },
         {
@@ -90322,6 +90928,1106 @@
         "newNativeSendOrReplyProof": 0
       },
       "note": "Source values changed while the valid company/contact population stayed stable. The newer source inventory has its own collection clock; historical native and commercial proof is not redated."
+    },
+    "sourceFieldAuditReview": {
+      "snapshotAt": "2026-10-29T06:36:06.311872+00:00",
+      "reviewedAt": "2026-10-29T06:36:06.311872+00:00",
+      "appliesToVideoInventorySnapshotAt": "2026-10-29T05:51:57Z",
+      "sourceCollectionClockPreserved": true,
+      "connectionDateRowsRecovered": 120,
+      "records": [
+        {
+          "profileId": "mac-dougherty",
+          "sourceRow": 50,
+          "date": "2025-01-30",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "mikepena08",
+          "sourceRow": 51,
+          "date": "2025-10-15",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "maorfaridphd",
+          "sourceRow": 52,
+          "date": "2025-10-17",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "sidghatak",
+          "sourceRow": 53,
+          "date": "2025-11-06",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "richardyuxuanzhang",
+          "sourceRow": 54,
+          "date": "2025-11-06",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "shreykapoor1",
+          "sourceRow": 55,
+          "date": "2025-11-10",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "laurengage",
+          "sourceRow": 56,
+          "date": "2025-11-26",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "eyal-heldenberg-4171a24",
+          "sourceRow": 57,
+          "date": "2026-01-28",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "ajith-govind",
+          "sourceRow": 58,
+          "date": "2026-01-28",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "alexchantavy",
+          "sourceRow": 59,
+          "date": "2026-01-29",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "saoud-khalifah",
+          "sourceRow": 60,
+          "date": "2026-01-29",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "peterglyman",
+          "sourceRow": 61,
+          "date": "2026-02-05",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "samira-daswani",
+          "sourceRow": 62,
+          "date": "2026-02-06",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "grant-siders-0860354b",
+          "sourceRow": 63,
+          "date": "2026-02-08",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "brandondterry",
+          "sourceRow": 64,
+          "date": "2026-02-14",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "derekabdine",
+          "sourceRow": 65,
+          "date": "2026-04-08",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "ido-arieli-noga",
+          "sourceRow": 66,
+          "date": "2026-04-08",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "manvitha-mallela-9a699884",
+          "sourceRow": 67,
+          "date": "2026-04-08",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "rimoch",
+          "sourceRow": 68,
+          "date": "2026-04-08",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "keltonhardrictjr",
+          "sourceRow": 69,
+          "date": "2026-04-09",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "sayantan-biswas-",
+          "sourceRow": 70,
+          "date": "2026-04-09",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "mehdimerai",
+          "sourceRow": 71,
+          "date": "2026-04-09",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "federico-spagnoli-80204b1",
+          "sourceRow": 72,
+          "date": "2026-04-09",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "le-ora-lichtenstein-cfa-9bbb8b112",
+          "sourceRow": 73,
+          "date": "2026-04-09",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "ozzie-saeed",
+          "sourceRow": 74,
+          "date": "2026-04-09",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "assafweinberg",
+          "sourceRow": 75,
+          "date": "2026-04-14",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "prkhot",
+          "sourceRow": 76,
+          "date": "2026-06-26",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "spencerpotts",
+          "sourceRow": 77,
+          "date": "2026-07-22",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "robmay",
+          "sourceRow": 78,
+          "date": "2026-07-22",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "jrowl",
+          "sourceRow": 79,
+          "date": "2026-07-30",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "veronicama97",
+          "sourceRow": 80,
+          "date": "2026-08-26",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "innocent-c-80713232",
+          "sourceRow": 81,
+          "date": "2026-09-15",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "aakarkhanna",
+          "sourceRow": 82,
+          "date": "2026-09-18",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "jrebholz",
+          "sourceRow": 83,
+          "date": "2026-09-18",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "jinman11",
+          "sourceRow": 84,
+          "date": "2026-09-18",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "kaya-celebi",
+          "sourceRow": 85,
+          "date": "2026-09-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "nikhilrreddy",
+          "sourceRow": 86,
+          "date": "2026-09-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "tedjulian",
+          "sourceRow": 87,
+          "date": "2026-09-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "steve-rahimi",
+          "sourceRow": 88,
+          "date": "2026-09-21",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "serena-dang-aaab3141",
+          "sourceRow": 89,
+          "date": "2026-10-05",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "williamjunchenwu",
+          "sourceRow": 90,
+          "date": "2026-10-05",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "jaredzelman",
+          "sourceRow": 91,
+          "date": "2026-10-05",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "nicholas-bartz",
+          "sourceRow": 92,
+          "date": "2026-10-05",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "rkhardalian",
+          "sourceRow": 93,
+          "date": "2026-10-06",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "travisbond",
+          "sourceRow": 94,
+          "date": "2026-10-06",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "seckin-secilmis",
+          "sourceRow": 95,
+          "date": "2026-10-07",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "dankatzman",
+          "sourceRow": 96,
+          "date": "2026-10-12",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "alexandradebow",
+          "sourceRow": 97,
+          "date": "2026-10-13",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "yigit-guney-90a80314a",
+          "sourceRow": 98,
+          "date": "2026-10-15",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "siddharthbohra",
+          "sourceRow": 99,
+          "date": "2026-10-15",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "adish-jain",
+          "sourceRow": 100,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "yihhanma",
+          "sourceRow": 101,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "adamfreed",
+          "sourceRow": 102,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "sherwoodcallaway",
+          "sourceRow": 103,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "brantroth",
+          "sourceRow": 104,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "aliciajkeyes505",
+          "sourceRow": 140,
+          "date": "2026-10-20",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "joel-bar-el",
+          "sourceRow": 159,
+          "date": "2026-10-21",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "aryah-oztanir",
+          "sourceRow": 235,
+          "date": "2026-10-20",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "henry-birge-lee",
+          "sourceRow": 267,
+          "date": "2026-10-25",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "ericleuthardt",
+          "sourceRow": 304,
+          "date": "2026-10-22",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "ashishmandavia",
+          "sourceRow": 371,
+          "date": "2025-02-17",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "dos-bahá-4a671391",
+          "sourceRow": 372,
+          "date": "2025-04-23",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "royzur",
+          "sourceRow": 373,
+          "date": "2025-05-12",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "andy-ellner-md-ba1b6567",
+          "sourceRow": 374,
+          "date": "2025-09-01",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "nadav-cornberg",
+          "sourceRow": 375,
+          "date": "2025-10-16",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "susanoneillfcca",
+          "sourceRow": 376,
+          "date": "2025-11-11",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "benpham1",
+          "sourceRow": 377,
+          "date": "2026-01-28",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "cale-johnston",
+          "sourceRow": 378,
+          "date": "2026-02-03",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "jirka-bachel",
+          "sourceRow": 379,
+          "date": "2026-04-08",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "dominik-pederzani-07baa26a",
+          "sourceRow": 380,
+          "date": "2026-04-08",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "noeljthomas",
+          "sourceRow": 381,
+          "date": "2026-04-08",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "stephen-martin-texas",
+          "sourceRow": 382,
+          "date": "2026-04-09",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "dadhemar",
+          "sourceRow": 383,
+          "date": "2026-04-09",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "maximeberthelot",
+          "sourceRow": 384,
+          "date": "2026-04-09",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "patrickcollins1",
+          "sourceRow": 385,
+          "date": "2026-04-09",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "le-ora-lichtenstein-cfa-9bbb8b112",
+          "sourceRow": 386,
+          "date": "2026-04-09",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "cam-badger",
+          "sourceRow": 387,
+          "date": "2026-04-09",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "ryan-wenger",
+          "sourceRow": 388,
+          "date": "2026-04-14",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "assafweinberg",
+          "sourceRow": 389,
+          "date": "2026-04-14",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "michael-martin-35a7ba26",
+          "sourceRow": 390,
+          "date": "2026-05-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "batuhan-balci-7a3589114",
+          "sourceRow": 391,
+          "date": "2026-09-18",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "nikita-mullangi",
+          "sourceRow": 392,
+          "date": "2026-09-18",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "raj-jagiasi",
+          "sourceRow": 393,
+          "date": "2026-09-18",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "alinapark",
+          "sourceRow": 394,
+          "date": "2026-09-18",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "silvestrejaramontes",
+          "sourceRow": 395,
+          "date": "2026-09-18",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "junlianglee",
+          "sourceRow": 396,
+          "date": "2026-09-18",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "ryan-nowicki-stewart",
+          "sourceRow": 397,
+          "date": "2026-09-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "shaivi-rau",
+          "sourceRow": 398,
+          "date": "2026-09-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "jamiecuffe",
+          "sourceRow": 399,
+          "date": "2026-09-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "pankaj-dhariwal",
+          "sourceRow": 400,
+          "date": "2026-10-05",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "jiezhaophd",
+          "sourceRow": 401,
+          "date": "2026-10-05",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "jakenewfield",
+          "sourceRow": 402,
+          "date": "2026-10-05",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "kabiri-ali",
+          "sourceRow": 403,
+          "date": "2026-10-07",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "betchang",
+          "sourceRow": 404,
+          "date": "2026-10-07",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "razvanr",
+          "sourceRow": 405,
+          "date": "2026-10-08",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "kuan-zou-322a27117",
+          "sourceRow": 406,
+          "date": "2026-10-13",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "meghana-helder",
+          "sourceRow": 407,
+          "date": "2026-10-13",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "justin-byers-axio",
+          "sourceRow": 408,
+          "date": "2026-10-13",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "mitchell-fogelson",
+          "sourceRow": 409,
+          "date": "2026-10-13",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "gregrable",
+          "sourceRow": 410,
+          "date": "2026-10-13",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "nicholas-aldridge",
+          "sourceRow": 411,
+          "date": "2026-10-13",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "dominic-toselli-80722b27",
+          "sourceRow": 412,
+          "date": "2026-10-13",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "kiranjain",
+          "sourceRow": 413,
+          "date": "2026-10-14",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "ataberk",
+          "sourceRow": 414,
+          "date": "2026-10-14",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "torrey-leonard",
+          "sourceRow": 415,
+          "date": "2026-10-17",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "arikvrobel",
+          "sourceRow": 416,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "sebastianscott",
+          "sourceRow": 417,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "pinarormeci",
+          "sourceRow": 418,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "pau-casas",
+          "sourceRow": 419,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "tuvia-ohana",
+          "sourceRow": 420,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "mariatcarmona",
+          "sourceRow": 421,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "craigahrens",
+          "sourceRow": 422,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "dean-bracha-75256a70",
+          "sourceRow": 423,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "spirosoik",
+          "sourceRow": 424,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "blennon",
+          "sourceRow": 425,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "matthew-r-ao",
+          "sourceRow": 426,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "ben-fuxbruner-555b2b187",
+          "sourceRow": 427,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "kyle-nesbit-7312a58",
+          "sourceRow": 428,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "finnlancaster",
+          "sourceRow": 429,
+          "date": "2026-10-19",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        },
+        {
+          "profileId": "yaoyuyang",
+          "sourceRow": 430,
+          "date": "2026-10-20",
+          "sourceColumn": "Connected At",
+          "sourceEncoding": "integral_google_sheets_serial_string",
+          "exactAcceptedProfileDateMatch": true
+        }
+      ],
+      "scope": "Normalization correction of already-collected explicit date attributes, independently corroborated by exact accepted-profile date joins; no new event proof.",
+      "nativeSeenMarkerReview": {
+        "snapshotAt": "2026-10-29T06:40:22.802121+00:00",
+        "reviewedAt": "2026-10-29T06:40:22.802121+00:00",
+        "scope": "Six explicitly reviewed selected message blocks with own undated Seen markers; two old-message negative controls. Not a complete message-read census.",
+        "appliesToVideoInventorySnapshotAt": "2026-10-29T05:51:57Z",
+        "records": [
+          {
+            "profileId": "adamfreed",
+            "company": "Bevel",
+            "contact": "Adam Freed",
+            "messageDate": "2026-10-26",
+            "messageKind": "video_follow_up",
+            "messageObservationId": "linkedin-ui:2026-10-29:adamfreed:outbound:66c2d54d8b48527716533477",
+            "sourceObservedAt": "2026-10-29T06:15:18.354Z",
+            "validatedAt": "2026-10-29T06:40:22.802121+00:00",
+            "seenMarkerObserved": true,
+            "readReceiptDate": null,
+            "receiptDateEstablished": false,
+            "videoViewedEstablished": false,
+            "exactMessageBlockMatched": true,
+            "newReplyOrCommercialOutcomeAdded": false
+          },
+          {
+            "profileId": "aliciajkeyes505",
+            "company": "Apaluma",
+            "contact": "Alicia J. Keyes",
+            "messageDate": "2026-10-28",
+            "messageKind": "video",
+            "messageObservationId": "linkedin-ui:2026-10-29:aliciajkeyes505:outbound:88f3d7aa1f71fb96d917fcbd",
+            "sourceObservedAt": "2026-10-29T06:08:28.850Z",
+            "validatedAt": "2026-10-29T06:40:22.802121+00:00",
+            "seenMarkerObserved": true,
+            "readReceiptDate": null,
+            "receiptDateEstablished": false,
+            "videoViewedEstablished": false,
+            "exactMessageBlockMatched": true,
+            "newReplyOrCommercialOutcomeAdded": false
+          },
+          {
+            "profileId": "dankatzman",
+            "company": "Bernard",
+            "contact": "Dan Katzman",
+            "messageDate": "2026-10-26",
+            "messageKind": "video_follow_up",
+            "messageObservationId": "linkedin-ui:2026-10-29:dankatzman:outbound:db78971b0b86c785080de849",
+            "sourceObservedAt": "2026-10-29T06:13:57.117Z",
+            "validatedAt": "2026-10-29T06:40:22.802121+00:00",
+            "seenMarkerObserved": true,
+            "readReceiptDate": null,
+            "receiptDateEstablished": false,
+            "videoViewedEstablished": false,
+            "exactMessageBlockMatched": true,
+            "newReplyOrCommercialOutcomeAdded": false
+          },
+          {
+            "profileId": "samira-daswani",
+            "company": "Manta Cares",
+            "contact": "Samira Daswani",
+            "messageDate": "2026-10-26",
+            "messageKind": "video_follow_up",
+            "messageObservationId": "linkedin-ui:2026-10-29:samira-daswani:outbound:8f01c04c0b42887f5e04a5e4",
+            "sourceObservedAt": "2026-10-29T06:12:22.910Z",
+            "validatedAt": "2026-10-29T06:40:22.802121+00:00",
+            "seenMarkerObserved": true,
+            "readReceiptDate": null,
+            "receiptDateEstablished": false,
+            "videoViewedEstablished": false,
+            "exactMessageBlockMatched": true,
+            "newReplyOrCommercialOutcomeAdded": false
+          },
+          {
+            "profileId": "seckin-secilmis",
+            "company": "TigerByte Cyber",
+            "contact": "Sage Secilmis",
+            "messageDate": "2026-10-26",
+            "messageKind": "video_follow_up",
+            "messageObservationId": "linkedin-ui:2026-10-29:seckin-secilmis:outbound:f72982b0a07af26077e9d0d6",
+            "sourceObservedAt": "2026-10-29T06:13:35.881Z",
+            "validatedAt": "2026-10-29T06:40:22.802121+00:00",
+            "seenMarkerObserved": true,
+            "readReceiptDate": null,
+            "receiptDateEstablished": false,
+            "videoViewedEstablished": false,
+            "exactMessageBlockMatched": true,
+            "newReplyOrCommercialOutcomeAdded": false
+          },
+          {
+            "profileId": "yihhanma",
+            "company": "Hint",
+            "contact": "Yih-Han Ma",
+            "messageDate": "2026-10-26",
+            "messageKind": "video_follow_up",
+            "messageObservationId": "linkedin-ui:2026-10-29:yihhanma:outbound:6c6f63af03f73e2bd34c27e8",
+            "sourceObservedAt": "2026-10-29T06:15:07.218Z",
+            "validatedAt": "2026-10-29T06:40:22.802121+00:00",
+            "seenMarkerObserved": true,
+            "readReceiptDate": null,
+            "receiptDateEstablished": false,
+            "videoViewedEstablished": false,
+            "exactMessageBlockMatched": true,
+            "newReplyOrCommercialOutcomeAdded": false
+          }
+        ],
+        "negativeControls": [
+          {
+            "profileId": "grant-siders-0860354b",
+            "selectedDate": "2026-10-26",
+            "selectedMessageHasOwnSeenMarker": false,
+            "earlierMessageMarkerNotBorrowed": true,
+            "sourceObservedAt": "2026-10-29T06:12:37.769Z"
+          },
+          {
+            "profileId": "rkhardalian",
+            "selectedDate": "2026-10-26",
+            "selectedMessageHasOwnSeenMarker": false,
+            "earlierMessageMarkerNotBorrowed": true,
+            "sourceObservedAt": "2026-10-29T06:13:00.977Z"
+          }
+        ],
+        "observedMarkerCorrections": 6,
+        "videoMessages": 1,
+        "textFollowUpMessages": 5,
+        "newSourceDataCollected": false,
+        "originalCaptureClocksPreserved": true,
+        "readReceiptDatesAdded": 0,
+        "videoPlayEventsAdded": 0,
+        "nativeMessageEventsAdded": 0,
+        "replyEventsAdded": 0,
+        "commercialOutcomesAdded": 0
+      }
     }
   },
   "waalaxy": {
@@ -101325,13 +103031,35 @@
       "overlapWithSheet": {
         "sameProfiles": 167,
         "onlyInExports": 39,
-        "onlyInSheet": 1,
-        "treatment": "Do not sum snapshots or their daily person attributes. Membership/source freshness differs."
+        "onlyInSheet": 6,
+        "reviewedAt": "2026-10-29T06:36:06.311872+00:00",
+        "appliesToSheetSnapshotAt": "2026-10-29T05:51:57Z",
+        "exportParentReviewedAt": "2026-10-22T01:02:14Z",
+        "exportSourceObservationThrough": "2026-10-20",
+        "exportUniqueProfiles": 206,
+        "sheetUniqueProfiles": 173,
+        "profileMatchBasis": "Exact normalized profile IDs in the two retained source inventories; no new aliases inferred.",
+        "newSourceDataCollected": false,
+        "actualMessageEventsAdded": 0,
+        "treatment": "Do not sum snapshots or their daily person attributes. Membership/source freshness differs. This comparison uses the explicitly identified current Sheet inventory and retains the older CSV source dates."
       },
       "notes": [
         "These exports are selected people and first/last attributes, not complete messages/replies/invitation events.",
         "File modification time is not an authenticated upstream export or sync time.",
         "No sender/account ID is present; owner identified the Charles workflow. No account-wide claim or cohort acceptance rate is supported."
+      ],
+      "retainedPriorOverlapReviews": [
+        {
+          "sameProfiles": 167,
+          "onlyInExports": 39,
+          "onlyInSheet": 1,
+          "treatment": "Do not sum snapshots or their daily person attributes. Membership/source freshness differs.",
+          "historicalOnly": true,
+          "originalComparisonSheetSnapshotAt": null,
+          "originalComparisonSheetClockUnreported": true,
+          "parentExportReviewAt": "2026-10-22T01:02:14Z",
+          "retentionBasis": "Original stored overlap retained without inventing the missing historical Sheet comparison clock."
+        }
       ]
     },
     "accountAnalytics": {
@@ -133375,6 +135103,79 @@
       },
       "method": "Read-only Sales Inbox browser review; selected mailbox and individual sender/date evidence verified separately",
       "note": "Curated correspondence context only. The displayed inbox aggregate is not selected-period activity or completeness evidence. Original CRM inventory and commercial decisions retain their own sources and clocks."
+    },
+    {
+      "id": "video_connection_dates",
+      "name": "Video DM · connection-date normalization audit",
+      "asOf": "2026-10-29T05:51:57Z",
+      "reviewedAt": "2026-10-29T06:36:06.311872+00:00",
+      "status": "Explicit retained source dates recovered; no new acceptance events",
+      "coverage": "120 keyed Connected At attributes corroborated to accepted profiles; source inventory clock preserved.",
+      "note": "Date-only source attributes have unknown event timezone. Normalization does not establish when an invitation was accepted."
+    },
+    {
+      "id": "waalaxy_snapshot_overlap",
+      "name": "Waalaxy · independently dated snapshot overlap",
+      "asOf": "2026-10-29T05:51:57Z",
+      "reviewedAt": "2026-10-29T06:36:06.311872+00:00",
+      "status": "Current worksheet compared with retained selected-person exports",
+      "coverage": {
+        "sameProfiles": 167,
+        "onlyInExports": 39,
+        "onlyInSheet": 6,
+        "reviewedAt": "2026-10-29T06:36:06.311872+00:00",
+        "appliesToSheetSnapshotAt": "2026-10-29T05:51:57Z",
+        "exportParentReviewedAt": "2026-10-22T01:02:14Z",
+        "exportSourceObservationThrough": "2026-10-20",
+        "exportUniqueProfiles": 206,
+        "sheetUniqueProfiles": 173,
+        "profileMatchBasis": "Exact normalized profile IDs in the two retained source inventories; no new aliases inferred.",
+        "newSourceDataCollected": false,
+        "actualMessageEventsAdded": 0,
+        "treatment": "Do not sum snapshots or their daily person attributes. Membership/source freshness differs. This comparison uses the explicitly identified current Sheet inventory and retains the older CSV source dates."
+      },
+      "note": "The older CSV retains its source date and sender limitations. These overlapping populations are never summed."
+    },
+    {
+      "id": "video_crm_alias",
+      "name": "Video DM · verified canonical CRM/profile alias",
+      "asOf": "2026-10-29T06:31:49.516Z",
+      "reviewedAt": "2026-10-29T06:31:49.516Z",
+      "status": "Apaluma identity resolved; source asset-note gap remains",
+      "coverage": {
+        "videoInventorySnapshotAt": "2026-10-29T05:51:57Z",
+        "crmInventorySnapshotAt": "2026-10-29T06:01:08.808Z",
+        "company": "Apaluma",
+        "crmDealId": 411
+      },
+      "note": "Independently observed native redirect resolves identity only. Original CRM URL, worksheet ID, inventory and native proof clocks remain unchanged."
+    },
+    {
+      "id": "video_native_seen",
+      "name": "Video DM · undated Seen marker review",
+      "asOf": "2026-10-29T06:15:18.354Z",
+      "reviewedAt": "2026-10-29T06:40:22.802121+00:00",
+      "status": "Own-message markers verified; no receipt dates or video views inferred",
+      "coverage": "6 existing exact native message blocks; no new message, reply or commercial event.",
+      "note": "Each marker keeps its original source capture and separate validation clock; it applies to the LinkedIn message, not proof a video was played."
+    },
+    {
+      "id": "ads_zero_delivery",
+      "name": "LinkedIn Ads · bounded zero-delivery aggregate",
+      "asOf": "2026-10-29T06:38:16.046Z",
+      "checkedAt": "2026-10-29",
+      "status": "Verified aggregate zero for four metrics; October29 partial",
+      "coverage": {
+        "start": "2026-10-22",
+        "end": "2026-10-29",
+        "sourceTimezone": "UTC",
+        "finalDayPartial": true,
+        "completeDaysThrough": "2026-10-28",
+        "sourceMayRestate": true
+      },
+      "method": "Unfiltered authenticated Performance headers/aggregate; seven shown/seven total ad sets, exact retained IDs and UTC controls verified",
+      "note": "Spent, impressions, clicks and platform Leads are explicitly zero in this bounded interval. No individual-row dash or missing CSV day is converted to zero. Qualified leads, bookings, video and form opens retain separate unknown coverage.",
+      "reviewedAt": "2026-10-29T06:39:08.300455+00:00"
     }
   ],
   "outcomes": {

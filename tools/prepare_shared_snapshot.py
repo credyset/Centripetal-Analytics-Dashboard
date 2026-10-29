@@ -169,6 +169,7 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
                                     ('video','gapResolutionReview','video_gap_resolution'),
                                     ('video','sourceFreshnessReview','video_source_freshness'),
                                     ('ads','lifecycleReview','ads_lifecycle'),
+                                    ('ads','zeroDeliveryReview','ads_zero_delivery'),
                                     ('video','datedStatusReview','source_audit'),
                                     ('video','metadataFreshnessCheck','source_freshness'),
                                     ('meetings','metadataFreshnessCheck','source_freshness'),
@@ -282,6 +283,7 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
     # them to a compatible current inventory before using row-based claims.
     focused_cards={}
     focused_paths=[(('crm','incrementalReview'),'crm_incremental'),
+                   (('ads','zeroDeliveryReview'),'ads_zero_delivery'),
                    (('crm','mailboxReview'),'crm_inbox_context'),
                    (('video','gapResolutionReview'),'video_gap_resolution'),
                    (('video','sourceFreshnessReview'),'video_source_freshness'),

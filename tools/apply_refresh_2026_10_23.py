@@ -223,6 +223,29 @@ def merge_message_review(previous, incoming, video, sheet_subset, sheet_collecte
             candidates = [prior, item]
             chosen = max(candidates, key=lambda e: clock(e.get('observedAt')))
             item = copy.deepcopy(chosen)
+            # A collector's false means it did not establish a Seen marker in
+            # its excerpt, not that the recipient became unread. Carry an
+            # already verified marker only for this same authored message;
+            # another displayed block must not borrow the receipt evidence.
+            def same_receipt_message(a, b):
+                if a.get('sourceMessageId') and b.get('sourceMessageId'):
+                    return str(a['sourceMessageId']) == str(b['sourceMessageId'])
+                fingerprint_a, fingerprint_b = a.get('contentFingerprint'), b.get('contentFingerprint')
+                if fingerprint_a and fingerprint_b and fingerprint_a != fingerprint_b:
+                    return False
+                time_a = re.sub(r'\s+', '', str(a.get('displayedTime') or '')).upper()
+                time_b = re.sub(r'\s+', '', str(b.get('displayedTime') or '')).upper()
+                return bool(time_a and time_a == time_b)
+            known_markers = [candidate for candidate in candidates if candidate.get('platformReadReceiptObserved') is True
+                and same_receipt_message(candidate, chosen)]
+            if known_markers and item.get('platformReadReceiptObserved') is not True:
+                marker = max(known_markers, key=lambda e: clock(e.get('readReceiptValidatedAt') or e.get('readReceiptSourceObservedAt') or e.get('observedAt')))
+                for receipt_field in ('platformReadReceiptObserved', 'readReceiptBasis', 'readReceiptDate',
+                        'readReceiptSourceObservedAt', 'readReceiptValidatedAt', 'readReceiptAppliesTo', 'loomVideoViewedEstablished'):
+                    if receipt_field in marker:
+                        item[receipt_field] = copy.deepcopy(marker[receipt_field])
+                if not item.get('readReceiptSourceObservedAt'):
+                    item['readReceiptSourceObservedAt'] = marker.get('readReceiptSourceObservedAt') or marker.get('observedAt')
             observations = {}
             for candidate in candidates:
                 for evidence in candidate.get('observationHistory', []) + [{k: candidate.get(k) for k in ('observationId', 'observedAt', 'sourceRow', 'evidenceBasis')}]:
