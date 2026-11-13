@@ -1,25 +1,53 @@
 """Regression fixtures for keyed accuracy changes and independent evidence clocks.
 
-Uses only the tracked snapshot, never ignored source exports or credentials.
+Uses the immutable October publication as its default regression input.
 """
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 import argparse
 import json
+import subprocess
 import tempfile
+from unittest.mock import patch
 
-from apply_accuracy_review_2026_10_29 import (CONNECTION_FIELDS, integrate, load_bundle)
+from apply_accuracy_review_2026_10_29 import (CONNECTION_FIELDS, integrate as integrate_accuracy, load_bundle)
+from apply_effort_estimate import apply_effort_estimate
+from apply_outcome_confirmations import apply_outcome_confirmations
 from apply_refresh_2026_10_23 import event_key
 
 ROOT = Path(__file__).resolve().parents[1]
+OCTOBER_BASELINE = '8226aaef8b9aedc54a94e5fdd076d095cf321e89'
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--snapshot', type=Path, default=ROOT/'data/shared-dashboard.json')
+parser.add_argument('--snapshot', type=Path, help='Alternate snapshot for reproducing the October accuracy review')
 args = parser.parse_args()
 
 
+def read_october_fixture(path):
+    return json.loads(subprocess.check_output(['git', 'show', f'{OCTOBER_BASELINE}:{path}'], cwd=ROOT))
+
+
+OCTOBER_EFFORT = read_october_fixture('EFFORT_ESTIMATE.json')
+OCTOBER_OUTCOMES = {name: read_october_fixture(name) for name in ('OUTCOME_CONFIRMATIONS.json', 'OWNER_CONFIRMATIONS.json')}
+
+
+def integrate(before, bundle, reviewed_at):
+    def october_effort(effort, decision=None):
+        return apply_effort_estimate(effort, decision=OCTOBER_EFFORT if decision is None else decision)
+
+    with tempfile.TemporaryDirectory() as folder:
+        policy_root = Path(folder)
+        for name, decision in OCTOBER_OUTCOMES.items():
+            (policy_root / name).write_text(json.dumps(decision))
+        with patch('prepare_shared_snapshot.apply_effort_estimate', october_effort), \
+                patch('apply_owner_confirmations.ROOT', policy_root), \
+                patch('prepare_shared_snapshot.apply_outcome_confirmations',
+                    lambda data: apply_outcome_confirmations(data, root=policy_root)):
+            return integrate_accuracy(before, bundle, reviewed_at=reviewed_at)
+
+
 def fixture():
-    before = json.loads(args.snapshot.read_text())
+    before = json.loads(args.snapshot.read_text()) if args.snapshot else read_october_fixture('data/shared-dashboard.json')
     # The synthetic one-row audit starts before its own corrections, even when
     # the tracked snapshot already contains the complete published audit.
     before['video'].pop('sourceFieldAuditReview', None)

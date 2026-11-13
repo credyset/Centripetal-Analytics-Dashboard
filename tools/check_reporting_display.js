@@ -49,14 +49,13 @@ assert.match(profileHtml,/1,313/);
 assert.match(profileHtml,/LinkedIn preset: Past 90 days/);
 assert.match(profileHtml,/Exact start and end dates are not exposed/);
 assert.match(profileHtml,/Source timezone is not supplied/);
-assert.match(profileHtml,/does not follow the dashboard date filter/);
-assert.match(profileHtml,/no daily or selected-period profile-view count/);
+assert.match(profileHtml,/preset totals are independent of the dashboard date filter/);
 assert.doesNotMatch(profileHtml,/35%|163|Aug 1/);
 run("S.start='2026-08-01';S.end='2026-08-02';");
 assert.equal(run('creatorProfileEvidence(profileFixture)'),profileHtml);
 run('profileFixture.profileAnalytics.account.identityVerified=false;');
 assert.doesNotMatch(run('creatorProfileEvidence(profileFixture)'),/1,313/);
-assert.match(run('creatorProfileEvidence(profileFixture)'),/aggregate is withheld/);
+assert.match(run('creatorProfileEvidence(profileFixture)'),/Account identity is unverified/);
 run("S.start='2026-10-19';S.end='2026-10-23';");
 
 ctx.reconciliationFixture={crmReconciliation:{cohortStartDate:'2026-10-21',cohortEndDate:'2026-10-22',cohortDate:'2026-10-22',reviewedAt:'2026-10-24T03:18:50Z',selfReportedSentRows:21,validVideoAssetRows:19,videoAssetCohortCrmMatches:19,expectedVideoCrmMissing:0,statusRowsWithoutVideoAsset:2,messageNoteWithoutAssetRows:2,records:[{recordingFieldKind:'empty'},{recordingFieldKind:'empty'}]}};

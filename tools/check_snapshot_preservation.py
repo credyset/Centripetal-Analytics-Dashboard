@@ -1,13 +1,24 @@
 """Regression checks for importing old sources after a newer reviewed snapshot."""
 import copy
 import json
-from datetime import datetime,timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from prepare_shared_snapshot import curate_snapshot, preserve_newer_shared_sources, publication_policy
 
 ROOT=Path(__file__).resolve().parents[1]
 current=json.loads((ROOT/'data/shared-dashboard.json').read_text())
-NEWER=(datetime.fromisoformat(current['meta']['generatedAt'].replace('Z','+00:00'))+timedelta(days=2)).isoformat().replace('+00:00','Z')
+def source_instant(value):
+    instant = datetime.fromisoformat(value.replace('Z', '+00:00'))
+    return instant.replace(tzinfo=timezone.utc) if instant.tzinfo is None else instant
+
+source_times = [source_instant(current['meta']['generatedAt'])]
+for section in current.values():
+    if isinstance(section, dict):
+        for key in ('snapshotAt', 'collectedAt'):
+            if section.get(key):
+                source_times.append(source_instant(section[key]))
+source_times.extend(source_instant(card['asOf']) for card in current['sources'] if card.get('asOf'))
+NEWER=(max(source_times)+timedelta(days=2)).isoformat().replace('+00:00','Z')
 LATER=(datetime.fromisoformat(NEWER.replace('Z','+00:00'))+timedelta(days=1)).isoformat().replace('+00:00','Z')
 older=copy.deepcopy(current)
 for key in ('publicationStatus','reportingAsOfDate','defaultCompleteReportingThrough','defaultDatePreset','currentDayPartial'):

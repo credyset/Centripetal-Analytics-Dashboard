@@ -49,16 +49,19 @@ assert.equal(series.reduce((n,row)=>n+row.value,0),expectedRows.length,'Recent C
 // its exact scope/window. It must never invent daily/individual campaign rows,
 // owner-qualified leads, bookings, video metrics or zero commercial outcomes.
 const clone=value=>JSON.parse(JSON.stringify(value));
-const retainedIds=[...new Set([...(ctx.published.ads.review.sourceScope.exportedAdSetIds||[]),
-  ...(ctx.published.ads.review.sourceScope.uiOnlyZeroDeliveryAdSetIds||[])])].sort();
+const octoberBaseline='8226aaef8b9aedc54a94e5fdd076d095cf321e89';
+const october=JSON.parse(require('node:child_process').execFileSync('git',
+  ['show',`${octoberBaseline}:data/shared-dashboard.json`],{cwd:path.join(__dirname,'..'),encoding:'utf8',maxBuffer:16*1024*1024}));
+const retainedIds=[...new Set([...(october.ads.review.sourceScope.exportedAdSetIds||[]),
+  ...(october.ads.review.sourceScope.uiOnlyZeroDeliveryAdSetIds||[])])].sort();
 const zeroReview={snapshotAt:'2026-10-29T06:35:02.571Z',reviewedAt:'2026-10-29T06:40:00Z',
-  accountId:ctx.published.ads.lifecycleReview.accountId,identityVerified:true,
+  accountId:october.ads.lifecycleReview.accountId,identityVerified:true,
   reviewKind:'authenticated_ui_aggregate_zero',
   coverage:{start:'2026-10-22',end:'2026-10-29',sourceTimezone:'UTC',finalDayPartial:true,completeDaysThrough:'2026-10-28'},
   metrics:{spend:0,impressions:0,clicks:0,rawLeads:0},
   scope:{adSetIds:retainedIds,matchesRetainedAdSetScope:true,adSetsReviewed:retainedIds.length},
   sourceDailyRowsAdded:0};
-ctx.zeroData=clone(ctx.published);ctx.zeroData.ads.zeroDeliveryReview=clone(zeroReview);
+ctx.zeroData=clone(october);ctx.zeroData.ads.zeroDeliveryReview=clone(zeroReview);
 const sourceBytes=JSON.stringify({daily:ctx.zeroData.ads.daily,campaigns:ctx.zeroData.ads.campaigns,
   outcomes:ctx.zeroData.outcomes,time:ctx.zeroData.time});
 run("S.data=zeroData;S.start='2026-10-22';S.end='2026-10-29';");

@@ -13,7 +13,8 @@ ctx.fixture.waalaxy.daily[18].invitationsSent=59;ctx.fixture.waalaxy.daily[18].i
 run("S.data=fixture;S.start='2026-10-19';S.end='2026-10-22';");
 const vector=()=>JSON.parse(run("JSON.stringify(vectorData().find(r=>r.id==='waalaxy'))"));
 assert.equal(vector().cardActivity.value,'59');assert.equal(vector().cardOutcome.value,'22');
-assert.equal(vector().cardOutcome.label,'Accepted · export date buckets');
+assert.equal(vector().cardActivity.label,'Sent · source-date buckets');
+assert.equal(vector().cardOutcome.label,'Accepted · source-date buckets');
 assert.equal(vector().cardOutcome.basis,'partial');
 assert.match(vector().cardOutcome.note,/accepted-event dates.*not established/);
 assert.equal(vector().responses.find(r=>r.label==='Answered messages reported').value,'2');

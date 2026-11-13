@@ -59,11 +59,16 @@ def check_video_reconciliation(data):
         if 'reportedVideoSentDate' in record:
             assert record['reportedVideoSentDate']==row.get('reportedVideoSentDate')
         if key in asset_keys:
-            assert record['crmDealId'] and record['crmNoteIds']
-            assert row.get('matchedCrmDealId')==record['crmDealId']
             if 'sourceLoomAssetId' in record:
                 assert record['sourceLoomAssetId']==row.get('recordingAssetId')
-                assert record['profileMatchVerified'] and record['assetMatchVerified']
+            if record.get('crmDealId'):
+                assert record['crmNoteIds'] and row.get('matchedCrmDealId')==record['crmDealId']
+                if 'sourceLoomAssetId' in record:
+                    assert record['profileMatchVerified'] and record['assetMatchVerified']
+            else:
+                assert record.get('matchDisposition')=='unmatched_in_reviewed_scope'
+                assert record.get('profileMatchVerified') is False and record.get('assetMatchVerified') is False
+                assert not record.get('crmNoteIds') and not row.get('matchedCrmDealId')
         else:
             assert not record.get('assetMatchVerified')
     matches=sum(bool(records[key].get('crmDealId')) for key in asset_keys)
@@ -134,6 +139,17 @@ def regression_tests(data):
         try:check_video_reconciliation(invalid)
         except AssertionError:pass
         else:raise AssertionError('A stale or mismatched source crosswalk was accepted')
+
+    sample=next((r for r in video['crmReconciliation']['records'] if r.get('matchDisposition')=='unmatched_in_reviewed_scope'),None)
+    if sample:
+        for changed in ({'profileMatchVerified':True},{'assetMatchVerified':True},{'crmNoteIds':[1]},
+                        {'matchDisposition':'unreviewed'}):
+            invalid=copy.deepcopy(data)
+            record=next(r for r in invalid['video']['crmReconciliation']['records'] if row_key(r)==row_key(sample))
+            record.update(changed)
+            try:check_video_reconciliation(invalid)
+            except AssertionError:pass
+            else:raise AssertionError('An unmatched source row claimed unsupported CRM evidence')
 
 
 def main():

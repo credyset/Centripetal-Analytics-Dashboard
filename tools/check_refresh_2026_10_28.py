@@ -8,19 +8,48 @@ from tempfile import TemporaryDirectory
 from unittest.mock import patch
 import json
 import os
+import subprocess
 import unittest
 
 from apply_refresh_2026_10_28 import (ROOT, apply_child_reviews,
     assert_native_retained, combine_source_cards, integrate, native_child_overrides,
     replace_group, sync_video_review_cards)
 from prepare_meeting_refresh_2026_10_28 import owner_decision, OWNER_INCREMENT_ID
+from apply_effort_estimate import apply_effort_estimate
+from apply_outcome_confirmations import apply_outcome_confirmations
+
+OCTOBER_BASELINE = '8226aaef8b9aedc54a94e5fdd076d095cf321e89'
+
+
+def read_october_fixture(path):
+    return json.loads(subprocess.check_output(['git', 'show', f'{OCTOBER_BASELINE}:{path}'], cwd=ROOT))
 
 
 class OctoberRefreshTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.before = json.loads((ROOT / 'data/shared-dashboard.json').read_text())
-        cls.decision = owner_decision(json.loads((ROOT / 'EFFORT_ESTIMATE.json').read_text()))
+        cls.before = read_october_fixture('data/shared-dashboard.json')
+        cls.decision = owner_decision(read_october_fixture('EFFORT_ESTIMATE.json'))
+
+    def setUp(self):
+        def october_effort(effort, decision=None):
+            return apply_effort_estimate(effort, decision=self.decision if decision is None else decision)
+
+        folder = TemporaryDirectory()
+        self.addCleanup(folder.cleanup)
+        policy_root = Path(folder.name)
+        for name in ('OUTCOME_CONFIRMATIONS.json', 'OWNER_CONFIRMATIONS.json'):
+            (policy_root / name).write_text(json.dumps(read_october_fixture(name)))
+        policy = patch('prepare_shared_snapshot.apply_effort_estimate', october_effort)
+        policy.start()
+        self.addCleanup(policy.stop)
+        outcomes = patch('prepare_shared_snapshot.apply_outcome_confirmations',
+            lambda data: apply_outcome_confirmations(data, root=policy_root))
+        outcomes.start()
+        self.addCleanup(outcomes.stop)
+        owners = patch('apply_owner_confirmations.ROOT', policy_root)
+        owners.start()
+        self.addCleanup(owners.stop)
 
     def test_dated_owner_increment_is_idempotent_and_never_changes_outcomes(self):
         before = deepcopy(self.before)

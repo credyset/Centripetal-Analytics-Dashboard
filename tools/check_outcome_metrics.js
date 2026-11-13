@@ -109,4 +109,25 @@ run("S.start='2026-10-18';S.end='2026-10-18';");
 assert.equal(run('selectedReferralFollowups(followupFixture).label'),'≥1');
 run("S.start='2026-10-19';S.end='2026-10-19';");
 assert.equal(run('selectedReferralFollowups(followupFixture).label'),'Pending');
+
+// The stage inventory and the dated cleanup must remain independent from the
+// verified introduction and commercial outcome counters.
+run(`referralInventory={status:'current_snapshot',snapshotAt:'2026-11-13T13:34:27Z',
+  records:[{id:1,stage:'Parking Lot'}],
+  summary:{activeReferralDeals:1,totalPipelineDeals:284,excludedGraveyardNewsletterCount:283,excludedTestCount:0,
+    circleContacts:{parkingLot:1,opportunity:null},stageDistribution:{'Parking Lot':1}},
+  taxonomyReview:{retiredHistoricalStageLabels:['Office Hours','Intro Made','Opportunity ( Referred )'],
+    currentOpportunityStageAvailable:false,stageRenameEvidence:{id:29,before:'Intro Made',after:'Parking Lot'}},
+  cleanupReview:{sourceInventorySnapshotAt:'2026-11-13T13:34:27Z',date:'2026-11-09',recordCount:283,
+    priorOfficeHoursRecords:245,priorGraveyardRecords:38}};
+  S.data={meta:{},referrals:referralInventory};S.start='2026-11-06';S.end='2026-11-12';`);
+assert.match(run('referrals()'),/283 administrative closures on Nov 9, 2026/);
+assert.match(run('referrals()'),/Parking Lot records/);
+assert.doesNotMatch(run('referrals()'),/Opportunity-stage records/);
+assert.equal(run("vectorData().find(v=>v.id==='referrals').activity.find(m=>m.label==='Administrative referral closures').value"),283);
+assert.equal(run("vectorData().find(v=>v.id==='referrals').responses[0].value"),'Pending');
+run("S.start='2026-11-10';");
+assert.doesNotMatch(run('referrals()'),/administrative closures on/);
+run("S.start='2026-11-06';referralInventory.cleanupReview.sourceInventorySnapshotAt='2026-10-29T06:01:08Z';");
+assert.equal(run('selectedReferralCleanup(referralInventory)'),null);
 console.log('Charles outcome metrics: cohort, deduplication, scope, Mountain dates, and unknown/zero rules passed.');

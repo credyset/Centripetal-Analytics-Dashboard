@@ -78,11 +78,14 @@ def curate_snapshot(source, effort_decision=None):
         meetings['notes']=[n for n in meetings.get('notes',[]) if '19 recordings classified' not in n and 'Attendance is verified by recording presence' not in n]
     for item in public.get('sources', []):
         if item['id'] == 'waalaxy':
+            tooltip_source = public.get('waalaxy',{}).get('invitationImportReview',{}).get('sourceType') == 'authenticated_home_chart_tooltips'
+            home_note = ('See the separately dated, verified Charles Home account aggregate alongside the authenticated chart tooltips and earlier CSV buckets.' if tooltip_source else
+                         'See the separately dated, verified Charles Home account aggregate; it does not refresh this daily invitation CSV or selected-person subset.')
             item['note'] = ('Invitation source-date buckets are available, including source-reported zero days. Accepted buckets can be revised retrospectively; exact acceptance-event dates and matched invitation cohorts are unverified. '
                             'The final source day is partial and the source timezone is unspecified. '
                             + ('A separately dated selected connected-prospect subset is available through Sheets; sender account and upstream sync time are unverified. ' if public.get('waalaxy',{}).get('sheetSubset') else '') +
                             'Dated message/reply events and campaign breakdowns remain unavailable; historical person flags retain older coverage. '
-                            + ('See the separately dated, verified Charles Home account aggregate; it does not refresh this daily invitation CSV or selected-person subset.' if public.get('waalaxy',{}).get('accountAnalytics') else '')
+                            + (home_note if public.get('waalaxy',{}).get('accountAnalytics') else '')
                             if public.get('waalaxy',{}).get('invitationCoverage') else
                             'Historical Charles-only person flags, not period message totals. Current campaign analytics remain unavailable.')
     return apply_publication_redactions(public)

@@ -55,7 +55,10 @@ assert.equal(count.textContent,'1–1 of 1 records');
 
 // Broader current identity/asset coverage is a separate denominator from the
 // dated source cohort. Original and matched IDs stay separate in the gap table.
-ctx.actualVideo=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/shared-dashboard.json'),'utf8')).video;
+const octoberSnapshot=JSON.parse(require('node:child_process').execFileSync('git',
+  ['show','8226aaef8b9aedc54a94e5fdd076d095cf321e89:data/shared-dashboard.json'],
+  {cwd:path.join(__dirname,'..'),encoding:'utf8',maxBuffer:16*1024*1024}));
+ctx.actualVideo=octoberSnapshot.video;
 const identityHtml=run('videoIdentityAssetEvidence(actualVideo)'),identity=ctx.actualVideo.crmReconciliation.currentIdentityAssetReview;
 assert.match(identityHtml,/broader ID\/asset scope is separate from the dated report cohort/);
 assert.ok(identityHtml.includes(`${identity.sameAssetInCrmNotes} of ${identity.sourceLoomUrls}`));
