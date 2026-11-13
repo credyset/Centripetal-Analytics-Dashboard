@@ -8,7 +8,7 @@ Other agents can clone this repository, run the populated dashboard and contribu
 
 Previous accuracy follow-up: [October 29 accuracy review](ACCURACY_REVIEW_2026-10-29.md). It restores the full CRM history chart, 120 source connection dates, current snapshot comparisons, Apaluma’s verified profile alias and six undated Seen indicators, and separately establishes recent zero paid delivery.
 
-Latest source collection: [November 13 refresh](REFRESH_2026-11-13.md). At a glance opens to November 6–12, the last seven complete Mountain days. November 13 is partial and can be selected with custom dates.
+Latest source collection: [November 13 refresh](REFRESH_2026-11-13.md) and [fourteen-day accuracy review](ACCURACY_REVIEW_2026-11-13.md). At a glance opens to November 6–12, the last seven complete Mountain days. Select Last 14 complete days for October 30–November 12. November 13 is partial and can be selected with custom dates.
 
 Earlier focused findings remain in [October 24 CRM and Video DM gap resolution](GAP_RESOLUTION_2026-10-24.md), including historical native-message proof, bounded source-profile first appearances and the eight-thread Charles Team-mailbox review. Those reviews retain their original dates.
 
@@ -47,7 +47,7 @@ The repository includes application code and the curated reporting snapshot in `
 - Waalaxy: 62 invitations sent and 22 reported acceptances across the selected source dates. The November chart reconciles to Charles’s fixed Home totals. Earlier CSV history and the selected accepted-connection worksheet retain separate scope.
 - LinkedIn Content: Charles’s personal workbook reports 8,032 impressions, 74 workbook engagements and 141 new followers over November 6–12 UTC. The signed-in chart reconciles to all 90 workbook days. The native LinkedIn profile-view presets are shown with their own scope.
 - Pipedrive: 24 new deal records, 385 latest-updated records and 30 activities marked done over the selected Mountain dates. The latest census contains 843 accessible deals and 932 activities. Charles’s commercial outcomes remain pending confirmation.
-- Video DMs: 618 prospect rows, 605 distinct profiles, nine worksheet-reported sends and nine worksheet-reported follow-ups over the selected source dates. Two exact November 11 sends were independently verified. Revisions establish at least 88 distinct profiles first observed in the selected week.
+- Video DMs: 618 prospect rows and 605 distinct profiles. The seven-day default contains nine native-verified sends and nine native-verified follow-ups. The 14-day selection contains 19 native-verified sends, 13 native-verified follow-ups, and one general inbound reply in the reviewed cohort. Revisions establish at least 88 distinct profiles first observed in the latest week and 138 across the two weeks.
 - Referrals: 99 active records. The November 9 administrative cleanup closed 283 records. Dated introductions and commercial outcomes require separate evidence.
 - Time & effort: 361.77 associated October audio minutes and a separate 21.75–23-hour non-meeting estimate through October 28. One November 10 recording adds 21.79 associated audio minutes to the separate November review.
 - Sources & definitions: dates, refresh method, manual import checklist, known gaps and outcome definitions.

@@ -66,5 +66,13 @@ def apply_outcome_confirmations(data, root=ROOT):
         note='The owner confirmed the linked NuVee and Venus calls were held. New inbox evidence shows the Venus October 15 booking was rescheduled to an accepted October 16 invitation; its exact occurrence day remains unresolved. Its held confirmation counts once when a selected period includes both candidate dates. NuVee remains the only qualified paid lead under the latest explicit owner decision.'
         if note not in meetings['notes']:meetings['notes'].append(note)
     ledger['ownerDecisionsAsOf'] = max(filter(None, [r.get('confirmedOn') for r in ledger['heldCalls'] + ledger.get('opportunityAcceptances', []) + ledger.get('clientWins', [])]), default=None)
+    # Independently verified conversations can establish a held-call minimum.
+    # Preserve the owner ledger and its historical booking-date corrections.
+    for row in data.get('meetings', {}).get('sourceVerifiedHeldCalls', []):
+        assert row['heldConfirmed'] is True and row['prospectMeeting'] is True and row['charlesParticipated'] is True
+        assert row['qualification'] == 'unknown' and not row.get('qualificationConfirmedOn')
+        assert row.get('heldAt') or row.get('heldDateRange')
+        calls.setdefault(row['conversationId'], copy.deepcopy(row))
+    ledger['heldCalls'] = list(calls.values())
     data['outcomes'] = ledger
     return data

@@ -5,6 +5,22 @@ const app=fs.readFileSync(path.join(__dirname,'../app.js'),'utf8').replace(/\nin
 const ctx=vm.createContext({Intl,Date,URL,setTimeout:()=>{},document:{querySelector:()=>null}});
 vm.runInContext(app,ctx);
 const run=s=>vm.runInContext(s,ctx);
+const html=fs.readFileSync(path.join(__dirname,'../index.html'),'utf8');
+assert.match(html,/<option value="14">Last 14 complete days<\/option>/);
+ctx.dateInputs={'#date-start':{},'#date-end':{}};
+ctx.document.querySelector=selector=>ctx.dateInputs[selector]||null;
+ctx.fortnightFixture={meta:{reportingAsOfDate:'2026-11-13',defaultReportingThrough:'2026-11-13',defaultCompleteReportingThrough:'2026-11-12',defaultDatePreset:'7',currentDayPartial:true},meetings:{fireflies:{records:[],currentWeekPurposeReview:{start:'2026-11-06',end:'2026-11-12',recordingsReviewed:29,selectedPeriodKind:'last_7_complete_days'},fourteenDayPurposeReview:{start:'2026-10-30',end:'2026-11-12',recordingsReviewed:60}}}};
+run('S.data=fortnightFixture;preset(S.data.meta.defaultDatePreset);');
+assert.equal(ctx.dateInputs['#date-start'].value,'2026-11-06');
+assert.equal(ctx.dateInputs['#date-end'].value,'2026-11-12');
+assert.match(run('recordingEvidenceReview()'),/Seven-day recording review.*29 available indexed recordings reviewed/);
+assert.doesNotMatch(run('recordingEvidenceReview()'),/14-day recording review/);
+run("preset('14');");
+assert.equal(ctx.dateInputs['#date-start'].value,'2026-10-30');
+assert.equal(ctx.dateInputs['#date-end'].value,'2026-11-12');
+assert.match(run('recordingEvidenceReview()'),/14-day recording review.*60 available indexed recordings reviewed/);
+assert.doesNotMatch(run('recordingEvidenceReview()'),/Seven-day recording review/);
+
 ctx.input={meta:{},content:{creatorAnalytics:{coverage:{start:'2026-07-25',end:'2026-10-22',finalDayPartial:true},summary:{impressions:9999,membersReached:777,socialEngagements:50},exportAnalytics:{coverage:{start:'2026-10-18',end:'2026-10-22',finalDayPartial:true},daily:[{date:'2026-10-18',impressions:800},{date:'2026-10-19',impressions:0},{date:'2026-10-20',impressions:27},{date:'2026-10-21',impressions:5},{date:'2026-10-22',impressions:null}],followers:{daily:[]}}}}};
 run("S.data=input;S.start='2026-10-19';S.end='2026-10-21';");
 const primary=()=>JSON.parse(run("JSON.stringify(vectorData().find(r=>r.id==='content').activity[0])"));
