@@ -1,4 +1,4 @@
-"""Build the Charles-only outcome ledger from explicit owner confirmations.
+"""Build the Charles-only outcome ledger from owner and reviewed source evidence.
 
 Source snapshots must never manufacture commercial acceptance or attendance.
 Call this after assembling the dashboard and again during shared curation so
@@ -70,9 +70,28 @@ def apply_outcome_confirmations(data, root=ROOT):
     # Preserve the owner ledger and its historical booking-date corrections.
     for row in data.get('meetings', {}).get('sourceVerifiedHeldCalls', []):
         assert row['heldConfirmed'] is True and row['prospectMeeting'] is True and row['charlesParticipated'] is True
-        assert row['qualification'] == 'unknown' and not row.get('qualificationConfirmedOn')
+        qualification = row['qualification']
+        assert qualification in ('unknown', 'qualified', 'unqualified')
+        if qualification == 'unknown':
+            assert not row.get('qualificationConfirmedOn')
+        else:
+            assert row.get('sourceQualificationVerified') is True
+            assert row.get('qualificationEvidenceBasis') == 'direct_charles_commercial_approval'
+            assert row.get('qualificationConfirmedOn') and row.get('qualificationDetail')
+            assert row.get('evidenceBasis') and row.get('reviewedAt')
         assert row.get('heldAt') or row.get('heldDateRange')
         calls.setdefault(row['conversationId'], copy.deepcopy(row))
     ledger['heldCalls'] = list(calls.values())
+    observed = {r['opportunityId']: copy.deepcopy(r) for r in ledger.get('observedOpportunities', [])}
+    for row in data.get('meetings', {}).get('sourceObservedOpportunities', []):
+        # A documented proposal establishes current pipeline evidence. Without
+        # the original acceptance date it cannot establish a new acceptance.
+        assert row.get('originalAcceptanceDateVerified') is False
+        assert row.get('originalAcceptedAt') is None
+        assert row.get('documentedBy') and row.get('lastDocumentedAt')
+        assert row.get('companyKey') and row.get('dealId')
+        assert row.get('nextStep') and row.get('evidenceBasis') and row.get('reviewedAt')
+        observed.setdefault(row['opportunityId'], copy.deepcopy(row))
+    ledger['observedOpportunities'] = list(observed.values())
     data['outcomes'] = ledger
     return data

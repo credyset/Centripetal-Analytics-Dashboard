@@ -1,4 +1,8 @@
-# Remaining measurement gaps — October 29, 2026
+# Remaining measurement gaps
+
+**Current November status:** the [November 19 refresh and remaining confirmations](REFRESH_2026-11-19.md#remaining-confirmations) supersede the source counts below. Commercial original acceptance/win dates, complete Video DM reply coverage, event-level referral/Waalaxy evidence, and Christian’s November human effort remain the highest-impact gaps. The detailed October review below is historical.
+
+## Historical October 29 review
 
 The [October 29 accuracy follow-up](ACCURACY_REVIEW_2026-10-29.md) resolves additional normalization, comparison and chart omissions. The [October 29 source refresh](REFRESH_2026-10-29.md) supplies complete accessible CRM inventories, both full worksheet ranges, Charles’s personal creator export and profile aggregate, a current invitation CSV, Ads exports and refreshed calendar/recording evidence. **Another generic CRM or Video DM sheet export is not needed.** The remaining gaps concern decisions, actual events and source scope that a flat export cannot establish.
 

@@ -21,6 +21,30 @@ assert.equal(ctx.dateInputs['#date-end'].value,'2026-11-12');
 assert.match(run('recordingEvidenceReview()'),/14-day recording review.*60 available indexed recordings reviewed/);
 assert.doesNotMatch(run('recordingEvidenceReview()'),/Seven-day recording review/);
 
+// The complete-month preset stops before the partial reporting day. November
+// audio follows selected dates and excludes duplicate artifacts; October's
+// owner estimate must not become November effort.
+assert.match(html,/<option value="mtd-complete">Month through last complete day<\/option>/);
+ctx.novemberEffortFixture={meta:{reportingAsOfDate:'2026-11-19',defaultCompleteReportingThrough:'2026-11-18'},time:{period:{start:'2026-10-01',end:'2026-10-28'},novemberRecordingReview:{coverage:{start:'2026-11-01',end:'2026-11-18'},events:[{indexedAt:'2026-11-10T16:30:00Z',associatedAudioMinutes:21.79},{indexedAt:'2026-11-13T15:30:00Z',associatedAudioMinutes:49.54},{indexedAt:'2026-11-13T15:30:00Z',associatedAudioMinutes:16,excludedDuplicate:true},{indexedAt:'2026-11-17T15:30:00Z',associatedAudioMinutes:46}]}}};
+run("S.data=novemberEffortFixture;preset('mtd-complete');");
+assert.equal(ctx.dateInputs['#date-start'].value,'2026-11-01');
+assert.equal(ctx.dateInputs['#date-end'].value,'2026-11-18');
+assert.equal(run('timeVector().activity[0].value'),'1h 57m');
+assert.equal(run('timeVector().responses[0].value'),null);
+run("preset('7');");
+assert.equal(ctx.dateInputs['#date-start'].value,'2026-11-12');
+assert.equal(run('timeVector().activity[0].value'),'1h 36m');
+run("preset('mtd');");
+assert.equal(ctx.dateInputs['#date-end'].value,'2026-11-19');
+assert.equal(run('timeVector().activity[0].value'),'1h 57m');
+assert.equal(run('timeVector().responses[0].value'),null);
+assert.equal(run('timeVector().coverage.end'),'2026-11-18');
+run("preset('7');S.data.video={messageDateReview:{platformObservedEvents:[{date:'2026-11-13',direction:'outbound',messageKind:'video_follow_up'}]}};");
+assert.equal(run("vectorData().find(r=>r.id==='video').cardActivity.label"),'Observed video follow-ups');
+assert.equal(run("vectorData().find(r=>r.id==='video').cardActivity.value"),'≥1');
+assert.equal(run("vectorData().find(r=>r.id==='video').activity[0].value"),null);
+
+
 ctx.input={meta:{},content:{creatorAnalytics:{coverage:{start:'2026-07-25',end:'2026-10-22',finalDayPartial:true},summary:{impressions:9999,membersReached:777,socialEngagements:50},exportAnalytics:{coverage:{start:'2026-10-18',end:'2026-10-22',finalDayPartial:true},daily:[{date:'2026-10-18',impressions:800},{date:'2026-10-19',impressions:0},{date:'2026-10-20',impressions:27},{date:'2026-10-21',impressions:5},{date:'2026-10-22',impressions:null}],followers:{daily:[]}}}}};
 run("S.data=input;S.start='2026-10-19';S.end='2026-10-21';");
 const primary=()=>JSON.parse(run("JSON.stringify(vectorData().find(r=>r.id==='content').activity[0])"));
