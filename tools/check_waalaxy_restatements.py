@@ -133,13 +133,13 @@ class InvitationRestatementTests(unittest.TestCase):
         with csv_path.open(encoding='utf-8-sig', newline='') as handle:
             row = next(row for row in csv.DictReader(handle) if row['Date'] == 'Wed Oct 28 2026')
         self.assertEqual((int(row['Sent']), int(row['Accepted'])), (73, 19))
-        current = json.loads((ROOT / 'data/dashboard.json').read_text())
+        current = json.loads((ROOT / 'data/shared-dashboard.json').read_text())
         segment = next(segment for segment in current['waalaxy']['invitationCoverage']['segments'] if segment.get('sourceFilename') == 'invitations (6).csv')
         self.assertEqual(segment['collectedAt'], RECORD['retainedCsvCollectedAt'])
         self.assertEqual(segment['sourceSha256'], hashlib.sha256(csv_path.read_bytes()).hexdigest())
 
     def test_actual_series_and_public_curation_unchanged(self):
-        current = json.loads((ROOT / 'data/dashboard.json').read_text())
+        current = json.loads((ROOT / 'data/shared-dashboard.json').read_text())
         restored = copy.deepcopy(current)
         restored['waalaxy']['invitationImportReview']['separatelyObservedRestatements'] = [copy.deepcopy(RECORD)]
         candidate = curate_snapshot(preserve_newer_shared_sources(restored, current))
@@ -148,10 +148,10 @@ class InvitationRestatementTests(unittest.TestCase):
         self.assertEqual(numeric_values(candidate['waalaxy']), numeric_values(current['waalaxy']))
         for field in ('snapshotAt', 'invitationCollectedAt', 'invitationCoverage', 'invitationSummary', 'accountAnalytics'):
             self.assertEqual(candidate['waalaxy'][field], current['waalaxy'][field])
-        self.assertEqual(current, json.loads((ROOT / 'data/dashboard.json').read_text()))
+        self.assertEqual(current, json.loads((ROOT / 'data/shared-dashboard.json').read_text()))
 
     def test_invitation_ui_discloses_versions_without_changing_selected_totals(self):
-        snapshot = json.loads((ROOT / 'data/dashboard.json').read_text())
+        snapshot = json.loads((ROOT / 'data/shared-dashboard.json').read_text())
         snapshot['waalaxy']['invitationImportReview']['separatelyObservedRestatements'] = [copy.deepcopy(RECORD)]
         script = r"""
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
