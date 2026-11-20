@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-11-20T16:43:56.001544+00:00",
+    "generatedAt": "2026-11-20T17:24:25.294858+00:00",
     "asOfDate": "2026-11-19",
     "timezone": "America/Denver",
     "scope": "Charles Solomon and Centripetal Advisors",
@@ -25,7 +25,7 @@
     "publicationApprovedAt": "2026-10-22T12:57:17.430019+00:00",
     "publicationReview": "REFRESH_2026-11-19.md",
     "accuracyAuditReviewedAt": "2026-10-29T06:50:40.476815+00:00",
-    "qualityReviewedAt": "2026-11-20T16:43:56.001544+00:00"
+    "qualityReviewedAt": "2026-11-20T17:24:25.294858+00:00"
   },
   "ads": {
     "status": "available",
@@ -8855,10 +8855,10 @@
     }
   },
   "crm": {
-    "snapshotAt": "2026-11-20T05:20:00.568Z",
+    "snapshotAt": "2026-11-20T17:14:04.787Z",
     "timezone": "America/Denver",
     "coverage": {
-      "method": "Configured read-only Pipedrive connection. Full all_not_deleted deal pagination and explicit all-owner done/undone activity pages were exhausted.",
+      "method": "Configured Centripetal Pipedrive read-only MCP. All accessible non-deleted deal pages and explicit user_id=0 done/undone activity pages were exhausted. Independent dated child evidence retains its prior collection clocks.",
       "dealsComplete": true,
       "activitiesComplete": true,
       "earliestDealCreatedDate": "2024-09-11",
@@ -8871,7 +8871,7 @@
         "Charles Solomon": 128,
         "Christian W": 872
       },
-      "reportingThrough": "2026-11-18",
+      "reportingThrough": "2026-11-19",
       "currentDayPartial": true,
       "pagination": {
         "deals": [
@@ -8906,94 +8906,146 @@
             "limit": 500,
             "more_items_in_collection": false
           }
-        ],
-        "leadsInboxActive": [
-          {
-            "start": 0,
-            "limit": 500,
-            "more_items_in_collection": false
-          }
-        ],
-        "leadsInboxArchived": [
-          {
-            "start": 0,
-            "limit": 500,
-            "more_items_in_collection": false
-          }
         ]
       },
       "stageHistorySnapshotAt": "2026-10-15T03:03:19Z",
-      "collectionStartedAt": "2026-11-20T05:19:58.941Z",
-      "collectionCompletedAt": "2026-11-20T05:20:00.568Z",
+      "collectionCompletedAt": "2026-11-20T17:14:04.787Z",
       "allOwnerActivitiesRequested": true,
       "latestBusinessActivityCreatedAt": "2026-11-19T23:36:51Z",
       "latestBusinessActivityCompletedAt": "2026-11-19T23:37:00Z",
-      "observedThrough": "2026-11-19",
-      "currentDayPartialDate": "2026-11-19",
+      "observedThrough": "2026-11-20",
+      "currentDayPartialDate": "2026-11-20",
       "sourceFiles": {
-        "deals_000.json": {
-          "requestStartedAt": "2026-11-20T05:19:59.068Z",
-          "collectedAt": "2026-11-20T05:19:59.693Z",
-          "sha256": "dbdf8f5955200132b6657a603e740d9b2c7a0cb64231013c7d2114b6ab0c7f11"
+        "deals_0000.raw.json": {
+          "endpoint": "deals",
+          "args": {
+            "status": "all_not_deleted",
+            "sort": "id ASC",
+            "start": 0,
+            "limit": 500
+          },
+          "capturedAtUTC": "2026-11-20T17:13:07.089Z",
+          "sha256": "b6dce24b756e88f406f99a109151483649c47a2996eb55f94085b14691bd629c",
+          "rows": 500,
+          "pagination": {
+            "start": 0,
+            "limit": 500,
+            "more_items_in_collection": true,
+            "next_start": 500
+          }
         },
-        "activities_undone_000.json": {
-          "requestStartedAt": "2026-11-20T05:19:59.068Z",
-          "collectedAt": "2026-11-20T05:19:59.731Z",
-          "sha256": "8200567e2b2cd9588050aabad21802c887f02f7cfcb90fc43b714cd106f89a71"
+        "deals_0500.raw.json": {
+          "endpoint": "deals",
+          "args": {
+            "status": "all_not_deleted",
+            "sort": "id ASC",
+            "start": 500,
+            "limit": 500
+          },
+          "requestStartedAtUTC": "2026-11-20T17:13:18Z",
+          "requestReturnedNoLaterThanUTC": "2026-11-20T17:13:35Z",
+          "capturedAtUTC": "2026-11-20T17:13:35.885Z",
+          "sha256": "d5f314599931b5d7c856bd408d4be6bbf0a3be9b446a796fae3fc1c19a1292c9",
+          "rows": 445,
+          "pagination": {
+            "start": 500,
+            "limit": 500,
+            "more_items_in_collection": false
+          }
         },
-        "activities_done_000.json": {
-          "requestStartedAt": "2026-11-20T05:19:59.068Z",
-          "collectedAt": "2026-11-20T05:19:59.772Z",
-          "sha256": "e87be15a0b9132c28caad16a3daf124b354d1d1e07294e03efd98ef6c54a3357"
+        "activities_done_all_0000.raw.json": {
+          "endpoint": "activities",
+          "args": {
+            "done": 1,
+            "user_id": 0,
+            "start": 0,
+            "limit": 500
+          },
+          "capturedAtUTC": "2026-11-20T17:13:48.900Z",
+          "sha256": "2cc62f1f0477e24259739151251a57846c40849719abe3fb6ed18ef21181070f",
+          "rows": 500,
+          "pagination": {
+            "start": 0,
+            "limit": 500,
+            "more_items_in_collection": true,
+            "next_start": 500
+          }
         },
-        "deals_500.json": {
-          "requestStartedAt": "2026-11-20T05:19:59.724Z",
-          "collectedAt": "2026-11-20T05:20:00.094Z",
-          "sha256": "aed0f26aea9656f5b7b64318dbbeb936a2a980eeb0de6cb0ae13d9c10b89166a"
+        "activities_done_all_0500.raw.json": {
+          "endpoint": "activities",
+          "args": {
+            "done": 1,
+            "user_id": 0,
+            "start": 500,
+            "limit": 500
+          },
+          "capturedAtUTC": "2026-11-20T17:14:04.646Z",
+          "sha256": "20eb30672981f67bd410c723938194a3d383cffa10893df1eef215071392d6a2",
+          "rows": 160,
+          "pagination": {
+            "start": 500,
+            "limit": 500,
+            "more_items_in_collection": false
+          }
         },
-        "activities_done_500.json": {
-          "requestStartedAt": "2026-11-20T05:19:59.782Z",
-          "collectedAt": "2026-11-20T05:20:00.119Z",
-          "sha256": "75288c472b8054feb79fd0be314c6585f4f752424e0d051159f2e3d6518dffdc"
+        "activities_undone_all_0000.raw.json": {
+          "endpoint": "activities",
+          "args": {
+            "done": 0,
+            "user_id": 0,
+            "start": 0,
+            "limit": 500
+          },
+          "capturedAtUTC": "2026-11-20T17:14:04.787Z",
+          "sha256": "a7be06e85f940ccca98e83d431182d97b92baeb3ae5f94770f14a7a4879b1d56",
+          "rows": 362,
+          "pagination": {
+            "start": 0,
+            "limit": 500,
+            "more_items_in_collection": false
+          }
         },
-        "activity_types.json": {
-          "requestStartedAt": "2026-11-20T05:20:00.123Z",
-          "collectedAt": "2026-11-20T05:20:00.209Z",
-          "sha256": "7f451e4a1472f33a3b9ac2bd75b40d8238f5da2fbe9f53135c98f07bcc416cc1"
+        "users.raw.json": {
+          "endpoint": "users",
+          "args": {},
+          "requestStartedAtUTC": "2026-11-20T17:13:18Z",
+          "requestReturnedNoLaterThanUTC": "2026-11-20T17:13:35Z",
+          "capturedAtUTC": "2026-11-20T17:13:36.418Z",
+          "sha256": "1027b691bba5ac8ef7973c4ca7001d26b4afab2119e272aa4e8c57c9e418a4f2",
+          "rows": 5,
+          "pagination": null
         },
-        "pipelines.json": {
-          "requestStartedAt": "2026-11-20T05:20:00.123Z",
-          "collectedAt": "2026-11-20T05:20:00.267Z",
-          "sha256": "6ef59a52dcfb342d1f5d8ee078597d55e07e4ede70f6fc4f52ea9428fd5db3a5"
+        "pipelines.raw.json": {
+          "endpoint": "pipelines",
+          "args": {},
+          "requestStartedAtUTC": "2026-11-20T17:13:18Z",
+          "requestReturnedNoLaterThanUTC": "2026-11-20T17:13:35Z",
+          "capturedAtUTC": "2026-11-20T17:13:36.476Z",
+          "sha256": "33da7b6bf60d086ccb54aa21c9a20022f957eca3840812430ca28b695b233449",
+          "rows": 3,
+          "pagination": {
+            "start": 0,
+            "limit": 100,
+            "more_items_in_collection": false
+          }
         },
-        "stages.json": {
-          "requestStartedAt": "2026-11-20T05:20:00.123Z",
-          "collectedAt": "2026-11-20T05:20:00.266Z",
-          "sha256": "af97c4c594ad5a806e8dcb181da272914a71ab760b8415429dfa69e69db6348e"
-        },
-        "users.json": {
-          "requestStartedAt": "2026-11-20T05:20:00.123Z",
-          "collectedAt": "2026-11-20T05:20:00.268Z",
-          "sha256": "ebcea7b7ef484b80b3cbf01e949c8c80a6e1c6144d813d6d422517d52a500080"
-        },
-        "deal_fields_000.json": {
-          "requestStartedAt": "2026-11-20T05:20:00.270Z",
-          "collectedAt": "2026-11-20T05:20:00.384Z",
-          "sha256": "fed9f9251f13c2890b410c0b397a6a2dd43fd5b51eeafa88b375ea504dbb42d4"
-        },
-        "leads_inbox_archived_000.json": {
-          "requestStartedAt": "2026-11-20T05:20:00.385Z",
-          "collectedAt": "2026-11-20T05:20:00.509Z",
-          "sha256": "1f2f34933e26f812aec1a820848d368238f488fcb6194a5f3c2beaa5714b0c0b"
-        },
-        "leads_inbox_active_000.json": {
-          "requestStartedAt": "2026-11-20T05:20:00.385Z",
-          "collectedAt": "2026-11-20T05:20:00.567Z",
-          "sha256": "1f2f34933e26f812aec1a820848d368238f488fcb6194a5f3c2beaa5714b0c0b"
+        "stages.raw.json": {
+          "endpoint": "stages",
+          "args": {},
+          "requestStartedAtUTC": "2026-11-20T17:13:18Z",
+          "requestReturnedNoLaterThanUTC": "2026-11-20T17:13:35Z",
+          "capturedAtUTC": "2026-11-20T17:13:36.515Z",
+          "sha256": "0248065eba1c7d30ae9a14feeca4ed36813a18d16211f94f885989efbfc1e2fe",
+          "rows": 27,
+          "pagination": {
+            "start": 0,
+            "limit": 100,
+            "more_items_in_collection": false
+          }
         }
       },
       "atomicSnapshot": false,
-      "baselineSnapshotSha256": "0c37a6721ec226a9f1dc281aba8062b8f661a42afe536c7239d18fb268bfe0ee",
+      "baselineSnapshotSha256": "d0e50b5cb5117c61aabbf2ded5f2d8c4434637590ec881251a3ec9d6b99c860f",
       "archiveCoverage": {
         "archivedRecordsReturned": 0,
         "nonArchivedRecordsReturned": 945,
@@ -9001,10 +9053,18 @@
         "dedicatedArchiveEndpointComplete": true,
         "dedicatedArchiveEndpointCount": 0,
         "dedicatedArchiveCheckedAt": "2026-11-20T05:17:02.831Z",
-        "note": "The current non-archived and dedicated archived queries were separately exhausted."
+        "note": "Fresh accessible non-deleted census returned no archived records; the dedicated archive endpoint retains its separately dated older check.",
+        "currentAccessibleCensusAt": "2026-11-20T17:14:04.787Z"
       },
       "freshSelectedHistorySnapshotAt": "2026-11-20T05:17:35.071Z",
-      "freshSelectedHistoryDealCount": 195
+      "freshSelectedHistoryDealCount": 195,
+      "collectionStartedAtNotRetained": true,
+      "captureWriteSpanStart": "2026-11-20T17:13:07.089Z",
+      "captureClockBasis": "capturedAtUTC is the exact local private-file write clock after the MCP response, not an API event or exact request-return timestamp. Exact first/final request clocks were not retained; recorded tool-clock windows are preserved where available.",
+      "freshSelectedHistoryDealCountBasis": "Latest independently dated refresh batch; not the merged retained register.",
+      "freshSelectedHistoryLatestBatchDealCount": 195,
+      "retainedSelectedHistoryDealCount": 277,
+      "retainedSelectedHistoryCoverageBasis": "Merged retained histories keep their original per-deal collection clocks; the latest batch count and completion clock are separately retained."
     },
     "pipelines": [
       {
@@ -9207,6 +9267,13 @@
         "name": "Graveyard ( Newsletter )",
         "pipelineId": 4,
         "order": 10,
+        "active": true
+      },
+      {
+        "id": 46,
+        "name": "Nurture Automation Drip",
+        "pipelineId": 2,
+        "order": 17,
         "active": true
       }
     ],
@@ -14595,7 +14662,7 @@
         "value": 0,
         "currency": "USD",
         "createdAt": "2026-03-04T21:21:08Z",
-        "updatedAt": "2026-11-19T21:16:47Z",
+        "updatedAt": "2026-11-20T11:31:07Z",
         "stageChangedAt": "2026-08-20T01:18:53Z",
         "wonAt": null,
         "lostAt": null,
@@ -31171,7 +31238,7 @@
         "value": 0,
         "currency": "USD",
         "createdAt": "2026-09-30T02:47:29Z",
-        "updatedAt": "2026-11-19T21:06:04Z",
+        "updatedAt": "2026-11-20T16:52:26Z",
         "stageChangedAt": "2026-10-28T02:11:51Z",
         "wonAt": null,
         "lostAt": null,
@@ -32926,13 +32993,13 @@
         "organizationId": 1270,
         "company": "Increase Alpha",
         "pipelineId": 1,
-        "stageId": 5,
+        "stageId": 41,
         "status": "open",
         "value": 0,
         "currency": "USD",
         "createdAt": "2026-10-16T23:06:07Z",
-        "updatedAt": "2026-11-19T23:18:58Z",
-        "stageChangedAt": "2026-11-17T20:53:34Z",
+        "updatedAt": "2026-11-20T16:34:48Z",
+        "stageChangedAt": "2026-11-20T16:34:15Z",
         "wonAt": null,
         "lostAt": null,
         "scheduledCallDate": null,
@@ -36158,13 +36225,13 @@
         "organizationId": 1375,
         "company": "Rekha Kapania",
         "pipelineId": 2,
-        "stageId": 22,
+        "stageId": 45,
         "status": "open",
         "value": 0,
         "currency": "USD",
         "createdAt": "2026-11-13T20:25:54Z",
-        "updatedAt": "2026-11-17T18:00:07Z",
-        "stageChangedAt": "2026-11-17T18:00:07Z",
+        "updatedAt": "2026-11-20T15:41:23Z",
+        "stageChangedAt": "2026-11-20T15:41:23Z",
         "wonAt": null,
         "lostAt": null,
         "scheduledCallDate": "2026-11-17",
@@ -38019,7 +38086,7 @@
         "value": 0,
         "currency": "USD",
         "createdAt": "2026-11-17T22:40:56Z",
-        "updatedAt": "2026-11-19T23:00:20Z",
+        "updatedAt": "2026-11-20T17:10:09Z",
         "stageChangedAt": null,
         "wonAt": null,
         "lostAt": null,
@@ -38051,7 +38118,7 @@
         "value": 0,
         "currency": "USD",
         "createdAt": "2026-11-18T03:19:16Z",
-        "updatedAt": "2026-11-19T23:00:12Z",
+        "updatedAt": "2026-11-20T12:55:35Z",
         "stageChangedAt": null,
         "wonAt": null,
         "lostAt": null,
@@ -61031,7 +61098,7 @@
           "pipelineId": 2,
           "stageId": 45,
           "currency": "USD",
-          "count": 5,
+          "count": 6,
           "value": 0
         },
         {
@@ -61045,7 +61112,7 @@
           "pipelineId": 1,
           "stageId": 41,
           "currency": "USD",
-          "count": 10,
+          "count": 11,
           "value": 2000
         },
         {
@@ -61067,13 +61134,6 @@
           "stageId": 39,
           "currency": "USD",
           "count": 9,
-          "value": 0
-        },
-        {
-          "pipelineId": 1,
-          "stageId": 5,
-          "currency": "USD",
-          "count": 1,
           "value": 0
         },
         {
@@ -61110,13 +61170,6 @@
           "currency": "USD",
           "count": 1,
           "value": 0
-        },
-        {
-          "pipelineId": 2,
-          "stageId": 22,
-          "currency": "USD",
-          "count": 1,
-          "value": 0
         }
       ],
       "salesPipelineByCurrency": [
@@ -61129,194 +61182,179 @@
       "activeSalesByCurrency": [
         {
           "currency": "USD",
-          "count": 7,
+          "count": 6,
           "value": 0
         }
       ],
       "acceptedOpportunityCount": null,
       "last30CompleteDays": {
-        "start": "2026-10-20",
-        "end": "2026-11-18",
-        "newDeals": 172,
-        "latestUpdatedDeals": 500,
+        "start": "2026-10-21",
+        "end": "2026-11-19",
+        "newDeals": 189,
+        "latestUpdatedDeals": 551,
         "wonDeals": 0,
-        "lostDeals": 291,
-        "activitiesMarkedDone": 103,
+        "lostDeals": 295,
+        "activitiesMarkedDone": 113,
         "callsDue": 0,
         "callsMarkedDone": 8
       },
       "weekly": [
         {
+          "activitiesMarkedDone": 0,
+          "callsDue": 0,
+          "callsMarkedDone": 0,
           "start": "2026-08-24",
           "end": "2026-08-30",
           "newDeals": 0,
           "latestUpdatedDeals": 0,
           "wonDeals": 0,
-          "lostDeals": 0,
-          "activitiesMarkedDone": 0,
-          "callsDue": 0,
-          "callsMarkedDone": 0
+          "lostDeals": 0
         },
         {
+          "activitiesMarkedDone": 0,
+          "callsDue": 0,
+          "callsMarkedDone": 0,
           "start": "2026-08-31",
           "end": "2026-09-06",
           "newDeals": 296,
           "latestUpdatedDeals": 283,
           "wonDeals": 0,
-          "lostDeals": 0,
-          "activitiesMarkedDone": 0,
-          "callsDue": 0,
-          "callsMarkedDone": 0
+          "lostDeals": 0
         },
         {
+          "activitiesMarkedDone": 0,
+          "callsDue": 0,
+          "callsMarkedDone": 0,
           "start": "2026-09-07",
           "end": "2026-09-13",
           "newDeals": 1,
           "latestUpdatedDeals": 1,
           "wonDeals": 0,
-          "lostDeals": 0,
-          "activitiesMarkedDone": 0,
-          "callsDue": 0,
-          "callsMarkedDone": 0
+          "lostDeals": 0
         },
         {
+          "activitiesMarkedDone": 0,
+          "callsDue": 0,
+          "callsMarkedDone": 0,
           "start": "2026-09-14",
           "end": "2026-09-20",
           "newDeals": 1,
           "latestUpdatedDeals": 1,
           "wonDeals": 0,
-          "lostDeals": 0,
-          "activitiesMarkedDone": 0,
-          "callsDue": 0,
-          "callsMarkedDone": 0
+          "lostDeals": 0
         },
         {
+          "activitiesMarkedDone": 0,
+          "callsDue": 0,
+          "callsMarkedDone": 0,
           "start": "2026-09-21",
           "end": "2026-09-27",
           "newDeals": 2,
           "latestUpdatedDeals": 6,
           "wonDeals": 0,
-          "lostDeals": 0,
-          "activitiesMarkedDone": 0,
-          "callsDue": 0,
-          "callsMarkedDone": 0
+          "lostDeals": 0
         },
         {
+          "activitiesMarkedDone": 0,
+          "callsDue": 0,
+          "callsMarkedDone": 0,
           "start": "2026-09-28",
           "end": "2026-10-04",
           "newDeals": 31,
           "latestUpdatedDeals": 2,
           "wonDeals": 0,
-          "lostDeals": 0,
-          "activitiesMarkedDone": 0,
-          "callsDue": 0,
-          "callsMarkedDone": 0
+          "lostDeals": 0
         },
         {
+          "activitiesMarkedDone": 0,
+          "callsDue": 0,
+          "callsMarkedDone": 0,
           "start": "2026-10-05",
           "end": "2026-10-11",
           "newDeals": 4,
           "latestUpdatedDeals": 5,
           "wonDeals": 0,
-          "lostDeals": 0,
-          "activitiesMarkedDone": 0,
-          "callsDue": 0,
-          "callsMarkedDone": 0
+          "lostDeals": 0
         },
         {
+          "activitiesMarkedDone": 0,
+          "callsDue": 0,
+          "callsMarkedDone": 0,
           "start": "2026-10-12",
           "end": "2026-10-18",
           "newDeals": 36,
           "latestUpdatedDeals": 41,
           "wonDeals": 0,
-          "lostDeals": 0,
-          "activitiesMarkedDone": 0,
-          "callsDue": 0,
-          "callsMarkedDone": 0
+          "lostDeals": 0
         },
         {
+          "activitiesMarkedDone": 0,
+          "callsDue": 0,
+          "callsMarkedDone": 0,
           "start": "2026-10-19",
           "end": "2026-10-25",
           "newDeals": 26,
           "latestUpdatedDeals": 23,
           "wonDeals": 0,
-          "lostDeals": 0,
-          "activitiesMarkedDone": 0,
-          "callsDue": 0,
-          "callsMarkedDone": 0
+          "lostDeals": 0
         },
         {
+          "activitiesMarkedDone": 1,
+          "callsDue": 0,
+          "callsMarkedDone": 1,
           "start": "2026-10-26",
           "end": "2026-11-01",
           "newDeals": 0,
           "latestUpdatedDeals": 0,
           "wonDeals": 0,
-          "lostDeals": 0,
-          "activitiesMarkedDone": 1,
-          "callsDue": 0,
-          "callsMarkedDone": 1
+          "lostDeals": 0
         },
         {
+          "activitiesMarkedDone": 0,
+          "callsDue": 0,
+          "callsMarkedDone": 0,
           "start": "2026-11-02",
           "end": "2026-11-08",
           "newDeals": 39,
           "latestUpdatedDeals": 23,
           "wonDeals": 0,
-          "lostDeals": 1,
-          "activitiesMarkedDone": 0,
-          "callsDue": 0,
-          "callsMarkedDone": 0
+          "lostDeals": 1
         },
         {
+          "activitiesMarkedDone": 30,
+          "callsDue": 0,
+          "callsMarkedDone": 7,
           "start": "2026-11-09",
           "end": "2026-11-15",
           "newDeals": 25,
           "latestUpdatedDeals": 323,
           "wonDeals": 0,
-          "lostDeals": 284,
-          "activitiesMarkedDone": 30,
-          "callsDue": 0,
-          "callsMarkedDone": 7
+          "lostDeals": 284
         },
         {
-          "start": "2026-11-16",
-          "end": "2026-11-18",
-          "newDeals": 84,
-          "latestUpdatedDeals": 133,
-          "wonDeals": 0,
-          "lostDeals": 6,
-          "activitiesMarkedDone": 72,
+          "activitiesMarkedDone": 82,
           "callsDue": 0,
-          "callsMarkedDone": 0
+          "callsMarkedDone": 0,
+          "start": "2026-11-16",
+          "end": "2026-11-19",
+          "newDeals": 104,
+          "latestUpdatedDeals": 187,
+          "wonDeals": 0,
+          "lostDeals": 10
         }
       ],
       "overdueUndoneActivities": 339,
       "last7CompleteDays": {
-        "start": "2026-11-12",
-        "end": "2026-11-18",
+        "start": "2026-11-13",
+        "end": "2026-11-19",
         "currentDayPartial": false,
-        "newDeals": 100,
-        "latestUpdatedDeals": 139,
+        "newDeals": 105,
+        "latestUpdatedDeals": 189,
         "wonDeals": 0,
-        "lostDeals": 6,
+        "lostDeals": 10,
         "administrativeReferralCleanupLosses": 0,
-        "otherCrmLossStatuses": 6,
+        "otherCrmLossStatuses": 10,
         "newDealIds": [
-          907,
-          908,
-          909,
-          910,
-          911,
-          912,
-          913,
-          914,
-          915,
-          916,
-          917,
-          918,
-          919,
-          920,
-          921,
           922,
           923,
           924,
@@ -61401,11 +61439,32 @@
           1003,
           1005,
           1006,
-          1007
+          1007,
+          1008,
+          1009,
+          1010,
+          1011,
+          1012,
+          1013,
+          1014,
+          1015,
+          1016,
+          1017,
+          1018,
+          1019,
+          1020,
+          1021,
+          1022,
+          1023,
+          1024,
+          1025,
+          1026,
+          1027
         ],
         "latestUpdatedDealIds": [
           125,
           165,
+          203,
           241,
           280,
           282,
@@ -61416,15 +61475,21 @@
           362,
           435,
           438,
+          440,
+          442,
           444,
           445,
           446,
           495,
+          497,
           508,
+          527,
+          613,
           748,
           750,
           751,
           760,
+          765,
           768,
           780,
           788,
@@ -61442,6 +61507,7 @@
           859,
           861,
           864,
+          865,
           867,
           868,
           869,
@@ -61449,6 +61515,7 @@
           871,
           872,
           873,
+          874,
           875,
           876,
           877,
@@ -61463,11 +61530,16 @@
           886,
           891,
           895,
+          898,
           899,
+          901,
+          902,
+          903,
           904,
           905,
           906,
           907,
+          908,
           909,
           910,
           911,
@@ -61477,11 +61549,7 @@
           915,
           916,
           917,
-          918,
-          919,
-          920,
-          921,
-          922,
+          923,
           924,
           925,
           926,
@@ -61508,8 +61576,21 @@
           947,
           948,
           949,
+          950,
+          951,
+          952,
+          953,
+          954,
+          955,
+          956,
+          957,
           958,
           959,
+          960,
+          961,
+          962,
+          963,
+          964,
           965,
           966,
           967,
@@ -61525,24 +61606,51 @@
           977,
           978,
           979,
+          982,
           983,
+          984,
           985,
           986,
           987,
           988,
+          989,
           990,
           991,
           992,
+          993,
+          994,
+          995,
           996,
           997,
           998,
           999,
+          1000,
           1001,
           1002,
           1003,
           1005,
           1006,
-          1007
+          1007,
+          1008,
+          1009,
+          1010,
+          1011,
+          1012,
+          1013,
+          1014,
+          1015,
+          1016,
+          1017,
+          1018,
+          1019,
+          1020,
+          1021,
+          1022,
+          1023,
+          1024,
+          1025,
+          1026,
+          1027
         ],
         "wonDealIds": [],
         "lostDealIds": [
@@ -61551,21 +61659,25 @@
           446,
           750,
           798,
-          861
+          861,
+          962,
+          995,
+          1019,
+          1027
         ],
         "headlineAcceptedOpportunities": null,
         "headlineFirstClientWins": null
       },
       "monthToDate": {
         "start": "2026-11-01",
-        "end": "2026-11-18",
+        "end": "2026-11-19",
         "currentDayPartial": false,
-        "newDeals": 148,
-        "latestUpdatedDeals": 479,
+        "newDeals": 168,
+        "latestUpdatedDeals": 533,
         "wonDeals": 0,
-        "lostDeals": 291,
+        "lostDeals": 295,
         "administrativeReferralCleanupLosses": 283,
-        "otherCrmLossStatuses": 8,
+        "otherCrmLossStatuses": 12,
         "newDealIds": [
           858,
           859,
@@ -61714,7 +61826,27 @@
           1003,
           1005,
           1006,
-          1007
+          1007,
+          1008,
+          1009,
+          1010,
+          1011,
+          1012,
+          1013,
+          1014,
+          1015,
+          1016,
+          1017,
+          1018,
+          1019,
+          1020,
+          1021,
+          1022,
+          1023,
+          1024,
+          1025,
+          1026,
+          1027
         ],
         "latestUpdatedDealIds": [
           20,
@@ -61733,6 +61865,7 @@
           154,
           165,
           185,
+          203,
           217,
           241,
           280,
@@ -61745,7 +61878,9 @@
           397,
           435,
           438,
+          440,
           441,
+          442,
           443,
           444,
           445,
@@ -61791,6 +61926,7 @@
           493,
           495,
           496,
+          497,
           498,
           499,
           500,
@@ -61814,6 +61950,7 @@
           521,
           524,
           526,
+          527,
           528,
           529,
           530,
@@ -61898,6 +62035,7 @@
           610,
           611,
           612,
+          613,
           614,
           615,
           616,
@@ -62039,6 +62177,7 @@
           760,
           761,
           764,
+          765,
           766,
           767,
           768,
@@ -62085,6 +62224,7 @@
           862,
           863,
           864,
+          865,
           867,
           868,
           869,
@@ -62092,6 +62232,7 @@
           871,
           872,
           873,
+          874,
           875,
           876,
           877,
@@ -62115,12 +62256,17 @@
           895,
           896,
           897,
+          898,
           899,
           900,
+          901,
+          902,
+          903,
           904,
           905,
           906,
           907,
+          908,
           909,
           910,
           911,
@@ -62134,7 +62280,7 @@
           919,
           920,
           921,
-          922,
+          923,
           924,
           925,
           926,
@@ -62161,8 +62307,21 @@
           947,
           948,
           949,
+          950,
+          951,
+          952,
+          953,
+          954,
+          955,
+          956,
+          957,
           958,
           959,
+          960,
+          961,
+          962,
+          963,
+          964,
           965,
           966,
           967,
@@ -62178,24 +62337,51 @@
           977,
           978,
           979,
+          982,
           983,
+          984,
           985,
           986,
           987,
           988,
+          989,
           990,
           991,
           992,
+          993,
+          994,
+          995,
           996,
           997,
           998,
           999,
+          1000,
           1001,
           1002,
           1003,
           1005,
           1006,
-          1007
+          1007,
+          1008,
+          1009,
+          1010,
+          1011,
+          1012,
+          1013,
+          1014,
+          1015,
+          1016,
+          1017,
+          1018,
+          1019,
+          1020,
+          1021,
+          1022,
+          1023,
+          1024,
+          1025,
+          1026,
+          1027
         ],
         "wonDealIds": [],
         "lostDealIds": [
@@ -62489,14 +62675,18 @@
           798,
           843,
           859,
-          861
+          861,
+          962,
+          995,
+          1019,
+          1027
         ],
         "headlineAcceptedOpportunities": null,
         "headlineFirstClientWins": null
       },
       "currentWeekToDate": {
         "start": "2026-11-16",
-        "end": "2026-11-19",
+        "end": "2026-11-20",
         "currentDayPartial": true,
         "newDeals": 104,
         "latestUpdatedDeals": 193,
@@ -62822,106 +63012,26 @@
         "headlineFirstClientWins": null
       },
       "currentDayPartial": {
-        "start": "2026-11-19",
-        "end": "2026-11-19",
+        "start": "2026-11-20",
+        "end": "2026-11-20",
         "currentDayPartial": true,
-        "newDeals": 20,
-        "latestUpdatedDeals": 60,
+        "newDeals": 0,
+        "latestUpdatedDeals": 6,
         "wonDeals": 0,
-        "lostDeals": 4,
+        "lostDeals": 0,
         "administrativeReferralCleanupLosses": 0,
-        "otherCrmLossStatuses": 4,
-        "newDealIds": [
-          1008,
-          1009,
-          1010,
-          1011,
-          1012,
-          1013,
-          1014,
-          1015,
-          1016,
-          1017,
-          1018,
-          1019,
-          1020,
-          1021,
-          1022,
-          1023,
-          1024,
-          1025,
-          1026,
-          1027
-        ],
+        "otherCrmLossStatuses": 0,
+        "newDealIds": [],
         "latestUpdatedDealIds": [
-          203,
           214,
-          440,
-          442,
-          497,
-          527,
-          613,
           762,
-          765,
           821,
-          865,
-          874,
-          898,
-          901,
-          902,
-          903,
-          908,
-          923,
-          950,
-          951,
-          952,
-          953,
-          954,
-          955,
-          956,
-          957,
-          960,
-          961,
-          962,
-          963,
-          964,
+          922,
           980,
-          981,
-          982,
-          984,
-          989,
-          993,
-          994,
-          995,
-          1000,
-          1008,
-          1009,
-          1010,
-          1011,
-          1012,
-          1013,
-          1014,
-          1015,
-          1016,
-          1017,
-          1018,
-          1019,
-          1020,
-          1021,
-          1022,
-          1023,
-          1024,
-          1025,
-          1026,
-          1027
+          981
         ],
         "wonDealIds": [],
-        "lostDealIds": [
-          962,
-          995,
-          1019,
-          1027
-        ],
+        "lostDealIds": [],
         "headlineAcceptedOpportunities": null,
         "headlineFirstClientWins": null
       }
@@ -62980,14 +63090,14 @@
       "organizationTestLabelPolicy": "Flag the organization label. Explicit test-labelled deal titles determine exclusions."
     },
     "assessment": {
-      "asOf": "2026-11-20T05:20:00.568Z",
+      "asOf": "2026-11-20T17:14:04.787Z",
       "inventory": {
         "records": 1017,
         "done": 659,
         "undone": 358,
         "overdue": 339,
-        "dueToday": 0,
-        "future": 19,
+        "dueToday": 2,
+        "future": 17,
         "undatedUndone": 0,
         "overdueUndone": 339,
         "byType": [
@@ -63047,8 +63157,8 @@
             "done": 2,
             "undone": 3,
             "overdue": 0,
-            "dueToday": 0,
-            "future": 3,
+            "dueToday": 1,
+            "future": 2,
             "undatedUndone": 0
           },
           {
@@ -63077,8 +63187,8 @@
             "done": 248,
             "undone": 231,
             "overdue": 223,
-            "dueToday": 0,
-            "future": 8,
+            "dueToday": 1,
+            "future": 7,
             "undatedUndone": 0
           },
           {
@@ -63109,8 +63219,8 @@
             "done": 111,
             "undone": 17,
             "overdue": 0,
-            "dueToday": 0,
-            "future": 17,
+            "dueToday": 1,
+            "future": 16,
             "undatedUndone": 0
           },
           {
@@ -63119,8 +63229,8 @@
             "done": 526,
             "undone": 341,
             "overdue": 339,
-            "dueToday": 0,
-            "future": 2,
+            "dueToday": 1,
+            "future": 1,
             "undatedUndone": 0
           }
         ],
@@ -63131,8 +63241,8 @@
             "done": 646,
             "undone": 357,
             "overdue": 339,
-            "dueToday": 0,
-            "future": 18,
+            "dueToday": 2,
+            "future": 16,
             "undatedUndone": 0
           },
           {
@@ -63349,442 +63459,21 @@
       },
       "snapshotChanges": {
         "available": true,
-        "baselineAt": "2026-11-13T13:34:27.159Z",
-        "currentAt": "2026-11-20T05:20:00.568Z",
-        "baselineDealCount": 843,
+        "baselineAt": "2026-11-20T05:20:00.568Z",
+        "currentAt": "2026-11-20T17:14:04.787Z",
+        "baselineDealCount": 945,
         "currentDealCount": 945,
-        "baselineActivityCount": 932,
+        "baselineActivityCount": 1022,
         "currentActivityCount": 1022,
-        "newDealIds": [
-          922,
-          923,
-          924,
-          925,
-          926,
-          927,
-          928,
-          929,
-          930,
-          931,
-          932,
-          933,
-          934,
-          935,
-          936,
-          937,
-          938,
-          939,
-          940,
-          941,
-          942,
-          943,
-          944,
-          945,
-          946,
-          947,
-          948,
-          949,
-          950,
-          951,
-          952,
-          953,
-          954,
-          955,
-          956,
-          957,
-          958,
-          959,
-          960,
-          961,
-          962,
-          963,
-          964,
-          965,
-          966,
-          967,
-          968,
-          969,
-          970,
-          971,
-          972,
-          973,
-          974,
-          975,
-          976,
-          977,
-          978,
-          979,
-          980,
-          981,
-          982,
-          983,
-          984,
-          985,
-          986,
-          987,
-          988,
-          989,
-          990,
-          991,
-          992,
-          993,
-          994,
-          995,
-          996,
-          997,
-          998,
-          999,
-          1000,
-          1001,
-          1002,
-          1003,
-          1005,
-          1006,
-          1007,
-          1008,
-          1009,
-          1010,
-          1011,
-          1012,
-          1013,
-          1014,
-          1015,
-          1016,
-          1017,
-          1018,
-          1019,
-          1020,
-          1021,
-          1022,
-          1023,
-          1024,
-          1025,
-          1026,
-          1027
-        ],
-        "removedDealIds": [
-          229,
-          795,
-          818
-        ],
+        "newDealIds": [],
+        "removedDealIds": [],
         "changedDeals": [
-          {
-            "id": 125,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-08-20T01:23:44Z",
-                "after": "2026-11-18T05:11:44Z"
-              }
-            }
-          },
-          {
-            "id": 165,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-09T02:37:19Z",
-                "after": "2026-11-15T02:58:18Z"
-              }
-            }
-          },
-          {
-            "id": 203,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T15:01:41Z",
-                "after": "2026-11-19T13:56:46Z"
-              }
-            }
-          },
           {
             "id": 214,
             "changes": {
               "updatedAt": {
-                "before": "2026-08-20T01:18:53Z",
-                "after": "2026-11-19T21:16:47Z"
-              }
-            }
-          },
-          {
-            "id": 241,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T00:01:50Z",
-                "after": "2026-11-16T20:38:36Z"
-              }
-            }
-          },
-          {
-            "id": 280,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-10T20:21:00Z",
-                "after": "2026-11-17T04:46:25Z"
-              }
-            }
-          },
-          {
-            "id": 282,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-10-16T21:29:41Z",
-                "after": "2026-11-17T18:44:22Z"
-              }
-            }
-          },
-          {
-            "id": 283,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-21T22:03:29Z",
-                "after": "2026-11-18T19:28:50Z"
-              }
-            }
-          },
-          {
-            "id": 284,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-06T14:52:04Z",
-                "after": "2026-11-16T20:54:30Z"
-              }
-            }
-          },
-          {
-            "id": 293,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-12T20:05:33Z",
-                "after": "2026-11-17T04:50:39Z"
-              }
-            }
-          },
-          {
-            "id": 309,
-            "changes": {
-              "status": {
-                "before": "open",
-                "after": "lost"
-              },
-              "updatedAt": {
-                "before": "2026-09-04T18:32:12Z",
-                "after": "2026-11-18T05:11:21Z"
-              }
-            }
-          },
-          {
-            "id": 362,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-10-06T14:51:37Z",
-                "after": "2026-11-17T04:50:37Z"
-              }
-            }
-          },
-          {
-            "id": 435,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T18:36:33Z",
-                "after": "2026-11-17T04:50:44Z"
-              }
-            }
-          },
-          {
-            "id": 438,
-            "changes": {
-              "status": {
-                "before": "open",
-                "after": "lost"
-              },
-              "updatedAt": {
-                "before": "2026-09-04T18:32:16Z",
-                "after": "2026-11-18T05:11:19Z"
-              }
-            }
-          },
-          {
-            "id": 440,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-09T22:26:41Z",
-                "after": "2026-11-19T23:18:51Z"
-              },
-              "lastActivityDate": {
-                "before": "2026-08-20",
-                "after": "2026-11-18"
-              }
-            }
-          },
-          {
-            "id": 442,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-11T15:27:23Z",
-                "after": "2026-11-19T22:18:42Z"
-              }
-            }
-          },
-          {
-            "id": 444,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-10T21:56:53Z",
-                "after": "2026-11-17T04:46:20Z"
-              }
-            }
-          },
-          {
-            "id": 445,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-21T21:58:33Z",
-                "after": "2026-11-17T04:46:18Z"
-              }
-            }
-          },
-          {
-            "id": 446,
-            "changes": {
-              "status": {
-                "before": "open",
-                "after": "lost"
-              },
-              "updatedAt": {
-                "before": "2026-11-10T22:05:51Z",
-                "after": "2026-11-18T19:49:43Z"
-              },
-              "nextActivityDate": {
-                "before": "2026-11-18",
-                "after": null
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-18"
-              }
-            }
-          },
-          {
-            "id": 495,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-10T21:21:33Z",
-                "after": "2026-11-17T23:02:51Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-17"
-              }
-            }
-          },
-          {
-            "id": 497,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-11T02:40:15Z",
-                "after": "2026-11-19T23:36:51Z"
-              },
-              "nextActivityDate": {
-                "before": null,
-                "after": "2026-11-23"
-              },
-              "lastActivityDate": {
-                "before": "2026-11-10",
-                "after": "2026-11-18"
-              }
-            }
-          },
-          {
-            "id": 508,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-09-21T17:28:53Z",
-                "after": "2026-11-16T17:05:04Z"
-              }
-            }
-          },
-          {
-            "id": 527,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-10-06T15:30:02Z",
-                "after": "2026-11-19T22:51:26Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-19"
-              }
-            }
-          },
-          {
-            "id": 613,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T10:50:01Z",
-                "after": "2026-11-20T04:07:42Z"
-              }
-            }
-          },
-          {
-            "id": 748,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-09-22T13:28:42Z",
-                "after": "2026-11-16T20:54:23Z"
-              }
-            }
-          },
-          {
-            "id": 750,
-            "changes": {
-              "status": {
-                "before": "open",
-                "after": "lost"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:14Z",
-                "after": "2026-11-17T17:55:06Z"
-              },
-              "lastActivityDate": {
-                "before": "2026-11-10",
-                "after": "2026-11-17"
-              }
-            }
-          },
-          {
-            "id": 751,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-05T15:02:30Z",
-                "after": "2026-11-16T20:54:20Z"
-              }
-            }
-          },
-          {
-            "id": 760,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-09-30T02:47:27Z",
-                "after": "2026-11-15T23:16:25Z"
+                "before": "2026-11-19T21:16:47Z",
+                "after": "2026-11-20T11:31:07Z"
               }
             }
           },
@@ -63792,172 +63481,8 @@
             "id": 762,
             "changes": {
               "updatedAt": {
-                "before": "2026-11-12T17:00:23Z",
-                "after": "2026-11-19T21:06:04Z"
-              }
-            }
-          },
-          {
-            "id": 765,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T17:19:25Z",
-                "after": "2026-11-19T21:30:58Z"
-              },
-              "nextActivityDate": {
-                "before": null,
-                "after": "2026-11-24"
-              },
-              "lastActivityDate": {
-                "before": "2026-09-29",
-                "after": "2026-11-17"
-              }
-            }
-          },
-          {
-            "id": 768,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-11T02:42:53Z",
-                "after": "2026-11-17T22:54:26Z"
-              }
-            }
-          },
-          {
-            "id": 780,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-11T02:43:09Z",
-                "after": "2026-11-16T18:03:22Z"
-              }
-            }
-          },
-          {
-            "id": 788,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:20Z",
-                "after": "2026-11-17T23:02:41Z"
-              },
-              "nextActivityDate": {
-                "before": "2026-11-17",
-                "after": "2026-11-24"
-              }
-            }
-          },
-          {
-            "id": 789,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-12T17:50:10Z",
-                "after": "2026-11-16T20:54:18Z"
-              }
-            }
-          },
-          {
-            "id": 790,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-14T17:02:09Z",
-                "after": "2026-11-17T04:46:15Z"
-              }
-            }
-          },
-          {
-            "id": 794,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-02T18:18:58Z",
-                "after": "2026-11-17T04:46:13Z"
-              }
-            }
-          },
-          {
-            "id": 797,
-            "changes": {
-              "pipelineId": {
-                "before": 1,
-                "after": 2
-              },
-              "stageId": {
-                "before": 41,
-                "after": 8
-              },
-              "updatedAt": {
-                "before": "2026-11-10T18:48:02Z",
-                "after": "2026-11-16T20:54:07Z"
-              }
-            }
-          },
-          {
-            "id": 798,
-            "changes": {
-              "pipelineId": {
-                "before": 1,
-                "after": 2
-              },
-              "stageId": {
-                "before": 44,
-                "after": 8
-              },
-              "status": {
-                "before": "open",
-                "after": "lost"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:17Z",
-                "after": "2026-11-18T03:18:41Z"
-              },
-              "nextActivityDate": {
-                "before": "2026-11-18",
-                "after": null
-              },
-              "lastActivityDate": {
-                "before": "2026-11-10",
-                "after": "2026-11-18"
-              }
-            }
-          },
-          {
-            "id": 799,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-10-16T16:44:55Z",
-                "after": "2026-11-17T05:12:19Z"
-              }
-            }
-          },
-          {
-            "id": 805,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T17:51:53Z",
-                "after": "2026-11-17T04:46:11Z"
-              }
-            }
-          },
-          {
-            "id": 810,
-            "changes": {
-              "pipelineId": {
-                "before": 4,
-                "after": 2
-              },
-              "stageId": {
-                "before": 27,
-                "after": 8
-              },
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:26Z",
-                "after": "2026-11-17T17:39:05Z"
+                "before": "2026-11-19T21:06:04Z",
+                "after": "2026-11-20T16:52:26Z"
               }
             }
           },
@@ -63965,1001 +63490,59 @@
             "id": 821,
             "changes": {
               "stageId": {
-                "before": 44,
-                "after": 5
+                "before": 5,
+                "after": 41
               },
               "updatedAt": {
-                "before": "2026-11-10T20:20:57Z",
-                "after": "2026-11-19T23:18:58Z"
+                "before": "2026-11-19T23:18:58Z",
+                "after": "2026-11-20T16:34:48Z"
               },
-              "nextActivityDate": {
-                "before": "2026-11-25",
-                "after": "2026-11-20"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-25"
+              "stageChangedAt": {
+                "before": "2026-11-17T20:53:34Z",
+                "after": "2026-11-20T16:34:15Z"
               }
             }
           },
           {
-            "id": 838,
+            "id": 922,
             "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-10-21T14:28:24Z",
-                "after": "2026-11-17T04:50:47Z"
-              }
-            }
-          },
-          {
-            "id": 852,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-10-22T16:51:31Z",
-                "after": "2026-11-17T04:50:45Z"
-              }
-            }
-          },
-          {
-            "id": 858,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-10T21:21:36Z",
-                "after": "2026-11-17T22:59:07Z"
-              },
-              "nextActivityDate": {
-                "before": "2026-11-17",
-                "after": "2026-11-30"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-17"
-              }
-            }
-          },
-          {
-            "id": 859,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-10T19:27:36Z",
-                "after": "2026-11-17T22:59:09Z"
-              },
-              "nextActivityDate": {
-                "before": "2026-11-17",
-                "after": null
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-17"
-              }
-            }
-          },
-          {
-            "id": 861,
-            "changes": {
-              "status": {
-                "before": "open",
-                "after": "lost"
-              },
-              "updatedAt": {
-                "before": "2026-11-02T23:25:22Z",
-                "after": "2026-11-18T05:41:35Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-10-30"
-              }
-            }
-          },
-          {
-            "id": 864,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T00:03:54Z",
-                "after": "2026-11-17T23:56:33Z"
-              },
-              "nextActivityDate": {
-                "before": null,
-                "after": "2026-11-24"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-17"
-              }
-            }
-          },
-          {
-            "id": 865,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T00:03:55Z",
-                "after": "2026-11-19T23:00:25Z"
-              },
-              "nextActivityDate": {
-                "before": null,
-                "after": "2026-11-23"
-              }
-            }
-          },
-          {
-            "id": 867,
-            "changes": {
-              "pipelineId": {
-                "before": 4,
-                "after": 2
-              },
-              "stageId": {
-                "before": 27,
-                "after": 8
-              },
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:29Z",
-                "after": "2026-11-17T17:39:08Z"
-              }
-            }
-          },
-          {
-            "id": 868,
-            "changes": {
-              "pipelineId": {
-                "before": 4,
-                "after": 2
-              },
-              "stageId": {
-                "before": 27,
-                "after": 8
-              },
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:32Z",
-                "after": "2026-11-17T17:39:10Z"
-              }
-            }
-          },
-          {
-            "id": 869,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:23Z",
-                "after": "2026-11-16T17:43:29Z"
-              }
-            }
-          },
-          {
-            "id": 870,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-04T15:59:12Z",
-                "after": "2026-11-16T17:43:31Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-04"
-              }
-            }
-          },
-          {
-            "id": 871,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-04T15:59:14Z",
-                "after": "2026-11-16T17:43:33Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-04"
-              }
-            }
-          },
-          {
-            "id": 872,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-04T16:41:26Z",
-                "after": "2026-11-17T04:46:09Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-04"
-              }
-            }
-          },
-          {
-            "id": 873,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-10T20:40:17Z",
-                "after": "2026-11-17T04:46:06Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-04"
-              }
-            }
-          },
-          {
-            "id": 874,
-            "changes": {
-              "pipelineId": {
-                "before": 2,
-                "after": 1
-              },
               "stageId": {
                 "before": 22,
-                "after": 44
-              },
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
+                "after": 45
               },
               "updatedAt": {
-                "before": "2026-11-10T18:03:37Z",
-                "after": "2026-11-19T17:55:20Z"
+                "before": "2026-11-17T18:00:07Z",
+                "after": "2026-11-20T15:41:23Z"
               },
-              "nextActivityDate": {
-                "before": null,
-                "after": "2026-12-08"
+              "stageChangedAt": {
+                "before": "2026-11-17T18:00:07Z",
+                "after": "2026-11-20T15:41:23Z"
               }
             }
           },
           {
-            "id": 875,
+            "id": 980,
             "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
               "updatedAt": {
-                "before": "2026-11-11T02:26:35Z",
-                "after": "2026-11-16T17:40:57Z"
+                "before": "2026-11-19T23:00:20Z",
+                "after": "2026-11-20T17:10:09Z"
               }
             }
           },
           {
-            "id": 876,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:38Z",
-                "after": "2026-11-18T05:13:54Z"
-              }
-            }
-          },
-          {
-            "id": 877,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:40Z",
-                "after": "2026-11-16T17:41:01Z"
-              }
-            }
-          },
-          {
-            "id": 878,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:43Z",
-                "after": "2026-11-16T17:41:03Z"
-              }
-            }
-          },
-          {
-            "id": 879,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:46Z",
-                "after": "2026-11-16T17:43:10Z"
-              }
-            }
-          },
-          {
-            "id": 880,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:49Z",
-                "after": "2026-11-16T17:43:13Z"
-              }
-            }
-          },
-          {
-            "id": 881,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:51Z",
-                "after": "2026-11-16T17:43:15Z"
-              }
-            }
-          },
-          {
-            "id": 882,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:54Z",
-                "after": "2026-11-16T17:43:18Z"
-              }
-            }
-          },
-          {
-            "id": 883,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:26:57Z",
-                "after": "2026-11-16T17:43:20Z"
-              }
-            }
-          },
-          {
-            "id": 884,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:27:00Z",
-                "after": "2026-11-16T17:43:22Z"
-              }
-            }
-          },
-          {
-            "id": 885,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:27:03Z",
-                "after": "2026-11-16T17:43:24Z"
-              }
-            }
-          },
-          {
-            "id": 886,
-            "changes": {
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              },
-              "updatedAt": {
-                "before": "2026-11-11T02:27:06Z",
-                "after": "2026-11-16T17:43:27Z"
-              }
-            }
-          },
-          {
-            "id": 891,
+            "id": 981,
             "changes": {
               "updatedAt": {
-                "before": "2026-11-10T21:24:40Z",
-                "after": "2026-11-17T19:19:58Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-17"
-              }
-            }
-          },
-          {
-            "id": 895,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-05T21:17:15Z",
-                "after": "2026-11-17T23:51:55Z"
-              },
-              "nextActivityDate": {
-                "before": "2026-11-05",
-                "after": "2026-11-24"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-17"
-              }
-            }
-          },
-          {
-            "id": 898,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-09T20:20:10Z",
-                "after": "2026-11-20T03:18:45Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-17"
-              }
-            }
-          },
-          {
-            "id": 899,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-11T02:56:53Z",
-                "after": "2026-11-17T23:51:58Z"
-              },
-              "nextActivityDate": {
-                "before": null,
-                "after": "2026-11-24"
-              }
-            }
-          },
-          {
-            "id": 901,
-            "changes": {
-              "stageId": {
-                "before": 27,
-                "after": 28
-              },
-              "updatedAt": {
-                "before": "2026-11-11T19:36:30Z",
-                "after": "2026-11-19T21:37:08Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-11"
-              }
-            }
-          },
-          {
-            "id": 902,
-            "changes": {
-              "pipelineId": {
-                "before": 4,
-                "after": 2
-              },
-              "stageId": {
-                "before": 27,
-                "after": 8
-              },
-              "updatedAt": {
-                "before": "2026-11-11T19:36:43Z",
-                "after": "2026-11-19T21:37:14Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-11"
-              }
-            }
-          },
-          {
-            "id": 903,
-            "changes": {
-              "stageId": {
-                "before": 27,
-                "after": 28
-              },
-              "updatedAt": {
-                "before": "2026-11-11T19:36:56Z",
-                "after": "2026-11-19T21:37:11Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-11"
-              }
-            }
-          },
-          {
-            "id": 904,
-            "changes": {
-              "stageId": {
-                "before": 27,
-                "after": 28
-              },
-              "updatedAt": {
-                "before": "2026-11-11T19:37:09Z",
-                "after": "2026-11-17T22:57:03Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-17"
-              }
-            }
-          },
-          {
-            "id": 905,
-            "changes": {
-              "pipelineId": {
-                "before": 4,
-                "after": 2
-              },
-              "stageId": {
-                "before": 27,
-                "after": 8
-              },
-              "updatedAt": {
-                "before": "2026-11-11T19:37:21Z",
-                "after": "2026-11-17T22:57:14Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-11"
-              }
-            }
-          },
-          {
-            "id": 906,
-            "changes": {
-              "stageId": {
-                "before": 27,
-                "after": 28
-              },
-              "updatedAt": {
-                "before": "2026-11-11T19:37:33Z",
-                "after": "2026-11-17T22:57:07Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-17"
-              }
-            }
-          },
-          {
-            "id": 907,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T22:29:06Z",
-                "after": "2026-11-17T17:51:17Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-17"
-              }
-            }
-          },
-          {
-            "id": 908,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T19:32:19Z",
-                "after": "2026-11-19T23:18:48Z"
-              },
-              "nextActivityDate": {
-                "before": "2026-11-19",
-                "after": null
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-19"
-              }
-            }
-          },
-          {
-            "id": 909,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T22:30:10Z",
-                "after": "2026-11-16T19:23:19Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-12"
-              }
-            }
-          },
-          {
-            "id": 910,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T22:30:32Z",
-                "after": "2026-11-16T19:23:22Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-12"
-              }
-            }
-          },
-          {
-            "id": 911,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T22:30:47Z",
-                "after": "2026-11-16T19:23:25Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-12"
-              }
-            }
-          },
-          {
-            "id": 912,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T22:31:03Z",
-                "after": "2026-11-16T17:40:17Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-15"
-              }
-            }
-          },
-          {
-            "id": 913,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T22:31:21Z",
-                "after": "2026-11-16T17:40:20Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-15"
-              }
-            }
-          },
-          {
-            "id": 914,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T22:31:37Z",
-                "after": "2026-11-16T17:40:23Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-15"
-              }
-            }
-          },
-          {
-            "id": 915,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T23:01:15Z",
-                "after": "2026-11-16T17:40:31Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-12"
-              }
-            }
-          },
-          {
-            "id": 916,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T23:01:33Z",
-                "after": "2026-11-16T17:40:34Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-12"
-              }
-            }
-          },
-          {
-            "id": 917,
-            "changes": {
-              "updatedAt": {
-                "before": "2026-11-12T23:01:47Z",
-                "after": "2026-11-16T17:40:38Z"
-              },
-              "lastActivityDate": {
-                "before": null,
-                "after": "2026-11-12"
+                "before": "2026-11-19T23:00:12Z",
+                "after": "2026-11-20T12:55:35Z"
               }
             }
           }
         ],
-        "newActivityIds": [
-          1122,
-          1123,
-          1124,
-          1125,
-          1126,
-          1130,
-          1131,
-          1132,
-          1133,
-          1134,
-          1135,
-          1136,
-          1137,
-          1138,
-          1139,
-          1140,
-          1141,
-          1142,
-          1143,
-          1144,
-          1145,
-          1146,
-          1147,
-          1148,
-          1149,
-          1150,
-          1151,
-          1152,
-          1153,
-          1154,
-          1155,
-          1156,
-          1157,
-          1158,
-          1159,
-          1160,
-          1161,
-          1162,
-          1163,
-          1164,
-          1165,
-          1166,
-          1167,
-          1168,
-          1169,
-          1170,
-          1171,
-          1172,
-          1173,
-          1174,
-          1175,
-          1176,
-          1177,
-          1178,
-          1179,
-          1180,
-          1181,
-          1182,
-          1183,
-          1184,
-          1185,
-          1186,
-          1187,
-          1188,
-          1189,
-          1190,
-          1191,
-          1192,
-          1193,
-          1194,
-          1195,
-          1196,
-          1197,
-          1198,
-          1199,
-          1200,
-          1201,
-          1202,
-          1203,
-          1204,
-          1205,
-          1206,
-          1207,
-          1208,
-          1209,
-          1210,
-          1211,
-          1212,
-          1213,
-          1214
-        ],
+        "newActivityIds": [],
         "removedActivityIds": [],
-        "changedActivities": [
-          {
-            "id": 269,
-            "changes": {
-              "dealId": {
-                "before": 229,
-                "after": 282
-              }
-            }
-          },
-          {
-            "id": 1090,
-            "changes": {
-              "type": {
-                "before": "call",
-                "after": "task"
-              },
-              "dueDate": {
-                "before": "2026-11-17",
-                "after": "2026-11-24"
-              },
-              "owner": {
-                "before": "Christian W",
-                "after": "Charles Solomon"
-              }
-            }
-          },
-          {
-            "id": 1092,
-            "changes": {
-              "dueDate": {
-                "before": "2026-11-17",
-                "after": "2026-11-30"
-              }
-            }
-          },
-          {
-            "id": 1093,
-            "changes": {
-              "done": {
-                "before": false,
-                "after": true
-              },
-              "completedAt": {
-                "before": null,
-                "after": "2026-11-17T22:59:09Z"
-              }
-            }
-          },
-          {
-            "id": 1094,
-            "changes": {
-              "done": {
-                "before": false,
-                "after": true
-              },
-              "completedAt": {
-                "before": null,
-                "after": "2026-11-18T03:18:41Z"
-              }
-            }
-          },
-          {
-            "id": 1095,
-            "changes": {
-              "done": {
-                "before": false,
-                "after": true
-              },
-              "completedAt": {
-                "before": null,
-                "after": "2026-11-18T19:49:43Z"
-              }
-            }
-          },
-          {
-            "id": 1096,
-            "changes": {
-              "done": {
-                "before": false,
-                "after": true
-              },
-              "completedAt": {
-                "before": null,
-                "after": "2026-11-17T17:43:57Z"
-              }
-            }
-          },
-          {
-            "id": 1097,
-            "changes": {
-              "done": {
-                "before": false,
-                "after": true
-              },
-              "completedAt": {
-                "before": null,
-                "after": "2026-11-17T23:51:54Z"
-              }
-            }
-          },
-          {
-            "id": 1100,
-            "changes": {
-              "done": {
-                "before": false,
-                "after": true
-              },
-              "completedAt": {
-                "before": null,
-                "after": "2026-11-17T22:37:56Z"
-              }
-            }
-          },
-          {
-            "id": 1121,
-            "changes": {
-              "done": {
-                "before": false,
-                "after": true
-              },
-              "completedAt": {
-                "before": null,
-                "after": "2026-11-19T23:18:48Z"
-              }
-            }
-          }
-        ],
-        "note": "Snapshot differences are observed since the baseline, not a complete intervening event history. Missing source records need deletion/permission checks.",
-        "verifiedNoLongerObservedRecords": [
-          {
-            "dealId": 791,
-            "status": "deleted",
-            "verifiedAt": "2026-11-13T13:35:33.642Z",
-            "sourceUpdatedAt": "2026-11-03T16:13:26Z",
-            "relatedCurrentDealId": 805,
-            "formalMergeVerified": false
-          },
-          {
-            "dealId": 229,
-            "status": "deleted",
-            "verifiedAt": "2026-11-20T05:18:05.195Z",
-            "sourceUpdatedAt": "2026-11-17T18:44:17Z",
-            "formalMergeVerified": false
-          },
-          {
-            "dealId": 795,
-            "status": "deleted",
-            "verifiedAt": "2026-11-20T05:18:05.327Z",
-            "sourceUpdatedAt": "2026-11-17T05:07:02Z",
-            "formalMergeVerified": false
-          },
-          {
-            "dealId": 818,
-            "status": "deleted",
-            "verifiedAt": "2026-11-20T05:18:05.456Z",
-            "sourceUpdatedAt": "2026-11-17T05:10:39Z",
-            "formalMergeVerified": false
-          }
-        ]
+        "changedActivities": [],
+        "note": "Six latest-source record changes and one unused new stage were observed in the completed accessible census. This is non-atomic current-state evidence, not complete event history or new commercial acceptance."
       },
       "history": {
         "complete": false,
@@ -66123,48 +64706,48 @@
       },
       "periods": {
         "last7CompleteDays": {
-          "start": "2026-11-12",
-          "end": "2026-11-18",
-          "activitiesCreated": 85,
-          "activitiesMarkedDone": 72,
+          "start": "2026-11-13",
+          "end": "2026-11-19",
+          "activitiesCreated": 90,
+          "activitiesMarkedDone": 82,
           "automationActivitiesCreated": 0,
-          "activitiesDue": 41,
-          "latestUpdatedActivities": 82,
+          "activitiesDue": 37,
+          "latestUpdatedActivities": 100,
           "callsCreated": 1,
           "callsMarkedDone": 0,
           "callsDue": 0,
-          "meetingsCreated": 3,
+          "meetingsCreated": 4,
           "meetingsMarkedDone": 1,
           "meetingsDue": 1,
           "createdByType": {
             "cold_referral": 4,
-            "referral_ask": 47,
+            "referral_ask": 48,
             "reply_received": 3,
             "warm_referral": 3,
-            "meeting": 3,
-            "linkedin_touch": 6,
-            "email": 6,
-            "task": 10,
+            "meeting": 4,
+            "linkedin_touch": 5,
+            "email": 7,
+            "task": 13,
             "call": 1,
             "deadline": 2
           },
           "completedByType": {
             "cold_referral": 4,
-            "referral_ask": 42,
+            "referral_ask": 45,
             "reply_received": 3,
             "warm_referral": 3,
-            "task": 8,
+            "task": 13,
             "meeting": 1,
-            "linkedin_touch": 4,
-            "email": 6,
+            "linkedin_touch": 5,
+            "email": 7,
             "deadline": 1
           },
           "createdByOwner": {
-            "Charles Solomon": 84,
+            "Charles Solomon": 89,
             "Christian W": 1
           },
           "completedByOwner": {
-            "Charles Solomon": 71,
+            "Charles Solomon": 81,
             "Christian W": 1
           },
           "createdActivityIds": [
@@ -66237,21 +64820,26 @@
             1205,
             1206,
             1207,
-            1121,
             1189,
             1203,
             1204,
+            1211,
+            1212,
             1196,
+            1213,
             1170,
             1197,
             1188,
             1192,
             1208,
+            1214,
             1185,
             1173,
             1184,
+            1210,
             1167,
             1202,
+            1209,
             1186
           ],
           "completedActivityIds": [
@@ -66320,59 +64908,69 @@
             1195,
             1094,
             1095,
+            1179,
+            1187,
+            1190,
+            1191,
+            1199,
             1201,
             1205,
             1206,
             1207,
+            1121,
+            1189,
+            1203,
             1204,
+            1211,
+            1212,
             1196,
             1100
           ]
         },
         "last30CompleteDays": {
-          "start": "2026-10-20",
-          "end": "2026-11-18",
-          "activitiesCreated": 114,
-          "activitiesMarkedDone": 103,
+          "start": "2026-10-21",
+          "end": "2026-11-19",
+          "activitiesCreated": 120,
+          "activitiesMarkedDone": 113,
           "automationActivitiesCreated": 2,
-          "activitiesDue": 92,
-          "latestUpdatedActivities": 118,
+          "activitiesDue": 97,
+          "latestUpdatedActivities": 134,
           "callsCreated": 1,
           "callsMarkedDone": 8,
           "callsDue": 0,
-          "meetingsCreated": 3,
+          "meetingsCreated": 4,
           "meetingsMarkedDone": 1,
           "meetingsDue": 1,
           "createdByType": {
             "cold_referral": 4,
-            "referral_ask": 47,
+            "referral_ask": 48,
             "reply_received": 3,
             "warm_referral": 3,
-            "task": 31,
-            "email": 12,
-            "meeting": 3,
+            "task": 34,
+            "email": 13,
+            "meeting": 4,
             "linkedin_touch": 6,
             "deadline": 4,
             "call": 1
           },
           "completedByType": {
-            "email": 13,
+            "email": 14,
             "call": 8,
-            "task": 24,
+            "task": 29,
             "cold_referral": 4,
-            "referral_ask": 42,
+            "referral_ask": 45,
             "reply_received": 3,
             "warm_referral": 3,
             "meeting": 1,
-            "linkedin_touch": 4,
+            "linkedin_touch": 5,
             "deadline": 1
           },
           "createdByOwner": {
-            "Charles Solomon": 111,
+            "Charles Solomon": 117,
             "Christian W": 3
           },
           "completedByOwner": {
-            "Charles Solomon": 101,
+            "Charles Solomon": 111,
             "Christian W": 2
           },
           "createdActivityIds": [
@@ -66474,20 +65072,26 @@
             1189,
             1203,
             1204,
+            1211,
+            1212,
             1196,
             1100,
+            1213,
             1170,
             1197,
             1188,
             1192,
             1208,
+            1214,
             1185,
             1098,
             1173,
             1184,
+            1210,
             1092,
             1167,
             1202,
+            1209,
             1099,
             1186
           ],
@@ -66588,288 +65192,27 @@
             1195,
             1094,
             1095,
+            1179,
+            1187,
+            1190,
+            1191,
+            1199,
             1201,
             1205,
             1206,
             1207,
+            1121,
+            1189,
+            1203,
             1204,
+            1211,
+            1212,
             1196,
             1100
           ]
         },
         "last90CompleteDays": {
-          "start": "2026-08-21",
-          "end": "2026-11-18",
-          "activitiesCreated": 117,
-          "activitiesMarkedDone": 103,
-          "automationActivitiesCreated": 4,
-          "activitiesDue": 98,
-          "latestUpdatedActivities": 121,
-          "callsCreated": 1,
-          "callsMarkedDone": 8,
-          "callsDue": 0,
-          "meetingsCreated": 3,
-          "meetingsMarkedDone": 1,
-          "meetingsDue": 1,
-          "createdByType": {
-            "task": 34,
-            "cold_referral": 4,
-            "referral_ask": 47,
-            "reply_received": 3,
-            "warm_referral": 3,
-            "email": 12,
-            "meeting": 3,
-            "linkedin_touch": 6,
-            "deadline": 4,
-            "call": 1
-          },
-          "completedByType": {
-            "email": 13,
-            "call": 8,
-            "task": 24,
-            "cold_referral": 4,
-            "referral_ask": 42,
-            "reply_received": 3,
-            "warm_referral": 3,
-            "meeting": 1,
-            "linkedin_touch": 4,
-            "deadline": 1
-          },
-          "createdByOwner": {
-            "Christian W": 4,
-            "Charles Solomon": 113
-          },
-          "completedByOwner": {
-            "Charles Solomon": 101,
-            "Christian W": 2
-          },
-          "createdActivityIds": [
-            1068,
-            1123,
-            1091,
-            1130,
-            1200,
-            1122,
-            1198,
-            1160,
-            1165,
-            1166,
-            1131,
-            1132,
-            1133,
-            1134,
-            1135,
-            1136,
-            1137,
-            1138,
-            1139,
-            1140,
-            1141,
-            1142,
-            1143,
-            1144,
-            1161,
-            1162,
-            1163,
-            1164,
-            1096,
-            1101,
-            1102,
-            1103,
-            1104,
-            1105,
-            1106,
-            1107,
-            1108,
-            1109,
-            1110,
-            1111,
-            1112,
-            1113,
-            1114,
-            1115,
-            1116,
-            1117,
-            1118,
-            1119,
-            1120,
-            1145,
-            1146,
-            1147,
-            1148,
-            1149,
-            1150,
-            1097,
-            1151,
-            1152,
-            1153,
-            1154,
-            1155,
-            1156,
-            1157,
-            1158,
-            1159,
-            1124,
-            1125,
-            1126,
-            1178,
-            1093,
-            1168,
-            1169,
-            1171,
-            1172,
-            1174,
-            1175,
-            1176,
-            1177,
-            1180,
-            1181,
-            1182,
-            1183,
-            1193,
-            1194,
-            1195,
-            1094,
-            1095,
-            1179,
-            1187,
-            1190,
-            1191,
-            1199,
-            1201,
-            1205,
-            1206,
-            1207,
-            1121,
-            1189,
-            1203,
-            1204,
-            1196,
-            1100,
-            1170,
-            1197,
-            1188,
-            1192,
-            1208,
-            1185,
-            1090,
-            1098,
-            1173,
-            1184,
-            1092,
-            1167,
-            1202,
-            1099,
-            1186
-          ],
-          "completedActivityIds": [
-            65,
-            66,
-            67,
-            68,
-            70,
-            1058,
-            1059,
-            1060,
-            1061,
-            1068,
-            1123,
-            1091,
-            1130,
-            1200,
-            1122,
-            1198,
-            1160,
-            1165,
-            1166,
-            1131,
-            1132,
-            1133,
-            1134,
-            1135,
-            1136,
-            1137,
-            1138,
-            1139,
-            1140,
-            1141,
-            1142,
-            1143,
-            1144,
-            1161,
-            1162,
-            1163,
-            1164,
-            1096,
-            1101,
-            1102,
-            1103,
-            1104,
-            1105,
-            1106,
-            1107,
-            1108,
-            1109,
-            1110,
-            1111,
-            1112,
-            1113,
-            1114,
-            1115,
-            1116,
-            1117,
-            1118,
-            1119,
-            1120,
-            1145,
-            1146,
-            1147,
-            1148,
-            1149,
-            1150,
-            1097,
-            1151,
-            1152,
-            1153,
-            1154,
-            1155,
-            1156,
-            1157,
-            1158,
-            1159,
-            1124,
-            1125,
-            1126,
-            1178,
-            1093,
-            1168,
-            1169,
-            1171,
-            1172,
-            1174,
-            1175,
-            1176,
-            1177,
-            1180,
-            1181,
-            1182,
-            1183,
-            1193,
-            1194,
-            1195,
-            1094,
-            1095,
-            1201,
-            1205,
-            1206,
-            1207,
-            1204,
-            1196,
-            1100
-          ]
-        },
-        "sinceSeptember1": {
-          "start": "2026-09-01",
+          "start": "2026-08-22",
           "end": "2026-11-19",
           "activitiesCreated": 123,
           "activitiesMarkedDone": 113,
@@ -67155,20 +65498,307 @@
             1100
           ]
         },
+        "sinceSeptember1": {
+          "start": "2026-09-01",
+          "end": "2026-11-20",
+          "activitiesCreated": 123,
+          "activitiesMarkedDone": 113,
+          "automationActivitiesCreated": 4,
+          "activitiesDue": 106,
+          "latestUpdatedActivities": 139,
+          "callsCreated": 1,
+          "callsMarkedDone": 8,
+          "callsDue": 0,
+          "meetingsCreated": 4,
+          "meetingsMarkedDone": 1,
+          "meetingsDue": 2,
+          "createdByType": {
+            "task": 37,
+            "cold_referral": 4,
+            "referral_ask": 48,
+            "reply_received": 3,
+            "warm_referral": 3,
+            "email": 13,
+            "meeting": 4,
+            "linkedin_touch": 6,
+            "deadline": 4,
+            "call": 1
+          },
+          "completedByType": {
+            "email": 14,
+            "call": 8,
+            "task": 29,
+            "cold_referral": 4,
+            "referral_ask": 45,
+            "reply_received": 3,
+            "warm_referral": 3,
+            "meeting": 1,
+            "linkedin_touch": 5,
+            "deadline": 1
+          },
+          "createdByOwner": {
+            "Christian W": 4,
+            "Charles Solomon": 119
+          },
+          "completedByOwner": {
+            "Charles Solomon": 111,
+            "Christian W": 2
+          },
+          "createdActivityIds": [
+            1068,
+            1123,
+            1091,
+            1130,
+            1200,
+            1122,
+            1198,
+            1160,
+            1165,
+            1166,
+            1131,
+            1132,
+            1133,
+            1134,
+            1135,
+            1136,
+            1137,
+            1138,
+            1139,
+            1140,
+            1141,
+            1142,
+            1143,
+            1144,
+            1161,
+            1162,
+            1163,
+            1164,
+            1096,
+            1101,
+            1102,
+            1103,
+            1104,
+            1105,
+            1106,
+            1107,
+            1108,
+            1109,
+            1110,
+            1111,
+            1112,
+            1113,
+            1114,
+            1115,
+            1116,
+            1117,
+            1118,
+            1119,
+            1120,
+            1145,
+            1146,
+            1147,
+            1148,
+            1149,
+            1150,
+            1097,
+            1151,
+            1152,
+            1153,
+            1154,
+            1155,
+            1156,
+            1157,
+            1158,
+            1159,
+            1124,
+            1125,
+            1126,
+            1178,
+            1093,
+            1168,
+            1169,
+            1171,
+            1172,
+            1174,
+            1175,
+            1176,
+            1177,
+            1180,
+            1181,
+            1182,
+            1183,
+            1193,
+            1194,
+            1195,
+            1094,
+            1095,
+            1179,
+            1187,
+            1190,
+            1191,
+            1199,
+            1201,
+            1205,
+            1206,
+            1207,
+            1121,
+            1189,
+            1203,
+            1204,
+            1211,
+            1212,
+            1196,
+            1100,
+            1213,
+            1170,
+            1197,
+            1188,
+            1192,
+            1208,
+            1214,
+            1185,
+            1090,
+            1098,
+            1173,
+            1184,
+            1210,
+            1092,
+            1167,
+            1202,
+            1209,
+            1099,
+            1186
+          ],
+          "completedActivityIds": [
+            65,
+            66,
+            67,
+            68,
+            70,
+            1058,
+            1059,
+            1060,
+            1061,
+            1068,
+            1123,
+            1091,
+            1130,
+            1200,
+            1122,
+            1198,
+            1160,
+            1165,
+            1166,
+            1131,
+            1132,
+            1133,
+            1134,
+            1135,
+            1136,
+            1137,
+            1138,
+            1139,
+            1140,
+            1141,
+            1142,
+            1143,
+            1144,
+            1161,
+            1162,
+            1163,
+            1164,
+            1096,
+            1101,
+            1102,
+            1103,
+            1104,
+            1105,
+            1106,
+            1107,
+            1108,
+            1109,
+            1110,
+            1111,
+            1112,
+            1113,
+            1114,
+            1115,
+            1116,
+            1117,
+            1118,
+            1119,
+            1120,
+            1145,
+            1146,
+            1147,
+            1148,
+            1149,
+            1150,
+            1097,
+            1151,
+            1152,
+            1153,
+            1154,
+            1155,
+            1156,
+            1157,
+            1158,
+            1159,
+            1124,
+            1125,
+            1126,
+            1178,
+            1093,
+            1168,
+            1169,
+            1171,
+            1172,
+            1174,
+            1175,
+            1176,
+            1177,
+            1180,
+            1181,
+            1182,
+            1183,
+            1193,
+            1194,
+            1195,
+            1094,
+            1095,
+            1179,
+            1187,
+            1190,
+            1191,
+            1199,
+            1201,
+            1205,
+            1206,
+            1207,
+            1121,
+            1189,
+            1203,
+            1204,
+            1211,
+            1212,
+            1196,
+            1100
+          ]
+        },
         "currentWeekToDate": {
           "start": "2026-11-16",
-          "end": "2026-11-19",
+          "end": "2026-11-20",
           "activitiesCreated": 90,
           "activitiesMarkedDone": 82,
           "automationActivitiesCreated": 0,
-          "activitiesDue": 34,
+          "activitiesDue": 36,
           "latestUpdatedActivities": 100,
           "callsCreated": 1,
           "callsMarkedDone": 0,
           "callsDue": 0,
           "meetingsCreated": 4,
           "meetingsMarkedDone": 1,
-          "meetingsDue": 1,
+          "meetingsDue": 2,
           "createdByType": {
             "cold_referral": 4,
             "referral_ask": 48,
@@ -67378,311 +66008,25 @@
           ]
         },
         "currentDayPartial": {
-          "start": "2026-11-19",
-          "end": "2026-11-19",
-          "activitiesCreated": 6,
-          "activitiesMarkedDone": 10,
+          "start": "2026-11-20",
+          "end": "2026-11-20",
+          "activitiesCreated": 0,
+          "activitiesMarkedDone": 0,
           "automationActivitiesCreated": 0,
-          "activitiesDue": 6,
-          "latestUpdatedActivities": 18,
+          "activitiesDue": 2,
+          "latestUpdatedActivities": 0,
           "callsCreated": 0,
           "callsMarkedDone": 0,
           "callsDue": 0,
-          "meetingsCreated": 1,
+          "meetingsCreated": 0,
           "meetingsMarkedDone": 0,
-          "meetingsDue": 0,
-          "createdByType": {
-            "task": 3,
-            "email": 1,
-            "meeting": 1,
-            "referral_ask": 1
-          },
-          "completedByType": {
-            "task": 5,
-            "referral_ask": 3,
-            "linkedin_touch": 1,
-            "email": 1
-          },
-          "createdByOwner": {
-            "Charles Solomon": 6
-          },
-          "completedByOwner": {
-            "Charles Solomon": 10
-          },
-          "createdActivityIds": [
-            1211,
-            1212,
-            1213,
-            1214,
-            1210,
-            1209
-          ],
-          "completedActivityIds": [
-            1179,
-            1187,
-            1190,
-            1191,
-            1199,
-            1121,
-            1189,
-            1203,
-            1211,
-            1212
-          ]
-        },
-        "monthToDate": {
-          "start": "2026-11-01",
-          "end": "2026-11-18",
-          "activitiesCreated": 114,
-          "activitiesMarkedDone": 102,
-          "createdActivityIds": [
-            1123,
-            1130,
-            1200,
-            1122,
-            1198,
-            1160,
-            1165,
-            1166,
-            1131,
-            1132,
-            1133,
-            1134,
-            1135,
-            1136,
-            1137,
-            1138,
-            1139,
-            1140,
-            1141,
-            1142,
-            1143,
-            1144,
-            1161,
-            1162,
-            1163,
-            1164,
-            1096,
-            1101,
-            1102,
-            1103,
-            1104,
-            1105,
-            1106,
-            1107,
-            1108,
-            1109,
-            1110,
-            1111,
-            1112,
-            1113,
-            1114,
-            1115,
-            1116,
-            1117,
-            1118,
-            1119,
-            1120,
-            1145,
-            1146,
-            1147,
-            1148,
-            1149,
-            1150,
-            1097,
-            1151,
-            1152,
-            1153,
-            1154,
-            1155,
-            1156,
-            1157,
-            1158,
-            1159,
-            1124,
-            1125,
-            1126,
-            1178,
-            1093,
-            1168,
-            1169,
-            1171,
-            1172,
-            1174,
-            1175,
-            1176,
-            1177,
-            1180,
-            1181,
-            1182,
-            1183,
-            1193,
-            1194,
-            1195,
-            1094,
-            1095,
-            1179,
-            1187,
-            1190,
-            1191,
-            1199,
-            1201,
-            1205,
-            1206,
-            1207,
-            1121,
-            1189,
-            1203,
-            1204,
-            1196,
-            1100,
-            1170,
-            1197,
-            1188,
-            1192,
-            1208,
-            1185,
-            1098,
-            1173,
-            1184,
-            1092,
-            1167,
-            1202,
-            1099,
-            1186
-          ],
-          "completedActivityIds": [
-            65,
-            66,
-            67,
-            68,
-            70,
-            1059,
-            1060,
-            1061,
-            1068,
-            1123,
-            1091,
-            1130,
-            1200,
-            1122,
-            1198,
-            1160,
-            1165,
-            1166,
-            1131,
-            1132,
-            1133,
-            1134,
-            1135,
-            1136,
-            1137,
-            1138,
-            1139,
-            1140,
-            1141,
-            1142,
-            1143,
-            1144,
-            1161,
-            1162,
-            1163,
-            1164,
-            1096,
-            1101,
-            1102,
-            1103,
-            1104,
-            1105,
-            1106,
-            1107,
-            1108,
-            1109,
-            1110,
-            1111,
-            1112,
-            1113,
-            1114,
-            1115,
-            1116,
-            1117,
-            1118,
-            1119,
-            1120,
-            1145,
-            1146,
-            1147,
-            1148,
-            1149,
-            1150,
-            1097,
-            1151,
-            1152,
-            1153,
-            1154,
-            1155,
-            1156,
-            1157,
-            1158,
-            1159,
-            1124,
-            1125,
-            1126,
-            1178,
-            1093,
-            1168,
-            1169,
-            1171,
-            1172,
-            1174,
-            1175,
-            1176,
-            1177,
-            1180,
-            1181,
-            1182,
-            1183,
-            1193,
-            1194,
-            1195,
-            1094,
-            1095,
-            1201,
-            1205,
-            1206,
-            1207,
-            1204,
-            1196,
-            1100
-          ],
-          "createdByType": {
-            "cold_referral": 4,
-            "referral_ask": 47,
-            "reply_received": 3,
-            "warm_referral": 3,
-            "task": 31,
-            "email": 12,
-            "meeting": 3,
-            "linkedin_touch": 6,
-            "deadline": 4,
-            "call": 1
-          },
-          "completedByType": {
-            "email": 13,
-            "call": 7,
-            "task": 24,
-            "cold_referral": 4,
-            "referral_ask": 42,
-            "reply_received": 3,
-            "warm_referral": 3,
-            "meeting": 1,
-            "linkedin_touch": 4,
-            "deadline": 1
-          },
-          "callsCreated": 1,
-          "callsMarkedDone": 7,
-          "heldCalls": null,
-          "note": "Activity timestamps describe CRM creation and completion. Held attendance requires independent source evidence."
+          "meetingsDue": 1,
+          "createdByType": {},
+          "completedByType": {},
+          "createdByOwner": {},
+          "completedByOwner": {},
+          "createdActivityIds": [],
+          "completedActivityIds": []
         }
       },
       "newestActivities": [
@@ -68531,24 +66875,6 @@
       ],
       "workingSalesFollowUp": [
         {
-          "dealId": 821,
-          "title": "Increase Alpha",
-          "stageId": 5,
-          "stage": "Negotiating Contract",
-          "owner": "Charles Solomon",
-          "stageEnteredAt": "2026-11-17T20:53:34Z",
-          "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 2,
-          "undoneActivities": 1,
-          "overdueActivities": 0,
-          "futureActivities": 1,
-          "futureActivityIds": [
-            1213
-          ],
-          "nextScheduledDate": "2026-11-20",
-          "latestRecordedActivityAt": "2026-11-19T23:18:58Z"
-        },
-        {
           "dealId": 858,
           "title": "Cyrus Health",
           "stageId": 44,
@@ -68556,7 +66882,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-11-02T17:32:51Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 17,
+          "daysAtCurrentStage": 18,
           "undoneActivities": 1,
           "overdueActivities": 0,
           "futureActivities": 1,
@@ -68574,7 +66900,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-11-18T03:14:54Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 2,
+          "daysAtCurrentStage": 3,
           "undoneActivities": 2,
           "overdueActivities": 0,
           "futureActivities": 2,
@@ -68593,7 +66919,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-11-09T14:37:32Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 10,
+          "daysAtCurrentStage": 11,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68609,7 +66935,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-11-09T19:30:10Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 10,
+          "daysAtCurrentStage": 11,
           "undoneActivities": 1,
           "overdueActivities": 0,
           "futureActivities": 1,
@@ -68627,7 +66953,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-11-11T02:54:54Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 9,
+          "daysAtCurrentStage": 10,
           "undoneActivities": 1,
           "overdueActivities": 0,
           "futureActivities": 1,
@@ -68645,7 +66971,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-11-18T16:52:57Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 1,
+          "daysAtCurrentStage": 2,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68663,7 +66989,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-11T20:54:49Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 39,
+          "daysAtCurrentStage": 40,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68679,7 +67005,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-11T20:54:46Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 39,
+          "daysAtCurrentStage": 40,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68695,7 +67021,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-07-29T19:21:45Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 113,
+          "daysAtCurrentStage": 114,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68711,7 +67037,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-08-26T17:27:15Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 85,
+          "daysAtCurrentStage": 86,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68727,7 +67053,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-09-28T19:30:26Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 52,
+          "daysAtCurrentStage": 53,
           "undoneActivities": 1,
           "overdueActivities": 1,
           "futureActivities": 0,
@@ -68743,7 +67069,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-11-10T18:49:08Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 9,
+          "daysAtCurrentStage": 10,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68759,7 +67085,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-11T20:54:39Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 39,
+          "daysAtCurrentStage": 40,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68775,7 +67101,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-09-22T13:28:42Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 58,
+          "daysAtCurrentStage": 59,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68791,7 +67117,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-05T15:02:30Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 45,
+          "daysAtCurrentStage": 46,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68807,7 +67133,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-11T20:57:40Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 39,
+          "daysAtCurrentStage": 40,
           "undoneActivities": 1,
           "overdueActivities": 0,
           "futureActivities": 1,
@@ -68825,7 +67151,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-12T17:50:10Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 38,
+          "daysAtCurrentStage": 39,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68841,7 +67167,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-14T17:02:09Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 36,
+          "daysAtCurrentStage": 37,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68857,7 +67183,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-13T19:53:58Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 37,
+          "daysAtCurrentStage": 38,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68873,7 +67199,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-10-16T16:44:55Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 34,
+          "daysAtCurrentStage": 35,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68889,13 +67215,29 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-11-12T17:45:09Z",
           "stageEntryDateBasis": "latest stage change",
-          "daysAtCurrentStage": 7,
+          "daysAtCurrentStage": 8,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
           "futureActivityIds": [],
           "nextScheduledDate": null,
           "latestRecordedActivityAt": null
+        },
+        {
+          "dealId": 821,
+          "title": "Increase Alpha",
+          "stageId": 41,
+          "stage": "Parking Lot (Short Term)",
+          "owner": "Charles Solomon",
+          "stageEnteredAt": "2026-11-20T16:34:15Z",
+          "stageEntryDateBasis": "latest stage change",
+          "daysAtCurrentStage": 0,
+          "undoneActivities": 1,
+          "overdueActivities": 0,
+          "futureActivities": 0,
+          "futureActivityIds": [],
+          "nextScheduledDate": "2026-11-20",
+          "latestRecordedActivityAt": "2026-11-19T23:18:58Z"
         },
         {
           "dealId": 872,
@@ -68905,7 +67247,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-11-04T16:40:12Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 15,
+          "daysAtCurrentStage": 16,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -68921,7 +67263,7 @@
           "owner": "Charles Solomon",
           "stageEnteredAt": "2026-11-04T16:41:39Z",
           "stageEntryDateBasis": "creation date proxy",
-          "daysAtCurrentStage": 15,
+          "daysAtCurrentStage": 16,
           "undoneActivities": 0,
           "overdueActivities": 0,
           "futureActivities": 0,
@@ -140813,6 +139155,23 @@
       "limits": [
         "Source-day acceptance counts may restate. Changes to historical buckets are excluded from newly occurred activity.",
         "The final November20 source day is partial; source timezone is unavailable."
+      ],
+      "separatelyObservedRestatements": [
+        {
+          "date": "2026-10-28",
+          "retainedCsv": {
+            "invitationsSent": 73,
+            "invitationsAccepted": 19
+          },
+          "laterAuthenticatedTooltip": {
+            "invitationsSent": 73,
+            "invitationsAccepted": 25
+          },
+          "laterTooltipObservedAt": "2026-11-13T13:41:17.625Z",
+          "retainedCsvCollectedAt": "2026-10-29T05:59:13.568976+00:00",
+          "appliedToRetainedSeries": false,
+          "basis": "The latest view restated six additional acceptances for this historical source-day bucket. This bounded bridge does not reimport the earlier October series; the old CSV value is preserved. Neither vintage establishes exact acceptance-event dates."
+        }
       ]
     },
     "retainedEarlierAccountAnalytics": [
@@ -157359,7 +155718,7 @@
     }
   },
   "referrals": {
-    "snapshotAt": "2026-11-20T05:20:00.568Z",
+    "snapshotAt": "2026-11-20T17:14:04.787Z",
     "timezone": "America/Denver",
     "pipeline": {
       "id": 4,
@@ -157609,7 +155968,7 @@
         "owner": "Christian W",
         "addedAt": "2026-03-04T21:21:08Z",
         "createdAt": "2026-03-04T21:21:08Z",
-        "updatedAt": "2026-11-19T21:16:47Z",
+        "updatedAt": "2026-11-20T11:31:07Z",
         "stageChangedAt": "2026-08-20T01:18:53Z",
         "nextActivityDate": null,
         "lastActivityDate": null,
@@ -158311,7 +156670,7 @@
         "owner": "Christian W",
         "addedAt": "2026-09-30T02:47:29Z",
         "createdAt": "2026-09-30T02:47:29Z",
-        "updatedAt": "2026-11-19T21:06:04Z",
+        "updatedAt": "2026-11-20T16:52:26Z",
         "stageChangedAt": "2026-10-28T02:11:51Z",
         "nextActivityDate": null,
         "lastActivityDate": null,
@@ -160053,7 +158412,7 @@
         "owner": "Charles Solomon",
         "addedAt": "2026-11-18T03:19:16Z",
         "createdAt": "2026-11-18T03:19:16Z",
-        "updatedAt": "2026-11-19T23:00:12Z",
+        "updatedAt": "2026-11-20T12:55:35Z",
         "stageChangedAt": null,
         "nextActivityDate": null,
         "lastActivityDate": "2026-11-19",
@@ -167608,11 +165967,11 @@
     ],
     "coverage": {
       "source": "Referral Pipeline 4 filtered locally from the fully paginated current CRM inventory",
-      "collectedAt": "2026-11-20T05:20:00.568Z",
+      "collectedAt": "2026-11-20T17:14:04.787Z",
       "scope": "All accessible returned Pipeline 4 records and current stage metadata",
       "complete": true,
       "independentSnapshot": false,
-      "parentCRMSnapshotAt": "2026-11-20T05:20:00.568Z",
+      "parentCRMSnapshotAt": "2026-11-20T17:14:04.787Z",
       "parentCRMSource": "crm.json",
       "requestedFilter": {
         "status": "all_not_deleted",
@@ -167639,10 +165998,17 @@
         }
       ],
       "appliedLocalFilter": "pipeline_id == 4",
-      "observedThrough": "2026-11-19",
-      "reportingThrough": "2026-11-18",
+      "observedThrough": "2026-11-20",
+      "reportingThrough": "2026-11-19",
       "currentDayPartial": true,
-      "archiveInclusiveCompletenessVerified": false
+      "archiveInclusiveCompletenessVerified": false,
+      "collectionCompletedAt": "2026-11-20T17:14:04.787Z",
+      "captureClockBasis": "capturedAtUTC is the exact local private-file write clock after the MCP response, not an API event or exact request-return timestamp. Exact first/final request clocks were not retained; recorded tool-clock windows are preserved where available.",
+      "sourceHashes": {
+        "deals_0000.raw.json": "b6dce24b756e88f406f99a109151483649c47a2996eb55f94085b14691bd629c",
+        "deals_0500.raw.json": "d5f314599931b5d7c856bd408d4be6bbf0a3be9b446a796fae3fc1c19a1292c9",
+        "stages.raw.json": "0248065eba1c7d30ae9a14feeca4ed36813a18d16211f94f885989efbfc1e2fe"
+      }
     },
     "automationVerification": {
       "success": false,
@@ -168230,7 +166596,7 @@
       ]
     },
     "mainCRMComparison": {
-      "mainCRMSnapshotAt": "2026-11-20T05:20:00.568Z",
+      "mainCRMSnapshotAt": "2026-11-20T17:14:04.787Z",
       "mainCRMSource": "crm.json",
       "mainCRMReferralRecords": 390,
       "freshReferralIdsNotInMainCRM": [],
@@ -168249,7 +166615,7 @@
       ]
     },
     "notes": [
-      "Current inventory uses the November 19 source census and live stage metadata. Dated referral events retain independently verified evidence and original occurrence dates."
+      "Current inventory uses the November 20 accessible CRM census and captured stage metadata. Its membership is unchanged: only latest-update fields on records 214, 762 and 981 differ. Earlier inventory notes, dated referral events and independent reviews retain their original clocks."
     ],
     "note": "Current inventory contains 390 records, including 104 active, 283 in Graveyard/Newsletter and 3 explicit tests.",
     "legacyCaptureReview": {
@@ -171276,7 +169642,15 @@
       },
       "currentOpportunityStageAvailable": false,
       "basis": "The live stage list shows Parking Lot under stage ID 29. Earlier recorded transitions retain the historical Intro Made label."
-    }
+    },
+    "retainedPriorInventoryNotes": [
+      {
+        "snapshotAt": "2026-11-20T05:20:00.568Z",
+        "notes": [
+          "Current inventory uses the November 19 source census and live stage metadata. Dated referral events retain independently verified evidence and original occurrence dates."
+        ]
+      }
+    ]
   },
   "meetings": {
     "snapshotAt": "2026-11-20T05:19:15.949Z",
@@ -183957,10 +182331,10 @@
     {
       "id": "crm",
       "name": "Pipedrive",
-      "asOf": "2026-11-20T05:20:00.568Z",
-      "checkedAt": "2026-11-19",
+      "asOf": "2026-11-20T17:14:04.787Z",
+      "checkedAt": "2026-11-20T17:14:04.787Z",
       "coverage": {
-        "method": "Configured read-only Pipedrive connection. Full all_not_deleted deal pagination and explicit all-owner done/undone activity pages were exhausted.",
+        "method": "Configured Centripetal Pipedrive read-only MCP. All accessible non-deleted deal pages and explicit user_id=0 done/undone activity pages were exhausted. Independent dated child evidence retains its prior collection clocks.",
         "dealsComplete": true,
         "activitiesComplete": true,
         "earliestDealCreatedDate": "2024-09-11",
@@ -183973,7 +182347,7 @@
           "Charles Solomon": 128,
           "Christian W": 872
         },
-        "reportingThrough": "2026-11-18",
+        "reportingThrough": "2026-11-19",
         "currentDayPartial": true,
         "pagination": {
           "deals": [
@@ -184008,94 +182382,146 @@
               "limit": 500,
               "more_items_in_collection": false
             }
-          ],
-          "leadsInboxActive": [
-            {
-              "start": 0,
-              "limit": 500,
-              "more_items_in_collection": false
-            }
-          ],
-          "leadsInboxArchived": [
-            {
-              "start": 0,
-              "limit": 500,
-              "more_items_in_collection": false
-            }
           ]
         },
         "stageHistorySnapshotAt": "2026-10-15T03:03:19Z",
-        "collectionStartedAt": "2026-11-20T05:19:58.941Z",
-        "collectionCompletedAt": "2026-11-20T05:20:00.568Z",
+        "collectionCompletedAt": "2026-11-20T17:14:04.787Z",
         "allOwnerActivitiesRequested": true,
         "latestBusinessActivityCreatedAt": "2026-11-19T23:36:51Z",
         "latestBusinessActivityCompletedAt": "2026-11-19T23:37:00Z",
-        "observedThrough": "2026-11-19",
-        "currentDayPartialDate": "2026-11-19",
+        "observedThrough": "2026-11-20",
+        "currentDayPartialDate": "2026-11-20",
         "sourceFiles": {
-          "deals_000.json": {
-            "requestStartedAt": "2026-11-20T05:19:59.068Z",
-            "collectedAt": "2026-11-20T05:19:59.693Z",
-            "sha256": "dbdf8f5955200132b6657a603e740d9b2c7a0cb64231013c7d2114b6ab0c7f11"
+          "deals_0000.raw.json": {
+            "endpoint": "deals",
+            "args": {
+              "status": "all_not_deleted",
+              "sort": "id ASC",
+              "start": 0,
+              "limit": 500
+            },
+            "capturedAtUTC": "2026-11-20T17:13:07.089Z",
+            "sha256": "b6dce24b756e88f406f99a109151483649c47a2996eb55f94085b14691bd629c",
+            "rows": 500,
+            "pagination": {
+              "start": 0,
+              "limit": 500,
+              "more_items_in_collection": true,
+              "next_start": 500
+            }
           },
-          "activities_undone_000.json": {
-            "requestStartedAt": "2026-11-20T05:19:59.068Z",
-            "collectedAt": "2026-11-20T05:19:59.731Z",
-            "sha256": "8200567e2b2cd9588050aabad21802c887f02f7cfcb90fc43b714cd106f89a71"
+          "deals_0500.raw.json": {
+            "endpoint": "deals",
+            "args": {
+              "status": "all_not_deleted",
+              "sort": "id ASC",
+              "start": 500,
+              "limit": 500
+            },
+            "requestStartedAtUTC": "2026-11-20T17:13:18Z",
+            "requestReturnedNoLaterThanUTC": "2026-11-20T17:13:35Z",
+            "capturedAtUTC": "2026-11-20T17:13:35.885Z",
+            "sha256": "d5f314599931b5d7c856bd408d4be6bbf0a3be9b446a796fae3fc1c19a1292c9",
+            "rows": 445,
+            "pagination": {
+              "start": 500,
+              "limit": 500,
+              "more_items_in_collection": false
+            }
           },
-          "activities_done_000.json": {
-            "requestStartedAt": "2026-11-20T05:19:59.068Z",
-            "collectedAt": "2026-11-20T05:19:59.772Z",
-            "sha256": "e87be15a0b9132c28caad16a3daf124b354d1d1e07294e03efd98ef6c54a3357"
+          "activities_done_all_0000.raw.json": {
+            "endpoint": "activities",
+            "args": {
+              "done": 1,
+              "user_id": 0,
+              "start": 0,
+              "limit": 500
+            },
+            "capturedAtUTC": "2026-11-20T17:13:48.900Z",
+            "sha256": "2cc62f1f0477e24259739151251a57846c40849719abe3fb6ed18ef21181070f",
+            "rows": 500,
+            "pagination": {
+              "start": 0,
+              "limit": 500,
+              "more_items_in_collection": true,
+              "next_start": 500
+            }
           },
-          "deals_500.json": {
-            "requestStartedAt": "2026-11-20T05:19:59.724Z",
-            "collectedAt": "2026-11-20T05:20:00.094Z",
-            "sha256": "aed0f26aea9656f5b7b64318dbbeb936a2a980eeb0de6cb0ae13d9c10b89166a"
+          "activities_done_all_0500.raw.json": {
+            "endpoint": "activities",
+            "args": {
+              "done": 1,
+              "user_id": 0,
+              "start": 500,
+              "limit": 500
+            },
+            "capturedAtUTC": "2026-11-20T17:14:04.646Z",
+            "sha256": "20eb30672981f67bd410c723938194a3d383cffa10893df1eef215071392d6a2",
+            "rows": 160,
+            "pagination": {
+              "start": 500,
+              "limit": 500,
+              "more_items_in_collection": false
+            }
           },
-          "activities_done_500.json": {
-            "requestStartedAt": "2026-11-20T05:19:59.782Z",
-            "collectedAt": "2026-11-20T05:20:00.119Z",
-            "sha256": "75288c472b8054feb79fd0be314c6585f4f752424e0d051159f2e3d6518dffdc"
+          "activities_undone_all_0000.raw.json": {
+            "endpoint": "activities",
+            "args": {
+              "done": 0,
+              "user_id": 0,
+              "start": 0,
+              "limit": 500
+            },
+            "capturedAtUTC": "2026-11-20T17:14:04.787Z",
+            "sha256": "a7be06e85f940ccca98e83d431182d97b92baeb3ae5f94770f14a7a4879b1d56",
+            "rows": 362,
+            "pagination": {
+              "start": 0,
+              "limit": 500,
+              "more_items_in_collection": false
+            }
           },
-          "activity_types.json": {
-            "requestStartedAt": "2026-11-20T05:20:00.123Z",
-            "collectedAt": "2026-11-20T05:20:00.209Z",
-            "sha256": "7f451e4a1472f33a3b9ac2bd75b40d8238f5da2fbe9f53135c98f07bcc416cc1"
+          "users.raw.json": {
+            "endpoint": "users",
+            "args": {},
+            "requestStartedAtUTC": "2026-11-20T17:13:18Z",
+            "requestReturnedNoLaterThanUTC": "2026-11-20T17:13:35Z",
+            "capturedAtUTC": "2026-11-20T17:13:36.418Z",
+            "sha256": "1027b691bba5ac8ef7973c4ca7001d26b4afab2119e272aa4e8c57c9e418a4f2",
+            "rows": 5,
+            "pagination": null
           },
-          "pipelines.json": {
-            "requestStartedAt": "2026-11-20T05:20:00.123Z",
-            "collectedAt": "2026-11-20T05:20:00.267Z",
-            "sha256": "6ef59a52dcfb342d1f5d8ee078597d55e07e4ede70f6fc4f52ea9428fd5db3a5"
+          "pipelines.raw.json": {
+            "endpoint": "pipelines",
+            "args": {},
+            "requestStartedAtUTC": "2026-11-20T17:13:18Z",
+            "requestReturnedNoLaterThanUTC": "2026-11-20T17:13:35Z",
+            "capturedAtUTC": "2026-11-20T17:13:36.476Z",
+            "sha256": "33da7b6bf60d086ccb54aa21c9a20022f957eca3840812430ca28b695b233449",
+            "rows": 3,
+            "pagination": {
+              "start": 0,
+              "limit": 100,
+              "more_items_in_collection": false
+            }
           },
-          "stages.json": {
-            "requestStartedAt": "2026-11-20T05:20:00.123Z",
-            "collectedAt": "2026-11-20T05:20:00.266Z",
-            "sha256": "af97c4c594ad5a806e8dcb181da272914a71ab760b8415429dfa69e69db6348e"
-          },
-          "users.json": {
-            "requestStartedAt": "2026-11-20T05:20:00.123Z",
-            "collectedAt": "2026-11-20T05:20:00.268Z",
-            "sha256": "ebcea7b7ef484b80b3cbf01e949c8c80a6e1c6144d813d6d422517d52a500080"
-          },
-          "deal_fields_000.json": {
-            "requestStartedAt": "2026-11-20T05:20:00.270Z",
-            "collectedAt": "2026-11-20T05:20:00.384Z",
-            "sha256": "fed9f9251f13c2890b410c0b397a6a2dd43fd5b51eeafa88b375ea504dbb42d4"
-          },
-          "leads_inbox_archived_000.json": {
-            "requestStartedAt": "2026-11-20T05:20:00.385Z",
-            "collectedAt": "2026-11-20T05:20:00.509Z",
-            "sha256": "1f2f34933e26f812aec1a820848d368238f488fcb6194a5f3c2beaa5714b0c0b"
-          },
-          "leads_inbox_active_000.json": {
-            "requestStartedAt": "2026-11-20T05:20:00.385Z",
-            "collectedAt": "2026-11-20T05:20:00.567Z",
-            "sha256": "1f2f34933e26f812aec1a820848d368238f488fcb6194a5f3c2beaa5714b0c0b"
+          "stages.raw.json": {
+            "endpoint": "stages",
+            "args": {},
+            "requestStartedAtUTC": "2026-11-20T17:13:18Z",
+            "requestReturnedNoLaterThanUTC": "2026-11-20T17:13:35Z",
+            "capturedAtUTC": "2026-11-20T17:13:36.515Z",
+            "sha256": "0248065eba1c7d30ae9a14feeca4ed36813a18d16211f94f885989efbfc1e2fe",
+            "rows": 27,
+            "pagination": {
+              "start": 0,
+              "limit": 100,
+              "more_items_in_collection": false
+            }
           }
         },
         "atomicSnapshot": false,
-        "baselineSnapshotSha256": "0c37a6721ec226a9f1dc281aba8062b8f661a42afe536c7239d18fb268bfe0ee",
+        "baselineSnapshotSha256": "d0e50b5cb5117c61aabbf2ded5f2d8c4434637590ec881251a3ec9d6b99c860f",
         "archiveCoverage": {
           "archivedRecordsReturned": 0,
           "nonArchivedRecordsReturned": 945,
@@ -184103,14 +182529,22 @@
           "dedicatedArchiveEndpointComplete": true,
           "dedicatedArchiveEndpointCount": 0,
           "dedicatedArchiveCheckedAt": "2026-11-20T05:17:02.831Z",
-          "note": "The current non-archived and dedicated archived queries were separately exhausted."
+          "note": "Fresh accessible non-deleted census returned no archived records; the dedicated archive endpoint retains its separately dated older check.",
+          "currentAccessibleCensusAt": "2026-11-20T17:14:04.787Z"
         },
         "freshSelectedHistorySnapshotAt": "2026-11-20T05:17:35.071Z",
-        "freshSelectedHistoryDealCount": 195
+        "freshSelectedHistoryDealCount": 195,
+        "collectionStartedAtNotRetained": true,
+        "captureWriteSpanStart": "2026-11-20T17:13:07.089Z",
+        "captureClockBasis": "capturedAtUTC is the exact local private-file write clock after the MCP response, not an API event or exact request-return timestamp. Exact first/final request clocks were not retained; recorded tool-clock windows are preserved where available.",
+        "freshSelectedHistoryDealCountBasis": "Latest independently dated refresh batch; not the merged retained register.",
+        "freshSelectedHistoryLatestBatchDealCount": 195,
+        "retainedSelectedHistoryDealCount": 277,
+        "retainedSelectedHistoryCoverageBasis": "Merged retained histories keep their original per-deal collection clocks; the latest batch count and completion clock are separately retained."
       },
-      "method": "Read-only Pipedrive full deal and all-owner done/undone activity pages",
-      "note": "Latest update counts describe distinct records at this snapshot. Backfilled task completion and stage positions require separate occurrence evidence.",
-      "status": "Current accessible complete CRM inventory"
+      "method": "Read-only Centripetal Pipedrive full non-deleted deal and explicit all-owner done/undone activity pages",
+      "note": "Full accessible deal/activity inventory refreshed; six existing deal records changed and stage 46 was added without current deal membership. Latest-update counts can decrease in historical selections when a record receives a newer edit. Dedicated archive/Inbox, stage-history, mailbox and commercial reviews retain their own earlier clocks.",
+      "status": "Current accessible complete deal/activity inventory"
     },
     {
       "id": "video",
@@ -184227,15 +182661,15 @@
     {
       "id": "referrals",
       "name": "Referrals",
-      "asOf": "2026-11-20T05:20:00.568Z",
-      "checkedAt": "2026-11-19",
+      "asOf": "2026-11-20T17:14:04.787Z",
+      "checkedAt": "2026-11-20T17:14:04.787Z",
       "coverage": {
         "source": "Referral Pipeline 4 filtered locally from the fully paginated current CRM inventory",
-        "collectedAt": "2026-11-20T05:20:00.568Z",
+        "collectedAt": "2026-11-20T17:14:04.787Z",
         "scope": "All accessible returned Pipeline 4 records and current stage metadata",
         "complete": true,
         "independentSnapshot": false,
-        "parentCRMSnapshotAt": "2026-11-20T05:20:00.568Z",
+        "parentCRMSnapshotAt": "2026-11-20T17:14:04.787Z",
         "parentCRMSource": "crm.json",
         "requestedFilter": {
           "status": "all_not_deleted",
@@ -184262,13 +182696,20 @@
           }
         ],
         "appliedLocalFilter": "pipeline_id == 4",
-        "observedThrough": "2026-11-19",
-        "reportingThrough": "2026-11-18",
+        "observedThrough": "2026-11-20",
+        "reportingThrough": "2026-11-19",
         "currentDayPartial": true,
-        "archiveInclusiveCompletenessVerified": false
+        "archiveInclusiveCompletenessVerified": false,
+        "collectionCompletedAt": "2026-11-20T17:14:04.787Z",
+        "captureClockBasis": "capturedAtUTC is the exact local private-file write clock after the MCP response, not an API event or exact request-return timestamp. Exact first/final request clocks were not retained; recorded tool-clock windows are preserved where available.",
+        "sourceHashes": {
+          "deals_0000.raw.json": "b6dce24b756e88f406f99a109151483649c47a2996eb55f94085b14691bd629c",
+          "deals_0500.raw.json": "d5f314599931b5d7c856bd408d4be6bbf0a3be9b446a796fae3fc1c19a1292c9",
+          "stages.raw.json": "0248065eba1c7d30ae9a14feeca4ed36813a18d16211f94f885989efbfc1e2fe"
+        }
       },
-      "method": "Pipeline 4 selected locally from the same full CRM census",
-      "note": "Current stages describe inventory. Verified dated introductions and Charles follow-ups retain separate source identities.",
+      "method": "Pipeline 4 selected locally from the same fully paginated accessible CRM census",
+      "note": "Current Referral inventory refreshed from the same CRM census: three latest-update fields changed; all 104 active records, 283 Graveyard/Newsletter records and three explicit tests retain their membership. Independently dated introductions, follow-ups and reviews retain their source clocks.",
       "status": "Current accessible Referral Pipeline inventory"
     },
     {

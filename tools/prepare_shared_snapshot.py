@@ -117,6 +117,39 @@ def merge_review_rows(source, previous, child, identity):
             if prior is None or review_stamp(row)>review_stamp(prior):selected[ident]=copy.deepcopy(row)
     return list(selected.values())
 
+def merge_invitation_restatements(source, previous):
+    """Keep independently dated bucket versions when the invitation parent changes."""
+    selected = {}
+    for container in (source, previous):
+        review = (container.get('waalaxy') or {}).get('invitationImportReview') or {}
+        records = review.get('separatelyObservedRestatements', [])
+        assert isinstance(records, list), 'Invitation restatements must be a record list'
+        for row in records:
+            assert isinstance(row, dict), 'Invitation restatement must be a record'
+            day = row.get('date')
+            assert isinstance(day, str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}', day), 'Invitation restatement requires a source date'
+            assert datetime.fromisoformat(day).date().isoformat() == day, 'Invalid invitation restatement source date'
+            clocks = {}
+            for field in ('laterTooltipObservedAt', 'retainedCsvCollectedAt'):
+                value = row.get(field)
+                assert isinstance(value, str) and re.search(r'(?:Z|[+-]\d{2}:\d{2})$', value), 'Invitation restatement requires independent collection clocks'
+                clock = datetime.fromisoformat(value.replace('Z', '+00:00'))
+                assert clock.utcoffset() is not None, 'Invitation restatement clock requires a timezone offset'
+                clocks[field] = clock
+            assert clocks['laterTooltipObservedAt'] >= clocks['retainedCsvCollectedAt'], 'Invitation restatement predates the retained CSV'
+            for field in ('retainedCsv', 'laterAuthenticatedTooltip'):
+                values = row.get(field)
+                assert isinstance(values, dict) and set(values) == {'invitationsSent', 'invitationsAccepted'}, 'Invitation restatement requires both source counts'
+                assert all(type(value) is int and value >= 0 for value in values.values()), 'Invitation restatement counts must be nonnegative integers'
+            assert row.get('appliedToRetainedSeries') is False, 'Separate invitation restatements do not replace retained date buckets'
+            assert isinstance(row.get('basis'), str) and row['basis'].strip(), 'Invitation restatement needs its source interpretation'
+            identity = (day, clocks['laterTooltipObservedAt'])
+            if identity in selected:
+                assert row == selected[identity], 'Conflicting invitation restatements share a source date and observation clock'
+            else:
+                selected[identity] = copy.deepcopy(row)
+    return [selected[key] for key in sorted(selected)]
+
 def preserve_newer_shared_sources(source, previous, publication_approved=False):
     """Older local inputs must not erase newer collaborator source revisions."""
     result=copy.deepcopy(source)
@@ -169,6 +202,12 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
                 'status':'Current independently dated invitation export',
                 'method':'Retained invitation CSV date buckets',
                 'note':'Invitation date buckets retain their own collection date. Source timezone, exact acceptance-event dates and matched invitation cohorts are unverified; message/reply actions have separate coverage.'}
+    # An invitation-family winner can omit earlier independently observed
+    # versions. Merge from both original inputs, preserving every source clock;
+    # these observations never modify daily rows or become new acceptance events.
+    restatements = merge_invitation_restatements(source, previous)
+    if restatements:
+        new_w.setdefault('invitationImportReview', {})['separatelyObservedRestatements'] = restatements
     if old_w.get('sheetSubset') and old_w.get('sheetSubsetCollectedAt','')>new_w.get('sheetSubsetCollectedAt',''):
         for key in ('sheetSubset','sheetSubsetCollectedAt','sheetSubsetAccountVerification','sheetSubsetUpstreamSyncAt'):
             if key in old_w:new_w[key]=copy.deepcopy(old_w[key])

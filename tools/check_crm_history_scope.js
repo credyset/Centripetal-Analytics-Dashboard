@@ -1,0 +1,37 @@
+'use strict';
+// A merged history register must not borrow the latest subset's collection clock.
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const root=path.resolve(__dirname,'..');
+const data=JSON.parse(fs.readFileSync(process.argv[2]||path.join(root,'data/shared-dashboard.json'),'utf8'));
+const source=fs.readFileSync(path.join(root,'app.js'),'utf8').replace(/init\(\);\s*$/,'');
+const ctx=vm.createContext({Intl,Date,URL,setTimeout:()=>0,clearTimeout:()=>{},document:{}});
+vm.runInContext(source+'\nglobalThis.probe={S,crmHistoryReview,shortTimestamp,sourceCoverageLabel};globalThis.tables=[];table=(id,title,rows,cols,note)=>{tables.push({id,title,rows,note});return `<section>${title} ${note}</section>`;};',ctx);
+const p=ctx.probe,original=JSON.stringify(data.crm.assessment.freshSelectedDealHistory);
+p.S.data=data;p.S.start='2026-09-01';p.S.end='2026-11-20';
+const c=data.crm,h=c.assessment.freshSelectedDealHistory;
+const retained=new Set(h.dealIdsReviewed.map(String)).size,latest=new Set(h.latestRefreshDealIds.map(String)).size;
+assert(retained>=latest&&latest>=2,'Fixture needs a retained register and a smaller dated batch');
+const html=p.crmHistoryReview(c,c);
+assert(html.includes(`${retained} deal histories in the merged retained register.`));
+assert(html.includes(`Latest batch: ${latest} deal histories;`));
+assert(html.includes(p.shortTimestamp(h.latestRefreshCompletedAt)));
+assert(html.includes('Older histories retain their separate collection clocks.'));
+assert(!html.includes(`${retained} freshly reviewed histories`));
+assert.equal(JSON.stringify(h),original,'Rendering changed source event or collection dates');
+let table=ctx.tables.find(r=>r.id==='crm-fresh-stage-events');
+assert(table.title==='Retained selected-deal stage changes');
+const expected=h.events.filter(e=>e.field==='stage_id'&&c.deals.some(d=>String(d.id)===String(e.dealId))&&e.timestamp.slice(0,10)>='2026-09-02'&&e.timestamp.slice(0,10)<='2026-11-19');
+for(const e of expected)assert(table.rows.some(r=>r.dealId===e.dealId&&r.timestamp===e.timestamp),'A retained source event disappeared');
+// Dynamic subset size and an independently later completion clock must drive copy.
+const fixture=JSON.parse(JSON.stringify(c));fixture.assessment.freshSelectedDealHistory.latestRefreshDealIds=h.latestRefreshDealIds.slice(0,2);fixture.assessment.freshSelectedDealHistory.latestRefreshCompletedAt='2026-11-20T17:00:00Z';
+const dynamic=p.crmHistoryReview(fixture,fixture);
+assert(dynamic.includes('Latest batch: 2 deal histories;'));
+assert(dynamic.includes(p.shortTimestamp('2026-11-20T17:00:00Z')));
+assert(!dynamic.includes(`Latest batch: ${latest} deal histories;`));
+delete fixture.assessment.freshSelectedDealHistory.latestRefreshCompletedAt;
+const undated=p.crmHistoryReview(fixture,fixture);
+assert(undated.includes('No separately dated latest batch is retained.'));
+const coverage=p.sourceCoverageLabel({retainedSelectedHistoryDealCount:retained,freshSelectedHistoryLatestBatchDealCount:latest,freshSelectedHistorySnapshotAt:h.latestRefreshCompletedAt});
+assert(coverage.includes(`${retained} retained merged histories; latest separately dated batch ${latest}`));
+assert(coverage.includes(p.shortTimestamp(h.latestRefreshCompletedAt)));
+console.log(`CRM history scope: merged ${retained} / latest ${latest}, dynamic subset clocks, event preservation and missing-batch-clock cases passed.`);

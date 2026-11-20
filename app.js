@@ -38,6 +38,7 @@ function sourceCoverageLabel(c){
   else if(c.earliestDealCreatedDate)parts.push(`Current CRM inventory · earliest retained deal created ${shortDate(c.earliestDealCreatedDate)}`);
   if(c.reportingThrough)parts.push(`Complete reporting days through ${shortDate(c.reportingThrough)}`);
   if(c.observedThrough)parts.push(`Observed through ${shortDate(c.observedThrough)}${c.currentDayPartial?' · latest day partial':''}`);
+  if(c.retainedSelectedHistoryDealCount!==undefined)parts.push(`Stage history: ${num(c.retainedSelectedHistoryDealCount)} retained merged histories; latest separately dated batch ${num(c.freshSelectedHistoryLatestBatchDealCount)}${c.freshSelectedHistorySnapshotAt?` through ${shortTimestamp(c.freshSelectedHistorySnapshotAt)}`:''}; earlier history clocks retained`);
   return parts.join(' · ')||c.note||'Coverage not supplied';
 }
 function link(url,text){try{const u=new URL(url);if(!['http:','https:'].includes(u.protocol))return esc(text);}catch{return esc(text);}return `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(text)} ↗</a>`;}
@@ -298,12 +299,24 @@ function waalaxyAccountEvidence(w){
   return html+panel('Current account source limits',notes(a.limits),'TIMEZONE NOT SUPPLIED');
 }
 
+function waalaxyInvitationRestatements(w){
+  const records=w.invitationImportReview?.separatelyObservedRestatements||[];if(!records.length)return '';
+  const comparisons=records.map(row=>{
+    const csv=row.retainedCsv,tooltip=row.laterAuthenticatedTooltip,current=(w.daily||[]).find(day=>day.date===row.date);
+    const retained=current?.invitationsSent===csv.invitationsSent&&current?.invitationsAccepted===csv.invitationsAccepted;
+    const change=tooltip.invitationsAccepted-csv.invitationsAccepted,delta=`${change>0?'+':''}${num(change)}`;
+    return `${shortDate(row.date)} source-date bucket: ${retained?'the displayed historical CSV':'the earlier CSV version'} has ${num(csv.invitationsSent)} Sent / ${num(csv.invitationsAccepted)} Accepted, collected ${shortTimestamp(row.retainedCsvCollectedAt)}. Charles’s later authenticated tooltip reported ${num(tooltip.invitationsSent)} Sent / ${num(tooltip.invitationsAccepted)} Accepted, observed ${shortTimestamp(row.laterTooltipObservedAt)}. ${delta} Accepted is a retrospective source-bucket restatement, not new acceptance events in the selected period.${retained?` The displayed historical CSV remains ${num(csv.invitationsAccepted)} Accepted.`:''}`;
+  });
+  return panel('Historical invitation bucket versions',notes([...comparisons,'This fixed historical comparison retains each original collection clock and does not change selected invitation counts. Exact acceptance-event dates remain unverified.']),'SEPARATELY DATED SOURCE VERSIONS');
+}
+
 function waalaxy(){const w=S.data.waalaxy||{},i=selectedInvitations(),m=w.metrics||{},count=(...keys)=>{for(const k of keys)if(m[k]!==undefined)return m[k];return null;};let html=coverageBanner(i.all.length?`<strong>Daily invitation source-date buckets.</strong> ${esc(range(i.coverage))}${i.coverage?.currentDayPartial?' (last source day partial)':''}. Selected totals use retained source-day buckets. Accepted buckets can be restated later; exact acceptance-event dates, source timezone and matched invitation cohorts are unverified. The separate Home aggregate is not added to this series.`:'<strong>Invitation daily analytics needed.</strong> Historical person flags and a fixed current-month aggregate do not reconstruct actions in the selected period.');
   if(i.sourceIssue)html+=coverageBanner('<strong>Invitation source-day rows need review.</strong> Duplicate or invalid days prevent verified period totals.');
   html+=kpis([[num(i.sent),'Sent · export date buckets','Selected retained source dates'],[num(i.accepted),'Accepted · export date buckets','Acceptance-event dates and cohort semantics unverified'],[num(i.rows.length),'Retained daily buckets','Explicit zeros retained; missing dates unavailable'],['—','Dated messages / replies','Unavailable in invitation history']]);
   if(!i.rows.length)html+=empty('No retained invitation rows in this selection.','There are no invitation day buckets for these dates. Absence is not converted into zero activity, and historical prospect flags are kept separate.','Choose a period with retained invitation rows or import a complete Charles-only campaign export.');
   html+=table('waalaxy-invitations','Invitation source-date register',i.rows,[{key:'date',label:'Source date bucket',render:shortDate},{key:'invitationsSent',label:'Sent',render:num},{key:'invitationsAccepted',label:'Accepted · source date bucket',render:num}],`${i.coverage?.sourceDateBasis||'Source-date buckets; timezone and exact acceptance-event dates unavailable'}. ${i.coverage?.complete?'Retained sources cover their stated combined window.':'Invitation coverage is incomplete.'} ${i.coverage?.zeroActivityDatesConfirmed?'Explicit source zero rows are retained.':'Unreported days are not filled with zero.'} ${i.coverage?.currentDayPartial?`The last source day (${shortDate(i.coverage.end)}) is partial.`:''} Accepted buckets may be revised retrospectively and do not establish exact acceptance-event dates. No matched-cohort rate or message/reply events are inferred.`);
   const importReview=w.invitationImportReview;if(importReview){const latest=importReview.latestExportSummary||{},comparison=importReview.homeReconciliation,tooltips=importReview.sourceType==='authenticated_home_chart_tooltips';html+=panel('Latest invitation collection and overlap',notes([`${latest.sourceDays??'Unknown'} source-date buckets from ${shortDate(latest.start)} through ${shortDate(latest.end)}: ${num(latest.sent)} Sent / ${num(latest.accepted)} Accepted. Earlier retained days have separate provenance.`,tooltips?'November buckets and the October bridge came from Charles’s authenticated chart. The earlier CSV series through October 28 retains its original values.':`The latest CSV replaced ${(importReview.revisedDateBuckets||[]).length} overlapping date buckets. Differences are excluded from new acceptance events.`,invitationHomeComparisonNote(w,comparison),tooltips?'The tooltip readings verify the current account and source dates. The source timezone is unknown.':'The CSV account is owner-attributed and its timezone is unavailable.']),'SOURCE-DATE RECONCILIATION');}
+  html+=waalaxyInvitationRestatements(w);
   html+=waalaxyAccountEvidence(w);
   html+=waalaxySheetSubset(w)+waalaxySelectedExportReview(w)+waalaxyReplyContext(w);
   html+=heading('Historical prospect reference','People with lifetime flags remain distinct from period event counts.');
@@ -353,7 +366,7 @@ function content(){
 }
 
 function supplementaryContentEvidence(c){
-  const body=companyContentEvidence(c)+publicContentEvidence(c)+panel('Retained source context',notes(c.notes));
+  const body=companyContentEvidence(c)+publicContentEvidence(c)+panel('Historical source context','<div class="definition-note">These notes retain the wording and dates of earlier collections. “Current” refers to those earlier collection dates. Use the dated creator and company evidence above for the latest retained source coverage.</div>'+notes(c.notes),'EARLIER COLLECTIONS');
   return `<details class="activity-review-details"><summary>Supplementary company-page and historical public context</summary>${body}</details>`;
 }
 
@@ -471,8 +484,9 @@ function crmHistoryReview(c,all){
   const fresh=c.assessment?.freshSelectedDealHistory;
   if(fresh){
     const freshEvents=(fresh.events||[]).filter(e=>e.field==='stage_id'&&ids.has(String(e.dealId))&&inPeriod(e.timestamp)).map(e=>({...e,dealTitle:lookup.get(String(e.dealId))?.title||`Deal ${e.dealId}`}));
-    html+=coverageBanner(`<strong>Fresh selected history review · ${esc(shortTimestamp(fresh.collectedAt))}.</strong> ${num(fresh.dealIdsReviewed?.length)} selected deal histories; completed returned flow pages. This overlaps the earlier scoped review and is not account-wide progression.`,false);
-    html+=table('crm-fresh-stage-events','Fresh selected-deal stage changes',freshEvents,[{key:'timestamp',label:'Changed',render:shortTimestamp},{key:'dealTitle',label:'Deal',render:(v,r)=>link(`https://centripetaladvisors.pipedrive.com/deal/${encodeURIComponent(r.dealId)}`,v)},{key:'oldStageName',label:'From stage'},{key:'newStageName',label:'To stage'},{key:'changeSource',label:'Change source'}],`Selected-period stage-field events in ${num(fresh.dealIdsReviewed?.length)} freshly reviewed histories; value edits are excluded. These may duplicate older retained history rows; do not sum the two tables. Stage changes do not independently establish qualification, attendance, acceptance or wins.`);
+    const retainedCount=new Set((fresh.dealIdsReviewed||[]).map(String)).size,latestCount=new Set((fresh.latestRefreshDealIds||[]).map(String)).size,latestBasis=fresh.latestRefreshCompletedAt&&latestCount?`Latest batch: ${num(latestCount)} deal histories; completed returned flow pages through ${shortTimestamp(fresh.latestRefreshCompletedAt)}.`:'No separately dated latest batch is retained.';
+    html+=coverageBanner(`<strong>Retained selected-deal history.</strong> ${num(retainedCount)} deal histories in the merged retained register. ${esc(latestBasis)} Older histories retain their separate collection clocks. This overlaps the earlier scoped review and is not account-wide progression.`,false);
+    html+=table('crm-fresh-stage-events','Retained selected-deal stage changes',freshEvents,[{key:'timestamp',label:'Changed',render:shortTimestamp},{key:'dealTitle',label:'Deal',render:(v,r)=>link(`https://centripetaladvisors.pipedrive.com/deal/${encodeURIComponent(r.dealId)}`,v)},{key:'oldStageName',label:'From stage'},{key:'newStageName',label:'To stage'},{key:'changeSource',label:'Change source'}],`Selected-period stage-field events in a merged ${num(retainedCount)}-deal register. ${latestBasis} Older rows keep their original collection clocks; value edits are excluded. These may duplicate older retained history rows; do not sum the two tables. Stage changes do not independently establish qualification, attendance, acceptance or wins.`);
   }
   const diff=c.assessment.snapshotChanges;
   if(diff?.available)html+=panel('Changes since the previous retained read',notes([`All-CRM comparison: ${shortTimestamp(diff.baselineAt)} to ${shortTimestamp(diff.currentAt)}.`,`${num(diff.newDealIds?.length)} newly observed deal IDs; ${num(diff.changedDeals?.length)} records with changed retained fields; ${num(diff.newActivityIds?.length)} new activity IDs; ${num(diff.changedActivities?.length)} changed activities.`,diff.note||'Snapshot differences do not reconstruct every intervening event.']),'ALL CRM · SNAPSHOT COMPARISON');
@@ -728,12 +742,55 @@ function selectedVideoSourceAppearances(v){
   const contained=valid&&inPeriod(review.firstAppearedAfter)&&inPeriod(review.firstAppearedBy);
   return {review,valid,contained,value:contained?minimum:null};
 }
+function selectedVideoSourceAppearanceRefresh(v){
+  const fresh=v.sourceAppearanceRefresh,unavailable=()=>({fresh,valid:false,profiles:null,occurrences:null});
+  const stamp=value=>typeof value==='string'&&/(?:Z|[+-]\d{2}:\d{2})$/i.test(value)&&Number.isFinite(Date.parse(value))?Date.parse(value):null;
+  const count=value=>Number.isInteger(value)&&value>=0,profile=row=>String(row.profileId||row.id||'').normalize('NFKC').trim().toLowerCase();
+  const normalized=value=>String(value||'').normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]/gu,''),identity=row=>JSON.stringify([profile(row),normalized(row.company),normalized(row.contact)]);
+  if(!fresh||fresh.appliesToSnapshotAt!==v.snapshotAt||fresh.currentHeadMatchesLiveRows!==true||fresh.stableIdentityComparisonVerified!==true||fresh.revisionComparisonComplete!==true||!Array.isArray(fresh.intervals)||!fresh.intervals.length||!Array.isArray(fresh.records)||!Array.isArray(v.rows))return unavailable();
+  const pairs=new Map();
+  for(const row of fresh.intervals){
+    if(!row||typeof row!=='object')return unavailable();
+    const after=stamp(row.firstAppearedAfter),by=stamp(row.firstAppearedBy),baseline=String(row.baselineRevisionId||''),later=String(row.laterRevisionId||'');
+    if(after===null||by===null||after>=by||!baseline||!later||baseline===later||!['newStableIdentities','addedRowOccurrences','removedRowOccurrences'].every(key=>count(row[key]))||row.removedRowOccurrences!==0||row.addedRowOccurrences<row.newStableIdentities)return unavailable();
+    const key=JSON.stringify([baseline,later]),signature=JSON.stringify([after,by,row.newStableIdentities,row.addedRowOccurrences,row.removedRowOccurrences]);
+    if(pairs.has(key)){if(pairs.get(key).signature!==signature)return unavailable();continue;}
+    pairs.set(key,{...row,after,by,baseline,later,signature,records:new Map()});
+  }
+  const intervals=[...pairs.values()].sort((a,b)=>a.after-b.after),first=intervals[0],last=intervals.at(-1),bounds=new Map(),revisionClocks=new Map();
+  for(let i=0;i<intervals.length;i++){
+    const row=intervals[i],previous=intervals[i-1];
+    // Adjacent bounds may meet; overlapping, disconnected or conflicting
+    // revision chains cannot establish independent additions.
+    if(previous&&(previous.by!==row.after||previous.later!==row.baseline))return unavailable();
+    for(const [id,clock] of [[row.baseline,row.after],[row.later,row.by]]){if(revisionClocks.has(id)&&revisionClocks.get(id)!==clock)return unavailable();revisionClocks.set(id,clock);}
+    const key=JSON.stringify([row.after,row.by]);if(bounds.has(key))return unavailable();bounds.set(key,row);
+  }
+  if(String(fresh.baselineRevisionId)!==first.baseline||String(fresh.laterRevisionId)!==last.later||String(fresh.currentRevisionId)!==last.later||stamp(fresh.firstAppearedAfter)!==first.after||stamp(fresh.firstAppearedBy)!==last.by||stamp(fresh.currentRevisionAt)!==last.by)return unavailable();
+  const current=new Map();for(const row of v.rows){if(!row||!Number.isInteger(row.sourceRow)||current.has(row.sourceRow))return unavailable();current.set(row.sourceRow,row);}
+  const records=new Map();
+  for(const row of fresh.records){
+    if(!row||typeof row!=='object')return unavailable();
+    const interval=bounds.get(JSON.stringify([stamp(row.firstAppearedAfter),stamp(row.firstAppearedBy)])),key=identity(row),source=current.get(row.currentSourceRow);
+    if(!interval||!profile(row)||!normalized(row.company)||!normalized(row.contact)||!source||identity(source)!==key||!count(row.recordOccurrencesAdded)||row.recordOccurrencesAdded===0)return unavailable();
+    const signature=JSON.stringify([interval.after,interval.by,row.currentSourceRow,row.recordOccurrencesAdded]);
+    if(records.has(key)){if(records.get(key).signature!==signature)return unavailable();continue;}
+    const record={row,signature,interval};records.set(key,record);interval.records.set(key,record);
+  }
+  for(const interval of intervals){if(interval.records.size!==interval.newStableIdentities||sum([...interval.records.values()].map(record=>record.row),'recordOccurrencesAdded')>interval.addedRowOccurrences)return unavailable();}
+  const added=sum(intervals,'addedRowOccurrences'),allProfiles=new Set([...records.values()].map(record=>profile(record.row)));
+  if(!['baselineValidSourceRows','laterValidSourceRows','currentValidSourceRows','retainedPriorRowOccurrences','newStableSourceRecordsMinimum','newUniqueProfilesMinimum','rowOccurrencesAdded','extraOccurrencesBeyondDistinctNewIdentities','sourceRecordsRemoved'].every(key=>count(fresh[key]))||fresh.sourceRecordsRemoved!==0||fresh.retainedPriorRowOccurrences!==fresh.baselineValidSourceRows||fresh.laterValidSourceRows!==fresh.baselineValidSourceRows+added||fresh.currentValidSourceRows!==fresh.laterValidSourceRows||fresh.currentValidSourceRows!==v.rows.length||fresh.newStableSourceRecordsMinimum!==records.size||fresh.newUniqueProfilesMinimum!==allProfiles.size||fresh.rowOccurrencesAdded!==added||fresh.extraOccurrencesBeyondDistinctNewIdentities!==added-records.size)return unavailable();
+  const included=intervals.filter(row=>inPeriod(row.firstAppearedAfter)&&inPeriod(row.firstAppearedBy)),selectedProfiles=new Set(included.flatMap(interval=>[...interval.records.values()].map(record=>profile(record.row))));
+  // Existing identities can gain extra row occurrences. Their interval counts
+  // are retained separately from the keyed first-appearance identity records.
+  return {fresh,valid:true,profiles:selectedProfiles.size,occurrences:sum(included,'addedRowOccurrences')};
+}
 function videoSourceAppearanceEvidence(v){
   const fresh=v.sourceAppearanceRefresh;
-  if(fresh&&fresh.appliesToSnapshotAt===v.snapshotAt&&fresh.currentHeadMatchesLiveRows===true&&fresh.stableIdentityComparisonVerified===true){
-    const intervals=(fresh.intervals||[]).filter(row=>row.newStableIdentities>0&&inPeriod(row.firstAppearedAfter)&&inPeriod(row.firstAppearedBy));
-    const profiles=sum(intervals,'newStableIdentities'),occurrences=sum(intervals,'addedRowOccurrences');
-    return panel('First appearances in the worksheet',`<div class="funnel-row"><span>Distinct profiles first observed<small>Verified revision intervals fully inside the selection</small></span><strong>${profiles?`≥${num(profiles)}`:'Not measured'}</strong></div><div class="definition-note">${profiles?`${num(occurrences)} row occurrences were added across the included revision intervals.`:'No positive lower bound is established for this selection.'} These are first appearances between revisions. Exact row creation and message activity have separate evidence.</div>`,'BOUNDED SOURCE EVIDENCE');
+  if(fresh){
+    const selected=selectedVideoSourceAppearanceRefresh(v),profiles=selected.profiles,occurrences=selected.occurrences;
+    const explanation=!selected.valid?'The first-appearance minimum is unavailable. Retained revision intervals or source identities are inconsistent or incompatible with the current inventory.':profiles?`${num(occurrences)} row occurrences were added across the included revision intervals.`:'No positive lower bound is established for this selection.';
+    return panel('First appearances in the worksheet',`<div class="funnel-row"><span>Distinct profiles first observed<small>Verified revision intervals fully inside the selection</small></span><strong>${profiles?`≥${num(profiles)}`:'Not measured'}</strong></div><div class="definition-note">${explanation} These are first appearances between revisions. Exact row creation and message activity have separate evidence.</div>`,'BOUNDED SOURCE EVIDENCE');
   }
   const selected=selectedVideoSourceAppearances(v),review=selected.review;if(!review)return '';
   const explanation=!selected.valid?'The retained comparison is incomplete or incompatible with the current inventory; no selected-period minimum is reported.':selected.contained?'The entire verified appearance interval falls within the selected Mountain reporting dates. This is a confirmed source-record minimum; complete period addition coverage remains unknown.':'The selected dates do not contain the entire verified appearance interval, so the selected-period minimum is unavailable.';

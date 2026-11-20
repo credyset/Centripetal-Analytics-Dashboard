@@ -31,17 +31,22 @@ jobs:
         run: |
           node tools/check_outcome_metrics.js
           python3 tools/check_opportunity_state_reviews.py
+          node tools/check_crm_history_scope.js
       - name: Check Video DM recording and CRM reconciliation
         run: |
           python3 tools/check_video_reconciliation.py
           python3 tools/check_company_only_inventory.py
           python3 tools/check_video_connection_inventory.py
+          python3 tools/check_native_evidence_contract.py
+          node tools/check_video_source_appearances.js
       - name: Check dated effort estimates and reporting display
         run: |
           python3 tools/check_effort_estimate.py
           node tools/check_reporting_display.js
           node tools/check_metric_integrity.js
           node tools/check_waalaxy_reporting.js
+          python3 tools/check_waalaxy_restatements.py
+          node tools/check_content_history_context.js data/shared-dashboard.json
           node tools/check_video_message_display.js
           python3 tools/check_independent_channels.py
       - name: Check newer source and publication hold preservation

@@ -5,6 +5,7 @@ from datetime import date, datetime
 import json
 from publication_redactions import validate_publication_redactions
 from video_connection_inventory import validate_video_connection_inventory
+from check_native_evidence_contract import validate_native_evidence
 
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
@@ -13,6 +14,7 @@ source = parser.parse_args().snapshot
 data = json.loads(source.read_text())
 validate_publication_redactions(data)
 validate_video_connection_inventory(data.get('video') or {})
+validate_native_evidence(data.get('video') or {})
 assert all(k in data for k in ('meta','ads','crm','video','waalaxy','content','referrals','time','sources'))
 assert data['meta']['timezone'] == 'America/Denver'
 # Every retained daily series below is already normalized to one account/source
