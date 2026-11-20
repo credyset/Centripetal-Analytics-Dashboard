@@ -39,7 +39,47 @@ assert.equal(ctx.dateInputs['#date-end'].value,'2026-11-19');
 assert.equal(run('timeVector().activity[0].value'),'1h 57m');
 assert.equal(run('timeVector().responses[0].value'),null);
 assert.equal(run('timeVector().coverage.end'),'2026-11-18');
-run("preset('7');S.data.video={messageDateReview:{platformObservedEvents:[{date:'2026-11-13',direction:'outbound',messageKind:'video_follow_up'}]}};");
+
+// Crossing a month boundary must select the dated audio from both reviews,
+// rather than substitute the whole October proxy. Source IDs deduplicate a
+// recording retained in both reviews, and explicit duplicate artifacts stay out.
+ctx.crossMonthEffortFixture=JSON.parse(JSON.stringify(ctx.novemberEffortFixture));
+Object.assign(ctx.crossMonthEffortFixture.time,{snapshotAt:'2026-11-13T13:38:58Z',period:{start:'2026-10-01',end:'2026-10-31'},summary:{ownerEstimateRange:{periodStart:'2026-10-01',coversThrough:'2026-10-28',low:21.75,high:23}},meetings:{events:[{id:'fireflies:oct-first',startAt:'2026-10-01T14:10:00Z',countedMinutes:36},{id:'fireflies:oct-last',startAt:'2026-10-29T14:30:00Z',countedMinutes:37},{id:'fireflies:oct-duplicate',startAt:'2026-10-29T14:30:00Z',countedMinutes:37,duplicateOfId:'fireflies:oct-last'},{id:'fireflies:nov-middle',startAt:'2026-11-13T15:30:00Z',countedMinutes:49.54}]}});
+Object.assign(ctx.crossMonthEffortFixture.time.novemberRecordingReview,{snapshotAt:'2026-11-20T05:20:21Z'});
+ctx.crossMonthEffortFixture.time.novemberRecordingReview.events[1].recordingId='nov-middle';
+run("S.data=crossMonthEffortFixture;S.start='2026-10-31';S.end='2026-11-18';");
+assert.equal(run('timeVector().activity[0].value'),'1h 57m');
+assert.match(run('timeVector().activity[0].note'),/3 distinct known recordings.*Index dates are proxies.*attendance duration is unmeasured/);
+assert.equal(run('timeVector().responses[0].value'),null);
+assert.equal(run('timeVector().responses.length'),1); // No October estimate overlaps October 31 onward.
+run("preset('30');");
+assert.equal(run('timeVector().activity[0].value'),'2h 34m'); // October 29 + November, once each.
+assert.equal(run('timeVector().cardOutcome.value'),null); // The November hours are still unknown.
+assert.equal(run('timeVector().responses[1].value'),'21.75–23 h');
+assert.match(run('timeVector().responses[1].note'),/fixed historical reference.*Oct 1, 2026 – Oct 28, 2026.*no allocation/);
+run("preset('90');");
+assert.equal(run('timeVector().activity[0].value'),'3h 10m');
+run("S.start='2026-10-29';S.end='2026-10-29';");
+assert.equal(run('timeVector().activity[0].value'),'0h 37m');
+assert.equal(run('timeVector().asOf'),'2026-11-13T13:38:58Z'); // November collection cannot re-date October evidence.
+run("S.start='2026-11-19';S.end='2026-11-19';");
+assert.equal(run('timeVector().activity[0].value'),null);
+assert.match(run('timeVector().activity[0].note'),/No dated associated recording.*total audio remains unknown/);
+assert.equal(run('timeVector().responses[0].value'),null);
+
+// An observed partial calendar day is not a complete-day zero. Preserve its
+// separately retrieved scheduled-start scope without certifying later bookings.
+ctx.partialCalendarFixture={meta:{},meetings:{snapshotAt:'2026-11-20T05:19:15Z',coverage:{start:'2026-07-16',end:'2026-12-04',complete:true,completeDaysThrough:'2026-11-18',observedThrough:'2026-11-19',currentDayPartial:'2026-11-19'},events:[{bookingChainId:'known-chain',bookingCreatedAt:'2026-11-17T17:00:00Z',startAt:'2026-11-18T17:00:00Z',isCurrentBooking:true,status:'active'}]}};
+run("S.data=partialCalendarFixture;S.start='2026-11-19';S.end='2026-11-19';");
+assert.equal(run('calendarCreationAvailable(S.data.meetings)'),false);
+assert.match(run('calendarReview()'),/Period booking counts are unavailable/);
+assert.match(run('calendarReview()'),/metric-value[^>]*>—<\/div><div class="metric-label">Booking chains created/);
+run("S.start='2026-11-18';S.end='2026-11-18';");
+assert.equal(run('calendarCreationAvailable(S.data.meetings)'),true);
+run("delete S.data.meetings.coverage.completeDaysThrough;S.start='2026-11-19';S.end='2026-11-19';");
+assert.equal(run('calendarCreationAvailable(S.data.meetings)'),false); // The explicit partial-day fallback also stops before it.
+run('S.data=novemberEffortFixture;');
+run("preset('7');S.data.video={messageDateReview:{platformObservedEvents:[{observationId:'known-followup',date:'2026-11-13',direction:'outbound',messageKind:'video_follow_up'}]}};");
 assert.equal(run("vectorData().find(r=>r.id==='video').cardActivity.label"),'Observed video follow-ups');
 assert.equal(run("vectorData().find(r=>r.id==='video').cardActivity.value"),'≥1');
 assert.equal(run("vectorData().find(r=>r.id==='video').activity[0].value"),null);
@@ -119,7 +159,7 @@ assert.equal(run("capturedTables.find(t=>t[0]==='video-dated-status')[2].some(r=
 assert.equal(run("capturedTables.find(t=>t[0]==='video-historical-worksheet-reports')[2][0].sourceRow"),1040);
 assert.equal(run("capturedTables.find(t=>t[0]==='video-historical-worksheet-reports')[2][0].currentSourceRow"),30);
 
-ctx.messageFixture={messageDateReview:{reviewedAt:'2026-10-22T14:30:00Z',scope:{},summary:{},records:[{profileId:'kept-proof',reportedSendDate:null,historicalReportedSendDate:'2026-10-21',currentWorksheetReportedSendDates:[],platformSendDate:'2026-10-21'}],nativePlatformCoverage:{cohort:'Earlier reviewed asset cohort.',cohortProfilesChecked:1,cohortExactOutboundVideoMatches:1,profileChecks:[{status:'matched',observedAt:'2026-10-22T14:04:51Z'}]},platformObservedEvents:[{profileId:'kept-proof',date:'2026-10-21',direction:'outbound',videoIncluded:true,observedAt:'2026-10-22T14:04:51Z',sourceRow:1045,currentSourceRows:[51],historicalSourceSnapshotAt:'2026-10-22T01:02:14Z',evidenceBasis:'Matching asset observed'}]}};
+ctx.messageFixture={messageDateReview:{reviewedAt:'2026-10-22T14:30:00Z',scope:{},summary:{},records:[{profileId:'kept-proof',reportedSendDate:null,historicalReportedSendDate:'2026-10-21',currentWorksheetReportedSendDates:[],platformSendDate:'2026-10-21'}],nativePlatformCoverage:{cohort:'Earlier reviewed asset cohort.',cohortProfilesChecked:1,cohortExactOutboundVideoMatches:1,profileChecks:[{status:'matched',observedAt:'2026-10-22T14:04:51Z'}]},platformObservedEvents:[{observationId:'kept-native-proof',profileId:'kept-proof',date:'2026-10-21',direction:'outbound',videoIncluded:true,observedAt:'2026-10-22T14:04:51Z',sourceRow:1045,currentSourceRows:[51],historicalSourceSnapshotAt:'2026-10-22T01:02:14Z',evidenceBasis:'Matching asset observed'}]}};
 run('capturedTables=[];');
 const messageHtml=run('videoMessageDateEvidence(messageFixture)');
 assert.match(messageHtml,/Conversation checks collected through Oct 22, 2026/);
@@ -138,6 +178,10 @@ assert.match(recordingHtml,/Earlier October inventory review/);
 assert.match(recordingHtml,/15 new recording dialogues and 11 earlier insufficient responses/);
 assert.match(recordingHtml,/91/);
 assert.equal(run("capturedTables.find(t=>t[0]==='crm-recording-evidence')[2].length"),2);
+// Current source reviews name their response count separately from older
+// retained reviews. Render the explicit source count without inferring meetings.
+run("S.data.meetings.fireflies.currentWeekPurposeReview={start:'2026-10-19',end:'2026-10-23',sourceBodiesReviewed:26,indexedRecordings:26};");
+assert.match(run('recordingEvidenceReview()'),/26 available indexed recordings reviewed for Oct 19, 2026 – Oct 23, 2026/);
 // Company distribution must never become Charles's headline content activity,
 // including when personal creator evidence is absent or a historical date is selected.
 ctx.personalFocusData=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/shared-dashboard.json'),'utf8'));
@@ -174,4 +218,36 @@ for(const change of [{baselineSnapshotAt:'2026-10-24T03:11:08Z'},{overlapSinceTi
 }
 ctx.invalidBridge=JSON.parse(originalStateFixture);ctx.invalidBridge.incrementalReview.counts.deleted_deals_delta=1;
 assert.equal(run('crmStateCoverage(invalidBridge).reportingThrough'),'2026-10-22');
+
+// Deal ownership and activity ownership are separate source fields. A task
+// belongs to its linked deal's pipeline even when another person owns the deal.
+ctx.crossOwnerCRMFixture={crm:{deals:[{id:1,pipelineId:2,owner:'Charles Solomon'},{id:2,pipelineId:2,owner:'Christian W'},{id:3,pipelineId:4,owner:'Charles Solomon'},{id:4,pipelineId:4,owner:'Christian W'},{id:5,pipelineId:2,owner:'Charles Solomon',isTest:true},{id:6,pipelineId:1,owner:'Alex'}],activities:[{id:10,dealId:1,owner:'Christian W'},{id:11,dealId:2,owner:'Charles Solomon'},{id:12,dealId:1,owner:'Charles Solomon'},{id:13,dealId:null,owner:'Christian W'},{id:14,dealId:3,owner:'Charles Solomon'},{id:15,dealId:3,owner:'Christian W'},{id:16,dealId:5,owner:'Charles Solomon'},{id:17,dealId:2,owner:'Charles Solomon',isTest:true},{id:18,dealId:6,owner:'Alex'},{id:19,dealId:6,owner:'Christian W'}]}};
+const filteredIds=kind=>JSON.parse(run(`JSON.stringify(crmFiltered().${kind}.map(row=>row.id).sort((a,b)=>a-b))`));
+run("S.data=crossOwnerCRMFixture;S.pipeline='2';S.owner='Charles Solomon';");
+assert.deepEqual(filteredIds('deals'),[1]);
+assert.deepEqual(filteredIds('activities'),[11,12]); // Includes a task on Christian's deal.
+run("S.owner='Christian W';");
+assert.deepEqual(filteredIds('deals'),[2]);
+assert.deepEqual(filteredIds('activities'),[10]); // Includes a task on Charles's deal.
+run("S.pipeline='1';");
+assert.deepEqual(filteredIds('deals'),[]);
+assert.deepEqual(filteredIds('activities'),[19]); // An owner needs no owned deal to own its task.
+run("S.pipeline='4';");
+assert.deepEqual(filteredIds('deals'),[4]);
+assert.deepEqual(filteredIds('activities'),[15]);
+run("S.pipeline='2';S.owner='all';");
+assert.deepEqual(filteredIds('deals'),[1,2]);
+assert.deepEqual(filteredIds('activities'),[10,11,12]); // Test activities and test-deal pipeline membership excluded.
+run("S.pipeline='all';S.owner='Christian W';");
+assert.deepEqual(filteredIds('deals'),[2,4]);
+assert.deepEqual(filteredIds('activities'),[10,13,15,19]); // Unlinked tasks remain in the all-pipeline owner view.
+run("S.owner='all';");
+assert.deepEqual(filteredIds('deals'),[1,2,3,4,6]);
+assert.deepEqual(filteredIds('activities'),[10,11,12,13,14,15,16,18,19]); // Preserve the complete non-test activity inventory.
 console.log('Reporting display: selected-date impressions, missing/zero handling, fixed reach and source-specific coverage passed.');
+
+// Import-source context follows selected record IDs, without assigning an
+// unverified organic origin to every other new row.
+ctx.importContext={assessment:{dealCreationMeasurementReview:{sourceLabelSniperListDealIds:[2,3]}}};
+assert.match(run('crmCreatedRecordNote(importContext,[{id:1},{id:2}])'),/^1 carry reviewed Sniper List source labels/);
+assert.doesNotMatch(run('crmCreatedRecordNote(importContext,[{id:1}])'),/Sniper List/);

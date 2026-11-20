@@ -11,10 +11,42 @@ from prepare_shared_snapshot import curate_snapshot
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DIST = ROOT / '_site'
+STATIC_ASSETS = (
+    'LICENSE-Lora.txt', 'LICENSE-Roboto.txt', 'Lora-Regular.ttf',
+    'Lora-SemiBold.ttf', 'Roboto-Bold.ttf', 'Roboto-Medium.ttf',
+    'Roboto-Regular.ttf', 'logo.png',
+)
+
+
+def checked_destination(destination):
+    """Allow only dedicated outputs, and reject stale or linked contents intact."""
+    requested = Path(destination).expanduser()
+    if requested.is_symlink():
+        raise RuntimeError('Static output must not be a symbolic link.')
+    dist = requested.resolve()
+    dedicated = {ROOT / '_site', ROOT / 'public_site/dist'}
+    if dist == ROOT or dist in ROOT.parents or (ROOT in dist.parents and dist not in dedicated):
+        raise RuntimeError('Static output must be a dedicated build directory, not a checkout or source directory.')
+    expected_files = {'index.html', 'app.js', 'styles.css', '.nojekyll',
+                      'data/dashboard.json', 'data/empty.json'}
+    expected_files.update('assets/' + name for name in STATIC_ASSETS)
+    expected_dirs = {'data', 'assets'}
+    if dist.exists():
+        if not dist.is_dir():
+            raise RuntimeError('Static output must be a directory.')
+        for entry in sorted(dist.rglob('*')):
+            relative = entry.relative_to(dist).as_posix()
+            if entry.is_symlink() or (entry.is_file() and entry.stat().st_nlink > 1):
+                raise RuntimeError('Static output contains a linked entry: ' + relative)
+            if ((entry.is_dir() and relative in expected_dirs) or
+                    (entry.is_file() and relative in expected_files)):
+                continue
+            raise RuntimeError('Static output contains an unexpected entry; use a clean dedicated directory: ' + relative)
+    return dist
 
 
 def build(destination=DEFAULT_DIST, for_publication=False):
-    DIST = Path(destination).resolve()
+    DIST = checked_destination(destination)
     # The same tracked snapshot drives GitHub clones and the hosted dashboard.
     snapshot_path = ROOT / 'data/shared-dashboard.json'
     source = json.loads(snapshot_path.read_text())
@@ -24,7 +56,9 @@ def build(destination=DEFAULT_DIST, for_publication=False):
 
     DIST.mkdir(parents=True, exist_ok=True)
     (DIST / 'data').mkdir(exist_ok=True)
-    shutil.copytree(ROOT / 'assets', DIST / 'assets', dirs_exist_ok=True)
+    (DIST / 'assets').mkdir(exist_ok=True)
+    for name in STATIC_ASSETS:
+        shutil.copy2(ROOT / 'assets' / name, DIST / 'assets' / name)
     shutil.copy2(ROOT / 'styles.css', DIST / 'styles.css')
     state=public.get('meta',{}).get('publicationStatus')
     local_only=state=='local_only'

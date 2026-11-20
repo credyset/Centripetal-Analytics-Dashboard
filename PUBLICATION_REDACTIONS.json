@@ -9,12 +9,31 @@
       "safeClassification": "recruiting_interview",
       "safeClassificationBasis": "Employment/recruiting purpose verified; excluded from business-development outcomes. Personal employment details are withheld from publication.",
       "allowedFields": [
-        "id", "recordingId", "sourceId", "title", "indexedAt", "occurredAt", "dateBasis", "durationMinutes",
-        "classification", "classificationBasis", "reviewedDialogue", "sentenceCount", "speakerCount",
-        "charlesSpeakerConfirmed", "christianSpeakerLabelObserved", "charlesListedInParticipants",
-        "evidenceCollectedAt", "sourceEvidenceSha256", "commercialOutcomeDecisionApplied",
-        "qualificationDecisionApplied", "ownerReviewRequired", "audioDurationIsAttendance", "crmDealIds",
-        "publicationPolicy"
+        "id",
+        "recordingId",
+        "sourceId",
+        "title",
+        "indexedAt",
+        "occurredAt",
+        "dateBasis",
+        "durationMinutes",
+        "classification",
+        "classificationBasis",
+        "reviewedDialogue",
+        "sentenceCount",
+        "speakerCount",
+        "charlesSpeakerConfirmed",
+        "christianSpeakerLabelObserved",
+        "charlesListedInParticipants",
+        "evidenceCollectedAt",
+        "sourceEvidenceSha256",
+        "commercialOutcomeDecisionApplied",
+        "qualificationDecisionApplied",
+        "ownerReviewRequired",
+        "audioDurationIsAttendance",
+        "crmDealIds",
+        "publicationPolicy",
+        "purposeReviewStatus"
       ],
       "publicationPolicy": {
         "scope": "employment_context_minimized",
@@ -24,6 +43,188 @@
         "recordingAccessLinksWithheld": true,
         "rawEvidenceRetainedPrivately": true,
         "requiredDisplayTitle": "Recruiting interview (excluded from business-development outcomes)"
+      },
+      "safeEnumFields": {
+        "purposeReviewStatus": [
+          "dialogue_reviewed_purpose_classified",
+          "dialogue_reviewed_insufficient_for_business_purpose",
+          "response_success_no_dialogue"
+        ]
+      }
+    },
+    {
+      "sourceSystem": "fireflies",
+      "sourceId": "01M3Z0ECK6FWF6WKQWPQKS70ZJ",
+      "policyId": "employment_record_minimization"
+    },
+    {
+      "sourceSystem": "fireflies",
+      "sourceId": "01M47KABBB9KE992WJVP07YR3Q",
+      "policyId": "employment_record_minimization"
+    },
+    {
+      "sourceSystem": "fireflies",
+      "sourceId": "01M49K5Z3D0KHXZC7EBMDYBP2W",
+      "policyId": "employment_record_minimization"
+    },
+    {
+      "sourceSystem": "fireflies",
+      "sourceId": "01M4BRN9ZJS3ETMH8J5REMR8Q5",
+      "policyId": "employment_record_minimization"
+    },
+    {
+      "sourceSystem": "fireflies",
+      "sourceId": "01M4E1AEA38E1BDC1122MNHSK0",
+      "policyId": "employment_record_minimization"
+    },
+    {
+      "sourceSystem": "fireflies",
+      "sourceId": "01M4RMD1C8A2GJDX14N0E4RRK5",
+      "policyId": "employment_record_minimization"
+    },
+    {
+      "sourceSystem": "fireflies",
+      "sourceId": "01M4RMD1C9QZD883XMXSXPNPB9",
+      "policyId": "employment_record_minimization"
+    },
+    {
+      "sourceSystem": "fireflies",
+      "sourceId": "01M4S902G6YVB1HA0R58193800",
+      "policyId": "employment_record_minimization"
+    },
+    {
+      "sourceSystem": "fireflies",
+      "sourceId": "01M6KYXFDDASSMP7FFYXHH7P3G",
+      "policyId": "employment_record_minimization"
+    }
+  ],
+  "classificationPolicies": [
+    {
+      "id": "nonbuyer_booking_minimization",
+      "sourceSection": "meetings",
+      "excludedClassifications": [
+        "excluded_career_or_relationship_booking",
+        "career_or_relationship_booking",
+        "excluded_interview_type"
+      ],
+      "safeCommercialClassification": "excluded_nonbuyer_booking",
+      "safePurposeEvidence": "Excluded non-buyer booking; attendance unverified",
+      "privateContextPatterns": [
+        "\\bCFO\\s+in\\s+the\\s+market\\b",
+        "\\bcareer[ /_-]+(?:or[ /_-]+)?relationship[ /_-]+booking\\b",
+        "\\bjob[ -]?(?:seeker|seeking|search)\\b"
+      ],
+      "allowedEventFields": [
+        "id",
+        "name",
+        "status",
+        "createdAt",
+        "updatedAt",
+        "startAt",
+        "endAt",
+        "canceledAt",
+        "rescheduled",
+        "rescheduledFromEventId",
+        "rescheduledToEventId",
+        "bookingChainId",
+        "bookingCreatedAt",
+        "bookingChainComplete",
+        "isCurrentBooking",
+        "isRescheduleReplacement",
+        "source",
+        "inviteeCount",
+        "activeInviteeCount",
+        "noShowRecorded",
+        "matchedCrmDealIds",
+        "identityMatchBasis",
+        "hasCampaignTracking",
+        "trackingSourceHints",
+        "heldVerified",
+        "heldStatus",
+        "commercialClassification",
+        "purposeEvidence",
+        "publicationPolicy"
+      ],
+      "publicationPolicy": {
+        "scope": "nonbuyer_booking_minimized",
+        "businessIntakeWithheld": true,
+        "rawEvidenceRetainedPrivately": true
+      },
+      "safeSourceNote": "Excluded non-buyer bookings retain calendar lifecycle metadata only. Booking status does not establish attendance.",
+      "businessContextSourceId": "calendly_business_context",
+      "safeEventName": "Scheduled meeting (excluded non-buyer booking)",
+      "sourceIds": [
+        "0fa878c3-1ec7-4f5b-9553-a8001df03c9d",
+        "322954ca-fb22-4555-a861-5e67a74531b7",
+        "3dd6b411-38f7-4d01-8f1f-13e5bced390a",
+        "4efad041-af14-4de3-a812-0ed417125af4",
+        "5ae7a6b9-0fd6-4a4a-bebe-ea1c6964d346",
+        "995891a5-820a-4f19-96b5-575f035b07fe",
+        "b64aa49c-445d-4112-be7e-0f8265f06740",
+        "c054968e-7024-41d2-917b-abdc0deaac2a",
+        "da9e57f3-2437-405d-8d49-198da21d3ea4"
+      ]
+    }
+  ],
+  "recordClassificationPolicies": [
+    {
+      "id": "employment_record_minimization",
+      "classificationPatterns": [
+        "^(?:recruiting|hiring|employment)(?:_|$)",
+        "^existing_client_recruiting_support$",
+        "^(?:candidate_)?reference_check$"
+      ],
+      "safeTitle": "Excluded employment context",
+      "safeClassification": "excluded_employment_context",
+      "safeClassificationBasis": "Excluded from business-development outcomes. Personal employment context is withheld from publication.",
+      "allowedFields": [
+        "id",
+        "recordingId",
+        "sourceId",
+        "title",
+        "indexedAt",
+        "occurredAt",
+        "durationMinutes",
+        "classification",
+        "classificationBasis",
+        "reviewedDialogue",
+        "sentenceCount",
+        "speakerCount",
+        "charlesSpeakerConfirmed",
+        "christianSpeakerLabelObserved",
+        "charlesListedInParticipants",
+        "christianListedInParticipants",
+        "evidenceCollectedAt",
+        "sourceEvidenceSha256",
+        "purposeReviewSha256",
+        "lastPurposeReviewedAt",
+        "purposeSourceCollectedAt",
+        "commercialOutcomeDecisionApplied",
+        "qualificationDecisionApplied",
+        "ownerReviewRequired",
+        "audioDurationIsAttendance",
+        "confirmedProspectMeetingAdded",
+        "crmDealIds",
+        "bookingChainIds",
+        "duplicateCandidateIds",
+        "publicationPolicy",
+        "purposeReviewStatus"
+      ],
+      "publicationPolicy": {
+        "scope": "employment_record_minimized",
+        "candidateIdentityWithheld": true,
+        "originalTitleWithheld": true,
+        "employmentDetailsWithheld": true,
+        "recordingAccessLinksWithheld": true,
+        "rawEvidenceRetainedPrivately": true,
+        "requiredDisplayTitle": "Excluded employment context"
+      },
+      "safeEnumFields": {
+        "purposeReviewStatus": [
+          "dialogue_reviewed_purpose_classified",
+          "dialogue_reviewed_insufficient_for_business_purpose",
+          "response_success_no_dialogue"
+        ]
       }
     }
   ]

@@ -1,5 +1,7 @@
 # Remaining measurement gaps
 
+The [November 20 quality review](QC_REVIEW_2026-11-20.md) adds historical message proof, dated referral requests, closure state and booking context. It also restores 50 company-only targets to a separate preparation inventory. These targets lack contact/profile details and remain QC Pending; their research labels do not establish qualification or activation. It preserves incomplete coverage and the original reporting cutoff.
+
 **Current November status:** the [November 19 refresh and remaining confirmations](REFRESH_2026-11-19.md#remaining-confirmations) supersede the source counts below. Commercial original acceptance/win dates, complete Video DM reply coverage, event-level referral/Waalaxy evidence, and Christian’s November human effort remain the highest-impact gaps. The detailed October review below is historical.
 
 ## Historical October 29 review

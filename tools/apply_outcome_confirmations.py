@@ -7,9 +7,68 @@ imports cannot erase confirmed business outcomes. No source service is changed.
 import copy
 import json
 import re
+from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def explicit_timestamp(value, field):
+    """Require an actual source instant; a date or naive clock is insufficient."""
+    assert isinstance(value, str) and re.search(r'T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$', value), f'{field} needs an explicit offset timestamp'
+    try:
+        parsed = datetime.fromisoformat(value.replace('Z', '+00:00'))
+    except ValueError as error:
+        raise AssertionError(f'{field} needs a valid source timestamp') from error
+    assert parsed.utcoffset() is not None, f'{field} needs an explicit offset'
+    return parsed
+
+
+def apply_opportunity_state_reviews(observed, data):
+    """Overlay source closure without rewriting historical acceptance evidence."""
+    deals = {row['id']: row for row in data.get('crm', {}).get('deals', [])}
+    reviewed = set()
+    historical = ('documentedBy', 'lastDocumentedAt', 'originalAcceptedAt',
+                  'originalAcceptanceDateVerified', 'acceptedBeforeOctober')
+    for review in data.get('meetings', {}).get('sourceObservedOpportunityStateReviews', []):
+        ident = review.get('opportunityId')
+        assert ident in observed and ident not in reviewed, 'State review needs one existing opportunity ID'
+        reviewed.add(ident)
+        row = observed[ident]
+        deal_id = review.get('dealId')
+        assert type(deal_id) is int and deal_id == row.get('dealId'), 'State review deal does not match opportunity'
+        deal = deals.get(deal_id)
+        assert deal and deal.get('status') == 'lost', 'State review needs an actual CRM lost status'
+        assert review.get('sourceStatus') == 'lost', 'Only explicit source lost status is supported'
+        assert review.get('sourceStatusField') == 'Pipedrive deal.status', 'Stage labels cannot establish status'
+        assert re.fullmatch(r'pipedrive:dealChange:\d+', review.get('sourceStatusChangedEventId', '')), 'Source status change identity is required'
+        if review.get('companyKey') is not None:
+            assert review['companyKey'] == row.get('companyKey'), 'State review company does not match opportunity'
+        closed_at = explicit_timestamp(review.get('sourceClosedAt'), 'sourceClosedAt')
+        reviewed_at = explicit_timestamp(review.get('lastReviewedAt'), 'lastReviewedAt')
+        snapshot_at = explicit_timestamp(review.get('sourceSnapshotAt'), 'sourceSnapshotAt')
+        assert closed_at <= snapshot_at and closed_at <= reviewed_at, 'Closure must precede source collection and review'
+        assert deal.get('lostAt') and explicit_timestamp(deal['lostAt'], 'CRM lostAt') == closed_at, 'Source closure must match the retained actual lost timestamp'
+        evidence = review.get('closureEvidence') or {}
+        assert evidence.get('sourceSystem') == 'pipedrive_mail', 'Closure needs primary source evidence'
+        assert type(evidence.get('sourceMessageId')) is int and evidence['sourceMessageId'] > 0
+        assert evidence.get('sourceTimestampField') == 'mailMessage.message_time'
+        assert evidence.get('summary') and evidence.get('evidenceUrl', '').startswith('https://centripetaladvisors.pipedrive.com/mail/'), 'Closure needs an evidence summary and source link'
+        assert explicit_timestamp(evidence.get('occurredAt'), 'closureEvidence.occurredAt') <= reviewed_at
+        assert review.get('nextStep') is None and review.get('currentNextStepStatus') == 'no_active_agreed_next_step_verified'
+        assert review.get('currentState') in ('source_closed_lost', 'closed_lost')
+        for key, value in review.get('preserveHistoricalFields', {}).items():
+            assert key in historical and row.get(key) == value, 'State review cannot rewrite historical evidence'
+        prior_step = row.get('historicalNextStep') or row.get('nextStep')
+        assert prior_step and review.get('historicalNextStep') == prior_step, 'Historical next step must retain its original wording'
+        # Copy an explicit allowlist only. Collection/review dates never become
+        # active documentation or original acceptance dates.
+        for key in ('sourceStatus', 'sourceClosedAt', 'sourceStatusField',
+                    'sourceStatusChangedEventId', 'sourceSnapshotAt', 'lastReviewedAt',
+                    'currentNextStepStatus', 'closureEvidence'):
+            row[key] = copy.deepcopy(review[key])
+        row.update(historicalNextStep=prior_step, nextStep=None, currentState='closed_lost')
+    return observed
 
 
 def apply_outcome_confirmations(data, root=ROOT):
@@ -92,6 +151,7 @@ def apply_outcome_confirmations(data, root=ROOT):
         assert row.get('companyKey') and row.get('dealId')
         assert row.get('nextStep') and row.get('evidenceBasis') and row.get('reviewedAt')
         observed.setdefault(row['opportunityId'], copy.deepcopy(row))
+    apply_opportunity_state_reviews(observed, data)
     ledger['observedOpportunities'] = list(observed.values())
     data['outcomes'] = ledger
     return data

@@ -130,4 +130,18 @@ run("S.start='2026-11-10';");
 assert.doesNotMatch(run('referrals()'),/administrative closures on/);
 run("S.start='2026-11-06';referralInventory.cleanupReview.sourceInventorySnapshotAt='2026-10-29T06:01:08Z';");
 assert.equal(run('selectedReferralCleanup(referralInventory)'),null);
+// A three-target email is one request communication. A duplicate imported
+// copy, another type, and an unverified sender cannot inflate requests.
+ctx.requestFixture={eventReview:{coverage:{status:'incomplete'},events:[
+  {eventId:'ask-a',sourceSystem:'pipedrive_mail',sourceMessageId:100,verified:true,type:'request',direction:'outbound',sentByCharles:true,date:'2026-11-18',occurredAt:'2026-11-18T03:36:10Z',requestedCompanies:[{company:'A'},{company:'B'},{company:'C'}]},
+  {eventId:'ask-copy',sourceSystem:'pipedrive_mail',sourceMessageId:100,verified:true,type:'request',direction:'outbound',sentByCharles:true,date:'2026-11-18',occurredAt:'2026-11-18T03:36:10Z'},
+  {eventId:'other-sender',verified:true,type:'request',direction:'outbound',charlesIncluded:true,date:'2026-11-17'},
+  {eventId:'unsigned',verified:false,type:'request',direction:'outbound',sentByCharles:true,date:'2026-11-17'},
+  {eventId:'followup',verified:true,type:'follow_up',direction:'outbound',sentByCharles:true,date:'2026-11-17'}]}};
+run("S.start='2026-11-17';S.end='2026-11-17';");
+assert.equal(run('selectedReferralRequests(requestFixture).label'),'≥1');
+assert.equal(run('selectedReferralIntroductions(requestFixture).label'),'Pending');
+assert.equal(run('selectedReferralFollowups(requestFixture).label'),'≥1');
+run("S.start='2026-11-18';S.end='2026-11-18';");
+assert.equal(run('selectedReferralRequests(requestFixture).label'),'Pending');
 console.log('Charles outcome metrics: cohort, deduplication, scope, Mountain dates, and unknown/zero rules passed.');

@@ -13,11 +13,23 @@ manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else 
 now = manifest.get('snapshotAt') or datetime.now(timezone.utc).isoformat()
 header = raw[0]
 rows = []
+company_only_targets = []
 groups = defaultdict(list)
 dated = []
 for line, values in enumerate(raw[1:], 2):
     r = dict(zip(header, values))
-    company, contact = str(r.get('org', '')).strip(), str(r.get('contact', '')).strip()
+    company, contact = str(r.get('org') or '').strip(), str(r.get('contact') or '').strip()
+    if company and not contact and company.casefold() != 'org':
+        # A named company is still a target record when contact research is
+        # incomplete. Retain its literal source fields at a separate grain;
+        # it must not enter person identities, status totals or activity.
+        target = {'sourceRow': line, 'company': str(r['org'])}
+        for field, source in [('status', 'Status (CS Column)'), ('action', 'DM Action'),
+                              ('score', 'icp'), ('rank', 'rank'), ('tier', 'tier'), ('stage', 'stage')]:
+            if r.get(source) not in (None, ''):
+                target[field] = str(r[source])
+        company_only_targets.append(target)
+        continue
     if not company or not contact or (company == 'org' and contact == 'contact'):
         continue
     url = str(r.get('li', '')).strip()
@@ -98,13 +110,20 @@ result = {
     'snapshotAt': now, 'status': 'available',
     'coverage': 'Current status snapshot; row-added and video-sent dates are not consistently recorded',
     'sourceUrl': 'https://docs.google.com/spreadsheets/d/1_Vq5-hM3POad1V14rZjX6gfaUojUnnTvxjjSv1zDJ8M/edit',
-    'rows': rows, 'datedActions': dated,
+    'rows': rows, 'companyOnlyTargets': company_only_targets, 'datedActions': dated,
     'snapshotDelta': delta,
     'sourceCoverage': {'method': manifest.get('method', 'retained source snapshot'),
                        'complete': manifest.get('complete'),
-                       'ranges': manifest.get('ranges', [])},
+                       'ranges': manifest.get('ranges', []),
+                       'inventoryGrain': 'Contact/prospect rows and a separate company-only target register.',
+                       'mainReturnedRowsIncludingHeader': len(raw),
+                       'contactRows': len(rows), 'companyOnlyTargetRows': len(company_only_targets),
+                       'allTargetRows': len(rows) + len(company_only_targets),
+                       'excludedNonProspectPhysicalRows': len(raw) - 1 - len(rows) - len(company_only_targets)},
     'summary': {
         'sourceRows': len(rows), 'uniqueProfiles': len(groups),
+        'companyOnlyTargetRows': len(company_only_targets),
+        'allTargetRows': len(rows) + len(company_only_targets),
         'rowsMissingProfile': sum(not r['linkedin'] for r in rows),
         'readyRows': actions['Ready for video DM'],
         'sheetCompletedRows': actions['Already sent/completed'],
@@ -122,7 +141,8 @@ result = {
     },
     'duplicateProfiles': duplicates,
     'notes': [
-        'Status totals count source rows. Unique profiles deduplicate valid normalized LinkedIn URLs; rows without a valid profile remain unresolved.',
+        'Status totals and sourceRows count contact/prospect rows. Company-only target records are retained separately and do not add people, status counts, dated actions or profile snapshot changes. Their literal research scores and statuses are not commercial qualification.',
+        'Unique profiles deduplicate valid normalized LinkedIn URLs; contact rows without a valid profile remain unresolved.',
         'Spreadsheet sent/completed includes a Loom link or exact Sent/Done status. A Loom link alone does not establish delivery.',
         'Explicit Sent/Done is a self-reported status, not independently verified delivery. Undated sends cannot be assigned to the selected period.',
         'Follow-up categories overlap the main status categories; do not add them to the prospect total.',
@@ -132,5 +152,6 @@ result = {
 }
 assert len(rows)==sum(actions.values())
 assert len({r['sourceRow'] for r in rows})==len(rows)
+assert len({r['sourceRow'] for r in rows + company_only_targets})==len(rows) + len(company_only_targets)
 (BASE/'data/video.json').write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps(result['summary'],indent=2))

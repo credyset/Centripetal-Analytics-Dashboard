@@ -96,6 +96,27 @@ def stamp(section):
     dt = datetime.fromisoformat(value.replace('Z','+00:00'))
     return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt
 
+def review_stamp(section):
+    """A child review follows its own evidence clock, never its parent clock."""
+    return stamp({'snapshotAt':next((section.get(key) for key in
+        ('lastReviewedAt','reviewedAt','snapshotAt','collectedAt') if section.get(key)),None)})
+
+def merge_review_rows(source, previous, child, identity):
+    """Retain omitted source decisions and supersede only by explicit review."""
+    selected={}
+    for container in (previous,source):
+        seen=set()
+        for row in (container.get('meetings') or {}).get(child,[]):
+            ident=row.get(identity)
+            assert ident and ident not in seen, f'Duplicate or absent {child} identity'
+            seen.add(ident)
+            assert review_stamp(row)>stamp(None), f'{child} needs an independent review clock'
+            prior=selected.get(ident)
+            if prior and review_stamp(row)==review_stamp(prior):
+                assert row==prior, f'Conflicting {child} records share a review clock'
+            if prior is None or review_stamp(row)>review_stamp(prior):selected[ident]=copy.deepcopy(row)
+    return list(selected.values())
+
 def preserve_newer_shared_sources(source, previous, publication_approved=False):
     """Older local inputs must not erase newer collaborator source revisions."""
     result=copy.deepcopy(source)
@@ -285,27 +306,60 @@ def preserve_newer_shared_sources(source, previous, publication_approved=False):
     # analyses keep their own historical scope; display guards must still join
     # them to a compatible current inventory before using row-based claims.
     focused_cards={}
+    # Calendar preparation does not retract independently reviewed dialogue,
+    # commercial state or an original occurrence decision. Merge by source
+    # identity; a later explicit review can supersede the same identity.
+    commercial_rows=[]
+    for child,identity in (('sourceVerifiedHeldCalls','conversationId'),
+                           ('sourceObservedOpportunities','opportunityId'),
+                           ('sourceObservedOpportunityStateReviews','opportunityId')):
+        merged=merge_review_rows(source,previous,child,identity)
+        if merged:
+            result.setdefault('meetings',{})[child]=merged
+            commercial_rows.extend(merged)
+    if commercial_rows:
+        reviewed=max(review_stamp(row) for row in commercial_rows).isoformat()
+        focused_cards['commercial_source_evidence']={
+            'id':'commercial_source_evidence','name':'Commercial source decisions · retained independent evidence',
+            'asOf':reviewed,'status':'Individually dated source confirmations; incomplete total coverage',
+            'method':'Stable conversation/opportunity identity and each row’s own review clock',
+            'note':'Calendar inventory dates do not refresh or retract reviewed calls, opportunity documentation or closure evidence. Original acceptance and complete commercial totals remain separately unverified.'}
+    independent_paths={('meetings','businessContextReview'),('time','novemberRecordingReview'),('video','connectionInventoryReview'),
+                       ('content','creatorAnalytics','exportAnalytics')}
     focused_paths=[(('crm','incrementalReview'),'crm_incremental'),
                    (('ads','zeroDeliveryReview'),'ads_zero_delivery'),
                    (('crm','mailboxReview'),'crm_inbox_context'),
                    (('video','gapResolutionReview'),'video_gap_resolution'),
                    (('video','sourceFreshnessReview'),'video_source_freshness'),
+                   (('video','connectionInventoryReview'),'video_connection_inventory'),
                    (('video','gapResolutionReview','sourceAppearanceReview'),None),
-                   (('video','gapResolutionReview','identityDateReview'),None)]
+                   (('video','gapResolutionReview','identityDateReview'),None),
+                   (('meetings','businessContextReview'),'calendly_business_context'),
+                   (('time','novemberRecordingReview'),'time_november'),
+                   (('content','creatorAnalytics','exportAnalytics'),'content_creator_export')]
     for path,source_id in focused_paths:
         candidates=[]
         for container in (source,previous):
             value=container
             for part in path:
                 value=(value or {}).get(part) if isinstance(value,dict) else None
-            if value:candidates.append((stamp(value),value,container))
+            if value:candidates.append((review_stamp(value) if path in independent_paths else stamp(value),value,container))
         if not candidates:continue
+        if path in independent_paths and len(candidates)>1 and candidates[0][0]==candidates[1][0]:
+            assert candidates[0][1]==candidates[1][1], f'Conflicting {path} reviews share a collection clock'
         _,chosen,chosen_container=max(candidates,key=lambda item:item[0])
         target=result
         for part in path[:-1]:target=target.setdefault(part,{})
         target[path[-1]]=copy.deepcopy(chosen)
         if source_id:
             chosen_card=next((copy.deepcopy(s) for s in chosen_container.get('sources',[]) if s['id']==source_id),None)
+            if source_id=='content_creator_export':
+                chosen_card={'id':source_id,'name':'LinkedIn · Charles creator workbook',
+                    'asOf':chosen.get('snapshotAt') or chosen.get('collectedAt'),
+                    'coverage':copy.deepcopy(chosen.get('coverage')),
+                    'status':'Independently dated creator workbook',
+                    'method':'Authenticated creator workbook; retained independently of creator UI and profile-view collections',
+                    'note':'Workbook source dates and partial-day coverage are unchanged by a newer parent/UI collection.'}
             if chosen_card:focused_cards[source_id]=chosen_card
     by_id={s['id']:s for s in result.get('sources',[])}
     for src in previous.get('sources',[]):

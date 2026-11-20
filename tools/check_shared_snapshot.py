@@ -1,9 +1,10 @@
 """Check the portable, curated reporting snapshot before sharing changes."""
 from pathlib import Path
 import argparse
-from datetime import date
+from datetime import date, datetime
 import json
 from publication_redactions import validate_publication_redactions
+from video_connection_inventory import validate_video_connection_inventory
 
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
@@ -11,8 +12,23 @@ parser.add_argument('--snapshot', type=Path, default=ROOT/'data/shared-dashboard
 source = parser.parse_args().snapshot
 data = json.loads(source.read_text())
 validate_publication_redactions(data)
+validate_video_connection_inventory(data.get('video') or {})
 assert all(k in data for k in ('meta','ads','crm','video','waalaxy','content','referrals','time','sources'))
 assert data['meta']['timezone'] == 'America/Denver'
+# Every retained daily series below is already normalized to one account/source
+# grain. A repeated day cannot substitute for an absent reporting day.
+creator=data.get('content',{}).get('creatorAnalytics',{}).get('exportAnalytics',{})
+daily_series=[('creator',creator.get('daily',[])),
+              ('creator followers',creator.get('followers',{}).get('daily',[])),
+              ('company',data.get('content',{}).get('companyAnalytics',{}).get('daily',[])),
+              ('ads',data.get('ads',{}).get('daily',[])),
+              ('invitations',[r for r in data.get('waalaxy',{}).get('daily',[])
+                              if r.get('invitationsSent') is not None or r.get('invitationsAccepted') is not None])]
+for label,series in daily_series:
+    days=[r['date'] for r in series]
+    assert len(days)==len(set(days)), f'Duplicate source day in {label}'
+    assert all(isinstance(day,str) and date.fromisoformat(day).isoformat()==day for day in days), f'Invalid source day in {label}'
+
 
 # This opaque source ID is employment evidence, outside prospect-publication scope.
 # Guard by source identity rather than a candidate-name blacklist, so aliases and
@@ -44,6 +60,20 @@ for entity in ('deals','activities'):
     rows = data['crm'][entity]
     assert len(rows) == len({row['id'] for row in rows}), f'Duplicate CRM {entity} IDs'
 assert len(data['video']['rows']) == data['video']['summary']['sourceRows']
+company_targets=data['video'].get('companyOnlyTargets')
+if company_targets is not None:
+    video=data['video'];summary=video['summary'];coverage=video['sourceCoverage']
+    assert len(company_targets)==summary['companyOnlyTargetRows']
+    assert summary['allTargetRows']==summary['sourceRows']+len(company_targets)
+    assert len(company_targets)==len({r['sourceRow'] for r in company_targets})
+    assert not ({r['sourceRow'] for r in company_targets}&{r['sourceRow'] for r in video['rows']})
+    for row in company_targets:
+        assert row.get('company') and type(row['sourceRow']) is int
+        assert set(row)<={'sourceRow','company','status','action','score','rank','tier','stage'}
+        assert all(isinstance(v,str) for k,v in row.items() if k!='sourceRow')
+    assert coverage['allTargetRows']==summary['allTargetRows']
+    assert coverage['mainReturnedRowsIncludingHeader']==1+summary['allTargetRows']+coverage['excludedNonProspectPhysicalRows']
+
 archive=data['crm'].get('archiveReview')
 if archive:
     assert archive['success'] and archive['paginationComplete']
@@ -133,22 +163,70 @@ if company:
             assert totals['paidSource']==sum(ads_by_day[date][ad_key] for date in compared_dates)
             assert totals['equal'] is True
     assert company['postCoverage']['publishedPostCount'] is None, 'Missing post register became zero'
+context=data.get('meetings',{}).get('businessContextReview')
+if context:
+    calendar_events={e['id']:e for e in data['meetings']['events']}
+    assert len(context['records'])==len({r['eventId'] for r in context['records']})
+    fields={'eventId','inviteeName','company','stage','industry','fundraisingTiming','financialNeeds','financeHandling','cancellationReason','cancellationSourceDate','reviewedAt'}
+    reviewed=datetime.fromisoformat(context['reviewedAt'].replace('Z','+00:00'))
+    assert reviewed.utcoffset() is not None
+    for row in context['records']:
+        assert set(row)<=fields, 'Booking business context contains uncurated fields'
+        event=calendar_events[row['eventId']]
+        assert datetime.fromisoformat(row['reviewedAt'].replace('Z','+00:00'))<=reviewed
+        for key in ('inviteeName','company','stage','industry','fundraisingTiming','financeHandling','cancellationReason'):
+            assert row.get(key) is None or isinstance(row[key],str)
+        needs=row.get('financialNeeds')
+        assert needs is None or isinstance(needs,list) and all(isinstance(v,str) and v for v in needs)
+        if row.get('cancellationReason'):
+            assert event['status']=='canceled' and event.get('canceledAt')
+            assert datetime.fromisoformat(row['cancellationSourceDate'].replace('Z','+00:00'))==datetime.fromisoformat(event['canceledAt'].replace('Z','+00:00'))
 ref=data.get('referrals') or {}
 event_review=ref.get('eventReview')
 if event_review:
     events=event_review['events']
+    crm_deals={r['id']:r for r in data['crm']['deals']}
+    request_message_keys=set()
     assert len(events)==len({e['eventId'] for e in events})
     assert event_review['coverage']['status']=='incomplete'
     for event in events:
         assert event['verified'] and event['charlesIncluded']
         if event['type']=='introduction':assert event['direction']=='inbound' and event['prospectDealId']
         elif event['type']=='follow_up':assert event['direction']=='outbound' and event['sentByCharles'] is True
+        elif event['type']=='request':
+            assert event['direction']=='outbound' and event['sentByCharles'] is True
+            assert type(event.get('communicationCount')) is int and event['communicationCount']==1, 'Count request communications, not target companies'
+            assert event.get('sourceSystem') and event.get('sourceMessageId'), 'Requests need stable source-message evidence'
+            message_key=(event['sourceSystem'],event['sourceMessageId'])
+            assert message_key not in request_message_keys, 'One request communication cannot become per-target events'
+            request_message_keys.add(message_key)
+            contact_id=event.get('sourceContactDealId')
+            assert type(contact_id) is int and contact_id in crm_deals and not crm_deals[contact_id].get('isTest'), 'Request contact needs an actual business CRM record'
+            if event.get('referrerPersonId') is not None:
+                assert event['referrerPersonId']==crm_deals[contact_id].get('personId'), 'Request contact person does not match CRM evidence'
+            targets=event.get('requestedCompanies')
+            assert isinstance(targets,list), 'Request targets must be explicit; an unknown target list is empty'
+            target_names=set()
+            for target in targets:
+                name=target.get('company')
+                assert isinstance(name,str) and name.strip(), 'Named request targets need a company name'
+                normalized_name=name.strip().casefold()
+                assert normalized_name not in target_names, 'A requested company cannot be duplicated'
+                target_names.add(normalized_name)
+                target_id=target.get('prospectDealId')
+                if target_id is not None:
+                    assert type(target_id) is int and target_id in crm_deals and not crm_deals[target_id].get('isTest'), 'Request target needs an actual business CRM record'
+                    target_deal=crm_deals[target_id]
+                    assert normalized_name in {str(target_deal.get(k) or '').strip().casefold() for k in ('title','company')}, 'Request target name does not match its CRM join'
         else:raise AssertionError('Unrecognized curated referral event type')
         if event['datePrecision']=='timestamp':
             assert event['occurredAt'].endswith('Z') and event['sourceTimezone']=='UTC' and event['sourceMessageId']
         else:assert event['datePrecision']=='day' and event['sourceTimezone'] is None
         assert event['heldCallConfirmed'] is None and event['acceptedOpportunityConfirmed'] is None and event['firstClientWinConfirmed'] is None
-        assert event['referralDealId'] in {r['dealId'] for r in ref['records']}
+        if event.get('referralDealId') is None:
+            assert event['type']=='request' and event['sourceContactDealId'] in crm_deals, 'Only a source-linked request may lack a Referral Pipeline deal'
+        else:
+            assert event['referralDealId'] in {r['dealId'] for r in ref['records']}
         if event['prospectDealId']:assert event['prospectDealId'] in {r['id'] for r in data['crm']['deals']}
 if ref.get('partitions'):
     s=ref['summary']

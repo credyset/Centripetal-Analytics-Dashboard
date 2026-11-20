@@ -19,7 +19,7 @@ from apply_refresh_2026_10_23 import (SUPPORTED, apply_patches, assert_curated,
 from apply_effort_estimate import validate_effort_decision
 from prepare_meeting_refresh_2026_10_28 import apply_owner_preview, OWNER_INCREMENT_ID
 from prepare_shared_snapshot import curate_snapshot
-from publication_redactions import validate_publication_redactions
+from publication_redactions import apply_publication_redactions, validate_publication_redactions
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = ROOT / 'data/private/refresh_2026_10_28'
@@ -218,6 +218,10 @@ def assert_native_retained(before, result, incoming=None):
 
 
 def assert_historical_reviews(before, result):
+    # Historical fixtures retain private source context. Compare the current
+    # public representation without mutating that evidence or normalizing away
+    # any changes on the result side.
+    before = apply_publication_redactions(deepcopy(before))
     old = before.get('meetings', {}).get('fireflies') or {}
     new = result.get('meetings', {}).get('fireflies') or {}
     # The earlier 76-ID review and eight incremental records are separately dated

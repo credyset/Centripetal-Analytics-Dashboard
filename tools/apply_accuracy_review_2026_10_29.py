@@ -17,7 +17,7 @@ from apply_crm_alias_review_2026_10_29 import apply_alias
 from apply_refresh_2026_10_23 import assert_curated, clock, event_key
 from apply_refresh_2026_10_28 import replace_group, serialized
 from prepare_shared_snapshot import curate_snapshot
-from publication_redactions import validate_publication_redactions
+from publication_redactions import apply_publication_redactions, validate_publication_redactions
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = ROOT/'data/private/accuracy_audit_2026_10_29'
@@ -195,6 +195,9 @@ def audit_cards(result, bundle):
 
 
 def validate_result(before, result, bundle):
+    # Apply the required public privacy policy to a comparison copy only. The
+    # caller's historical evidence and all result-side invariants stay intact.
+    before = apply_publication_redactions(deepcopy(before))
     for name in ['crm', 'referrals', 'outcomes', 'time', 'content', 'meetings']:
         assert result[name] == before[name], f'Accuracy corrections altered protected {name}'
     owner = result['time']['summary']['ownerEstimateRange']
